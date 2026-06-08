@@ -9,253 +9,102 @@
   :root {
     --ink: #1a1a1a;
     --ink-light: #444;
-    --rule: #1a1a1a;
     --accent: #b5161b;
     --accent-light: #f5e8e8;
     --paper: #faf8f4;
     --paper-dark: #f0ece4;
     --column: 680px;
   }
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.7;
-  }
-  .masthead {
-    border-top: 5px solid var(--ink);
-    border-bottom: 3px double var(--ink);
-    padding: 20px 40px 16px;
-    text-align: center;
-    background: var(--paper);
-  }
-  .masthead-flag {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 13px;
-    letter-spacing: .25em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    margin-bottom: 6px;
-  }
-  .masthead-name {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(28px, 5vw, 48px);
-    font-weight: 900;
-    letter-spacing: .04em;
-    line-height: 1;
-    color: var(--ink);
-  }
-  .masthead-tagline {
-    font-size: 12px;
-    letter-spacing: .18em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    margin-top: 8px;
-    font-style: italic;
-  }
-  .masthead-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 12px;
-    padding-top: 10px;
-    border-top: 1px solid var(--ink);
-    font-size: 11.5px;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-  }
-  .article-wrap {
-    max-width: var(--column);
-    margin: 0 auto;
-    padding: 44px 24px 80px;
-  }
-  .section-label {
-    display: inline-block;
-    background: var(--accent);
-    color: #fff;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: .2em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    margin-bottom: 18px;
-  }
-  .headline {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(28px, 5vw, 46px);
-    font-weight: 900;
-    line-height: 1.12;
-    color: var(--ink);
-    margin-bottom: 14px;
-  }
-  .headline em {
-    font-style: italic;
-    color: var(--accent);
-  }
-  .deck {
-    font-size: 19px;
-    font-weight: 300;
-    line-height: 1.55;
-    color: var(--ink-light);
-    border-left: 3px solid var(--accent);
-    padding-left: 16px;
-    margin-bottom: 28px;
-    font-style: italic;
-  }
-  .byline {
-    font-size: 12px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--ink);
-    margin-bottom: 28px;
-  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; line-height: 1.7; }
+
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 20px 40px 16px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 6px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px,5vw,48px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); }
+  .masthead-tagline { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-light); margin-top: 8px; font-style: italic; }
+  .masthead-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--ink); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-light); }
+
+  .article-wrap { max-width: var(--column); margin: 0 auto; padding: 44px 24px 80px; }
+
+  .section-label { display: inline-block; background: var(--accent); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 18px; }
+
+  .headline { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px,5vw,46px); font-weight: 900; line-height: 1.12; color: var(--ink); margin-bottom: 14px; }
+  .headline em { font-style: italic; color: var(--accent); }
+
+  .deck { font-size: 19px; font-weight: 300; line-height: 1.55; color: var(--ink-light); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 28px; font-style: italic; }
+
+  .byline { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); padding-bottom: 20px; border-bottom: 1px solid var(--ink); margin-bottom: 28px; }
   .byline strong { color: var(--ink); }
-  .body p {
-    margin-bottom: 22px;
-    font-size: 17.5px;
-    line-height: 1.72;
-    hyphens: auto;
-  }
-  .body p.lede {
-    font-size: 19.5px;
-    font-weight: 400;
-    line-height: 1.6;
-  }
-  .body p.lede::first-letter {
-    font-family: 'Playfair Display', serif;
-    font-size: 4.2em;
-    font-weight: 900;
-    float: left;
-    line-height: .78;
-    margin: 6px 8px -4px 0;
-    color: var(--accent);
-  }
-  h2.section-head {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--ink);
-    margin: 36px 0 14px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--ink);
-  }
-  .pull-quote {
-    border-top: 3px solid var(--accent);
-    border-bottom: 3px solid var(--accent);
-    padding: 22px 0 18px;
-    margin: 36px 0;
-    text-align: center;
-  }
-  .pull-quote p {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-size: 22px !important;
-    font-style: italic;
-    font-weight: 700;
-    line-height: 1.4 !important;
-    color: var(--ink);
-    margin: 0 !important;
-  }
+
+  .body p { margin-bottom: 22px; font-size: 17.5px; line-height: 1.72; hyphens: auto; }
+  .body p.lede { font-size: 19.5px; font-weight: 400; line-height: 1.6; }
+  .body p.lede::first-letter { font-family: 'Playfair Display', serif; font-size: 4.2em; font-weight: 900; float: left; line-height: .78; margin: 6px 8px -4px 0; color: var(--accent); }
+
+  h2.section-head { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--ink); margin: 36px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+
+  .pull-quote { border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); padding: 22px 0 18px; margin: 36px 0; text-align: center; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px !important; font-style: italic; font-weight: 700; line-height: 1.4 !important; color: var(--ink); margin: 0 !important; }
   .pull-quote span { font-size: .8em; font-weight: 400; }
-  .pull-quote cite {
-    display: block;
-    margin-top: 10px;
-    font-size: 11px;
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    color: var(--ink-light);
-    font-style: normal;
-  }
-  .fact-box {
-    background: var(--paper-dark);
-    border-left: 4px solid var(--accent);
-    padding: 20px 24px;
-    margin: 30px 0;
-  }
-  .fact-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 14px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    margin-bottom: 14px;
-    color: var(--accent);
-  }
+  .pull-quote cite { display: block; margin-top: 10px; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-light); font-style: normal; }
+
+  .fact-box { background: var(--paper-dark); border-left: 4px solid var(--accent); padding: 20px 24px; margin: 30px 0; }
+  .fact-box h3 { font-family: 'Playfair Display', serif; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px; color: var(--accent); }
   .fact-box ul { list-style: none; padding: 0; }
-  .fact-box ul li {
-    font-size: 15px;
-    padding: 5px 0 5px 18px;
-    position: relative;
-    border-bottom: 1px solid #ddd8ce;
-    line-height: 1.5;
-  }
+  .fact-box ul li { font-size: 15px; padding: 5px 0 5px 18px; position: relative; border-bottom: 1px solid #ddd8ce; line-height: 1.5; }
   .fact-box ul li:last-child { border-bottom: none; }
-  .fact-box ul li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-size: 12px;
-    top: 7px;
-  }
-  .section-rule {
-    border: none;
-    border-top: 1px solid var(--ink);
-    margin: 48px 0 44px;
-  }
-  .lang-badge {
-    display: inline-block;
-    border: 1.5px solid var(--ink);
-    font-size: 11px;
-    letter-spacing: .15em;
-    text-transform: uppercase;
-    padding: 3px 9px;
-    margin-bottom: 20px;
-    font-weight: 600;
-  }
-  .editors-note {
-    background: var(--accent-light);
-    border: 1px solid #d4a0a0;
-    padding: 18px 22px;
-    margin-bottom: 36px;
-    font-size: 14px;
-    line-height: 1.6;
-    font-style: italic;
-  }
-  .editors-note strong {
-    font-style: normal;
-    text-transform: uppercase;
-    letter-spacing: .08em;
-    font-size: 11px;
-    display: block;
-    margin-bottom: 6px;
-    color: var(--accent);
-  }
-  .article-footer {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 3px double var(--ink);
-    font-size: 13px;
-    color: var(--ink-light);
-    line-height: 1.6;
-  }
-  .article-footer a { color: var(--accent); }
-  a { color: var(--accent); }
+  .fact-box ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 12px; top: 7px; }
+
+  /* Evidence card system */
+  .evidence-block { margin: 30px 0; border: 1px solid #d4c9b8; border-left: 4px solid var(--accent); background: var(--paper-dark); overflow: hidden; }
+  .evidence-block .ev-header { background: var(--ink); color: #fff; padding: 7px 16px; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .evidence-block .ev-header .ev-status { font-size: 9.5px; padding: 2px 8px; border-radius: 2px; white-space: nowrap; letter-spacing: .08em; }
+  .evidence-block .ev-header .ev-status.confirmed { background: #2a7a2a; }
+  .evidence-block .ev-header .ev-status.partial { background: #b07d12; }
+  .evidence-block .ev-header .ev-status.pending { background: #666; }
+  .evidence-block .ev-body { padding: 15px 18px; }
+  .evidence-block .ev-body p { font-size: 15px; margin-bottom: 10px; line-height: 1.6; }
+  .evidence-block .ev-body p:last-child { margin-bottom: 0; }
+  .evidence-block .ev-body blockquote { font-style: italic; border-left: 3px solid var(--accent); padding-left: 12px; margin: 10px 0; font-size: 15px; color: var(--ink-light); }
+  .ev-source-link { display: inline-block; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); border: 1px solid var(--accent); padding: 2px 8px; margin-top: 6px; text-decoration: none; }
+
+  /* Zoning map SVG container */
+  .zoning-map-wrap { margin: 20px 0 0; background: #e8e2d8; }
+  .zoning-map-wrap svg { display: block; width: 100%; }
+  .zoning-map-caption { background: var(--ink); color: #f0ece4; font-size: 12.5px; padding: 9px 15px; line-height: 1.55; font-style: italic; }
+  .zoning-map-caption strong { font-style: normal; color: #f5c842; }
+
+  /* Evidence chain */
+  .evidence-chain { list-style: none; padding: 0; margin: 16px 0 0; }
+  .evidence-chain li { padding: 9px 0 9px 30px; position: relative; border-bottom: 1px solid #ddd8ce; font-size: 15px; line-height: 1.55; }
+  .evidence-chain li:last-child { border-bottom: none; }
+  .evidence-chain li::before { position: absolute; left: 0; top: 10px; font-size: 14px; }
+  .evidence-chain li.ev-ok::before { content: '✅'; }
+  .evidence-chain li.ev-partial::before { content: '⚠️'; }
+  .evidence-chain li strong { display: block; font-size: 14px; color: var(--ink); margin-bottom: 2px; }
+
+  /* Verdict */
+  .verdict-box { border: 2px solid var(--accent); background: var(--accent-light); padding: 18px 22px; margin: 24px 0; }
+  .verdict-box h3 { font-family: 'Playfair Display', serif; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+  .verdict-box p { font-size: 15.5px; margin-bottom: 10px; line-height: 1.65; }
+  .verdict-box p:last-child { margin-bottom: 0; }
+
+  .section-rule { border: none; border-top: 1px solid var(--ink); margin: 48px 0 44px; }
+  .lang-badge { display: inline-block; border: 1.5px solid var(--ink); font-size: 11px; letter-spacing: .15em; text-transform: uppercase; padding: 3px 9px; margin-bottom: 20px; font-weight: 600; }
+  .editors-note { background: var(--accent-light); border: 1px solid #d4a0a0; padding: 18px 22px; margin-bottom: 36px; font-size: 14px; line-height: 1.6; font-style: italic; }
+  .editors-note strong { font-style: normal; text-transform: uppercase; letter-spacing: .08em; font-size: 11px; display: block; margin-bottom: 6px; color: var(--accent); }
+  .article-footer { margin-top: 50px; padding-top: 20px; border-top: 3px double var(--ink); font-size: 13px; color: var(--ink-light); line-height: 1.6; }
+  .article-footer a, a { color: var(--accent); }
+
   @media (max-width: 600px) {
     .masthead { padding: 16px 20px 12px; }
     .article-wrap { padding: 28px 18px 60px; }
     .masthead-meta { flex-direction: column; gap: 6px; text-align: center; }
+    .evidence-block .ev-header { flex-direction: column; align-items: flex-start; gap: 4px; }
   }
 </style>
 </head>
 <body>
+
 <header class="masthead">
   <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent</div>
   <div class="masthead-name">The Ormstown Observer</div>
@@ -266,148 +115,555 @@
     <span>Ormstown, Québec</span>
   </div>
 </header>
+
 <main class="article-wrap">
-  <section lang="en">
-    <div class="lang-badge">English</div>
-    <div class="editors-note">
-      <strong>Editor's Note / Note de la rédaction</strong>
-      This article is published in both English and French. The French version follows below. · Cet article est publié en anglais et en français. La version française suit ci-dessous.
-    </div>
-    <div class="section-label">Governance &amp; Accountability</div>
-    <h1 class="headline">Bell Wants to Build a 36-Metre Tower on an Ormstown Park Lot.<br><em>Most Residents Don't Know It's Even on the Table.</em></h1>
-    <p class="deck">A proposed telecommunications tower on a municipally owned, park-zoned lot has moved from an early council discussion to a signed lease and a public information session — without most Ormstown residents ever hearing about it.</p>
-    <div class="byline">By <strong>The Ormstown Observer</strong> &nbsp;·&nbsp; June 7, 2026 &nbsp;·&nbsp; Ormstown, Québec</div>
-    <div class="body">
-      <p class="lede">Bell Mobilité wants to build a 36-metre telecommunications tower on a municipally owned lot near the intersection of Isabelle and Linda streets, close to Route 138. The proposed structure is a monopole tower supporting 18 antennas, on land that belongs to Ormstown residents and is currently zoned exclusively for park and green space. A lease has already been signed. An information session is scheduled for Wednesday, June 10 at 6 p.m. at 5 rue Gale. Yet the vast majority of Ormstown's roughly 4,300 residents have heard little or nothing about it.</p>
-      <p>This article is the Observer's attempt to change that.</p>
-      <h2 class="section-head">How We Got Here</h2>
-      <p>The project surfaced publicly at the March 2, 2026 regular council meeting, when DG Daniel Leduc presented Resolution 7.5 — a request to authorize the municipality to negotiate and sign a lease with Bell Mobilité for part of municipal lot 6 065 483. Leduc explained that Bell had contacted the municipality about cellular coverage gaps in the area, that Bell had first explored mounting equipment on the municipal water tower but found it structurally unsuitable, and that the company had identified the wooded lot near Route 138 as an alternative.</p>
-      <p>The proposed lease term was five years, with annual rent of $10,000 — approximately $2.33 per Ormstown resident per year. Council authorized the signing.</p>
-      <p>Most residents were not there. The item was not advertised in advance as a major issue. Outside of those who attended the March 2 meeting, the matter appears to have gone largely unnoticed — until Bell began distributing notification letters to property owners living within 123 metres of the proposed site.</p>
-      <h2 class="section-head">A Promise Made, and What Came After</h2>
-      <p>During question period at the March 2 meeting, a resident asked whether the community could expect a public consultation before anything moved forward. DG Leduc answered: <em>"Oui. Bell le fait."</em> Mayor Philippe Besombes added: <em>"Oui, oui, oui."</em> When the resident followed up to confirm — <em>"So, nothing happens before a public consultation with all the facts?"</em> — Mayor Besombes replied: <em>"C'est la première question qu'on a posée."</em> DG Leduc added: <em>"Exact."</em> The Mayor also stated: <em>"Il y aura une consultation là-dessus."</em> Both officials are on the public record.</p>
-      <p>Three months later, on June 2, DG Leduc issued a public notice announcing a <em>séance d'information</em> — an information session — for June 10. The notice states explicitly: <em>"il ne s'agit pas d'une consultation publique."</em> This is not a public consultation. Residents are directed to submit questions by email to <strong>bell_E3640@cpc-consultation.ca</strong> — an address managed not by the municipality, but by a third-party firm retained by Bell.</p>
-      <p>The Observer has reviewed the council agenda for June 1, 2026 — the last council meeting before the notice was issued. There is no agenda item related to the Bell tower. No vote. No resolution. No authorization. The notice was issued the day after a council meeting at which the project was not discussed.</p>
-      <div class="pull-quote">
-        <p>"So, nothing happens before a public consultation with all the facts?"<br><span>Mayor Besombes: <em>"C'est la première question qu'on a posée."</em><br>DG Leduc: <em>"Exact."</em></span></p>
-        <cite>— Exchange at the March 2, 2026 council meeting, on the public record</cite>
-      </div>
-      <h2 class="section-head">The Lease Came Before the Consultation</h2>
-      <p>At the March 2 meeting, DG Leduc was explicit about the sequence. When presenting Resolution 7.5, he said: <em>"Ce qui est demandé au conseil municipal, c'est que d'autoriser la conclusion du bail. Puisque c'est le bail qui débute le processus en fait. À partir de là, il finit l'étude de faisabilité. Je pense qu'il y a une rencontre avec les gens qui habitent dans le périmètre."</em></p>
-      <p>In plain language: the lease starts the process. The feasibility study and citizen meeting come after. Under the federal CPC-2-0-03 framework, public consultation is required before a municipality provides written concurrence for a tower project. Signing a lease first creates, at minimum, the appearance of municipal approval before residents have had a meaningful opportunity to be heard.</p>
-      <p>Mayor Besombes acknowledged at the same meeting that social acceptability was a condition: <em>"Si cela est accepté socialement, on verra la consultation publique."</em> But a signed lease is not easily undone by a show of hands at an information session.</p>
-      <h2 class="section-head">A Zoning Problem the Municipality Has Not Addressed</h2>
-      <p>The proposed site falls within Zone P-15 under Ormstown's Zoning By-law 148-2023, adopted March 4, 2024. The Observer has reviewed the usage grid for Zone P-15, published in Annexe B of that by-law (<a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_Mars2024.pdf">available at ormstown.ca, page 64</a>). It authorizes exactly one category of use: <strong>R1 — Parc et espace vert</strong> — park and green space. No telecommunications structures. No towers. No conditional uses that could accommodate a 36-metre antenna mast.</p>
-      <p>Under Quebec's Act Respecting Land Use Planning and Development (LAU), installing a telecommunications tower on P-15 land would appear to require either a full rezoning — a by-law amendment process with public notice, a notice of motion, and potentially a citizen register or referendum — or some other formal planning mechanism. No rezoning appears on any recent council agenda. No notice of motion has been published.</p>
-      <p>There is also a discrepancy in the municipal record. Both the June 2 public notice and the March 2 council resolution refer to lot <strong>6 065 438</strong>. Bell's engineering documents and official neighbour notifications consistently reference lot <strong>6 065 483</strong>. These are different cadastral numbers. The Observer has confirmed through the official Quebec cadastral registry, as of June 7, 2026, that lot 6 065 483 is the parcel identified on Bell's engineering plan at the Route 138 site. Whether the municipal documents contain a clerical error or something else, the Observer has raised this discrepancy in its formal demand to the municipality.</p>
-      <div class="fact-box">
-        <h3>Key Facts at a Glance</h3>
-        <ul>
-          <li>Proposed tower: 36-metre monopole, 18 antennas — Bell engineering plan E3640 and Bell's "Avis aux propriétaires".</li>
-          <li>Location: near Isabelle/Linda/Route 138 — lot 6 065 483 per Bell's documents; lot 6 065 438 per municipal public notice.</li>
-          <li>Zoning: P-15 — R1, park and green space only — <a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_Mars2024.pdf">Règlement 148-2023, Annexe B, p. 64</a>.</li>
-          <li>Lease: authorized by council on March 2, 2026, before the feasibility study or citizen meeting.</li>
-          <li>Annual rent: $10,000 — approximately $2.33 per resident based on Ormstown's population of roughly 4,300.</li>
-          <li>Bell's comment deadline: June 19, 2026 — nine days after the June 10 information session.</li>
-          <li>Bell's brochure states that the municipality "collaborated in selecting the site".</li>
-          <li>Bell's brochure notes that Ormstown has no municipal protocol for telecom tower consultations.</li>
-          <li>June 1 council agenda: no Bell item, no vote, and no resolution authorizing the public notice.</li>
-          <li>DG Leduc described the tower on March 2 as "une trentaine de mètres"; Bell's documents specify 36 metres.</li>
-        </ul>
-      </div>
-      <h2 class="section-head">What Federal Rules Require</h2>
-      <p>The June 2 public notice references <strong>CPC-2-0-03</strong> — the federal ISED Client Procedures Circular governing antenna system installations across Canada. This is Bell's regulatory obligation. Under CPC-2-0-03, Bell must follow a public consultation process that includes formal written notification, an engagement period to address questions and concerns, and a formal written comment period. The municipality, as the land-use authority, must independently evaluate whether that consultation was adequate before providing written concurrence to ISED. Construction cannot begin without that concurrence.</p>
-      <p>CPC-2-0-03 also requires Bell to demonstrate, before proposing a new tower, that it explored using existing infrastructure. At the March 2 meeting, DG Leduc stated that Bell examined the municipal water tower but found it structurally unsuitable. No written documentation of that assessment has been made public.</p>
-      <p>Bell's own "Comprendre le processus" brochure acknowledges that Ormstown has no municipal protocol for public consultations on telecom towers. Bell is filling that void with its own process, run by its own third-party firm. The municipality's independence as evaluator is further complicated by that same brochure's statement that Ormstown <em>"collaborated in selecting the site."</em> An authority that helped choose a location is not well positioned to independently judge whether the consultation around that choice was adequate.</p>
-      <h2 class="section-head">What the Observer Is Asking</h2>
-      <p>The Observer has filed a formal written demand to the municipality asking three specific questions: what resolution of council authorized the June 2 public notice; how a 36-metre telecommunications tower is a permitted use in Zone P-15; and why the municipal public notice and council resolution reference lot 6 065 438 while Bell's own documents reference lot 6 065 483. That demand is being filed concurrently with this article.</p>
-      <p>We are also asking residents to attend the June 10 information session — not because it is the consultation that was promised, but because your presence, your questions, and your voice on the public record matter. The process is imperfect. That is not a reason to stay home. It is a reason to show up.</p>
-      <p>We will report on what happens.</p>
-      <div class="fact-box">
-        <h3>Questions Worth Asking on June 10</h3>
-        <ul>
-          <li>The lease was signed March 2, before any citizen meeting. What happens to that lease if residents oppose the project?</li>
-          <li>What council resolution authorized the June 2 public notice?</li>
-          <li>The public notice cites lot 6 065 438. Bell's documents cite lot 6 065 483. Which lot is the actual site?</li>
-          <li>How is a 36-metre telecommunications tower a permitted use in Zone P-15, which is zoned park and green space?</li>
-          <li>When will a rezoning process, with full public participation, take place?</li>
-          <li>Where is the written documentation of Bell's alternatives assessment for the municipal water tower?</li>
-          <li>Is this the public consultation that the Mayor and DG committed to on March 2?</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <hr class="section-rule">
-  <section lang="fr">
-    <div class="lang-badge">Français</div>
-    <div class="section-label">Gouvernance &amp; Transparence</div>
-    <h1 class="headline">Bell veut construire une tour de 36 mètres sur un terrain municipal zoné parc.<br><em>La plupart des résidents ne savent même pas que ça se discute.</em></h1>
-    <p class="deck">Un projet de tour de télécommunications sur un terrain municipal zoné espace vert est passé d'une discussion préliminaire au conseil à un bail signé et à une séance d'information — sans que la majorité des résidents d'Ormstown en ait entendu parler.</p>
-    <div class="byline">Par <strong>L'Ormstown Observer</strong> &nbsp;·&nbsp; 7 juin 2026 &nbsp;·&nbsp; Ormstown, Québec</div>
-    <div class="body">
-      <p class="lede">Bell Mobilité souhaite construire une tour de télécommunications de 36 mètres sur un terrain appartenant à la municipalité d'Ormstown, près de l'intersection des rues Isabelle et Linda, à proximité de la route 138. La structure proposée serait un pylône monopole supportant 18 antennes, sur un terrain qui appartient aux résidents d'Ormstown et qui est actuellement zoné exclusivement parc et espace vert. Un bail a déjà été signé. Une séance d'information est prévue le mercredi 10 juin à 18 h au 5, rue Gale. Pourtant, la grande majorité des quelque 4 300 résidents d'Ormstown en ont peu ou pas entendu parler.</p>
-      <p>Cet article est la tentative de l'Observer de changer cela.</p>
-      <h2 class="section-head">Comment on en est arrivé là</h2>
-      <p>Le dossier a été présenté publiquement lors de la séance ordinaire du conseil du 2 mars 2026, lorsque le DG Daniel Leduc a soumis la résolution 7.5 — une demande visant à autoriser la municipalité à négocier et à signer un bail avec Bell Mobilité pour une partie du lot municipal 6 065 483. M. Leduc a expliqué que Bell avait contacté la municipalité au sujet de lacunes de couverture cellulaire dans la région, que Bell avait d'abord envisagé d'installer des équipements sur le château d'eau municipal mais l'avait jugé structurellement inadéquat, et que l'entreprise avait identifié ce terrain boisé près de la route 138 comme solution de rechange.</p>
-      <p>Le bail proposé était d'une durée de cinq ans, avec un loyer annuel de 10 000 $ — soit environ 2,33 $ par résident d'Ormstown par année. Le conseil a autorisé la signature.</p>
-      <p>La plupart des résidents n'étaient pas présents. Le point n'avait pas été annoncé à l'avance comme un enjeu majeur. En dehors des personnes présentes à la séance du 2 mars, l'affaire semble être passée largement inaperçue — jusqu'à ce que Bell commence à distribuer des avis aux propriétaires vivant dans un rayon de 123 mètres du site proposé.</p>
-      <h2 class="section-head">Une promesse faite, et ce qui a suivi</h2>
-      <p>Lors de la période de questions du 2 mars, une résidente a demandé si la communauté pouvait s'attendre à une consultation publique avant que quoi que ce soit se concrétise. Le DG Leduc a répondu : <em>« Oui. Bell le fait. »</em> Le maire Philippe Besombes a ajouté : <em>« Oui, oui, oui. »</em> Lorsque la résidente a relancé pour confirmer — <em>« Donc, rien ne se passe avant une consultation publique avec tous les faits? »</em> — le maire Besombes a répondu : <em>« C'est la première question qu'on a posée. »</em> Le DG a ajouté : <em>« Exact. »</em> Le maire a également déclaré : <em>« Il y aura une consultation là-dessus. »</em> Les deux élus sont au compte rendu public.</p>
-      <p>Trois mois plus tard, le 2 juin, le DG Leduc a émis un avis public annonçant une <em>séance d'information</em> pour le 10 juin. L'avis le précise explicitement : <em>« il ne s'agit pas d'une consultation publique. »</em> Les résidents sont invités à soumettre leurs questions par courriel à <strong>bell_E3640@cpc-consultation.ca</strong> — une adresse gérée non pas par la municipalité, mais par une firme tierce mandatée par Bell.</p>
-      <p>L'Observer a examiné l'ordre du jour du conseil du 1er juin 2026 — la dernière séance du conseil avant l'émission de l'avis. Il n'y a aucun point relatif à la tour Bell. Aucun vote. Aucune résolution. Aucune autorisation. L'avis a été émis le lendemain d'une séance du conseil où le projet n'a pas été discuté.</p>
-      <div class="pull-quote">
-        <p>« Rien ne se passe avant une consultation publique avec tous les faits? »<br><span>Maire Besombes : <em>« C'est la première question qu'on a posée. »</em><br>DG Leduc : <em>« Exact. »</em></span></p>
-        <cite>— Échange au conseil municipal du 2 mars 2026, au compte rendu public</cite>
-      </div>
-      <h2 class="section-head">Le bail avant la consultation</h2>
-      <p>Lors de la séance du 2 mars, le DG Leduc a été explicite sur l'ordre des opérations. En présentant la résolution 7.5, il a déclaré : <em>« Ce qui est demandé au conseil municipal, c'est que d'autoriser la conclusion du bail. Puisque c'est le bail qui débute le processus en fait. À partir de là, il finit l'étude de faisabilité. Je pense qu'il y a une rencontre avec les gens qui habitent dans le périmètre. »</em></p>
-      <p>En clair : c'est le bail qui lance le processus. L'étude de faisabilité et la rencontre citoyenne viennent après. En vertu du cadre fédéral CPC-2-0-03, une consultation publique est requise avant qu'une municipalité fournisse sa concurrence écrite à un projet de tour. Signer un bail en premier crée, à tout le moins, l'apparence d'une approbation municipale avant que les résidents aient eu une occasion significative de se faire entendre.</p>
-      <p>Le maire Besombes a reconnu lors de la même séance que l'acceptabilité sociale était une condition : <em>« Si cela est accepté socialement, on verra la consultation publique. »</em> Mais un bail déjà signé ne se défait pas facilement par un vote à main levée lors d'une séance d'information.</p>
-      <h2 class="section-head">Un problème de zonage que la municipalité n'a pas adressé</h2>
-      <p>Le site proposé se trouve dans la zone P-15 en vertu du Règlement de zonage 148-2023 d'Ormstown, adopté le 4 mars 2024. L'Observer a examiné la grille des usages pour la zone P-15, publiée à l'Annexe B de ce règlement (<a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_Mars2024.pdf">disponible sur ormstown.ca, page 64</a>). Elle autorise exactement une catégorie d'usage : <strong>R1 — Parc et espace vert</strong>. Aucune structure de télécommunications. Aucune tour. Aucun usage conditionnel susceptible d'accommoder un pylône de 36 mètres.</p>
-      <p>En vertu de la Loi sur l'aménagement et l'urbanisme (LAU) du Québec, l'installation d'une tour de télécommunications sur un terrain P-15 semblerait nécessiter soit un rezonage complet — un processus de modification réglementaire avec avis public, avis de motion, et potentiellement un registre ou référendum citoyen — soit un autre mécanisme formel d'aménagement du territoire. Aucun rezonage n'apparaît dans les ordres du jour récents du conseil. Aucun avis de motion n'a été publié.</p>
-      <p>Il existe également une discordance dans les documents municipaux. L'avis public du 2 juin et la résolution du conseil du 2 mars font tous deux référence au lot <strong>6 065 438</strong>. Les documents d'ingénierie et les avis officiels de Bell font systématiquement référence au lot <strong>6 065 483</strong>. Ce sont des numéros cadastraux différents. L'Observer a confirmé, via la Banque cadastrale officielle du Québec en date du 7 juin 2026, que le lot 6 065 483 est la parcelle identifiée sur le plan d'ingénierie de Bell au site de la route 138. Qu'il s'agisse d'une erreur de transcription dans les documents municipaux ou d'autre chose, l'Observer a soulevé cette discordance dans sa demande formelle à la municipalité.</p>
-      <div class="fact-box">
-        <h3>Les faits essentiels</h3>
-        <ul>
-          <li>Tour proposée : monopole de 36 mètres, 18 antennes — plan d'ingénierie Bell E3640 et Bell « Avis aux propriétaires ».</li>
-          <li>Emplacement : près Isabelle/Linda/Route 138 — lot 6 065 483 selon Bell ; lot 6 065 438 selon l'avis public municipal.</li>
-          <li>Zonage : P-15 — R1, parc et espace vert seulement — <a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_Mars2024.pdf">Règlement 148-2023, Annexe B, p. 64</a>.</li>
-          <li>Bail : autorisé par le conseil le 2 mars 2026, avant l'étude de faisabilité ou la rencontre citoyenne.</li>
-          <li>Loyer annuel : 10 000 $ — soit environ 2,33 $ par résident basé sur une population d'environ 4 300 personnes.</li>
-          <li>Date limite de commentaires de Bell : 19 juin 2026 — neuf jours après la séance d'information du 10 juin.</li>
-          <li>La brochure de Bell affirme que la municipalité « a collaboré à la sélection du site choisi ».</li>
-          <li>La brochure de Bell indique qu'Ormstown ne possède aucun protocole municipal de consultation pour les tours de télécommunications.</li>
-          <li>Ordre du jour du 1er juin : aucun point Bell, aucun vote, aucune résolution autorisant l'avis public.</li>
-          <li>Le DG a décrit la tour le 2 mars comme « une trentaine de mètres » ; les documents de Bell précisent 36 mètres.</li>
-        </ul>
-      </div>
-      <h2 class="section-head">Ce que les règles fédérales exigent</h2>
-      <p>L'avis public du 2 juin fait référence à la <strong>CPC-2-0-03</strong> — la circulaire de procédures aux clients d'ISDE régissant l'installation des systèmes d'antennes au Canada. Il s'agit d'une obligation réglementaire de Bell. En vertu de la CPC-2-0-03, Bell doit suivre un processus de consultation publique comprenant une notification écrite formelle, une période d'engagement pour répondre aux questions et préoccupations, et une période officielle de commentaires écrits. La municipalité, à titre d'autorité responsable de l'utilisation du sol, doit évaluer de manière indépendante si cette consultation est adéquate avant de fournir sa concurrence écrite à ISDE. La construction ne peut commencer sans cette concurrence.</p>
-      <p>La CPC-2-0-03 exige également que Bell démontre, avant de proposer une nouvelle tour, qu'elle a exploré l'utilisation d'infrastructures existantes. Lors de la séance du 2 mars, le DG Leduc a indiqué que Bell avait examiné le château d'eau municipal mais l'avait jugé structurellement inadéquat. Aucune documentation écrite de cette évaluation n'a été rendue publique.</p>
-      <p>La brochure « Comprendre le processus » de Bell reconnaît qu'Ormstown ne dispose d'aucun protocole municipal de consultation pour les tours de télécommunications. Bell comble ce vide avec son propre processus, géré par sa propre firme tierce. L'indépendance de la municipalité comme évaluatrice est par ailleurs compliquée par la déclaration de cette même brochure selon laquelle Ormstown <em>« a collaboré à la sélection du site choisi. »</em> Une autorité qui a participé au choix de l'emplacement n'est pas bien placée pour juger indépendamment si la consultation autour de ce choix a été adéquate.</p>
-      <h2 class="section-head">Ce que l'Observer demande</h2>
-      <p>L'Observer a déposé une demande écrite formelle à la municipalité posant trois questions précises : quelle résolution du conseil a autorisé l'avis public du 2 juin ; comment une tour de télécommunications de 36 mètres constitue un usage permis en zone P-15 ; et pourquoi l'avis public municipal et la résolution du conseil font référence au lot 6 065 438 alors que les documents de Bell font systématiquement référence au lot 6 065 483. Cette demande est déposée en même temps que la publication de cet article.</p>
-      <p>Nous demandons également aux résidents d'assister à la séance d'information du 10 juin — non pas parce qu'il s'agit de la consultation qui avait été promise, mais parce que votre présence, vos questions et votre voix au compte rendu public comptent. Le processus est imparfait. Ce n'est pas une raison de rester chez soi. C'est une raison d'y aller.</p>
-      <p>Nous ferons rapport de ce qui se passera.</p>
-      <div class="fact-box">
-        <h3>Questions à poser le 10 juin</h3>
-        <ul>
-          <li>Le bail a été signé le 2 mars, avant toute rencontre citoyenne. Qu'arrive-t-il à ce bail si les résidents s'opposent au projet?</li>
-          <li>Quelle résolution du conseil a autorisé l'avis public du 2 juin?</li>
-          <li>L'avis public cite le lot 6 065 438. Les documents de Bell citent le lot 6 065 483. Quel lot est le véritable site?</li>
-          <li>Comment une tour de télécommunications de 36 mètres peut-elle être un usage permis en zone P-15, zonée parc et espace vert?</li>
-          <li>Quand un processus de rezonage, avec pleine participation publique, aura-t-il lieu?</li>
-          <li>Où se trouve la documentation écrite de l'évaluation des alternatives par Bell concernant le château d'eau municipal?</li>
-          <li>Est-ce la consultation publique que le maire et le DG se sont engagés à tenir le 2 mars?</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  <div class="article-footer">
-    <p><strong>L'Ormstown Observer</strong> est une publication indépendante de surveillance civique couvrant Ormstown et la région du Haut-Saint-Laurent. Nous n'acceptons aucune publicité des gouvernements municipaux. · <em>The Ormstown Observer is an independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region. We accept no advertising from municipal governments.</em></p>
-    <p style="margin-top:10px;">Questions, tips, corrections: <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a></p>
+
+<!-- ══════════════════════════════════════════════ -->
+<!--                 ENGLISH VERSION                -->
+<!-- ══════════════════════════════════════════════ -->
+<section lang="en">
+
+  <div class="lang-badge">English</div>
+
+  <div class="editors-note">
+    <strong>Editor's Note / Note de la rédaction</strong>
+    This article is published in both English and French. The French version follows below. · Cet article est publié en anglais et en français. La version française suit ci-dessous.
   </div>
+
+  <div class="section-label">Governance &amp; Accountability</div>
+
+  <h1 class="headline">A 36-Metre Telecommunications Tower Is Proposed for an Ormstown Park Lot.<br><em>Here Is Everything You Need to Know.</em></h1>
+
+  <p class="deck">Bell Mobilité's plan to install a 36-metre monopole tower on municipal land has moved through a council vote, a signed lease, and a federal consultation process — with virtually no public awareness. The Observer has reviewed every available document. This is what the record shows.</p>
+
+  <div class="byline">
+    By <strong>The Ormstown Observer</strong> &nbsp;·&nbsp; June 7, 2026 &nbsp;·&nbsp; Ormstown, Québec
+  </div>
+
+  <div class="body">
+
+    <p class="lede">Sometime in late 2025 or early 2026, Bell Mobilité identified a wooded municipal lot near Route 138 — between Rue Isabelle and Rue Linda — as the proposed location for a new 36-metre telecommunications tower. The tower would be a monopole structure carrying 18 antennas. The land belongs to the municipality of Ormstown, and therefore to its roughly 4,300 residents. Most of those residents do not know this project exists. A public information session is scheduled for Wednesday, June 10 at 6 p.m. at 5 rue Gale. The Observer is publishing this article so that residents can attend informed.</p>
+
+    <h2 class="section-head">The Project: What Bell Is Proposing</h2>
+
+    <p>Bell Mobilité's project — identified in its own documents as E3640 Ormstown — calls for a self-supporting monopole tower 36 metres tall, supporting 18 antennas in two configurations: six larger antennas (2535 mm × 590 mm) and twelve smaller ones (2438 mm × 301 mm). An equipment shelter and fenced compound would be built at the base. The site would not be accessible to the public.</p>
+
+    <p>The stated justification is cellular coverage. Bell's own consultation brochure, distributed to nearby residents, cites increasing demand for wireless data and notes that current service levels in parts of Ormstown do not meet the company's standards. The municipal water tower was apparently the first site Bell evaluated, but Bell's DG Leduc told council on March 2 that structural issues made it unsuitable. The wooded lot near Route 138 was identified as an alternative. No written documentation of that alternatives assessment has been made public.</p>
+
+    <p>Bell's brochure also notes that the municipality of Ormstown was consulted throughout and <em>"collaborated in selecting the site."</em> The municipality is not a passive bystander in this process — it is an active participant. That matters when evaluating the independence of what comes next.</p>
+
+    <div class="fact-box">
+      <h3>The Project at a Glance</h3>
+      <ul>
+        <li>Tower: 36-metre self-supporting monopole, 18 antennas — <em>Bell engineering plan E3640; Bell "Avis aux propriétaires"</em></li>
+        <li>Location: near Isabelle/Linda/Route 138 — lot 6 065 483 per Bell's documents; lot 6 065 438 per municipal public notice (discrepancy — see below)</li>
+        <li>Owner of the land: Municipality of Ormstown — confirmed in council resolution 26-03-074, March 2, 2026</li>
+        <li>Lease: 5-year initial term + six 5-year renewal periods; annual rent $10,000 (~$2.33/resident); authorized by council March 2, 2026</li>
+        <li>Bell's DG stated March 2: tower is "une trentaine de mètres" — Bell's own engineering plan specifies 36 metres</li>
+        <li>Municipality "collaborated in selecting the site" — Bell's own consultation brochure, distributed to residents</li>
+        <li>Ormstown has no municipal protocol for telecom tower consultations — acknowledged in Bell's own brochure</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">The Process: What Federal Rules Require</h2>
+
+    <p>Before Bell can build any antenna structure in Canada, it must follow a federal consultation framework established by ISED (Innovation, Science and Economic Development Canada) under a regulatory document called <strong>CPC-2-0-03</strong> — the Client Procedures Circular for Antenna Systems. This is not optional. It is Bell's legal obligation, and the June 10 information session is part of it.</p>
+
+    <p>The CPC-2-0-03 process has three mandatory steps. First, Bell must formally notify all property owners within a specified radius of the proposed site — which it has done, sending letters to owners within 123 metres. Second, Bell must hold a public engagement period to address questions and concerns. Third, there is a formal written comment period. Once those steps are complete, Bell submits a summary to the municipality. The municipality — acting as the <em>Autorité Responsable de l'Utilisation du Sol</em> (ARUS) — must then independently evaluate whether the consultation was adequate and provide written concurrence before ISED will approve construction. Construction cannot begin without that concurrence.</p>
+
+    <p>DG Daniel Leduc is named as Ormstown's official ARUS contact in Bell's own notification letter to residents. That means the DG will ultimately be the person evaluating the adequacy of a consultation process for a project his municipality helped design.</p>
+
+    <p>CPC-2-0-03 also requires Bell to demonstrate it explored alternatives to a new tower — existing rooftops, water towers, or other structures — before proposing a standalone monopole. Bell did examine the municipal water tower, according to DG Leduc's statement at the March 2 council meeting. But no written alternatives analysis has been made public. The federal framework requires that documentation to exist.</p>
+
+    <h2 class="section-head">The Information Session: What It Is and What It Isn't</h2>
+
+    <p>On June 2, 2026, the municipality issued a public notice announcing a <em>séance d'information</em> for June 10. The notice itself is explicit on one point: <em>"il ne s'agit pas d'une consultation publique"</em> — this is not a public consultation.</p>
+
+    <p>The session is organized by Bell's own third-party consultation firm. Residents with questions or comments are directed to <strong>bell_E3640@cpc-consultation.ca</strong> — not to the municipality. Bell's comment deadline is June 19, 2026 — nine days after the session. The municipality's Facebook post promoting the event describes it as an opportunity to learn about <em>"ses impacts positifs pour notre communauté"</em> — its positive impacts for our community. That framing, from the ARUS that must independently evaluate the process, is worth noting.</p>
+
+    <p>The Observer has reviewed the council agenda for June 1, 2026 — the last council meeting before the notice was issued. There is no Bell tower agenda item. No vote. No resolution. No authorization for the DG to issue the public notice. The notice was issued the day after a council meeting at which the project was not discussed.</p>
+
+    <h2 class="section-head">The Sequence: How We Got Here</h2>
+
+    <p>The Bell project first appeared on a public council agenda on March 2, 2026, as Resolution 7.5: <em>"Autorisation de négocier et de signer un bail avec Bell Mobilité sur le terrain de la municipalité."</em> DG Leduc presented the item, describing the coverage rationale and the proposed terms. Council voted unanimously to authorize the lease.</p>
+
+    <p>What is important to understand about that vote is the sequence the DG described. In his own words at the March 2 meeting:</p>
+
+    <div class="pull-quote">
+      <p><em>"Ce qui est demandé au conseil municipal, c'est que d'autoriser la conclusion du bail. Puisque c'est le bail qui débute le processus en fait. À partir de là, il finit l'étude de faisabilité."</em></p>
+      <cite>— DG Daniel Leduc, March 2, 2026 council meeting · <a href="https://www.youtube.com/watch?v=1fzDFGkjNRc" style="color:var(--accent);">YouTube recording</a> · <a href="https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf" style="color:var(--accent);">Official minutes, p. 54</a></cite>
+    </div>
+
+    <p>The lease starts the process. The feasibility study comes after. The citizen meeting comes after. Under the federal CPC-2-0-03 framework, public consultation is supposed to precede municipal concurrence. Signing a binding lease before residents have been consulted creates, at minimum, the appearance of a predetermined outcome. The council resolution itself acknowledged this gap, authorizing the lease <em>"sous réserve des autorisations réglementaires applicables"</em> — subject to applicable regulatory authorizations still to be obtained.</p>
+
+    <p>During question period at the same March 2 meeting, a resident asked directly whether a public consultation would take place before anything moved forward. DG Leduc answered: <em>"Oui. Bell le fait."</em> Mayor Philippe Besombes added: <em>"Oui, oui, oui."</em> When the resident pressed for an explicit commitment — <em>"So, nothing happens before a public consultation with all the facts?"</em> — Mayor Besombes replied: <em>"C'est la première question qu'on a posée."</em> DG Leduc added: <em>"Exact."</em></p>
+
+    <p>The June 10 session is what followed. The public notice describes it, in its own words, as not a public consultation.</p>
+
+    <h2 class="section-head">The Zoning Question</h2>
+
+    <p>One of the most significant unresolved questions surrounding this project is whether the proposed tower site is even legally available for this kind of construction under Ormstown's own zoning rules. The Observer has reviewed the relevant planning documents at length. Here is what we found — and where a gap remains.</p>
+
+    <!-- EVIDENCE BLOCK 1: ZONING MAP -->
+    <div class="evidence-block">
+      <div class="ev-header">
+        <span>Evidence 1 — Official Zoning Map · Règlement 148-2023, Annexe A, Feuillet 2</span>
+        <span class="ev-status partial">Strongly indicated — not yet confirmed</span>
+      </div>
+      <div class="ev-body">
+        <p>The official urban perimeter zoning map for Ormstown — part of Règlement de zonage 148-2023, adopted March 4, 2024, and publicly available on the municipality's website — shows <strong>Zone P-15</strong> labeled in a large, undivided parcel in the area northeast of the Route 138 / Bruno-Beaulieu intersection. This is the same general location described in Bell's documents and by DG Leduc at the March 2 meeting: a wooded lot near Route 138, approximately 300 metres east of Rue Bridge, between Isabelle and Linda streets.</p>
+        <p>The map legend classifies all P-zones as <strong>Publique et institutionnelle</strong>. Zone P-15 appears as an undivided lot — no internal subdivisions — consistent in size and position with the large municipal parcel identified as lot 6 065 483 in the council resolution. Adjacent zones visible on the map are R-33 (residential), R-35 (residential), C-5 (commercial), P-14, and P-16. This spatial context matches the Isabelle/Linda/Route 138 neighbourhood precisely.</p>
+        <p>The Observer cannot confirm with absolute certainty from the PDF map alone that lot 6 065 483 falls entirely within the P-15 zone boundary. That confirmation requires either an interactive GIS query or a direct municipal response. We have asked for it.</p>
+        <a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_AnnexeA_F2-PerimetreUrbain.pdf" class="ev-source-link" target="_blank">Source: Zoning map, Feuillet 2 (ormstown.ca) →</a>
+      </div>
+    </div>
+
+    <!-- ZONING MAP DIAGRAM -->
+    <div class="zoning-map-wrap">
+      <svg viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowhead" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto">
+            <polygon points="0 0, 8 3.5, 0 7" fill="#b5161b"/>
+          </marker>
+        </defs>
+
+        <rect width="680" height="460" fill="#f0ece4"/>
+
+        <!-- Route 138 diagonal band -->
+        <polygon points="0,105 680,0 680,42 0,147" fill="#d0ccc4"/>
+        <text x="480" y="34" font-family="sans-serif" font-size="12" fill="#666" font-weight="600">Route 138</text>
+
+        <!-- Ruisseau Smith / water feature -->
+        <path d="M 300,0 Q 330,60 310,110 Q 290,150 320,200" stroke="#8ecae6" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+        <!-- Zone P-13 (upper left — near river) -->
+        <polygon points="20,50 200,50 210,160 60,180 10,130" fill="#ddeedd" stroke="#444" stroke-width="1.5"/>
+        <text x="80" y="120" font-family="'Georgia',serif" font-size="17" font-weight="bold" fill="#2a2a2a">P-13</text>
+
+        <!-- Zone R-33 (upper centre) -->
+        <polygon points="240,60 360,45 390,130 270,145" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="290" y="100" font-family="'Georgia',serif" font-size="13" font-weight="bold" fill="#555">R-33</text>
+
+        <!-- ★ ZONE P-15 — highlighted in yellow, red border -->
+        <polygon points="330,42 580,15 640,155 530,185 350,175 295,105" fill="#fffbe6" stroke="#b5161b" stroke-width="3.5"/>
+        <text x="440" y="110" font-family="'Georgia',serif" font-size="26" font-weight="900" fill="#1a1a1a">P-15</text>
+        <text x="435" y="132" font-family="sans-serif" font-size="10" fill="#666" text-anchor="middle">Publique et institutionnelle</text>
+
+        <!-- Bell tower pin -->
+        <circle cx="460" cy="62" r="12" fill="#b5161b"/>
+        <polygon points="460,74 456,85 464,85" fill="#b5161b"/>
+        <text x="478" y="58" font-family="sans-serif" font-size="10.5" fill="#b5161b" font-weight="700">Proposed tower</text>
+        <text x="478" y="70" font-family="sans-serif" font-size="9.5" fill="#888">45.1210°N 73.9848°O</text>
+
+        <!-- annotation arrow from label to zone -->
+        <line x1="392" y1="73" x2="446" y2="68" stroke="#b5161b" stroke-width="1.8" marker-end="url(#arrowhead)"/>
+
+        <!-- Zone R-35 -->
+        <polygon points="420,185 570,165 600,270 445,285" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="480" y="235" font-family="'Georgia',serif" font-size="14" font-weight="bold" fill="#555">R-35</text>
+
+        <!-- Zone R-36 -->
+        <polygon points="575,150 660,135 675,210 610,225" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="607" y="185" font-family="'Georgia',serif" font-size="13" font-weight="bold" fill="#555">R-36</text>
+
+        <!-- Zone P-16 -->
+        <polygon points="610,220 670,210 680,278 625,288" fill="#ddeedd" stroke="#444" stroke-width="1.5"/>
+        <text x="630" y="255" font-family="'Georgia',serif" font-size="13" font-weight="bold" fill="#2a2a2a">P-16</text>
+
+        <!-- Zone C-5 -->
+        <polygon points="455,285 530,270 550,340 475,352" fill="#fefde0" stroke="#444" stroke-width="1.5"/>
+        <text x="488" y="315" font-family="'Georgia',serif" font-size="13" font-weight="bold" fill="#555">C-5</text>
+
+        <!-- Zone R-32 (left mid) -->
+        <polygon points="130,185 270,168 290,270 145,285" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="185" y="232" font-family="'Georgia',serif" font-size="14" font-weight="bold" fill="#555">R-32</text>
+
+        <!-- Zone C-5/C-7 (far left) -->
+        <polygon points="10,185 115,180 130,290 10,300" fill="#fefde0" stroke="#444" stroke-width="1.5"/>
+        <text x="40" y="245" font-family="'Georgia',serif" font-size="14" font-weight="bold" fill="#555">C-5/7</text>
+
+        <!-- Zone P-14 (lower left) -->
+        <polygon points="150,290 300,272 325,380 160,395" fill="#ddeedd" stroke="#444" stroke-width="1.5"/>
+        <text x="210" y="340" font-family="'Georgia',serif" font-size="16" font-weight="bold" fill="#2a2a2a">P-14</text>
+
+        <!-- Zone R-34 (bottom) -->
+        <polygon points="295,355 550,335 575,430 305,450" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="400" y="400" font-family="'Georgia',serif" font-size="15" font-weight="bold" fill="#555">R-34</text>
+
+        <!-- Street names -->
+        <text x="348" y="192" font-family="sans-serif" font-size="10.5" fill="#777" transform="rotate(-7,348,192)">Bruno-Beaulieu</text>
+        <text x="345" y="288" font-family="sans-serif" font-size="10.5" fill="#777">Rue Linda</text>
+        <text x="348" y="340" font-family="sans-serif" font-size="10.5" fill="#777">Rue Isabelle</text>
+        <text x="160" y="382" font-family="sans-serif" font-size="10.5" fill="#777">Rue Jamestown</text>
+        <text x="570" y="285" font-family="sans-serif" font-size="10.5" fill="#777">Rue Adèle</text>
+        <text x="68" y="228" font-family="sans-serif" font-size="10" fill="#777" transform="rotate(-12,68,228)">Rue Sadler</text>
+
+        <!-- Legend -->
+        <rect x="10" y="368" width="210" height="82" fill="white" stroke="#ccc" rx="2"/>
+        <text x="20" y="384" font-family="sans-serif" font-size="10" font-weight="bold" fill="#333">ZONE LEGEND</text>
+        <rect x="20" y="390" width="13" height="11" fill="#fffbe6" stroke="#b5161b" stroke-width="2"/>
+        <text x="38" y="400" font-family="sans-serif" font-size="10" fill="#333">P-15 — proposed tower site (highlighted)</text>
+        <rect x="20" y="406" width="13" height="11" fill="#ddeedd" stroke="#444" stroke-width="1"/>
+        <text x="38" y="416" font-family="sans-serif" font-size="10" fill="#333">Other P-zones (Publique et institutionnelle)</text>
+        <rect x="20" y="422" width="13" height="11" fill="#fff" stroke="#444" stroke-width="1"/>
+        <text x="38" y="432" font-family="sans-serif" font-size="10" fill="#333">R-zones (Résidentielle)</text>
+        <rect x="20" y="438" width="13" height="11" fill="#fefde0" stroke="#444" stroke-width="1"/>
+        <text x="38" y="448" font-family="sans-serif" font-size="10" fill="#333">C-zones (Commerciale)</text>
+
+        <!-- North + scale -->
+        <text x="640" y="435" font-family="sans-serif" font-size="26" fill="#888">↑</text>
+        <text x="642" y="453" font-family="sans-serif" font-size="11" fill="#888">N</text>
+        <text x="430" y="450" font-family="sans-serif" font-size="9.5" fill="#aaa">Reconstructed from Règlement 148-2023, Annexe A, Feuillet 2 · Scale 1:5,000 · Not for legal use</text>
+      </svg>
+      <div class="zoning-map-caption">
+        <strong>Diagram reconstructed from the official Ormstown zoning map (Règlement 148-2023, Annexe A, Feuillet 2, March 2024).</strong> Zone P-15 is highlighted in yellow with a red border. The red pin marks the proposed Bell tower location at the coordinates provided in Bell's own "Avis aux propriétaires." Zone boundaries are reproduced from the official PDF. This diagram is for illustrative purposes; <a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_AnnexeA_F2-PerimetreUrbain.pdf" style="color:#f5c842;">the official map is the authoritative document →</a>
+      </div>
+    </div>
+
+    <!-- EVIDENCE BLOCK 2: ZONE GRID -->
+    <div class="evidence-block" style="margin-top:20px;">
+      <div class="ev-header">
+        <span>Evidence 2 — Zone P-15 Usage Grid · Règlement 148-2023, Annexe B, p. 64</span>
+        <span class="ev-status confirmed">Confirmed</span>
+      </div>
+      <div class="ev-body">
+        <p>The official usage grid for Zone P-15, published in Annexe B of Règlement de zonage 148-2023, lists exactly one authorized use class:</p>
+        <blockquote>R1 — Parc et espace vert ■</blockquote>
+        <p>There are no additional permitted uses, no conditional uses, no specific permitted structures, and no noted exceptions. The grid contains no building height parameters — because structures are not contemplated in a park zone. A 36-metre telecommunications monopole is not listed as a permitted use under R1 — Parc et espace vert, nor under any other category in the Zone P-15 grid.</p>
+        <a href="https://www.ormstown.ca/wp-content/uploads/1-ORM_R148-2023_Zonage_AnnexeB_Grilles.pdf" class="ev-source-link" target="_blank">Source: Grille des usages, Annexe B, p. 64 (ormstown.ca) →</a>
+      </div>
+    </div>
+
+    <!-- EVIDENCE BLOCK 3: COUNCIL RESOLUTION -->
+    <div class="evidence-block">
+      <div class="ev-header">
+        <span>Evidence 3 — Council Resolution 26-03-074 · Procès-verbal, March 2, 2026, p. 54</span>
+        <span class="ev-status confirmed">Confirmed</span>
+      </div>
+      <div class="ev-body">
+        <p>The official minutes of the March 2 council meeting identify the property as:</p>
+        <blockquote>"La Municipalité est propriétaire d'un immeuble connu et désigné comme étant une partie du lot numéro SIX MILLIONS SOIXANTE-CINQ MILLE QUATRE CENT QUATRE-VINGT-TROIS (6 065 483) du Cadastre du Québec, circonscription foncière de Haut-Saint-Laurent."</blockquote>
+        <p>The resolution also states the lease is authorized <em>"sous réserve des autorisations réglementaires applicables"</em> — subject to applicable regulatory authorizations. The municipality thus acknowledged at the time of signing that required authorizations had not yet been obtained. No subsequent council agenda reviewed by the Observer contains a rezoning motion or zoning amendment for this site.</p>
+        <a href="https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf" class="ev-source-link" target="_blank">Source: Procès-verbal, March 2, 2026, p. 54 (ormstown.ca) →</a>
+      </div>
+    </div>
+
+    <!-- EVIDENCE CHAIN -->
+    <p>The Observer's evidence chain on the zoning question:</p>
+    <ul class="evidence-chain">
+      <li class="ev-ok">
+        <strong>Zone P-15 is shown on the official zoning map in the Isabelle/Linda/Route 138 area</strong>
+        Confirmed from Règlement 148-2023, Annexe A, Feuillet 2 — the large undivided parcel labeled P-15 northeast of Route 138 / Bruno-Beaulieu.
+      </li>
+      <li class="ev-ok">
+        <strong>Zone P-15 permits only R1 — Parc et espace vert. Nothing else.</strong>
+        Confirmed from Règlement 148-2023, Annexe B, p. 64. Single permitted use. No exceptions.
+      </li>
+      <li class="ev-ok">
+        <strong>The proposed site is on municipal lot 6 065 483, in the same location</strong>
+        Confirmed from council resolution 26-03-074 (March 2 PV, p. 54) and Bell's engineering plan E3640, with GPS coordinates matching the Route 138 / Isabelle / Linda area.
+      </li>
+      <li class="ev-ok">
+        <strong>The municipality itself authorized the lease "subject to applicable regulatory authorizations"</strong>
+        Confirmed from council resolution 26-03-074. Zoning authorization was not in hand at the time of signing.
+      </li>
+      <li class="ev-partial">
+        <strong>Lot 6 065 483 falls precisely within the P-15 zone boundary</strong>
+        Strongly indicated by the zoning map — P-15 occupies the correct location as a large undivided parcel. The Observer cannot confirm exact boundary alignment from the PDF map. This question is included in the Observer's formal demand to the municipality.
+      </li>
+    </ul>
+
+    <div class="verdict-box">
+      <h3>The Observer's Assessment</h3>
+      <p>The available evidence strongly suggests the proposed Bell tower site falls within Zone P-15, which under Ormstown's own zoning by-law permits only park and green space use. If that is correct, a 36-metre telecommunications tower would not be a permitted use under current zoning — and proceeding without a formal rezoning process would raise serious questions under Quebec's <em>Loi sur l'aménagement et l'urbanisme</em>.</p>
+      <p>The Observer cannot confirm the zone designation with absolute certainty from public mapping tools alone. We have formally asked the municipality to answer this question directly. If the site is not in Zone P-15, or if a zoning authorization exists that the Observer has not found, the municipality can and should say so — clearly and publicly.</p>
+    </div>
+
+    <h2 class="section-head">A Discrepancy in the Municipal Record</h2>
+
+    <p>There is one additional irregularity in the public record worth noting. The municipal public notice issued June 2, 2026 refers to the site as lot <strong>6 065 438</strong>. Bell's engineering plan E3640, the "Avis aux propriétaires" sent to nearby residents, and the official council resolution from March 2 all consistently reference lot <strong>6 065 483</strong>. The Observer has confirmed through the Quebec cadastral registry (Banque cadastrale officielle, June 7, 2026) that these are different cadastral numbers referring to different parcels.</p>
+
+    <p>The error is in the public notice — not in the resolution. Whether this is a clerical transposition or something else, the result is that the public notice describing the project to Ormstown residents references a parcel that is not the project site. The Observer has raised this in its formal demand to the municipality.</p>
+
+    <h2 class="section-head">What the Observer Is Asking</h2>
+
+    <p>The Observer has filed a formal written demand to the municipality asking three specific questions: what resolution of council authorized the DG to issue the June 2 public notice; how a 36-metre telecommunications tower is a permitted use under the zoning applicable to lot 6 065 483; and why the public notice references lot 6 065 438 while Bell's documents and the council resolution both reference lot 6 065 483. That demand is filed concurrently with this article.</p>
+
+    <p>We are asking residents to attend the June 10 information session — not because it is a consultation in the full sense of the word, but because your presence and your questions create a public record. What is said in that room matters. What is not answered in that room also matters.</p>
+
+    <p>We will report on what happens.</p>
+
+    <div class="fact-box">
+      <h3>Questions Worth Asking on June 10</h3>
+      <ul>
+        <li>The lease was signed March 2 — before residents were consulted. What happens to it if the community opposes the project?</li>
+        <li>What resolution authorized the DG to issue the June 2 public notice?</li>
+        <li>Is the proposed site in Zone P-15? If so, how is a 36-metre tower a permitted use? If not, what zone applies?</li>
+        <li>Has a rezoning process been initiated? If not, when will it be?</li>
+        <li>The public notice cites lot 6 065 438. Bell's documents cite lot 6 065 483. Which lot is the actual site?</li>
+        <li>Where is the written documentation of Bell's water tower alternatives assessment?</li>
+        <li>The municipality "collaborated in selecting the site" according to Bell's own brochure. How can it independently evaluate whether this consultation is adequate?</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ══════════════════════════════════════════════ -->
+<!--                 FRENCH VERSION                 -->
+<!-- ══════════════════════════════════════════════ -->
+<section lang="fr">
+
+  <div class="lang-badge">Français</div>
+
+  <div class="section-label">Gouvernance &amp; Transparence</div>
+
+  <h1 class="headline">Une tour de télécommunications de 36 mètres est proposée sur un terrain municipal zoné parc.<br><em>Voici tout ce que vous devez savoir.</em></h1>
+
+  <p class="deck">Le projet de Bell Mobilité d'installer un pylône monopole de 36 mètres sur un terrain municipal a franchi les étapes d'un vote au conseil, d'un bail signé et d'un processus fédéral de consultation — sans que la population en soit pratiquement informée. L'Observer a examiné tous les documents disponibles. Voici ce que le dossier révèle.</p>
+
+  <div class="byline">
+    Par <strong>L'Ormstown Observer</strong> &nbsp;·&nbsp; 7 juin 2026 &nbsp;·&nbsp; Ormstown, Québec
+  </div>
+
+  <div class="body">
+
+    <p class="lede">À un moment donné en 2025 ou au début 2026, Bell Mobilité a identifié un terrain municipal boisé près de la route 138 — entre la rue Isabelle et la rue Linda — comme emplacement proposé pour une nouvelle tour de télécommunications de 36 mètres. La tour serait un pylône monopole portant 18 antennes. Le terrain appartient à la municipalité d'Ormstown, et donc à ses quelque 4 300 résidents. La majorité de ces résidents ne sait pas que ce projet existe. Une séance d'information est prévue le mercredi 10 juin à 18h au 5, rue Gale. L'Observer publie cet article pour que les résidents puissent y assister en étant informés.</p>
+
+    <h2 class="section-head">Le projet : ce que Bell propose</h2>
+
+    <p>Le projet de Bell Mobilité — identifié dans ses propres documents comme E3640 Ormstown — prévoit un pylône monopole autoportant de 36 mètres de hauteur, supportant 18 antennes en deux configurations : six grandes antennes (2535 mm × 590 mm) et douze plus petites (2438 mm × 301 mm). Un abri technique et une enceinte clôturée seraient construits à la base. Le site ne serait pas accessible au public.</p>
+
+    <p>La justification invoquée est la couverture cellulaire. La brochure de consultation de Bell, distribuée aux résidents voisins, cite la demande croissante en données sans fil et note que les niveaux de service actuels dans certaines parties d'Ormstown ne respectent pas les normes de l'entreprise. Le château d'eau municipal a apparemment été le premier site évalué par Bell, mais le DG Leduc a indiqué au conseil le 2 mars que des problèmes structurels le rendaient inadéquat. Le terrain boisé près de la route 138 a été identifié comme solution de rechange. Aucune documentation écrite de cette évaluation des alternatives n'a été rendue publique.</p>
+
+    <p>La brochure de Bell indique également que la municipalité d'Ormstown a été consultée tout au long du processus et <em>« a collaboré à la sélection du site choisi. »</em> La municipalité n'est pas un observateur passif — elle est un participant actif. Cela importe lorsqu'on évalue l'indépendance de ce qui suit.</p>
+
+    <div class="fact-box">
+      <h3>Le projet en bref</h3>
+      <ul>
+        <li>Tour : monopole autoportant de 36 mètres, 18 antennes — <em>plan d'ingénierie Bell E3640 ; Bell « Avis aux propriétaires »</em></li>
+        <li>Emplacement : près Isabelle/Linda/Route 138 — lot 6 065 483 selon Bell ; lot 6 065 438 selon l'avis public municipal (discordance — voir ci-dessous)</li>
+        <li>Propriétaire du terrain : Municipalité d'Ormstown — confirmé dans la résolution 26-03-074 du 2 mars 2026</li>
+        <li>Bail : durée initiale de 5 ans + six périodes de renouvellement de 5 ans ; loyer annuel de 10 000 $ (~2,33 $/résident) ; autorisé par le conseil le 2 mars 2026</li>
+        <li>Le DG a décrit le 2 mars la tour comme « une trentaine de mètres » — le plan d'ingénierie de Bell précise 36 mètres</li>
+        <li>La municipalité « a collaboré à la sélection du site choisi » — brochure de consultation de Bell, distribuée aux résidents</li>
+        <li>Ormstown n'a aucun protocole municipal de consultation pour les tours télécom — reconnu dans la propre brochure de Bell</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">Le processus : ce qu'exigent les règles fédérales</h2>
+
+    <p>Avant de construire toute infrastructure d'antenne au Canada, Bell doit respecter un cadre de consultation fédéral établi par ISDE (Innovation, Sciences et Développement économique Canada) en vertu d'un document réglementaire appelé <strong>CPC-2-0-03</strong> — la Circulaire de procédures aux clients pour les systèmes d'antennes. Ce n'est pas optionnel. C'est une obligation légale de Bell, et la séance d'information du 10 juin en fait partie.</p>
+
+    <p>Le processus CPC-2-0-03 comporte trois étapes obligatoires. Premièrement, Bell doit notifier formellement tous les propriétaires dans un rayon déterminé — ce qu'elle a fait en envoyant des lettres aux propriétaires dans un rayon de 123 mètres. Deuxièmement, Bell doit tenir une période d'engagement public pour répondre aux questions et préoccupations. Troisièmement, il y a une période de commentaires écrits formelle. Une fois ces étapes complétées, Bell soumet un résumé à la municipalité. La municipalité — à titre d'<em>Autorité Responsable de l'Utilisation du Sol</em> (ARUS) — doit ensuite évaluer de manière indépendante si la consultation était adéquate et fournir sa concurrence écrite avant qu'ISDE approuve la construction. La construction ne peut débuter sans cette concurrence.</p>
+
+    <p>Le DG Daniel Leduc est nommé comme contact ARUS officiel d'Ormstown dans la lettre de notification de Bell aux résidents. Cela signifie que le DG sera ultimement la personne chargée d'évaluer l'adéquation d'un processus de consultation pour un projet que sa municipalité a contribué à concevoir.</p>
+
+    <p>La CPC-2-0-03 exige également que Bell démontre qu'elle a exploré des alternatives à une nouvelle tour — toits existants, châteaux d'eau ou autres structures — avant de proposer un pylône autonome. Bell a bien examiné le château d'eau municipal, selon la déclaration du DG Leduc à la séance du 2 mars. Mais aucune analyse écrite des alternatives n'a été rendue publique. Le cadre fédéral exige que cette documentation existe.</p>
+
+    <h2 class="section-head">La séance d'information : ce qu'elle est et ce qu'elle n'est pas</h2>
+
+    <p>Le 2 juin 2026, la municipalité a émis un avis public annonçant une séance d'information pour le 10 juin. L'avis lui-même est explicite sur un point : <em>« il ne s'agit pas d'une consultation publique. »</em></p>
+
+    <p>La séance est organisée par la propre firme de consultation tierce de Bell. Les résidents ayant des questions ou commentaires sont dirigés vers <strong>bell_E3640@cpc-consultation.ca</strong> — non pas vers la municipalité. La date limite de commentaires de Bell est le 19 juin 2026 — neuf jours après la séance. La publication Facebook de la municipalité faisant la promotion de l'événement le décrit comme une occasion d'en apprendre davantage sur <em>« ses impacts positifs pour notre communauté »</em>. Ce cadrage, de la part de l'ARUS qui doit évaluer indépendamment le processus, mérite d'être noté.</p>
+
+    <p>L'Observer a examiné l'ordre du jour du conseil du 1er juin 2026 — la dernière séance avant l'émission de l'avis. Il n'y a aucun point relatif à la tour Bell. Aucun vote. Aucune résolution. Aucune autorisation pour le DG d'émettre l'avis public. L'avis a été émis le lendemain d'une séance du conseil où le projet n'a pas été discuté.</p>
+
+    <h2 class="section-head">La séquence : comment on en est arrivé là</h2>
+
+    <p>Le projet Bell est apparu pour la première fois à un ordre du jour public du conseil le 2 mars 2026, comme résolution 7.5 : <em>« Autorisation de négocier et de signer un bail avec Bell Mobilité sur le terrain de la municipalité. »</em> Le DG Leduc a présenté le dossier, décrivant la justification liée à la couverture et les conditions proposées. Le conseil a voté à l'unanimité pour autoriser le bail.</p>
+
+    <p>Ce qui importe à comprendre concernant ce vote, c'est la séquence que le DG lui-même a décrite. Dans ses propres mots lors de la séance du 2 mars :</p>
+
+    <div class="pull-quote">
+      <p><em>« Ce qui est demandé au conseil municipal, c'est que d'autoriser la conclusion du bail. Puisque c'est le bail qui débute le processus en fait. À partir de là, il finit l'étude de faisabilité. »</em></p>
+      <cite>— DG Daniel Leduc, séance du conseil du 2 mars 2026 · <a href="https://www.youtube.com/watch?v=1fzDFGkjNRc" style="color:var(--accent);">Enregistrement YouTube</a> · <a href="https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf" style="color:var(--accent);">Procès-verbal officiel, p. 54</a></cite>
+    </div>
+
+    <p>Le bail lance le processus. L'étude de faisabilité vient après. La rencontre citoyenne vient après. En vertu du cadre fédéral CPC-2-0-03, la consultation publique est censée précéder la concurrence municipale. Signer un bail contraignant avant que les résidents aient été consultés crée, à tout le moins, l'apparence d'un résultat prédéterminé. La résolution du conseil reconnaissait d'ailleurs elle-même cet état de fait, autorisant le bail <em>« sous réserve des autorisations réglementaires applicables »</em> — des autorisations qui n'avaient pas encore été obtenues.</p>
+
+    <p>Lors de la période de questions de cette même séance du 2 mars, une résidente a demandé directement si une consultation publique aurait lieu avant que quoi que ce soit se concrétise. Le DG Leduc a répondu : <em>« Oui. Bell le fait. »</em> Le maire Philippe Besombes a ajouté : <em>« Oui, oui, oui. »</em> Lorsque la résidente a insisté pour obtenir un engagement explicite — <em>« Donc, rien ne se passe avant une consultation publique avec tous les faits? »</em> — le maire Besombes a répondu : <em>« C'est la première question qu'on a posée. »</em> Le DG a ajouté : <em>« Exact. »</em></p>
+
+    <p>La séance du 10 juin est ce qui a suivi. L'avis public la décrit, dans ses propres termes, comme n'étant pas une consultation publique.</p>
+
+    <h2 class="section-head">La question du zonage</h2>
+
+    <p>L'une des questions les plus importantes non résolues concernant ce projet est de savoir si le site proposé est même légalement disponible pour ce type de construction en vertu des propres règles de zonage d'Ormstown. L'Observer a examiné en détail les documents d'urbanisme pertinents. Voici ce que nous avons trouvé — et où subsiste un écart.</p>
+
+    <!-- FR EVIDENCE BLOCK 1 -->
+    <div class="evidence-block">
+      <div class="ev-header">
+        <span>Preuve 1 — Plan de zonage officiel · Règlement 148-2023, Annexe A, Feuillet 2</span>
+        <span class="ev-status partial">Fortement indiqué — pas encore confirmé</span>
+      </div>
+      <div class="ev-body">
+        <p>Le plan de zonage officiel du périmètre urbain d'Ormstown — partie du Règlement de zonage 148-2023, adopté le 4 mars 2024 et disponible sur le site de la municipalité — montre la <strong>Zone P-15</strong> désignée dans une grande parcelle non subdivisée au nord-est de l'intersection route 138 / Bruno-Beaulieu. C'est exactement la zone décrite dans les documents de Bell et par le DG Leduc lors de la séance du 2 mars : un terrain boisé municipal près de la route 138, à environ 300 mètres à l'est de la rue Bridge, entre les rues Isabelle et Linda.</p>
+        <p>La légende du plan classe toutes les zones P comme <strong>Publique et institutionnelle</strong>. La zone P-15 apparaît comme une parcelle non subdivisée — sans divisions internes — cohérente en taille et en position avec le grand lot municipal identifié comme lot 6 065 483 dans la résolution du conseil. Les zones adjacentes visibles sur le plan sont R-33 (résidentielle), R-35 (résidentielle), C-5 (commerciale), P-14 et P-16. Ce contexte spatial correspond précisément au quartier Isabelle/Linda/route 138.</p>
+        <p>L'Observer ne peut pas confirmer avec une certitude absolue, à partir du seul plan PDF, que le lot 6 065 483 se trouve entièrement dans les limites de la zone P-15. Cette confirmation nécessite soit une requête SIG interactive, soit une réponse directe de la municipalité. Nous l'avons demandé.</p>
+        <a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_AnnexeA_F2-PerimetreUrbain.pdf" class="ev-source-link" target="_blank">Source : Plan de zonage, Feuillet 2 (ormstown.ca) →</a>
+      </div>
+    </div>
+
+    <!-- FR ZONING MAP (shared SVG — same diagram, French caption) -->
+    <div class="zoning-map-wrap">
+      <svg viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowhead2" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto">
+            <polygon points="0 0, 8 3.5, 0 7" fill="#b5161b"/>
+          </marker>
+        </defs>
+        <rect width="680" height="460" fill="#f0ece4"/>
+        <polygon points="0,105 680,0 680,42 0,147" fill="#d0ccc4"/>
+        <text x="480" y="34" font-family="sans-serif" font-size="12" fill="#666" font-weight="600">Route 138</text>
+        <path d="M 300,0 Q 330,60 310,110 Q 290,150 320,200" stroke="#8ecae6" stroke-width="14" fill="none" stroke-linecap="round"/>
+        <polygon points="20,50 200,50 210,160 60,180 10,130" fill="#ddeedd" stroke="#444" stroke-width="1.5"/>
+        <text x="80" y="120" font-family="'Georgia',serif" font-size="17" font-weight="bold" fill="#2a2a2a">P-13</text>
+        <polygon points="240,60 360,45 390,130 270,145" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="290" y="100" font-family="'Georgia',serif" font-size="13" font-weight="bold" fill="#555">R-33</text>
+        <polygon points="330,42 580,15 640,155 530,185 350,175 295,105" fill="#fffbe6" stroke="#b5161b" stroke-width="3.5"/>
+        <text x="440" y="110" font-family="'Georgia',serif" font-size="26" font-weight="900" fill="#1a1a1a">P-15</text>
+        <text x="435" y="132" font-family="sans-serif" font-size="10" fill="#666" text-anchor="middle">Publique et institutionnelle</text>
+        <circle cx="460" cy="62" r="12" fill="#b5161b"/>
+        <polygon points="460,74 456,85 464,85" fill="#b5161b"/>
+        <text x="478" y="58" font-family="sans-serif" font-size="10.5" fill="#b5161b" font-weight="700">Tour proposée</text>
+        <text x="478" y="70" font-family="sans-serif" font-size="9.5" fill="#888">45.1210°N 73.9848°O</text>
+        <line x1="392" y1="73" x2="446" y2="68" stroke="#b5161b" stroke-width="1.8" marker-end="url(#arrowhead2)"/>
+        <polygon points="420,185 570,165 600,270 445,285" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="480" y="235" font-family="'Georgia',serif" font-size="14" font-weight="bold" fill="#555">R-35</text>
+        <polygon points="575,150 660,135 675,210 610,225" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="607" y="185" font-family="'Georgia',serif" font-size="13" font-weight="bold" fill="#555">R-36</text>
+        <polygon points="610,220 670,210 680,278 625,288" fill="#ddeedd" stroke="#444" stroke-width="1.5"/>
+        <text x="630" y="255" font-family="'Georgia',serif" font-size="13" font-weight="bold" fill="#2a2a2a">P-16</text>
+        <polygon points="455,285 530,270 550,340 475,352" fill="#fefde0" stroke="#444" stroke-width="1.5"/>
+        <text x="488" y="315" font-family="'Georgia',serif" font-size="13" font-weight="bold" fill="#555">C-5</text>
+        <polygon points="130,185 270,168 290,270 145,285" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="185" y="232" font-family="'Georgia',serif" font-size="14" font-weight="bold" fill="#555">R-32</text>
+        <polygon points="10,185 115,180 130,290 10,300" fill="#fefde0" stroke="#444" stroke-width="1.5"/>
+        <text x="40" y="245" font-family="'Georgia',serif" font-size="14" font-weight="bold" fill="#555">C-5/7</text>
+        <polygon points="150,290 300,272 325,380 160,395" fill="#ddeedd" stroke="#444" stroke-width="1.5"/>
+        <text x="210" y="340" font-family="'Georgia',serif" font-size="16" font-weight="bold" fill="#2a2a2a">P-14</text>
+        <polygon points="295,355 550,335 575,430 305,450" fill="#fff" stroke="#444" stroke-width="1.5"/>
+        <text x="400" y="400" font-family="'Georgia',serif" font-size="15" font-weight="bold" fill="#555">R-34</text>
+        <text x="348" y="192" font-family="sans-serif" font-size="10.5" fill="#777" transform="rotate(-7,348,192)">Bruno-Beaulieu</text>
+        <text x="345" y="288" font-family="sans-serif" font-size="10.5" fill="#777">Rue Linda</text>
+        <text x="348" y="340" font-family="sans-serif" font-size="10.5" fill="#777">Rue Isabelle</text>
+        <text x="160" y="382" font-family="sans-serif" font-size="10.5" fill="#777">Rue Jamestown</text>
+        <text x="570" y="285" font-family="sans-serif" font-size="10.5" fill="#777">Rue Adèle</text>
+        <text x="68" y="228" font-family="sans-serif" font-size="10" fill="#777" transform="rotate(-12,68,228)">Rue Sadler</text>
+        <rect x="10" y="368" width="210" height="82" fill="white" stroke="#ccc" rx="2"/>
+        <text x="20" y="384" font-family="sans-serif" font-size="10" font-weight="bold" fill="#333">LÉGENDE DES ZONES</text>
+        <rect x="20" y="390" width="13" height="11" fill="#fffbe6" stroke="#b5161b" stroke-width="2"/>
+        <text x="38" y="400" font-family="sans-serif" font-size="10" fill="#333">P-15 — site de la tour proposée</text>
+        <rect x="20" y="406" width="13" height="11" fill="#ddeedd" stroke="#444" stroke-width="1"/>
+        <text x="38" y="416" font-family="sans-serif" font-size="10" fill="#333">Autres zones P (Publique/institutionnelle)</text>
+        <rect x="20" y="422" width="13" height="11" fill="#fff" stroke="#444" stroke-width="1"/>
+        <text x="38" y="432" font-family="sans-serif" font-size="10" fill="#333">Zones R (Résidentielle)</text>
+        <rect x="20" y="438" width="13" height="11" fill="#fefde0" stroke="#444" stroke-width="1"/>
+        <text x="38" y="448" font-family="sans-serif" font-size="10" fill="#333">Zones C (Commerciale)</text>
+        <text x="640" y="435" font-family="sans-serif" font-size="26" fill="#888">↑</text>
+        <text x="642" y="453" font-family="sans-serif" font-size="11" fill="#888">N</text>
+        <text x="410" y="450" font-family="sans-serif" font-size="9.5" fill="#aaa">Reconstruit à partir du Règlement 148-2023, Annexe A, Feuillet 2 · Échelle 1:5 000 · Non valide à des fins légales</text>
+      </svg>
+      <div class="zoning-map-caption">
+        <strong>Schéma reconstruit à partir du plan de zonage officiel d'Ormstown (Règlement 148-2023, Annexe A, Feuillet 2, mars 2024).</strong> La zone P-15 est mise en évidence en jaune avec un contour rouge. L'épingle rouge indique l'emplacement proposé pour la tour Bell aux coordonnées fournies dans le propre « Avis aux propriétaires » de Bell. Les limites de zones sont reproduites à partir du PDF officiel. <a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_AnnexeA_F2-PerimetreUrbain.pdf" style="color:#f5c842;">Le plan officiel est le document de référence →</a>
+      </div>
+    </div>
+
+    <!-- FR EVIDENCE BLOCK 2 -->
+    <div class="evidence-block" style="margin-top:20px;">
+      <div class="ev-header">
+        <span>Preuve 2 — Grille des usages, Zone P-15 · Règlement 148-2023, Annexe B, p. 64</span>
+        <span class="ev-status confirmed">Confirmé</span>
+      </div>
+      <div class="ev-body">
+        <p>La grille officielle des usages pour la zone P-15, publiée à l'Annexe B du Règlement de zonage 148-2023, liste exactement un usage autorisé :</p>
+        <blockquote>R1 — Parc et espace vert ■</blockquote>
+        <p>Il n'y a pas d'usages supplémentaires permis, pas d'usages conditionnels, pas de structures spécifiquement autorisées, et aucune exception notée. La grille ne contient aucun paramètre de hauteur de bâtiment — parce que les structures n'y sont tout simplement pas envisagées. Un pylône monopole de télécommunications de 36 mètres n'est pas un usage permis sous R1 — Parc et espace vert, ni sous aucune autre catégorie de la grille de la zone P-15.</p>
+        <a href="https://www.ormstown.ca/wp-content/uploads/1-ORM_R148-2023_Zonage_AnnexeB_Grilles.pdf" class="ev-source-link" target="_blank">Source : Grille des usages, Annexe B, p. 64 (ormstown.ca) →</a>
+      </div>
+    </div>
+
+    <!-- FR EVIDENCE BLOCK 3 -->
+    <div class="evidence-block">
+      <div class="ev-header">
+        <span>Preuve 3 — Résolution 26-03-074 · Procès-verbal du 2 mars 2026, p. 54</span>
+        <span class="ev-status confirmed">Confirmé</span>
+      </div>
+      <div class="ev-body">
+        <p>Le procès-verbal officiel du 2 mars identifie le terrain comme suit :</p>
+        <blockquote>« La Municipalité est propriétaire d'un immeuble connu et désigné comme étant une partie du lot numéro SIX MILLIONS SOIXANTE-CINQ MILLE QUATRE CENT QUATRE-VINGT-TROIS (6 065 483) du Cadastre du Québec, circonscription foncière de Haut-Saint-Laurent. »</blockquote>
+        <p>La résolution précise également que le bail est autorisé <em>« sous réserve des autorisations réglementaires applicables »</em>. La municipalité reconnaissait donc au moment de la signature que des autorisations requises n'avaient pas encore été obtenues. Aucun ordre du jour subséquent du conseil examiné par l'Observer ne contient d'avis de motion ou de modification du zonage pour ce site.</p>
+        <a href="https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf" class="ev-source-link" target="_blank">Source : Procès-verbal du 2 mars 2026, p. 54 (ormstown.ca) →</a>
+      </div>
+    </div>
+
+    <p>La chaîne de preuves de l'Observer sur la question du zonage :</p>
+    <ul class="evidence-chain">
+      <li class="ev-ok">
+        <strong>La zone P-15 figure sur le plan de zonage officiel dans le secteur Isabelle/Linda/Route 138</strong>
+        Confirmé à partir du Règlement 148-2023, Annexe A, Feuillet 2 — la grande parcelle non subdivisée désignée P-15 au nord-est de la route 138 / Bruno-Beaulieu.
+      </li>
+      <li class="ev-ok">
+        <strong>La zone P-15 ne permet que R1 — Parc et espace vert. Rien d'autre.</strong>
+        Confirmé à partir du Règlement 148-2023, Annexe B, p. 64. Usage unique permis. Aucune exception.
+      </li>
+      <li class="ev-ok">
+        <strong>Le site proposé se trouve sur le lot municipal 6 065 483, dans la même zone</strong>
+        Confirmé par la résolution 26-03-074 (PV du 2 mars, p. 54) et le plan d'ingénierie Bell E3640, avec coordonnées GPS correspondant au secteur route 138 / Isabelle / Linda.
+      </li>
+      <li class="ev-ok">
+        <strong>La municipalité a elle-même autorisé le bail « sous réserve des autorisations réglementaires applicables »</strong>
+        Confirmé par la résolution 26-03-074. L'autorisation de zonage n'était pas en main au moment de la signature.
+      </li>
+      <li class="ev-partial">
+        <strong>Le lot 6 065 483 se trouve précisément dans les limites de la zone P-15</strong>
+        Fortement indiqué par le plan de zonage — la zone P-15 occupe le bon emplacement comme grande parcelle non subdivisée. L'Observer ne peut confirmer l'alignement exact des limites à partir du seul plan PDF. Cette question est incluse dans la demande formelle de l'Observer à la municipalité.
+      </li>
+    </ul>
+
+    <div class="verdict-box">
+      <h3>Position de l'Observer</h3>
+      <p>Les éléments disponibles indiquent fortement que le site proposé pour la tour Bell se trouve dans la zone P-15, qui, en vertu du propre règlement de zonage d'Ormstown, ne permet que l'usage parc et espace vert. Si c'est exact, une tour de télécommunications de 36 mètres ne serait pas un usage permis sous le zonage actuel — et procéder sans un processus formel de rezonage soulèverait de sérieuses questions en vertu de la Loi sur l'aménagement et l'urbanisme du Québec.</p>
+      <p>L'Observer ne peut confirmer la désignation de zone avec une certitude absolue à partir des seuls outils cartographiques publics disponibles. Nous avons formellement demandé à la municipalité de répondre directement à cette question. Si le site n'est pas en zone P-15, ou s'il existe une autorisation de zonage que l'Observer n'a pas trouvée, la municipalité peut et devrait le dire — clairement et publiquement.</p>
+    </div>
+
+    <h2 class="section-head">Une discordance dans les documents municipaux</h2>
+
+    <p>Il y a une irrégularité supplémentaire dans le dossier public qui mérite d'être soulignée. L'avis public municipal émis le 2 juin 2026 fait référence au lot <strong>6 065 438</strong>. Le plan d'ingénierie Bell E3640, l'« Avis aux propriétaires » envoyé aux résidents voisins, et la résolution officielle du conseil du 2 mars font tous systématiquement référence au lot <strong>6 065 483</strong>. L'Observer a confirmé via la Banque cadastrale officielle du Québec (en date du 7 juin 2026) qu'il s'agit de numéros cadastraux différents désignant des parcelles différentes.</p>
+
+    <p>L'erreur se trouve dans l'avis public — non pas dans la résolution. Qu'il s'agisse d'une transposition cléricale ou d'autre chose, le résultat est que l'avis public décrivant le projet aux résidents d'Ormstown fait référence à une parcelle qui n'est pas le site du projet. L'Observer a soulevé ce point dans sa demande formelle à la municipalité.</p>
+
+    <h2 class="section-head">Ce que l'Observer demande</h2>
+
+    <p>L'Observer a déposé une demande écrite formelle à la municipalité posant trois questions précises : quelle résolution du conseil a autorisé le DG à émettre l'avis public du 2 juin ; comment une tour de télécommunications de 36 mètres constitue un usage permis en vertu du zonage applicable au lot 6 065 483 ; et pourquoi l'avis public fait référence au lot 6 065 438 tandis que les documents de Bell et la résolution du conseil font tous deux référence au lot 6 065 483. Cette demande est déposée en même temps que la publication de cet article.</p>
+
+    <p>Nous demandons aux résidents d'assister à la séance d'information du 10 juin — non pas parce qu'il s'agit d'une consultation au sens plein du terme, mais parce que votre présence et vos questions créent un compte rendu public. Ce qui est dit dans cette salle compte. Ce à quoi on ne répond pas dans cette salle compte également.</p>
+
+    <p>Nous ferons rapport de ce qui se passera.</p>
+
+    <div class="fact-box">
+      <h3>Questions à poser le 10 juin</h3>
+      <ul>
+        <li>Le bail a été signé le 2 mars — avant la consultation des résidents. Qu'arrive-t-il au bail si la communauté s'y oppose?</li>
+        <li>Quelle résolution a autorisé le DG à émettre l'avis public du 2 juin?</li>
+        <li>Le site proposé est-il en zone P-15? Si oui, comment une tour de 36 mètres y est-elle un usage permis? Si non, quelle zone s'applique?</li>
+        <li>Un processus de rezonage a-t-il été initié? Si non, quand le sera-t-il?</li>
+        <li>L'avis public cite le lot 6 065 438. Les documents de Bell citent le lot 6 065 483. Quel lot est le véritable site?</li>
+        <li>Où se trouve la documentation écrite de l'évaluation des alternatives par Bell concernant le château d'eau municipal?</li>
+        <li>La municipalité « a collaboré à la sélection du site » selon la propre brochure de Bell. Comment peut-elle évaluer indépendamment si cette consultation est adéquate?</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<div class="article-footer">
+  <p><strong>L'Ormstown Observer</strong> est une publication indépendante de surveillance civique couvrant Ormstown et la région du Haut-Saint-Laurent. Nous n'acceptons aucune publicité des gouvernements municipaux. · <em>The Ormstown Observer is an independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region. We accept no advertising from municipal governments.</em></p>
+  <p style="margin-top:10px;">Questions, tips, corrections: <a href="mailto:info@ormstownobserver.ca">info@ormstownobserver.ca</a></p>
+</div>
+
 </main>
 </body>
 </html>
