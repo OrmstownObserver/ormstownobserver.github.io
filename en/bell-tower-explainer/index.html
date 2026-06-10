@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Before You Walk Into That Room — The Ormstown Observer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #444;
+    --accent: #b5161b;
+    --paper: #faf8f4;
+    --paper-dark: #f0ece4;
+    --rule: #c8b97a;
+    --border: #d4c9b8;
+    --muted: #555;
+    --sidebar: #f5f2eb;
+    --confirm: #155724;
+    --warn: #721c24;
+    --pending: #856404;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; line-height: 1.75; }
+  a { color: var(--accent); }
+
+  /* ── MASTHEAD ── */
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 16px 40px 14px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 12px; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 4px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 5vw, 52px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); text-decoration: none; display: block; }
+  .masthead-name:hover { color: var(--accent); }
+  .masthead-tagline { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-light); margin-top: 7px; font-style: italic; }
+
+  /* ── LANGUAGE SWITCHER ── */
+  .lang-switcher { display: flex; justify-content: center; gap: 0; border-bottom: 2px solid var(--ink); background: var(--paper-dark); }
+  .lang-switcher a { display: inline-block; padding: 8px 22px; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; color: var(--ink-light); text-decoration: none; border-right: 1px solid var(--border); transition: background .15s; }
+  .lang-switcher a:last-child { border-right: none; }
+  .lang-switcher a.active { background: var(--accent); color: #fff; }
+  .lang-switcher a:not(.active):hover { background: #e8e2d4; color: var(--ink); }
+
+  /* ── ARTICLE WRAP ── */
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* ── BACK LINK ── */
+  .back-link { display: inline-block; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-light); text-decoration: none; margin-bottom: 28px; }
+  .back-link:hover { color: var(--accent); }
+
+  /* ── ARTICLE HEADER ── */
+  .section-label { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-light); font-family: 'Playfair Display', Georgia, serif; margin-bottom: 12px; }
+  .article-headline { font-family: 'Playfair Display', Georgia, serif; font-size: 2.1rem; font-weight: 900; line-height: 1.2; color: var(--accent); margin-bottom: 0.5rem; }
+  .article-deck { font-size: 1.15rem; color: var(--muted); font-style: italic; margin-bottom: 1rem; line-height: 1.5; }
+  .byline { font-size: 0.82rem; letter-spacing: 0.05em; color: var(--muted); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.5rem 0; margin-bottom: 1.75rem; }
+  .byline strong { color: var(--ink); }
+
+  /* ── BODY TEXT ── */
+  p { margin-bottom: 1.25rem; }
+
+  h2 { font-size: 1.35rem; font-weight: 900; color: var(--accent); margin: 2.5rem 0 0.9rem; border-bottom: 2px solid var(--rule); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin: 1.8rem 0 0.7rem; }
+
+  /* ── PULL QUOTE ── */
+  blockquote { border-left: 4px solid var(--rule); padding: 0.75rem 1.25rem; margin: 1.75rem 0; color: var(--muted); font-style: italic; background: var(--sidebar); font-size: 0.95rem; }
+  blockquote cite { display: block; margin-top: 0.5rem; font-size: 0.8rem; font-style: normal; color: var(--muted); }
+
+  /* ── FACT BOX ── */
+  .fact-box { background: var(--sidebar); border: 1px solid var(--border); border-left: 5px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.93rem; }
+  .fact-box h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.75rem; }
+  .fact-box ul, .fact-box ol { padding-left: 1.4rem; }
+  .fact-box li { margin-bottom: 0.5rem; }
+
+  /* ── STATUS BADGES ── */
+  .badge { display: inline-block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 2px; vertical-align: middle; margin-left: 0.4rem; }
+  .badge-yes  { background: #d4edda; color: var(--confirm); }
+  .badge-no   { background: #f8d7da; color: var(--warn); }
+
+  /* ── QUESTION LISTS ── */
+  .question-list { list-style: none; padding: 0; margin: 1rem 0; }
+  .question-list li { padding: 0.7rem 0.9rem 0.7rem 2.8rem; border-bottom: 1px solid var(--border); position: relative; font-size: 0.95rem; }
+  .question-list li:last-child { border-bottom: none; }
+  .question-list li::before { position: absolute; left: 0.7rem; top: 0.7rem; font-weight: 900; font-size: 0.85rem; }
+  .question-list.allowed li::before { content: "✓"; color: #2a7a2a; }
+  .question-list.blocked li::before { content: "✗"; color: #c0392b; }
+
+  /* ── TIMELINE ── */
+  .timeline { border-left: 3px solid var(--rule); padding-left: 1.25rem; margin: 1.5rem 0; }
+  .timeline-item { margin-bottom: 1.25rem; position: relative; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.55rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--rule); }
+  .timeline-date { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .timeline-text { font-size: 0.93rem; }
+
+  /* ── DIVIDER ── */
+  hr.divider { border: none; border-top: 3px double var(--rule); margin: 3.5rem 0; }
+
+  /* ── FOOTER ── */
+  .article-footer { font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 1.25rem; margin-top: 3rem; font-style: italic; }
+
+  .site-footer { border-top: 3px double var(--ink); margin-top: 20px; padding: 28px 24px; text-align: center; font-size: 12px; letter-spacing: .08em; color: var(--ink-light); line-height: 2; }
+  .site-footer a { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .article-headline { font-size: 1.6rem; }
+    .masthead { padding: 14px 16px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+  <a class="masthead-name" href="/en/">The Ormstown Observer</a>
+  <div class="masthead-tagline">Civic accountability · Independent journalism</div>
+</header>
+
+<nav class="lang-switcher">
+  <a href="/en/bell-tower-explainer/" class="active">EN — English</a>
+  <a href="/fr/bell-tower-explainer/">FR — Français</a>
+</nav>
+
+<div class="article-wrap">
+
+  <a class="back-link" href="/en/">← Back to homepage</a>
+
+  <div class="section-label">Technology · Process · Your Rights</div>
+
+  <h1 class="article-headline">Before You Walk Into That Room on Wednesday, Read This.</h1>
+  <p class="article-deck">How cell towers actually work, what the science says about 5G and health, what the federal consultation process requires of Bell — and exactly what you can and cannot ask at the June 10 information session.</p>
+  <div class="byline">By <strong>The Ormstown Observer</strong> · June 8, 2026 · Ormstown, Québec</div>
+
+  <p>On Wednesday, June 10 at 6 p.m., residents of Ormstown are invited — for the first time — to ask questions about a 36-metre telecommunications tower Bell Mobilité wants to build on a municipal park lot near Route 138. The lease was signed in March. The project has been in development since at least late 2025. The information session is not, in the municipality's own words, a public consultation.</p>
+
+  <p>That room matters anyway. What is said in it, and what is recorded, becomes part of the formal federal file on this project. Residents who show up informed will be more effective than residents who show up angry. This article is about giving you the knowledge to do both things at once.</p>
+
+  <p>We start with the technology — because you cannot evaluate what you don't understand. Then we walk through the health and environmental research honestly, including both the scientific consensus and the legitimate questions that remain open. Then we explain the federal process that governs this project and what it requires of Bell. Then we tell you exactly what you can ask on Wednesday, what you cannot ask, and what to do after the session closes.</p>
+
+  <!-- ─── SECTION 1: HOW TOWERS WORK ─── -->
+  <h2>Part One: How Cell Towers Actually Work</h2>
+
+  <p>A cell tower — technically called a base transceiver station — is a structure that sends and receives radio signals to and from wireless devices in a surrounding geographic area. Your phone doesn't connect directly to the internet; it connects to the nearest tower, which connects to a broader network infrastructure via fibre-optic or microwave backhaul links. The tower is the bridge.</p>
+
+  <p>The geographic area served by a single tower is called a "cell" — which is where the name comes from. When you drive between towns, your phone invisibly hands off from one tower's cell to the next. The towers are hexagonally arranged in theory; in practice, terrain, buildings, and trees force irregular patterns.</p>
+
+  <h3>The Anatomy of a Monopole Tower</h3>
+
+  <p>The structure Bell is proposing for Ormstown is a monopole — a single self-supporting steel pole, 36 metres tall. This is the most common tower type in suburban and rural settings. At the top and along the upper section, panels called antenna arrays are mounted. Each antenna is essentially a radio transmitter and receiver. Bell's project specifies 18 antennas in two sizes: six larger panels measuring roughly 2.5 metres by 0.6 metres, and twelve smaller panels measuring about 2.4 metres by 0.3 metres. These point in different directions to provide 360-degree coverage.</p>
+
+  <p>At the base of the tower sits an equipment shelter — a locked cabinet or small building housing the electronic hardware that processes signals: the base station controller, power systems, and backhaul connection equipment. The whole compound is fenced. Once operational, it runs continuously, 24 hours a day, seven days a week, with remote monitoring and periodic maintenance visits. No staff are permanently on-site.</p>
+
+  <h3>What "5G" Actually Means</h3>
+
+  <p>The "G" stands for generation. Each generation of cellular technology is a new set of technical standards for how signals are encoded, transmitted, and received. We are currently in the fifth generation — 5G. The progression from 1G through 5G represents roughly 40 years of engineering evolution, each step bringing faster data speeds, lower latency (the delay between sending and receiving), and the ability to connect more devices simultaneously.</p>
+
+  <p>What matters physically is frequency. Radio signals travel in waves, and the frequency of those waves — measured in hertz — determines their range and their capacity to carry data. Lower frequencies travel farther but carry less data. Higher frequencies carry enormous amounts of data but don't travel as far and are absorbed or blocked more easily by buildings, trees, and rain.</p>
+
+  <div class="fact-box">
+    <h4>Frequency Spectrum — A Quick Reference</h4>
+    <ul>
+      <li><strong>Sub-1 GHz (700–850 MHz):</strong> Long range, good building penetration. Used for rural coverage. Bell's brochure suggests this project serves a coverage gap — this is the likely frequency band for an Ormstown monopole.</li>
+      <li><strong>Mid-band (2.5–3.5 GHz):</strong> Good balance of range and capacity. The workhorse of most 5G networks.</li>
+      <li><strong>Millimeter wave / mmWave (24–39 GHz):</strong> Very fast, very short range. Used in dense urban cores. Not relevant to a rural monopole of this type.</li>
+    </ul>
+  </div>
+
+  <p>The tower Bell is proposing for Ormstown is almost certainly a low-band or mid-band installation serving a wide rural coverage area. The 36-metre height and rural location are consistent with a tower designed to serve kilometres of surrounding terrain — not a dense urban small-cell deployment. This distinction matters when evaluating health questions: the highest-frequency, highest-density 5G infrastructure is urban; a rural monopole operates at lower frequencies with signals spread across a wide area.</p>
+
+  <h3>Why Are There More Towers Than There Used to Be?</h3>
+
+  <p>Two reasons. First, demand for wireless data has grown enormously — the average Canadian now uses roughly 15 gigabytes of mobile data per month, up from less than 1 GB a decade ago. Second, higher-frequency 5G signals don't travel as far as older lower-frequency signals, meaning more towers are needed to maintain coverage. In rural areas, however, the primary driver is often simpler: there are coverage gaps that have existed for years, and carriers are filling them.</p>
+
+  <p>Bell's own documentation for this project cites coverage deficiencies in parts of Ormstown. The Observer cannot independently verify the extent of that gap. What we can note is that coverage improvement is a legitimate public interest rationale — and one that should be weighed honestly alongside the concerns this project raises.</p>
+
+  <!-- ─── SECTION 2: HEALTH AND ENVIRONMENT ─── -->
+  <h2>Part Two: The Health and Environmental Research — Honestly Presented</h2>
+
+  <p>This is the section people most want to skip to. We are going to present it as accurately as we can, which means presenting both the scientific consensus and the legitimate areas of ongoing debate — without alarmism, and without dismissiveness.</p>
+
+  <h3>The Official Position: What Regulators Say</h3>
+
+  <p>The authoritative regulatory framework in Canada is <strong>Safety Code 6</strong>, published by Health Canada. It sets maximum exposure limits for radiofrequency electromagnetic fields (RF-EMF) from all sources, including cell towers. According to Health Canada, exposure at or below Safety Code 6 limits will not cause adverse health effects — and this conclusion explicitly covers 5G technology.</p>
+
+  <blockquote>
+    "Based on current scientific data, we have concluded that you will not experience adverse health effects from exposure to radiofrequency EMFs at the levels permitted by Safety Code 6. This includes exposure from equipment that uses 5G technology."
+    <cite>— Health Canada, Safety Code 6 overview, updated 2024</cite>
+  </blockquote>
+
+  <p>The Safety Code 6 limits are described by Health Canada as being set at least 50 times below the threshold of any established adverse health effect. This is not a narrow margin. The framework is endorsed by the World Health Organization, the International Commission on Non-Ionizing Radiation Protection (ICNIRP), the European Commission's Scientific Committee on Emerging and Newly Identified Health Risks (SCENIHR), the U.S. Food and Drug Administration, and Public Health Ontario.</p>
+
+  <p>Radiofrequency radiation from cell towers is <strong>non-ionizing</strong> — meaning it does not have enough energy to break chemical bonds or damage DNA directly, the way X-rays or gamma radiation can. This is a fundamental physical distinction, not a matter of regulatory opinion. The established mechanism of harm from RF-EMF at high doses is thermal — tissue heating — and the Safety Code 6 limits are designed to keep exposure far below the threshold where that occurs.</p>
+
+  <h3>Where the Scientific Debate Is Real</h3>
+
+  <p>The above is the consensus. The Observer also believes you deserve to know where the scientific community is not fully settled.</p>
+
+  <p>In 2011, the World Health Organization's International Agency for Research on Cancer (WHO/IARC) classified radiofrequency radiation as a <strong>Group 2B possible carcinogen</strong> — the same classification as pickled vegetables and talc. This classification means the evidence of carcinogenicity in humans is limited, not that it is established. The classification has not been upgraded in the intervening years. However, a significant IARC review completed in 2024 continued to examine the evidence base, and the debate among researchers continues.</p>
+
+  <p>Some researchers and health professionals argue that Safety Code 6 is based primarily on thermal effects — heating — and does not adequately account for potential non-thermal biological effects from long-duration, low-level exposure. A number of peer-reviewed studies have documented biological changes in cells exposed to RF-EMF at levels below established safety thresholds; the scientific debate concerns whether those changes are harmful, transient, or artefacts of experimental conditions.</p>
+
+  <p>The question of electromagnetic hypersensitivity (EHS) — where individuals attribute health symptoms to EMF exposure — is also contested. Health Canada's official position is that while EHS symptoms are real, scientific evidence has not demonstrated they are caused by electromagnetic fields in double-blind studies. Critics argue those studies are inadequate.</p>
+
+  <p>We are not going to tell you which side of this debate is right. We will tell you that the mainstream scientific and regulatory consensus — internationally — supports the position that towers operating within Safety Code 6 limits do not pose established health risks to nearby residents. We will also tell you that the precautionary principle — acting carefully in the face of uncertainty — is a reasonable value for a community to hold, and that asking rigorous questions about RF compliance is entirely legitimate.</p>
+
+  <h3>The Environmental Research: A More Open Question</h3>
+
+  <p>The health-effects debate for humans is relatively well-studied. The environmental effects of RF-EMF on wildlife — birds, insects, pollinators, and plants — is a younger and, arguably, more open field of inquiry.</p>
+
+  <p>A 2023 systematic review and meta-analysis published in the journal <em>Reviews on Environmental Health</em> examined dozens of studies on the biological effects of non-ionizing electromagnetic fields on insects. The review found that the vast majority of studies documented effects — generally harmful ones — at legally permitted exposure levels. Effects included impacts to reproduction and immune function in insects including bees. A separate landmark research review published in <em>Reviews on Environmental Health</em> by U.S. wildlife biologist Albert Manville and colleagues examined over 1,200 studies on non-ionizing radiation effects on flora and fauna and found adverse effects at very low intensities, including impacts to bird orientation, reproduction, and migration. Bees, as pollinators with bodies physically sized to resonate with certain frequencies, may be especially vulnerable to higher-frequency 5G emissions.</p>
+
+  <p>The proposed tower site is a wooded municipal lot. The proposed zone is classified as a park and green space. These are relevant considerations — not because they definitively establish harm, but because no regulatory safety limits for RF-EMF effects on wildlife exist. Safety Code 6 protects humans. There is no equivalent framework for the broader ecosystem.</p>
+
+  <p>The European Commission's Scientific Committee on Emerging and Newly Identified Health Risks has stated plainly: <em>"The lack of clear evidence to inform the development of exposure guidelines to 5G technology leaves open the possibility of unintended biological consequences."</em> That is not alarmism. It is a statement of what we do not yet know.</p>
+
+  <h3>What This Means for Ormstown</h3>
+
+  <p>A tower operating within Safety Code 6 is, under current Canadian law and regulatory science, considered safe for human residents nearby. That is the honest answer to the question most people are asking.</p>
+
+  <p>What it does not answer is whether the proposed site — a park lot — is the right site, whether the alternatives assessment was adequate, whether the environmental impact on the wooded lot and its wildlife was considered, and whether the municipality acted in its residents' best interest by co-selecting the site before public consultation. Those are governance questions, not health questions. And they are entirely within scope for Wednesday night.</p>
+
+  <!-- ─── SECTION 3: THE FEDERAL PROCESS ─── -->
+  <h2>Part Three: The Federal Framework — What CPC-2-0-03 Actually Requires</h2>
+
+  <p>Before Bell can build a single centimetre of this tower, it must complete a process established by the federal government under a document called <strong>CPC-2-0-03</strong> — the Client Procedures Circular for Radiocommunication and Broadcasting Antenna Systems, published by Innovation, Science and Economic Development Canada (ISED). This document is the legal foundation for everything happening this week.</p>
+
+  <p>Understanding CPC-2-0-03 is not just academic. It is the difference between knowing your rights and not knowing them. If Bell fails to comply with the process — or if the consultation is inadequate — ISED can decline to approve the project. That makes your participation in the process genuinely consequential.</p>
+
+  <h3>The Three Mandatory Steps of ISED's Default Process</h3>
+
+  <p>Because Ormstown has no established municipal protocol for telecom tower consultations (a fact acknowledged in Bell's own brochure), Bell must follow ISED's default process. That process has three steps:</p>
+
+  <div class="fact-box">
+    <h4>CPC-2-0-03 — The Three-Step Default Process</h4>
+    <ol>
+      <li><strong>Public Notification:</strong> Bell must send written notice to all property owners, residents, schools, community gathering areas, and businesses within a radius of three times the tower height — in this case, at least 108 metres from the base (Bell sent notices within 123 metres). The notice must give a minimum of 30 days for written comment. For towers 30 metres or taller, Bell must also place a notice in a local community newspaper.</li>
+      <li><strong>Responding to the Public:</strong> If written questions, comments, or concerns are received, Bell must acknowledge them in writing within 14 days and respond substantively within 60 days — either addressing the concern or explaining in writing why it is not, in Bell's view, reasonable or relevant.</li>
+      <li><strong>Public Reply Comment Period:</strong> After Bell's response, the public has 21 days to reply. Bell must keep records of all correspondence. If concerns remain unresolved after the reply period, Bell can request ISED engagement — at which point ISED may determine whether the consultation requirements have been met and whether the project may proceed.</li>
+    </ol>
+  </div>
+
+  <h3>The Role of the Municipality — and Why It Matters Here</h3>
+
+  <p>Under CPC-2-0-03, the municipality acts as the <strong>Autorité Responsable de l'Utilisation du Sol (ARUS)</strong> — the authority responsible for land use. Before ISED will approve construction, the ARUS must provide written concurrence confirming that the consultation process was adequate and that the project is consistent with local land-use requirements.</p>
+
+  <p>In Ormstown, DG Daniel Leduc is named as the official ARUS contact — confirmed in Bell's own notification letter to residents. That means DG Leduc will be the person evaluating the adequacy of a consultation process for a project his municipality helped design, on a site his municipality co-selected, under a lease his municipality authorized before residents were consulted.</p>
+
+  <p>CPC-2-0-03 also requires Bell to demonstrate it explored alternatives before proposing a new standalone structure. The framework is explicit: proponents are expected to share existing infrastructure — rooftops, water towers, other structures — before building new. Bell apparently evaluated the municipal water tower and found it structurally unsuitable. That evaluation must be documented. The documentation has not been made public.</p>
+
+  <h3>The Process Timeline for This Project</h3>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-date">Late 2025 / Early 2026</div>
+      <div class="timeline-text">Bell identifies municipal lot near Route 138 as proposed site. Municipality "collaborates in selecting the site," per Bell's own brochure. No public notice.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">March 2, 2026</div>
+      <div class="timeline-text">Resolution 26-03-074: Council votes unanimously to authorize lease with Bell Mobilité. DG Leduc describes the lease as the start of the process — the feasibility study and public consultation come after. Lease term: 5 years + six 5-year renewals, $10,000/year.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">Spring 2026</div>
+      <div class="timeline-text">Bell sends notification letters to property owners within 123 metres of the proposed site, initiating the 30-day public comment period.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">June 1, 2026</div>
+      <div class="timeline-text">Regular council meeting. No Bell tower item on the agenda. No vote, no resolution, no authorization for any public notice.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">June 2, 2026</div>
+      <div class="timeline-text">Municipality issues public notice for a June 10 information session, the day after a council meeting where the project was not discussed. The public notice describes a lot number (6 065 438) that does not match Bell's documents or the council resolution (6 065 483).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">June 10, 2026</div>
+      <div class="timeline-text"><strong>Information session, 6 p.m., 5 rue Gale.</strong> Organized by Bell's third-party consultation firm. This is the public engagement component of Step 2 under CPC-2-0-03.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">June 19, 2026</div>
+      <div class="timeline-text"><strong>Bell's written comment deadline.</strong> All comments must be submitted to <a href="mailto:bell_E3640@cpc-consultation.ca">bell_E3640@cpc-consultation.ca</a> by this date to be part of the formal record.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-date">After June 19</div>
+      <div class="timeline-text">If written concerns were received, Bell has 60 days from receipt to respond. The public then has 21 days to reply. After that process concludes, Bell submits its consultation summary to the municipality (ARUS). The municipality must independently evaluate and provide written concurrence before ISED approves construction.</div>
+    </div>
+  </div>
+
+  <h3>What the Session on Wednesday Is — And Is Not</h3>
+
+  <p>The June 10 session is organized by Bell's third-party consultation firm. It is the public engagement portion of Step 2 under ISED's default process. Questions and comments raised verbally at the session can become part of Bell's consultation record — but only if they are also submitted in writing before June 19.</p>
+
+  <p>The session is explicitly not a public consultation in the broader municipal sense. The municipality's own June 2 notice stated: <em>"il ne s'agit pas d'une consultation publique."</em> You cannot vote at this session. No binding decisions will be made in the room. The session's purpose, under CPC-2-0-03, is for Bell's representative to address questions and concerns from the public — and for the public to put those questions on the record.</p>
+
+  <p>Your presence matters for one primary reason: it creates a public record that Bell must respond to. Questions raised in the room that remain unanswered must be addressed in writing within 60 days. Concerns that are unresolved after the reply period can be escalated to ISED. The more substantive and well-grounded the questions, the harder it is for Bell to dismiss them as unreasonable or irrelevant.</p>
+
+  <!-- ─── SECTION 4: QUESTIONS ─── -->
+  <h2>Part Four: What You Can Ask, and What You Cannot</h2>
+
+  <p>CPC-2-0-03 defines the scope of what Bell is obligated to address. The standard is whether a question or concern is <strong>reasonable and relevant</strong> — meaning it relates to the requirements of the document and to the characteristics of the area surrounding the proposed tower. Bell is required to address concerns that meet this threshold. It is permitted to dismiss concerns that do not — in writing, with an explanation.</p>
+
+  <p>Knowing the difference matters. Questions outside the permitted scope will not make it onto the formal record in a way Bell must respond to, and they can distract from the questions that will.</p>
+
+  <h3>Questions Bell Is Obligated to Address <span class="badge badge-yes">In Scope</span></h3>
+
+  <p>The following questions are grounded in CPC-2-0-03 and the specific facts of this file. Raise them at the session, and submit them in writing before June 19.</p>
+
+  <ul class="question-list allowed">
+    <li><strong>Alternatives Assessment</strong> — CPC-2-0-03 requires Bell to explore existing infrastructure before proposing a new structure. Why was the municipal water tower deemed unsuitable — and where is the written documentation of that assessment? What other structures were evaluated?</li>
+    <li><strong>Alternatives Assessment</strong> — Who conducted the alternatives assessment, and on what date was it completed? Is that documentation available to the public?</li>
+    <li><strong>Alternate Sites</strong> — Beyond the water tower, what other sites within the coverage target area were evaluated? Why was the park lot selected over those alternatives?</li>
+    <li><strong>Site Design &amp; Integration</strong> — CPC-2-0-03 explicitly lists visual integration as a concern to address. What design options — camouflage, reduced height, alternative placement — were considered to reduce the visual impact on a park zone?</li>
+    <li><strong>Public Safety &amp; Access</strong> — CPC-2-0-03 explicitly identifies public access as a relevant concern. The proposed site is a municipal park lot. What specific measures will Bell take to ensure the compound is not accessible to the general public, including children?</li>
+    <li><strong>RF Exposure — Specifics</strong> — What are the projected RF exposure levels at the nearest residential property lines, playgrounds, schools, and community gathering areas? Provide the calculations or modelling, not just a statement that Safety Code 6 is met.</li>
+    <li><strong>RF Exposure — Cumulative</strong> — Does Bell's Safety Code 6 compliance calculation account for cumulative RF from other existing installations in the area? If not, why not?</li>
+    <li><strong>Post-Installation Verification</strong> — Will Bell commit to a third-party RF measurement audit after installation, at the nearest residential properties? If so, who conducts it and who pays for it?</li>
+    <li><strong>Aeronautical Safety</strong> — CPC-2-0-03 section 7.5 requires compliance with Transport Canada aeronautical obstruction marking requirements. What lighting or marking is required for a 36-metre structure at these coordinates, and what options are available?</li>
+    <li><strong>Consultation Integrity</strong> — Bell's own brochure states the municipality "collaborated in selecting the site." How can the ARUS independently evaluate the adequacy of this consultation when it co-selected the site and signed a lease before residents were consulted?</li>
+    <li><strong>Notification Scope</strong> — Bell sent notices within 123 metres. CPC-2-0-03 also requires notification of community gathering areas, public institutions, and schools. Which of those received notice?</li>
+    <li><strong>Lot Number Discrepancy</strong> — The municipal public notice of June 2 identifies lot 6 065 438. Bell's engineering plan E3640, the "Avis aux propriétaires," and the council resolution all identify lot 6 065 483. These are different cadastral parcels. Which lot is the actual project site, and will Bell correct the public record before the June 19 deadline?</li>
+    <li><strong>Lease vs. Consultation Sequence</strong> — DG Leduc stated on March 2 that the lease "starts the process." Under CPC-2-0-03, public consultation is supposed to precede municipal concurrence. How does a signed binding lease not predetermine the outcome of the consultation?</li>
+    <li><strong>Lease Terms if Rejected</strong> — What happens to the lease agreement if the community opposes the project, if ISED declines to approve, or if municipal concurrence is withheld?</li>
+    <li><strong>Zoning Authorization</strong> — Zone P-15 under Ormstown's Règlement de zonage 148-2023 permits only R1 — Parc et espace vert. What zoning authorization allows a 36-metre telecommunications monopole on this site? Has a formal rezoning or conditional-use process been initiated?</li>
+    <li><strong>Tower Height Discrepancy</strong> — DG Leduc described the tower as "une trentaine de mètres" on March 2. Bell's own engineering plan E3640 specifies 36 metres. What is the precise and final height of the structure?</li>
+    <li><strong>Future Antenna Additions</strong> — The project specifies 18 antennas. Can additional equipment or antennas be added to the structure during the lease term without triggering a new public consultation?</li>
+    <li><strong>Environmental Impact</strong> — The proposed site is a wooded park lot. Was any assessment conducted of the impact of a permanent installation on the wooded habitat, bird populations, or pollinators on or near the site? If not, why not?</li>
+    <li><strong>Sharing Obligations</strong> — CPC-2-0-17 imposes mandatory tower sharing obligations. Will this structure be made available to other carriers? If so, what are the implications for overall RF levels at the site?</li>
+    <li><strong>Written Record</strong> — Bell's written comment deadline is June 19 — nine days after this session. Will Bell commit to providing written responses to all questions raised tonight before that deadline, so residents can review them and submit informed reply comments?</li>
+  </ul>
+
+  <h3>Questions Outside the CPC-2-0-03 Scope <span class="badge badge-no">Out of Scope</span></h3>
+
+  <p>The following are explicitly identified in CPC-2-0-03 as concerns that are <strong>not reasonable or relevant</strong> for the purposes of this process. Bell is not required to address them, and raising them can dilute your credibility on the questions that matter.</p>
+
+  <ul class="question-list blocked">
+    <li><strong>Property values or municipal taxes</strong> — CPC-2-0-03 explicitly excludes "potential effects that a proposed antenna system will have on property values or municipal taxes." This is one of the most common concerns people raise, and it is explicitly out of scope. Save it for the ballot box.</li>
+    <li><strong>General grievances with Bell's service</strong> — Billing disputes, dropped calls in other areas, customer service complaints, and general dissatisfaction with Bell as a company are not relevant to this antenna installation.</li>
+    <li><strong>Challenges to the legislation itself</strong> — Questions about whether the Radiocommunication Act, CPC-2-0-03, Safety Code 6, or other legislation is valid, should be reformed, or is unconstitutional are out of scope. Bell does not have to engage with these arguments.</li>
+    <li><strong>Vague or non-specific health fears</strong> — General statements that "5G is dangerous" without specific connection to RF exposure calculations, site-specific data, or the Safety Code 6 compliance framework are likely to be dismissed as not reasonable or relevant. Ground health concerns in specifics: the projected exposure levels, cumulative calculations, and the specific characteristics of this installation.</li>
+    <li><strong>Bell's business rationale or corporate conduct</strong> — Why Bell needs more coverage revenue, whether Bell pays enough tax, or the company's broader corporate conduct are not relevant to this antenna proposal.</li>
+    <li><strong>Comparisons to other municipalities</strong> — Arguments that Bell should put the tower elsewhere, in another town, are not relevant to the specific proposal on the table.</li>
+  </ul>
+
+  <!-- ─── SECTION 5: WHAT TO DO ─── -->
+  <h2>Part Five: How to Prepare for Wednesday — and What to Do After</h2>
+
+  <h3>Before the Session</h3>
+  <p>Read Bell's notification package if you received one. It identifies the project number (E3640), the proponent contact, and the scope of the proposal. Review the Observer's earlier reporting on the zoning question and the lot number discrepancy — these are specific, documented irregularities that deserve specific, documented answers.</p>
+
+  <p>Write your questions down. Bring them on paper. A question you read from a page is a question you won't forget in the heat of the moment. If you want a response Bell is legally obligated to address, phrase it in terms of the installation, the site, and the CPC-2-0-03 requirements.</p>
+
+  <h3>At the Session</h3>
+  <p>Introduce yourself and state your name for the record. Ask questions clearly and one at a time. If the representative cannot answer in the room, ask them to confirm in writing when they will respond. Take notes. If other residents are raising points you agree with, you can note that in your written submission afterward — that strengthens the record.</p>
+
+  <h3>After the Session — The Most Important Step</h3>
+  <p>The session on its own does not protect your interests. What protects your interests is submitting your concerns <strong>in writing before June 19, 2026</strong> to:</p>
+
+  <div class="fact-box">
+    <h4>Bell Written Comment Submission</h4>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:bell_E3640@cpc-consultation.ca">bell_E3640@cpc-consultation.ca</a></li>
+      <li><strong>Reference:</strong> Project E3640 Ormstown</li>
+      <li><strong>Deadline:</strong> June 19, 2026</li>
+    </ul>
+    <p style="margin-top:0.75rem;">Once your written comment is on file, Bell must respond within 60 days addressing your specific concerns or explaining in writing why it considers them unreasonable or irrelevant. You then have 21 days to reply to that response. If your concerns remain unresolved, you may contact the local ISED office directly to flag the inadequacy of the consultation.</p>
+  </div>
+
+  <h3>Escalation: Contacting ISED Directly</h3>
+  <p>If you believe the consultation process is not being conducted in good faith — or if Bell's responses to written concerns are inadequate — you have the right to contact ISED directly. ISED may request records from any party, provide direction to parties, or determine that further consultation is required before the project can proceed. The Montreal ISED district office is the relevant contact for projects in the Montérégie region.</p>
+
+  <h3>Where to Find More Information</h3>
+
+  <div class="fact-box">
+    <h4>Key Documents and Resources</h4>
+    <ul>
+      <li><a href="https://ised-isde.canada.ca/site/spectrum-management-telecommunications/sites/default/files/attachments/2022/CPC-2-0-03-i6-2022-07EN.pdf" target="_blank">CPC-2-0-03 Issue 6 (July 2022) — Full text, ISED</a></li>
+      <li><a href="https://www.canada.ca/en/health-canada/services/health-risks-safety/radiation/occupational-exposure-regulations/safety-code-6-radiofrequency-exposure-guidelines.html" target="_blank">Safety Code 6 — Health Canada</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf" target="_blank">Council Minutes, March 2, 2026 (Resolution 26-03-074, p. 54) — Ormstown.ca</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/1-ORM_R148-2023_Zonage_AnnexeB_Grilles.pdf" target="_blank">Zoning Usage Grid, Annexe B — Règlement 148-2023 — Ormstown.ca</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_AnnexeA_F2-PerimetreUrbain.pdf" target="_blank">Zoning Map, Feuillet 2 — Règlement 148-2023 — Ormstown.ca</a></li>
+      <li><a href="/en/bell-tower/">Observer: Full investigation — A 36-Metre Tower Is Proposed for an Ormstown Park Lot</a></li>
+      <li><a href="https://www.youtube.com/watch?v=1fzDFGkjNRc" target="_blank">March 2, 2026 council meeting — YouTube recording</a></li>
+    </ul>
+  </div>
+
+  <p>The Observer will be present at the June 10 session. We will report on what is said, what is not answered, and what happens next. If you have questions or information to share before then, reach us at <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>.</p>
+
+  <p>Show up. Take notes. Submit in writing. The record is what matters.</p>
+
+  <div class="article-footer">
+    <strong>The Ormstown Observer</strong> is an independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region. We accept no advertising.<br><br>
+    Questions, tips, corrections: <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <strong>The Ormstown Observer</strong> is an independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region.<br>
+  We accept no advertising.<br><br>
+  Questions, tips, corrections: <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
+</footer>
+
+</body>
+</html>

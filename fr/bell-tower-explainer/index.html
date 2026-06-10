@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avant d'entrer dans cette salle mercredi, lisez ceci — L'Ormstown Observer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #444;
+    --accent: #b5161b;
+    --paper: #faf8f4;
+    --paper-dark: #f0ece4;
+    --rule: #c8b97a;
+    --border: #d4c9b8;
+    --muted: #555;
+    --sidebar: #f5f2eb;
+    --confirm: #155724;
+    --warn: #721c24;
+    --pending: #856404;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; line-height: 1.75; }
+  a { color: var(--accent); }
+
+  /* ── MASTHEAD ── */
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 16px 40px 14px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 12px; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 4px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 5vw, 52px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); text-decoration: none; display: block; }
+  .masthead-name:hover { color: var(--accent); }
+  .masthead-tagline { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-light); margin-top: 7px; font-style: italic; }
+
+  /* ── LANGUAGE SWITCHER ── */
+  .lang-switcher { display: flex; justify-content: center; gap: 0; border-bottom: 2px solid var(--ink); background: var(--paper-dark); }
+  .lang-switcher a { display: inline-block; padding: 8px 22px; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; color: var(--ink-light); text-decoration: none; border-right: 1px solid var(--border); transition: background .15s; }
+  .lang-switcher a:last-child { border-right: none; }
+  .lang-switcher a.active { background: var(--accent); color: #fff; }
+  .lang-switcher a:not(.active):hover { background: #e8e2d4; color: var(--ink); }
+
+  /* ── ARTICLE WRAP ── */
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 40px 24px 80px; }
+
+  /* ── BACK LINK ── */
+  .back-link { display: inline-block; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-light); text-decoration: none; margin-bottom: 28px; }
+  .back-link:hover { color: var(--accent); }
+
+  /* ── ARTICLE HEADER ── */
+  .section-label { font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-light); font-family: 'Playfair Display', Georgia, serif; margin-bottom: 12px; }
+  .article-headline { font-family: 'Playfair Display', Georgia, serif; font-size: 2.1rem; font-weight: 900; line-height: 1.2; color: var(--accent); margin-bottom: 0.5rem; }
+  .article-deck { font-size: 1.15rem; color: var(--muted); font-style: italic; margin-bottom: 1rem; line-height: 1.5; }
+  .byline { font-size: 0.82rem; letter-spacing: 0.05em; color: var(--muted); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.5rem 0; margin-bottom: 1.75rem; }
+  .byline strong { color: var(--ink); }
+
+  /* ── BODY TEXT ── */
+  p { margin-bottom: 1.25rem; }
+
+  h2 { font-size: 1.35rem; font-weight: 900; color: var(--accent); margin: 2.5rem 0 0.9rem; border-bottom: 2px solid var(--rule); padding-bottom: 0.3rem; }
+  h3 { font-size: 1.1rem; font-weight: 700; color: var(--ink); margin: 1.8rem 0 0.7rem; }
+
+  /* ── PULL QUOTE ── */
+  blockquote { border-left: 4px solid var(--rule); padding: 0.75rem 1.25rem; margin: 1.75rem 0; color: var(--muted); font-style: italic; background: var(--sidebar); font-size: 0.95rem; }
+  blockquote cite { display: block; margin-top: 0.5rem; font-size: 0.8rem; font-style: normal; color: var(--muted); }
+
+  /* ── FACT BOX ── */
+  .fact-box { background: var(--sidebar); border: 1px solid var(--border); border-left: 5px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; font-size: 0.93rem; }
+  .fact-box h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent); margin-bottom: 0.75rem; }
+  .fact-box ul, .fact-box ol { padding-left: 1.4rem; }
+  .fact-box li { margin-bottom: 0.5rem; }
+
+  /* ── STATUS BADGES ── */
+  .badge { display: inline-block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 2px; vertical-align: middle; margin-left: 0.4rem; }
+  .badge-yes  { background: #d4edda; color: var(--confirm); }
+  .badge-no   { background: #f8d7da; color: var(--warn); }
+
+  /* ── QUESTION LISTS ── */
+  .question-list { list-style: none; padding: 0; margin: 1rem 0; }
+  .question-list li { padding: 0.7rem 0.9rem 0.7rem 2.8rem; border-bottom: 1px solid var(--border); position: relative; font-size: 0.95rem; }
+  .question-list li:last-child { border-bottom: none; }
+  .question-list li::before { position: absolute; left: 0.7rem; top: 0.7rem; font-weight: 900; font-size: 0.85rem; }
+  .question-list.allowed li::before { content: "✓"; color: #2a7a2a; }
+  .question-list.blocked li::before { content: "✗"; color: #c0392b; }
+
+  /* ── TIMELINE ── */
+  .timeline { border-left: 3px solid var(--rule); padding-left: 1.25rem; margin: 1.5rem 0; }
+  .timeline-item { margin-bottom: 1.25rem; position: relative; }
+  .timeline-item::before { content: ''; position: absolute; left: -1.55rem; top: 0.45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--rule); }
+  .timeline-date { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .timeline-text { font-size: 0.93rem; }
+
+  /* ── DIVIDER ── */
+  hr.divider { border: none; border-top: 3px double var(--rule); margin: 3.5rem 0; }
+
+  /* ── FOOTER ── */
+  .article-footer { font-size: 0.82rem; color: var(--muted); border-top: 1px solid var(--border); padding-top: 1.25rem; margin-top: 3rem; font-style: italic; }
+
+  .site-footer { border-top: 3px double var(--ink); margin-top: 20px; padding: 28px 24px; text-align: center; font-size: 12px; letter-spacing: .08em; color: var(--ink-light); line-height: 2; }
+  .site-footer a { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    .article-headline { font-size: 1.6rem; }
+    .masthead { padding: 14px 16px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+  <a class="masthead-name" href="/fr/">L'Ormstown Observer</a>
+  <div class="masthead-tagline">Vigilance civique · Journalisme indépendant</div>
+</header>
+
+<nav class="lang-switcher">
+  <a href="/en/bell-tower-explainer/">EN — English</a>
+  <a href="/fr/bell-tower-explainer/" class="active">FR — Français</a>
+</nav>
+
+<div class="article-wrap">
+
+  <a class="back-link" href="/fr/">← Retour à l'accueil</a>
+
+  <div class="section-label">Technologie · Processus · Vos droits</div>
+
+  <h1 class="article-headline">Avant d'entrer dans cette salle mercredi, lisez ceci.</h1>
+  <p class="article-deck">Comment fonctionnent réellement les tours cellulaires, ce que dit la science sur la 5G et la santé, ce que le processus fédéral exige de Bell — et exactement ce que vous pouvez et ne pouvez pas demander lors de la séance d'information du 10 juin.</p>
+  <div class="byline">Par <strong>L'Ormstown Observer</strong> · 8 juin 2026 · Ormstown, Québec</div>
+
+  <p>Le mercredi 10 juin à 18h, les résidents d'Ormstown sont invités — pour la première fois — à poser des questions sur une tour de télécommunications de 36 mètres que Bell Mobilité veut construire sur un terrain municipal zoné parc, près de la route 138. Le bail a été signé en mars. Le projet est en développement depuis au moins la fin 2025. La séance d'information n'est pas, selon les propres mots de la municipalité, une consultation publique.</p>
+
+  <p>Cette salle compte quand même. Ce qui y est dit, et ce qui est consigné, devient une partie du dossier fédéral officiel sur ce projet. Les résidents qui se présentent bien informés seront plus efficaces que ceux qui se présentent en colère. Cet article vise à vous donner les connaissances nécessaires pour faire les deux à la fois.</p>
+
+  <p>Nous commençons par la technologie — parce qu'on ne peut pas évaluer ce qu'on ne comprend pas. Ensuite, nous parcourons honnêtement la recherche sur la santé et l'environnement, incluant à la fois le consensus scientifique et les questions légitimes qui restent ouvertes. Puis nous expliquons le processus fédéral qui régit ce projet et ce qu'il exige de Bell. Enfin, nous vous précisons exactement ce que vous pouvez demander mercredi soir, ce que vous ne pouvez pas demander, et ce qu'il faut faire après la fermeture de la séance.</p>
+
+  <!-- PARTIE 1 -->
+  <h2>Première partie : Comment fonctionnent réellement les tours cellulaires</h2>
+
+  <p>Une tour cellulaire — techniquement appelée station de base ou BTS (Base Transceiver Station) — est une structure qui envoie et reçoit des signaux radio vers et depuis les appareils sans fil dans une zone géographique environnante. Votre téléphone ne se connecte pas directement à Internet ; il se connecte à la tour la plus proche, qui est reliée à une infrastructure réseau plus large via des liens fibre optique ou des liaisons hyperfréquences. La tour est le pont.</p>
+
+  <p>La zone géographique desservie par une seule tour s'appelle une « cellule » — d'où vient le nom téléphone cellulaire. Quand vous conduisez entre deux villes, votre téléphone passe de façon invisible d'une cellule à l'autre. En théorie, les tours sont disposées en hexagones ; en pratique, le relief, les bâtiments et les arbres imposent des configurations irrégulières.</p>
+
+  <h3>L'anatomie d'un pylône monopole</h3>
+
+  <p>La structure que Bell propose pour Ormstown est un monopole — un poteau d'acier autoportant de 36 mètres de hauteur. C'est le type de tour le plus courant en milieu suburban et rural. Au sommet et le long de la section supérieure sont montés des panneaux appelés réseaux d'antennes. Chaque antenne est essentiellement un émetteur-récepteur radio. Le projet de Bell prévoit 18 antennes en deux formats : six grands panneaux d'environ 2,5 m × 0,6 m, et douze plus petits d'environ 2,4 m × 0,3 m. Ils pointent dans différentes directions pour assurer une couverture à 360 degrés.</p>
+
+  <p>À la base de la tour se trouve un abri technique — une armoire verrouillée ou un petit bâtiment contenant l'équipement électronique qui traite les signaux. L'ensemble du périmètre est clôturé. Une fois opérationnelle, la tour fonctionne en continu, 24 heures sur 24, 7 jours sur 7, avec surveillance à distance et visites périodiques d'entretien. Aucun personnel n'est présent en permanence sur le site.</p>
+
+  <h3>Ce que signifie vraiment la « 5G »</h3>
+
+  <p>Le « G » signifie génération. Chaque génération de technologie cellulaire représente un nouvel ensemble de normes techniques. Nous sommes actuellement dans la cinquième génération — la 5G. La progression de la 1G à la 5G représente environ 40 ans d'évolution technologique, chaque étape apportant des vitesses de transmission plus rapides, une latence plus faible et la capacité de connecter davantage d'appareils simultanément.</p>
+
+  <p>Ce qui compte physiquement, c'est la fréquence. Les signaux radio voyagent en ondes, et la fréquence de ces ondes — mesurée en hertz — détermine leur portée et leur capacité à transporter des données. Les fréquences plus basses portent plus loin mais transportent moins de données. Les fréquences plus élevées transportent d'énormes quantités de données mais ne voyagent pas aussi loin et sont plus facilement absorbées ou bloquées par les bâtiments, les arbres et la pluie.</p>
+
+  <p>La tour que Bell propose pour Ormstown est presque certainement une installation à bande basse ou moyenne desservant une vaste zone rurale. La hauteur de 36 mètres et l'emplacement rural sont cohérents avec une tour conçue pour desservir des kilomètres de terrain environnant — et non un déploiement de petites cellules 5G urbaines denses. Cette distinction est importante lors de l'évaluation des questions de santé : l'infrastructure 5G à fréquence la plus élevée et densité la plus forte est urbaine ; un monopole rural fonctionne à des fréquences plus basses avec des signaux répartis sur une large zone.</p>
+
+  <!-- PARTIE 2 -->
+  <h2>Deuxième partie : La recherche sur la santé et l'environnement — présentée honnêtement</h2>
+
+  <p>Le cadre réglementaire canadien est le <strong>Code de sécurité 6</strong>, publié par Santé Canada. Il établit les limites d'exposition maximales aux champs électromagnétiques de radiofréquences (RF-CEM) de toutes sources, y compris les tours cellulaires. Selon Santé Canada, une exposition en deçà des limites du Code de sécurité 6 ne causera pas d'effets nocifs sur la santé — et cette conclusion couvre explicitement la technologie 5G. Les limites sont décrites comme étant fixées au moins 50 fois en dessous du seuil de tout effet nocif établi sur la santé.</p>
+
+  <blockquote>
+    « D'après les données scientifiques actuelles, nous avons conclu que vous ne subirez pas d'effets nocifs sur la santé en raison de l'exposition aux CEM de radiofréquences aux niveaux permis par le Code de sécurité 6. Cela inclut l'exposition aux équipements utilisant la technologie 5G. »
+    <cite>— Santé Canada, aperçu du Code de sécurité 6, mis à jour en 2024</cite>
+  </blockquote>
+
+  <p>Le rayonnement de radiofréquences des tours cellulaires est <strong>non ionisant</strong> — il n'a pas assez d'énergie pour briser des liaisons chimiques ou endommager l'ADN directement, contrairement aux rayons X ou gamma. C'est une distinction physique fondamentale, pas une question d'opinion réglementaire.</p>
+
+  <p>Cela dit, en 2011, le Centre international de recherche sur le cancer de l'OMS (CIRC/OMS) a classé le rayonnement de radiofréquences comme un <strong>cancérigène possible de groupe 2B</strong> — la même classification que les légumes marinés et le talc. Cette classification signifie que les preuves de cancérogénicité chez l'humain sont limitées, et non établies. Certains chercheurs soutiennent que le Code de sécurité 6 se concentre principalement sur les effets thermiques et ne tient pas suffisamment compte des effets biologiques non thermiques potentiels d'une exposition de longue durée à faible niveau.</p>
+
+  <p>Sur le plan environnemental, une revue systématique et méta-analyse publiée en 2023 dans la revue <em>Reviews on Environmental Health</em> a examiné des dizaines d'études sur les effets biologiques des champs électromagnétiques non ionisants sur les insectes. La revue a conclu que la grande majorité des études documentaient des effets — généralement néfastes — à des niveaux d'exposition légalement autorisés, incluant des impacts sur la reproduction et la fonction immunitaire chez les abeilles et autres insectes pollinisateurs.</p>
+
+  <p>Le site proposé est un lot municipal boisé classé zone de parc. Il n'existe aucune limite réglementaire d'exposition aux RF-CEM pour la faune et la flore. Le Code de sécurité 6 protège les humains. Il n'existe pas de cadre équivalent pour l'écosystème au sens large.</p>
+
+  <p>Le Comité scientifique des risques sanitaires émergents et nouveaux de la Commission européenne a déclaré clairement : <em>« L'absence de preuves claires pour guider l'élaboration de lignes directrices sur l'exposition à la technologie 5G laisse ouverte la possibilité de conséquences biologiques involontaires. »</em> Ce n'est pas de l'alarmisme. C'est une déclaration de ce que nous ne savons pas encore.</p>
+
+  <!-- PARTIE 3 -->
+  <h2>Troisième partie : Le cadre fédéral — Ce qu'exige réellement la CPC-2-0-03</h2>
+
+  <p>Avant de construire le moindre centimètre de cette tour, Bell doit compléter un processus établi par le gouvernement fédéral en vertu d'un document appelé <strong>CPC-2-0-03</strong> — la Circulaire de procédures aux clients pour les systèmes d'antennes, publiée par Innovation, Sciences et Développement économique Canada (ISDE). Ce document est le fondement juridique de tout ce qui se passe cette semaine.</p>
+
+  <p>Comprendre la CPC-2-0-03 n'est pas qu'une question académique. C'est la différence entre connaître ses droits et ne pas les connaître. Si Bell ne se conforme pas au processus — ou si la consultation est insuffisante — ISDE peut refuser d'approuver le projet. Cela rend votre participation au processus véritablement conséquente.</p>
+
+  <p>Comme Ormstown n'a pas de protocole municipal établi pour les consultations sur les tours télécom — fait reconnu dans la propre brochure de Bell — Bell doit suivre le processus par défaut d'ISDE, qui comporte trois étapes :</p>
+
+  <div class="fact-box">
+    <h4>CPC-2-0-03 — Le processus par défaut en trois étapes</h4>
+    <ol>
+      <li><strong>Avis public :</strong> Bell doit envoyer un avis écrit à tous les propriétaires, résidents, écoles, lieux de rassemblement communautaires et entreprises dans un rayon de trois fois la hauteur de la tour — dans ce cas, au moins 108 mètres de la base (Bell a envoyé des avis dans un rayon de 123 mètres). L'avis doit prévoir au minimum 30 jours pour les commentaires écrits. Pour les tours de 30 mètres ou plus, Bell doit également publier un avis dans un journal local.</li>
+      <li><strong>Réponse au public :</strong> Si des questions, commentaires ou préoccupations écrits sont reçus, Bell doit les accuser réception par écrit dans les 14 jours et y répondre de manière substantielle dans les 60 jours — soit en traitant la préoccupation, soit en expliquant par écrit pourquoi elle n'est pas, à son avis, raisonnable ou pertinente.</li>
+      <li><strong>Période de commentaires en réponse :</strong> Après la réponse de Bell, le public dispose de 21 jours pour répliquer. Bell doit conserver des archives de toute correspondance. Si des préoccupations restent non résolues après la période de réponse, Bell peut demander l'intervention d'ISDE.</li>
+    </ol>
+  </div>
+
+  <h3>Le rôle de la municipalité — et pourquoi cela importe ici</h3>
+
+  <p>Sous la CPC-2-0-03, la municipalité agit à titre d'<strong>Autorité Responsable de l'Utilisation du Sol (ARUS)</strong>. Avant qu'ISDE approuve la construction, l'ARUS doit fournir sa concurrence écrite confirmant que le processus de consultation était adéquat et que le projet est compatible avec les exigences locales d'utilisation du sol. Le DG Daniel Leduc est désigné comme contact ARUS officiel d'Ormstown dans la lettre de notification de Bell. Cela signifie que le DG sera la personne chargée d'évaluer l'adéquation d'un processus de consultation pour un projet que sa municipalité a contribué à concevoir, sur un site que sa municipalité a co-sélectionné, en vertu d'un bail que sa municipalité a autorisé avant que les résidents soient consultés.</p>
+
+  <h3>La séance du 10 juin : ce qu'elle est et ce qu'elle n'est pas</h3>
+
+  <p>La séance du 10 juin est organisée par la firme de consultation tierce de Bell. C'est la composante d'engagement public de l'étape 2 du processus par défaut d'ISDE. Les questions et commentaires soulevés verbalement lors de la séance peuvent faire partie du dossier de consultation de Bell — mais seulement s'ils sont également soumis par écrit avant le 19 juin.</p>
+
+  <p>La séance n'est explicitement pas une consultation publique au sens municipal du terme. L'avis municipal du 2 juin l'a lui-même précisé : <em>« il ne s'agit pas d'une consultation publique. »</em> Aucune décision contraignante ne sera prise dans cette salle. La présence compte pour une raison principale : elle crée un dossier public auquel Bell doit répondre. Les questions soulevées dans la salle qui restent sans réponse doivent être traitées par écrit dans les 60 jours. Les préoccupations non résolues après la période de réponse peuvent être transmises à ISDE.</p>
+
+  <!-- PARTIE 4 -->
+  <h2>Quatrième partie : Ce que vous pouvez demander — et ce que vous ne pouvez pas</h2>
+
+  <p>La CPC-2-0-03 définit la portée de ce que Bell est tenue de traiter. La norme est celle des préoccupations <strong>raisonnables et pertinentes</strong> — c'est-à-dire celles qui se rapportent aux exigences du document et aux caractéristiques de la zone entourant la tour proposée. Bell est tenue de traiter les préoccupations qui répondent à ce seuil. Elle est autorisée à rejeter celles qui ne le font pas — par écrit, avec une explication.</p>
+
+  <p>Connaître la différence est important. Les questions hors de la portée autorisée ne figureront pas dans le dossier formel d'une façon à laquelle Bell doit répondre, et elles peuvent détourner l'attention des questions qui comptent.</p>
+
+  <h3>Questions auxquelles Bell est obligée de répondre <span class="badge badge-yes">Dans la portée</span></h3>
+
+  <p>Les questions suivantes sont fondées sur la CPC-2-0-03 et les faits spécifiques de ce dossier. Soulevez-les lors de la séance et soumettez-les par écrit avant le 19 juin.</p>
+
+  <ul class="question-list allowed">
+    <li><strong>Évaluation des alternatives :</strong> La CPC-2-0-03 exige que Bell explore l'infrastructure existante avant de proposer une nouvelle structure. Pourquoi le château d'eau municipal a-t-il été jugé inadéquat — et où est la documentation écrite de cette évaluation? Quelles autres structures ont été examinées?</li>
+    <li><strong>Évaluation des alternatives :</strong> Qui a effectué l'évaluation des alternatives, et à quelle date a-t-elle été complétée? Cette documentation est-elle disponible au public?</li>
+    <li><strong>Autres sites :</strong> Au-delà du château d'eau, quels autres sites dans la zone cible de couverture ont été évalués? Pourquoi le lot du parc a-t-il été choisi plutôt que ces alternatives?</li>
+    <li><strong>Conception du site et intégration visuelle :</strong> La CPC-2-0-03 liste explicitement l'intégration visuelle comme une préoccupation à traiter. Quelles options de conception — camouflage, hauteur réduite, emplacement alternatif — ont été envisagées pour réduire l'impact visuel sur une zone de parc?</li>
+    <li><strong>Sécurité publique et accès :</strong> La CPC-2-0-03 identifie explicitement l'accès public comme une préoccupation pertinente. Le site proposé est un terrain municipal de parc. Quelles mesures spécifiques Bell prendra-t-elle pour s'assurer que le périmètre n'est pas accessible au public, notamment aux enfants?</li>
+    <li><strong>Exposition aux RF — Données spécifiques :</strong> Quels sont les niveaux d'exposition aux RF projetés aux lignes de propriété résidentielles les plus proches, aux terrains de jeux, aux écoles et aux lieux de rassemblement communautaires? Fournissez les calculs ou la modélisation, pas seulement une déclaration de conformité au Code de sécurité 6.</li>
+    <li><strong>Exposition aux RF — Cumulative :</strong> Le calcul de conformité au Code de sécurité 6 de Bell tient-il compte des RF cumulatives des autres installations existantes dans la région? Sinon, pourquoi pas?</li>
+    <li><strong>Vérification post-installation :</strong> Bell s'engage-t-elle à une mesure RF par un tiers après l'installation, aux propriétés résidentielles les plus proches? Qui effectue la mesure et qui la paie?</li>
+    <li><strong>Sécurité aéronautique :</strong> La section 7.5 de la CPC-2-0-03 exige la conformité aux exigences de marquage d'obstruction aéronautique de Transports Canada. Quel balisage lumineux ou marquage est requis pour une structure de 36 mètres à ces coordonnées, et quelles options sont disponibles?</li>
+    <li><strong>Intégrité de la consultation :</strong> La propre brochure de Bell indique que la municipalité « a collaboré à la sélection du site ». Comment l'ARUS peut-elle évaluer indépendamment l'adéquation de cette consultation alors qu'elle a co-sélectionné le site et signé un bail avant que les résidents soient consultés?</li>
+    <li><strong>Portée des notifications :</strong> Bell a envoyé des avis dans un rayon de 123 mètres. La CPC-2-0-03 exige aussi la notification des lieux de rassemblement communautaires, des institutions publiques et des écoles. Lesquels ont reçu un avis?</li>
+    <li><strong>Discordance des numéros de lot :</strong> L'avis public municipal du 2 juin identifie le lot 6 065 438. Le plan E3640 de Bell, l'« Avis aux propriétaires » et la résolution du conseil identifient tous le lot 6 065 483. Ce sont des parcelles cadastrales différentes. Quel lot est le véritable site du projet, et Bell corrigera-t-elle le dossier public avant la date limite du 19 juin?</li>
+    <li><strong>Séquence bail/consultation :</strong> Le DG Leduc a déclaré le 2 mars que le bail « débute le processus ». Sous la CPC-2-0-03, la consultation publique est censée précéder la concurrence municipale. Comment un bail contraignant signé à l'avance ne prédétermine-t-il pas l'issue de la consultation?</li>
+    <li><strong>Sort du bail en cas d'opposition :</strong> Qu'arrive-t-il au bail si la communauté s'y oppose, si ISDE refuse l'approbation, ou si la concurrence municipale est refusée?</li>
+    <li><strong>Autorisation de zonage :</strong> La zone P-15 du Règlement de zonage 148-2023 ne permet que R1 — Parc et espace vert. Quelle autorisation de zonage permet un pylône de télécommunications de 36 mètres sur ce site? Un processus de rezonage ou d'usage conditionnel a-t-il été initié?</li>
+    <li><strong>Hauteur de la tour :</strong> Le DG Leduc a décrit la tour le 2 mars comme « une trentaine de mètres ». Le plan d'ingénierie E3640 de Bell précise 36 mètres. Quelle est la hauteur précise et définitive de la structure?</li>
+    <li><strong>Ajouts futurs d'équipement :</strong> Le projet prévoit 18 antennes. Des antennes ou équipements supplémentaires pourront-ils être ajoutés à la structure pendant la durée du bail sans déclencher une nouvelle consultation publique?</li>
+    <li><strong>Impact environnemental :</strong> Le site proposé est un lot boisé de parc. Une évaluation de l'impact d'une installation permanente sur l'habitat boisé, les populations d'oiseaux ou les pollinisateurs sur le site ou à proximité a-t-elle été réalisée? Sinon, pourquoi pas?</li>
+    <li><strong>Partage de la tour :</strong> Cette structure sera-t-elle rendue disponible pour d'autres opérateurs? Dans l'affirmative, quelles sont les implications pour les niveaux globaux de RF sur le site?</li>
+    <li><strong>Dossier écrit :</strong> La date limite des commentaires de Bell est le 19 juin — neuf jours après cette séance. Bell s'engage-t-elle à fournir des réponses écrites à toutes les questions soulevées ce soir avant cette date limite, afin que les résidents puissent les examiner et soumettre des commentaires en réponse éclairés?</li>
+  </ul>
+
+  <h3>Questions hors de la portée de la CPC-2-0-03 <span class="badge badge-no">Hors portée</span></h3>
+
+  <p>Les éléments suivants sont explicitement identifiés dans la CPC-2-0-03 comme des préoccupations qui ne sont <strong>pas raisonnables ou pertinentes</strong> aux fins de ce processus. Bell n'est pas tenue de les traiter, et les soulever peut diluer votre crédibilité sur les questions qui comptent.</p>
+
+  <ul class="question-list blocked">
+    <li><strong>Valeurs foncières ou taxes municipales :</strong> La CPC-2-0-03 exclut explicitement les « effets potentiels qu'un système d'antennes proposé aura sur les valeurs foncières ou les taxes municipales ». C'est l'une des préoccupations les plus fréquemment soulevées, et elle est explicitement hors portée. Réservez-la pour les urnes.</li>
+    <li><strong>Griefs généraux envers le service Bell :</strong> Les litiges de facturation, les appels interrompus ailleurs, les plaintes de service à la clientèle et l'insatisfaction générale envers Bell ne sont pas pertinents pour cette installation d'antennes.</li>
+    <li><strong>Contestation de la législation elle-même :</strong> Les questions sur la validité de la Loi sur la radiocommunication, de la CPC-2-0-03, du Code de sécurité 6 ou d'autres lois sont hors portée. Bell n'a pas à s'engager dans ces arguments.</li>
+    <li><strong>Craintes sanitaires vagues ou non spécifiques :</strong> Les déclarations générales que « la 5G est dangereuse » sans lien spécifique avec les calculs d'exposition RF, les données propres au site ou le cadre du Code de sécurité 6 seront probablement rejetées comme non raisonnables ou non pertinentes. Fondez les préoccupations sanitaires sur des données spécifiques à cette installation.</li>
+    <li><strong>Motifs commerciaux ou conduite corporative de Bell :</strong> Les raisons pour lesquelles Bell a besoin de plus de couverture, les taxes que Bell paie ou la conduite corporative générale de Bell ne sont pas pertinentes à cette proposition d'antennes.</li>
+    <li><strong>Comparaisons avec d'autres municipalités :</strong> Les arguments selon lesquels Bell devrait installer la tour ailleurs, dans une autre ville, ne sont pas pertinents à la proposition spécifique sur la table.</li>
+  </ul>
+
+  <!-- PARTIE 5 -->
+  <h2>Cinquième partie : Comment se préparer pour mercredi — et quoi faire après</h2>
+
+  <h3>Avant la séance</h3>
+  <p>Lisez la trousse de notification de Bell si vous en avez reçu une. Elle identifie le numéro de projet (E3640), le contact du promoteur et la portée de la proposition. Consultez les reportages précédents de l'Observer sur la question de zonage et la discordance des numéros de lot — ce sont des irrégularités spécifiques et documentées qui méritent des réponses spécifiques et documentées.</p>
+
+  <p>Notez vos questions par écrit. Apportez-les sur papier. Une question lue sur une page est une question que vous n'oublierez pas dans le feu de l'action. Si vous voulez une réponse que Bell est légalement obligée de donner, formulez-la en termes de l'installation, du site et des exigences de la CPC-2-0-03.</p>
+
+  <h3>Lors de la séance</h3>
+  <p>Présentez-vous et donnez votre nom pour le dossier. Posez vos questions clairement, une à la fois. Si le représentant ne peut pas répondre dans la salle, demandez-lui de confirmer par écrit quand il répondra. Prenez des notes. Si d'autres résidents soulèvent des points avec lesquels vous êtes d'accord, vous pouvez le noter dans votre soumission écrite par la suite — cela renforce le dossier.</p>
+
+  <h3>Après la séance — L'étape la plus importante</h3>
+  <p>La séance en elle-même ne protège pas vos intérêts. Ce qui protège vos intérêts, c'est de soumettre vos préoccupations <strong>par écrit avant le 19 juin 2026</strong> à :</p>
+
+  <div class="fact-box">
+    <h4>Soumission de commentaires écrits à Bell</h4>
+    <ul>
+      <li><strong>Courriel :</strong> <a href="mailto:bell_E3640@cpc-consultation.ca">bell_E3640@cpc-consultation.ca</a></li>
+      <li><strong>Référence :</strong> Projet E3640 Ormstown</li>
+      <li><strong>Date limite :</strong> 19 juin 2026</li>
+    </ul>
+    <p style="margin-top:0.75rem;">Une fois votre commentaire écrit déposé, Bell doit répondre dans les 60 jours en traitant vos préoccupations spécifiques ou en expliquant par écrit pourquoi elle les considère déraisonnables ou non pertinentes. Vous disposez ensuite de 21 jours pour répondre à cette réponse. Si vos préoccupations restent non résolues, vous pouvez contacter directement le bureau local d'ISDE pour signaler l'insuffisance de la consultation.</p>
+  </div>
+
+  <h3>Escalade : Contacter ISDE directement</h3>
+  <p>Si vous estimez que le processus de consultation n'est pas mené de bonne foi — ou si les réponses de Bell aux préoccupations écrites sont insuffisantes — vous avez le droit de contacter ISDE directement. ISDE peut demander des dossiers à toute partie, donner des directives aux parties ou déterminer qu'une consultation supplémentaire est nécessaire avant que le projet puisse aller de l'avant. Le bureau de district d'ISDE à Montréal est le contact pertinent pour les projets dans la région de la Montérégie.</p>
+
+  <h3>Pour en savoir plus</h3>
+
+  <div class="fact-box">
+    <h4>Documents et ressources clés</h4>
+    <ul>
+      <li><a href="https://ised-isde.canada.ca/site/spectrum-management-telecommunications/sites/default/files/attachments/2022/CPC-2-0-03-i6-2022-07EN.pdf" target="_blank">CPC-2-0-03, édition 6 (juillet 2022) — Texte intégral, ISDE</a></li>
+      <li><a href="https://www.canada.ca/fr/sante-canada/services/rayonnement/securite-publique-rayonnement-electromagn%C3%A9tique/code-securite-6-limites-exposition-radiofrequences.html" target="_blank">Code de sécurité 6 — Santé Canada</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf" target="_blank">Procès-verbal du conseil, 2 mars 2026 (Résolution 26-03-074, p. 54) — Ormstown.ca</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/1-ORM_R148-2023_Zonage_AnnexeB_Grilles.pdf" target="_blank">Grille des usages, Annexe B — Règlement 148-2023 — Ormstown.ca</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_AnnexeA_F2-PerimetreUrbain.pdf" target="_blank">Plan de zonage, Feuillet 2 — Règlement 148-2023 — Ormstown.ca</a></li>
+      <li><a href="/fr/bell-tower/">Observer : Enquête complète — Une tour de 36 mètres est proposée sur un terrain municipal d'Ormstown</a></li>
+      <li><a href="https://www.youtube.com/watch?v=1fzDFGkjNRc" target="_blank">Séance du conseil du 2 mars 2026 — Enregistrement YouTube</a></li>
+    </ul>
+  </div>
+
+  <p>L'Observer sera présent lors de la séance du 10 juin. Nous rapporterons ce qui a été dit, ce à quoi on n'a pas répondu, et ce qui se passera ensuite. Si vous avez des questions ou des informations à partager d'ici là, contactez-nous à <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>.</p>
+
+  <p>Présentez-vous. Prenez des notes. Soumettez par écrit. C'est le dossier qui compte.</p>
+
+  <div class="article-footer">
+    <strong>L'Ormstown Observer</strong> est une publication indépendante de surveillance civique couvrant Ormstown et la région du Haut-Saint-Laurent. Nous n'acceptons aucune publicité.<br><br>
+    Questions, conseils, corrections : <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <strong>L'Ormstown Observer</strong> est une publication indépendante de surveillance civique couvrant Ormstown et la région du Haut-Saint-Laurent.<br>
+  Nous n'acceptons aucune publicité.<br><br>
+  Questions, conseils, corrections : <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
+</footer>
+
+</body>
+</html>

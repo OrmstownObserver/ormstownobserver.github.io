@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Ormstown Observer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #444;
+    --accent: #b5161b;
+    --accent-light: #f5e8e8;
+    --paper: #faf8f4;
+    --paper-dark: #f0ece4;
+    --rule: #c8b97a;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accent); }
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 20px 40px 16px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 6px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 6vw, 60px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); }
+  .masthead-tagline { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-light); margin-top: 8px; font-style: italic; }
+  .masthead-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--ink); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-light); }
+  .lang-switcher { display: flex; justify-content: center; gap: 0; border-bottom: 2px solid var(--ink); background: var(--paper-dark); }
+  .lang-switcher a { display: inline-block; padding: 8px 22px; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; color: var(--ink-light); text-decoration: none; border-right: 1px solid #d4c9b8; transition: background .15s; }
+  .lang-switcher a:last-child { border-right: none; }
+  .lang-switcher a.active { background: var(--accent); color: #fff; }
+  .lang-switcher a:not(.active):hover { background: #e8e2d4; color: var(--ink); }
+  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+  .section-rule { display: flex; align-items: center; gap: 14px; margin: 40px 0 24px; }
+  .section-rule-label { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-light); white-space: nowrap; flex-shrink: 0; }
+  .section-rule-line { flex: 1; height: 1px; background: var(--ink); }
+  .lead-story { border-bottom: 2px solid var(--ink); padding: 36px 0 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .lead-story-label { display: inline-block; background: var(--accent); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 16px; }
+  .lead-headline { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(24px, 3.5vw, 40px); font-weight: 900; line-height: 1.1; color: var(--ink); margin-bottom: 14px; }
+  .lead-headline em { font-style: italic; color: var(--accent); }
+  .lead-deck { font-size: 16px; font-weight: 300; line-height: 1.6; color: var(--ink-light); font-style: italic; border-left: 3px solid var(--accent); padding-left: 14px; margin-bottom: 18px; }
+  .lead-byline { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 20px; }
+  .lead-byline strong { color: var(--ink); }
+  .lead-lede { font-size: 16px; line-height: 1.72; color: var(--ink); }
+  .read-more { display: inline-block; margin-top: 16px; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+  .read-more:hover { color: var(--ink); border-color: var(--ink); }
+  .lead-visual { padding-top: 4px; }
+  .lead-visual-inner { background: var(--paper-dark); border: 1px solid #d4c9b8; border-top: 4px solid var(--accent); padding: 24px; }
+  .lead-visual-kicker { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 16px; border-bottom: 1px solid #d4c9b8; padding-bottom: 10px; }
+  .lead-visual-item { padding: 12px 0; border-bottom: 1px solid #d4c9b8; font-size: 14px; line-height: 1.5; }
+  .lead-visual-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .lead-visual-item strong { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 3px; }
+  .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; padding: 8px 0 32px; }
+  .story-card { border-top: 2px solid var(--ink); padding-top: 16px; }
+  .story-card-label { display: inline-block; background: var(--paper-dark); color: var(--ink-light); font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; padding: 3px 8px; margin-bottom: 12px; border: 1px solid #d4c9b8; }
+  .story-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; color: var(--ink); }
+  .story-card h3 em { font-style: italic; color: var(--accent); }
+  .story-card p { font-size: 14.5px; line-height: 1.65; color: var(--ink-light); margin-bottom: 12px; }
+  .story-card .card-byline { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 12px; }
+  .placeholder-card { border-top: 2px solid #d4c9b8; padding-top: 16px; opacity: 0.45; }
+  .placeholder-card .ph-label { font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 10px; font-style: italic; }
+  .placeholder-card .ph-line { height: 14px; background: #d4c9b8; border-radius: 2px; margin-bottom: 8px; }
+  .placeholder-card .ph-line.short { width: 60%; }
+  .placeholder-card .ph-line.med { width: 80%; }
+  .notice-bar { background: var(--accent); color: #fff; text-align: center; padding: 10px 24px; font-size: 13px; letter-spacing: .05em; }
+  .notice-bar strong { font-weight: 700; }
+  .notice-bar a { color: #fff; text-decoration: underline; }
+  .site-footer { border-top: 3px double var(--ink); margin-top: 60px; padding: 28px 24px; text-align: center; font-size: 12px; letter-spacing: .08em; color: var(--ink-light); line-height: 2; }
+  .site-footer a { color: var(--accent); }
+  @media (max-width: 680px) {
+    .lead-story { grid-template-columns: 1fr; }
+    .lead-visual { display: none; }
+    .masthead { padding: 16px 20px 12px; }
+    .masthead-meta { flex-direction: column; gap: 4px; text-align: center; }
+    .page-wrap { padding: 0 16px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="notice-bar">
+  <strong>Mercredi 10 juin · 18h · 5 rue Gale</strong> — Séance d'information de Bell Mobilité sur la tour proposée de 36 mètres. <a href="/fr/bell-tower-explainer/">Lisez ce qu'il faut savoir avant d'y aller →</a>
+</div>
+
+<header class="masthead">
+  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+  <div class="masthead-name">L'Ormstown Observer</div>
+  <div class="masthead-tagline">Vigilance civique · Journalisme indépendant</div>
+  <div class="masthead-meta">
+    <span>Vol. 2026</span>
+    <span>Lundi 8 juin 2026</span>
+    <span>Ormstown, Québec</span>
+  </div>
+</header>
+
+<nav class="lang-switcher">
+  <a href="/en/">EN — English</a>
+  <a href="/fr/" class="active">FR — Français</a>
+</nav>
+
+<div class="page-wrap">
+
+  <div class="section-rule">
+    <span class="section-rule-label">À la une</span>
+    <span class="section-rule-line"></span>
+  </div>
+
+  <article class="lead-story">
+    <div class="lead-story-left">
+      <span class="lead-story-label">Enquête</span>
+      <h2 class="lead-headline">
+        Une tour de 36 mètres est proposée sur un terrain municipal d'Ormstown.<br>
+        <em>Voici tout ce que vous devez savoir.</em>
+      </h2>
+      <p class="lead-deck">Le projet de Bell Mobilité d'installer un pylône monopole de 36 mètres sur un terrain municipal a franchi les étapes d'un vote au conseil, d'un bail signé et d'un processus fédéral de consultation — sans que la population en soit pratiquement informée.</p>
+      <div class="lead-byline">Par <strong>L'Ormstown Observer</strong> &nbsp;·&nbsp; 8 juin 2026</div>
+      <p class="lead-lede">À un moment donné en 2025 ou au début 2026, Bell Mobilité a identifié un terrain municipal boisé près de la route 138 comme emplacement proposé pour une nouvelle tour de télécommunications. Le terrain appartient à la municipalité d'Ormstown — et donc à ses quelque 4 300 résidents. La majorité de ces résidents ne savait pas que ce projet existait. L'Observer a examiné tous les documents disponibles. Voici ce que le dossier révèle.</p>
+      <a class="read-more" href="/fr/bell-tower/">Lire l'enquête complète →</a>
+    </div>
+
+    <div class="lead-visual">
+      <div class="lead-visual-inner">
+        <div class="lead-visual-kicker">Le projet en bref · E3640 Ormstown</div>
+        <div class="lead-visual-item"><strong>Structure</strong>Pylône monopole de 36 m · 18 antennes · enceinte clôturée</div>
+        <div class="lead-visual-item"><strong>Site proposé</strong>Terrain municipal zoné parc, près de la route 138 (Lot 6 065 483)</div>
+        <div class="lead-visual-item"><strong>Bail signé</strong>2 mars 2026 — avant la consultation publique</div>
+        <div class="lead-visual-item"><strong>Loyer annuel</strong>10 000 $/an · terme de 5 ans + six renouvellements</div>
+        <div class="lead-visual-item"><strong>Séance d'information</strong>10 juin 2026 · 18h · 5, rue Gale</div>
+        <div class="lead-visual-item"><strong>Date limite commentaires écrits</strong>19 juin 2026 · <a href="mailto:bell_E3640@cpc-consultation.ca" style="color:var(--accent);">bell_E3640@cpc-consultation.ca</a></div>
+      </div>
+    </div>
+  </article>
+
+  <div class="section-rule">
+    <span class="section-rule-label">Également dans cette édition</span>
+    <span class="section-rule-line"></span>
+  </div>
+
+  <div class="stories-grid">
+    <article class="story-card">
+      <span class="story-card-label">Guide · Processus</span>
+      <h3><em>Avant d'entrer dans cette salle mercredi, lisez ceci.</em></h3>
+      <p class="card-byline">L'Ormstown Observer · 8 juin 2026</p>
+      <p>Comment fonctionnent les tours cellulaires, ce que dit réellement la recherche sur la 5G, un tour complet du processus fédéral CPC-2-0-03, et exactement ce que vous pouvez et ne pouvez pas demander à la séance du 10 juin.</p>
+      <a class="read-more" href="/fr/bell-tower-explainer/">Lire le guide →</a>
+    </article>
+
+    <div class="placeholder-card">
+      <div class="ph-label">Communauté · À venir</div>
+      <div class="ph-line med"></div>
+      <div class="ph-line short"></div>
+      <div class="ph-line med"></div>
+    </div>
+
+    <div class="placeholder-card">
+      <div class="ph-label">Affaires municipales · À venir</div>
+      <div class="ph-line med"></div>
+      <div class="ph-line short"></div>
+      <div class="ph-line med"></div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <strong>L'Ormstown Observer</strong> est une publication indépendante de surveillance civique couvrant Ormstown et la région du Haut-Saint-Laurent.<br>
+  Nous n'acceptons aucune publicité.<br><br>
+  Questions, conseils, corrections : <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
+</footer>
+
+</body>
+</html>
