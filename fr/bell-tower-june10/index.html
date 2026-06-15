@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Séance d'information Bell : ce qui a été dit | L'Ormstown Observer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1a1a1a;--ink-light:#444;--accent:#b5161b;--accent-bg:#f9efef;--paper:#faf8f4;--paper-dark:#f0ece4;--rule:#c8b97a;--callout:#1a3a5c;--callout-bg:#eef3f8;--warning:#7a4800;--warning-bg:#fff8ee;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;font-size:18px;line-height:1.75;}
+  a{color:var(--accent);}a:hover{text-decoration:none;}
+  .masthead{border-top:5px solid var(--ink);border-bottom:3px double var(--ink);padding:20px 40px 16px;text-align:center;}
+  .masthead-flag{font-family:'Playfair Display',Georgia,serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--ink-light);margin-bottom:6px;}
+  .masthead-name{font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,5vw,52px);font-weight:900;letter-spacing:.04em;line-height:1;}
+  .masthead-tagline{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-light);margin-top:8px;font-style:italic;}
+  .lang-switcher{display:flex;justify-content:center;border-bottom:2px solid var(--ink);background:var(--paper-dark);}
+  .lang-switcher a{display:inline-block;padding:8px 22px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-family:'Playfair Display',Georgia,serif;font-weight:700;color:var(--ink-light);text-decoration:none;border-right:1px solid #d4c9b8;}
+  .lang-switcher a.active{background:var(--accent);color:#fff;}
+  .lang-switcher a:last-child{border-right:none;}
+  .article-wrap{max-width:740px;margin:0 auto;padding:2.5rem 1.5rem 4rem;}
+  .dateline{font-family:'Playfair Display',Georgia,serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-light);border-top:2px solid var(--ink);border-bottom:1px solid var(--rule);padding:.5rem 0;margin-bottom:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;}
+  .story-label{display:inline-block;background:var(--accent);color:#fff;font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;padding:.25rem .7rem;margin-bottom:1rem;}
+  h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:900;line-height:1.12;margin-bottom:.75rem;}
+  .deck{font-size:1.1rem;font-style:italic;color:var(--ink-light);border-left:3px solid var(--accent);padding-left:1rem;margin-bottom:1.75rem;line-height:1.6;}
+  .video-wrap{background:#000;margin:1rem 0 .4rem;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border:2px solid var(--ink);}
+  .video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
+  .video-caption{font-family:'Playfair Display',Georgia,serif;font-size:.78rem;color:var(--ink-light);font-style:italic;margin-bottom:1.75rem;}
+  h2{font-family:'Playfair Display',Georgia,serif;font-size:1.45rem;font-weight:700;margin:2.25rem 0 .65rem;border-bottom:1px solid var(--rule);padding-bottom:.35rem;}
+  h3{font-family:'Playfair Display',Georgia,serif;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:1.5rem 0 .4rem;}
+  p{margin-bottom:1.1rem;}
+  .callout{border-left:4px solid var(--callout);background:var(--callout-bg);padding:1rem 1.3rem;margin:1.5rem 0;border-radius:0 3px 3px 0;}
+  .callout-title{font-family:'Playfair Display',Georgia,serif;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--callout);margin-bottom:.5rem;}
+  .callout p{margin-bottom:.5rem;font-size:.93rem;}.callout p:last-child{margin-bottom:0;}
+  .callout-warning{border-left-color:var(--warning);background:var(--warning-bg);}
+  .callout-warning .callout-title{color:var(--warning);}
+  .callout-action{border-left-color:var(--accent);background:var(--accent-bg);}
+  .callout-action .callout-title{color:var(--accent);}
+  .fact-box{border:2px solid var(--ink);padding:1.2rem 1.4rem;margin:1.75rem 0;}
+  .fact-box-title{font-family:'Playfair Display',Georgia,serif;font-size:.95rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--rule);padding-bottom:.4rem;margin-bottom:.8rem;}
+  .fact-box ul{padding-left:1.3rem;}.fact-box li{margin-bottom:.5rem;font-size:.93rem;}
+  .process-steps{list-style:none;padding:0;margin:.75rem 0 1.5rem;}
+  .process-steps li{display:flex;gap:1rem;padding:.7rem 0;border-bottom:1px solid #e8e2d4;font-size:.93rem;}
+  .process-steps li:last-child{border-bottom:none;}
+  .step-num{font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:900;color:var(--accent);line-height:1;flex-shrink:0;width:1.8rem;text-align:center;padding-top:.1rem;}
+  .step-body strong{display:block;font-family:'Playfair Display',Georgia,serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-light);margin-bottom:.15rem;}
+  .qa-table{width:100%;border-collapse:collapse;margin:1rem 0 1.75rem;font-size:.9rem;}
+  .qa-table th{font-family:'Playfair Display',Georgia,serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:#fff;padding:.5rem .8rem;text-align:left;}
+  .qa-table td{padding:.65rem .8rem;border-bottom:1px solid #e8e2d4;vertical-align:top;}
+  .qa-table tr:nth-child(even) td{background:rgba(0,0,0,.025);}
+  .qa-table .q-col{font-style:italic;color:var(--ink-light);width:38%;}
+  .q-list{list-style:none;padding:0;}
+  .q-list li{padding:.6rem 0 .6rem 1.4rem;border-bottom:1px solid #e8e2d4;font-size:.93rem;position:relative;}
+  .q-list li::before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700;}
+  .editors-note{font-family:'Playfair Display',Georgia,serif;font-size:.8rem;color:var(--ink-light);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:.8rem 0;margin:1.75rem 0;line-height:1.6;}
+  .divider{border:none;border-top:3px double var(--rule);margin:2.5rem 0;}
+  .back-link{display:inline-block;font-family:'Playfair Display',Georgia,serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);border-bottom:1px solid var(--accent);padding-bottom:2px;margin-bottom:1.5rem;}
+  .article-footer{font-family:'Playfair Display',Georgia,serif;font-size:.75rem;color:var(--ink-light);text-align:center;border-top:3px double var(--ink);padding-top:1.2rem;margin-top:2.5rem;line-height:2;}
+  @media(max-width:600px){body{font-size:16px;}.article-wrap{padding:1.25rem 1rem 3rem;}.qa-table .q-col{width:32%;}}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+  <div class="masthead-name">L'Ormstown Observer</div>
+  <div class="masthead-tagline">Vigilance civique · Journalisme indépendant</div>
+</header>
+
+<nav class="lang-switcher">
+  <a href="/en/bell-tower-june10/">EN — English</a>
+  <a href="/fr/bell-tower-june10/" class="active">FR — Français</a>
+</nav>
+
+<main class="article-wrap">
+
+  <a class="back-link" href="/fr/">← Retour à l'Observer</a>
+
+  <div class="dateline">
+    <span>L'Ormstown Observer</span>
+    <span>15 juin 2026</span>
+    <span>Enquête — Tour Bell</span>
+  </div>
+
+  <span class="story-label">Compte rendu · Séance d'information</span>
+
+  <h1>Séance d'information Bell : ce qui a été dit, ce qui ne l'a pas été, et ce qui vient ensuite</h1>
+  <p class="deck">Le 10 juin, une vingtaine de résidents se sont réunis au 5 rue Gale pour entendre la présentation de Bell sur la tour cellulaire de 36 mètres proposée. L'Observer était présent et a enregistré l'intégralité de la séance. Voici ce qui a été dit — et ce que le processus fédéral exige de vous avant le 19 juin.</p>
+
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/7I9LPNlw6tw" allowfullscreen title="Séance d'information Bell — Ormstown, 10 juin 2026"></iframe>
+  </div>
+  <p class="video-caption">Enregistrement complet de la séance d'information du 10 juin 2026, 5 rue Gale, Ormstown. Enregistré par l'Ormstown Observer.</p>
+
+  <div class="editors-note">
+    <strong>Note de la rédaction :</strong> Cet article fait suite à notre <a href="/fr/bell-tower/">enquête du 7 juin</a> sur la tour Bell Mobilité 5G proposée sur le lot 6 065 483 (Zone P-15). L'identification des intervenants est basée sur les notes de l'Observer. Les représentants de Bell présents étaient Robert Minotti (consultant, 30+ ans dans l'industrie) et Chantal Desjardins (Bell). Le directeur général Daniel Leduc a également pris la parole. Toutes les affirmations sont tirées de la transcription enregistrée. La version anglaise est disponible <a href="/en/bell-tower-june10/">ici</a>.
+  </div>
+
+  <h2>Contexte</h2>
+  <p>Bell Mobilité propose l'installation d'un monopôle cellulaire de 36 mètres sur le lot municipal 6 065 483, à l'angle des rues Isabelle, Linda et de la route 138, dans le périmètre urbain d'Ormstown. Le site est actuellement zoné P-15 — Parc et espace vert — selon le Règlement 148-2023. Le loyer annuel proposé, divulgué lors du conseil du 2 mars, est de 10 000 $ par année. Comme l'Observer l'a <a href="/fr/bell-tower/">rapporté le 7 juin</a>, le projet soulève des préoccupations documentées sur le zonage, le rôle de la municipalité, la zone inondable et la transparence du processus.</p>
+
+  <div class="callout">
+    <div class="callout-title">📋 Faits clés confirmés lors de la séance</div>
+    <p><strong>Numéro de lot :</strong> 6 065 483 — confirmé par le consultant de Bell. Les avis municipaux citaient incorrectement le 6 065 438.</p>
+    <p><strong>Tour :</strong> Monopôle de 36 m. Technologie : 5G et LTE (4G). Bell et Telus partageront la tour.</p>
+    <p><strong>Bail :</strong> Au 10 juin, <strong>aucun bail n'a été signé</strong> et aucune résolution municipale n'a été adoptée.</p>
+    <p><strong>Vote du conseil :</strong> Résolution prévue lors de la séance du 6 juillet.</p>
+    <p><strong>Date limite de commentaires écrits : 19 juin 2026.</strong></p>
+  </div>
+
+  <h2>Ce que Bell a présenté</h2>
+
+  <h3>Pourquoi une nouvelle tour ?</h3>
+  <p>Le représentant de Bell a expliqué qu'Ormstown a actuellement une couverture cellulaire marginale à médiocre. L'abandon des lignes fixes met une pression croissante sur les réseaux cellulaires, et la couverture à l'intérieur des bâtiments est une préoccupation grandissante, notamment pour les appels d'urgence. Des cartes de couverture ont été présentées; Bell a reconnu qu'une seule tour est rarement suffisante pour couvrir toute une municipalité et que les estimations de couverture sont indicatives.</p>
+
+  <h3>Pourquoi ce site ?</h3>
+  <p>Bell affirme avoir évalué le château d'eau et trois ou quatre terrains municipaux. Le château d'eau a été écarté après un rapport d'ingénierie de la firme IGACA concluant qu'il ne pouvait pas supporter les équipements d'antenne. Les autres terrains municipaux se trouvaient en dehors de la zone optimale. Des propriétés privées ont aussi été approchées; Bell a refusé de nommer les propriétaires, invoquant la vie privée. Le lot 6 065 483 a été décrit comme le mieux positionné dans la zone de recherche et l'un des rares terrains avec peu d'arbres.</p>
+
+  <h3>Zonage : la primauté fédérale</h3>
+  <p>Quand un résident a soulevé la question du zonage — P-15 autorise uniquement les parcs — le consultant de Bell a confirmé que la loi fédérale a préséance : <em>« La juridiction fédérale a préséance sur toutes les lois ou réglementations municipales ou provinciales. »</em> La municipalité n'a amorcé aucun processus de rezonage.</p>
+
+  <div class="callout callout-warning">
+    <div class="callout-title">⚠️ Ce que cela signifie pour les espaces verts</div>
+    <p>La zone P-15 du Règlement 148-2023 n'autorise que les usages R1 — parcs et espaces verts. Une tour de télécommunications n'est pas un usage autorisé. Bell soutient que la juridiction fédérale l'emporte sur cette restriction. La municipalité n'a amorcé aucun rezonage.</p>
+  </div>
+
+  <h3>Zone inondable</h3>
+  <p>Au moins deux résidents ont soulevé la question des inondations. Bell et le DG ont affirmé que le site avait été vérifié et confirmé hors zone inondable, sans citer de documents cartographiques spécifiques. Comme l'Observer l'a rapporté avant la séance, la cartographie officielle de la MRC HSL (Règlement 291-1-2017, Figures 10-9 et 10-18) couvre la rivière Châteauguay à travers le périmètre urbain avec un marqueur d'érosion au croisement de la route 138. La MRC peut être jointe au <strong>450-264-5411</strong> pour confirmer la classification du lot 6 065 483.</p>
+
+  <h3>Santé et environnement</h3>
+  <p>Bell a cité le Code de sécurité 6 de Santé Canada comme l'un des standards les plus rigoureux. Le représentant technique a souligné qu'un téléphone cherchant un signal en zone de faible couverture émet davantage de rayonnement qu'un appareil avec un signal fort. Une résidente a soulevé des recherches européennes sur les effets du 5G sur les pollinisateurs; Bell a répondu que les normes de Santé Canada n'en font pas mention. Une étude environnementale de Phase 1 sera réalisée avant la construction.</p>
+
+  <h3>Bruit</h3>
+  <p>La tour ne produit aucun son. Le seul bruit provient du système de climatisation de l'abri-équipement — comparable à un climatiseur de fenêtre résidentiel.</p>
+
+  <h3>Loyer</h3>
+  <p>Lorsque l'Observer a soulevé le chiffre de 10 000 $/an — divulgué lors du conseil du 2 mars — le représentant de Bell a indiqué que ce montant est confidentiel et n'aurait pas dû être rendu public : <em>« Vous ne devriez pas avoir ce chiffre, car c'est confidentiel. »</em> Les comparables du marché canadien suggèrent des loyers de 20 000 $ à 40 000 $ par année pour ce type d'infrastructure.</p>
+
+  <h2>Comment fonctionne le processus fédéral</h2>
+
+  <div class="fact-box">
+    <div class="fact-box-title">CPC-2-0-03 — Règles fédérales de consultation sur les antennes</div>
+    <ul>
+      <li>Les infrastructures de télécommunication fédérales sont réglementées par <a href="https://www.canada.ca/fr/radio-television-telecommunications/nouvelles/2022/07/systemes-d-antennes-de-radiocommunication-et-de-radiodiffusion-circulaire-de-procedures-pour-les-clients.html" target="_blank">ISDE Canada</a> en vertu de la <strong>Circulaire CPC-2-0-03</strong>.</li>
+      <li>Bell doit consulter la municipalité à titre d'<strong>autorité locale (AL)</strong>. La municipalité doit émettre une concurrence écrite avant toute construction.</li>
+      <li>Bell doit documenter l'évaluation des <strong>structures existantes</strong> avant de proposer une nouvelle tour.</li>
+      <li>Une <strong>notification publique</strong> doit être envoyée aux propriétaires dans un rayon de trois fois la hauteur (108 m) et un avis publié dans un journal local.</li>
+      <li>Une séance d'information publique comme celle du 10 juin n'est <strong>pas exigée</strong> par la loi fédérale — c'est la municipalité qui en a fait la demande.</li>
+      <li>Les <strong>commentaires écrits</strong> soumis avant la date limite sont formellement documentés. Bell est légalement tenu de répondre par écrit. Vous disposez ensuite de 21 jours pour poser des questions de suivi sur de nouveaux points.</li>
+      <li>Toutes les questions, réponses et préoccupations sont soumises à ISDE avec le dossier de Bell pour révision avant toute autorisation.</li>
+    </ul>
+  </div>
+
+  <p>Le consultant de Bell a été direct : <em>« Vos questions seront documentées et, si elles sont pertinentes, elles auront une réponse. »</em> Il a confirmé que des questions citoyennes ont déjà entraîné des modifications ou l'arrêt de projets.</p>
+
+  <h2>Ce qui vient ensuite</h2>
+
+  <ol class="process-steps">
+    <li><span class="step-num">1</span>
+      <div class="step-body"><strong>19 juin 2026 — Date limite de commentaires écrits</strong>
+      Envoyez vos questions à <a href="mailto:bell_E3640@cpc-consultation.ca">bell_E3640@cpc-consultation.ca</a>. Dernier jour où Bell est tenu d'accepter de nouvelles questions.</div>
+    </li>
+    <li><span class="step-num">2</span>
+      <div class="step-body"><strong>Dans les 60 jours — Bell répond par écrit</strong>
+      Bell doit répondre à toutes les questions soumises. Vous disposez ensuite de 21 jours pour des questions de suivi sur de nouveaux points.</div>
+    </li>
+    <li><span class="step-num">3</span>
+      <div class="step-body"><strong>6 juillet 2026 — Vote du conseil municipal (prévu)</strong>
+      Le conseil devrait voter une résolution finale autorisant le projet. Les six conseillers et conseillères étaient présents à la séance du 10 juin.</div>
+    </li>
+    <li><span class="step-num">4</span>
+      <div class="step-body"><strong>Après la résolution — Révision ISDE et permis</strong>
+      Bell soumet son dossier à ISDE pour approbation, puis procède à la construction. Objectif : mise en service d'ici 2027.</div>
+    </li>
+  </ol>
+
+  <div class="callout callout-action">
+    <div class="callout-title">📬 Date limite : 19 juin — Comment soumettre vos questions</div>
+    <p>Envoyez un courriel à <a href="mailto:bell_E3640@cpc-consultation.ca">bell_E3640@cpc-consultation.ca</a> avant le 19 juin 2026. Tout résident peut soumettre des questions. Bell est légalement tenu d'y répondre par écrit. Questions à considérer :</p>
+    <ul class="q-list">
+      <li>Pourquoi un site zoné P-15 (parc et espace vert) a-t-il été retenu, alors qu'une tour n'est pas un usage autorisé selon le Règlement 148-2023 ?</li>
+      <li>Pouvez-vous fournir le rapport d'ingénierie complet de la firme IGACA sur le château d'eau ?</li>
+      <li>Quelles autres structures existantes ont été évaluées et pourquoi ont-elles été écartées ? Cette analyse peut-elle être fournie par écrit ?</li>
+      <li>Pouvez-vous fournir l'évaluation de la zone inondable pour le lot 6 065 483, incluant la source cartographique et la date ?</li>
+      <li>Une étude environnementale formelle sera-t-elle réalisée avant la construction ? Par qui et selon quelles normes ?</li>
+      <li>Quelle est la portée projetée du signal pour cette tour, et qui a réalisé la modélisation de couverture ?</li>
+      <li>La municipalité a-t-elle formellement émis sa concurrence écrite à titre d'autorité locale sous CPC-2-0-03 ?</li>
+      <li>Quelles dispositions de confidentialité s'appliquent au bail, et sont-elles compatibles avec les obligations de transparence de la municipalité ?</li>
+      <li>Un rapport formel de sélection de site a-t-il été produit ? Si oui, peut-il être fourni aux résidents ?</li>
+    </ul>
+    <p style="margin-top:.9rem;"><strong>Vous pouvez également assister à la séance du conseil du 6 juillet</strong> pour observer ou intervenir lors de la période de questions du public.</p>
+  </div>
+
+  <h2>Notes de l'Observer sur la séance</h2>
+  <p>Une vingtaine de résidents étaient présents. Les questions ont porté sur le zonage, les inondations, la santé, l'environnement, la sélection du site et le rôle de la municipalité. La séance a duré environ une heure.</p>
+
+  <table class="qa-table">
+    <thead><tr><th>Question posée</th><th>Réponse donnée</th></tr></thead>
+    <tbody>
+      <tr><td class="q-col">La municipalité était-elle neutre ou co-promoteur du projet ?</td><td>Bell a rejeté la caractérisation de co-promoteur, affirmant que la municipalité et Bell partagent le même objectif : de meilleurs services pour les résidents. Il a remercié la municipalité pour sa collaboration.</td></tr>
+      <tr><td class="q-col">D'autres fournisseurs peuvent-ils s'installer sur cette tour ?</td><td>Oui — à 36 m, un colocataire supplémentaire est possible. Rogers ou un autre opérateur pourrait théoriquement s'y installer.</td></tr>
+      <tr><td class="q-col">Le montant du loyer est-il public ?</td><td>Bell a affirmé que le loyer est couvert par une clause de confidentialité et n'aurait pas dû être divulgué lors du conseil du 2 mars.</td></tr>
+      <tr><td class="q-col">Le bail a-t-il été signé ?</td><td>Non. Bell et la municipalité ont tous deux confirmé : aucun bail signé, aucune résolution municipale en vigueur.</td></tr>
+      <tr><td class="q-col">Le site est-il en zone inondable ?</td><td>Bell et la municipalité ont dit non, sans citer de documents cartographiques spécifiques. Bell a noté que les abris-équipements peuvent être surélevés.</td></tr>
+      <tr><td class="q-col">Des questions citoyennes ont-elles déjà arrêté un projet ?</td><td>Le consultant de Bell a confirmé : oui. Les questions sont formellement documentées et peuvent entraîner des modifications ou l'arrêt de projets.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Liens et ressources</h2>
+  <ul class="q-list">
+    <li><a href="/fr/bell-tower/">Enquête de l'Observer : Tour Bell à Ormstown — 7 juin 2026</a></li>
+    <li><a href="https://www.canada.ca/fr/radio-television-telecommunications/nouvelles/2022/07/systemes-d-antennes-de-radiocommunication-et-de-radiodiffusion-circulaire-de-procedures-pour-les-clients.html" target="_blank">ISDE Canada — Circulaire CPC-2-0-03</a></li>
+    <li><a href="https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_Mars2024.pdf" target="_blank">Règlement de zonage 148-2023 (PDF) — Zone P-15, p. 64</a></li>
+    <li><a href="https://www.mrchsl.com" target="_blank">MRC Haut-Saint-Laurent — cartographie des zones inondables (450-264-5411)</a></li>
+    <li><a href="mailto:bell_E3640@cpc-consultation.ca">Soumettre vos questions à Bell : bell_E3640@cpc-consultation.ca</a> — date limite : 19 juin</li>
+    <li><a href="mailto:info@ormstown.ca">Contacter la municipalité : info@ormstown.ca</a></li>
+  </ul>
+
+  <hr class="divider">
+
+  <div class="article-footer">
+    <strong>L'Ormstown Observer</strong> — Journalisme civique indépendant · Ormstown &amp; Haut-Saint-Laurent<br>
+    Questions, corrections, informations : <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
+  </div>
+
+</main>
+</body>
+</html>
