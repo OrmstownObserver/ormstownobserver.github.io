@@ -24,6 +24,66 @@
     "recurring": false
   },
   {
+    "name": "Séance ordinaire du conseil municipal",
+    "date_start": "2026-07-06",
+    "date_end": null,
+    "location": "Hôtel de ville, 5 rue Gale, Ormstown · 6:30 PM",
+    "category": "municipal",
+    "organization": "Municipalité d'Ormstown",
+    "description_en": "Regular monthly council meeting, open to the public. Citizen question period at the end.",
+    "description_fr": "Séance ordinaire mensuelle du conseil, ouverte au public. Période de questions des citoyens à la fin.",
+    "link": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+    "recurring": true
+  },
+  {
+    "name": "Séance ordinaire du conseil municipal",
+    "date_start": "2026-08-03",
+    "date_end": null,
+    "location": "Hôtel de ville, 5 rue Gale, Ormstown · 6:30 PM",
+    "category": "municipal",
+    "organization": "Municipalité d'Ormstown",
+    "description_en": "Regular monthly council meeting, open to the public. Citizen question period at the end.",
+    "description_fr": "Séance ordinaire mensuelle du conseil, ouverte au public. Période de questions des citoyens à la fin.",
+    "link": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+    "recurring": true
+  },
+  {
+    "name": "Séance ordinaire du conseil municipal",
+    "date_start": "2026-09-14",
+    "date_end": null,
+    "location": "Hôtel de ville, 5 rue Gale, Ormstown · 6:30 PM",
+    "category": "municipal",
+    "organization": "Municipalité d'Ormstown",
+    "description_en": "Regular monthly council meeting, open to the public. Citizen question period at the end.",
+    "description_fr": "Séance ordinaire mensuelle du conseil, ouverte au public. Période de questions des citoyens à la fin.",
+    "link": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+    "recurring": true
+  },
+  {
+    "name": "Séance ordinaire du conseil municipal",
+    "date_start": "2026-10-05",
+    "date_end": null,
+    "location": "Hôtel de ville, 5 rue Gale, Ormstown · 6:30 PM",
+    "category": "municipal",
+    "organization": "Municipalité d'Ormstown",
+    "description_en": "Regular monthly council meeting, open to the public. Citizen question period at the end.",
+    "description_fr": "Séance ordinaire mensuelle du conseil, ouverte au public. Période de questions des citoyens à la fin.",
+    "link": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+    "recurring": true
+  },
+  {
+    "name": "Séance ordinaire du conseil municipal",
+    "date_start": "2026-11-02",
+    "date_end": null,
+    "location": "Hôtel de ville, 5 rue Gale, Ormstown · 6:30 PM",
+    "category": "municipal",
+    "organization": "Municipalité d'Ormstown",
+    "description_en": "Regular monthly council meeting, open to the public. Citizen question period at the end.",
+    "description_fr": "Séance ordinaire mensuelle du conseil, ouverte au public. Période de questions des citoyens à la fin.",
+    "link": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+    "recurring": true
+  },
+  {
     "name": "Ormstown Christmas Market",
     "date_start": "2026-12-06",
     "date_end": null,
@@ -34,5 +94,17 @@
     "description_fr": "Édition des Fêtes du marché fermier, réunissant producteurs et artisans locaux du Haut-Saint-Laurent.",
     "link": "https://www.marchefermierhuntingdon.ca/en/calendar/",
     "recurring": false
+  },
+  {
+    "name": "Séance ordinaire du conseil municipal",
+    "date_start": "2026-12-07",
+    "date_end": null,
+    "location": "Hôtel de ville, 5 rue Gale, Ormstown · 6:30 PM",
+    "category": "municipal",
+    "organization": "Municipalité d'Ormstown",
+    "description_en": "Regular monthly council meeting, open to the public. Citizen question period at the end.",
+    "description_fr": "Séance ordinaire mensuelle du conseil, ouverte au public. Période de questions des citoyens à la fin.",
+    "link": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+    "recurring": true
   }
 ]
