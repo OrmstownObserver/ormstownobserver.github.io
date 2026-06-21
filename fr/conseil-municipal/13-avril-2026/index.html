@@ -56,6 +56,12 @@
   .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 14px 18px; margin: 20px 0; border-radius: 2px; font-size: 0.95rem; }
   .note-box strong { color: var(--pending); }
 
+  .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 6px 14px; border-radius: 20px; margin-bottom: 26px; }
+  .status-badge .status-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
+  .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
+  .status-badge.confirmed { background: #e8f3ea; color: var(--confirm); border: 1px solid #b8dcc0; }
+  .status-badge a { color: inherit; text-decoration: underline; font-weight: 700; }
+
   blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
 
   .reso-wrap { overflow-x: auto; margin: 16px 0 28px; border: 1px solid var(--border); border-radius: 4px; }
@@ -110,6 +116,8 @@
   <h1 class="article-headline">Le conseil complète un cycle réglementaire de cinq mois, emprunte 750 440 $ pour la rue Prince-Albert et répond à des questions sur le roulement de personnel</h1>
   <p class="article-deck">Lundi 13 avril 2026 — Un ordre du jour chargé : un important cycle réglementaire adopté après cinq mois de travail, quatre nouveaux comités consultatifs mis en place, 24 nouvelles résidences approuvées sur la rue Isabelle, et les questions pointues d'un citoyen sur plus de 20 départs de personnel en deux ans et demi.</p>
   <div class="byline">L'Ormstown Observer &middot; Conseil municipal &middot; 18 h 40, Hôtel de ville, 5 rue Gale &middot; <a href="https://www.youtube.com/live/cV8bF56YGdM">Voir l'enregistrement complet sur YouTube &rarr;</a></div>
+
+  <div class="status-badge unofficial"><span class="status-dot"></span>Notes de l'Observer &middot; Résumé non officiel, en attente du procès-verbal officiel</div>
 
   <div class="fact-box">
     <h3>En bref</h3>
