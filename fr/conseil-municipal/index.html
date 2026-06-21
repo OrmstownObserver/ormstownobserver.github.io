@@ -82,6 +82,11 @@
     color: var(--muted); font-style: italic; font-size: 0.92rem; text-align: center;
   }
 
+  .status-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 20px; margin-top: 10px; }
+  .status-badge .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
+  .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
+  .status-badge.confirmed { background: #e8f3ea; color: var(--confirm); border: 1px solid #b8dcc0; }
+
   .site-footer {
     border-top: 3px double var(--rule); text-align: center; padding: 26px 20px;
     font-size: 0.85rem; color: var(--muted); background: var(--paper-dark);
@@ -130,7 +135,8 @@
       <h2><a href="/fr/conseil-municipal/13-avril-2026/">Le conseil complète un cycle réglementaire de cinq mois, emprunte 750 440 $ pour la rue Prince-Albert et répond à des questions sur le roulement de personnel</a></h2>
       <p class="desc">Un important ensemble de règlements adopté après cinq mois de travail, quatre nouveaux comités consultatifs mis en place, 24 nouvelles résidences approuvées sur la rue Isabelle, et les questions pointues d'un citoyen sur plus de 20 départs de personnel en deux ans et demi.</p>
       <a class="read-more" href="/fr/conseil-municipal/13-avril-2026/">Lire le compte rendu &rarr;</a>
-      <div class="meta-date">Publié le 21 juin 2026 &middot; Procès-verbal officiel à venir</div>
+      <div class="meta-date">Publié le 21 juin 2026</div>
+      <div class="status-badge unofficial"><span class="status-dot"></span>Non officiel &middot; PV à venir</div>
     </div>
 
     <div class="placeholder-card">
