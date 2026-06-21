@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "name": "Fête nationale du Québec à Ormstown",
+    "date_start": "2026-06-23",
+    "date_end": null,
+    "location": "Parc Lindsay-Cullen, rue Church, Ormstown · 3–10 PM",
+    "category": "municipal",
+    "organization": "Municipalité d'Ormstown",
+    "description_en": "Family celebration for Quebec's national holiday: inflatable games, BBQ, cash bar, and live music from Laurence Bay and Théo Théo.",
+    "description_fr": "Fête familiale pour la Fête nationale : jeux gonflables, BBQ, bar payant et spectacles de Laurence Bay et Théo Théo.",
+    "link": "https://www.ormstown.ca/culture-et-loisirs/evenements/fete-nationale-du-quebec-a-ormstown",
+    "recurring": false
+  },
+  {
+    "name": "Fête du Canada à Ormstown",
+    "date_start": "2026-07-01",
+    "date_end": null,
+    "location": "Parc Lindsay-Cullen, rue Church, Ormstown · From 4 PM",
+    "category": "municipal",
+    "organization": "Municipalité d'Ormstown",
+    "description_en": "Free Canada Day celebration: inflatable games, face painting, cotton candy, a food truck, a bar, and live music.",
+    "description_fr": "Fête du Canada gratuite : jeux gonflables, maquillage, barbe à papa, camion de rue, bar et prestation musicale.",
+    "link": "https://www.ormstown.ca/culture-et-loisirs/evenements/fete-du-canada-a-ormstown",
+    "recurring": false
+  },
+  {
+    "name": "Ormstown Christmas Market",
+    "date_start": "2026-12-06",
+    "date_end": null,
+    "location": "Ormstown Rec Center, 87 rue Roy · 9 AM–4 PM",
+    "category": "community",
+    "organization": "Marché Fermier du Comté de Huntingdon",
+    "description_en": "Holiday edition of the farmers market, bringing together local producers and artisans from the Haut-Saint-Laurent region.",
+    "description_fr": "Édition des Fêtes du marché fermier, réunissant producteurs et artisans locaux du Haut-Saint-Laurent.",
+    "link": "https://www.marchefermierhuntingdon.ca/en/calendar/",
+    "recurring": false
+  }
+]
