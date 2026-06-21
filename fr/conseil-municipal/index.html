@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conseil municipal — L'Ormstown Observer</title>
+<meta name="description" content="Comptes rendus en langage clair des séances du conseil municipal d'Ormstown — ce qui a été décidé, ce qui a été discuté et ce qu'il faut surveiller, tirés des diffusions publiques avant la publication du procès-verbal officiel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: 'Source Serif 4', Georgia, serif; line-height: 1.6;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .masthead { text-align: center; padding: 28px 20px 18px; border-bottom: 3px double var(--rule); }
+  .masthead-flag { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.4rem; letter-spacing: 0.5px; margin: 0; }
+  .masthead-name { color: var(--ink); text-decoration: none; }
+  .masthead-tagline { font-style: italic; color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+  .masthead-meta { font-size: 0.8rem; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+
+  .lang-switcher { text-align: center; padding: 8px 0; font-size: 0.85rem; background: var(--paper-dark); }
+  .lang-switcher a { margin: 0 6px; color: var(--ink-light); }
+  .lang-switcher a.active { color: var(--accent); font-weight: 600; }
+
+  nav.site-nav {
+    background: var(--ink); text-align: center; padding: 0;
+    font-family: 'Source Serif 4', serif;
+  }
+  nav.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+  nav.site-nav li { margin: 0; }
+  nav.site-nav a {
+    display: block; padding: 12px 18px; color: #f0ece4; text-decoration: none;
+    font-size: 0.92rem; letter-spacing: 0.3px; border-right: 1px solid #333;
+  }
+  nav.site-nav li:last-child a { border-right: none; }
+  nav.site-nav a:hover, nav.site-nav a.active { background: var(--accent); color: #fff; text-decoration: none; }
+
+  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 60px; }
+  .back-link { display: inline-block; margin-bottom: 18px; font-size: 0.9rem; }
+
+  .section-intro { text-align: center; margin-bottom: 36px; }
+  .section-intro h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.1rem; margin: 0 0 10px; }
+  .section-intro p { color: var(--muted); max-width: 680px; margin: 0 auto; font-size: 1.02rem; }
+
+  .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 12px 18px; margin: 0 auto 36px; max-width: 680px; border-radius: 2px; font-size: 0.9rem; color: var(--ink-light); }
+
+  .section-rule { display: flex; align-items: center; margin: 30px 0 18px; }
+  .section-rule-label { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 0.95rem; color: var(--accent); white-space: nowrap; padding-right: 14px; }
+  .section-rule-line { flex: 1; border-top: 1px solid var(--rule); }
+
+  .explainer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .explainer-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 4px;
+    padding: 22px 22px 20px; display: flex; flex-direction: column;
+  }
+  .explainer-card .tag {
+    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--accent); font-weight: 600; margin-bottom: 8px;
+  }
+  .explainer-card h2 {
+    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem;
+    margin: 0 0 10px; line-height: 1.3;
+  }
+  .explainer-card h2 a { color: var(--ink); }
+  .explainer-card p.desc { color: var(--ink-light); font-size: 0.95rem; flex-grow: 1; margin: 0 0 14px; }
+  .explainer-card .read-more { font-size: 0.88rem; font-weight: 600; }
+  .explainer-card .meta-date { font-size: 0.78rem; color: var(--muted); margin-top: 10px; }
+
+  .placeholder-card {
+    background: var(--sidebar); border: 1px dashed var(--border); border-radius: 4px;
+    padding: 22px; display: flex; flex-direction: column; justify-content: center;
+    color: var(--muted); font-style: italic; font-size: 0.92rem; text-align: center;
+  }
+
+  .site-footer {
+    border-top: 3px double var(--rule); text-align: center; padding: 26px 20px;
+    font-size: 0.85rem; color: var(--muted); background: var(--paper-dark);
+  }
+  .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1 class="masthead-flag"><a class="masthead-name" href="/fr/">L'Ormstown Observer</a></h1>
+  <div class="masthead-tagline">Imputabilité civique &middot; Journalisme indépendant</div>
+  <div class="masthead-meta">Ormstown et la région du Haut-Saint-Laurent</div>
+</header>
+
+<div class="lang-switcher">
+  <a href="/en/council-watch/">EN</a> | <a href="/fr/conseil-municipal/" class="active">FR</a>
+</div>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/conseil-municipal/" class="active">Conseil municipal</a></li>
+  </ul>
+</nav>
+
+<div class="page-wrap">
+  <a class="back-link" href="/fr/">&larr; Retour à l'accueil</a>
+
+  <div class="section-intro">
+    <h1>Conseil municipal</h1>
+    <p>Peu de citoyens regardent une séance complète du conseil. Cette section résume en langage clair chaque séance ordinaire du conseil municipal d'Ormstown — ce qui a été décidé, ce qui a été discuté et ce qu'il faut surveiller. Les comptes rendus sont préparés à partir de la diffusion publique YouTube et publiés bien avant le procès-verbal officiel, que la municipalité met généralement 4 à 6 semaines à publier.</p>
+  </div>
+
+  <div class="note-box">Le procès-verbal officiel est volontairement en retard sur ces comptes rendus — la municipalité ne le publie qu'une fois adopté à la séance ordinaire suivante. Chaque compte rendu ci-dessous sera mis à jour avec le lien vers le procès-verbal dès sa publication.</div>
+
+  <div class="section-rule">
+    <span class="section-rule-label">Comptes rendus</span>
+    <span class="section-rule-line"></span>
+  </div>
+
+  <div class="explainer-grid">
+
+    <div class="explainer-card">
+      <div class="tag">Séance ordinaire &middot; 13 avril 2026</div>
+      <h2><a href="/fr/conseil-municipal/13-avril-2026/">Le conseil complète un cycle réglementaire de cinq mois, emprunte 750 440 $ pour la rue Prince-Albert et répond à des questions sur le roulement de personnel</a></h2>
+      <p class="desc">Un important ensemble de règlements adopté après cinq mois de travail, quatre nouveaux comités consultatifs mis en place, 24 nouvelles résidences approuvées sur la rue Isabelle, et les questions pointues d'un citoyen sur plus de 20 départs de personnel en deux ans et demi.</p>
+      <a class="read-more" href="/fr/conseil-municipal/13-avril-2026/">Lire le compte rendu &rarr;</a>
+      <div class="meta-date">Publié le 21 juin 2026 &middot; Procès-verbal officiel à venir</div>
+    </div>
+
+    <div class="placeholder-card">
+      Compte rendu de la séance du 1er juin 2026 — à venir.
+    </div>
+
+    <div class="placeholder-card">
+      D'autres comptes rendus seront publiés après chaque séance ordinaire.
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>L'Ormstown Observer est une publication indépendante de surveillance civique couvrant Ormstown et la région du Haut-Saint-Laurent. Nous n'acceptons aucune publicité.</p>
+  <p>Contact : ormstownobserver@gmail.com</p>
+</footer>
+
+</body>
+</html>
