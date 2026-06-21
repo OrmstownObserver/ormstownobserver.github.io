@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Events — The Ormstown Observer</title>
+<meta name="description" content="A calendar of municipal, community, and business events in Ormstown and the Haut-Saint-Laurent — council meetings, OBNL fundraisers, markets, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8; --muted: #555;
+    --cat-municipal: #b5161b; --cat-community: #2f6b4f; --cat-business: #8a6d1f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accent); }
+
+  /* TOP NAV */
+  .topbar { background: var(--ink); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .topnav { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; }
+  .topnav a { font-family: 'Playfair Display', serif; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 8px 13px; color: #d8d3c4; }
+  .topnav a:hover { color: #fff; }
+  .topnav a.active { color: var(--accent); }
+  .lang-pill-sm { display: inline-flex; gap: 0; border: 1px solid #444; margin-left: 8px; }
+  .lang-pill-sm a { font-size: 11px; padding: 6px 11px; color: #d8d3c4; }
+  .lang-pill-sm a.active { background: var(--accent); color: #fff; }
+
+  /* MASTHEAD */
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 20px 40px 16px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 6vw, 60px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); }
+  .masthead-name a { color: inherit; }
+  .masthead-tagline { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; font-style: italic; }
+
+  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+  .back-link { display: inline-block; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-light); margin: 28px 0 18px; }
+  .back-link:hover { color: var(--accent); }
+
+  .page-header { border-bottom: 2px solid var(--ink); padding-bottom: 22px; margin-bottom: 8px; }
+  .page-kicker { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .page-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
+  .page-intro { font-size: 15.5px; color: var(--ink-light); max-width: 680px; line-height: 1.65; }
+
+  .section-rule { display: flex; align-items: center; gap: 14px; margin: 38px 0 18px; }
+  .section-rule-label { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+  .section-rule-line { flex: 1; height: 1px; background: var(--ink); }
+
+  /* FILTER BAR */
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 4px; }
+  .filter-btn { font-family: 'Playfair Display', Georgia, serif; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 9px 16px; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer; transition: background .15s, color .15s; }
+  .filter-btn:hover { background: var(--paper-dark); }
+  .filter-btn.active { background: var(--ink); color: #fff; }
+
+  /* THIS WEEK BOX */
+  .this-week-box { background: var(--accent-light); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 4px 24px 8px; margin: 8px 0 8px; }
+
+  /* EVENT LIST */
+  .events-list { display: flex; flex-direction: column; }
+  .event-card { display: grid; grid-template-columns: 70px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--border); }
+  .event-card:last-child { border-bottom: none; }
+  .event-date { text-align: center; padding-top: 2px; }
+  .event-date .day { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: 27px; line-height: 1; color: var(--ink); }
+  .event-date .month { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+  .event-date .wd { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-top: 2px; }
+  .event-cat { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
+  .event-cat.municipal { color: var(--cat-municipal); }
+  .event-cat.community { color: var(--cat-community); }
+  .event-cat.business { color: var(--cat-business); }
+  .event-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 700; line-height: 1.25; margin-bottom: 5px; color: var(--ink); }
+  .event-meta { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  .event-meta .dot { margin: 0 6px; }
+  .event-desc { font-size: 14px; color: var(--ink-light); line-height: 1.55; margin-bottom: 8px; }
+  .event-link { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+  .event-card[data-recurring="true"] .event-meta::after { content: "Recurring"; margin-left: 6px; font-style: italic; color: var(--muted); }
+
+  .month-divider { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); margin: 28px 0 4px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+
+  /* EMPTY STATE */
+  .empty-state { padding: 44px 24px; text-align: center; color: var(--muted); font-style: italic; border: 1px dashed var(--border); background: var(--paper-dark); font-size: 14.5px; }
+
+  /* SUGGEST / SUBSCRIBE STRIP */
+  .action-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 16px; }
+  .action-card { border: 1px solid var(--border); padding: 20px 22px; background: #fff; }
+  .action-card h4 { font-family: 'Playfair Display', Georgia, serif; font-size: 14px; letter-spacing: .04em; margin-bottom: 6px; color: var(--ink); }
+  .action-card p { font-size: 13.5px; color: var(--ink-light); margin-bottom: 12px; line-height: 1.55; }
+  .action-card a.btn, .action-card span.btn-soon { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 9px 16px; }
+  .action-card a.btn { background: var(--ink); color: #fff; }
+  .action-card a.btn:hover { background: var(--accent); color: #fff; }
+  .action-card span.btn-soon { background: var(--paper-dark); color: var(--muted); border: 1px solid var(--border); cursor: default; }
+
+  .site-footer { border-top: 3px double var(--ink); margin-top: 60px; padding: 28px 24px; text-align: center; font-size: 12px; letter-spacing: .08em; color: var(--muted); line-height: 2; }
+  .site-footer a { color: var(--accent); }
+
+  @media (max-width: 680px) {
+    .masthead { padding: 16px 20px 12px; }
+    .page-wrap { padding: 0 16px 60px; }
+    .topbar-inner { justify-content: center; text-align: center; }
+    .event-card { grid-template-columns: 54px 1fr; gap: 14px; }
+    .action-strip { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <nav class="topnav">
+      <a href="/en/">Home</a>
+      <a href="/en/bell-tower/">Investigations</a>
+      <a href="/en/bylaws-regulations/">Bylaws &amp; Regulations</a>
+      <a href="/en/events/" class="active">Events</a>
+      <a href="mailto:ormstownobserver@gmail.com">Contact</a>
+    </nav>
+    <span class="lang-pill-sm"><a href="/en/events/" class="active">EN</a><a href="/fr/events/">FR</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+  <a class="masthead-name" href="/en/">The Ormstown Observer</a>
+  <div class="masthead-tagline">Civic accountability · Independent journalism</div>
+</header>
+
+<div class="page-wrap">
+
+  <a class="back-link" href="/en/">← Back to homepage</a>
+
+  <div class="page-header">
+    <div class="page-kicker">Community Calendar</div>
+    <h1 class="page-title">Community Events</h1>
+    <p class="page-intro">A running calendar of what's happening around Ormstown and the Haut-Saint-Laurent — council meetings and public consultations, fundraisers and activities from local non-profits and organizations, and notable business events. Compiled and verified by the Observer.</p>
+  </div>
+
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-filter="all">All Events</button>
+    <button class="filter-btn" data-filter="municipal">🏛️ Municipal</button>
+    <button class="filter-btn" data-filter="community">🤝 Community &amp; OBNL</button>
+    <button class="filter-btn" data-filter="business">💼 Business</button>
+  </div>
+
+  <div id="this-week-section" style="display:none;">
+    <div class="section-rule"><span class="section-rule-label">This Week</span><span class="section-rule-line"></span></div>
+    <div class="this-week-box"><div class="events-list" id="this-week-list"></div></div>
+  </div>
+
+  <div class="section-rule"><span class="section-rule-label">Upcoming</span><span class="section-rule-line"></span></div>
+  <div id="upcoming-section"><div class="empty-state" id="loading-state">Loading events…</div></div>
+
+  <div class="section-rule"><span class="section-rule-label">Get Involved</span><span class="section-rule-line"></span></div>
+  <div class="action-strip">
+    <div class="action-card">
+      <h4>Know about an event we're missing?</h4>
+      <p>Organizations and businesses can submit events directly for inclusion in this calendar — it's free, and there's no advertising attached.</p>
+      <a class="btn" href="mailto:ormstownobserver@gmail.com?subject=Event%20submission%20for%20the%20Observer%20calendar">Suggest an Event →</a>
+    </div>
+    <div class="action-card">
+      <h4>Subscribe to this calendar</h4>
+      <p>Add every listed event directly to your Google, Apple, or Outlook calendar and get them automatically.</p>
+      <span class="btn-soon">Coming Soon</span>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <strong>The Ormstown Observer</strong> is an independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region.<br>
+  We accept no advertising.<br><br>
+  Questions, tips, corrections: <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
+</footer>
+
+<script>
+(function(){
+  var MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var MONTHS_SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var WEEKDAYS_SHORT = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+  var CAT_LABEL = { municipal: "🏛️ Municipal", community: "🤝 Community & OBNL", business: "💼 Business" };
+
+  var todayStr = new Date().toISOString().slice(0,10);
+  var weekAhead = new Date(); weekAhead.setDate(weekAhead.getDate() + 7);
+  var weekAheadStr = weekAhead.toISOString().slice(0,10);
+
+  var activeFilter = "all";
+  var allEvents = [];
+
+  function parseDate(s) {
+    var p = s.split("-"); return new Date(parseInt(p[0]), parseInt(p[1]) - 1, parseInt(p[2]));
+  }
+
+  function eventCardHTML(ev) {
+    var d = parseDate(ev.date_start);
+    var link = ev.link ? '<a class="event-link" href="' + ev.link + '" target="_blank" rel="noopener">Details →</a>' : '';
+    var meta = [ev.organization, ev.location].filter(Boolean).join('<span class="dot">·</span>');
+    return '<div class="event-card" data-cat="' + ev.category + '" data-recurring="' + (!!ev.recurring) + '">' +
+      '<div class="event-date"><div class="wd">' + WEEKDAYS_SHORT[d.getDay()] + '</div><div class="day">' + d.getDate() + '</div><div class="month">' + MONTHS_SHORT[d.getMonth()] + '</div></div>' +
+      '<div class="event-body">' +
+        '<div class="event-cat ' + ev.category + '">' + (CAT_LABEL[ev.category] || ev.category) + '</div>' +
+        '<h3>' + ev.name + '</h3>' +
+        (meta ? '<div class="event-meta">' + meta + '</div>' : '') +
+        (ev.description_en ? '<p class="event-desc">' + ev.description_en + '</p>' : '') +
+        link +
+      '</div></div>';
+  }
+
+  function render() {
+    var visible = allEvents.filter(function(e){ return activeFilter === "all" || e.category === activeFilter; });
+    var thisWeek = visible.filter(function(e){ return e.date_start >= todayStr && e.date_start <= weekAheadStr; });
+    var upcoming = visible.filter(function(e){ return e.date_start > weekAheadStr; });
+
+    var twSection = document.getElementById('this-week-section');
+    var twList = document.getElementById('this-week-list');
+    if (thisWeek.length) {
+      twSection.style.display = '';
+      twList.innerHTML = thisWeek.map(eventCardHTML).join('');
+    } else {
+      twSection.style.display = 'none';
+    }
+
+    var upcomingEl = document.getElementById('upcoming-section');
+    if (!upcoming.length) {
+      upcomingEl.innerHTML = '<div class="empty-state">No upcoming events in this category yet. Check back soon, or <a href="mailto:ormstownobserver@gmail.com">suggest one</a>.</div>';
+      return;
+    }
+    var byMonth = {};
+    var order = [];
+    upcoming.forEach(function(e){
+      var d = parseDate(e.date_start);
+      var key = d.getFullYear() + '-' + d.getMonth();
+      if (!byMonth[key]) { byMonth[key] = []; order.push(key); }
+      byMonth[key].push(e);
+    });
+    var html = '';
+    order.forEach(function(key){
+      var parts = key.split('-'); var label = MONTHS[parseInt(parts[1])] + ' ' + parts[0];
+      html += '<div class="month-divider">' + label + '</div><div class="events-list">' + byMonth[key].map(eventCardHTML).join('') + '</div>';
+    });
+    upcomingEl.innerHTML = html;
+  }
+
+  document.getElementById('filter-bar').addEventListener('click', function(e){
+    if (e.target.tagName !== 'BUTTON') return;
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    e.target.classList.add('active');
+    activeFilter = e.target.getAttribute('data-filter');
+    render();
+  });
+
+  fetch('/events.json').then(function(r){ return r.json(); }).then(function(data){
+    allEvents = (data || []).filter(function(e){ return e.date_start >= todayStr; }).sort(function(a,b){ return a.date_start.localeCompare(b.date_start); });
+    if (!allEvents.length) {
+      document.getElementById('upcoming-section').innerHTML = '<div class="empty-state">We\'re building this calendar out now. Check back soon — or <a href="mailto:ormstownobserver@gmail.com">tell us about an event</a> in the meantime.</div>';
+      return;
+    }
+    render();
+  }).catch(function(){
+    document.getElementById('upcoming-section').innerHTML = '<div class="empty-state">Events couldn\'t be loaded right now. Please check back soon.</div>';
+  });
+})();
+</script>
+
+</body>
+</html>
