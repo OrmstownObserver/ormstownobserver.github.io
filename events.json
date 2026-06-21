@@ -12,6 +12,18 @@
     "recurring": false
   },
   {
+    "name": "Tricot-biblio (Thursday Knit & Chat)",
+    "date_start": "2026-06-25",
+    "date_end": null,
+    "location": "Bibliothèque municipale d'Ormstown · Thursdays",
+    "category": "community",
+    "organization": "Bibliothèque municipale d'Ormstown",
+    "description_en": "Weekly Thursday knitting and chat group at the Ormstown library.",
+    "description_fr": "Groupe tricot-causerie le jeudi à la bibliothèque d'Ormstown.",
+    "link": "https://www.ormstown.ca/culture-et-loisirs/culture/bibliotheque",
+    "recurring": true
+  },
+  {
     "name": "Fête du Canada à Ormstown",
     "date_start": "2026-07-01",
     "date_end": null,
