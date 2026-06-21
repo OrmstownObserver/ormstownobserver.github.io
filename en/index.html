@@ -5,87 +5,80 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Ormstown Observer</title>
 <meta name="description" content="Independent civic watchdog reporting for Ormstown and the Haut-Saint-Laurent region: investigations, bylaw explainers, and council watch.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;0,900;1,500;1,600&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #12161d; --navy: #1c2c42; --navy-deep: #0d1620;
-    --paper: #f1f0e8; --paper-dim: #e7e4d8; --line: #d6d2c2;
-    --gold: #c0973b; --gold-bright: #dcb35e; --brick: #9c3f2e;
-    --slate: #57606b; --slate-on-dark: #aab4c1; --cream: #f5f4ee;
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8; --muted: #555;
   }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body { background: var(--paper); color: var(--ink); font-family: 'Public Sans', system-ui, sans-serif; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; }
   a { color: inherit; text-decoration: none; }
-  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; margin: 0; }
-  p { margin: 0; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
-  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+  a:hover { color: var(--accent); }
 
-  .stamp { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 1.5px solid currentColor; border-radius: 2px; transform: rotate(-1.1deg); }
+  /* TOP NAV (new) */
+  .topbar { background: var(--ink); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .topnav { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; }
+  .topnav a { font-family: 'Playfair Display', serif; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 8px 13px; color: #d8d3c4; }
+  .topnav a:hover { color: #fff; }
+  .topnav a.active { color: var(--accent); }
+  .lang-pill-sm { display: inline-flex; gap: 0; border: 1px solid #444; margin-left: 8px; }
+  .lang-pill-sm a { font-size: 11px; padding: 6px 11px; color: #d8d3c4; }
+  .lang-pill-sm a.active { background: var(--accent); color: #fff; }
 
-  /* NOTICE */
-  .notice-bar { background: var(--brick); color: #fff; text-align: center; padding: 10px 20px; font-size: 13.5px; font-weight: 500; }
-  .notice-bar a { text-decoration: underline; font-weight: 700; }
+  /* MASTHEAD */
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 20px 40px 16px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 6vw, 60px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); }
+  .masthead-tagline { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; font-style: italic; }
 
-  /* TOP BAR */
-  .topbar { background: var(--navy); color: var(--cream); }
-  .topbar-inner { max-width: 1080px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  .brand { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; }
-  .brand a:hover { color: var(--gold-bright); }
-  .topnav { display: flex; gap: 4px; align-items: center; flex-wrap: wrap; }
-  .topnav a { font-size: 13.5px; font-weight: 600; padding: 7px 13px; border-radius: 5px; color: var(--slate-on-dark); transition: background .15s, color .15s; }
-  .topnav a:hover { background: rgba(255,255,255,.08); color: #fff; }
-  .topnav a.active { background: var(--gold); color: var(--ink); }
-  .lang-pill { display: inline-flex; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); border-radius: 999px; padding: 3px; margin-left: 6px; }
-  .lang-pill a { font-size: 12px; font-weight: 700; padding: 6px 13px; border-radius: 999px; color: var(--slate-on-dark); }
-  .lang-pill a.active { background: var(--gold); color: var(--ink); }
-
-  .page-wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px 80px; }
-  .section-rule { display: flex; align-items: center; gap: 14px; margin: 44px 0 26px; }
-  .section-eyebrow { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--brick); white-space: nowrap; }
-  .section-rule-line { flex: 1; height: 1px; background: var(--line); }
+  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+  .section-rule { display: flex; align-items: center; gap: 14px; margin: 40px 0 24px; }
+  .section-rule-label { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+  .section-rule-line { flex: 1; height: 1px; background: var(--ink); }
 
   /* LEAD STORY */
-  .lead-story { display: grid; grid-template-columns: 1.3fr 1fr; gap: 44px; align-items: start; padding-top: 8px; }
-  .lead-story .stamp { color: var(--brick); margin-bottom: 18px; }
-  .lead-headline { font-size: clamp(26px, 4vw, 40px); font-weight: 900; line-height: 1.12; margin-bottom: 16px; }
-  .lead-headline em { font-style: italic; color: var(--brick); }
-  .lead-deck { font-size: 16px; font-weight: 400; line-height: 1.65; color: var(--slate); border-left: 3px solid var(--gold); padding-left: 16px; margin-bottom: 20px; }
-  .lead-byline { font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--slate); margin-bottom: 18px; text-transform: uppercase; }
-  .lead-lede { font-size: 16px; line-height: 1.72; }
-  .read-more { display: inline-block; margin-top: 18px; font-size: 13px; font-weight: 700; color: var(--brick); }
-  .read-more:hover { color: var(--ink); }
-
-  .lead-visual-inner { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 22px; }
-  .lead-visual-kicker { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--slate); margin-bottom: 14px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
-  .lead-visual-item { padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; line-height: 1.5; }
+  .lead-story { border-bottom: 2px solid var(--ink); padding: 36px 0 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .lead-story-label { display: inline-block; background: var(--accent); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 16px; }
+  .lead-headline { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(24px, 3.5vw, 40px); font-weight: 900; line-height: 1.1; color: var(--ink); margin-bottom: 14px; }
+  .lead-headline em { font-style: italic; color: var(--accent); }
+  .lead-deck { font-size: 16px; font-weight: 300; line-height: 1.6; color: var(--ink-light); font-style: italic; border-left: 3px solid var(--accent); padding-left: 14px; margin-bottom: 18px; }
+  .lead-byline { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+  .lead-byline strong { color: var(--ink); }
+  .lead-lede { font-size: 16px; line-height: 1.72; color: var(--ink); }
+  .read-more { display: inline-block; margin-top: 16px; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+  .read-more:hover { color: var(--ink); border-color: var(--ink); }
+  .lead-visual-inner { background: var(--paper-dark); border: 1px solid var(--border); border-top: 4px solid var(--accent); padding: 24px; }
+  .lead-visual-kicker { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+  .lead-visual-item { padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 14px; line-height: 1.5; }
   .lead-visual-item:last-child { border-bottom: none; padding-bottom: 0; }
-  .lead-visual-item strong { display: block; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--slate); margin-bottom: 3px; font-weight: 700; }
-  .lead-visual-item a { color: var(--brick); font-weight: 600; }
+  .lead-visual-item strong { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+  .lead-visual-item a { color: var(--accent); }
 
-  /* STORY GRID */
-  .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; padding-top: 6px; }
-  .story-card { background: #fff; border: 1px solid var(--line); border-radius: 7px; padding: 20px 20px 18px; transition: transform .16s, box-shadow .16s, border-color .16s; }
-  a.story-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px -14px rgba(18,22,29,.32); border-color: var(--gold); }
-  .story-card .stamp { color: var(--gold); margin-bottom: 13px; }
-  .story-card h3 { font-size: 18px; font-weight: 700; line-height: 1.25; margin-bottom: 9px; }
-  .story-card h3 em { font-style: italic; color: var(--brick); }
-  .story-card p { font-size: 13.5px; line-height: 1.6; color: var(--slate); margin-bottom: 12px; }
-  .story-card .card-byline { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--slate); margin-bottom: 10px; }
-  .placeholder-card { border: 1px dashed var(--line); border-radius: 7px; padding: 20px; opacity: .55; display: flex; flex-direction: column; justify-content: center; text-align: center; font-size: 13px; font-style: italic; color: var(--slate); }
+  /* STORIES GRID */
+  .stories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 32px; padding: 8px 0 32px; }
+  .story-card { border-top: 2px solid var(--ink); padding-top: 16px; }
+  .story-card-label { display: inline-block; background: var(--paper-dark); color: var(--muted); font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; padding: 3px 8px; margin-bottom: 12px; border: 1px solid var(--border); }
+  .story-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700; line-height: 1.2; margin-bottom: 10px; color: var(--ink); }
+  .story-card h3 em { font-style: italic; color: var(--accent); }
+  .story-card p { font-size: 14.5px; line-height: 1.65; color: var(--ink-light); margin-bottom: 12px; }
+  .story-card .card-byline { font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+  .placeholder-card { border-top: 2px solid var(--border); padding-top: 16px; opacity: 0.5; font-style: italic; color: var(--muted); font-size: 13.5px; }
+
+  /* NOTICE BAR */
+  .notice-bar { background: var(--accent); color: #fff; text-align: center; padding: 10px 24px; font-size: 13px; letter-spacing: .05em; }
+  .notice-bar strong { font-weight: 700; }
+  .notice-bar a { color: #fff; text-decoration: underline; }
 
   /* FOOTER */
-  .site-footer { background: var(--navy-deep); color: var(--slate-on-dark); text-align: center; padding: 44px 24px 36px; margin-top: 24px; }
-  .footer-name { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--cream); margin-bottom: 10px; }
-  .footer-line { font-size: 13px; line-height: 1.9; max-width: 460px; margin: 0 auto; }
-  .footer-line a { color: var(--gold-bright); }
-  .footer-rule { width: 40px; height: 2px; background: var(--gold); margin: 20px auto; border-radius: 2px; }
+  .site-footer { border-top: 3px double var(--ink); margin-top: 60px; padding: 28px 24px; text-align: center; font-size: 12px; letter-spacing: .08em; color: var(--muted); line-height: 2; }
+  .site-footer a { color: var(--accent); }
 
-  @media (max-width: 760px) {
+  @media (max-width: 680px) {
     .lead-story { grid-template-columns: 1fr; }
+    .masthead { padding: 16px 20px 12px; }
+    .page-wrap { padding: 0 16px 60px; }
     .topbar-inner { justify-content: center; text-align: center; }
   }
 </style>
@@ -98,30 +91,35 @@
 
 <div class="topbar">
   <div class="topbar-inner">
-    <div class="brand"><a href="/en/">The Ormstown Observer</a></div>
     <nav class="topnav">
       <a href="/en/" class="active">Home</a>
       <a href="/en/bell-tower/">Investigations</a>
       <a href="/en/bylaws-regulations/">Bylaws &amp; Regulations</a>
       <a href="mailto:ormstownobserver@gmail.com">Contact</a>
-      <span class="lang-pill"><a href="/en/" class="active">EN</a><a href="/fr/">FR</a></span>
     </nav>
+    <span class="lang-pill-sm"><a href="/en/" class="active">EN</a><a href="/fr/">FR</a></span>
   </div>
 </div>
+
+<header class="masthead">
+  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+  <div class="masthead-name">The Ormstown Observer</div>
+  <div class="masthead-tagline">Civic accountability · Independent journalism</div>
+</header>
 
 <div class="page-wrap">
 
   <div class="section-rule">
-    <span class="section-eyebrow">Lead story</span>
+    <span class="section-rule-label">Lead Story</span>
     <span class="section-rule-line"></span>
   </div>
 
   <article class="lead-story">
     <div class="lead-story-left">
-      <span class="stamp">Case file · Projet E3640</span>
+      <span class="lead-story-label">Investigation</span>
       <h2 class="lead-headline">A 36-Metre Tower Is Proposed for an Ormstown Park Lot. <em>Here Is Everything You Need to Know.</em></h2>
       <p class="lead-deck">Bell Mobilité's plan to install a 36-metre monopole on municipal land moved through a council vote, a signed lease, and a federal consultation process — with virtually no public awareness.</p>
-      <div class="lead-byline">By The Ormstown Observer &nbsp;·&nbsp; June 8, 2026</div>
+      <div class="lead-byline">By <strong>The Ormstown Observer</strong> &nbsp;·&nbsp; June 8, 2026</div>
       <p class="lead-lede">Sometime in late 2025 or early 2026, Bell Mobilité identified a wooded municipal lot near Route 138 as the proposed location for a new telecommunications tower. The land belongs to the municipality of Ormstown — and therefore to its roughly 4,300 residents. Most of those residents did not know this project existed. The Observer has reviewed every available document. This is what the record shows.</p>
       <a class="read-more" href="/en/bell-tower/">Read the full investigation →</a>
     </div>
@@ -140,13 +138,13 @@
   </article>
 
   <div class="section-rule">
-    <span class="section-eyebrow">Also in this edition</span>
+    <span class="section-rule-label">Also in this edition</span>
     <span class="section-rule-line"></span>
   </div>
 
   <div class="stories-grid">
     <a class="story-card" href="/en/bell-tower-explainer/">
-      <span class="stamp">Guide · Process</span>
+      <span class="story-card-label">Guide · Process</span>
       <h3><em>Before You Walk Into That Room, Read This.</em></h3>
       <p class="card-byline">June 8, 2026</p>
       <p>How cell towers work, what the health and environmental research actually says about 5G, a full walkthrough of the CPC-2-0-03 federal process, and what you can and cannot ask.</p>
@@ -154,7 +152,7 @@
     </a>
 
     <a class="story-card" href="/en/bell-tower-june10/">
-      <span class="stamp">Report · June 10 session</span>
+      <span class="story-card-label">Report · June 10 Session</span>
       <h3>Bell's Information Session: <em>What Was Said, and What Happens Next</em></h3>
       <p class="card-byline">June 15, 2026</p>
       <p>~25 residents attended the June 10 session at 5 rue Gale. Full video, session report, how the CPC-2-0-03 federal process works, and the questions sent to Bell before the deadline.</p>
@@ -162,7 +160,7 @@
     </a>
 
     <a class="story-card" href="/en/bylaws-regulations/">
-      <span class="stamp">Explainer series</span>
+      <span class="story-card-label">Explainer Series</span>
       <h3>Bylaws &amp; Regulations <em>Explainer</em></h3>
       <p class="card-byline">Updated June 20, 2026</p>
       <p>Plain-language breakdowns of newly adopted Ormstown bylaws — currently covering the PIIA architectural-integration rules and the new animal control bylaw.</p>
@@ -175,12 +173,9 @@
 </div>
 
 <footer class="site-footer">
-  <div class="footer-name">The Ormstown Observer</div>
-  <div class="footer-rule"></div>
-  <p class="footer-line">
-    An independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region. We accept no advertising.<br><br>
-    Questions, tips, corrections: <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
-  </p>
+  <strong>The Ormstown Observer</strong> is an independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region.<br>
+  We accept no advertising.<br><br>
+  Questions, tips, corrections: <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
 </footer>
 
 </body>
