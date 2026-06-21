@@ -25,18 +25,23 @@
   a { color: var(--accent); }
 
   /* ── MASTHEAD ── */
-  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 16px 40px 14px; text-align: center; background: var(--paper); }
-  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 12px; letter-spacing: .25em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 4px; }
-  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 5vw, 52px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); text-decoration: none; display: block; }
-  .masthead-name:hover { color: var(--accent); }
-  .masthead-tagline { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-light); margin-top: 7px; font-style: italic; }
+    /* TOP NAV */
+  .topbar { background: var(--ink); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .topnav { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; }
+  .topnav a { font-family: 'Playfair Display', serif; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 8px 13px; color: #d8d3c4; }
+  .topnav a:hover { color: #fff; }
+  .topnav a.active { color: var(--accent); }
+  .lang-pill-sm { display: inline-flex; gap: 0; border: 1px solid #444; margin-left: 8px; }
+  .lang-pill-sm a { font-size: 11px; padding: 6px 11px; color: #d8d3c4; }
+  .lang-pill-sm a.active { background: var(--accent); color: #fff; }
 
-  /* ── LANGUAGE SWITCHER ── */
-  .lang-switcher { display: flex; justify-content: center; gap: 0; border-bottom: 2px solid var(--ink); background: var(--paper-dark); }
-  .lang-switcher a { display: inline-block; padding: 8px 22px; font-size: 11.5px; letter-spacing: .18em; text-transform: uppercase; font-family: 'Playfair Display', Georgia, serif; font-weight: 700; color: var(--ink-light); text-decoration: none; border-right: 1px solid var(--border); transition: background .15s; }
-  .lang-switcher a:last-child { border-right: none; }
-  .lang-switcher a.active { background: var(--accent); color: #fff; }
-  .lang-switcher a:not(.active):hover { background: #e8e2d4; color: var(--ink); }
+  /* MASTHEAD */
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 20px 40px 16px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 6vw, 60px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); text-decoration: none; display: block; }
+  .masthead-name:hover { color: var(--ink); }
+  .masthead-tagline { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; font-style: italic; }
 
   /* ── ARTICLE WRAP ── */
   .article-wrap { max-width: 740px; margin: 0 auto; padding: 40px 24px 80px; }
@@ -106,16 +111,25 @@
 </head>
 <body>
 
+<div class="topbar">
+  <div class="topbar-inner">
+    <nav class="topnav">
+      <a href="/fr/">Accueil</a>
+      <a href="/fr/bell-tower/" class="active">Enquêtes</a>
+      <a href="/fr/bylaws-regulations/">Règlements</a>
+      <a href="/fr/conseil-municipal/">Conseil municipal</a>
+      <a href="/fr/events/">Événements</a>
+      <a href="mailto:ormstownobserver@gmail.com">Contact</a>
+    </nav>
+    <span class="lang-pill-sm"><a href="/en/bell-tower-explainer/">EN</a><a href="/fr/bell-tower-explainer/" class="active">FR</a></span>
+  </div>
+</div>
+
 <header class="masthead">
   <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
   <a class="masthead-name" href="/fr/">L'Ormstown Observer</a>
   <div class="masthead-tagline">Vigilance civique · Journalisme indépendant</div>
 </header>
-
-<nav class="lang-switcher">
-  <a href="/en/bell-tower-explainer/">EN — English</a>
-  <a href="/fr/bell-tower-explainer/" class="active">FR — Français</a>
-</nav>
 
 <div class="article-wrap">
 
