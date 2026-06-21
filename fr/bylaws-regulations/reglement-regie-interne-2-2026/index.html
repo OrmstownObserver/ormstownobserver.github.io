@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment fonctionnent vraiment les séances du conseil d'Ormstown : le Règlement 2-2026 expliqué — The Ormstown Observer</title>
+<meta name="description" content="Le Règlement 2-2026, en vigueur depuis le 17 avril 2026, réécrit les règles des séances du conseil d'Ormstown : deux périodes de questions publiques, une durée maximale de 3 heures, et un droit de veto du maire que le conseil peut renverser.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+    /* TOP NAV */
+  .topbar { background: var(--ink); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .topnav { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; }
+  .topnav a { font-family: 'Playfair Display', serif; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 8px 13px; color: #d8d3c4; }
+  .topnav a:hover { color: #fff; }
+  .topnav a.active { color: var(--accent); }
+  .lang-pill-sm { display: inline-flex; gap: 0; border: 1px solid #444; margin-left: 8px; }
+  .lang-pill-sm a { font-size: 11px; padding: 6px 11px; color: #d8d3c4; }
+  .lang-pill-sm a.active { background: var(--accent); color: #fff; }
+
+  /* MASTHEAD */
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 20px 40px 16px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 6vw, 60px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); text-decoration: none; display: block; }
+  .masthead-name:hover { color: var(--ink); }
+  .masthead-tagline { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; font-style: italic; }
+
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 32px 20px 60px; }
+  .back-link { display: inline-block; margin-bottom: 18px; font-size: 0.9rem; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .article-headline { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
+  .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+
+  h2 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.35rem; margin: 32px 0 12px; }
+  h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 24px 0 10px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  .fact-box { background: var(--sidebar); border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .fact-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+  .fact-box ul { margin-bottom: 0; }
+
+  .correction-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .correction-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--pending); }
+  .correction-box p:last-child { margin-bottom: 0; }
+
+  blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
+
+  .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  .article-footer h3 { font-size: 1rem; font-style: normal; }
+
+  .site-footer { border-top: 3px double var(--rule); text-align: center; padding: 26px 20px; font-size: 0.85rem; color: var(--muted); background: var(--paper-dark); }
+  .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <nav class="topnav">
+      <a href="/fr/">Accueil</a>
+      <a href="/fr/bell-tower/">Enquêtes</a>
+      <a href="/fr/bylaws-regulations/" class="active">Règlements</a>
+      <a href="/fr/conseil-municipal/">Conseil municipal</a>
+      <a href="/fr/events/">Événements</a>
+      <a href="mailto:ormstownobserver@gmail.com">Contact</a>
+    </nav>
+    <span class="lang-pill-sm"><a href="/en/bylaws-regulations/council-procedure-2-2026/">EN</a><a href="/fr/bylaws-regulations/reglement-regie-interne-2-2026/" class="active">FR</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+  <a class="masthead-name" href="/fr/">L'Ormstown Observer</a>
+  <div class="masthead-tagline">Vigilance civique · Journalisme indépendant</div>
+</header>
+
+<div class="article-wrap">
+  <a class="back-link" href="/fr/bylaws-regulations/">&larr; Retour aux règlements expliqués</a>
+
+  <div class="section-label">Procédure du conseil &middot; Règlement 2-2026</div>
+  <h1 class="article-headline">Comment fonctionnent vraiment les séances du conseil d'Ormstown</h1>
+  <p class="article-deck">Le Règlement 2-2026, en vigueur depuis le 17 avril 2026, réécrit les règles internes des séances du conseil : deux périodes de questions publiques, une durée maximale fixe, et un droit de veto du maire que le conseil peut renverser. Une ligne du texte officiel laissait croire, à tort, que les séances déménageaient au mercredi. Nous avons vérifié : ce n'est pas le cas.</p>
+  <div class="byline">The Ormstown Observer &middot; Règlements expliqués</div>
+
+  <div class="fact-box">
+    <h3>L'essentiel</h3>
+    <ul>
+      <li>Le Règlement 2-2026 est entré en vigueur le 17 avril 2026, remplaçant l'ancien règlement de régie interne d'Ormstown.</li>
+      <li>Chaque séance ordinaire comporte désormais <strong>deux périodes de questions publiques</strong> d'une durée maximale de 30 minutes chacune — une avant l'ouverture de la séance, une après sa levée — avec une limite de 5 minutes par intervention.</li>
+      <li>Les séances sont plafonnées à <strong>3 heures</strong>. Si l'ordre du jour n'est pas épuisé, la séance reprend à 18 h 30 le jour ouvrable suivant, sauf vote contraire des deux tiers des membres présents.</li>
+      <li>Le maire peut suspendre une décision du conseil par écrit dans les 48 heures; le conseil peut lever ce veto en réadoptant la résolution à la majorité absolue de ses membres.</li>
+      <li>Le texte du règlement laisse croire, à première lecture, que les séances déménagent au mercredi. Ce n'est pas le cas — le calendrier 2026 adopté séparément par le conseil place chacune des douze séances de l'année un lundi.</li>
+    </ul>
+  </div>
+
+  <h2>Ce qui change, et pourquoi</h2>
+  <p>Le Règlement 2-2026 — officiellement le <em>Règlement sur la régie interne et la procédure d'assemblée du conseil municipal</em> — remplace et abroge l'ancien règlement de régie interne d'Ormstown. Il est adopté en vertu de l'article 491 du <em>Code municipal du Québec</em>, qui permet à un conseil municipal d'établir ses propres règles pour la tenue de ses séances et le maintien de l'ordre.</p>
+  <p>La conseillère Jane Fairhurst a donné l'avis de motion le 19 janvier 2026; le projet de règlement a été déposé à la séance du 2 février; il a été adopté et est entré en vigueur le 17 avril 2026 — quatre jours après le premier compte rendu Conseil municipal de l'Observer, qui en avait résumé les grandes lignes alors que le règlement était encore à l'étude.</p>
+
+  <h2>Quand le conseil se réunit vraiment — et une coquille dans le texte du règlement</h2>
+  <p>L'article 3 du nouveau règlement, qui fixe le calendrier des séances ordinaires, contient une anomalie de rédaction : la clause nomme à la fois « le premier lundi » <em>et</em> « mercredi » du mois dans la même phrase, comme si un mot devait être remplacé et que l'opération n'a jamais été terminée. Lue isolément, cette phrase pourrait laisser croire à un déménagement des séances au mercredi.</p>
+  <p>Ce n'est pas le cas. Ce même article accorde au conseil le pouvoir distinct de fixer le calendrier annuel des séances par résolution — et le conseil a déjà exercé ce pouvoir. Le <a href="https://www.ormstown.ca/wp-content/uploads/AVIS_Calendrier-seances-ordinaires_2026.pdf">calendrier officiel des séances 2026</a>, adopté le 1er décembre 2025 et publié deux semaines avant même l'avis de motion du Règlement 2-2026, fixe les douze séances ordinaires de l'année — et chacune d'entre elles, du 19 janvier au 7 décembre, tombe un lundi. Nous avons vérifié chaque date par rapport au calendrier.</p>
+  <p>En somme : une erreur de rédaction dans le texte du règlement ne l'emporte pas sur le calendrier réellement adopté par le conseil. Les séances se tiennent toujours le lundi, à 18 h 30, à l'hôtel de ville, 5 rue Gale.</p>
+
+  <h2>Deux périodes de questions, pas une seule</h2>
+  <p>Le changement le plus concret pour les citoyens est structurel. Chaque séance ordinaire comporte désormais deux périodes de questions publiques distinctes, chacune plafonnée à 30 minutes :</p>
+  <ul>
+    <li><strong>La période d'ouverture</strong> (dite « divergente »), tenue avant le début officiel de la séance, ouverte à tout sujet d'intérêt municipal — inscrit ou non à l'ordre du jour.</li>
+    <li><strong>La période de clôture</strong> (dite « sur l'ordre du jour »), tenue après la levée de la séance, réservée aux sujets effectivement traités ce soir-là.</li>
+  </ul>
+  <p>Chaque personne dispose d'un maximum de 5 minutes par question, et peut en poser une nouvelle une fois que toutes les autres personnes désirant intervenir ont eu leur tour. Impossible de vous déplacer? Les questions écrites sont acceptées par courriel à <a href="mailto:greffe@ormstown.ca">greffe@ormstown.ca</a>, par la poste, ou déposées à la réception de l'hôtel de ville — mais la date limite est midi le vendredi précédant la séance, et non le jour même. (Pour les séances extraordinaires, une seule période de questions est tenue, limitée à l'ordre du jour, avec des questions écrites attendues au plus tard à midi le jour de la séance.)</p>
+  <p>Toutes les séances ordinaires sont diffusées en direct et archivées sur la chaîne YouTube de la municipalité pour une période minimale de cinq ans, ce qui permet de vérifier après coup les réponses données en direct.</p>
+
+  <h2>La durée maximale d'une séance</h2>
+  <p>Les séances comportent désormais un arrêt ferme : 3 heures après l'ouverture de la séance. Si l'ordre du jour n'est pas épuisé à ce moment, la séance reprend à 18 h 30 le jour ouvrable suivant — là où elle s'est arrêtée — à moins que les deux tiers des membres présents ne votent pour ajourner ou suspendre selon d'autres modalités. Le conseil peut aussi voter, selon le même seuil des deux tiers, pour prolonger une séance à deux reprises au maximum dans la même soirée, de 30 minutes chaque fois.</p>
+
+  <h2>Le veto suspensif du maire</h2>
+  <p>L'une des dispositions les plus importantes du règlement : le maire peut refuser d'approuver une décision que le conseil vient d'adopter. Pour l'exercer, le maire doit aviser le greffier par écrit dans les 48 heures suivant l'adoption de la résolution. Cela déclenche un veto suspensif — la décision est mise en pause, pas annulée.</p>
+  <p>Le conseil peut le lever. Réadopter la même résolution à la <strong>majorité absolue</strong> de tous les membres du conseil (et non seulement ceux présents) lève le veto et la décision tient. Il s'agit d'un véritable contre-pouvoir face au bureau du maire, mais cela signifie qu'une même résolution peut nécessiter deux votes pour prendre effet si le maire s'y oppose.</p>
+
+  <h2>Le maintien de l'ordre dans la salle</h2>
+  <p>Le règlement accorde au président d'assemblée — habituellement le maire — un large pouvoir pour maintenir l'ordre et le décorum, y compris celui d'expulser quiconque trouble une séance : crier, utiliser un langage injurieux, interrompre un intervenant, engager le débat avec le public, ou simplement refuser de s'en tenir au sujet en discussion figurent tous parmi les motifs énumérés. Ce pouvoir ne se limite pas au public — un membre du conseil qui ne se comporte pas adéquatement peut également être expulsé, en vertu de l'article 159 du <em>Code municipal</em>.</p>
+  <p>Par ailleurs, les membres du conseil sont tenus de voter sur chaque proposition, sauf exemption légale liée à un conflit d'intérêts; le défaut de voter sans exemption valide entraîne une amende de 100 $.</p>
+
+  <h2>Comment participer</h2>
+  <p>Présentez-vous à 18 h 30 le premier lundi du mois (deuxième lundi en janvier) à l'hôtel de ville, 5 rue Gale — ou suivez la diffusion en direct sur la chaîne YouTube de la municipalité. Pour poser une question sans vous déplacer, écrivez à <a href="mailto:greffe@ormstown.ca">greffe@ormstown.ca</a> au plus tard à midi le vendredi précédant la séance, en indiquant votre nom, adresse et numéro de téléphone.</p>
+  <p>📞 450 829-2625 &middot; ✉️ ormstown@ormstown.ca &middot; 🏛️ 5, rue Gale, Ormstown</p>
+
+  <h2>Questions ouvertes pour le conseil et l'administration</h2>
+  <ul>
+    <li>Le texte publié du règlement nomme à la fois « lundi » et « mercredi » dans la même clause sur le calendrier des séances. La municipalité a-t-elle relevé cette anomalie, et une version corrigée sera-t-elle republiée?</li>
+    <li>L'article 6 fait de toute divulgation, même partielle, du contenu d'un caucus une infraction. Comment cette disposition s'articule-t-elle avec les autres obligations d'un membre du conseil — par exemple, signaler un acte répréhensible soupçonné?</li>
+  </ul>
+
+  <div class="article-footer">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/Regl.-Regie-interne-VF-adopte-1.pdf">Texte complet : Règlement 2-2026 — régie interne et procédure d'assemblée (PDF)</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/AVIS_Calendrier-seances-ordinaires_2026.pdf">Calendrier officiel des séances 2026 (PDF)</a></li>
+      <li><a href="https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal">Séances du conseil et procès-verbaux — ormstown.ca</a></li>
+      <li><a href="https://www.ormstown.ca/actualites/avis-publics/">Avis publics — ormstown.ca</a></li>
+      <li><a href="/fr/conseil-municipal/13-avril-2026/">Conseil municipal de l'Observer — compte rendu du 13 avril 2026</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>The Ormstown Observer est une publication indépendante de vigilance civique couvrant Ormstown et la région du Haut-Saint-Laurent. Nous n'acceptons aucune publicité.</p>
+  <p>Contact : ormstownobserver@gmail.com</p>
+</footer>
+
+</body>
+</html>
