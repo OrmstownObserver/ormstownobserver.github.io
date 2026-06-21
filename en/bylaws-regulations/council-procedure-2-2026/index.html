@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How Ormstown Council Meetings Actually Work Now: Bylaw 2-2026 Explained — The Ormstown Observer</title>
+<meta name="description" content="Règlement 2-2026, in force since April 17, 2026, rewrites the rulebook for Ormstown council meetings: two public question periods, a 3-hour cap, and a mayor's veto council can override. Here's what actually changed.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+    /* TOP NAV */
+  .topbar { background: var(--ink); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .topnav { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; }
+  .topnav a { font-family: 'Playfair Display', serif; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 8px 13px; color: #d8d3c4; }
+  .topnav a:hover { color: #fff; }
+  .topnav a.active { color: var(--accent); }
+  .lang-pill-sm { display: inline-flex; gap: 0; border: 1px solid #444; margin-left: 8px; }
+  .lang-pill-sm a { font-size: 11px; padding: 6px 11px; color: #d8d3c4; }
+  .lang-pill-sm a.active { background: var(--accent); color: #fff; }
+
+  /* MASTHEAD */
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 20px 40px 16px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 6vw, 60px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); text-decoration: none; display: block; }
+  .masthead-name:hover { color: var(--ink); }
+  .masthead-tagline { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; font-style: italic; }
+
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 32px 20px 60px; }
+  .back-link { display: inline-block; margin-bottom: 18px; font-size: 0.9rem; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .article-headline { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
+  .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+
+  h2 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.35rem; margin: 32px 0 12px; }
+  h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 24px 0 10px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  .fact-box { background: var(--sidebar); border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .fact-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+  .fact-box ul { margin-bottom: 0; }
+
+  .correction-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .correction-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--pending); }
+  .correction-box p:last-child { margin-bottom: 0; }
+
+  blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
+
+  .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  .article-footer h3 { font-size: 1rem; font-style: normal; }
+
+  .site-footer { border-top: 3px double var(--rule); text-align: center; padding: 26px 20px; font-size: 0.85rem; color: var(--muted); background: var(--paper-dark); }
+  .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <nav class="topnav">
+      <a href="/en/">Home</a>
+      <a href="/en/bell-tower/">Investigations</a>
+      <a href="/en/bylaws-regulations/" class="active">Bylaws &amp; Regulations</a>
+      <a href="/en/council-watch/">Council Watch</a>
+      <a href="/en/events/">Events</a>
+      <a href="mailto:ormstownobserver@gmail.com">Contact</a>
+    </nav>
+    <span class="lang-pill-sm"><a href="/en/bylaws-regulations/council-procedure-2-2026/" class="active">EN</a><a href="/fr/bylaws-regulations/reglement-regie-interne-2-2026/">FR</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+  <a class="masthead-name" href="/en/">The Ormstown Observer</a>
+  <div class="masthead-tagline">Civic accountability · Independent journalism</div>
+</header>
+
+<div class="article-wrap">
+  <a class="back-link" href="/en/bylaws-regulations/">&larr; Back to Bylaws &amp; Regulations Explainer</a>
+
+  <div class="section-label">Council Procedure &middot; Bylaw 2-2026</div>
+  <h1 class="article-headline">How Ormstown Council Meetings Actually Work Now</h1>
+  <p class="article-deck">Règlement 2-2026, in force since April 17, 2026, rewrites the internal rulebook for council meetings — two public question periods, a hard cap on meeting length, and a mayor's veto council can overturn. One line in the bylaw's own published text briefly suggested meetings were moving to Wednesdays. They aren't, and we checked.</p>
+  <div class="byline">The Ormstown Observer &middot; Bylaws &amp; Regulations Explainer</div>
+
+  <div class="fact-box">
+    <h3>Key takeaway</h3>
+    <ul>
+      <li>Règlement 2-2026 took effect April 17, 2026, replacing Ormstown's previous council procedure bylaw.</li>
+      <li>Every ordinary meeting now has <strong>two public question periods</strong> of up to 30 minutes each — one before the meeting opens, one after it closes — with a 5-minute limit per speaker.</li>
+      <li>Meetings are capped at <strong>3 hours</strong>. Unfinished business resumes at 6:30 p.m. the next business day, unless two-thirds of members present vote otherwise.</li>
+      <li>The mayor can suspend any council decision in writing within 48 hours; council can override that veto by re-adopting the resolution with an absolute majority.</li>
+      <li>The bylaw's own text briefly reads as if meetings were moving to Wednesdays. They're not — the council's separately adopted 2026 calendar puts every single meeting this year on a Monday.</li>
+    </ul>
+  </div>
+
+  <h2>What changed, and why</h2>
+  <p>Règlement 2-2026 — formally the <em>Règlement sur la régie interne et la procédure d'assemblée du conseil municipal</em> — replaces and repeals Ormstown's previous internal-procedure rules. It's adopted under article 491 of the <em>Code municipal du Québec</em>, which lets a municipal council set its own rules for running meetings and keeping order.</p>
+  <p>Councillor Jane Fairhurst gave notice of motion on January 19, 2026; the draft bylaw was tabled at the February 2 meeting; it was formally adopted and came into force on April 17, 2026 — four days after the Observer's first Council Watch recap, which reported on it in summary while it was still moving through council.</p>
+
+  <h2>When council actually meets — and a wrinkle in the bylaw's own text</h2>
+  <p>Article 3 of the new bylaw, which sets the schedule for ordinary meetings, contains a drafting oddity: the clause names both "the first Monday" <em>and</em> "Wednesday" of the month in the same sentence, as if a word was meant to be swapped out and never was. Read in isolation, it could suggest meetings were shifting to Wednesdays.</p>
+  <p>They aren't. The same article gives council the separate authority to fix the year's meeting calendar by resolution — and council already exercised that authority. The <a href="https://www.ormstown.ca/wp-content/uploads/AVIS_Calendrier-seances-ordinaires_2026.pdf">official 2026 meeting calendar</a>, adopted December 1, 2025 and published two weeks before Règlement 2-2026 even had its notice of motion, sets all twelve ordinary sessions for 2026 — and every one of them, from January 19 through December 7, falls on a Monday. We checked each date against the calendar.</p>
+  <p>In short: a wording slip in the bylaw's text doesn't override the calendar council actually adopted. Meetings continue on Mondays at 6:30 p.m. at the Hôtel de Ville, 5 rue Gale.</p>
+
+  <h2>Two question periods, not one</h2>
+  <p>The most concrete change for residents is structural. Every ordinary meeting now includes two distinct public question periods, each capped at 30 minutes:</p>
+  <ul>
+    <li><strong>The opening period</strong> ("divergente"), held before the meeting formally begins, open to any subject of municipal interest — on the agenda or not.</li>
+    <li><strong>The closing period</strong> ("sur l'ordre du jour"), held after the meeting is adjourned, restricted to topics that were actually dealt with on that night's agenda.</li>
+  </ul>
+  <p>Anyone speaking gets up to 5 minutes per question, and may ask a new question once everyone else who wants to speak has had a turn. Can't make it in person? Written questions are accepted by email at <a href="mailto:greffe@ormstown.ca">greffe@ormstown.ca</a>, by mail, or dropped off at the town hall reception — but the deadline is noon the Friday before the meeting, not the day of. (For extraordinary, single-issue meetings, there's only one question period, restricted to the agenda, with written questions due by noon that same day.)</p>
+  <p>All ordinary meetings are livestreamed and archived on the municipality's YouTube channel for a minimum of five years, so answers given live remain checkable after the fact.</p>
+
+  <h2>How long a meeting can run</h2>
+  <p>Meetings now have a hard stop: 3 hours from the opening of the session. If business is unfinished at that point, the meeting resumes at 6:30 p.m. the next business day — picking up exactly where it left off — unless two-thirds of the members present vote to adjourn or suspend on different terms. Council can also vote, by the same two-thirds threshold, to extend a meeting up to twice in one night, by 30 minutes each time.</p>
+
+  <h2>The mayor's suspensive veto</h2>
+  <p>One of the bylaw's more consequential provisions: the mayor can refuse to approve a decision council has just adopted. To use it, the mayor must notify the municipal clerk in writing within 48 hours of the resolution passing. That triggers a suspensive veto — the decision is paused, not killed.</p>
+  <p>Council can override it. Re-adopting the same resolution by an <strong>absolute majority</strong> of all council members (not just those present) lifts the veto and the decision stands. This is a real check on the mayor's office, but it does mean a single resolution can require two votes to take effect if the mayor objects.</p>
+
+  <h2>Keeping order in the room</h2>
+  <p>The bylaw gives the chair — normally the mayor — broad authority to maintain order and decorum, including the power to expel anyone disrupting a meeting: shouting, using abusive language, interrupting a speaker, debating with the public, or simply refusing to stay on topic are all listed grounds. That authority isn't limited to members of the public — a council member who fails to behave can be expelled too, under article 159 of the <em>Code municipal</em>.</p>
+  <p>Separately, council members are required to vote on every motion unless they're legally exempt due to a conflict of interest; failing to vote without a valid exemption carries a $100 fine.</p>
+
+  <h2>How residents can take part</h2>
+  <p>Show up at 6:30 p.m. on the first Monday of the month (second Monday in January) at the Hôtel de Ville, 5 rue Gale — or watch live on the municipality's YouTube channel. To ask a question without attending, email <a href="mailto:greffe@ormstown.ca">greffe@ormstown.ca</a> by noon the Friday before, with your name, address, and phone number.</p>
+  <p>📞 450 829-2625 &middot; ✉️ ormstown@ormstown.ca &middot; 🏛️ 5, rue Gale, Ormstown</p>
+
+  <h2>Open questions for council/administration</h2>
+  <ul>
+    <li>The bylaw's published text names both "Monday" and "Wednesday" in the same clause on meeting scheduling. Has the municipality flagged this for correction, and will a clean version be republished?</li>
+    <li>Article 6 makes it an offence to disclose, even partially, what's discussed in a council caucus. How does that provision interact with a council member's other obligations — for example, reporting suspected wrongdoing?</li>
+  </ul>
+
+  <div class="article-footer">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/Regl.-Regie-interne-VF-adopte-1.pdf">Full text: Règlement 2-2026 — régie interne et procédure d'assemblée (PDF)</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/AVIS_Calendrier-seances-ordinaires_2026.pdf">Official 2026 meeting calendar (PDF)</a></li>
+      <li><a href="https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal">Council meetings &amp; minutes — ormstown.ca</a></li>
+      <li><a href="https://www.ormstown.ca/actualites/avis-publics/">Avis publics — ormstown.ca</a></li>
+      <li><a href="/en/council-watch/april-13-2026/">Observer Council Watch — April 13, 2026 recap</a></li>
+    </ul>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>The Ormstown Observer is an independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region. We accept no advertising.</p>
+  <p>Contact: ormstownobserver@gmail.com</p>
+</footer>
+
+</body>
+</html>
