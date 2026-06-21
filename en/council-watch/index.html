@@ -82,6 +82,11 @@
     color: var(--muted); font-style: italic; font-size: 0.92rem; text-align: center;
   }
 
+  .status-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 20px; margin-top: 10px; }
+  .status-badge .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
+  .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
+  .status-badge.confirmed { background: #e8f3ea; color: var(--confirm); border: 1px solid #b8dcc0; }
+
   .site-footer {
     border-top: 3px double var(--rule); text-align: center; padding: 26px 20px;
     font-size: 0.85rem; color: var(--muted); background: var(--paper-dark);
@@ -130,7 +135,8 @@
       <h2><a href="/en/council-watch/april-13-2026/">Council closes a five-month regulatory overhaul, borrows $750,440 for Prince-Albert Street, and faces questions on staff turnover</a></h2>
       <p class="desc">A full bylaw package adopted after five months of work, four new advisory committees seated, 24 new homes approved on rue Isabelle, and a resident's pointed questions about 20+ staff departures in two and a half years.</p>
       <a class="read-more" href="/en/council-watch/april-13-2026/">Read the recap &rarr;</a>
-      <div class="meta-date">Published June 21, 2026 &middot; Official minutes pending</div>
+      <div class="meta-date">Published June 21, 2026</div>
+      <div class="status-badge unofficial"><span class="status-dot"></span>Unofficial &middot; minutes pending</div>
     </div>
 
     <div class="placeholder-card">
