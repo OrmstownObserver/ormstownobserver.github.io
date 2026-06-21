@@ -56,6 +56,12 @@
   .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 14px 18px; margin: 20px 0; border-radius: 2px; font-size: 0.95rem; }
   .note-box strong { color: var(--pending); }
 
+  .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 6px 14px; border-radius: 20px; margin-bottom: 26px; }
+  .status-badge .status-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
+  .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
+  .status-badge.confirmed { background: #e8f3ea; color: var(--confirm); border: 1px solid #b8dcc0; }
+  .status-badge a { color: inherit; text-decoration: underline; font-weight: 700; }
+
   blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
 
   .reso-wrap { overflow-x: auto; margin: 16px 0 28px; border: 1px solid var(--border); border-radius: 4px; }
@@ -110,6 +116,8 @@
   <h1 class="article-headline">Council closes a five-month regulatory overhaul, borrows $750,440 for Prince-Albert Street, and faces questions on staff turnover</h1>
   <p class="article-deck">Monday, April 13, 2026 — A packed agenda: a full bylaw package adopted after five months of work, four new advisory committees seated, 24 new homes approved on rue Isabelle, and a resident's pointed questions about 20+ staff departures in two and a half years.</p>
   <div class="byline">The Ormstown Observer &middot; Council Watch &middot; 6:40 p.m., Town Hall, 5 Gale Street &middot; <a href="https://www.youtube.com/live/cV8bF56YGdM">Watch the full recording on YouTube &rarr;</a></div>
+
+  <div class="status-badge unofficial"><span class="status-dot"></span>Observer Notes &middot; Unofficial summary, pending official minutes</div>
 
   <div class="fact-box">
     <h3>At a glance</h3>
