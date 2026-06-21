@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conseil municipal du 13 avril 2026 — Un cycle réglementaire complet, 20 000 $ pour les pompiers et des questions sur le roulement de personnel — L'Ormstown Observer</title>
+<meta name="description" content="Le conseil d'Ormstown a complété une révision réglementaire de cinq mois, adopté un règlement d'emprunt de 750 440 $ pour la rue Prince-Albert, approuvé 24 nouvelles résidences sur la rue Isabelle et répondu aux questions d'un citoyen sur le roulement de personnel. Compte rendu complet, résolution par résolution.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .masthead { text-align: center; padding: 28px 20px 18px; border-bottom: 3px double var(--rule); }
+  .masthead-flag { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.4rem; letter-spacing: 0.5px; margin: 0; }
+  .masthead-name { color: var(--ink); text-decoration: none; }
+  .masthead-tagline { font-style: italic; color: var(--muted); font-size: 0.95rem; margin-top: 4px; }
+  .masthead-meta { font-size: 0.8rem; color: var(--muted); margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+
+  .lang-switcher { text-align: center; padding: 8px 0; font-size: 0.85rem; background: var(--paper-dark); }
+  .lang-switcher a { margin: 0 6px; color: var(--ink-light); }
+  .lang-switcher a.active { color: var(--accent); font-weight: 600; }
+
+  nav.site-nav { background: var(--ink); text-align: center; padding: 0; font-family: 'Source Serif 4', serif; }
+  nav.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; flex-wrap: wrap; }
+  nav.site-nav li { margin: 0; }
+  nav.site-nav a { display: block; padding: 12px 18px; color: #f0ece4; text-decoration: none; font-size: 0.92rem; letter-spacing: 0.3px; border-right: 1px solid #333; }
+  nav.site-nav li:last-child a { border-right: none; }
+  nav.site-nav a:hover, nav.site-nav a.active { background: var(--accent); color: #fff; text-decoration: none; }
+
+  .article-wrap { max-width: 800px; margin: 0 auto; padding: 32px 20px 60px; }
+  .back-link { display: inline-block; margin-bottom: 18px; font-size: 0.9rem; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .article-headline { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
+  .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+
+  h2 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.35rem; margin: 32px 0 12px; }
+  h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 24px 0 10px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  .fact-box { background: var(--sidebar); border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .fact-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+  .fact-box ul { margin-bottom: 0; }
+
+  .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 14px 18px; margin: 20px 0; border-radius: 2px; font-size: 0.95rem; }
+  .note-box strong { color: var(--pending); }
+
+  blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
+
+  .reso-wrap { overflow-x: auto; margin: 16px 0 28px; border: 1px solid var(--border); border-radius: 4px; }
+  table.reso-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; background: #fff; }
+  table.reso-table th { background: var(--ink); color: #f0ece4; text-align: left; padding: 8px 10px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+  table.reso-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.reso-table td.pt { font-weight: 600; white-space: nowrap; color: var(--muted); }
+  table.reso-table tr:last-child td { border-bottom: none; }
+  table.reso-table tr:nth-child(even) td { background: var(--paper-dark); }
+  .res-carried { color: var(--confirm); white-space: nowrap; }
+  .res-tabled { color: var(--pending); white-space: nowrap; }
+  .res-refused { color: var(--warn); white-space: nowrap; }
+
+  table.follow-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 28px; }
+  table.follow-table th { background: var(--paper-dark); text-align: left; padding: 8px 10px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--ink); }
+  table.follow-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+
+  .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  .article-footer h3 { font-size: 1rem; font-style: normal; }
+
+  .site-footer { border-top: 3px double var(--rule); text-align: center; padding: 26px 20px; font-size: 0.85rem; color: var(--muted); background: var(--paper-dark); }
+  .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  @media (max-width: 680px) {
+    table.reso-table { font-size: 0.78rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <h1 class="masthead-flag"><a class="masthead-name" href="/fr/">L'Ormstown Observer</a></h1>
+  <div class="masthead-tagline">Imputabilité civique &middot; Journalisme indépendant</div>
+  <div class="masthead-meta">Ormstown et la région du Haut-Saint-Laurent</div>
+</header>
+
+<div class="lang-switcher">
+  <a href="/en/council-watch/april-13-2026/">EN</a> | <a href="/fr/conseil-municipal/13-avril-2026/" class="active">FR</a>
+</div>
+
+<nav class="site-nav">
+  <ul>
+    <li><a href="/fr/">Accueil</a></li>
+    <li><a href="/fr/conseil-municipal/" class="active">Conseil municipal</a></li>
+  </ul>
+</nav>
+
+<div class="article-wrap">
+  <a class="back-link" href="/fr/conseil-municipal/">&larr; Retour à Conseil municipal</a>
+
+  <div class="section-label">Conseil municipal &middot; Séance ordinaire</div>
+  <h1 class="article-headline">Le conseil complète un cycle réglementaire de cinq mois, emprunte 750 440 $ pour la rue Prince-Albert et répond à des questions sur le roulement de personnel</h1>
+  <p class="article-deck">Lundi 13 avril 2026 — Un ordre du jour chargé : un important cycle réglementaire adopté après cinq mois de travail, quatre nouveaux comités consultatifs mis en place, 24 nouvelles résidences approuvées sur la rue Isabelle, et les questions pointues d'un citoyen sur plus de 20 départs de personnel en deux ans et demi.</p>
+  <div class="byline">L'Ormstown Observer &middot; Conseil municipal &middot; 18 h 40, Hôtel de ville, 5 rue Gale &middot; <a href="https://www.youtube.com/live/cV8bF56YGdM">Voir l'enregistrement complet sur YouTube &rarr;</a></div>
+
+  <div class="fact-box">
+    <h3>En bref</h3>
+    <ul>
+      <li>Quorum atteint, troisième séance consécutive diffusée en direct sur YouTube.</li>
+      <li>Un cycle réglementaire de cinq mois s'est conclu : nouveau règlement de régie interne, plan d'urbanisme, zonage, permis, tarification et règlement sur les animaux, tous adoptés le même soir.</li>
+      <li>Règlement d'emprunt de 750 440 $ (173-2026) adopté pour les infrastructures souterraines de la rue Prince-Albert.</li>
+      <li>24 résidences unifamiliales approuvées pour la rue Isabelle; les logements accessoires de ce projet ont été refusés, faute de capacité des infrastructures municipales.</li>
+      <li>La question d'un citoyen sur le roulement de personnel (plus de 20 départs en 2,5 ans) a suscité une réponse directe du maire sur les limites légales du rôle du conseil en matière de gestion du personnel.</li>
+      <li><strong>Le procès-verbal officiel n'était pas encore publié au moment d'écrire ces lignes</strong> — la municipalité dispose d'un délai pouvant atteindre deux mois. Ce compte rendu est basé sur la diffusion publique YouTube.</li>
+    </ul>
+  </div>
+
+  <h2>Avant l'ouverture officielle</h2>
+  <p>Louise Labelle Rolin, présidente des Dames auxiliaires d'Ormstown, a remis à la municipalité un chèque de 20 000 $ pour l'achat d'appareils respiratoires destinés au service incendie. Le conseiller Robert Greig, également représentant des pompiers, était présent pour la remise.</p>
+  <p>Le conseil a aussi dressé le bilan de la journée citoyenne portes ouvertes du 11 avril : plus de 120 citoyens ont visité les kiosques à l'hôtel de ville, où deux demandes de subvention PAFIRSPA — inscrites plus tard à l'ordre du jour de la soirée — ont été présentées à 11 h. L'événement, coordonné par Isabelle Tanguet, a été jugé concluant et sera reconduit. Par ailleurs, la municipalité a rappelé son rôle de partenaire dans l'événement de la Journée de la Terre du CVR, le samedi 19 avril, qui inclura une déchiqueteuse pour les citoyens.</p>
+  <p>Deux modifications ont été apportées à l'ordre du jour en début de séance : le point 4.13 (mandat de service en ressources humaines spécialisées) a été ajouté, et le point 10.6 (stationnement rue Hector pour un événement FADOQ) a été retiré et reporté à une séance ultérieure.</p>
+
+  <h2>Un cycle réglementaire complet, conclu en une seule soirée</h2>
+  <p>Après cinq mois de rédaction et de révision, le conseil a adopté un important ensemble de règlements en une seule séance. Le nouveau règlement de régie interne (2-2026) — qui introduit notamment deux périodes de questions publiques par séance à compter de la prochaine rencontre — a été adopté en même temps que les modifications au plan d'urbanisme (147.1-2025), au règlement de zonage (148.4-2025) et au règlement sur les permis et certificats (151.1-2025). Le conseil a également adopté un nouveau règlement de tarification municipale (39-2026) ainsi que le règlement sur les animaux domestiques et les chiens dangereux (131-2026). Des avis de motion ont été déposés pour une mise à jour du code d'éthique des élus (74-2026) et une modification au règlement sur la bibliothèque (90.1-2026) — toutes deux attendues à la prochaine séance.</p>
+
+  <h2>750 440 $ empruntés pour la rue Prince-Albert</h2>
+  <p>Le conseil a adopté le règlement d'emprunt 173-2026, finançant la reconstruction des infrastructures souterraines de la rue Prince-Albert. Un contrat de travaux connexe pour les rues Prince-Albert, Cullen et Oliver a été octroyé plus tard dans la même séance.</p>
+
+  <h2>Quatre nouveaux comités consultatifs mis en place</h2>
+  <p>Le conseil a procédé à la nomination des membres de quatre comités prévus dès le début du mandat actuel : le Comité consultatif agricole, le Comité environnement, le Comité de développement économique local et le Comité de la vie citoyenne.</p>
+
+  <h2>Travaux publics : un dossier d'infrastructure chargé</h2>
+  <ul>
+    <li>Entente de déneigement pour le Rang Dumas avec la Municipalité de Franklin</li>
+    <li>Entente de collaboration avec le ministère des Transports (MTMD) pour deux projets routiers</li>
+    <li>Dépôt de deux demandes de subvention PAFIRSPA (infrastructures récréatives et sportives)</li>
+    <li>Contrat de services d'hydrogéologue octroyé à Orflow</li>
+    <li>Contrats octroyés pour l'acquisition et l'installation de compteurs d'eau modernes à lecture à distance</li>
+    <li>Les offres reçues pour la vente des véhicules municipaux excédentaires ont été refusées — aucune offre acceptable</li>
+    <li>Contrat de forage des puits d'exploitation octroyé à Forage métropolitain inc., adopté à la majorité, le conseiller Émond votant contre — le seul vote dissident de la soirée</li>
+  </ul>
+
+  <h2>Urbanisme : une dérogation et 24 nouvelles résidences</h2>
+  <p>Une dérogation mineure a été approuvée pour un agrandissement résidentiel au 1242 rue du Marais, portant la superficie totale à 128,18 m² — soit 48,18 m² de plus que le maximum de 80 m² prévu pour la zone R-22. Le Comité consultatif d'urbanisme (CCU) a noté que la majorité des résidences de la zone dépassent déjà cette norme, et le service d'urbanisme a été mandaté pour étudier une révision plus large de la réglementation applicable.</p>
+  <p>Les plans d'implantation et d'intégration architecturale (PIIA) ont été approuvés pour un projet de 24 résidences unifamiliales isolées sur la rue Isabelle. Les modèles incluant un logement accessoire ont été refusés : les infrastructures municipales ne peuvent pas soutenir la densité équivalente à 48 unités. Tous les permis de construction du projet devront être conformes à la résolution adoptée.</p>
+
+  <h2>Culture et vie communautaire</h2>
+  <ul>
+    <li><strong>Piano public :</strong> la municipalité demande à la MRC du Haut-Saint-Laurent de l'inclure dans son programme, avec un instrument prévu pour le noyau villageois.</li>
+    <li><strong>Foire d'Ormstown 2026 :</strong> aide de 5 000 $ accordée au LBA. La foire a attiré plus de 35 000 visiteurs en 2025.</li>
+    <li><strong>Redistribution du loyer du bureau de la députée :</strong> 1 000 $ chacun à cinq organismes locaux — Cercle de l'Amitié, Club FADOQ, Légion royale canadienne, Affaire de famille et un cinquième organisme — versement prévu au terme du bail, en février 2027.</li>
+    <li><strong>Bibliothèque :</strong> exposition de Dorotime à compter du 14 avril, échange réseau biblio le 22 avril, et projet de club de généalogie à l'étude.</li>
+    <li>Le maire Besombes et la conseillère Fairhurst ont remis les bourses de persévérance scolaire 2026 au CVCEC.</li>
+  </ul>
+
+  <h2>Période de questions : un citoyen interpelle le conseil sur le roulement de personnel</h2>
+  <p>Un citoyen a soulevé des préoccupations sur le roulement de personnel à la municipalité, évoquant au moins 20 départs dans les postes administratifs, techniques et aux travaux publics au cours des deux dernières années et demie. Il a aussi décrit un cas précis : un employé aurait reçu un préavis de seulement quatre heures avant que le conseil n'adopte une résolution de congédiement, et le document de mise à pied n'aurait pas été signé par le directeur général tel que requis.</p>
+  <p>Le maire Besombes a reconnu la préoccupation, tout en étant clair sur le cadre légal : dans les municipalités québécoises, la gestion du personnel relève exclusivement de l'administration — le directeur général et la directrice des ressources humaines — et non du conseil. Il a précisé ne pas pouvoir intervenir dans des dossiers individuels sans risquer d'être blâmé par la Commission municipale.</p>
+  <p>Le conseil a souligné trois actions déjà en cours : les ressources humaines sont désormais un point statutaire à l'ordre du jour des COCUS mensuels; la directrice des ressources humaines, en poste depuis moins d'un an, structure activement les descriptions de tâches, processus et politiques; et la municipalité travaille à se conformer à la Loi 27.</p>
+  <div class="note-box"><strong>Note de l'Observer :</strong> La question du roulement de personnel soulevée en période de questions est d'intérêt public légitime. L'Observer suivra ce dossier et demeurera attentif aux prochains ordres du jour pour tout développement relatif à la gouvernance des ressources humaines.</div>
+
+  <h2>Tableau complet des résolutions</h2>
+  <p>Tous les points soumis au vote ou déposés formellement, tirés de l'enregistrement public. Les champs proposeur/secondeur ne sont pas toujours énoncés à voix haute et sont marqués d'un tiret lorsqu'indisponibles.</p>
+  <div class="reso-wrap">
+    <table class="reso-table">
+<thead><tr><th>Point</th><th>Sujet</th><th>Proposeur</th><th>Secondeur</th><th>Résultat</th></tr></thead>
+<tbody>
+<tr><td class="pt">3.1</td><td>Adoption du PV &mdash; séance ordinaire du 2 mars 2026</td><td>J. Fairhurst</td><td>V. Taillefer</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">3.2</td><td>Adoption du PV &mdash; séance extraordinaire du 23 mars 2026</td><td>J. Guilbault</td><td>M.A. Émond</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.1</td><td>Approbation des opérations financières &mdash; décompte marge de crédit Rang Desbro: 561 662,02 $ et 58 748,40 $</td><td>R. Greig</td><td>M.A. Émond</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.2</td><td>Autorisation ClicSéqur &mdash; accès Revenu Québec (DG, greffière, DRH)</td><td>R. Gauthier</td><td>J. Fairhurst</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.3</td><td>Embauche temporaire travaux publics &mdash; Mathis Maisonneuve, journalier (max. 1 140 $)</td><td>R. Gauthier</td><td>J. Fairhurst</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.4</td><td>Renouvellement assurance accident pompiers et bénévoles FQM 2026-2027 (2 148,39 $)</td><td>V. Taillefer</td><td>R. Greig</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.5</td><td>Renouvellement assurance combinée municipalité FQM 2026-2027 (97 472,16 $)</td><td>V. Taillefer</td><td>J. Fairhurst</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.6</td><td>Contribution 2025 à la Légion royale canadienne &mdash; 2 000 $</td><td>J. Guilbault</td><td>R. Greig</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.7</td><td>Renouvellement cotisations ordres professionnels 2026 (Chambre des notaires, OIQ, Ordre des urbanistes, APDEQ, ACMQ)</td><td>J. Fairhurst</td><td>R. Gauthier</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.8</td><td>Redistribution loyer bureau satellite de la députée de Huntingdon &mdash; 5 &times; 1 000 $ aux organismes locaux</td><td>J. Guilbault</td><td>J. Fairhurst</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.9</td><td>Embauche bibliothèque &mdash; Sylvie Martin, commis, temps partiel, période de probation de 6 mois</td><td>M.A. Émond</td><td>R. Greig</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.10</td><td>Embauche technicienne en génie civil &mdash; Livia Charlebois, contrat 1 an minimum</td><td>V. Taillefer</td><td>J. Fairhurst</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.11</td><td>Stage en technique d'administration &mdash; Ludovic Leduc, 15 semaines, max. 12 000 $</td><td>R. Gauthier</td><td>R. Greig</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.12</td><td>Consolidation bancaire &mdash; Caisse Desjardins du Haut-Saint-Laurent, compte unique</td><td>R. Greig</td><td>J. Guilbault</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">4.13</td><td>Mandat d'accompagnement en ressources humaines spécialisées (ajouté à l'OdJ)</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">5.1</td><td>Adoption règlement 2-2026 &mdash; Régie interne et procédure d'assemblée (mod. règl. 2-2023)</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">5.2</td><td>Adoption règlement 147.1-2025 &mdash; Modification du plan d'urbanisme 147-2023</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">5.3</td><td>Adoption règlement 148.4-2025 &mdash; Modification du règlement de zonage 148-2023</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">5.4</td><td>Adoption règlement 151.1-2025 &mdash; Modification du règlement sur les permis et certificats 151-2023</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">5.5</td><td>Adoption règlement de tarification municipale 39-2026</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">5.6</td><td>Adoption règlement animaux domestiques et chiens dangereux 131-2026</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">5.7</td><td>Avis de motion &mdash; règlement 90.1-2026 modifiant le règlement sur la bibliothèque 90-2021</td><td>&mdash;</td><td>&mdash;</td><td class="res-tabled">📋 Dépôt</td></tr>
+<tr><td class="pt">5.8</td><td>Avis de motion &mdash; règlement 74-2026 code d'éthique et de déontologie des élus (mod. 74-2021)</td><td>&mdash;</td><td>&mdash;</td><td class="res-tabled">📋 Dépôt</td></tr>
+<tr><td class="pt">5.9</td><td>Adoption règlement d'emprunt 173-2026 &mdash; 750 440 $ pour travaux rue Prince-Albert</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">6.1</td><td>Nomination membres &mdash; Comité consultatif agricole</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">6.2</td><td>Nomination membres &mdash; Comité environnement</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">6.3</td><td>Nomination membres &mdash; Comité développement économique local</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">6.4</td><td>Nomination membres &mdash; Comité vie citoyenne</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">7.1</td><td>Entente de déneigement Rang Dumas avec la Municipalité de Franklin</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">7.2</td><td>Entente de collaboration avec MTMD &mdash; Projets 154870370 et 154151099</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">7.3</td><td>Dépôt de projet PAFIRSPA Volet 1</td><td>&mdash;</td><td>&mdash;</td><td class="res-tabled">📋 Dépôt</td></tr>
+<tr><td class="pt">7.4</td><td>Dépôt de projet PAFIRSPA Volet 2</td><td>&mdash;</td><td>&mdash;</td><td class="res-tabled">📋 Dépôt</td></tr>
+<tr><td class="pt">7.5</td><td>Octroi contrat Orflow &mdash; service d'hydrogéologue</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">7.6</td><td>Octroi contrat ORM2026-06 &mdash; acquisition de compteurs d'eau</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">7.7</td><td>Octroi contrat ORM2026-06.1 &mdash; installation des compteurs d'eau</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">7.8</td><td>Refus des offres &mdash; vente véhicules municipaux sur appel d'offres</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Refus</td></tr>
+<tr><td class="pt">7.9</td><td>Octroi contrat &mdash; travaux rues Prince-Albert, Cullen et Oliver</td><td>&mdash;</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">7.10</td><td>Octroi contrat &mdash; forages des puits d'exploitation, Forage métropolitain inc.</td><td>V. Taillefer</td><td>R. Greig</td><td class="res-carried">✅ Majorité &mdash; 1 contre (M.A. Émond)</td></tr>
+<tr><td class="pt">8.1</td><td>Rapport mensuel SSI &mdash; février 2026</td><td>&mdash;</td><td>&mdash;</td><td class="res-tabled">📋 Dépôt</td></tr>
+<tr><td class="pt">8.2</td><td>Adoption programme protection respiratoire SSI 2026</td><td>V. Taillefer</td><td>J. Fairhurst</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">8.3</td><td>Adoption programme 2026-005 : inspection et entretien des équipements SSI</td><td>R. Greig</td><td>M.A. Émond</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">8.4</td><td>Adoption programme entretien des véhicules d'intervention SSI</td><td>R. Gauthier</td><td>V. Taillefer</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">8.5</td><td>Adoption programme prévention SST &mdash; service de sécurité incendie</td><td>J. Guilbault</td><td>J. Fairhurst</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">8.6</td><td>Adoption programme formation et maintien des compétences SSI version 2026</td><td>V. Taillefer</td><td>R. Greig</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">8.7</td><td>Adoption programme régional entretien réseaux d'eau / bornes-fontaines (MRC)</td><td>M.A. Émond</td><td>J. Fairhurst</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">8.8</td><td>Adoption protocole d'appels version 2026-03-25 (11 secteurs, 7 protocoles)</td><td>R. Gauthier</td><td>R. Greig</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">9.1</td><td>Liste des permis émis &mdash; mars 2026</td><td>&mdash;</td><td>&mdash;</td><td class="res-tabled">📋 Dépôt</td></tr>
+<tr><td class="pt">9.2</td><td>Dérogation mineure &mdash; agrandissement résidentiel 1242 rue du Marais, zone R-22, 128,18 m²</td><td>R. Gauthier</td><td>M.A. Émond</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">9.3</td><td>PIA rue Isabelle &mdash; 24 résidences unifamiliales APPROUVÉES; logements accessoires REFUSÉS</td><td>R. Greig</td><td>J. Fairhurst</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">10.1</td><td>Rapport activités bibliothèque &mdash; avril 2026</td><td>&mdash;</td><td>&mdash;</td><td class="res-tabled">📋 Dépôt</td></tr>
+<tr><td class="pt">10.2</td><td>Dépôt rapport annuel bibliothèque et rapport financier 2025</td><td>&mdash;</td><td>&mdash;</td><td class="res-tabled">📋 Dépôt</td></tr>
+<tr><td class="pt">10.3</td><td>Partenariat LBA &mdash; aide financière Foire / Expo Ormstown 2026 (5 000 $)</td><td>J. Fairhurst</td><td>V. Taillefer</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">10.4</td><td>Participation au programme Piano public du Haut-Saint-Laurent (MRC)</td><td>J. Guilbault</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">10.5</td><td>Adoption politique réservation et location des installations municipales (mise à jour assurances)</td><td>J. Guilbault</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">10.6</td><td>Reconnaissance événement spécial FADOQ &mdash; stationnement rue Hector</td><td>&mdash;</td><td>&mdash;</td><td class="res-refused">❌ Retiré</td></tr>
+<tr><td class="pt">12.1</td><td>Commandite feuillet paroissial Saint-Viateur &mdash; 180 $ annuel</td><td>R. Gauthier</td><td>M.A. Émond</td><td class="res-carried">✅ Adopté</td></tr>
+<tr><td class="pt">12.2</td><td>Lettre d'appui &mdash; Marché fermier du comté d'Huntingdon (refonte site web, programme EPR-TNT 2527)</td><td>J. Guilbault</td><td>&mdash;</td><td class="res-carried">✅ Adopté</td></tr>
+</tbody></table>
+  </div>
+
+  <h2>Points en suspens et suivis requis</h2>
+  <table class="follow-table">
+    <thead><tr><th>Action / suivi</th><th>Responsable</th><th>Échéance</th></tr></thead>
+    <tbody>
+      <tr><td>Entente-cadre avec la Légion royale canadienne</td><td>DG Daniel Leduc</td><td>Mai&ndash;juin 2026</td></tr>
+      <tr><td>Analyse de la réglementation de la zone R-22 (superficies au sol)</td><td>Service d'urbanisme</td><td>À confirmer</td></tr>
+      <tr><td>Point 10.6 (FADOQ / stationnement rue Hector) &mdash; retiré de l'ordre du jour</td><td>Conseil municipal</td><td>Prochaine séance</td></tr>
+      <tr><td>Mise à jour des politiques RH, descriptions de tâches, conformité à la Loi 27</td><td>DRH + DG</td><td>En cours</td></tr>
+      <tr><td>Dépôt de la demande Piano public à la MRC du HSL</td><td>Service culture et loisirs</td><td>Printemps 2026</td></tr>
+      <tr><td>Suivi des permis de construction &mdash; rue Isabelle (24 unités)</td><td>Service d'urbanisme</td><td>En cours</td></tr>
+      <tr><td>Code d'éthique des élus (règl. 74-2026) &mdash; avis de motion déposé</td><td>Conseil + greffière</td><td>Prochaine séance</td></tr>
+      <tr><td>Règlement sur la bibliothèque (règl. 90.1-2026) &mdash; avis de motion déposé</td><td>Conseil + greffière</td><td>Prochaine séance</td></tr>
+    </tbody>
+  </table>
+
+  <div class="article-footer">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.youtube.com/live/cV8bF56YGdM">Enregistrement complet de la séance — YouTube</a></li>
+      <li><a href="https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal">Procès-verbal officiel — publication à venir sur ormstown.ca</a> (la municipalité publie le procès-verbal une fois adopté à la séance ordinaire suivante, généralement un délai de 4 à 6 semaines)</li>
+    </ul>
+    <p style="margin-top:14px; font-size:0.85rem; color:var(--muted);"><em>Ce compte rendu a été préparé à partir de l'enregistrement vidéo public, avant la publication du procès-verbal officiel. De légères imprécisions sont possibles; l'Observer mettra à jour cet article et y ajoutera le lien vers le procès-verbal officiel dès sa publication. Questions ou corrections : ormstownobserver@gmail.com</em></p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>L'Ormstown Observer est une publication indépendante de surveillance civique couvrant Ormstown et la région du Haut-Saint-Laurent. Nous n'acceptons aucune publicité.</p>
+  <p>Contact : ormstownobserver@gmail.com</p>
+</footer>
+
+</body>
+</html>
