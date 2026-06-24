@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surveillance du conseil : 1er juin 2026 — États financiers 2025 déposés, projet de 24 logements et nouvelles règles d'affichage — L'Ormstown Observer</title>
+<meta name="description" content="Le conseil a reçu les états financiers 2025, examiné un projet résidentiel de 24 unités nécessitant une consultation publique, adopté deux règlements et traité un ordre du jour chargé en urbanisme.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .topbar { background: var(--ink); }
+  .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .topnav { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; }
+  .topnav a { font-family: 'Playfair Display', serif; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 8px 13px; color: #d8d3c4; }
+  .topnav a:hover { color: #fff; }
+  .topnav a.active { color: var(--accent); }
+  .lang-pill-sm { display: inline-flex; gap: 0; border: 1px solid #444; margin-left: 8px; }
+  .lang-pill-sm a { font-size: 11px; padding: 6px 11px; color: #d8d3c4; }
+  .lang-pill-sm a.active { background: var(--accent); color: #fff; }
+
+  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 20px 40px 16px; text-align: center; background: var(--paper); }
+  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 6vw, 60px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); text-decoration: none; display: block; }
+  .masthead-name:hover { color: var(--ink); }
+  .masthead-tagline { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; font-style: italic; }
+
+  .article-wrap { max-width: 800px; margin: 0 auto; padding: 32px 20px 60px; }
+  .back-link { display: inline-block; margin-bottom: 18px; font-size: 0.9rem; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .article-headline { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
+  .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+
+  h2 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.35rem; margin: 32px 0 12px; }
+  h3 { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 24px 0 10px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  .fact-box { background: var(--sidebar); border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .fact-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+  .fact-box ul { margin-bottom: 0; }
+
+  .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 14px 18px; margin: 20px 0; border-radius: 2px; font-size: 0.95rem; }
+  .note-box strong { color: var(--pending); }
+
+  .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 6px 14px; border-radius: 20px; margin-bottom: 26px; }
+  .status-badge .status-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
+  .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
+
+  .reso-wrap { overflow-x: auto; margin: 16px 0 28px; border: 1px solid var(--border); border-radius: 4px; }
+  table.follow-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 28px; }
+  table.follow-table th { background: var(--paper-dark); text-align: left; padding: 8px 10px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--ink); }
+  table.follow-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+
+  .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  .article-footer h3 { font-size: 1rem; font-style: normal; }
+
+  .site-footer { border-top: 3px double var(--rule); text-align: center; padding: 26px 20px; font-size: 0.85rem; color: var(--muted); background: var(--paper-dark); }
+  .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+  @media (max-width: 680px) { .article-wrap { padding: 20px 14px 40px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <nav class="topnav">
+      <a href="/fr/">Accueil</a>
+      <a href="/fr/enquetes/">Enquêtes</a>
+      <a href="/fr/reglements/">Règlements</a>
+      <a href="/fr/conseil-municipal/" class="active">Conseil municipal</a>
+      <a href="/fr/evenements/">Événements</a>
+      <a href="mailto:ormstownobserver@gmail.com">Contact</a>
+    </nav>
+    <span class="lang-pill-sm"><a href="/en/council-watch/june-1-2026/">EN</a><a href="/fr/conseil-municipal/1-juin-2026/" class="active">FR</a></span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+  <a class="masthead-name" href="/fr/">L'Ormstown Observer</a>
+  <div class="masthead-tagline">Journalisme civique · Indépendant</div>
+</header>
+
+<div class="article-wrap">
+  <a class="back-link" href="/fr/conseil-municipal/">&larr; Retour à Surveillance du conseil</a>
+
+  <div class="section-label">Surveillance du conseil &middot; Séance ordinaire</div>
+  <h1 class="article-headline">États financiers 2025 déposés, projet de 24 logements proposé et nouvelles règles d'affichage des avis publics</h1>
+  <p class="article-deck">Lundi 1er juin 2026 — Un ordre du jour chargé : dépôt des états financiers 2025, examen d'un projet résidentiel de 24 unités nécessitant une consultation publique, adoption de deux règlements et un avis de motion pour un emprunt de 4,8 M$.</p>
+  <div class="byline">L'Ormstown Observer &middot; Surveillance du conseil &middot; 18 h 30, Hôtel de ville, 5, rue Gale &middot; <a href="https://www.youtube.com/live/b3LBwLNeRU0?si=9kwlo34aB5K4geNZ">Visionner l'enregistrement complet sur YouTube &rarr;</a></div>
+
+  <div class="status-badge unofficial"><span class="status-dot"></span>Notes de l'Observer &middot; Résumé non officiel — procès-verbal en attente</div>
+
+  <div class="fact-box">
+    <h3>En bref</h3>
+    <ul>
+      <li>Quorum complet. Les sept membres et l'administration au complet étaient présents.</li>
+      <li>États financiers et faits saillants 2025 reçus — l'Observer publiera un résumé une fois le document disponible publiquement.</li>
+      <li>Projet résidentiel de 24 unités (quatre immeubles de 6 logements) sur le lot 6&nbsp;455&nbsp;729 — une consultation publique est obligatoire avant toute décision.</li>
+      <li>Deux règlements adoptés : nouvelles règles d'affichage des avis publics (<a href="https://www.ormstown.ca/wp-content/uploads/Reglement-167.1-2026-modifiant-167-2025_WEB.pdf">Règlement 167.1-2026</a>) et tarification des services municipaux (<a href="https://www.ormstown.ca/wp-content/uploads/Reglement_39-2026-Tarification-des-services-municipaux_WEB-2.pdf">Règlement 39-2026</a>).</li>
+      <li>Avis de motion pour un amendement au règlement d'emprunt de 4,8 M$ visant les rues Prince-Albert, Cullen et Oliver.</li>
+      <li><strong>Le procès-verbal officiel n'était pas encore publié au moment de la rédaction</strong> — la municipalité prend généralement de 4 à 6 semaines. Ce résumé est tiré de l'enregistrement public sur YouTube et de l'ordre du jour publié.</li>
+    </ul>
+  </div>
+
+  <h2>Finances et administration</h2>
+  <p>Le conseil a reçu les <strong>états financiers et faits saillants 2025</strong> — le bilan annuel des revenus, dépenses et situation financière de la municipalité. L'Observer publiera un résumé une fois le document disponible sur ormstown.ca.</p>
+  <p>Le conseil a également donné un <strong>avis de motion pour le Règlement 1.1-2026</strong>, un amendement au règlement sur le taux de taxation 2026. Les détails seront soumis à un vote lors d'une séance ultérieure.</p>
+  <p>Deux mandats de services professionnels ont été autorisés : <strong>Dunton Rainville</strong> pour le soutien au greffe, et une prolongation du mandat de <strong>CM Lex</strong> pour des services juridiques spécialisés en ressources humaines.</p>
+  <p>Le <strong>registre 2025 des dons et avantages reçus par les élus</strong> a été déposé — exigence annuelle de transparence en vertu de la loi québécoise.</p>
+  <p>Sur le plan du personnel : le conseil a confirmé la <strong>permanence d'une journalière aux travaux publics</strong> et approuvé l'<strong>embauche de quatre travailleurs saisonniers</strong>.</p>
+
+  <h2>Règlements</h2>
+  <p><strong><a href="https://www.ormstown.ca/wp-content/uploads/Reglement-167.1-2026-modifiant-167-2025_WEB.pdf">Règlement 167.1-2026</a></strong> — Le conseil a adopté un amendement au règlement sur les avis publics. Le préambule du règlement indique que la municipalité a été informée qu'elle ne pouvait plus utiliser son emplacement désigné précédent. Les avis publics seront dorénavant affichés sur le site Web municipal et sur le babillard extérieur de l'hôtel de ville (5, rue Gale).</p>
+  <p><strong><a href="https://www.ormstown.ca/wp-content/uploads/Reglement_39-2026-Tarification-des-services-municipaux_WEB-2.pdf">Règlement 39-2026</a></strong> — Le conseil a adopté le règlement de tarification des services municipaux mis à jour, qui avait été retiré de l'ordre du jour du 4 mai et représenté pour adoption lors de cette séance.</p>
+  <p>Un <strong>avis de motion a été déposé pour le Règlement d'emprunt 173.1-2026</strong>, modifiant le règlement d'emprunt d'infrastructure existant pour couvrir des travaux aux rues Prince-Albert, Cullen et Oliver — un ensemble de 4,8 M$. Le vote d'adoption aura lieu à une séance ultérieure.</p>
+
+  <h2>Urbanisme</h2>
+  <p>C'était l'un des ordres du jour en urbanisme les plus chargés de l'année. Cinq demandes de <a href="/fr/bylaws-regulations/reglement-piia-152-2023/"><strong>PIIA</strong></a> — des révisions d'intégration architecturale et patrimoniale — étaient devant le conseil pour des propriétés des rues Victoria et Bridge, couvrant des travaux de toiture, remplacement de fenêtres, changement de portes, revêtement, soffites et changement de couleur.</p>
+  <p>Une <strong>demande de PPCMOI pour le 33, rue Prince-Albert</strong> — le site de la Légion royale canadienne — était à l'ordre du jour. Sa présence peut indiquer un intérêt pour la redéveloppement de cet emplacement.</p>
+  <p>Une deuxième demande de PPCMOI concernait le <strong>lot 6&nbsp;455&nbsp;729</strong> : un projet résidentiel proposé comprenant quatre immeubles de 6 logements, pour un total de <strong>24 unités</strong>. Le conseil ne peut voter sur ce projet sans avoir d'abord complété un processus de consultation publique obligatoire — les résidents auront l'occasion de se prononcer avant toute décision. L'Observer suivra ce dossier.</p>
+  <p>Le conseil a également traité les <strong>nominations au comité de démolition</strong>, reçu la <strong>liste des permis de mai 2026</strong> et examiné un <strong>don de terrain de l'écocentre à l'église St-James</strong>.</p>
+
+  <h2>Travaux publics</h2>
+  <p>Le conseil a autorisé un <strong>contrat de caractérisation des sols</strong> en lien avec la reconstruction de la Route 138A et approuvé un appel d'offres pour des <strong>services annuels de contrôle de qualité en laboratoire</strong> pour les matériaux de construction.</p>
+
+  <h2>Culture et loisirs</h2>
+  <p>Le conseil a examiné une <strong>demande d'aide financière pour le jardin communautaire</strong> (Debbie Neumann), reçu le <strong>rapport d'activités de la bibliothèque</strong>, adopté une <strong>proclamation pour la Journée mondiale de sensibilisation à la maltraitance des personnes aînées</strong> (15 juin), et exprimé son appui à un <strong>projet de rénovation du terrain de baseball</strong> au Parc des Copains à Sainte-Martine.</p>
+
+  <h2>À suivre</h2>
+  <table class="follow-table">
+    <thead><tr><th>Dossier</th><th>État</th><th>Prochaine étape</th></tr></thead>
+    <tbody>
+      <tr><td>États financiers 2025</td><td>Reçus par le conseil</td><td>L'Observer publiera un résumé dès la diffusion du document sur ormstown.ca</td></tr>
+      <tr><td>Projet résidentiel de 24 unités — lot 6&nbsp;455&nbsp;729</td><td>Devant le conseil</td><td>Consultation publique obligatoire avant tout vote</td></tr>
+      <tr><td>Règlement d'emprunt 173.1-2026 (4,8 M$)</td><td>Avis de motion déposé</td><td>Vote d'adoption à une séance ultérieure</td></tr>
+      <tr><td>Règlement 1.1-2026 (amendement au taux de taxation)</td><td>Avis de motion déposé</td><td>Vote d'adoption à une séance ultérieure</td></tr>
+      <tr><td>PPCMOI — 33, rue Prince-Albert (site de la Légion)</td><td>Demande devant le conseil</td><td>Décision en attente; l'Observer suivra le dossier</td></tr>
+      <tr><td>Procès-verbal officiel — 1er juin 2026</td><td>Non encore publié</td><td>Attendu sur ormstown.ca environ 4 à 6 semaines après la prochaine séance ordinaire</td></tr>
+    </tbody>
+  </table>
+
+  <div class="article-footer">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.youtube.com/live/b3LBwLNeRU0?si=9kwlo34aB5K4geNZ">Enregistrement complet de la séance — YouTube</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/000-Ordre-du-jour-2026-06-01_Avec-certificat-de-publication.pdf">Ordre du jour publié — 1er juin 2026 (PDF, ormstown.ca)</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/Reglement-167.1-2026-modifiant-167-2025_WEB.pdf">Règlement 167.1-2026 — Amendement aux avis publics (PDF)</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/Reglement_39-2026-Tarification-des-services-municipaux_WEB-2.pdf">Règlement 39-2026 — Tarification des services (PDF)</a></li>
+      <li><a href="https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal">Procès-verbal officiel — publication en attente sur ormstown.ca</a></li>
+    </ul>
+    <p style="margin-top:14px; font-size:0.85rem; color:var(--muted);"><em>Ce résumé a été préparé à partir de l'enregistrement public et de l'ordre du jour avant la publication du procès-verbal officiel. Des imprécisions mineures sont possibles; l'Observer mettra cet article à jour et y ajoutera un lien vers le procès-verbal officiel dès sa publication. Questions ou corrections : ormstownobserver@gmail.com</em></p>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>L'Ormstown Observer est une publication indépendante de vigilance civique couvrant Ormstown et la région du Haut-Saint-Laurent. Nous n'acceptons aucune publicité.</p>
+  <p>Contact : ormstownobserver@gmail.com</p>
+</footer>
+
+</body>
+</html>
