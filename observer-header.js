@@ -209,7 +209,7 @@
       <span data-en>The Ormstown Observer</span><span data-fr>L'Ormstown Observer</span>
     </div>
     <span data-en>The Ormstown Observer is a bilingual civic watchdog covering the decisions, bylaws, and debates that shape Ormstown and the Haut-Saint-Laurent. A bilingual publication for a bilingual community. We accept no advertising.</span>
-    <span data-fr>L'Ormstown Observer est un chien de garde civique bilingue qui couvre les décisions, règlements et débats qui façonnent Ormstown et le Haut-Saint-Laurent. Une publication bilingue pour une communauté bilingue. Nous n'acceptons aucune publicité.</span><br>
+    <span data-fr>L'Ormstown Observer est une vigie civique bilingue qui couvre les décisions, règlements et débats qui façonnent Ormstown et le Haut-Saint-Laurent. Une publication bilingue pour une communauté bilingue. Nous n'acceptons aucune publicité.</span><br>
     <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
   </footer>`;
 
