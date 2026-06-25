@@ -17,23 +17,23 @@
   a { color: inherit; text-decoration: none; }
   a:hover { color: var(--accent); }
 
-  /* TOP NAV */
-  .topbar { background: var(--ink); }
-  .topbar-inner { max-width: 1100px; margin: 0 auto; padding: 10px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
-  .topnav { display: flex; gap: 2px; align-items: center; flex-wrap: wrap; }
-  .topnav a { font-family: 'Playfair Display', serif; font-size: 12.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 8px 13px; color: #d8d3c4; }
-  .topnav a:hover { color: #fff; }
-  .topnav a.active { color: var(--accent); }
-  .lang-pill-sm { display: inline-flex; gap: 0; border: 1px solid #444; margin-left: 8px; }
-  .lang-pill-sm a { font-size: 11px; padding: 6px 11px; color: #d8d3c4; }
-  .lang-pill-sm a.active { background: var(--accent); color: #fff; }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
-  /* MASTHEAD */
-  .masthead { border-top: 5px solid var(--ink); border-bottom: 3px double var(--ink); padding: 20px 40px 16px; text-align: center; background: var(--paper); }
-  .masthead-flag { font-family: 'Playfair Display', Georgia, serif; font-size: 13px; letter-spacing: .25em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
-  .masthead-name { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(32px, 6vw, 60px); font-weight: 900; letter-spacing: .04em; line-height: 1; color: var(--ink); }
+  
+  
+  
+  
   .masthead-name a { color: inherit; }
-  .masthead-tagline { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 8px; font-style: italic; }
+  
 
   .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
   .back-link { display: inline-block; font-size: 11.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-light); margin: 28px 0 18px; }
@@ -91,36 +91,24 @@
   .action-card a.btn:hover { background: var(--accent); color: #fff; }
   .action-card span.btn-soon { background: var(--paper-dark); color: var(--muted); border: 1px solid var(--border); cursor: default; }
 
-  .site-footer { border-top: 3px double var(--ink); margin-top: 60px; padding: 28px 24px; text-align: center; font-size: 12px; letter-spacing: .08em; color: var(--muted); line-height: 2; }
-  .site-footer a { color: var(--accent); }
+  
+  
 
   @media (max-width: 680px) {
-    .masthead { padding: 16px 20px 12px; }
+    
     .page-wrap { padding: 0 16px 60px; }
-    .topbar-inner { justify-content: center; text-align: center; }
+    
     .event-card { grid-template-columns: 54px 1fr; gap: 14px; }
     .action-strip { grid-template-columns: 1fr; }
   }
 </style>
+<script src="/observer-header.js" defer></script>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <nav class="topnav">
-      <a href="/en/">Home</a>
-      <a href="/en/bell-tower/">Investigations</a>
-      <a href="/en/bylaws-regulations/">Bylaws &amp; Regulations</a>
-      <a href="/en/council-watch/">Council Watch</a>
-      <a href="/en/events/" class="active">Events</a>
-      <a href="mailto:ormstownobserver@gmail.com">Contact</a>
-    </nav>
-    <span class="lang-pill-sm"><a href="/en/events/" class="active">EN</a><a href="/fr/events/">FR</a></span>
-  </div>
-</div>
 
-<header class="masthead">
-  <div class="masthead-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
+
+
   <a class="masthead-name" href="/en/">The Ormstown Observer</a>
   <div class="masthead-tagline">Civic accountability · Independent journalism</div>
 </header>
@@ -166,11 +154,7 @@
 
 </div>
 
-<footer class="site-footer">
-  <strong>The Ormstown Observer</strong> is an independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region.<br>
-  We accept no advertising.<br><br>
-  Questions, tips, corrections: <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
-</footer>
+
 
 <script>
 (function(){
