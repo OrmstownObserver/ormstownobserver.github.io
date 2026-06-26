@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Ormstown Observer — Civic accountability for Ormstown &amp; the Haut-Saint-Laurent</title>
-<meta name="description" content="Independent, citizen-funded journalism covering the decisions, developments, and debates shaping Ormstown and the Haut-Saint-Laurent. EN/FR.">
+<meta name="description" content="Independent, bilingual civic journalism covering the decisions, developments, and debates shaping Ormstown and the Haut-Saint-Laurent. EN/FR.">
 <script>
   (function(){
     try {
@@ -19,190 +19,570 @@
 <style>
   :root {
     --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
-    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8; --muted: #555;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8; --muted: #666;
+    /* Placeholder colours — replace with real images later */
+    --ph-investigations: linear-gradient(135deg, #1a3028 0%, #0d1c18 100%);
+    --ph-council:        linear-gradient(135deg, #18182e 0%, #0d0d1c 100%);
+    --ph-bylaws:         linear-gradient(135deg, #2a1818 0%, #180d0d 100%);
+    --ph-editorial:      linear-gradient(155deg, #1c2e42 0%, #0d1520 100%);
+    --ph-tower:          linear-gradient(135deg, #1a2a1a 0%, #0d180d 100%);
+    --ph-events:         linear-gradient(135deg, #2a2010 0%, #181008 100%);
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
   a { color: inherit; text-decoration: none; }
-  h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; margin: 0; }
+  h1,h2,h3,h4 { font-family: 'Playfair Display', Georgia, serif; margin: 0; }
   p { margin: 0; }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
 
+  /* ── LANGUAGE ── */
   [data-fr] { display: none; }
   html.lang-fr [data-en] { display: none; }
   html.lang-fr [data-fr] { display: inline; }
+  .block-fr { display: none; }
+  html.lang-fr .block-en { display: none; }
+  html.lang-fr .block-fr { display: block; }
 
-  /* ============ HERO / MASTHEAD ============ */
-  .hero { text-align: center; padding: 48px 24px 44px; }
-  .hero-rule-top { width: 100%; max-width: 640px; height: 5px; background: var(--ink); margin: 0 auto; }
-  .hero-rule-mid { width: 100%; max-width: 640px; height: 3px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); margin: 2px auto 28px; }
-  .hero-kicker { font-family: 'Playfair Display', serif; font-size: 12px; letter-spacing: .26em; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
-  .hero-name { font-weight: 900; font-size: clamp(36px, 8vw, 60px); letter-spacing: .02em; line-height: 1.05; margin-bottom: 18px; }
-  .hero-mission { font-size: clamp(16px, 2.3vw, 19px); font-style: italic; font-weight: 300; color: var(--ink-light); max-width: 540px; margin: 0 auto 34px; line-height: 1.65; }
-
-  .hero-divider { display: flex; align-items: center; gap: 12px; max-width: 360px; margin: 0 auto 30px; }
-  .hero-divider-line { flex: 1; height: 1px; background: var(--rule); }
-  .hero-divider-diamond { width: 8px; height: 8px; background: var(--rule); transform: rotate(45deg); flex-shrink: 0; }
-
-  .lang-prompt { font-size: 11.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--paper); border-bottom: 3px double var(--ink);
+    padding: 14px 24px 12px; text-align: center;
+  }
+  .masthead-meta {
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: sans-serif; font-size: 11px; color: var(--muted);
+    margin-bottom: 10px;
+  }
+  .masthead-date { font-style: italic; }
   .lang-toggle { display: inline-flex; border: 2px solid var(--ink); overflow: hidden; }
   .lang-toggle button {
-    font-family: 'Playfair Display', serif; font-weight: 900; font-size: 17px; letter-spacing: .04em;
-    color: var(--ink); background: var(--paper); border: none; border-right: 1px solid var(--ink);
-    padding: 13px 30px; cursor: pointer; transition: background .15s, color .15s;
+    font-family: 'Playfair Display', serif; font-weight: 900; font-size: 14px;
+    color: var(--ink); background: var(--paper); border: none;
+    border-right: 1px solid var(--ink); padding: 4px 14px; cursor: pointer;
+    transition: background .15s, color .15s;
   }
   .lang-toggle button:last-child { border-right: none; }
   .lang-toggle button.is-active { background: var(--accent); color: #fff; }
   .lang-toggle button:not(.is-active):hover { background: var(--paper-dark); }
+  .masthead-name {
+    font-weight: 900; font-size: clamp(30px, 6vw, 52px);
+    letter-spacing: .02em; line-height: 1.05;
+  }
+  .masthead-tagline { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 5px; }
 
-  /* ============ SECTIONS ============ */
-  .section { max-width: 1080px; margin: 0 auto; padding: 50px 24px; }
-  .section-rule { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
-  .section-rule-label { font-family: 'Playfair Display', serif; font-size: 11.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
-  .section-rule-line { flex: 1; height: 1px; background: var(--ink); }
-  .section-title { font-size: clamp(23px, 3.6vw, 30px); font-weight: 700; margin-bottom: 6px; }
+  /* ── NAV ── */
+  .site-nav {
+    display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    border-bottom: 2px solid var(--ink); background: var(--paper);
+    font-family: sans-serif; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .1em;
+    scrollbar-width: none;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav a {
+    padding: 10px 18px; white-space: nowrap; flex-shrink: 0;
+    border-right: 1px solid var(--border); color: var(--ink);
+    transition: background .12s, color .12s;
+  }
+  .site-nav a:first-child { border-left: 1px solid var(--border); }
+  .site-nav a:hover, .site-nav a.is-active { background: var(--accent); color: #fff; }
 
-  .label { display: block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-  .label.is-soon { color: var(--muted); font-style: italic; font-weight: 400; letter-spacing: .08em; }
+  /* ── HERO ── */
+  .hero {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    border-bottom: 2px solid var(--ink);
+    min-height: 380px;
+  }
+  .hero-main {
+    position: relative; overflow: hidden;
+    background: var(--ph-editorial);
+    border-right: 1px solid var(--border);
+  }
+  .hero-ph-label {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .1em; color: rgba(255,255,255,.18); pointer-events: none;
+    text-align: center; padding: 20px;
+  }
+  .hero-gradient {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.45) 50%, rgba(0,0,0,.1) 100%);
+  }
+  .hero-content {
+    position: absolute; bottom: 0; left: 0; right: 0; padding: 26px 24px;
+  }
+  .hero-eyebrow {
+    font-family: sans-serif; font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .14em; color: var(--rule);
+    margin-bottom: 9px;
+  }
+  .hero-headline {
+    font-size: clamp(20px, 3vw, 26px); font-weight: 900; line-height: 1.18;
+    color: #fff; margin-bottom: 10px;
+  }
+  .hero-deck {
+    font-size: 13px; color: rgba(255,255,255,.74); line-height: 1.58;
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .hero-cta {
+    display: inline-block; margin-top: 16px;
+    font-family: sans-serif; font-size: 11px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .08em;
+    color: var(--rule); border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px; transition: color .15s, border-color .15s;
+  }
+  .hero-cta:hover { color: #fff; border-color: #fff; }
 
-  .cover-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; }
-  .cover-card { background: #fff; border: 1px solid var(--border); border-top: 3px solid var(--accent); padding: 24px 22px 22px; display: flex; flex-direction: column; transition: transform .16s, box-shadow .16s; }
-  a.cover-card:hover { transform: translateY(-2px); box-shadow: 0 10px 24px -16px rgba(26,26,26,.3); }
-  .cover-card.is-soon { border-top-color: var(--border); opacity: .72; }
-  .cover-card.is-soon:hover { transform: none; box-shadow: none; }
-  .cover-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 9px; line-height: 1.25; }
-  .cover-card p { font-size: 14px; color: var(--ink-light); line-height: 1.6; flex-grow: 1; margin-bottom: 14px; }
-  .cover-card .cover-link { font-size: 12.5px; font-weight: 700; color: var(--accent); letter-spacing: .02em; }
+  /* Hero rail */
+  .hero-rail { display: flex; flex-direction: column; background: var(--paper); }
+  .rail-item {
+    display: flex; align-items: stretch; flex: 1;
+    border-bottom: 1px solid var(--border);
+    transition: background .12s;
+  }
+  .rail-item:last-child { border-bottom: none; }
+  a.rail-item:hover { background: var(--paper-dark); }
+  .rail-thumb {
+    width: 100px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: sans-serif; font-size: 9px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .06em;
+    color: rgba(255,255,255,.22); text-align: center; padding: 8px; line-height: 1.4;
+  }
+  .rt-investigations { background: var(--ph-investigations); }
+  .rt-council        { background: var(--ph-council); }
+  .rt-bylaws         { background: var(--ph-bylaws); }
+  .rail-body { padding: 14px 14px; display: flex; flex-direction: column; justify-content: center; }
+  .rail-label {
+    font-family: sans-serif; font-size: 9px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 5px;
+  }
+  .rail-hed { font-size: 13px; font-weight: 700; line-height: 1.3; color: var(--ink); }
+  .rail-date { font-family: sans-serif; font-size: 10px; color: #999; margin-top: 5px; }
 
-  /* ============ LATEST ============ */
-  .latest-section { background: var(--paper-dark); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .latest-list { display: flex; flex-direction: column; }
-  .latest-item { display: grid; grid-template-columns: 200px 1fr; gap: 20px; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--border); transition: opacity .15s; }
-  .latest-item:last-child { border-bottom: none; }
-  a.latest-item:hover { opacity: .7; }
-  .latest-item .label { margin-bottom: 0; }
-  .latest-item h3 { font-size: 17px; font-weight: 700; line-height: 1.3; }
-  @media (max-width: 560px) { .latest-item { grid-template-columns: 1fr; gap: 6px; } }
+  /* ── SECTION CARDS ── */
+  .section-cards {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    border-bottom: 1px solid var(--border);
+    background: var(--paper);
+  }
+  .sec-card {
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    transition: background .12s;
+  }
+  .sec-card:last-child { border-right: none; }
+  a.sec-card:hover { background: var(--paper-dark); }
+  .sec-thumb {
+    height: 120px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: sans-serif; font-size: 10px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .08em;
+    color: rgba(255,255,255,.2); text-align: center; padding: 12px; line-height: 1.5;
+  }
+  .st-investigations { background: var(--ph-investigations); }
+  .st-council        { background: var(--ph-council); }
+  .st-bylaws         { background: var(--ph-bylaws); }
+  .sec-body { padding: 16px 18px 20px; flex: 1; display: flex; flex-direction: column; }
+  .sec-label {
+    font-family: sans-serif; font-size: 9px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 7px;
+  }
+  .sec-hed { font-size: 15px; font-weight: 700; line-height: 1.28; margin-bottom: 7px; }
+  .sec-dek { font-size: 12.5px; color: var(--muted); line-height: 1.6; flex: 1; }
+  .sec-link {
+    font-family: sans-serif; font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-top: 12px;
+  }
 
-  /* ============ FOOTER ============ */
-  .site-footer { border-top: 3px double var(--ink); text-align: center; padding: 30px 24px; font-size: 12.5px; letter-spacing: .04em; color: var(--ink-light); line-height: 2; margin-top: 10px; }
+  /* ── BOTTOM ── */
+  .bottom-grid {
+    display: grid; grid-template-columns: 1fr 280px;
+    border-top: 2px solid var(--ink);
+  }
+
+  /* Latest */
+  .latest-col { padding: 24px 24px; border-right: 1px solid var(--border); }
+  .col-head {
+    font-family: sans-serif; font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .18em; color: var(--muted);
+    padding-bottom: 10px; border-bottom: 1px solid var(--border); margin-bottom: 2px;
+  }
+  .lat-item {
+    display: flex; gap: 14px; padding: 11px 0;
+    border-bottom: 1px solid #eee; align-items: baseline;
+    transition: opacity .12s;
+  }
+  .lat-item:last-child { border-bottom: none; }
+  a.lat-item:hover { opacity: .65; }
+  .lat-cat {
+    font-family: sans-serif; font-size: 9px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .08em; color: var(--accent);
+    min-width: 88px; flex-shrink: 0; padding-top: 2px;
+  }
+  .lat-hed { font-size: 13px; font-weight: 700; line-height: 1.3; }
+
+  /* About */
+  .about-col { padding: 24px 22px; background: var(--paper-dark); }
+  .about-col p { font-size: 12.5px; color: #555; line-height: 1.68; margin-bottom: 14px; }
+  .tip-btn {
+    display: inline-block; background: var(--ink); color: #fff;
+    font-family: sans-serif; font-size: 10px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .06em; padding: 9px 18px;
+    transition: background .15s;
+  }
+  .tip-btn:hover { background: var(--accent); }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    border-top: 3px double var(--ink); text-align: center;
+    padding: 28px 24px; font-size: 12px; color: var(--muted);
+    line-height: 2; background: var(--paper);
+  }
+  .footer-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px; color: var(--ink); margin-bottom: 4px; }
   .site-footer a { color: var(--accent); }
-  .footer-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 17px; color: var(--ink); margin-bottom: 4px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-main { min-height: 280px; }
+    .hero-rail { flex-direction: row; overflow-x: auto; border-top: 1px solid var(--border); }
+    .rail-item { min-width: 220px; border-right: 1px solid var(--border); border-bottom: none; flex: none; }
+    .rail-item:last-child { border-right: none; }
+    .section-cards { grid-template-columns: 1fr; }
+    .sec-card { border-right: none; border-bottom: 1px solid var(--border); }
+    .sec-card:last-child { border-bottom: none; }
+    .bottom-grid { grid-template-columns: 1fr; }
+    .latest-col { border-right: none; border-bottom: 1px solid var(--border); }
+    .site-nav a { padding: 10px 14px; font-size: 10px; }
+  }
 </style>
+<script src="/observer-header.js" defer></script>
 </head>
 <body>
 
-<header class="hero">
-  <div class="hero-rule-top"></div>
-  <div class="hero-rule-mid"></div>
-  <div class="hero-kicker">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
-  <h1 class="hero-name"><span data-en>The Ormstown Observer</span><span data-fr>L'Ormstown Observer</span></h1>
-  <p class="hero-mission">
-    <span data-en>Independent, citizen-funded journalism covering the decisions, developments, and debates shaping Ormstown and the Haut-Saint-Laurent.</span>
-    <span data-fr>Un journalisme indépendant et financé par les citoyens, qui couvre les décisions, les développements et les débats qui façonnent Ormstown et le Haut-Saint-Laurent.</span>
-  </p>
-
-  <div class="hero-divider"><span class="hero-divider-line"></span><span class="hero-divider-diamond"></span><span class="hero-divider-line"></span></div>
-
-  <div class="lang-prompt"><span data-en>Choose your language</span><span data-fr>Choisissez votre langue</span></div>
-  <div class="lang-toggle" role="group" aria-label="Language / Langue">
-    <button type="button" id="btn-en" onclick="setObserverLang('en')">English</button>
-    <button type="button" id="btn-fr" onclick="setObserverLang('fr')">Français</button>
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-meta">
+    <span class="masthead-date" data-en>Ormstown &amp; Haut-Saint-Laurent &mdash; Independent civic journalism</span>
+    <span class="masthead-date" data-fr>Ormstown &amp; Haut-Saint-Laurent &mdash; Journalisme civique ind&eacute;pendant</span>
+    <div class="lang-toggle" role="group" aria-label="Language / Langue">
+      <button type="button" id="btn-en" onclick="setObserverLang('en')">EN</button>
+      <button type="button" id="btn-fr" onclick="setObserverLang('fr')">FR</button>
+    </div>
+  </div>
+  <div class="masthead-name">
+    <span data-en>The Ormstown Observer</span>
+    <span data-fr>L&rsquo;Ormstown Observer</span>
+  </div>
+  <div class="masthead-tagline">
+    <span data-en>Independent bilingual civic watchdog &mdash; Ormstown &amp; the Haut-Saint-Laurent</span>
+    <span data-fr>Chien de garde civique bilingue ind&eacute;pendant &mdash; Ormstown &amp; le Haut-Saint-Laurent</span>
   </div>
 </header>
 
-<section class="section">
-  <div class="section-rule">
-    <span class="section-rule-label"><span data-en>What we cover</span><span data-fr>Ce que nous couvrons</span></span>
-    <span class="section-rule-line"></span>
-  </div>
-  <h2 class="section-title" style="margin-bottom:26px;"><span data-en>One outlet, every part of civic life in Ormstown</span><span data-fr>Un seul média, toute la vie civique d'Ormstown</span></h2>
+<!-- NAV -->
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="is-active"
+     data-href-en="/" data-href-fr="/"
+     href="/">
+    <span data-en>Home</span><span data-fr>Accueil</span>
+  </a>
+  <a data-href-en="/en/bell-tower/" data-href-fr="/fr/bell-tower/" href="/en/bell-tower/">
+    <span data-en>Investigations</span><span data-fr>Enqu&ecirc;tes</span>
+  </a>
+  <a data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/" href="/en/council-watch/">
+    <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>
+  </a>
+  <a data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/" href="/en/bylaws-regulations/">
+    <span data-en>Bylaws &amp; Regs</span><span data-fr>R&egrave;glements</span>
+  </a>
+  <a data-href-en="/en/editorials/language-policy-2026/" data-href-fr="/fr/editoriaux/politique-linguistique-2026/" href="/en/editorials/language-policy-2026/">
+    <span data-en>Editorials</span><span data-fr>&Eacute;ditoriaux</span>
+  </a>
+  <a data-href-en="/en/events/" data-href-fr="/fr/events/" href="/en/events/">
+    <span data-en>Events</span><span data-fr>&Eacute;v&eacute;nements</span>
+  </a>
+  <a href="mailto:ormstownobserver@gmail.com">
+    <span data-en>Tips &amp; Contact</span><span data-fr>Conseils &amp; contact</span>
+  </a>
+</nav>
 
-  <div class="cover-grid">
+<!-- HERO -->
+<section class="hero" aria-label="Featured stories">
 
-    <a class="cover-card" data-href-en="/en/bell-tower/" data-href-fr="/fr/bell-tower/" href="/en/bell-tower/">
-      <span class="label"><span data-en>Investigations</span><span data-fr>Enquêtes</span></span>
-      <h3><span data-en>Investigations</span><span data-fr>Enquêtes</span></h3>
-      <p><span data-en>Original, document-based reporting that follows the paper trail on issues affecting residents.</span><span data-fr>Du journalisme original, basé sur les documents, qui suit la piste écrite sur les enjeux touchant les résidents.</span></p>
-      <span class="cover-link"><span data-en>Read the Bell tower investigation →</span><span data-fr>Lire l'enquête sur la tour Bell →</span></span>
+  <!-- HERO MAIN: Feature editorial -->
+  <a class="hero-main"
+     data-href-en="/en/editorials/language-policy-2026/"
+     data-href-fr="/fr/editoriaux/politique-linguistique-2026/"
+     href="/en/editorials/language-policy-2026/"
+     aria-label="Read feature editorial">
+    <div class="hero-ph-label">
+      <span data-en>📷 Feature image &mdash; replace with photo</span>
+      <span data-fr>📷 Image de une &mdash; remplacer par une photo</span>
+    </div>
+    <div class="hero-gradient"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span data-en>✏️ Feature Editorial &middot; June 25, 2026</span>
+        <span data-fr>✏️ &Eacute;ditorial de fond &middot; 25 juin 2026</span>
+      </div>
+      <h1 class="hero-headline">
+        <span data-en>When Policy Allows More Than Practice</span>
+        <span data-fr>Quand la politique permet plus que la pratique</span>
+      </h1>
+      <p class="hero-deck">
+        <span data-en>Ormstown&rsquo;s own language directive permits English communication for health, safety, and natural justice &mdash; yet residents see nothing but French on the town&rsquo;s website and Facebook page.</span>
+        <span data-fr>La propre directive linguistique d&rsquo;Ormstown autorise une communication en anglais pour des raisons de sant&eacute;, de s&eacute;curit&eacute; et de justice naturelle &mdash; mais les r&eacute;sidents ne voient que du fran&ccedil;ais sur le site Web et la page Facebook de la ville.</span>
+      </p>
+      <span class="hero-cta">
+        <span data-en>Read the full editorial &rarr;</span>
+        <span data-fr>Lire l&rsquo;&eacute;ditorial complet &rarr;</span>
+      </span>
+    </div>
+  </a>
+
+  <!-- HERO RAIL: 3 recent stories -->
+  <div class="hero-rail">
+
+    <a class="rail-item"
+       data-href-en="/en/bell-tower/"
+       data-href-fr="/fr/bell-tower/"
+       href="/en/bell-tower/">
+      <div class="rail-thumb rt-investigations">
+        <span data-en>📷 Photo</span><span data-fr>📷 Photo</span>
+      </div>
+      <div class="rail-body">
+        <div class="rail-label">
+          <span data-en>🔍 Investigation</span><span data-fr>🔍 Enqu&ecirc;te</span>
+        </div>
+        <div class="rail-hed">
+          <span data-en>A 36-metre tower proposed for an Ormstown park lot</span>
+          <span data-fr>Une tour de 36 m&egrave;tres propos&eacute;e sur un terrain municipal d&rsquo;Ormstown</span>
+        </div>
+        <div class="rail-date">Bell Tower &middot; Projet E3640</div>
+      </div>
     </a>
 
-    <a class="cover-card" data-href-en="/en/editorials/language-policy-2026/" data-href-fr="/fr/editoriaux/politique-linguistique-2026/" href="/en/editorials/language-policy-2026/">
-      <span class="label"><span data-en>Editorial</span><span data-fr>Éditorial</span></span>
-      <h3><span data-en>When Policy Allows More Than Practice</span><span data-fr>Quand la politique permet plus que la pratique</span></h3>
-      <p><span data-en>Ormstown's own language directive permits flexible communication in English. Why aren't residents benefiting from it?</span><span data-fr>La directive linguistique d'Ormstown autorise une communication flexible en anglais. Pourquoi les résidents n'en bénéficient-ils pas?</span></p>
-      <span class="cover-link"><span data-en>Read the editorial →</span><span data-fr>Lire l'éditorial →</span></span>
+    <a class="rail-item"
+       data-href-en="/en/council-watch/june-1-2026/"
+       data-href-fr="/fr/conseil-municipal/1-juin-2026/"
+       href="/en/council-watch/june-1-2026/">
+      <div class="rail-thumb rt-council">
+        <span data-en>📷 Photo</span><span data-fr>📷 Photo</span>
+      </div>
+      <div class="rail-body">
+        <div class="rail-label">
+          <span data-en>🏛 Council Watch</span><span data-fr>🏛 Conseil municipal</span>
+        </div>
+        <div class="rail-hed">
+          <span data-en>2025 financials tabled, 24-unit housing project proposed</span>
+          <span data-fr>&Eacute;tats financiers 2025 d&eacute;pos&eacute;s, projet de 24 logements propos&eacute;</span>
+        </div>
+        <div class="rail-date"><span data-en>June 1, 2026</span><span data-fr>1er juin 2026</span></div>
+      </div>
     </a>
 
-    <a class="cover-card" data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/" href="/en/bylaws-regulations/">
-      <span class="label"><span data-en>Règlements</span><span data-fr>Règlements</span></span>
-      <h3><span data-en>Bylaws &amp; Regulations Explainer</span><span data-fr>Explicateur de règlements</span></h3>
-      <p><span data-en>Plain-language breakdowns of newly adopted municipal bylaws — what changed, and what it means for you.</span><span data-fr>Des explications en langage clair des règlements municipaux récemment adoptés — ce qui a changé, et ce que ça signifie pour vous.</span></p>
-      <span class="cover-link"><span data-en>Browse the explainers →</span><span data-fr>Voir les explicateurs →</span></span>
-    </a>
-
-    <a class="cover-card" data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/" href="/en/council-watch/">
-      <span class="label"><span data-en>Council Watch</span><span data-fr>Surveillance du conseil</span></span>
-      <h3><span data-en>Council Watch</span><span data-fr>Surveillance du conseil</span></h3>
-      <p><span data-en>Plain-language recaps of every council session — what was decided, what was discussed, and what to watch next.</span><span data-fr>Des résumés en langage clair de chaque séance du conseil — ce qui a été décidé, discuté et ce qu'il faut surveiller.</span></p>
-      <span class="cover-link"><span data-en>Read the recaps →</span><span data-fr>Lire les comptes rendus →</span></span>
-    </a>
-
-    <a class="cover-card" data-href-en="/en/events/" data-href-fr="/fr/events/" href="/en/events/">
-      <span class="label"><span data-en>Community Calendar</span><span data-fr>Calendrier communautaire</span></span>
-      <h3><span data-en>Community Events</span><span data-fr>Événements communautaires</span></h3>
-      <p><span data-en>A calendar of what's happening around Ormstown and the Haut-Saint-Laurent.</span><span data-fr>Un calendrier de ce qui se passe à Ormstown et dans le Haut-Saint-Laurent.</span></p>
-      <span class="cover-link"><span data-en>Browse the calendar →</span><span data-fr>Voir le calendrier →</span></span>
-    </a>
-
-    <a class="cover-card" href="mailto:ormstownobserver@gmail.com">
-      <span class="label"><span data-en>Tips &amp; Contact</span><span data-fr>Conseils et contact</span></span>
-      <h3><span data-en>Tips &amp; Contact</span><span data-fr>Conseils et contact</span></h3>
-      <p><span data-en>See something we should look into? Send a tip, a document, or a correction.</span><span data-fr>Vous avez vu quelque chose qu'on devrait examiner? Envoyez un conseil, un document ou une correction.</span></p>
-      <span class="cover-link">ormstownobserver@gmail.com →</span>
+    <a class="rail-item"
+       data-href-en="/en/bylaws-regulations/animal-control-131-2026/"
+       data-href-fr="/fr/bylaws-regulations/reglement-animaux-131-2026/"
+       href="/en/bylaws-regulations/animal-control-131-2026/">
+      <div class="rail-thumb rt-bylaws">
+        <span data-en>📷 Photo</span><span data-fr>📷 Photo</span>
+      </div>
+      <div class="rail-body">
+        <div class="rail-label">
+          <span data-en>📋 Bylaws</span><span data-fr>📋 R&egrave;glements</span>
+        </div>
+        <div class="rail-hed">
+          <span data-en>New animal bylaw: lifetime pet licenses, legal backyard chickens</span>
+          <span data-fr>Nouveau r&egrave;glement animalier&nbsp;: permis &agrave; vie, poules permises</span>
+        </div>
+        <div class="rail-date">R&egrave;glement 131-2026</div>
+      </div>
     </a>
 
   </div>
 </section>
 
-<section class="latest-section">
-  <div class="section" style="padding-top:44px; padding-bottom:44px;">
-    <div class="section-rule">
-      <span class="section-rule-label"><span data-en>Latest</span><span data-fr>Récemment publié</span></span>
-      <span class="section-rule-line"></span>
-    </div>
-    <h2 class="section-title" style="margin-bottom:22px;"><span data-en>Recently published</span><span data-fr>Dernières publications</span></h2>
+<!-- SECTION CARDS -->
+<div class="section-cards">
 
-    <div class="latest-list">
-      <a class="latest-item" data-href-en="/en/editorials/language-policy-2026/" data-href-fr="/fr/editoriaux/politique-linguistique-2026/" href="/en/editorials/language-policy-2026/">
-        <span class="label"><span data-en>Editorial · June 25, 2026</span><span data-fr>Éditorial · 25 juin 2026</span></span>
-        <h3><span data-en>When Policy Allows More Than Practice — Ormstown's language directive and the gap residents live with</span><span data-fr>Quand la politique permet plus que la pratique — la directive linguistique d'Ormstown et l'écart que vivent les résidents</span></h3>
-      </a>
-      <a class="latest-item" data-href-en="/en/bell-tower/" data-href-fr="/fr/bell-tower/" href="/en/bell-tower/">
-        <span class="label">Projet E3640</span>
-        <h3><span data-en>A 36-metre tower proposed for an Ormstown park lot</span><span data-fr>Une tour de 36 mètres proposée sur un terrain municipal d'Ormstown</span></h3>
-      </a>
-      <a class="latest-item" data-href-en="/en/bylaws-regulations/piia-152-2023/" data-href-fr="/fr/bylaws-regulations/reglement-piia-152-2023/" href="/en/bylaws-regulations/piia-152-2023/">
-        <span class="label">Règlement 152-2023</span>
-        <h3><span data-en>PIIA explained: when a renovation needs council approval first</span><span data-fr>Le PIIA expliqué : quand une rénovation exige l'accord du conseil</span></h3>
-      </a>
-      <a class="latest-item" data-href-en="/en/council-watch/june-1-2026/" data-href-fr="/fr/conseil-municipal/1-juin-2026/" href="/en/council-watch/june-1-2026/">
-        <span class="label">Council Watch · June 1, 2026</span>
-        <h3><span data-en>2025 financials tabled, 24-unit housing project proposed, and new public notice rules</span><span data-fr>États financiers 2025 déposés, projet de 24 logements et nouvelles règles d'affichage</span></h3>
-      </a>
-      <a class="latest-item" data-href-en="/en/bylaws-regulations/animal-control-131-2026/" data-href-fr="/fr/bylaws-regulations/reglement-animaux-131-2026/" href="/en/bylaws-regulations/animal-control-131-2026/">
-        <span class="label">Règlement 131-2026</span>
-        <h3><span data-en>New animal bylaw: lifetime pet licenses, legal backyard chickens</span><span data-fr>Nouveau règlement animalier : permis à vie, poules permises</span></h3>
-      </a>
+  <a class="sec-card"
+     data-href-en="/en/bell-tower/"
+     data-href-fr="/fr/bell-tower/"
+     href="/en/bell-tower/">
+    <div class="sec-thumb st-investigations">
+      <span data-en>📷 Investigation photo &mdash; placeholder</span>
+      <span data-fr>📷 Photo d&rsquo;enqu&ecirc;te &mdash; temporaire</span>
     </div>
+    <div class="sec-body">
+      <div class="sec-label">
+        <span data-en>🔍 Investigations</span><span data-fr>🔍 Enqu&ecirc;tes</span>
+      </div>
+      <h2 class="sec-hed">
+        <span data-en>Following the paper trail</span>
+        <span data-fr>Suivre la piste documentaire</span>
+      </h2>
+      <p class="sec-dek">
+        <span data-en>Original, document-based reporting on the issues that affect residents most.</span>
+        <span data-fr>Du reportage original, fond&eacute; sur les documents, sur les enjeux qui touchent le plus les r&eacute;sidents.</span>
+      </p>
+      <span class="sec-link">
+        <span data-en>Read investigations &rarr;</span><span data-fr>Lire les enqu&ecirc;tes &rarr;</span>
+      </span>
+    </div>
+  </a>
+
+  <a class="sec-card"
+     data-href-en="/en/council-watch/"
+     data-href-fr="/fr/conseil-municipal/"
+     href="/en/council-watch/">
+    <div class="sec-thumb st-council">
+      <span data-en>📷 Council session photo &mdash; placeholder</span>
+      <span data-fr>📷 Photo du conseil &mdash; temporaire</span>
+    </div>
+    <div class="sec-body">
+      <div class="sec-label">
+        <span data-en>🏛 Council Watch</span><span data-fr>🏛 Conseil municipal</span>
+      </div>
+      <h2 class="sec-hed">
+        <span data-en>Every session, plain language</span>
+        <span data-fr>Chaque s&eacute;ance, en langage clair</span>
+      </h2>
+      <p class="sec-dek">
+        <span data-en>What was decided, what was discussed, and what to watch at the next meeting.</span>
+        <span data-fr>Ce qui a &eacute;t&eacute; d&eacute;cid&eacute;, discut&eacute;, et ce qu&rsquo;il faut surveiller &agrave; la prochaine s&eacute;ance.</span>
+      </p>
+      <span class="sec-link">
+        <span data-en>Browse recaps &rarr;</span><span data-fr>Voir les comptes rendus &rarr;</span>
+      </span>
+    </div>
+  </a>
+
+  <a class="sec-card"
+     data-href-en="/en/bylaws-regulations/"
+     data-href-fr="/fr/bylaws-regulations/"
+     href="/en/bylaws-regulations/">
+    <div class="sec-thumb st-bylaws">
+      <span data-en>📷 Bylaw document photo &mdash; placeholder</span>
+      <span data-fr>📷 Photo de r&egrave;glement &mdash; temporaire</span>
+    </div>
+    <div class="sec-body">
+      <div class="sec-label">
+        <span data-en>📋 Bylaws &amp; Regulations</span><span data-fr>📋 R&egrave;glements</span>
+      </div>
+      <h2 class="sec-hed">
+        <span data-en>What the rules actually say</span>
+        <span data-fr>Ce que les r&egrave;gles disent r&eacute;ellement</span>
+      </h2>
+      <p class="sec-dek">
+        <span data-en>Plain-language explainers on newly adopted municipal bylaws — what changed, and what it means for you.</span>
+        <span data-fr>Des explicateurs en langage clair sur les r&egrave;glements municipaux adopt&eacute;s &mdash; ce qui a chang&eacute; et ce que &ccedil;a signifie pour vous.</span>
+      </p>
+      <span class="sec-link">
+        <span data-en>Read explainers &rarr;</span><span data-fr>Lire les explicateurs &rarr;</span>
+      </span>
+    </div>
+  </a>
+
+</div>
+
+<!-- LATEST + ABOUT -->
+<div class="bottom-grid">
+
+  <div class="latest-col">
+    <div class="col-head">
+      <span data-en>Latest</span><span data-fr>Derni&egrave;res publications</span>
+    </div>
+
+    <a class="lat-item"
+       data-href-en="/en/editorials/language-policy-2026/"
+       data-href-fr="/fr/editoriaux/politique-linguistique-2026/"
+       href="/en/editorials/language-policy-2026/">
+      <span class="lat-cat"><span data-en>Editorial</span><span data-fr>&Eacute;ditorial</span></span>
+      <span class="lat-hed">
+        <span data-en>When Policy Allows More Than Practice &mdash; Ormstown&rsquo;s language directive and the gap residents live with</span>
+        <span data-fr>Quand la politique permet plus que la pratique &mdash; la directive linguistique d&rsquo;Ormstown et l&rsquo;&eacute;cart que vivent les r&eacute;sidents</span>
+      </span>
+    </a>
+
+    <a class="lat-item"
+       data-href-en="/en/bell-tower/"
+       data-href-fr="/fr/bell-tower/"
+       href="/en/bell-tower/">
+      <span class="lat-cat"><span data-en>Investigation</span><span data-fr>Enqu&ecirc;te</span></span>
+      <span class="lat-hed">
+        <span data-en>A 36-metre tower proposed for an Ormstown park lot &mdash; Projet E3640</span>
+        <span data-fr>Une tour de 36 m&egrave;tres propos&eacute;e sur un terrain municipal &mdash; Projet E3640</span>
+      </span>
+    </a>
+
+    <a class="lat-item"
+       data-href-en="/en/council-watch/june-1-2026/"
+       data-href-fr="/fr/conseil-municipal/1-juin-2026/"
+       href="/en/council-watch/june-1-2026/">
+      <span class="lat-cat"><span data-en>Council Watch</span><span data-fr>Conseil</span></span>
+      <span class="lat-hed">
+        <span data-en>2025 financials tabled, 24-unit housing project proposed &mdash; June 1, 2026</span>
+        <span data-fr>&Eacute;tats financiers 2025 d&eacute;pos&eacute;s, projet de 24 logements &mdash; 1er juin 2026</span>
+      </span>
+    </a>
+
+    <a class="lat-item"
+       data-href-en="/en/bylaws-regulations/animal-control-131-2026/"
+       data-href-fr="/fr/bylaws-regulations/reglement-animaux-131-2026/"
+       href="/en/bylaws-regulations/animal-control-131-2026/">
+      <span class="lat-cat"><span data-en>Bylaws</span><span data-fr>R&egrave;glements</span></span>
+      <span class="lat-hed">
+        <span data-en>New animal bylaw: lifetime pet licenses, legal backyard chickens &mdash; R&egrave;glement 131-2026</span>
+        <span data-fr>Nouveau r&egrave;glement animalier&nbsp;: permis &agrave; vie, poules permises &mdash; R&egrave;glement 131-2026</span>
+      </span>
+    </a>
+
+    <a class="lat-item"
+       data-href-en="/en/bylaws-regulations/piia-152-2023/"
+       data-href-fr="/fr/bylaws-regulations/reglement-piia-152-2023/"
+       href="/en/bylaws-regulations/piia-152-2023/">
+      <span class="lat-cat"><span data-en>Bylaws</span><span data-fr>R&egrave;glements</span></span>
+      <span class="lat-hed">
+        <span data-en>PIIA explained: when a renovation needs council approval first &mdash; R&egrave;glement 152-2023</span>
+        <span data-fr>Le PIIA expliqu&eacute;&nbsp;: quand une r&eacute;novation exige l&rsquo;accord du conseil &mdash; R&egrave;glement 152-2023</span>
+      </span>
+    </a>
+
   </div>
-</section>
 
+  <div class="about-col">
+    <div class="col-head">
+      <span data-en>About the Observer</span><span data-fr>À propos de l&rsquo;Observer</span>
+    </div>
+    <p>
+      <span data-en>Independent. Bilingual. No advertising. We cover municipal affairs in Ormstown and the Haut-Saint-Laurent because residents deserve to understand the decisions made on their behalf.</span>
+      <span data-fr>Ind&eacute;pendant. Bilingue. Sans publicit&eacute;. Nous couvrons les affaires municipales &agrave; Ormstown et dans le Haut-Saint-Laurent parce que les r&eacute;sidents m&eacute;ritent de comprendre les d&eacute;cisions prises en leur nom.</span>
+    </p>
+    <p>
+      <span data-en>See something we should look into?</span>
+      <span data-fr>Vous avez vu quelque chose qu&rsquo;on devrait examiner&nbsp;?</span>
+    </p>
+    <a class="tip-btn" href="mailto:ormstownobserver@gmail.com">
+      <span data-en>Send a tip &rarr;</span><span data-fr>Envoyer un conseil &rarr;</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
 <footer class="site-footer">
-  <div class="footer-name"><span data-en>The Ormstown Observer</span><span data-fr>L'Ormstown Observer</span></div>
-  <span data-en>An independent civic watchdog publication covering Ormstown and the Haut-Saint-Laurent region. We accept no advertising.</span><span data-fr>Une publication indépendante de vigilance civique couvrant Ormstown et la région du Haut-Saint-Laurent. Nous n'acceptons aucune publicité.</span><br>
+  <div class="footer-name">
+    <span data-en>The Ormstown Observer</span><span data-fr>L&rsquo;Ormstown Observer</span>
+  </div>
+  <span data-en>An independent bilingual civic watchdog covering Ormstown and the Haut-Saint-Laurent. We accept no advertising.</span>
+  <span data-fr>Un chien de garde civique bilingue ind&eacute;pendant couvrant Ormstown et le Haut-Saint-Laurent. Nous n&rsquo;acceptons aucune publicit&eacute;.</span>
+  <br>
   <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
 </footer>
 
@@ -214,10 +594,17 @@
     try { localStorage.setItem('observerLang', lang); } catch(e) {}
     document.getElementById('btn-en').classList.toggle('is-active', lang === 'en');
     document.getElementById('btn-fr').classList.toggle('is-active', lang === 'fr');
+    // Update all language-aware links
     document.querySelectorAll('[data-href-en]').forEach(function(el){
       el.setAttribute('href', lang === 'fr' ? el.getAttribute('data-href-fr') : el.getAttribute('data-href-en'));
     });
+    // Update nav active states (home stays active)
+    document.querySelectorAll('.site-nav a').forEach(function(el){
+      if (el.getAttribute('data-href-en') === '/' || el.getAttribute('href') === '/') return;
+      el.classList.remove('is-active');
+    });
   }
+  // Init on load
   setObserverLang(document.documentElement.classList.contains('lang-fr') ? 'fr' : 'en');
 </script>
 
