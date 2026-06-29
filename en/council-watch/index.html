@@ -4,139 +4,230 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Council Watch — The Ormstown Observer</title>
-<meta name="description" content="Plain-language recaps of Ormstown municipal council meetings — what was decided, what was discussed, and what to watch next, drawn from public broadcasts ahead of official minutes.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<meta name="description" content="Plain-language recaps of every Ormstown municipal council session — what was decided, what was discussed, and what to watch next.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
-    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
-    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+    --ink:#1a1a1a;--ink-light:#444;--accent:#b5161b;--accent-light:#f5e8e8;
+    --paper:#faf8f4;--paper-dark:#f0ece4;--rule:#c8b97a;--border:#d4c9b8;--muted:#555;
+    --confirm:#155724;--warn:#721c24;--pending:#856404;
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: 'Source Serif 4', Georgia, serif; line-height: 1.6;
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;}
+
+  .filter-bar{
+    position:sticky;top:0;z-index:10;
+    background:var(--paper);border-bottom:2px solid var(--ink);
+    padding:10px 24px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-
-  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 60px; }
-  
-
-  .section-intro { text-align: center; margin-bottom: 36px; }
-  .section-intro h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.1rem; margin: 0 0 10px; }
-  .section-intro p { color: var(--muted); max-width: 680px; margin: 0 auto; font-size: 1.02rem; }
-
-  .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 12px 18px; margin: 0 auto 36px; max-width: 680px; border-radius: 2px; font-size: 0.9rem; color: var(--ink-light); }
-
-  .section-rule { display: flex; align-items: center; margin: 30px 0 18px; }
-  .section-rule-label { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 0.95rem; color: var(--accent); white-space: nowrap; padding-right: 14px; }
-  .section-rule-line { flex: 1; border-top: 1px solid var(--rule); }
-
-  .explainer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-  .explainer-card {
-    background: #fff; border: 1px solid var(--border); border-radius: 4px;
-    padding: 22px 22px 20px; display: flex; flex-direction: column;
+  .filter-chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{
+    font-family:sans-serif;font-size:10px;font-weight:700;
+    text-transform:uppercase;letter-spacing:.08em;
+    padding:5px 12px;border:1px solid var(--border);
+    background:var(--paper-dark);color:var(--muted);cursor:pointer;
+    transition:background .12s,color .12s,border-color .12s;
   }
-  .explainer-card .tag {
-    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px;
-    color: var(--accent); font-weight: 600; margin-bottom: 8px;
-  }
-  .explainer-card h2 {
-    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem;
-    margin: 0 0 10px; line-height: 1.3;
-  }
-  .explainer-card h2 a { color: var(--ink); }
-  .explainer-card p.desc { color: var(--ink-light); font-size: 0.95rem; flex-grow: 1; margin: 0 0 14px; }
-  .explainer-card .read-more { font-size: 0.88rem; font-weight: 600; }
-  .explainer-card .meta-date { font-size: 0.78rem; color: var(--muted); margin-top: 10px; }
+  .chip:hover{border-color:var(--ink);color:var(--ink);}
+  .chip.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .result-count{font-family:sans-serif;font-size:10px;color:var(--muted);margin-left:auto;}
 
-  .placeholder-card {
-    background: var(--sidebar); border: 1px dashed var(--border); border-radius: 4px;
-    padding: 22px; display: flex; flex-direction: column; justify-content: center;
-    color: var(--muted); font-style: italic; font-size: 0.92rem; text-align: center;
+  .page-wrap{max-width:900px;margin:0 auto;padding:32px 24px 80px;}
+  .back-link{display:inline-block;font-family:sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:24px;}
+  .back-link:hover{color:var(--accent);}
+  .section-head{margin-bottom:32px;}
+  .section-head h1{font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:8px;}
+  .section-head p{font-size:15px;color:var(--muted);max-width:620px;line-height:1.65;}
+
+  .note-box{
+    background:#fdf6e3;border-left:4px solid #c8a44a;
+    padding:10px 16px;margin-bottom:32px;
+    font-family:sans-serif;font-size:12px;color:var(--ink-light);line-height:1.6;
   }
 
-  .status-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 20px; margin-top: 10px; }
-  .status-badge .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
-  .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
-  .status-badge.confirmed { background: #e8f3ea; color: var(--confirm); border: 1px solid #b8dcc0; }
+  /* ── SESSION LIST ── */
+  .session-list{border-top:2px solid var(--ink);}
+  .session-item{
+    display:grid;grid-template-columns:120px 1fr auto;
+    gap:0;border-bottom:1px solid var(--border);
+    transition:background .1s;
+  }
+  .session-item:hover{background:var(--accent-light);}
+  a.session-item{color:inherit;}
 
-  
-  .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .session-date-col{
+    padding:20px 16px 20px 0;
+    border-right:1px solid var(--border);
+    display:flex;flex-direction:column;justify-content:flex-start;
+    flex-shrink:0;
+  }
+  .session-date{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:17px;line-height:1.2;color:var(--ink);
+  }
+  .session-year{
+    font-family:sans-serif;font-size:10px;color:var(--muted);
+    margin-top:3px;text-transform:uppercase;letter-spacing:.08em;
+  }
+
+  .session-body{padding:20px 20px;}
+  .session-type{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:6px;
+  }
+  .session-hed{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:16px;line-height:1.28;color:var(--ink);margin-bottom:6px;
+  }
+  .session-desc{font-size:13px;color:var(--ink-light);line-height:1.6;margin-bottom:8px;}
+  .session-tags{display:flex;flex-wrap:wrap;gap:5px;}
+  .session-tag{
+    font-family:sans-serif;font-size:9px;font-weight:600;
+    text-transform:uppercase;letter-spacing:.06em;
+    padding:2px 7px;background:var(--paper-dark);
+    border:1px solid var(--border);color:var(--muted);
+  }
+
+  .session-status-col{
+    padding:20px 16px;display:flex;flex-direction:column;
+    align-items:flex-end;justify-content:flex-start;flex-shrink:0;
+    border-left:1px solid var(--border);min-width:110px;
+  }
+  .minutes-badge{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;
+    padding:3px 8px;
+  }
+  .minutes-live{background:#e6f4ea;color:var(--confirm);border:1px solid #a8d5b5;}
+  .minutes-pending{background:#fff3cd;color:var(--pending);border:1px solid #ffd680;}
+  .published-on{font-family:sans-serif;font-size:10px;color:#aaa;margin-top:6px;text-align:right;}
+  .session-cta{
+    font-family:sans-serif;font-size:10px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;
+    color:var(--accent);margin-top:10px;
+  }
+
+  .no-results{display:none;padding:40px 0;text-align:center;color:var(--muted);font-style:italic;font-size:14px;}
+
+  @media(max-width:600px){
+    .session-item{grid-template-columns:1fr;}
+    .session-date-col{border-right:none;border-bottom:1px solid var(--border);padding:14px 16px 10px;}
+    .session-status-col{border-left:none;border-top:1px solid var(--border);flex-direction:row;align-items:center;gap:12px;min-width:unset;}
+    .published-on{margin-top:0;}
+  }
 </style>
 <script src="/observer-header.js" defer></script>
 </head>
 <body>
 
-
-
-
-  
-  
-</header>
-
-<div class="page-wrap">
-  
-
-  <div class="section-intro">
-    <h1>Council Watch</h1>
-    <p>Most residents never watch a full council meeting. This section recaps every regular session of Ormstown municipal council in plain language — what was decided, what was discussed, and what's worth following up on. Recaps are built from the public YouTube broadcast and published well ahead of official minutes, which the municipality typically takes 4&ndash;6 weeks to release.</p>
+<div class="filter-bar">
+  <div class="filter-chips" id="chips">
+    <button class="chip active" data-type="all">All sessions</button>
+    <button class="chip" data-type="Regular">Regular</button>
+    <button class="chip" data-type="Extraordinary">Extraordinary</button>
+    <button class="chip" data-type="Special">Special</button>
   </div>
-
-  <div class="note-box">Official minutes lag behind these recaps by design — the municipality only publishes a procès-verbal once it's formally adopted at the following regular session. Each recap below links to the relevant minutes once they're available.</div>
-
-  <div class="section-rule">
-    <span class="section-rule-label">Council Recaps — 2026</span>
-    <span class="section-rule-line"></span>
-  </div>
-
-  <div class="explainer-grid">
-
-    <div class="explainer-card">
-      <div class="tag">Regular Session &middot; June 1, 2026</div>
-      <h2><a href="/en/council-watch/june-1-2026/">2025 financials tabled, 24-unit housing project proposed, and council changes where it posts public notices</a></h2>
-      <p class="desc">A dense agenda: the 2025 financial statements before council, a 24-unit residential development requiring public consultation, two bylaw adoptions, five planning applications, and a $4.8M infrastructure borrowing amendment on the way.</p>
-      <a class="read-more" href="/en/council-watch/june-1-2026/">Read the recap &rarr;</a>
-      <div class="meta-date">Published June 24, 2026</div>
-      <div class="status-badge unofficial"><span class="status-dot"></span>Unofficial &middot; minutes pending</div>
-    </div>
-
-    <div class="explainer-card">
-      <div class="tag">Regular Session &middot; April 13, 2026</div>
-      <h2><a href="/en/council-watch/april-13-2026/">Council closes a five-month regulatory overhaul, borrows $750,440 for Prince-Albert Street, and faces questions on staff turnover</a></h2>
-      <p class="desc">A full bylaw package adopted after five months of work, four new advisory committees seated, 24 new homes approved on rue Isabelle, and a resident's pointed questions about 20+ staff departures in two and a half years.</p>
-      <a class="read-more" href="/en/council-watch/april-13-2026/">Read the recap &rarr;</a>
-      <div class="meta-date">Published June 21, 2026</div>
-      <div class="status-badge unofficial"><span class="status-dot"></span>Unofficial &middot; minutes pending</div>
-    </div>
-
-    <div class="placeholder-card">
-      More council recaps published after each regular session.
-    </div>
-
-  </div>
+  <span class="result-count" id="result-count"></span>
 </div>
 
+<div class="page-wrap">
 
+  <a class="back-link" href="/">← Home</a>
 
+  <div class="section-head">
+    <h1>Council Watch</h1>
+    <p>Plain-language recaps of every Ormstown municipal council session — what was decided, what was discussed, and what to watch next. Published from public broadcasts, ahead of official minutes.</p>
+  </div>
+
+  <div class="note-box">
+    📋 Official minutes are published by the municipality approximately 4–6 weeks after each session. The Observer's recaps are based on public YouTube broadcasts and published agendas. We note where minutes have been confirmed.
+  </div>
+
+  <div class="session-list" id="session-list">
+
+    <a class="session-item" href="/en/council-watch/june-1-2026/" data-type="Regular">
+      <div class="session-date-col">
+        <div class="session-date">June 1</div>
+        <div class="session-year">2026</div>
+      </div>
+      <div class="session-body">
+        <div class="session-type">Regular Session</div>
+        <div class="session-hed">2025 financials tabled, 24-unit housing project proposed, new public notice rules</div>
+        <div class="session-desc">A dense agenda: 2025 financial statements received, a 24-unit residential development requiring public consultation, two bylaws adopted, five planning applications, and a $4.8M infrastructure borrowing notice of motion.</div>
+        <div class="session-tags">
+          <span class="session-tag">Finance</span>
+          <span class="session-tag">Housing</span>
+          <span class="session-tag">Urban Planning</span>
+          <span class="session-tag">Bylaws</span>
+          <span class="session-tag">Infrastructure</span>
+        </div>
+      </div>
+      <div class="session-status-col">
+        <span class="minutes-badge minutes-pending">Minutes pending</span>
+        <div class="published-on">Published<br>June 24, 2026</div>
+        <span class="session-cta">Read recap →</span>
+      </div>
+    </a>
+
+    <a class="session-item" href="/en/council-watch/april-13-2026/" data-type="Regular">
+      <div class="session-date-col">
+        <div class="session-date">Apr 13</div>
+        <div class="session-year">2026</div>
+      </div>
+      <div class="session-body">
+        <div class="session-type">Regular Session</div>
+        <div class="session-hed">Council closes a five-month regulatory overhaul, borrows $750,440 for Prince-Albert Street</div>
+        <div class="session-desc">A full bylaw package adopted after five months of work, four new advisory committees struck, 24 new homes approved on rue Isabelle, and a resident presses council on staff turnover.</div>
+        <div class="session-tags">
+          <span class="session-tag">Bylaws</span>
+          <span class="session-tag">Infrastructure</span>
+          <span class="session-tag">Housing</span>
+          <span class="session-tag">Governance</span>
+        </div>
+      </div>
+      <div class="session-status-col">
+        <span class="minutes-badge minutes-pending">Minutes pending</span>
+        <div class="published-on">Published<br>June 21, 2026</div>
+        <span class="session-cta">Read recap →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="no-results" id="no-results">No sessions match this filter.</div>
+
+</div>
+
+<script>
+  var items = Array.from(document.querySelectorAll('.session-item'));
+  var chips = Array.from(document.querySelectorAll('.chip'));
+  var noResults = document.getElementById('no-results');
+  var countEl = document.getElementById('result-count');
+  var activeType = 'all';
+
+  function filter() {
+    var visible = 0;
+    items.forEach(function(item) {
+      var show = activeType === 'all' || item.dataset.type === activeType;
+      item.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+    countEl.textContent = visible + ' session' + (visible !== 1 ? 's' : '');
+  }
+
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      activeType = chip.dataset.type;
+      filter();
+    });
+  });
+
+  filter();
+</script>
 </body>
 </html>
