@@ -3,139 +3,257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bylaws &amp; Regulations Explainer — The Ormstown Observer</title>
-<meta name="description" content="Plain-language explainers of newly adopted Ormstown municipal bylaws and regulations — what changed, why, and what it means for residents.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<title>Bylaws &amp; Regulations — The Ormstown Observer</title>
+<meta name="description" content="Plain-language explainers of Ormstown municipal bylaws and regulations — searchable by topic, status, and category.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
-    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
-    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+    --ink:#1a1a1a;--ink-light:#444;--accent:#b5161b;--accent-light:#f5e8e8;
+    --paper:#faf8f4;--paper-dark:#f0ece4;--rule:#c8b97a;--border:#d4c9b8;--muted:#555;
+    --confirm:#155724;--warn:#721c24;--pending:#856404;
   }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; background: var(--paper); color: var(--ink);
-    font-family: 'Source Serif 4', Georgia, serif; line-height: 1.6;
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;}
+
+  /* ── FILTER BAR ── */
+  .filter-bar{
+    position:sticky;top:0;z-index:10;
+    background:var(--paper);border-bottom:2px solid var(--ink);
+    padding:10px 24px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;
   }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
-
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 32px 20px 60px; }
-  
-
-  .section-intro { text-align: center; margin-bottom: 36px; }
-  .section-intro h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 2.1rem; margin: 0 0 10px; }
-  .section-intro p { color: var(--muted); max-width: 680px; margin: 0 auto; font-size: 1.02rem; }
-
-  .section-rule { display: flex; align-items: center; margin: 30px 0 18px; }
-  .section-rule-label { font-family: 'Playfair Display', serif; font-weight: 700; font-style: italic; font-size: 0.95rem; color: var(--accent); white-space: nowrap; padding-right: 14px; }
-  .section-rule-line { flex: 1; border-top: 1px solid var(--rule); }
-
-  .explainer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
-  .explainer-card {
-    background: #fff; border: 1px solid var(--border); border-radius: 4px;
-    padding: 22px 22px 20px; display: flex; flex-direction: column;
+  .search-wrap{position:relative;flex:1;min-width:180px;max-width:320px;}
+  .search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;}
+  #search{
+    width:100%;padding:7px 10px 7px 32px;
+    font-family:'Source Serif 4',serif;font-size:13px;
+    border:1px solid var(--border);background:var(--paper-dark);color:var(--ink);
+    outline:none;
   }
-  .explainer-card .tag {
-    font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px;
-    color: var(--accent); font-weight: 600; margin-bottom: 8px;
+  #search:focus{border-color:var(--accent);}
+  .filter-chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{
+    font-family:sans-serif;font-size:10px;font-weight:700;
+    text-transform:uppercase;letter-spacing:.08em;
+    padding:5px 12px;border:1px solid var(--border);
+    background:var(--paper-dark);color:var(--muted);cursor:pointer;
+    transition:background .12s,color .12s,border-color .12s;
   }
-  .explainer-card h2 {
-    font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem;
-    margin: 0 0 10px; line-height: 1.3;
-  }
-  .explainer-card h2 a { color: var(--ink); }
-  .explainer-card p.desc { color: var(--ink-light); font-size: 0.95rem; flex-grow: 1; margin: 0 0 14px; }
-  .explainer-card .read-more { font-size: 0.88rem; font-weight: 600; }
-  .explainer-card .meta-date { font-size: 0.78rem; color: var(--muted); margin-top: 10px; }
-
-  .placeholder-card {
-    background: var(--sidebar); border: 1px dashed var(--border); border-radius: 4px;
-    padding: 22px; display: flex; flex-direction: column; justify-content: center;
-    color: var(--muted); font-style: italic; font-size: 0.92rem; text-align: center;
+  .chip:hover{border-color:var(--ink);color:var(--ink);}
+  .chip.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+  .result-count{
+    font-family:sans-serif;font-size:10px;color:var(--muted);
+    margin-left:auto;white-space:nowrap;
   }
 
-  
-  .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+  /* ── PAGE WRAP ── */
+  .page-wrap{max-width:1000px;margin:0 auto;padding:32px 24px 80px;}
+  .section-head{margin-bottom:32px;}
+  .section-head h1{font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:8px;}
+  .section-head p{font-size:15px;color:var(--muted);max-width:620px;line-height:1.65;}
+
+  /* ── DATABASE TABLE ── */
+  .bylaw-table{width:100%;border-collapse:collapse;border-top:2px solid var(--ink);}
+  .bylaw-table th{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.14em;color:var(--muted);
+    text-align:left;padding:10px 14px;
+    border-bottom:1px solid var(--ink);background:var(--paper-dark);
+    white-space:nowrap;
+  }
+  .bylaw-row{border-bottom:1px solid var(--border);transition:background .1s;}
+  .bylaw-row:hover{background:var(--accent-light);}
+  .bylaw-row td{padding:14px 14px;vertical-align:top;}
+  .bylaw-row td:first-child{padding-left:16px;}
+
+  /* Number col */
+  .td-num{
+    font-family:sans-serif;font-size:11px;font-weight:700;
+    color:var(--muted);white-space:nowrap;min-width:110px;
+  }
+  /* Title col */
+  .td-title a{
+    font-family:'Playfair Display',serif;font-weight:700;font-size:15px;
+    color:var(--accent);line-height:1.3;display:block;margin-bottom:4px;
+  }
+  .td-title a:hover{text-decoration:underline;}
+  .td-desc{font-size:12.5px;color:var(--ink-light);line-height:1.55;}
+  /* Category col */
+  .td-cat{white-space:nowrap;min-width:100px;}
+  .cat-badge{
+    display:inline-block;font-family:sans-serif;font-size:9px;font-weight:700;
+    text-transform:uppercase;letter-spacing:.08em;
+    padding:3px 8px;border:1px solid var(--border);color:var(--muted);
+    background:var(--paper-dark);
+  }
+  /* Status col */
+  .td-status{white-space:nowrap;min-width:90px;}
+  .status{
+    display:inline-block;font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;
+  }
+  .status-active{background:#e6f4ea;color:var(--confirm);border:1px solid #a8d5b5;}
+  .status-amended{background:#fff3cd;color:var(--pending);border:1px solid #ffd680;}
+  .status-proposed{background:var(--accent-light);color:var(--warn);border:1px solid #e8b0b0;}
+  /* Date col */
+  .td-date{font-family:sans-serif;font-size:11px;color:var(--muted);white-space:nowrap;min-width:100px;}
+
+  /* ── NO RESULTS ── */
+  .no-results{display:none;padding:40px 0;text-align:center;color:var(--muted);font-style:italic;font-size:14px;}
+
+  /* ── BACK LINK ── */
+  .back-link{display:inline-block;font-family:sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:24px;}
+  .back-link:hover{color:var(--accent);}
+
+  @media(max-width:680px){
+    .td-cat,.td-status,.td-date{display:none;}
+    .filter-bar{padding:8px 12px;}
+    .page-wrap{padding:20px 12px 60px;}
+  }
 </style>
 <script src="/observer-header.js" defer></script>
 </head>
 <body>
 
-
-
-
-  
-  
-</header>
-
-<div class="page-wrap">
-  
-
-  <div class="section-intro">
-    <h1>Bylaws &amp; Regulations Explainer</h1>
-    <p>Ormstown council adopts bylaws regularly — most residents never read them. This section breaks down newly adopted municipal bylaws and regulations in plain language: what changed, why council did it, and what it actually means for you.</p>
+<div class="filter-bar">
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
+    <input type="search" id="search" placeholder="Search bylaws…" autocomplete="off">
   </div>
-
-  <div class="section-rule">
-    <span class="section-rule-label">Explainers</span>
-    <span class="section-rule-line"></span>
+  <div class="filter-chips" id="chips">
+    <button class="chip active" data-cat="all">All</button>
+    <button class="chip" data-cat="Animal Control">Animal Control</button>
+    <button class="chip" data-cat="Urban Planning">Urban Planning</button>
+    <button class="chip" data-cat="Council Procedure">Council Procedure</button>
+    <button class="chip" data-cat="Infrastructure">Infrastructure</button>
+    <button class="chip" data-cat="Finance">Finance</button>
   </div>
-
-  <div class="explainer-grid">
-
-    <div class="explainer-card">
-      <div class="tag">Animal Control &middot; Bylaw 131-2026</div>
-      <h2><a href="/en/bylaws-regulations/animal-control-131-2026/">New animal bylaw: lifetime pet licenses, legal backyard chickens, and rules for dangerous dogs</a></h2>
-      <p class="desc">Ormstown's new pet bylaw replaces annual licensing with a one-time, lifetime license, legalizes backyard hens for the first time, and lays out a strict three-tier process for dogs that bite or attack — including a 48-hour euthanasia deadline for dogs declared dangerous.</p>
-      <a class="read-more" href="/en/bylaws-regulations/animal-control-131-2026/">Read the explainer &rarr;</a>
-      <div class="meta-date">In force since April 17, 2026</div>
-    </div>
-
-    <div class="explainer-card">
-      <div class="tag">Council Procedure &middot; Bylaw 2-2026</div>
-      <h2><a href="/en/bylaws-regulations/council-procedure-2-2026/">How Ormstown council meetings actually work now</a></h2>
-      <p class="desc">New internal rules create two public question periods per meeting, cap meetings at 3 hours, and give the mayor a suspensive veto that council can override by absolute majority. Meetings stay on Mondays — we checked.</p>
-      <a class="read-more" href="/en/bylaws-regulations/council-procedure-2-2026/">Read the explainer &rarr;</a>
-      <div class="meta-date">In force since April 17, 2026</div>
-    </div>
-
-    <div class="explainer-card">
-      <div class="tag">Urban Planning &middot; Règlement 152-2023</div>
-      <h2><a href="/en/bylaws-regulations/piia-152-2023/">PIIA explained: when a renovation needs council approval first</a></h2>
-      <p class="desc">Règlement 152-2023 lets the municipality evaluate how a project looks, not just whether it's allowed, in the heritage core, along Route 201 Sud, on rue Isabelle, and for any backyard accessory dwelling — with fines up to $2,000/day for skipping it.</p>
-      <a class="read-more" href="/en/bylaws-regulations/piia-152-2023/">Read the explainer &rarr;</a>
-      <div class="meta-date">Current version in force since March 2024</div>
-    </div>
-
-    <div class="placeholder-card">
-      More bylaw explainers coming soon as new regulations are adopted by council.
-    </div>
-
-  </div>
+  <span class="result-count" id="result-count"></span>
 </div>
 
+<div class="page-wrap">
 
+  <a class="back-link" href="/">← Home</a>
 
+  <div class="section-head">
+    <h1>Bylaws &amp; Regulations</h1>
+    <p>Plain-language explainers of Ormstown municipal bylaws — what the rule says, what changed, and what it means for you. Use the search and filters above to find what you're looking for.</p>
+  </div>
+
+  <table class="bylaw-table" id="bylaw-table" aria-label="Bylaws database">
+    <thead>
+      <tr>
+        <th>Bylaw #</th>
+        <th>Title &amp; Summary</th>
+        <th>Category</th>
+        <th>Status</th>
+        <th>In Force</th>
+      </tr>
+    </thead>
+    <tbody id="bylaw-body">
+
+      <tr class="bylaw-row" data-cat="Animal Control" data-keywords="animal control pet license dog cat chicken backyard 131-2026">
+        <td class="td-num">Règlement<br>131-2026</td>
+        <td class="td-title">
+          <a href="/en/bylaws-regulations/animal-control-131-2026/">New animal bylaw: lifetime pet licenses, legal backyard chickens</a>
+          <div class="td-desc">Replaces annual dog and cat licensing with a one-time lifetime license. Permits up to six hens (no roosters) in backyards under specific conditions. New rules for dangerous dogs.</div>
+        </td>
+        <td class="td-cat"><span class="cat-badge">Animal Control</span></td>
+        <td class="td-status"><span class="status status-active">In force</span></td>
+        <td class="td-date">Apr 17, 2026</td>
+      </tr>
+
+      <tr class="bylaw-row" data-cat="Council Procedure" data-keywords="council procedure meeting governance rules agenda quorum mayor veto 2-2026">
+        <td class="td-num">Règlement<br>2-2026</td>
+        <td class="td-title">
+          <a href="/en/bylaws-regulations/council-procedure-2-2026/">How Ormstown council meetings actually work</a>
+          <div class="td-desc">New internal governance rules: meetings on first Wednesday of each month, capped at 3 hours with two 30-minute extensions. Two public question periods. Mayor's suspensive veto. Fines for procedural violations.</div>
+        </td>
+        <td class="td-cat"><span class="cat-badge">Council Procedure</span></td>
+        <td class="td-status"><span class="status status-active">In force</span></td>
+        <td class="td-date">Apr 17, 2026</td>
+      </tr>
+
+      <tr class="bylaw-row" data-cat="Urban Planning" data-keywords="PIIA architectural integration heritage renovation permit approval 152-2023 urban planning">
+        <td class="td-num">Règlement<br>152-2023</td>
+        <td class="td-title">
+          <a href="/en/bylaws-regulations/piia-152-2023/">PIIA explained: when a renovation needs council approval first</a>
+          <div class="td-desc">Règlement 152-2023 requires council review of exterior renovations in designated heritage and planning corridors — windows, roofing, siding, additions. Applies before permits are issued.</div>
+        </td>
+        <td class="td-cat"><span class="cat-badge">Urban Planning</span></td>
+        <td class="td-status"><span class="status status-active">In force</span></td>
+        <td class="td-date">Mar 2024</td>
+      </tr>
+
+      <tr class="bylaw-row" data-cat="Finance" data-keywords="public notice posting bulletin board website 167-2025 167.1-2026 communication">
+        <td class="td-num">Règlement<br>167.1-2026</td>
+        <td class="td-title">
+          <a href="/en/council-watch/june-1-2026/">Public notice bylaw amended: new posting locations <span style="font-family:sans-serif;font-size:10px;font-weight:700;color:var(--muted);">[See June 1 recap]</span></a>
+          <div class="td-desc">Municipality can no longer use its previously designated posting location. Public notices now appear on the municipal website and the exterior bulletin board at Town Hall (5, rue Gale). No standalone explainer yet.</div>
+        </td>
+        <td class="td-cat"><span class="cat-badge">Finance</span></td>
+        <td class="td-status"><span class="status status-active">In force</span></td>
+        <td class="td-date">Jun 1, 2026</td>
+      </tr>
+
+      <tr class="bylaw-row" data-cat="Infrastructure" data-keywords="infrastructure borrowing loan Prince-Albert Cullen Oliver 173.1-2026 roads streets">
+        <td class="td-num">Règlement<br>173.1-2026</td>
+        <td class="td-title">
+          <a href="/en/council-watch/june-1-2026/">$4.8M infrastructure borrowing: rues Prince-Albert, Cullen &amp; Oliver <span style="font-family:sans-serif;font-size:10px;font-weight:700;color:var(--muted);">[Notice of motion — pending vote]</span></a>
+          <div class="td-desc">Amendment to the existing infrastructure borrowing bylaw to cover road reconstruction works on three streets. Notice of motion tabled June 1, 2026. Adoption vote at a future session. No standalone explainer yet.</div>
+        </td>
+        <td class="td-cat"><span class="cat-badge">Infrastructure</span></td>
+        <td class="td-status"><span class="status status-proposed">Pending vote</span></td>
+        <td class="td-date">TBD</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div class="no-results" id="no-results">No bylaws match your search. Try different terms or clear the filter.</div>
+
+</div>
+
+<script>
+  var rows = Array.from(document.querySelectorAll('.bylaw-row'));
+  var searchInput = document.getElementById('search');
+  var chips = Array.from(document.querySelectorAll('.chip'));
+  var noResults = document.getElementById('no-results');
+  var countEl = document.getElementById('result-count');
+  var activeCat = 'all';
+
+  function updateCount(n) {
+    countEl.textContent = n + ' bylaw' + (n !== 1 ? 's' : '');
+  }
+
+  function filter() {
+    var q = searchInput.value.toLowerCase().trim();
+    var visible = 0;
+    rows.forEach(function(row) {
+      var cat = row.dataset.cat;
+      var kw = (row.dataset.keywords + ' ' + row.textContent).toLowerCase();
+      var catMatch = activeCat === 'all' || cat === activeCat;
+      var qMatch = !q || kw.indexOf(q) !== -1;
+      var show = catMatch && qMatch;
+      row.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+    updateCount(visible);
+  }
+
+  chips.forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      chips.forEach(function(c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+      activeCat = chip.dataset.cat;
+      filter();
+    });
+  });
+
+  searchInput.addEventListener('input', filter);
+  filter();
+</script>
 </body>
 </html>
