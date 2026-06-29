@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investigations — The Ormstown Observer</title>
+<meta name="description" content="Original document-based investigative reporting on municipal affairs in Ormstown and the Haut-Saint-Laurent.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#1a1a1a;--ink-light:#444;--accent:#b5161b;--accent-light:#f5e8e8;
+    --paper:#faf8f4;--paper-dark:#f0ece4;--rule:#c8b97a;--border:#d4c9b8;--muted:#555;
+    --confirm:#155724;--warn:#721c24;--pending:#856404;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;}
+
+  .page-wrap{max-width:900px;margin:0 auto;padding:32px 24px 80px;}
+  .back-link{display:inline-block;font-family:sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:24px;}
+  .back-link:hover{color:var(--accent);}
+  .section-head{margin-bottom:40px;}
+  .section-head h1{font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:8px;}
+  .section-head p{font-size:15px;color:var(--muted);max-width:620px;line-height:1.65;}
+
+  /* ── INVESTIGATION FILE ── */
+  .inv-file{border:2px solid var(--ink);margin-bottom:48px;}
+  .inv-file-header{
+    background:var(--ink);color:#fff;
+    padding:16px 22px;
+    display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+    flex-wrap:wrap;
+  }
+  .inv-file-name{font-family:'Playfair Display',serif;font-weight:900;font-size:18px;}
+  .inv-file-status{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.1em;
+    padding:3px 10px;border:1px solid rgba(255,255,255,.4);
+    flex-shrink:0;
+  }
+  .inv-status-active{color:#7ee8a2;border-color:#7ee8a2;}
+  .inv-status-closed{color:#aaa;border-color:#aaa;}
+
+  .inv-summary{
+    padding:16px 22px;border-bottom:1px solid var(--border);
+    font-size:13.5px;color:var(--ink-light);line-height:1.65;
+    background:var(--paper-dark);
+  }
+
+  /* Timeline of articles */
+  .inv-timeline{padding:0;}
+  .inv-article{
+    display:grid;grid-template-columns:80px 1fr;
+    border-bottom:1px solid var(--border);
+    transition:background .1s;
+  }
+  .inv-article:last-child{border-bottom:none;}
+  a.inv-article:hover{background:var(--accent-light);}
+
+  .inv-art-num{
+    border-right:1px solid var(--border);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:18px 10px;
+    font-family:'Playfair Display',serif;font-weight:900;
+    font-size:22px;color:var(--border);
+    flex-shrink:0;
+  }
+  .inv-art-num span{font-family:sans-serif;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:2px;}
+
+  .inv-art-body{padding:18px 20px;}
+  .inv-art-type{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:5px;
+  }
+  .inv-art-hed{
+    font-family:'Playfair Display',serif;font-weight:700;
+    font-size:15px;line-height:1.28;color:var(--ink);margin-bottom:5px;
+  }
+  .inv-art-desc{font-size:12.5px;color:var(--ink-light);line-height:1.6;margin-bottom:8px;}
+  .inv-art-date{font-family:sans-serif;font-size:10px;color:#aaa;}
+  .inv-art-cta{
+    font-family:sans-serif;font-size:10px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-top:6px;display:inline-block;
+  }
+
+  /* Pending article */
+  .inv-article.pending{opacity:.55;}
+  .inv-article.pending .inv-art-hed{font-style:italic;}
+  .pending-badge{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;
+    padding:2px 8px;background:#fff3cd;color:var(--pending);border:1px solid #ffd680;
+    display:inline-block;margin-bottom:5px;
+  }
+
+  @media(max-width:600px){
+    .inv-article{grid-template-columns:50px 1fr;}
+    .inv-art-num{font-size:16px;}
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <a class="back-link" href="/">← Home</a>
+
+  <div class="section-head">
+    <h1>Investigations</h1>
+    <p>Original, document-based reporting on the decisions, processes, and actors shaping Ormstown and the Haut-Saint-Laurent. Every claim linked to a primary source.</p>
+  </div>
+
+  <!-- ── BELL TOWER FILE ── -->
+  <div class="inv-file">
+    <div class="inv-file-header">
+      <div class="inv-file-name">Bell Tower E3640 — Ormstown</div>
+      <span class="inv-file-status inv-status-active">● Active file</span>
+    </div>
+    <div class="inv-summary">
+      Bell Mobilité's proposal to install a 36-metre monopole on municipal park land in Zone P-15. The Observer has reviewed every available document — the lease signed before consultation, the federal CPC-2-0-03 process, the zoning question, and the follow-up correspondence. Articles published in sequence below.
+    </div>
+    <div class="inv-timeline">
+
+      <a class="inv-article" href="/en/bell-tower/">
+        <div class="inv-art-num">1<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Investigation</div>
+          <div class="inv-art-hed">A 36-Metre Tower Is Proposed for an Ormstown Park Lot. Here Is Everything You Need to Know.</div>
+          <div class="inv-art-desc">The full paper trail: the lease, the zoning question, the lot discrepancy, the sequence of events, and the questions residents should ask.</div>
+          <div class="inv-art-date">June 8, 2026</div>
+          <span class="inv-art-cta">Read →</span>
+        </div>
+      </a>
+
+      <a class="inv-article" href="/en/bell-tower-explainer/">
+        <div class="inv-art-num">2<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Explainer · Background</div>
+          <div class="inv-art-hed">Before You Walk Into That Room on Wednesday, Read This.</div>
+          <div class="inv-art-desc">How cell towers work, what the health research actually says about RF exposure, a full walkthrough of the federal CPC-2-0-03 consultation process, and what you can and cannot ask Bell at a public information session.</div>
+          <div class="inv-art-date">June 8, 2026</div>
+          <span class="inv-art-cta">Read →</span>
+        </div>
+      </a>
+
+      <a class="inv-article" href="/en/bell-tower-june10/">
+        <div class="inv-art-num">3<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Session Report</div>
+          <div class="inv-art-hed">Bell's June 10 Information Session: What Was Said, and What Happens Next.</div>
+          <div class="inv-art-desc">~25 residents attended the June 10 session at 5 rue Gale. Full video, what was and wasn't answered, the questions submitted to Bell before the written comment deadline, and next steps in the federal process.</div>
+          <div class="inv-art-date">June 15, 2026</div>
+          <span class="inv-art-cta">Read →</span>
+        </div>
+      </a>
+
+      <div class="inv-article pending">
+        <div class="inv-art-num">4<span>Article</span></div>
+        <div class="inv-art-body">
+          <span class="pending-badge">Forthcoming</span>
+          <div class="inv-art-type">Follow-up · Correspondence</div>
+          <div class="inv-art-hed">Six Questions Bell Has Not Answered — The Observer's Follow-up to Agent Robert Minotti</div>
+          <div class="inv-art-desc">The Observer's formal follow-up letter to Bell's consultation agent documents six unresolved concerns: Annex A omissions, inconsistencies from the June 10 session recording, flood zone status, site selection rationale, the premature July 6 council vote, and DGSO-001-26 context.</div>
+          <div class="inv-art-date">Publishing soon</div>
+        </div>
+      </div>
+
+      <div class="inv-article pending">
+        <div class="inv-art-num">5<span>Article</span></div>
+        <div class="inv-art-body">
+          <span class="pending-badge">Awaiting event — July 6</span>
+          <div class="inv-art-type">Council Report</div>
+          <div class="inv-art-hed">July 6 Council Vote: Did the Municipality Give Premature Concurrence?</div>
+          <div class="inv-art-desc">Ormstown council is scheduled to vote on the Bell tower project July 6 — before the July 10 public comment deadline closes. The Observer will report on the vote and what it means for the CPC-2-0-03 process.</div>
+          <div class="inv-art-date">After July 6, 2026</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
