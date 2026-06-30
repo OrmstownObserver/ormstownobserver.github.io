@@ -141,7 +141,6 @@
   `;
 
   // ── HTML ──
-  // Determine active section from URL path
   var path = window.location.pathname;
   function isActive(href){ return path.indexOf(href) === 0 && href !== '/'; }
   var rootHref = '/';
@@ -218,7 +217,6 @@
   styleEl.textContent = css;
   document.head.appendChild(styleEl);
 
-  // Insert fonts if not already present
   if(!document.querySelector('link[href*="Playfair+Display"]')){
     var fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
@@ -226,15 +224,12 @@
     document.head.appendChild(fontLink);
   }
 
-  // Prepend header
   var headerDiv = document.createElement('div');
   headerDiv.innerHTML = header;
   document.body.insertBefore(headerDiv, document.body.firstChild);
 
-  // Remove any existing .topbar and old .masthead that pages may contain
   document.querySelectorAll('.topbar, .masthead, .site-header-old').forEach(function(el){ el.remove(); });
 
-  // Append footer (replaces existing site-footer if present)
   var existingFooter = document.querySelector('.site-footer, footer.obs-footer-old');
   if(existingFooter) existingFooter.remove();
   var footerDiv = document.createElement('div');
@@ -268,6 +263,16 @@
 
   // ── LANG LOGIC ──
   window.obsSetLang = function(lang){
+    // Check for a page-level alternate URL first (hreflang redirect)
+    var alternate = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+    if(alternate && alternate.href && alternate.href !== window.location.href){
+      // Save preference before navigating
+      try{ localStorage.setItem('observerLang', lang); } catch(e){}
+      window.location.href = alternate.href;
+      return;
+    }
+
+    // No alternate — just toggle classes (homepage or pages without alternates)
     var html = document.documentElement;
     if(lang==='fr'){ html.classList.add('lang-fr'); } else { html.classList.remove('lang-fr'); }
     html.setAttribute('lang', lang);
@@ -282,13 +287,23 @@
     });
   };
 
-  // Init lang
+  // Init lang — on page load, don't redirect; just set visual state
   (function(){
     try{
       var saved = localStorage.getItem('observerLang');
       var lang = saved || (navigator.language && navigator.language.toLowerCase().indexOf('fr')===0 ? 'fr' : 'en');
-      obsSetLang(lang);
-    } catch(e){ obsSetLang('en'); }
+      // Apply visual state without triggering redirect on init
+      var html = document.documentElement;
+      if(lang==='fr'){ html.classList.add('lang-fr'); } else { html.classList.remove('lang-fr'); }
+      html.setAttribute('lang', lang);
+      var btnEn = document.getElementById('obs-btn-en');
+      var btnFr = document.getElementById('obs-btn-fr');
+      if(btnEn) btnEn.classList.toggle('is-active', lang==='en');
+      if(btnFr) btnFr.classList.toggle('is-active', lang==='fr');
+      document.querySelectorAll('[data-href-en]').forEach(function(el){
+        el.setAttribute('href', lang==='fr' ? el.getAttribute('data-href-fr') : el.getAttribute('data-href-en'));
+      });
+    } catch(e){}
   })();
 
 })();
