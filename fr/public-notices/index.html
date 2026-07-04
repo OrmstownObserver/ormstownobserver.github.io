@@ -103,7 +103,7 @@
     var deadline = (n.date_deadline && n.date_deadline >= todayStr)
       ? '<div class="notice-deadline">Consultation / date limite : ' + esc(fmtLong(n.date_deadline)) + '</div>' : '';
     var orig = n.source_url
-      ? '<a class="notice-link" href="' + esc(n.source_url) + '" target="_blank" rel="noopener">Consulter l\'avis original (PDF) &rarr;</a>' : '';
+      ? '<a class="notice-link" href="' + esc(n.source_url) + '">Consulter l\'avis original (PDF) &rarr;</a>' : '';
     return '<div class="notice-card" data-cat="' + esc(cat) + '">'
       + '<div class="notice-date"><div class="day">' + d.getDate() + '</div><div class="month">' + MONTHS_SHORT[d.getMonth()] + '</div><div class="year">' + d.getFullYear() + '</div></div>'
       + '<div class="notice-body">'

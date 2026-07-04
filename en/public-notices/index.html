@@ -118,11 +118,11 @@
     var details = n.full_translation_en
       ? '<details class="notice-details"><summary>Read the full unofficial English translation</summary>'
         + '<div class="notice-full">' + fullHTML(n.full_translation_en) + '</div>'
-        + (n.attribution ? '<div class="notice-attr">' + esc(n.attribution).replace('strAI.ca','<a href="https://strai.ca" target="_blank" rel="noopener">strAI.ca</a>') + '</div>' : '')
+        + (n.attribution ? '<div class="notice-attr">' + esc(n.attribution).replace('strAI.ca','<a href="https://strai.ca">strAI.ca</a>') + '</div>' : '')
         + '</details>'
       : '';
     var orig = n.source_url
-      ? '<a class="notice-link" href="' + esc(n.source_url) + '" target="_blank" rel="noopener">View the original notice (French, PDF) &rarr;</a>' : '';
+      ? '<a class="notice-link" href="' + esc(n.source_url) + '">View the original notice (French, PDF) &rarr;</a>' : '';
     return '<div class="notice-card" data-cat="' + esc(cat) + '">'
       + '<div class="notice-date"><div class="day">' + d.getDate() + '</div><div class="month">' + MONTHS_SHORT[d.getMonth()] + '</div><div class="year">' + d.getFullYear() + '</div></div>'
       + '<div class="notice-body">'

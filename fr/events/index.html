@@ -178,7 +178,7 @@
 
   function eventCardHTML(ev) {
     var d = parseDate(ev.date_start);
-    var link = ev.link ? '<a class="event-link" href="' + ev.link + '" target="_blank" rel="noopener">Détails →</a>' : '';
+    var link = ev.link ? '<a class="event-link" href="' + ev.link + '">Détails →</a>' : '';
     var meta = [ev.organization, ev.location].filter(Boolean).join('<span class="dot">·</span>');
     return '<div class="event-card" data-cat="' + ev.category + '" data-recurring="' + (!!ev.recurring) + '">' +
       '<div class="event-date"><div class="wd">' + WEEKDAYS_SHORT[d.getDay()] + '</div><div class="day">' + d.getDate() + '</div><div class="month">' + MONTHS_SHORT[d.getMonth()] + '</div></div>' +
