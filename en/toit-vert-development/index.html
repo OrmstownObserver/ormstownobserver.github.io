@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A 24-Unit Development Next to Le Toit Vert — The Ormstown Observer</title>
+<meta name="description" content="Ormstown council took the first step toward a 24-unit development on rue Church on June 1. The public consultation was July 2 — announced only at town hall and on the website, in the same meeting that narrowed how the town posts its notices.">
+<link rel="canonical" href="https://ormstownobserver.ca/en/toit-vert-development/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #444;
+    --accent: #b5161b;
+    --accent-light: #f5e8e8;
+    --paper: #faf8f4;
+    --paper-dark: #f0ece4;
+    --rule: #c8b97a;
+    --column: 680px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; line-height: 1.7; }
+  a { color: var(--accent); }
+  a:hover { color: var(--ink); }
+
+  /* ── LAYOUT ── */
+  .article-wrap { max-width: var(--column); margin: 0 auto; padding: 44px 24px 80px; }
+  .section-label { display: inline-block; background: var(--accent); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 18px; }
+  .headline { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px,5vw,46px); font-weight: 900; line-height: 1.12; color: var(--ink); margin-bottom: 14px; }
+  .headline em { font-style: italic; color: var(--accent); }
+  .deck { font-size: 19px; font-weight: 300; line-height: 1.55; color: var(--ink-light); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 28px; font-style: italic; }
+  .byline { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); padding-bottom: 20px; border-bottom: 1px solid var(--ink); margin-bottom: 28px; }
+  .byline strong { color: var(--ink); }
+  .body p { margin-bottom: 22px; font-size: 17.5px; line-height: 1.72; hyphens: auto; }
+  .body p.lede { font-size: 19.5px; font-weight: 400; line-height: 1.6; }
+  .body p.lede::first-letter { font-family: 'Playfair Display', serif; font-size: 4.2em; font-weight: 900; float: left; line-height: .78; margin: 6px 8px -4px 0; color: var(--accent); }
+  h2.section-head { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--ink); margin: 52px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+  .pull-quote { border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); padding: 22px 0 18px; margin: 36px 0; text-align: center; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px !important; font-style: italic; font-weight: 700; line-height: 1.4 !important; color: var(--ink); margin: 0 !important; }
+  .pull-quote cite { display: block; margin-top: 10px; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-light); font-style: normal; }
+  .fact-box { background: var(--paper-dark); border-left: 4px solid var(--accent); padding: 20px 24px; margin: 30px 0; }
+  .fact-box h3, .fact-box h4 { font-family: 'Playfair Display', serif; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px; color: var(--accent); }
+  .fact-box ul { list-style: none; padding: 0; }
+  .fact-box ul li { font-size: 15px; padding: 5px 0 5px 18px; position: relative; border-bottom: 1px solid #ddd8ce; line-height: 1.5; }
+  .fact-box ul li:last-child { border-bottom: none; }
+  .fact-box ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 12px; top: 7px; }
+  .fact-box ul li strong { color: var(--ink); }
+  .body ol { margin: 0 0 22px; padding-left: 0; list-style: none; counter-reset: step; }
+  .body ol li { position: relative; padding: 0 0 16px 44px; font-size: 17.5px; line-height: 1.7; counter-increment: step; }
+  .body ol li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 30px; height: 30px; background: var(--accent); color: #fff; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+  .related-box { border: 1px solid var(--rule); background: var(--paper-dark); padding: 16px 20px; margin: 30px 0; font-size: 14.5px; line-height: 1.6; }
+  .related-box strong { display: block; font-family: 'Playfair Display', serif; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 8px; }
+  .article-footer { margin-top: 50px; padding-top: 20px; border-top: 3px double var(--ink); font-size: 13px; color: var(--ink-light); line-height: 1.6; font-style: italic; }
+  .back-link { display: inline-block; margin-bottom: 26px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-light); }
+  .back-link:hover { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .article-wrap { padding: 28px 18px 60px; }
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/toit-vert-development/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/toit-vert-development/">
+</head>
+<body>
+
+<main class="article-wrap">
+
+  <a class="back-link" href="/en/investigations/">← Investigations</a>
+
+  <div class="section-label">Investigation · Transparency</div>
+
+  <h1 class="headline">A 24-Unit Development Was Approved in Principle Next to Le Toit Vert.</h1>
+
+  <p class="deck">Almost no one could have known the public consultation was July 2. Council took the first step on June 1 — in the same meeting it narrowed how the town publishes its notices.</p>
+
+  <div class="byline">
+    By <strong>The Ormstown Observer</strong> &nbsp;·&nbsp; July 3, 2026 &nbsp;·&nbsp; Ormstown, Québec
+  </div>
+
+  <div class="body">
+
+    <p class="lede">On June 1, 2026, Ormstown council took the first formal step toward a 24-unit residential development on a vacant lot next to the Le Toit Vert restaurant on rue Church. Under Québec's rules for this kind of project, that step required a public consultation — the one moment for residents to be heard before the project can advance. It was held Thursday, July 2, 2026.</p>
+
+    <p>The project is significant: four three-storey buildings, and a draft resolution that carries provisions that could be put to a referendum. Yet the consultation was announced only ten days ahead, in a notice posted at the town hall and on the municipal website — the same two channels the council had, in that very June 1 meeting, just finished defending as residents asked for better ones.</p>
+
+    <p>This is not a claim that the municipality broke a rule. As far as the Observer can determine, the town met the minimum the law requires. That is the point: the legal minimum was enough to carry a major development past its public-input stage with almost no public awareness — so much so that the Observer itself, which attended the June 1 meeting, did not learn the consultation had been set for July 2 until after it had passed.</p>
+
+    <div class="fact-box">
+      <h3>The project</h3>
+      <ul>
+        <li><strong>What —</strong> four multifamily buildings, three storeys each, six dwellings each: 24 dwellings</li>
+        <li><strong>Where —</strong> vacant lot 6 455 729, next to the Le Toit Vert restaurant, 52 rue Church, zone R-7</li>
+        <li><strong>Process —</strong> PPCMOI 2026-041 (specific-project by-law), file 2104-168, under by-laws 114-2021 / 169-2025</li>
+        <li><strong>First step —</strong> first draft resolution accepted June 1, 2026 (proposed and seconded; none recorded against)</li>
+        <li><strong>Public consultation —</strong> July 2, 2026, 6 p.m., Hôtel de ville, 5 rue Gale</li>
+        <li><strong>Referendum —</strong> the draft resolution contains provisions susceptible of referendum approval</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">What the project asks for</h2>
+
+    <p>The application seeks derogations — exceptions to the normal rules — on use, permitted height, the minimum isolation margin, the minimum width of a two-way driveway, the width of the vegetated strip around the parking area, and the distance between site accesses. At the meeting, the mayor described it as "gentle densification" (<em>une densification douce</em>) in keeping with the village core, with a pitched-roof "pavilion" form, brick and textured siding, and a landscaped parking area meant to reduce the heat-island effect. The municipality's planning advisory committee (CCU) recommended it favourably.</p>
+
+    <h2 class="section-head">How the timeline worked against residents</h2>
+
+    <p>Follow the sequence from a resident's point of view:</p>
+
+    <ol>
+      <li><strong>June 1 — the decision is made in the room.</strong> Council accepted the first draft resolution. The project and a <em>forthcoming</em> consultation did come up when a resident asked about it — but when pressed on timing, the mayor said plainly: "Je n'ai pas la date encore" ("I don't have the date yet"). The minutes of the meeting are <a href="/en/council-watch/june-1-2026/">not yet public</a>, and will not be adopted until the next regular meeting, July 6. In real time, the only way to know what council had decided was to attend in person or watch the YouTube stream.</li>
+      <li><strong>June 22 — the dated notice appears.</strong> The public notice fixing the consultation for July 2 was signed by the director general and, per its own certificate, posted at the places designated by council, including the municipal website — in practice, the town hall bulletin board and ormstown.ca.</li>
+      <li><strong>July 2 — the consultation is held.</strong> The single formal opportunity for residents to be heard came and went.</li>
+    </ol>
+
+    <p>Nothing in that chain was designed to actively reach the people most affected. A resident would have had to already be watching the town hall board or refreshing the municipal website to learn that a 24-unit project near their street was up for consultation.</p>
+
+    <h2 class="section-head">The same meeting narrowed how notices reach the public</h2>
+
+    <p>There is a pointed irony in the June 1 record. The very meeting that advanced the 24-unit project also adopted by-law 167.1-2026, which changed how the municipality publishes its public notices — specifically to remove the post office as a posting site, after the municipality said it was told it could no longer post there. As the mayor put it, "otherwise we would not have changed it, because for us it worked well."</p>
+
+    <p>That change drew sustained pushback in the question period:</p>
+
+    <p>— <strong>When questioned by the Ormstown Observer</strong> about what the municipality would do to communicate better now that the post office was no longer an option, the mayor pointed to the website and the town-hall board: "Le meilleur moyen pour avoir les avis, c'est vraiment l'hôtel de ville" ("The best way to get the notices is really the town hall").</p>
+
+    <div class="pull-quote">
+      <p>"The best way to get the notices is really the town hall."</p>
+      <cite>— The mayor, June 1 council meeting</cite>
+    </div>
+
+    <p>— Asked whether social media should be written into by-law 167.1 as a required channel, the mayor said he doubted Facebook is required by provincial law and that the town had to bring its by-law into compliance quickly, but added: "on a une volonté de transparence… ce n'est pas pour cacher des avis, au contraire. Plus les gens le savent, mieux c'est" ("we have a desire for transparency… it's not to hide notices, quite the opposite. The more people know, the better").</p>
+
+    <p>— A resident noted people used to see notices while collecting their mail, that notices at the town hall are "pas vraiment visible" ("not really visible"), and asked whether the town could post them at a local business or café and notify residents formally — observing that even the Tuesday-morning walking club is unaware: "chaque nouveau membre arrive ici et n'avait aucune idée qu'il pouvait venir voir les avis" ("every new member turns up here with no idea they could come see the notices").</p>
+
+    <p>— <strong>Director general Daniel Leduc agreed</strong> the town hall is poorly placed for this: "Je suis 100% d'accord avec vous… l'hôtel de ville est un peu à l'extérieur du périmètre urbain… il faut faire un détour pour venir à l'hôtel de ville" ("I agree 100%… the town hall is a bit outside the urban perimeter… you have to make a detour to come to the town hall").</p>
+
+    <p>The mayor said the council had heard the message and would look into additional posting locations — "On a compris le message. On va regarder… si c'est possible, on le fera."</p>
+
+    <h2 class="section-head">What the law requires — and what it doesn't</h2>
+
+    <p>Under Québec's <em>Code municipal</em>, a municipality publishes its public notices in the manner set by its own notice by-law, together with posting on its website. Ormstown's notice by-law is 167-2025, as amended June 1 by 167.1-2026. Posting at the town hall and on the website appears to satisfy that requirement.</p>
+
+    <p>What the law does not require is any guarantee that a notice actually reaches the people most affected — by mail, by social media, by neighbourhood signage, or by direct notice to adjacent residents. Those are steps a municipality may choose. On June 1, residents asked the council to choose more of them. The council said it would look into it.</p>
+
+    <h2 class="section-head">Why it matters</h2>
+
+    <p>A 24-unit development is a substantial change for a village core. The residents who raised it on June 1 pointed to concrete effects — as one put it, "24 units means at least 24, maybe 48 cars" onto an already-congested Route 201/138 in summer, and streets nearby that have "already densified quite a bit." The mayor defended the project on housing-supply and infrastructure grounds and stressed nothing is final until the consultation and the steps that follow. Those competing concerns are exactly what a public consultation exists to weigh. When the consultation is announced only through the minimum channels, the process can run its course without the public it is meant to serve ever arriving.</p>
+
+    <div class="related-box">
+      <strong>Read the record</strong>
+      The Observer's neutral recap of the <a href="/en/council-watch/june-1-2026/">June 1 council meeting</a> · The municipality's official <a href="/en/public-notices/">public notice for PPCMOI 2026-041</a> (unofficial bilingual translation).
+    </div>
+
+    <h2 class="section-head">What is confirmed</h2>
+
+    <div class="fact-box">
+      <ul>
+        <li>The project's scope, location, the June 1 first resolution, the July 2 consultation date, and the referendum-susceptible status are confirmed by the municipality's own public notice for PPCMOI 2026-041 and the June 1 agenda.</li>
+        <li>The adoption of by-law 167.1-2026 removing the post office as a posting site, and the question-period exchanges on notices, are on the June 1 meeting record.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">What remains unclear</h2>
+
+    <div class="fact-box">
+      <ul>
+        <li><strong>What happened at the July 2 consultation</strong> — turnout, comments, and whether the project now advances to a second draft resolution and a possible referendum register. The Observer will report this once confirmed.</li>
+        <li><strong>The identity of the developer/applicant</strong>, which the Observer is verifying from the PPCMOI file (2104-168) before naming.</li>
+        <li><strong>Whether the municipality will add notification channels</strong>, as residents requested on June 1.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">Source notes</h2>
+
+    <p>Public notice — <em>Assemblée publique de consultation, PPCMOI 2026-041</em>, Municipalité d'Ormstown, signed Daniel Leduc, DG / greffier-trésorier, published June 22, 2026. · June 1, 2026 council agenda (item 9.7) and meeting recording (Municipalité d'Ormstown YouTube, June 1, 2026). · By-law 167.1-2026 (public-notice publication), adopted June 1, 2026.</p>
+
+  </div>
+
+  <div class="article-footer">
+    This is a developing file. The Observer will update it after the July 2 consultation and the July 6 council meeting, and will add the municipality's response if one is provided.
+  </div>
+
+</main>
+
+</body>
+</html>

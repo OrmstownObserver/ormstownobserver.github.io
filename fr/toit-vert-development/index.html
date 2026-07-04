@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un projet de 24 logements voisin du Toit Vert — L'Ormstown Observer</title>
+<meta name="description" content="Le conseil d'Ormstown a franchi le 1er juin la première étape vers un projet de 24 logements rue Church. La consultation publique a eu lieu le 2 juillet — annoncée seulement à l'hôtel de ville et sur le site web, dans la séance même qui a réduit la portée des avis publics.">
+<link rel="canonical" href="https://ormstownobserver.ca/fr/toit-vert-development/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #444;
+    --accent: #b5161b;
+    --accent-light: #f5e8e8;
+    --paper: #faf8f4;
+    --paper-dark: #f0ece4;
+    --rule: #c8b97a;
+    --column: 680px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; line-height: 1.7; }
+  a { color: var(--accent); }
+  a:hover { color: var(--ink); }
+
+  /* ── LAYOUT ── */
+  .article-wrap { max-width: var(--column); margin: 0 auto; padding: 44px 24px 80px; }
+  .section-label { display: inline-block; background: var(--accent); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 18px; }
+  .headline { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px,5vw,46px); font-weight: 900; line-height: 1.12; color: var(--ink); margin-bottom: 14px; }
+  .headline em { font-style: italic; color: var(--accent); }
+  .deck { font-size: 19px; font-weight: 300; line-height: 1.55; color: var(--ink-light); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 28px; font-style: italic; }
+  .byline { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); padding-bottom: 20px; border-bottom: 1px solid var(--ink); margin-bottom: 28px; }
+  .byline strong { color: var(--ink); }
+  .body p { margin-bottom: 22px; font-size: 17.5px; line-height: 1.72; hyphens: auto; }
+  .body p.lede { font-size: 19.5px; font-weight: 400; line-height: 1.6; }
+  .body p.lede::first-letter { font-family: 'Playfair Display', serif; font-size: 4.2em; font-weight: 900; float: left; line-height: .78; margin: 6px 8px -4px 0; color: var(--accent); }
+  h2.section-head { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--ink); margin: 52px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+  .pull-quote { border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); padding: 22px 0 18px; margin: 36px 0; text-align: center; }
+  .pull-quote p { font-family: 'Playfair Display', Georgia, serif; font-size: 22px !important; font-style: italic; font-weight: 700; line-height: 1.4 !important; color: var(--ink); margin: 0 !important; }
+  .pull-quote cite { display: block; margin-top: 10px; font-size: 11px; letter-spacing: .15em; text-transform: uppercase; color: var(--ink-light); font-style: normal; }
+  .fact-box { background: var(--paper-dark); border-left: 4px solid var(--accent); padding: 20px 24px; margin: 30px 0; }
+  .fact-box h3, .fact-box h4 { font-family: 'Playfair Display', serif; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 14px; color: var(--accent); }
+  .fact-box ul { list-style: none; padding: 0; }
+  .fact-box ul li { font-size: 15px; padding: 5px 0 5px 18px; position: relative; border-bottom: 1px solid #ddd8ce; line-height: 1.5; }
+  .fact-box ul li:last-child { border-bottom: none; }
+  .fact-box ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-size: 12px; top: 7px; }
+  .fact-box ul li strong { color: var(--ink); }
+  .body ol { margin: 0 0 22px; padding-left: 0; list-style: none; counter-reset: step; }
+  .body ol li { position: relative; padding: 0 0 16px 44px; font-size: 17.5px; line-height: 1.7; counter-increment: step; }
+  .body ol li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 30px; height: 30px; background: var(--accent); color: #fff; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 15px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+  .related-box { border: 1px solid var(--rule); background: var(--paper-dark); padding: 16px 20px; margin: 30px 0; font-size: 14.5px; line-height: 1.6; }
+  .related-box strong { display: block; font-family: 'Playfair Display', serif; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 8px; }
+  .article-footer { margin-top: 50px; padding-top: 20px; border-top: 3px double var(--ink); font-size: 13px; color: var(--ink-light); line-height: 1.6; font-style: italic; }
+  .back-link { display: inline-block; margin-bottom: 26px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-light); }
+  .back-link:hover { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .article-wrap { padding: 28px 18px 60px; }
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/toit-vert-development/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/toit-vert-development/">
+</head>
+<body>
+
+<main class="article-wrap">
+
+  <a class="back-link" href="/fr/">← Accueil</a>
+
+  <div class="section-label">Enquête · Transparence</div>
+
+  <h1 class="headline">Un projet de 24 logements approuvé en principe voisin du Toit Vert.</h1>
+
+  <p class="deck">Presque personne ne pouvait savoir que la consultation avait lieu le 2 juillet. Le conseil a franchi la première étape le 1er juin — dans la séance même qui a réduit la portée des avis publics.</p>
+
+  <div class="byline">
+    Par <strong>L'Ormstown Observer</strong> &nbsp;·&nbsp; 3 juillet 2026 &nbsp;·&nbsp; Ormstown, Québec
+  </div>
+
+  <div class="body">
+
+    <p class="lede">Le 1er juin 2026, le conseil d'Ormstown a franchi la première étape formelle vers un projet résidentiel de 24 logements sur un terrain vacant voisin du restaurant Le Toit Vert, rue Church. Les règles québécoises applicables à ce type de projet exigeaient une consultation publique — le seul moment pour les résidents de se faire entendre avant que le projet n'avance. Elle a eu lieu le jeudi 2 juillet 2026.</p>
+
+    <p>Le projet est d'importance : quatre immeubles de trois étages, et un projet de résolution qui contient des dispositions susceptibles d'approbation référendaire. Or la consultation n'a été annoncée que dix jours à l'avance, par un avis affiché à l'hôtel de ville et sur le site web municipal — les deux mêmes canaux que le conseil venait, lors de cette même séance du 1er juin, de défendre pendant que des résidents en réclamaient de meilleurs.</p>
+
+    <p>Il ne s'agit pas d'affirmer que la Municipalité a enfreint une règle. Autant que l'Observer puisse l'établir, la Ville a respecté le minimum exigé par la loi. C'est justement là l'enjeu : ce minimum légal a suffi à faire franchir à un projet majeur son étape de participation publique sans que le public en soit réellement informé — au point que l'Observer lui-même, présent à la séance du 1er juin, n'a appris la tenue de la consultation du 2 juillet qu'après coup.</p>
+
+    <div class="fact-box">
+      <h3>Le projet</h3>
+      <ul>
+        <li><strong>Quoi —</strong> quatre immeubles multifamiliaux, trois étages, six logements chacun : 24 logements</li>
+        <li><strong>Où —</strong> le lot vacant 6 455 729, voisin du restaurant Le Toit Vert, 52 rue Church, zone R-7</li>
+        <li><strong>Processus —</strong> PPCMOI 2026-041 (projet particulier), dossier 2104-168, en vertu des règlements 114-2021 / 169-2025</li>
+        <li><strong>Première étape —</strong> premier projet de résolution accepté le 1er juin 2026 (proposé et appuyé; aucun vote contre inscrit)</li>
+        <li><strong>Consultation publique —</strong> 2 juillet 2026, 18 h, Hôtel de ville, 5 rue Gale</li>
+        <li><strong>Référendum —</strong> le projet de résolution contient des dispositions susceptibles d'approbation référendaire</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">Ce que demande le projet</h2>
+
+    <p>La demande sollicite des dérogations — des exceptions aux règles habituelles — quant à l'usage, la hauteur permise, la marge d'isolement minimale, la largeur minimale d'une allée à double sens, la largeur de la bande végétalisée autour du stationnement et la distance entre les accès au terrain. En séance, le maire l'a décrite comme une « densification douce » cohérente avec le noyau villageois, avec une volumétrie pavillonnaire à toit incliné, de la brique et un déclin texturé, et un stationnement végétalisé destiné à réduire l'effet d'îlot de chaleur. Le comité consultatif d'urbanisme (CCU) a recommandé favorablement le projet.</p>
+
+    <h2 class="section-head">Comment l'échéancier a joué contre les résidents</h2>
+
+    <p>Suivons la séquence du point de vue d'un résident :</p>
+
+    <ol>
+      <li><strong>1er juin — la décision se prend dans la salle.</strong> Le conseil a accepté le premier projet de résolution. Le projet et une consultation <em>à venir</em> ont bien été évoqués quand une résidente a posé la question — mais, pressé sur la date, le maire a répondu simplement : « Je n'ai pas la date encore. » Le procès-verbal de la séance <a href="/fr/conseil-municipal/1-juin-2026/">n'est pas encore public</a> et ne sera adopté qu'à la prochaine séance ordinaire, le 6 juillet. En temps réel, la seule façon de connaître la décision était d'assister à la séance ou de regarder la diffusion YouTube.</li>
+      <li><strong>22 juin — l'avis daté paraît.</strong> L'avis fixant la consultation au 2 juillet, signé par le directeur général, a été affiché, selon son propre certificat, aux endroits désignés par le conseil, y compris le site web — en pratique, le babillard de l'hôtel de ville et ormstown.ca.</li>
+      <li><strong>2 juillet — la consultation a lieu.</strong> La seule occasion formelle pour les résidents de se faire entendre est passée.</li>
+    </ol>
+
+    <p>Rien dans cette chaîne n'était conçu pour rejoindre activement les personnes concernées. Il fallait déjà surveiller le babillard de l'hôtel de ville ou consulter le site web pour apprendre qu'un projet de 24 logements près de chez soi était en consultation.</p>
+
+    <h2 class="section-head">La même séance a réduit la portée des avis publics</h2>
+
+    <p>Il y a une ironie marquante au dossier du 1er juin. La séance même qui a fait avancer le projet de 24 logements a aussi adopté le règlement 167.1-2026, qui modifie la publication des avis publics — précisément pour retirer le bureau de poste comme lieu d'affichage, la Municipalité disant avoir été informée qu'elle ne pouvait plus y afficher. Comme l'a dit le maire : « Sinon, on n'aurait pas changé parce que, dans le fond, pour nous, ça fonctionnait bien. »</p>
+
+    <p>Ce changement a suscité des réserves soutenues durant la période de questions :</p>
+
+    <p>— <strong>Interrogé par l'Ormstown Observer</strong> sur ce que la Municipalité ferait pour mieux communiquer maintenant que le bureau de poste n'est plus une option, le maire a renvoyé au site web et au babillard : « Le meilleur moyen pour avoir les avis, c'est vraiment l'hôtel de ville. »</p>
+
+    <div class="pull-quote">
+      <p>« Le meilleur moyen pour avoir les avis, c'est vraiment l'hôtel de ville. »</p>
+      <cite>— Le maire, séance du conseil du 1er juin</cite>
+    </div>
+
+    <p>— Questionné à savoir si les médias sociaux devraient être inscrits au règlement 167.1 comme canal obligatoire, le maire a dit douter que Facebook soit exigé par la loi et que la Ville devait se conformer rapidement, ajoutant : « on a une volonté de transparence… ce n'est pas pour cacher des avis, au contraire. Plus les gens le savent, mieux c'est. »</p>
+
+    <p>— Une résidente a rappelé que les gens voyaient les avis en allant chercher leur courrier, que l'affichage à l'hôtel de ville n'est « pas vraiment visible », et a demandé si la Ville pouvait afficher chez un commerce ou un café et aviser les résidents formellement — soulignant que même le club de marche l'ignore : « chaque nouveau membre arrive ici et n'avait aucune idée qu'il pouvait venir voir les avis. »</p>
+
+    <p>— Le <strong>directeur général Daniel Leduc a acquiescé</strong> : « Je suis 100 % d'accord avec vous… l'hôtel de ville est un peu à l'extérieur du périmètre urbain… il faut faire un détour pour venir à l'hôtel de ville. »</p>
+
+    <p>Le maire a dit avoir entendu le message et qu'on regarderait d'autres lieux d'affichage : « On a compris le message. On va regarder… si c'est possible, on le fera. »</p>
+
+    <h2 class="section-head">Ce que la loi exige — et ce qu'elle n'exige pas</h2>
+
+    <p>En vertu du <em>Code municipal</em>, une municipalité publie ses avis selon les modalités fixées par son propre règlement, en plus de l'affichage sur son site web. À Ormstown, ce règlement est le 167-2025, modifié le 1er juin par le 167.1-2026. L'affichage à l'hôtel de ville et sur le site web paraît satisfaire à cette exigence.</p>
+
+    <p>Ce que la loi n'exige pas, c'est une garantie que l'avis rejoigne réellement les personnes les plus touchées — par la poste, les médias sociaux, un affichage de quartier ou un avis direct aux voisins immédiats. Ce sont des mesures que la Municipalité peut choisir. Le 1er juin, des résidents lui ont demandé d'en choisir davantage. Le conseil a dit qu'il examinerait la question.</p>
+
+    <h2 class="section-head">Pourquoi c'est important</h2>
+
+    <p>Un projet de 24 logements représente un changement notable pour un noyau villageois. Les résidents qui l'ont soulevé le 1er juin ont évoqué des effets concrets — « s'il y a 24 logements, il va y avoir au moins 24, peut-être 48 voitures » sur une route 201/138 déjà congestionnée l'été, et des rues voisines « déjà pas mal densifiées ». Le maire a défendu le projet au nom de l'offre de logements et des enjeux d'infrastructure, en insistant que rien n'est final avant la consultation et les étapes suivantes. Ces préoccupations opposées sont précisément ce qu'une consultation publique sert à soupeser. Lorsqu'elle n'est annoncée que par les canaux minimaux, le processus peut suivre son cours sans que le public qu'il vise n'y participe.</p>
+
+    <div class="related-box">
+      <strong>Consulter le dossier</strong>
+      Le compte rendu neutre de l'Observer sur la <a href="/fr/conseil-municipal/1-juin-2026/">séance du 1er juin</a> · L'<a href="/fr/public-notices/">avis public officiel pour le PPCMOI 2026-041</a> (traduction non officielle bilingue).
+    </div>
+
+    <h2 class="section-head">Ce qui est confirmé</h2>
+
+    <div class="fact-box">
+      <ul>
+        <li>La portée du projet, sa localisation, la résolution du 1er juin, la date de consultation du 2 juillet et le caractère référendaire sont confirmés par l'avis public de la Municipalité (PPCMOI 2026-041) et l'ordre du jour du 1er juin.</li>
+        <li>L'adoption du règlement 167.1-2026 retirant le bureau de poste, et les échanges en période de questions, figurent au compte rendu de la séance du 1er juin.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">Ce qui reste à confirmer</h2>
+
+    <div class="fact-box">
+      <ul>
+        <li><strong>Ce qui s'est passé le 2 juillet</strong> — participation, commentaires, et si le projet passe maintenant à un second projet de résolution et à un éventuel registre référendaire. L'Observer y reviendra.</li>
+        <li><strong>L'identité du promoteur</strong>, que l'Observer vérifie auprès du dossier PPCMOI (2104-168) avant de la nommer.</li>
+        <li><strong>Si la Municipalité ajoutera des canaux d'information</strong>, comme l'ont demandé des résidents.</li>
+      </ul>
+    </div>
+
+    <h2 class="section-head">Notes de sources</h2>
+
+    <p>Avis public — <em>Assemblée publique de consultation, PPCMOI 2026-041</em>, Municipalité d'Ormstown, signé Daniel Leduc, DG / greffier-trésorier, publié le 22 juin 2026. · Ordre du jour du 1er juin 2026 (point 9.7) et enregistrement de la séance (YouTube de la Municipalité d'Ormstown, 1er juin 2026). · Règlement 167.1-2026 (publication des avis publics), adopté le 1er juin 2026.</p>
+
+  </div>
+
+  <div class="article-footer">
+    Ce dossier évolue. L'Observer le mettra à jour après la consultation du 2 juillet et la séance du conseil du 6 juillet, et ajoutera la réponse de la Municipalité si elle en fournit une.
+  </div>
+
+</main>
+
+</body>
+</html>
