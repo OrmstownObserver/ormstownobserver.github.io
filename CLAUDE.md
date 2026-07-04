@@ -28,3 +28,9 @@ Then visit http://localhost:8000/.
 ## Notes
 - Do not commit or push changes unless explicitly requested.
 - Keep edits focused on the current task and avoid unrelated refactors.
+
+## Source of truth (all AI tools + Claude Code)
+- Notion is the source of truth for decisions, statuses, and IDs — not chat history.
+- Canonical IDs (databases, repos, credentials, Drive folders) live in ONE place: the **🧭 System Registry — Live DBs, Repos & Files** page in Notion (Seneca OS). Never hardcode a DB ID here; link to the registry.
+- Session logging: write a handoff to the **🗒️ Session Archive** DB at session close (venture = Observer); check the **Daily Log** unreviewed view at session start. (The legacy "Session Handoffs DB" was retired 2026-06-25 — do not use it.)
+- Before any push/API/publish task, read credentials silently from the Notion Claude Credentials page. Never print token values.
