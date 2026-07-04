@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avis publics · L'Ormstown Observer</title>
+<meta name="description" content="Résumés en langage clair des avis publics municipaux d'Ormstown et du Haut-Saint-Laurent, avec un lien vers le document original.">
+<link rel="canonical" href="https://ormstownobserver.ca/fr/public-notices/">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/public-notices/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/public-notices/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8; --muted: #555;
+    --cat-consultation: #b5161b; --cat-bylaw: #2f6b4f; --cat-tender: #8a6d1f; --cat-other: #555;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; line-height: 1.7; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accent); }
+
+  .page-wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+  .page-header { border-bottom: 2px solid var(--ink); padding-bottom: 22px; margin-bottom: 8px; }
+  .page-kicker { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .page-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 4.5vw, 44px); font-weight: 900; line-height: 1.1; margin-bottom: 10px; }
+  .page-intro { font-size: 15.5px; color: var(--ink-light); max-width: 700px; line-height: 1.65; }
+
+  .section-rule { display: flex; align-items: center; gap: 14px; margin: 34px 0 16px; }
+  .section-rule-label { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+  .section-rule-line { flex: 1; height: 1px; background: var(--ink); }
+
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 4px; }
+  .filter-btn { font-family: 'Playfair Display', Georgia, serif; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 9px 16px; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer; transition: background .15s, color .15s; }
+  .filter-btn:hover { background: var(--paper-dark); }
+  .filter-btn.active { background: var(--ink); color: #fff; }
+
+  .notice-list { display: flex; flex-direction: column; }
+  .notice-card { display: grid; grid-template-columns: 74px 1fr; gap: 20px; padding: 22px 0; border-bottom: 1px solid var(--border); }
+  .notice-card:last-child { border-bottom: none; }
+  .notice-date { text-align: center; padding-top: 3px; }
+  .notice-date .day { font-family: 'Playfair Display', Georgia, serif; font-weight: 900; font-size: 27px; line-height: 1; color: var(--ink); }
+  .notice-date .month { font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+  .notice-date .year { font-size: 10px; letter-spacing: .06em; color: var(--muted); margin-top: 2px; }
+  .notice-cat { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 6px; }
+  .notice-cat.consultation { color: var(--cat-consultation); }
+  .notice-cat.bylaw-notice { color: var(--cat-bylaw); }
+  .notice-cat.tender { color: var(--cat-tender); }
+  .notice-cat.other { color: var(--cat-other); }
+  .notice-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 700; line-height: 1.25; margin-bottom: 6px; color: var(--ink); }
+  .notice-deadline { display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-light); border: 1px solid var(--border); padding: 2px 9px; border-radius: 3px; margin-bottom: 8px; }
+  .notice-summary { font-size: 15px; color: var(--ink-light); line-height: 1.6; margin-bottom: 10px; }
+  .notice-link { display: inline-block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+
+  .empty-state { padding: 44px 24px; text-align: center; color: var(--muted); font-style: italic; border: 1px dashed var(--border); background: var(--paper-dark); font-size: 14.5px; }
+
+  @media (max-width: 680px) {
+    .page-wrap { padding: 0 16px 60px; }
+    .notice-card { grid-template-columns: 58px 1fr; gap: 14px; }
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <div class="page-header">
+    <div class="page-kicker">Municipalité d'Ormstown et Haut-Saint-Laurent</div>
+    <h1 class="page-title">Avis publics</h1>
+    <p class="page-intro">Résumés en langage clair des avis publics officiels — consultations, adoptions de règlements, appels d'offres, etc. — de la Municipalité d'Ormstown et de la MRC. Chaque avis renvoie au document original. L'avis original constitue toujours la version officielle.</p>
+  </div>
+
+  <div class="filter-bar" id="filter-bar">
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="consultation">Consultations</button>
+    <button class="filter-btn" data-filter="bylaw-notice">Règlements</button>
+    <button class="filter-btn" data-filter="tender">Appels d'offres</button>
+    <button class="filter-btn" data-filter="other">Autres</button>
+  </div>
+
+  <div class="section-rule"><span class="section-rule-label">Avis</span><span class="section-rule-line"></span></div>
+  <div id="notices-section"><div class="empty-state" id="loading-state">Chargement des avis publics…</div></div>
+
+</div>
+
+<script>
+(function(){
+  var MONTHS_SHORT = ["janv.","févr.","mars","avr.","mai","juin","juill.","août","sept.","oct.","nov.","déc."];
+  var MONTHS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+  var CAT_LABEL = { consultation: "Consultation publique", "bylaw-notice": "Avis de règlement", tender: "Appel d'offres", other: "Avis" };
+  var todayStr = new Date().toISOString().slice(0,10);
+  var activeFilter = "all";
+  var allNotices = [];
+
+  function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function parseDate(s){ var p=(s||'').split("-"); return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2])); }
+  function fmtLong(s){ var d=parseDate(s); return d.getDate()+" "+MONTHS[d.getMonth()]+" "+d.getFullYear(); }
+
+  function noticeCardHTML(n){
+    var d = parseDate(n.date_published);
+    var cat = n.category || 'other';
+    var deadline = (n.date_deadline && n.date_deadline >= todayStr)
+      ? '<div class="notice-deadline">Consultation / date limite : ' + esc(fmtLong(n.date_deadline)) + '</div>' : '';
+    var orig = n.source_url
+      ? '<a class="notice-link" href="' + esc(n.source_url) + '" target="_blank" rel="noopener">Consulter l\'avis original (PDF) &rarr;</a>' : '';
+    return '<div class="notice-card" data-cat="' + esc(cat) + '">'
+      + '<div class="notice-date"><div class="day">' + d.getDate() + '</div><div class="month">' + MONTHS_SHORT[d.getMonth()] + '</div><div class="year">' + d.getFullYear() + '</div></div>'
+      + '<div class="notice-body">'
+        + '<div class="notice-cat ' + esc(cat) + '">' + (CAT_LABEL[cat] || esc(cat)) + '</div>'
+        + '<h3>' + esc(n.title_fr || '') + '</h3>'
+        + deadline
+        + (n.summary_fr ? '<p class="notice-summary">' + esc(n.summary_fr) + '</p>' : '')
+        + orig
+      + '</div></div>';
+  }
+
+  function render(){
+    var visible = allNotices.filter(function(n){ return activeFilter==='all' || (n.category||'other')===activeFilter; });
+    var el = document.getElementById('notices-section');
+    if(!visible.length){ el.innerHTML = '<div class="empty-state">Aucun avis public dans cette catégorie pour le moment. Revenez bientôt.</div>'; return; }
+    el.innerHTML = '<div class="notice-list">' + visible.map(noticeCardHTML).join('') + '</div>';
+  }
+
+  document.getElementById('filter-bar').addEventListener('click', function(e){
+    if(e.target.tagName!=='BUTTON') return;
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    e.target.classList.add('active');
+    activeFilter = e.target.getAttribute('data-filter');
+    render();
+  });
+
+  fetch('/public-notices.json').then(function(r){ return r.json(); }).then(function(data){
+    allNotices = (data||[]).slice().sort(function(a,b){ return (b.date_published||'').localeCompare(a.date_published||''); });
+    if(!allNotices.length){ document.getElementById('notices-section').innerHTML = '<div class="empty-state">Cette section est en cours de développement. Revenez bientôt.</div>'; return; }
+    render();
+  }).catch(function(){
+    document.getElementById('notices-section').innerHTML = '<div class="empty-state">Les avis n\'ont pas pu être chargés pour le moment. Revenez bientôt.</div>';
+  });
+})();
+</script>
+
+</body>
+</html>
