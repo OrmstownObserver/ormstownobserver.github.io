@@ -287,6 +287,9 @@
   <a data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/" href="/en/bylaws-regulations/">
     <span data-en>Bylaws &amp; Regs</span><span data-fr>R&egrave;glements</span>
   </a>
+  <a data-href-en="/en/public-notices/" data-href-fr="/fr/public-notices/" href="/en/public-notices/">
+    <span data-en>Public Notices</span><span data-fr>Avis publics</span>
+  </a>
   <a data-href-en="/en/editorials/" data-href-fr="/fr/editoriaux/" href="/en/editorials/">
     <span data-en>Editorials</span><span data-fr>&Eacute;ditoriaux</span>
   </a>
@@ -457,6 +460,26 @@
     <div class="col-head">
       <span data-en>Latest</span><span data-fr>Derni&egrave;res publications</span>
     </div>
+
+    <div id="pn-teaser"></div>
+    <script>
+    (function(){
+      fetch('/public-notices.json').then(function(r){return r.json();}).then(function(data){
+        var list=(data||[]).slice().sort(function(a,b){return (b.date_published||'').localeCompare(a.date_published||'');}).slice(0,2);
+        if(!list.length) return;
+        var box=document.getElementById('pn-teaser'); if(!box) return;
+        var frNow=document.documentElement.classList.contains('lang-fr');
+        function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+        box.innerHTML=list.map(function(n){
+          var href=frNow?'/fr/public-notices/':'/en/public-notices/';
+          return '<a class="lat-item" data-href-en="/en/public-notices/" data-href-fr="/fr/public-notices/" href="'+href+'">'
+            +'<span class="lat-cat"><span data-en>Public Notice</span><span data-fr>Avis public</span></span>'
+            +'<span class="lat-hed"><span data-en>'+esc(n.title_en||'')+'</span><span data-fr>'+esc(n.title_fr||'')+'</span></span>'
+            +'</a>';
+        }).join('');
+      }).catch(function(){});
+    })();
+    </script>
 
     <a class="lat-item"
        data-href-en="/en/editorials/language-policy-2026/"

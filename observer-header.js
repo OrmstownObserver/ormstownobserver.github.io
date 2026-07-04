@@ -181,6 +181,10 @@
         class="${isActive('/en/bylaws') || isActive('/fr/bylaws') || isActive('/fr/reglements') ? 'is-active' : ''}">
         <span data-en>Bylaws &amp; Regulations</span><span data-fr>Règlements</span>
       </a>
+      <a href="/en/public-notices/" data-href-en="/en/public-notices/" data-href-fr="/fr/public-notices/"
+        class="${isActive('/en/public-notices') || isActive('/fr/public-notices') ? 'is-active' : ''}">
+        <span data-en>Public Notices</span><span data-fr>Avis publics</span>
+      </a>
       <a href="/en/council-watch/" data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/"
         class="${isActive('/en/council') || isActive('/fr/conseil') ? 'is-active' : ''}">
         <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>
