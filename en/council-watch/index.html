@@ -111,6 +111,27 @@
     color:var(--accent);margin-top:10px;
   }
 
+  /* ── MEETING DOCUMENTS ── */
+  .docs-block{margin-bottom:36px;}
+  .docs-title{font-family:'Playfair Display',serif;font-weight:900;font-size:20px;margin:0 0 4px;}
+  .docs-sub{font-family:sans-serif;font-size:12px;color:var(--muted);margin:0 0 14px;}
+  .docs-list{border-top:2px solid var(--ink);}
+  .doc-item{display:grid;grid-template-columns:120px 1fr;border-bottom:1px solid var(--border);}
+  .doc-date-col{padding:16px 16px 16px 0;border-right:1px solid var(--border);}
+  .doc-date{font-family:'Playfair Display',serif;font-weight:700;font-size:15px;line-height:1.2;}
+  .doc-year{font-family:sans-serif;font-size:10px;color:var(--muted);margin-top:3px;text-transform:uppercase;letter-spacing:.08em;}
+  .doc-body{padding:16px 20px;}
+  .doc-type{font-family:sans-serif;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:6px;}
+  .doc-hed{font-family:'Playfair Display',serif;font-weight:700;font-size:15px;line-height:1.3;margin-bottom:6px;}
+  .doc-meeting{display:inline-block;font-family:sans-serif;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--confirm);background:#e6f4ea;border:1px solid #a8d5b5;padding:3px 8px;margin-bottom:8px;}
+  .doc-summary{font-size:13px;color:var(--ink-light);line-height:1.6;margin:0 0 8px;}
+  .doc-link{font-family:sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);}
+  .recaps-title{font-family:'Playfair Display',serif;font-weight:900;font-size:20px;margin:0 0 14px;}
+  @media(max-width:600px){
+    .doc-item{grid-template-columns:1fr;}
+    .doc-date-col{border-right:none;border-bottom:1px solid var(--border);padding:12px 16px 8px;}
+  }
+
   .no-results{display:none;padding:40px 0;text-align:center;color:var(--muted);font-style:italic;font-size:14px;}
 
   @media(max-width:600px){
@@ -146,6 +167,14 @@
   <div class="note-box">
     📋 Official minutes are published by the municipality approximately 4–6 weeks after each session. The Observer's recaps are based on public YouTube broadcasts and published agendas. We note where minutes have been confirmed.
   </div>
+
+  <div class="docs-block" id="docs-block" hidden>
+    <h2 class="docs-title">Meeting documents</h2>
+    <p class="docs-sub">Agendas and minutes published by the municipality, summarized in plain language by the Observer. The original French document is always the official version.</p>
+    <div class="docs-list" id="docs-list"></div>
+  </div>
+
+  <h2 class="recaps-title">Session recaps</h2>
 
   <div class="session-list" id="session-list">
 
@@ -230,6 +259,37 @@
   });
 
   filter();
+</script>
+<script>
+(function(){
+  var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var MS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var LBL={agenda:"Council agenda",minutes:"Council minutes"};
+  var today=new Date().toISOString().slice(0,10);
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function pd(s){var p=(s||'').split('-');return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2]));}
+  fetch('/public-notices.json').then(function(r){return r.json();}).then(function(data){
+    var docs=(data||[]).filter(function(n){return n.category==='agenda'||n.category==='minutes';})
+      .sort(function(a,b){return (b.date_published||'').localeCompare(a.date_published||'');});
+    if(!docs.length) return;
+    document.getElementById('docs-block').hidden=false;
+    document.getElementById('docs-list').innerHTML=docs.map(function(n){
+      var d=pd(n.date_published);
+      var m=n.date_deadline?pd(n.date_deadline):null;
+      var meeting=(m&&n.date_deadline>=today)?'<span class="doc-meeting">Meeting: '+MONTHS[m.getMonth()]+' '+m.getDate()+', '+m.getFullYear()+'</span>':'';
+      var link=n.source_url?'<a class="doc-link" href="'+esc(n.source_url)+'">View the original document (French, PDF) &rarr;</a>':'';
+      return '<div class="doc-item">'
+        +'<div class="doc-date-col"><div class="doc-date">'+MS[d.getMonth()]+' '+d.getDate()+'</div><div class="doc-year">'+d.getFullYear()+'</div></div>'
+        +'<div class="doc-body">'
+          +'<div class="doc-type">'+(LBL[n.category]||'Document')+'</div>'
+          +'<div class="doc-hed">'+esc(n.title_en||'')+'</div>'
+          +meeting
+          +(n.summary_en?'<p class="doc-summary">'+esc(n.summary_en)+'</p>':'')
+          +link
+        +'</div></div>';
+    }).join('');
+  }).catch(function(){});
+})();
 </script>
 </body>
 </html>

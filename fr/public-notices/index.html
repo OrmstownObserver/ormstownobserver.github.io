@@ -68,7 +68,7 @@
   <div class="page-header">
     <div class="page-kicker">Municipalité d'Ormstown et Haut-Saint-Laurent</div>
     <h1 class="page-title">Avis publics</h1>
-    <p class="page-intro">Résumés en langage clair des avis publics officiels — consultations, adoptions de règlements, appels d'offres, etc. — de la Municipalité d'Ormstown et de la MRC. Chaque avis renvoie au document original. L'avis original constitue toujours la version officielle.</p>
+    <p class="page-intro">Résumés en langage clair des avis publics officiels — consultations, adoptions de règlements, appels d'offres, etc. — de la Municipalité d'Ormstown et de la MRC. Chaque avis renvoie au document original. L'avis original constitue toujours la version officielle. Les ordres du jour et procès-verbaux des séances du conseil sont publiés dans la section <a href="/fr/conseil-municipal/">Conseil municipal</a>.</p>
   </div>
 
   <div class="filter-bar" id="filter-bar">
@@ -76,7 +76,6 @@
     <button class="filter-btn" data-filter="consultation">Consultations</button>
     <button class="filter-btn" data-filter="bylaw-notice">Règlements</button>
     <button class="filter-btn" data-filter="tender">Appels d'offres</button>
-    <button class="filter-btn" data-filter="agenda">Ordres du jour</button>
     <button class="filter-btn" data-filter="other">Autres</button>
   </div>
 
@@ -132,7 +131,7 @@
   });
 
   fetch('/public-notices.json').then(function(r){ return r.json(); }).then(function(data){
-    allNotices = (data||[]).slice().sort(function(a,b){ return (b.date_published||'').localeCompare(a.date_published||''); });
+    allNotices = (data||[]).filter(function(n){ var c = n.category||'other'; return c!=='agenda' && c!=='minutes'; }).sort(function(a,b){ return (b.date_published||'').localeCompare(a.date_published||''); });
     if(!allNotices.length){ document.getElementById('notices-section').innerHTML = '<div class="empty-state">Cette section est en cours de développement. Revenez bientôt.</div>'; return; }
     render();
   }).catch(function(){

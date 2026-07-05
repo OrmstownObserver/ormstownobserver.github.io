@@ -77,7 +77,7 @@
   <div class="page-header">
     <div class="page-kicker">Municipality of Ormstown &amp; Haut-Saint-Laurent</div>
     <h1 class="page-title">Public Notices</h1>
-    <p class="page-intro">Plain-language English summaries of official public notices — consultations, by-law adoptions, tenders, and more — from the Municipality of Ormstown and the MRC. Each notice links to the original French document; where useful, an unofficial full English translation is available to expand. The original notice is always the official version.</p>
+    <p class="page-intro">Plain-language English summaries of official public notices — consultations, by-law adoptions, tenders, and more — from the Municipality of Ormstown and the MRC. Each notice links to the original French document; where useful, an unofficial full English translation is available to expand. The original notice is always the official version. Council meeting agendas and minutes are published in <a href="/en/council-watch/">Council Watch</a>.</p>
   </div>
 
   <div class="filter-bar" id="filter-bar">
@@ -85,7 +85,6 @@
     <button class="filter-btn" data-filter="consultation">Consultations</button>
     <button class="filter-btn" data-filter="bylaw-notice">By-laws</button>
     <button class="filter-btn" data-filter="tender">Tenders</button>
-    <button class="filter-btn" data-filter="agenda">Agendas</button>
     <button class="filter-btn" data-filter="other">Other</button>
   </div>
 
@@ -152,7 +151,7 @@
   });
 
   fetch('/public-notices.json').then(function(r){ return r.json(); }).then(function(data){
-    allNotices = (data||[]).slice().sort(function(a,b){ return (b.date_published||'').localeCompare(a.date_published||''); });
+    allNotices = (data||[]).filter(function(n){ var c = n.category||'other'; return c!=='agenda' && c!=='minutes'; }).sort(function(a,b){ return (b.date_published||'').localeCompare(a.date_published||''); });
     if(!allNotices.length){ document.getElementById('notices-section').innerHTML = '<div class="empty-state">This section is being built out now. Check back soon.</div>'; return; }
     render();
   }).catch(function(){

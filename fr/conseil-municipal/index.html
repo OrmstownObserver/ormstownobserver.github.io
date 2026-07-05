@@ -79,6 +79,14 @@
 
   <div class="note-box">Le procès-verbal officiel est volontairement en retard sur ces comptes rendus — la municipalité ne le publie qu'une fois adopté à la séance ordinaire suivante. Chaque compte rendu ci-dessous sera mis à jour avec le lien vers le procès-verbal dès sa publication.</div>
 
+  <div id="docs-block" hidden>
+    <div class="section-rule">
+      <span class="section-rule-label">Documents de séance — ordres du jour et procès-verbaux</span>
+      <span class="section-rule-line"></span>
+    </div>
+    <div class="explainer-grid" id="docs-list"></div>
+  </div>
+
   <div class="section-rule">
     <span class="section-rule-label">Comptes rendus — 2026</span>
     <span class="section-rule-line"></span>
@@ -111,7 +119,32 @@
   </div>
 </div>
 
-
+<script>
+(function(){
+  var MOIS=["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
+  var LBL={agenda:"Ordre du jour",minutes:"Procès-verbal"};
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function pd(s){var p=(s||'').split('-');return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2]));}
+  function fmt(s){var d=pd(s);return d.getDate()+(d.getDate()===1?'er':'')+' '+MOIS[d.getMonth()]+' '+d.getFullYear();}
+  fetch('/public-notices.json').then(function(r){return r.json();}).then(function(data){
+    var docs=(data||[]).filter(function(n){return n.category==='agenda'||n.category==='minutes';})
+      .sort(function(a,b){return (b.date_published||'').localeCompare(a.date_published||'');});
+    if(!docs.length) return;
+    document.getElementById('docs-block').hidden=false;
+    document.getElementById('docs-list').innerHTML=docs.map(function(n){
+      var tag=(LBL[n.category]||'Document')+(n.date_deadline?' &middot; s&eacute;ance du '+esc(fmt(n.date_deadline)):'');
+      var link=n.source_url?'<a class="read-more" href="'+esc(n.source_url)+'">Consulter le document original (PDF) &rarr;</a>':'';
+      return '<div class="explainer-card">'
+        +'<div class="tag">'+tag+'</div>'
+        +'<h2>'+esc(n.title_fr||'')+'</h2>'
+        +'<p class="desc">'+esc(n.summary_fr||'')+'</p>'
+        +link
+        +'<div class="meta-date">Publi&eacute; le '+esc(fmt(n.date_published))+'</div>'
+        +'</div>';
+    }).join('');
+  }).catch(function(){});
+})();
+</script>
 
 </body>
 </html>

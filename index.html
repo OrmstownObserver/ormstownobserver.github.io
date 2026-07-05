@@ -471,9 +471,14 @@
         var frNow=document.documentElement.classList.contains('lang-fr');
         function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
         box.innerHTML=list.map(function(n){
-          var href=frNow?'/fr/public-notices/':'/en/public-notices/';
-          return '<a class="lat-item" data-href-en="/en/public-notices/" data-href-fr="/fr/public-notices/" href="'+href+'">'
-            +'<span class="lat-cat"><span data-en>Public Notice</span><span data-fr>Avis public</span></span>'
+          var isCW=(n.category==='agenda'||n.category==='minutes');
+          var hrefEn=isCW?'/en/council-watch/':'/en/public-notices/';
+          var hrefFr=isCW?'/fr/conseil-municipal/':'/fr/public-notices/';
+          var labEn=isCW?'Council Watch':'Public Notice';
+          var labFr=isCW?'Conseil municipal':'Avis public';
+          var href=frNow?hrefFr:hrefEn;
+          return '<a class="lat-item" data-href-en="'+hrefEn+'" data-href-fr="'+hrefFr+'" href="'+href+'">'
+            +'<span class="lat-cat"><span data-en>'+labEn+'</span><span data-fr>'+labFr+'</span></span>'
             +'<span class="lat-hed"><span data-en>'+esc(n.title_en||'')+'</span><span data-fr>'+esc(n.title_fr||'')+'</span></span>'
             +'</a>';
         }).join('');
