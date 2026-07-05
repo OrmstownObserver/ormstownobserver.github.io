@@ -76,6 +76,7 @@
     <button class="filter-btn" data-filter="consultation">Consultations</button>
     <button class="filter-btn" data-filter="bylaw-notice">Règlements</button>
     <button class="filter-btn" data-filter="tender">Appels d'offres</button>
+    <button class="filter-btn" data-filter="agenda">Ordres du jour</button>
     <button class="filter-btn" data-filter="other">Autres</button>
   </div>
 
@@ -88,7 +89,7 @@
 (function(){
   var MONTHS_SHORT = ["janv.","févr.","mars","avr.","mai","juin","juill.","août","sept.","oct.","nov.","déc."];
   var MONTHS = ["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","décembre"];
-  var CAT_LABEL = { consultation: "Consultation publique", "bylaw-notice": "Avis de règlement", tender: "Appel d'offres", other: "Avis" };
+  var CAT_LABEL = { consultation: "Consultation publique", "bylaw-notice": "Avis de règlement", tender: "Appel d'offres", agenda: "Ordre du jour", other: "Avis" };
   var todayStr = new Date().toISOString().slice(0,10);
   var activeFilter = "all";
   var allNotices = [];
