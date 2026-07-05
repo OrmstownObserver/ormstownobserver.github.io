@@ -126,6 +126,17 @@
   .doc-meeting{display:inline-block;font-family:sans-serif;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--confirm);background:#e6f4ea;border:1px solid #a8d5b5;padding:3px 8px;margin-bottom:8px;}
   .doc-summary{font-size:13px;color:var(--ink-light);line-height:1.6;margin:0 0 8px;}
   .doc-link{font-family:sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);}
+  .doc-ref{font-family:sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px;}
+  .doc-links{display:flex;flex-wrap:wrap;gap:4px 16px;margin:0 0 8px;}
+  .doc-links a{font-size:12.5px;color:var(--accent);border-bottom:1px dotted var(--accent);padding-bottom:1px;}
+  .doc-details{border:1px solid var(--border);background:#fff;border-radius:4px;margin:4px 0 8px;}
+  .doc-details>summary{cursor:pointer;list-style:none;padding:8px 12px;font-family:sans-serif;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--accent);}
+  .doc-details>summary::-webkit-details-marker{display:none;}
+  .doc-details>summary::before{content:"▸ ";}
+  .doc-details[open]>summary::before{content:"▾ ";}
+  .doc-full{padding:0 14px 6px;font-size:13px;line-height:1.65;}
+  .doc-full p{margin:0 0 10px;}
+  .doc-attr{padding:8px 14px 12px;font-size:11px;font-style:italic;color:var(--muted);border-top:1px dashed var(--border);}
   .recaps-title{font-family:'Playfair Display',serif;font-weight:900;font-size:20px;margin:0 0 14px;}
   @media(max-width:600px){
     .doc-item{grid-template-columns:1fr;}
@@ -278,13 +289,18 @@
       var m=n.date_deadline?pd(n.date_deadline):null;
       var meeting=(m&&n.date_deadline>=today)?'<span class="doc-meeting">Meeting: '+MONTHS[m.getMonth()]+' '+m.getDate()+', '+m.getFullYear()+'</span>':'';
       var link=n.source_url?'<a class="doc-link" href="'+esc(n.source_url)+'">View the original document (French, PDF) &rarr;</a>':'';
+      var rel=(n.links&&n.links.length)?'<div class="doc-links">'+n.links.map(function(l){return '<a href="'+esc(l.url_en||l.url_fr)+'">'+esc(l.label_en||'')+' &rarr;</a>';}).join('')+'</div>':'';
+      var details=n.full_translation_en?'<details class="doc-details"><summary>Read the full unofficial English translation</summary><div class="doc-full">'+String(n.full_translation_en).split(/\n\n+/).map(function(p){return '<p>'+esc(p).replace(/\n/g,'<br>')+'</p>';}).join('')+'</div>'+(n.attribution?'<div class="doc-attr">'+esc(n.attribution)+'</div>':'')+'</details>':'';
       return '<div class="doc-item">'
         +'<div class="doc-date-col"><div class="doc-date">'+MS[d.getMonth()]+' '+d.getDate()+'</div><div class="doc-year">'+d.getFullYear()+'</div></div>'
         +'<div class="doc-body">'
           +'<div class="doc-type">'+(LBL[n.category]||'Document')+'</div>'
           +'<div class="doc-hed">'+esc(n.title_en||'')+'</div>'
+          +(n.reference?'<div class="doc-ref">'+esc(n.reference)+'</div>':'')
           +meeting
           +(n.summary_en?'<p class="doc-summary">'+esc(n.summary_en)+'</p>':'')
+          +rel
+          +details
           +link
         +'</div></div>';
     }).join('');

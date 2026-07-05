@@ -178,7 +178,7 @@
         <span data-en>Investigations</span><span data-fr>Enquêtes</span>
       </a>
       <a href="/en/bylaws-regulations/" data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/"
-        class="${isActive('/en/bylaws') || isActive('/fr/bylaws') || isActive('/fr/reglements') ? 'is-active' : ''}">
+        class="${isActive('/en/bylaws') || isActive('/fr/bylaws') ? 'is-active' : ''}">
         <span data-en>Bylaws &amp; Regulations</span><span data-fr>Règlements</span>
       </a>
       <a href="/en/public-notices/" data-href-en="/en/public-notices/" data-href-fr="/fr/public-notices/"
@@ -188,6 +188,10 @@
       <a href="/en/council-watch/" data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/"
         class="${isActive('/en/council') || isActive('/fr/conseil') ? 'is-active' : ''}">
         <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>
+      </a>
+      <a href="/en/editorials/" data-href-en="/en/editorials/" data-href-fr="/fr/editoriaux/"
+        class="${isActive('/en/editorials') || isActive('/fr/editoriaux') ? 'is-active' : ''}">
+        <span data-en>Editorials</span><span data-fr>Éditoriaux</span>
       </a>
       <a href="/en/events/" data-href-en="/en/events/" data-href-fr="/fr/events/"
         class="${isActive('/en/events') || isActive('/fr/events') ? 'is-active' : ''}">

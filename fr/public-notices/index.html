@@ -47,10 +47,14 @@
   .notice-cat.bylaw-notice { color: var(--cat-bylaw); }
   .notice-cat.tender { color: var(--cat-tender); }
   .notice-cat.other { color: var(--cat-other); }
+  .notice-ref { font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .notice-links { display: flex; flex-wrap: wrap; gap: 4px 18px; margin: 0 0 10px; }
+  .notice-links a { font-size: 13px; color: var(--accent); border-bottom: 1px dotted var(--accent); padding-bottom: 1px; }
   .notice-card h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 700; line-height: 1.25; margin-bottom: 6px; color: var(--ink); }
   .notice-deadline { display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-light); border: 1px solid var(--border); padding: 2px 9px; border-radius: 3px; margin-bottom: 8px; }
   .notice-summary { font-size: 15px; color: var(--ink-light); line-height: 1.6; margin-bottom: 10px; }
   .notice-link { display: inline-block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+  .notice-attr-line { font-size: 12px; font-style: italic; color: var(--muted); margin-top: 8px; }
 
   .empty-state { padding: 44px 24px; text-align: center; color: var(--muted); font-style: italic; border: 1px dashed var(--border); background: var(--paper-dark); font-size: 14.5px; }
 
@@ -104,14 +108,19 @@
       ? '<div class="notice-deadline">Consultation / date limite : ' + esc(fmtLong(n.date_deadline)) + '</div>' : '';
     var orig = n.source_url
       ? '<a class="notice-link" href="' + esc(n.source_url) + '">Consulter l\'avis original (PDF) &rarr;</a>' : '';
+    var rel = (n.links && n.links.length)
+      ? '<div class="notice-links">' + n.links.map(function(l){ return '<a href="' + esc(l.url_fr || l.url_en) + '">' + esc(l.label_fr || l.label_en || '') + ' &rarr;</a>'; }).join('') + '</div>' : '';
     return '<div class="notice-card" data-cat="' + esc(cat) + '">'
       + '<div class="notice-date"><div class="day">' + d.getDate() + '</div><div class="month">' + MONTHS_SHORT[d.getMonth()] + '</div><div class="year">' + d.getFullYear() + '</div></div>'
       + '<div class="notice-body">'
         + '<div class="notice-cat ' + esc(cat) + '">' + (CAT_LABEL[cat] || esc(cat)) + '</div>'
         + '<h3>' + esc(n.title_fr || '') + '</h3>'
+        + (n.reference ? '<div class="notice-ref">' + esc(n.reference) + '</div>' : '')
         + deadline
         + (n.summary_fr ? '<p class="notice-summary">' + esc(n.summary_fr) + '</p>' : '')
+        + rel
         + orig
+        + (n.attribution ? '<div class="notice-attr-line">' + esc(n.attribution) + '</div>' : '')
       + '</div></div>';
   }
 

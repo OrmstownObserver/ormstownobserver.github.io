@@ -55,6 +55,9 @@
   .status-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 10px; border-radius: 20px; margin-top: 10px; }
   .status-badge .status-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
   .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
+  .doc-ref { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; margin: -4px 0 8px; }
+  .doc-links { display: flex; flex-direction: column; gap: 4px; margin: 0 0 12px; }
+  .doc-links a { font-size: 0.88rem; }
   
   .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
 </style>
@@ -67,7 +70,6 @@
 
   
   
-</header>
 
 <div class="page-wrap">
   
@@ -133,11 +135,14 @@
     document.getElementById('docs-block').hidden=false;
     document.getElementById('docs-list').innerHTML=docs.map(function(n){
       var tag=(LBL[n.category]||'Document')+(n.date_deadline?' &middot; s&eacute;ance du '+esc(fmt(n.date_deadline)):'');
+      var rel=(n.links&&n.links.length)?'<div class="doc-links">'+n.links.map(function(l){return '<a href="'+esc(l.url_fr||l.url_en)+'">'+esc(l.label_fr||l.label_en||'')+' &rarr;</a>';}).join('')+'</div>':'';
       var link=n.source_url?'<a class="read-more" href="'+esc(n.source_url)+'">Consulter le document original (PDF) &rarr;</a>':'';
       return '<div class="explainer-card">'
         +'<div class="tag">'+tag+'</div>'
         +'<h2>'+esc(n.title_fr||'')+'</h2>'
+        +(n.reference?'<div class="doc-ref">'+esc(n.reference)+'</div>':'')
         +'<p class="desc">'+esc(n.summary_fr||'')+'</p>'
+        +rel
         +link
         +'<div class="meta-date">Publi&eacute; le '+esc(fmt(n.date_published))+'</div>'
         +'</div>';

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Éditoriaux — L'Ormstown Observer</title>
+<meta name="description" content="Les positions de l'Observer sur la gouvernance, la transparence et la vie civique à Ormstown et dans le Haut-Saint-Laurent.">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/editorials/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/editoriaux/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#1a1a1a;--ink-light:#444;--accent:#b5161b;--accent-light:#f5e8e8;
+    --paper:#faf8f4;--paper-dark:#f0ece4;--rule:#c8b97a;--border:#d4c9b8;--muted:#555;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;}
+
+  .page-wrap{max-width:800px;margin:0 auto;padding:32px 24px 80px;}
+  .back-link{display:inline-block;font-family:sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:24px;}
+  .back-link:hover{color:var(--accent);}
+  .section-head{border-bottom:2px solid var(--ink);padding-bottom:24px;margin-bottom:0;}
+  .section-head h1{font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:8px;}
+  .section-head p{font-size:15px;color:var(--muted);max-width:580px;line-height:1.65;}
+
+  .editorial-note{
+    font-family:sans-serif;font-size:11px;color:var(--muted);
+    font-style:italic;line-height:1.7;
+    padding:16px 0;border-bottom:1px solid var(--border);margin-bottom:8px;
+  }
+
+  /* ── LISTE DES ÉDITORIAUX ── */
+  .editorial-item{
+    display:grid;grid-template-columns:60px 1fr;
+    border-bottom:1px solid var(--border);
+    transition:background .1s;
+  }
+  a.editorial-item:hover{background:var(--accent-light);}
+
+  .ed-num-col{
+    border-right:1px solid var(--border);
+    display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+    padding:22px 10px 22px;
+    font-family:'Playfair Display',serif;font-weight:900;
+    font-size:20px;color:var(--border);
+    flex-shrink:0;
+  }
+
+  .ed-body{padding:22px 22px;}
+  .ed-kicker{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.12em;color:var(--rule);margin-bottom:7px;
+  }
+  .ed-hed{
+    font-family:'Playfair Display',serif;font-weight:900;
+    font-size:18px;line-height:1.22;color:var(--ink);margin-bottom:8px;
+  }
+  .ed-deck{font-size:13.5px;color:var(--ink-light);line-height:1.62;margin-bottom:10px;}
+  .ed-meta{font-family:sans-serif;font-size:10px;color:#aaa;}
+  .ed-cta{
+    font-family:sans-serif;font-size:10px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;
+    color:var(--accent);margin-top:10px;display:inline-block;
+  }
+
+  @media(max-width:600px){
+    .ed-num-col{display:none;}
+    .editorial-item{grid-template-columns:1fr;}
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <a class="back-link" href="/">← Accueil</a>
+
+  <div class="section-head">
+    <h1>Éditoriaux</h1>
+    <p>Les positions de l'Observer sur la gouvernance, la transparence et la vie civique — ancrées dans le dossier public, écrites en pensant à la communauté.</p>
+  </div>
+
+  <div class="editorial-note">
+    Les éditoriaux représentent la position de L'Ormstown Observer. Ils se distinguent des reportages et des enquêtes, qui sont factuels et attribués à leurs sources. Les éditoriaux sont des positions assumées — appuyées sur des faits, mais ouvertement argumentées.
+  </div>
+
+  <div class="editorial-list">
+
+    <a class="editorial-item" href="/fr/editoriaux/politique-linguistique-2026/">
+      <div class="ed-num-col">1</div>
+      <div class="ed-body">
+        <div class="ed-kicker">Éditorial vedette &middot; 25 juin 2026</div>
+        <div class="ed-hed">Quand la politique permet plus que la pratique</div>
+        <div class="ed-deck">La directive linguistique d'Ormstown permet la communication en anglais pour la santé, la sécurité et la justice naturelle — pourtant les résidents ne voient que du français sur le site web et la page Facebook de la municipalité. L'Observer examine l'écart entre ce que la politique permet et ce que les résidents vivent réellement.</div>
+        <div class="ed-meta">Par L'Ormstown Observer &nbsp;·&nbsp; 25 juin 2026</div>
+        <span class="ed-cta">Lire l'éditorial →</span>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
+</body>
+</html>
