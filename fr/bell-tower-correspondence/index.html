@@ -81,6 +81,29 @@
 
   .closing { margin: 40px 0 0; }
   .closing p { font-size: 16.5px; line-height: 1.7; margin-bottom: 16px; }
+
+  /* ── TEXTE INTÉGRAL VERBATIM ── */
+  .fulltext-intro { font-size: 15px; color: var(--ink-light); line-height: 1.62; margin: 6px 0 20px; }
+  details.full-letter { border: 1px solid var(--border); margin: 14px 0; background: #fff; }
+  details.full-letter > summary { list-style: none; cursor: pointer; padding: 14px 18px; font-family: sans-serif; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  details.full-letter > summary::-webkit-details-marker { display: none; }
+  details.full-letter.obs > summary { border-left: 4px solid var(--obs); }
+  details.full-letter.bell > summary { border-left: 4px solid var(--bell); }
+  details.full-letter .fl-num { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; color: var(--ink); }
+  details.full-letter .fl-meta { font-size: 12px; color: var(--ink-light); }
+  details.full-letter .fl-cta { margin-left: auto; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); white-space: nowrap; }
+  details.full-letter[open] .fl-cta::after { content: ' ▲'; }
+  details.full-letter:not([open]) .fl-cta::after { content: ' ▼'; }
+  .fl-body { padding: 4px 22px 24px; border-top: 1px solid var(--border); }
+  .fl-body .fl-head { font-family: sans-serif; font-size: 12px; color: var(--ink-light); background: var(--paper-dark); padding: 10px 14px; margin: 16px 0 18px; line-height: 1.7; word-break: break-word; }
+  .fl-body h4 { font-family: 'Playfair Display', serif; font-size: 16px; color: var(--ink); margin: 22px 0 8px; }
+  .fl-body p { font-size: 15.5px; line-height: 1.66; margin-bottom: 12px; }
+  .fl-body ul, .fl-body ol { margin: 0 0 12px 22px; }
+  .fl-body li { font-size: 15.5px; line-height: 1.55; margin-bottom: 5px; }
+  .fl-body blockquote { border-left: 3px solid var(--rule); padding-left: 14px; margin: 12px 0; font-style: italic; color: var(--ink-light); }
+  .fl-sign { font-size: 15px; color: var(--ink-light); margin-top: 16px; line-height: 1.5; }
+  .fl-attach { font-size: 12.5px; color: var(--ink-light); font-style: italic; margin-top: 14px; }
+
   .article-footer { margin-top: 46px; padding-top: 20px; border-top: 3px double var(--ink); font-size: 13px; color: var(--ink-light); line-height: 1.6; }
 
   @media (max-width: 600px) {
@@ -114,7 +137,7 @@
   <div class="fr-link"><a href="/en/bell-tower-correspondence/">English version here →</a></div>
 
   <div class="method">
-    Chaque lettre est reproduite dans l'ordre où elle a été envoyée. Les passages entre guillemets sont tirés directement des originaux — les réponses écrites de Bell sont citées textuellement. Les notes de la rédaction apparaissent dans un style gris distinct et ne font pas partie de la correspondance originale. Les quatre lettres sont conservées en dossier dans leur intégralité et disponibles sur demande.
+    Ce dossier comporte deux parties. D'abord, une lecture lettre par lettre avec les passages clés cités et de brèves notes de la rédaction (en gris — elles sont de nous, et ne font pas partie de la correspondance). Ensuite, à la fin, <strong>les lettres reproduites intégralement, textuellement</strong>, telles qu'envoyées. Les lettres des 19 et 25 juin sont complètes; la réponse finale de Bell du 26 juin est reproduite à partir de ses passages substantiels, la lettre complète étant conservée en dossier. <em>Les lettres sont reproduites dans leur langue d'origine (l'anglais).</em>
     <div class="legend">
       <span><span class="swatch obs"></span> Vert = L'Observer</span>
       <span><span class="swatch bell"></span> Bleu = Bell Mobilité</span>
@@ -130,7 +153,7 @@
         <div class="g-date">19 juin 2026</div>
         <div class="g-dir">Observer → Bell</div>
       </div>
-      <div class="glance-body">Soumission écrite initiale à l'agent de Bell, Robert Minotti. Des questions réparties en sept volets : sélection du site et solutions de rechange, environnement et zone inondable, empreinte au sol, processus de consultation, expansion future et partage, bail, et les documents à l'appui sur lesquels Bell s'est fondée.</div>
+      <div class="glance-body">Soumission écrite initiale à l'agent de Bell, Robert Minotti. Des questions réparties en sept volets : sélection du site et solutions de rechange, considérations environnementales, empreinte au sol, processus de consultation, expansion future et partage, bail et remise en état, et les documents à l'appui sur lesquels Bell s'est fondée.</div>
     </div>
     <div class="glance-row">
       <div class="glance-tag bell">
@@ -158,7 +181,7 @@
     </div>
   </div>
 
-  <h2 class="section-head">Les quatre lettres, in extenso</h2>
+  <h2 class="section-head">L'échange, lettre par lettre</h2>
 
   <!-- LETTRE 1 -->
   <div class="letter obs">
@@ -171,11 +194,11 @@
       <p>Le 19 juin, l'Observer a déposé une soumission écrite détaillée auprès de l'agent de Bell, <strong>Robert Minotti</strong> (Romin Acquisition), avant la clôture de la période de commentaires initiale. Elle organisait ses questions en sept volets :</p>
       <ul class="letter-points">
         <li>La sélection du site et les solutions de rechange envisagées par Bell</li>
-        <li>Le statut environnemental et de zone inondable du site proposé</li>
+        <li>Les considérations environnementales — faune, végétation et abattage d'arbres</li>
         <li>L'empreinte au sol de la tour et de l'enceinte clôturée</li>
         <li>Le processus de consultation et son calendrier</li>
         <li>L'expansion future et le partage par d'autres entreprises</li>
-        <li>Le bail municipal proposé</li>
+        <li>Le bail et la remise en état du site</li>
         <li>Les études et documents à l'appui sur lesquels Bell s'est fondée</li>
       </ul>
       <div class="ed-note"><strong>Note de la rédaction</strong> &nbsp; La soumission du 19 juin faisait suite à une demande d'information antérieure, envoyée le 7 juin par l'Observer à la fois à Bell et à la Municipalité, qui portait sur les emplacements de rechange, l'évaluation du château d'eau, la compatibilité du zonage, la cartographie des zones inondables, le bail et la procédure de consultation.</div>
@@ -255,6 +278,246 @@
       <div class="ed-note"><strong>Note de la rédaction</strong> &nbsp; Cette déclaration est survenue <strong style="text-transform:none;letter-spacing:0;font-size:inherit;">quatorze jours avant</strong> la date limite de réplique du 10 juillet que Bell avait fixée dans la Lettre 2, et un jour après le suivi de l'Observer du 25 juin — une soumission déposée à l'intérieur de la période de réponse. En vertu de la CPC-2-0-03, la consultation n'est censée être considérée comme conclue qu'après l'expiration de la période de réponse de 21 jours sans autre commentaire.</div>
     </div>
   </div>
+
+  <h2 class="section-head">Les lettres intégrales — texte verbatim</h2>
+  <p class="fulltext-intro">Ci-dessous, la correspondance reproduite exactement telle qu'envoyée, dans sa langue d'origine (l'anglais). Les lettres 1 à 3 sont complètes; la réponse finale de Bell du 26 juin (lettre 4) est reproduite à partir de ses passages substantiels, la lettre complète étant conservée en dossier. Cliquez sur une lettre pour la déplier.</p>
+
+  <details class="full-letter obs">
+    <summary><span class="fl-num">Lettre 1</span> <span class="fl-meta">Observer → Bell · 19 juin 2026, 11&nbsp;h&nbsp;42</span> <span class="fl-cta">Texte intégral</span></summary>
+    <div class="fl-body">
+      <div class="fl-head">From: Jesse Roskies &lt;jesse.roskies@icloud.com&gt;<br>To: bell_E3640@cpc-consultation.ca &nbsp;·&nbsp; Cc: ormstownobserver@gmail.com<br>Subject: Consultation / Request for Information – Project E3640</div>
+      <p>June 19, 2026</p>
+      <p>To: Bell Mobilité – Consultation Team (Project E3640 Ormstown)<br>Email: bell_E3640@cpc-consultation.ca</p>
+      <p>Re: Written Comments and Request for Information – Project E3640</p>
+      <p>To Whom It May Concern,</p>
+      <p>I am submitting the following written comments regarding Project E3640 and request that they be entered into the formal consultation record.</p>
+      <p>The proposed telecommunications tower is planned for a municipally owned wooded property that has been identified in project documentation as Lot 6 065 483 and, in other municipal documents, as Lot 6 065 438. Before the consultation process can be considered complete, I am requesting written responses and supporting documentation regarding the matters below.</p>
+      <h4>1. Site Selection</h4>
+      <p>Please provide documentation demonstrating that Bell investigated alternatives before selecting this location, including:</p>
+      <ul>
+        <li>Existing towers considered for co-location.</li>
+        <li>Existing structures considered, including water towers, rooftops, utility structures, or other infrastructure.</li>
+        <li>Alternative sites that were evaluated.</li>
+        <li>The reasons each alternative was rejected.</li>
+        <li>The criteria used to determine that the proposed site was the preferred location.</li>
+      </ul>
+      <p>Please provide any maps, engineering studies, propagation studies, coverage analyses, site selection reports, or other documentation used to evaluate alternative locations.</p>
+      <h4>2. Environmental Considerations</h4>
+      <p>The proposed site is a wooded municipal property currently used as green space. Please provide:</p>
+      <ul>
+        <li>Any environmental assessments completed for this site.</li>
+        <li>Any wildlife, vegetation, bird, pollinator, or habitat studies completed for this site.</li>
+        <li>Any tree inventory, tree-removal plan, or vegetation management plan associated with the project.</li>
+        <li>Any maps identifying wetlands, wildlife corridors, ecological corridors, protected habitats, or environmentally sensitive areas in the vicinity of the proposed installation.</li>
+        <li>Any assessment conducted regarding potential impacts on birds, pollinators, insects, bats, or other wildlife.</li>
+      </ul>
+      <p>If no such studies have been completed, please confirm this in writing.</p>
+      <h4>3. Project Footprint</h4>
+      <p>Please provide plans showing:</p>
+      <ul>
+        <li>The exact tower location.</li>
+        <li>The dimensions of the equipment compound.</li>
+        <li>The location and width of any access road.</li>
+        <li>The total area that will be cleared, disturbed, fenced, or otherwise altered.</li>
+        <li>The number of trees expected to be removed.</li>
+      </ul>
+      <p>Please also provide any site plans, grading plans, engineering drawings, or construction drawings currently available.</p>
+      <h4>4. Consultation Process</h4>
+      <p>I am seeking clarification regarding several procedural issues. Please provide:</p>
+      <ul>
+        <li>Confirmation of the correct cadastral lot number associated with the project.</li>
+        <li>An explanation of why municipal documents reference a different lot number than Bell's engineering plans and related documentation.</li>
+        <li>Confirmation of the date on which Bell formally selected the proposed site.</li>
+        <li>Confirmation of the date on which Bell first entered into discussions with the Municipality of Ormstown regarding this location.</li>
+        <li>Confirmation of whether the municipality participated in selecting the proposed site, as stated in Bell's consultation materials.</li>
+        <li>An explanation of how the municipality's participation in site selection is reconciled with its role as the land-use authority responsible for evaluating the adequacy of the consultation process.</li>
+      </ul>
+      <h4>5. Future Expansion</h4>
+      <p>Please clarify the long-term implications of this installation. Specifically:</p>
+      <ul>
+        <li>How many antennas are proposed at initial construction?</li>
+        <li>What is the maximum number of antennas that may be installed on the structure?</li>
+        <li>Can additional antennas or equipment be added without a new public consultation process?</li>
+        <li>Will the tower be available for co-location by other carriers?</li>
+        <li>Has Bell assessed the cumulative impact of a future multi-carrier installation?</li>
+        <li>What is the maximum anticipated equipment footprint over the life of the project?</li>
+      </ul>
+      <h4>6. Lease and Site Restoration</h4>
+      <p>The proposed lease arrangement appears to permit occupancy of the site for an extended period. Please provide:</p>
+      <ul>
+        <li>The anticipated lifespan of the tower.</li>
+        <li>Bell's decommissioning plan.</li>
+        <li>Site restoration requirements at the end of the lease term.</li>
+        <li>Confirmation of who is responsible for restoration costs.</li>
+        <li>Any documentation addressing tower removal and site remediation obligations.</li>
+      </ul>
+      <p>Also, please clarify if the lease can be signed prior to completion of the consultation period.</p>
+      <h4>7. Supporting Records</h4>
+      <p>Please provide copies of all studies, reports, assessments, maps, engineering documents, environmental reviews, site-selection analyses, propagation studies, consultation records, and other materials relied upon by Bell in selecting and evaluating this location.</p>
+      <p>If any requested records do not exist, please identify which records have not been prepared.</p>
+      <p>I respectfully request that Bell respond in writing to each item above and indicate whether each requested document can be provided as part of the consultation process. Should any requested documentation be unavailable, please confirm whether it does not exist, was not prepared, or cannot be disclosed, and provide the reason.</p>
+      <p>Thank you for your attention to these questions.</p>
+      <div class="fl-sign">Sincerely,<br>Jesse Roskies<br>Ormstown, Québec<br>(514) 618-6185</div>
+      <div class="fl-attach">Attachments: Bell E3640 Rue Bridge-Ormstown_CPC_EN 20 mai 2026.pdf · Bell E3640 Rue Bridge-Ormstown_Photo simulations and plan.pdf</div>
+    </div>
+  </details>
+
+  <details class="full-letter bell">
+    <summary><span class="fl-num">Lettre 2</span> <span class="fl-meta">Bell → Observer · 19 juin 2026, 16&nbsp;h&nbsp;31</span> <span class="fl-cta">Texte intégral</span></summary>
+    <div class="fl-body">
+      <div class="fl-head">From: CPC-Consultation &lt;info@cpc-consultation.ca&gt;<br>To: Jesse Roskies<br>Subject: Re: Consultation / Request for Information – Project E3640</div>
+      <p>Mr. Roskies,</p>
+      <p>Thank you for your correspondence regarding Bell Mobility Project E3640 and for your participation in the public consultation process.</p>
+      <p>We have reviewed your comments in accordance with Innovation, Science and Economic Development Canada (ISED) Client Procedures Circular CPC-2-0-03, Issue 6.</p>
+      <p>Several of the matters raised in your submission were also discussed during the public information meeting held on June 10, 2026, and are addressed in the consultation materials provided.</p>
+      <p>Please find below responses to the relevant concerns raised in your submission as well as documentation sent to landowners within the radius as outlined by the CPC 2.0.03 process.</p>
+      <h4>Site Selection</h4>
+      <p>Bell evaluated potential solutions to improve wireless service within the target coverage area.</p>
+      <p>As discussed during the public information meeting held on June 10, 2026, Bell initially investigated the possibility of utilizing existing structures within the target search area in an effort to minimize the need for a new tower installation. No existing telecommunications towers or other suitable structures were available within the search area apart from the municipal water tower. The water tower was subsequently evaluated by an independent engineering firm retained by Bell and was determined to be unsuitable for the proposed telecommunications equipment and associated loading requirements. As a result, Bell continued its evaluation of alternative locations and ultimately selected the proposed site in collaboration with the Municipality of Ormstown.</p>
+      <p>Additional potential locations were considered during the planning process. Certain candidate sites were eliminated due to technical constraints, engineering requirements, land-use considerations, site availability, or lack of landowner interest. The Municipality of Ormstown participated in discussions regarding potential locations and collaborated in the selection of the preferred site, as indicated in the consultation materials provided to the public. The selected location was determined to be the most suitable site to meet the technical objectives of the project while taking into consideration coverage requirements, existing infrastructure, land-use compatibility, and other project-specific factors.</p>
+      <p>Bell does not publicly disclose confidential commercial information, negotiations involving private landowners, proprietary engineering analyses, propagation studies, internal site-selection records, or other documents that are not required to be disclosed as part of the CPC-2-0-03 consultation process.</p>
+      <h4>Environmental Considerations</h4>
+      <p>As indicated in the consultation materials, the proposed installation is not subject to a federal environmental assessment under the Impact Assessment Act.</p>
+      <p>The proposed tower location is situated within an existing cleared area. Any environmental reviews, permits, approvals, or studies that may be required during subsequent stages of project development will be completed in accordance with applicable legislation and regulatory requirements.</p>
+      <p>At the current stage of the project, Bell has not relied upon wildlife, pollinator, bird, habitat, vegetation, or similar ecological studies as part of the public consultation process under CPC-2-0-03.</p>
+      <p>Questions regarding broader environmental policy matters fall outside the scope of the CPC-2-0-03 land-use consultation process.</p>
+      <h4>Project Footprint</h4>
+      <p>The consultation package provided to residents included a site plan and photo simulations illustrating the proposed installation. The project currently consists of:</p>
+      <ul>
+        <li>A proposed 36-metre monopole telecommunications tower;</li>
+        <li>An equipment shelter approximately 2.5 m x 2.5 m located at the base of the tower;</li>
+        <li>A secured fenced compound surrounding the equipment area.</li>
+      </ul>
+      <p>The exact construction footprint and detailed engineering specifications will be finalized during the detailed design phase. Bell does not publicly release proprietary engineering drawings, construction drawings, grading plans, or similar technical documentation as part of the public consultation process.</p>
+      <h4>Consultation Process</h4>
+      <p>The correct cadastral lot number associated with the proposed installation is Lot 6 065 483 of the Cadastre of Québec, as clearly identified in the consultation materials distributed to residents and published as part of the public consultation process. Questions regarding references appearing in other municipal documents should be directed to the Municipality of Ormstown.</p>
+      <p>As stated in the consultation materials, the Municipality of Ormstown was consulted regarding this wireless network improvement project and collaborated in the selection of the chosen site. Bell's responsibility under CPC-2-0-03 is to conduct the required public consultation process and address reasonable and relevant concerns relating to the proposed antenna system. The Municipality, in its role as Land-Use Authority, remains responsible for determining whether the consultation process has been satisfactorily completed and whether it concurs with the proposed installation.</p>
+      <p>Bell does not disclose internal project timelines, commercial discussions, negotiation records, or other confidential records associated with the site-selection process.</p>
+      <h4>Future Expansion</h4>
+      <p>The initial installation is proposed to include twelve (12) antennas, as identified in the consultation materials. The structure has been designed to accommodate future co-location opportunities in accordance with ISED policies encouraging shared use of telecommunications infrastructure. The tower can physically accommodate additional telecommunications equipment, including equipment from future co-locating carriers.</p>
+      <p>Should another carrier seek to install equipment on the structure in the future, that carrier would be responsible for obtaining all applicable approvals and demonstrating compliance with all applicable regulatory requirements, including Health Canada's Safety Code 6. Any assessment relating to future co-located equipment would be undertaken at the time such equipment is proposed.</p>
+      <h4>Lease and Site Restoration</h4>
+      <p>The intention of the project is to provide long-term telecommunications service to the community. Bell remains responsible for the operation, maintenance, and eventual decommissioning of its telecommunications infrastructure. At the end of the operational life of the facility, Bell will remove its equipment and restore the site in accordance with applicable agreements and regulatory requirements.</p>
+      <p>Commercial lease negotiations and lease terms are confidential and are not disclosed as part of the public consultation process. Any lease documentation associated with the proposed site remains subject to the completion of the consultation process and the receipt of all required approvals.</p>
+      <h4>Supporting Records</h4>
+      <p>Bell has provided the information required under ISED's CPC-2-0-03 consultation process, including public notices, project information, photo simulations, site plans, and technical information describing the proposed installation.</p>
+      <p>The consultation process established under CPC-2-0-03 does not require the disclosure of confidential commercial information, proprietary engineering analyses, internal planning documents, site-selection records, propagation studies, consultation records, lease documentation, or other internal project materials. Accordingly, Bell does not provide such documents as part of the public consultation process.</p>
+      <p>Where requested records have not been prepared, do not exist, or are not required for the purposes of the CPC-2-0-03 consultation process, Bell is unable to provide them.</p>
+      <p>Your comments will be included in the consultation record and considered as part of Bell's obligations under CPC-2-0-03.</p>
+      <p>If you wish to submit other comments, apart from those already addressed in this correspondence, please send them to us no later than July 10th, 2026.</p>
+      <div class="fl-sign">Sincerely,<br>Robert Minotti<br>Agent for Bell Mobility<br>Project E3640</div>
+    </div>
+  </details>
+
+  <details class="full-letter obs">
+    <summary><span class="fl-num">Lettre 3</span> <span class="fl-meta">Observer → Bell · 25 juin 2026, 22&nbsp;h&nbsp;30</span> <span class="fl-cta">Texte intégral</span></summary>
+    <div class="fl-body">
+      <div class="fl-head">From: Ormstown Observer &lt;ormstownobserver@gmail.com&gt;<br>To: CPC-Consultation &lt;info@cpc-consultation.ca&gt;<br>Subject: Re: Consultation / Request for Information – Project E3640 (J. Roskies)</div>
+      <p>Mr. Minotti,</p>
+      <p>Thank you for your written response of June 19, 2026 regarding Project E3640.</p>
+      <p>I am submitting this follow-up within the 21-day reply period referenced in Bell's consultation package and in CPC-2-0-03. The purpose of this correspondence is not to repeat the broader document requests made in my June 19 submission. Bell has already stated that it does not publicly disclose certain categories of internal, commercial, proprietary, engineering, or site-selection records as part of the CPC-2-0-03 consultation process.</p>
+      <p>Instead, I am asking Bell to clarify its position on several specific issues where there appear to be inconsistencies between:</p>
+      <ol>
+        <li>the notification package distributed to residents;</li>
+        <li>statements made by Bell representatives during the June 10, 2026 information session;</li>
+        <li>Bell's written response of June 19, 2026; and</li>
+        <li>the disclosure and consultation requirements set out in CPC-2-0-03.</li>
+      </ol>
+      <p>Where Bell's position is that certain information is not required to be disclosed, I am not asking Bell simply to reconsider that position. I am asking Bell to state the basis for that position clearly, so that the consultation record accurately reflects Bell's interpretation of its obligations under CPC-2-0-03.</p>
+      <h4>1. Bell's interpretation of Annex A of CPC-2-0-03</h4>
+      <p>Annex A of CPC-2-0-03 sets out the minimum contents of the public notification package under ISED's default public consultation process. It provides that the notification package must include:</p>
+      <blockquote>"the proposed antenna system's purpose, the reasons why existing antenna systems or other infrastructure cannot be used, a list of other structures that were considered unsuitable and future sharing possibilities for the proposal" — CPC-2-0-03, Issue 6, Annex A, item 1</blockquote>
+      <p>Bell's notification package identifies the municipal water tower as the only existing structure considered and rejected. It states that the water tower was deemed structurally unsuitable to accommodate the required equipment and associated loading requirements.</p>
+      <p>Bell's June 19 response, however, confirms that additional potential locations were considered during the planning process and that certain candidate sites were eliminated due to technical constraints, engineering requirements, land-use considerations, site availability, or lack of landowner interest. At the June 10 session, Bell representatives also stated that private properties had been considered and that "some people said yes and some people said no." In a separate exchange, it was stated in French that "trois ou quatre terrains municipaux" had also been proposed but were considered too far outside the search area.</p>
+      <p>This raises a specific clarification issue under Annex A. Please clarify whether Bell's position is that Annex A, item 1 required Bell to identify only the municipal water tower, and did not require Bell to identify any of the other candidate municipal or private sites discussed during the June 10 session. If Bell's position is that those other sites were not "existing antenna systems," "other infrastructure," or "other structures" within the meaning of Annex A, please state that expressly. If Bell's position is that some of those sites did fall within Annex A, but were not identified in the notification package because Bell considers the information confidential, please state that expressly and explain how that position is reconciled with the wording of Annex A.</p>
+      <h4>2. Alternative municipal sites acknowledged during the June 10 session</h4>
+      <p>At the June 10 session, in response to a question about whether the proposed municipal lot was the only municipal site considered, it was stated:</p>
+      <blockquote>"Il y avait trois ou quatre terrains municipaux qui avaient été proposés. Les autres étaient trop à l'extérieur de la zone de recherche."</blockquote>
+      <p>Bell's June 19 response does not separately address these municipal lots. Instead, Bell grouped all additional candidate locations together and stated that it does not publicly disclose confidential commercial information, negotiations involving private landowners, proprietary engineering analyses, propagation studies, internal site-selection records, or other documents not required under CPC-2-0-03.</p>
+      <p>I understand Bell's stated position regarding confidential negotiations with private landowners. However, the three or four municipal lots referenced at the June 10 session are different in kind. They are publicly owned sites, not private landowner negotiations. Accordingly, please clarify Bell's position on the following:</p>
+      <ol>
+        <li>Does Bell acknowledge that three or four other municipally owned lots were considered or proposed before Lot 6 065 483 was selected?</li>
+        <li>If so, is Bell's position that the identity of those municipal lots is confidential?</li>
+        <li>If Bell considers the identity of those municipal lots confidential, please identify the basis for that position.</li>
+        <li>If Bell does not consider the identity of those municipal lots confidential, please identify the lots or, at minimum, provide a non-confidential description of their locations and the reason each was rejected.</li>
+      </ol>
+      <p>This request is being made because CPC-2-0-03 identifies "why an alternate site is not possible" as an example of a reasonable and relevant concern proponents are expected to address during the consultation process.</p>
+      <h4>3. Privately owned sites and landowner privacy</h4>
+      <p>At the June 10 session, Bell representatives stated that several private locations were considered and explained that landowner privacy was a reason for not identifying them publicly. I understand the concern about disclosing the names of private landowners.</p>
+      <p>However, my request is not for the names of private landowners. The issue is whether Bell can provide enough non-personal information to allow the consultation record to reflect why alternative sites were not possible. Please clarify whether Bell's position is that it cannot disclose any non-identifying information about privately owned alternative sites, such as general location, site type, approximate distance from the preferred location, or technical reason for rejection.</p>
+      <p>If Bell's position is that even non-identifying information about alternative private sites cannot be disclosed, please state whether that position is based on privacy, commercial confidentiality, CPC-2-0-03, or some other basis.</p>
+      <h4>4. The water tower engineering report</h4>
+      <p>The water tower is the only alternative structure identified in Bell's notification package. It is therefore central to Bell's explanation of why an existing structure could not be used.</p>
+      <p>At the June 10 information session, a question was asked about whether a structural engineering report existed for the water tower assessment. Bell's representative indicated that such a report existed, referred to it as being physically present at the meeting, and stated words to the effect of: "It's right here." When asked how the report could be obtained, attendees were directed to contact Bell Media Relations.</p>
+      <p>Bell's June 19 written response states that the municipal water tower was evaluated by an independent engineering firm retained by Bell and was determined to be unsuitable for the proposed telecommunications equipment and associated loading requirements. The same response also states that Bell does not publicly disclose proprietary engineering analyses as part of the CPC-2-0-03 consultation process.</p>
+      <p>Those positions require clarification. Please confirm which of the following reflects Bell's current position:</p>
+      <ol>
+        <li>the water tower engineering report exists and may be obtained through Bell Media Relations, as indicated at the June 10 session;</li>
+        <li>the water tower engineering report exists, but Bell will not make it available through Bell Media Relations or through the CPC-2-0-03 consultation process;</li>
+        <li>the direction given at the June 10 session regarding Bell Media Relations was incorrect; or</li>
+        <li>Bell's position is different from the options above.</li>
+      </ol>
+      <p>If Bell's position is that the report exists but will not be disclosed, please confirm whether Bell is relying on that report as the basis for the statement in the notification package that the water tower was structurally unsuitable. If Bell is relying on the report but will not disclose it, please state the basis on which Bell considers the report outside the disclosure obligations of CPC-2-0-03, given that Annex A requires the notification package to provide the reasons why existing antenna systems or other infrastructure cannot be used.</p>
+      <h4>5. Flood zone status and the maps relied upon</h4>
+      <p>At the June 10 session, a resident raised concerns regarding whether the proposed site is located in a flood zone. The response given at the meeting was that the site was not in a flood zone and that this had been validated by inspectors and maps.</p>
+      <p>Following the session, I consulted the Québec government's official flood zone portal, operated by the Ministère des Ressources naturelles et des Forêts. When queried directly by cadastral number for Lot 6 065 483, the portal returned the following result:</p>
+      <blockquote>"A high-velocity or low-velocity flood zone could be identified on this property." / "Une zone inondable de grand courant ou de faible courant pourrait être identifiée sur cette propriété."</blockquote>
+      <p>The portal also identifies the status as "Possible presence of a flood zone / Présence possible de zone inondable."</p>
+      <p>I am not asking Bell to resolve the flood-zone issue in this letter. I am asking Bell to clarify the basis for the statement made at the June 10 session. Please identify the maps, inspectors, data source, or assessment relied upon by Bell and/or the Municipality in stating at the June 10 session that the proposed site is not located in a flood zone.</p>
+      <p>If Bell is not in possession of the maps, inspection records, or data source relied upon for that statement, please confirm whether the statement was made on the basis of information provided by the Municipality of Ormstown. If Bell's position is that flood-zone status is outside the CPC-2-0-03 consultation process, please state that position expressly. I ask, however, that Bell still clarify the factual basis for the statement made to residents at the public information session.</p>
+      <h4>6. Selection of a park and green-space parcel</h4>
+      <p>At the June 10 session, concerns were raised about the proposed site's designation as park and green space, Zone P-15, under Ormstown's Règlement de zonage 148-2023. In response, it was stated that radiocommunication falls under federal jurisdiction and that municipal zoning does not govern the final siting decision.</p>
+      <p>For the purposes of this letter, I am not asking Bell to debate federal jurisdiction over telecommunications infrastructure. That is not the point being raised. The issue is more practical and more specific: if multiple municipal sites were considered, why was a municipally designated park and green-space parcel selected over any feasible alternative municipal site that may have had a less sensitive land-use designation?</p>
+      <p>Bell's notification package states that the Municipality of Ormstown does not have a public consultation protocol for telecommunication towers, and that ISED's default public consultation process is therefore being followed. In the absence of a local antenna siting protocol, the rationale for selecting one municipal property over another becomes particularly important to understanding the site-selection process. Accordingly, please clarify:</p>
+      <ol>
+        <li>whether any of the three or four municipal lots referenced during the June 10 session were zoned for a use other than park or green space;</li>
+        <li>whether any such lot was technically feasible;</li>
+        <li>if any such lot was technically feasible, why Lot 6 065 483 was selected instead; and</li>
+        <li>if none of the other municipal lots were technically feasible, whether Bell is willing to state that clearly in the consultation record.</li>
+      </ol>
+      <p>Again, I am not asking Bell to concede that municipal zoning controls the final siting decision. I am asking Bell to explain whether the park and green-space designation was considered as part of the site-selection process, particularly in light of the acknowledged existence of other municipal candidate sites.</p>
+      <h4>7. Status of the consultation period and any July 6 municipal concurrence</h4>
+      <p>Bell's notification package describes the consultation process as follows:</p>
+      <blockquote>"Following Bell's response, the concerned party will have a further delay of 21 days to respond to Bell, after which the comment period ends."</blockquote>
+      <p>Bell's June 19 written response also states that further comments may be submitted no later than July 10, 2026. CPC-2-0-03 similarly provides that, where written questions, comments, or concerns are received, ISED's default public consultation process is considered concluded only if the proponent has addressed and resolved all reasonable and relevant concerns and the public has not provided further comment within the 21-day reply comment period.</p>
+      <p>I understand that the Municipality of Ormstown may consider this project at its July 6, 2026 council meeting. Since July 6 falls before the July 10 reply deadline identified by Bell, please clarify Bell's position on whether written concurrence from the Municipality before July 10 would be procedurally premature under CPC-2-0-03.</p>
+      <p>I am not asking Bell to speak for the Municipality. I am asking Bell to clarify whether it intends to advise the Municipality that the public reply period remains open until July 10, 2026, and that any concurrence should account for any reply comments submitted before that date. If Bell's position is that the Municipality may validly issue concurrence before the expiry of the 21-day reply period, please state Bell's interpretation of CPC-2-0-03 on that point.</p>
+      <h4>8. Summary of requested clarifications</h4>
+      <p>For ease of reference, I am requesting written clarification of Bell's position on the following points:</p>
+      <ol>
+        <li>Whether Bell's position is that Annex A, item 1 required only the disclosure of the municipal water tower, and did not require disclosure of any other candidate sites or structures acknowledged during the June 10 session.</li>
+        <li>Whether Bell acknowledges that three or four other municipally owned lots were considered or proposed, and whether Bell considers the identity of those municipal lots confidential.</li>
+        <li>Whether Bell can provide any non-identifying information about privately owned candidate sites, such as general location, site type, approximate distance from the preferred site, or reason for rejection, without identifying private landowners.</li>
+        <li>Whether the water tower engineering report exists; whether Bell is relying on it as the basis for the water tower unsuitability statement; and whether Bell's current position is that the report can or cannot be obtained through Bell Media Relations, as indicated at the June 10 session.</li>
+        <li>What maps, inspection records, data, or assessment formed the basis for the statement made at the June 10 session that the proposed lot is not located in a flood zone.</li>
+        <li>Whether any of the alternative municipal lots considered were zoned for a use other than park or green space and, if so, why Lot 6 065 483 was selected in preference to those sites.</li>
+        <li>Whether Bell agrees that the 21-day reply period remains open until July 10, 2026, and whether Bell considers municipal concurrence before that date to be procedurally proper under CPC-2-0-03.</li>
+        <li>Whether Bell has formally submitted all written plans to the Municipality of Ormstown for the purpose of triggering the 120-day land-use authority consultation period under CPC-2-0-03, and if so, the date of that formal written submission.</li>
+      </ol>
+      <p>The purpose of seeking these clarifications is to ensure that the consultation record accurately reflects Bell's position before I determine whether further review by ISED is necessary.</p>
+      <p>I have a verified recording of the June 10, 2026 information session and am prepared to provide a transcript upon request.</p>
+      <div class="fl-sign">Sincerely,<br>Jesse Roskies<br>Ormstown Observer<br>Ormstown, Québec<br>(514) 618-6185</div>
+    </div>
+  </details>
+
+  <details class="full-letter bell">
+    <summary><span class="fl-num">Lettre 4</span> <span class="fl-meta">Bell → Observer · 26 juin 2026 · passages substantiels</span> <span class="fl-cta">Texte</span></summary>
+    <div class="fl-body">
+      <div class="fl-head">De : Robert Minotti, agent de Bell Mobilité (projet E3640) &nbsp;·&nbsp; 26 juin 2026<br>Réponse finale de Bell au suivi du 25 juin. Les passages ci-dessous sont reproduits textuellement (en anglais) de la lettre du 26 juin; la lettre complète est conservée en dossier.</div>
+      <p>On Bell's interpretation of Annex A and the additional candidate sites:</p>
+      <blockquote>"Additional candidate locations considered during the site selection process consisted of potential greenfield locations rather than existing antenna systems or structures contemplated by Annex A. The identification, evaluation and negotiation of potential candidate sites form part of Bell's confidential commercial and engineering site selection process and are not disclosure requirements under CPC-2-0-03."</blockquote>
+      <p>On the other municipal properties:</p>
+      <blockquote>"The Municipality identified several municipal properties for consideration during the site selection process. Following Bell's technical and engineering evaluation, Lot 6 065 483 was determined to be the only municipal property that satisfied the technical, engineering, operational and coverage requirements necessary to meet the objectives of the proposed telecommunications system."</blockquote>
+      <p>On the water tower engineering report:</p>
+      <blockquote>"The engineering assessment formed the basis for Bell's conclusion that the water tower was unsuitable for the proposed installation. The conclusion of that assessment has been communicated through the consultation process and satisfies the disclosure requirements of CPC-2-0-03. The underlying engineering report is proprietary and is not part of the public consultation record."</blockquote>
+      <p>On the flood zone, Bell explained that the compound's placement relied on a professional survey by a Québec Land Surveyor identifying nearby watercourse, riparian, and marsh boundaries and confirming the compound was outside them, adding that the provincial flood-zone portal addresses an entire parcel rather than the specific compound location.</p>
+      <p>On zoning and the timing of the municipal decision:</p>
+      <blockquote>"Questions relating to municipal zoning, municipal resolutions, or the timing of decisions by the Municipality of Ormstown fall within the jurisdiction of the Municipality and are outside Bell's authority and the scope of the ISED CPC-2-0-03 public consultation process."</blockquote>
+      <p>Bell then closed the record:</p>
+      <blockquote>"Bell now considers the public consultation record complete as of today June 26, 2026. Accordingly, Bell also considers the consultation process with respect to your comments concluded. No further correspondence on the matters addressed above is anticipated."</blockquote>
+      <div class="fl-sign">— Robert Minotti, Agent for Bell Mobility, Project E3640, June 26, 2026</div>
+    </div>
+  </details>
 
   <div class="closing">
     <h2 class="section-head">Pourquoi ce dossier existe</h2>
