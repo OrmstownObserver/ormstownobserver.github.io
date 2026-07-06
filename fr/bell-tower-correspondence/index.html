@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le dossier de correspondance complet : l'Observer et Bell Mobilité — L'Ormstown Observer</title>
+<meta name="description" content="Chaque lettre de l'échange écrit entre l'Ormstown Observer et Bell Mobilité au sujet du projet E3640, dans l'ordre — quatre lettres en huit jours, jusqu'à la fermeture de la consultation par Bell, quatorze jours avant sa propre date limite.">
+<link rel="canonical" href="https://ormstownobserver.ca/fr/bell-tower-correspondence/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --ink-light: #444;
+    --accent: #b5161b;
+    --accent-light: #f5e8e8;
+    --paper: #faf8f4;
+    --paper-dark: #f0ece4;
+    --rule: #c8b97a;
+    --obs: #2a7a2a;
+    --bell: #1c4f9c;
+    --border: #d4c9b8;
+    --column: 720px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; line-height: 1.7; }
+  a { color: var(--accent); }
+  a:hover { color: var(--ink); }
+
+  .article-wrap { max-width: var(--column); margin: 0 auto; padding: 44px 24px 80px; }
+  .back-link { display: inline-block; font-family: sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--ink-light); margin-bottom: 22px; text-decoration: none; }
+  .back-link:hover { color: var(--accent); }
+  .section-label { display: inline-block; background: var(--ink); color: #fff; font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; padding: 4px 10px; margin-bottom: 18px; }
+  .headline { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px,5vw,44px); font-weight: 900; line-height: 1.14; color: var(--ink); margin-bottom: 14px; }
+  .headline em { font-style: italic; color: var(--accent); }
+  .deck { font-size: 19px; font-weight: 300; line-height: 1.55; color: var(--ink-light); border-left: 3px solid var(--accent); padding-left: 16px; margin-bottom: 22px; font-style: italic; }
+  .byline { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-light); padding-bottom: 8px; margin-bottom: 8px; }
+  .byline strong { color: var(--ink); }
+  .fr-link { font-family: sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .04em; padding-bottom: 20px; border-bottom: 1px solid var(--ink); margin-bottom: 26px; }
+
+  .method { background: var(--paper-dark); border-left: 4px solid var(--rule); padding: 18px 22px; margin: 26px 0; font-size: 14.5px; line-height: 1.62; color: var(--ink-light); }
+  .method strong { color: var(--ink); }
+  .legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 14px; font-family: sans-serif; font-size: 12px; font-weight: 700; color: var(--ink); }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .legend .swatch { width: 14px; height: 14px; border-radius: 2px; display: inline-block; }
+  .swatch.obs { background: var(--obs); }
+  .swatch.bell { background: var(--bell); }
+
+  h2.section-head { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 700; color: var(--ink); margin: 48px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+
+  .glance { border: 1px solid var(--border); margin: 22px 0 8px; }
+  .glance-row { display: grid; grid-template-columns: 132px 1fr; border-bottom: 1px solid var(--border); }
+  .glance-row:last-child { border-bottom: none; }
+  .glance-tag { padding: 14px 14px; color: #fff; font-family: sans-serif; }
+  .glance-tag.obs { background: var(--obs); }
+  .glance-tag.bell { background: var(--bell); }
+  .glance-tag .g-num { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 15px; }
+  .glance-tag .g-date { font-size: 11px; opacity: .92; margin-top: 3px; }
+  .glance-tag .g-dir { font-size: 9.5px; text-transform: uppercase; letter-spacing: .08em; margin-top: 7px; font-weight: 700; }
+  .glance-body { padding: 13px 16px; font-size: 14.5px; line-height: 1.56; }
+
+  .letter { border: 1px solid var(--border); margin: 30px 0; overflow: hidden; }
+  .letter-head { display: flex; align-items: baseline; gap: 14px; padding: 12px 18px; color: #fff; font-family: sans-serif; flex-wrap: wrap; }
+  .letter.obs .letter-head { background: var(--obs); }
+  .letter.bell .letter-head { background: var(--bell); }
+  .letter-head .l-num { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 18px; }
+  .letter-head .l-dir { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+  .letter-head .l-date { margin-left: auto; font-size: 12px; opacity: .95; }
+  .letter-body { padding: 20px 22px; }
+  .letter-body p { font-size: 16.5px; line-height: 1.68; margin-bottom: 16px; }
+  .letter-body p:last-child { margin-bottom: 0; }
+  .letter-body blockquote { border-left: 3px solid var(--border); padding: 2px 0 2px 16px; margin: 16px 0; font-style: italic; font-size: 16px; line-height: 1.6; color: var(--ink); }
+  .letter.obs .letter-body blockquote { border-left-color: var(--obs); }
+  .letter.bell .letter-body blockquote { border-left-color: var(--bell); }
+  .letter-body blockquote cite { display: block; font-style: normal; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-light); margin-top: 8px; }
+  .letter-points { list-style: none; padding: 0; margin: 4px 0 16px; }
+  .letter-points li { font-size: 15.5px; padding: 7px 0 7px 20px; position: relative; border-bottom: 1px solid #e6e0d6; line-height: 1.5; }
+  .letter-points li:last-child { border-bottom: none; }
+  .letter-points li::before { content: '›'; position: absolute; left: 2px; color: var(--accent); font-weight: 700; }
+  .ed-note { background: var(--paper-dark); border-left: 3px solid var(--rule); padding: 12px 16px; margin: 16px 0 0; font-size: 13.5px; line-height: 1.6; color: var(--ink-light); }
+  .ed-note strong { color: var(--ink); text-transform: uppercase; letter-spacing: .08em; font-size: 11px; }
+
+  .closing { margin: 40px 0 0; }
+  .closing p { font-size: 16.5px; line-height: 1.7; margin-bottom: 16px; }
+  .article-footer { margin-top: 46px; padding-top: 20px; border-top: 3px double var(--ink); font-size: 13px; color: var(--ink-light); line-height: 1.6; }
+
+  @media (max-width: 600px) {
+    .article-wrap { padding: 28px 18px 60px; }
+    .glance-row { grid-template-columns: 108px 1fr; }
+    .letter-head .l-date { margin-left: 0; width: 100%; }
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/bell-tower-correspondence/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/bell-tower-correspondence/">
+</head>
+<body>
+
+<!-- MASTHEAD injecté par /observer-header.js -->
+
+<main class="article-wrap">
+
+  <a class="back-link" href="/fr/bell-tower/">← Enquête Tour Bell</a>
+
+  <div class="section-label">Dossier documentaire · Projet E3640</div>
+
+  <h1 class="headline">Le dossier de correspondance complet :<br><em>L'Observer et Bell Mobilité</em></h1>
+
+  <p class="deck">Chaque lettre de l'échange écrit, dans l'ordre. Quatre lettres en huit jours — des questions de l'Observer jusqu'à la déclaration de Bell fermant la consultation, quatorze jours avant sa propre date limite.</p>
+
+  <div class="byline">
+    Par <strong>Jesse Roskies</strong> &nbsp;·&nbsp; L'Ormstown Observer &nbsp;·&nbsp; 5 juillet 2026 &nbsp;·&nbsp; Ormstown, Québec
+  </div>
+  <div class="fr-link"><a href="/en/bell-tower-correspondence/">English version here →</a></div>
+
+  <div class="method">
+    Chaque lettre est reproduite dans l'ordre où elle a été envoyée. Les passages entre guillemets sont tirés directement des originaux — les réponses écrites de Bell sont citées textuellement. Les notes de la rédaction apparaissent dans un style gris distinct et ne font pas partie de la correspondance originale. Les quatre lettres sont conservées en dossier dans leur intégralité et disponibles sur demande.
+    <div class="legend">
+      <span><span class="swatch obs"></span> Vert = L'Observer</span>
+      <span><span class="swatch bell"></span> Bleu = Bell Mobilité</span>
+    </div>
+  </div>
+
+  <h2 class="section-head">En un coup d'œil — l'échange dans l'ordre</h2>
+
+  <div class="glance">
+    <div class="glance-row">
+      <div class="glance-tag obs">
+        <div class="g-num">Lettre 1</div>
+        <div class="g-date">19 juin 2026</div>
+        <div class="g-dir">Observer → Bell</div>
+      </div>
+      <div class="glance-body">Soumission écrite initiale à l'agent de Bell, Robert Minotti. Des questions réparties en sept volets : sélection du site et solutions de rechange, environnement et zone inondable, empreinte au sol, processus de consultation, expansion future et partage, bail, et les documents à l'appui sur lesquels Bell s'est fondée.</div>
+    </div>
+    <div class="glance-row">
+      <div class="glance-tag bell">
+        <div class="g-num">Lettre 2</div>
+        <div class="g-date">19 juin 2026</div>
+        <div class="g-dir">Bell → Observer</div>
+      </div>
+      <div class="glance-body">Première réponse écrite de Bell, le même jour. Confirme l'évaluation d'ingénierie du château d'eau, l'examen d'emplacements candidats additionnels et la participation de la Municipalité aux discussions — et fixe au 10 juillet 2026 la date limite des commentaires en réplique.</div>
+    </div>
+    <div class="glance-row">
+      <div class="glance-tag obs">
+        <div class="g-num">Lettre 3</div>
+        <div class="g-date">25 juin 2026</div>
+        <div class="g-dir">Observer → Bell</div>
+      </div>
+      <div class="glance-body">Suivi déposé expressément à l'intérieur de la période de réponse de 21 jours. Huit points de clarification — l'interprétation de l'Annexe A par Bell, le statut et le zonage des autres terrains municipaux, le rapport sur le château d'eau, la source de l'évaluation de la zone inondable, et le calendrier du 6 / 10 juillet.</div>
+    </div>
+    <div class="glance-row">
+      <div class="glance-tag bell">
+        <div class="g-num">Lettre 4</div>
+        <div class="g-date">26 juin 2026</div>
+        <div class="g-dir">Bell → Observer</div>
+      </div>
+      <div class="glance-body">Bell répond aux huit points, renvoie les questions de zonage et de calendrier à la Municipalité, et déclare le dossier de consultation « complet en date d'aujourd'hui » — quatorze jours avant la date limite du 10 juillet qu'elle avait elle-même fixée.</div>
+    </div>
+  </div>
+
+  <h2 class="section-head">Les quatre lettres, in extenso</h2>
+
+  <!-- LETTRE 1 -->
+  <div class="letter obs">
+    <div class="letter-head">
+      <span class="l-num">Lettre 1</span>
+      <span class="l-dir">Observer → Bell</span>
+      <span class="l-date">19 juin 2026</span>
+    </div>
+    <div class="letter-body">
+      <p>Le 19 juin, l'Observer a déposé une soumission écrite détaillée auprès de l'agent de Bell, <strong>Robert Minotti</strong> (Romin Acquisition), avant la clôture de la période de commentaires initiale. Elle organisait ses questions en sept volets :</p>
+      <ul class="letter-points">
+        <li>La sélection du site et les solutions de rechange envisagées par Bell</li>
+        <li>Le statut environnemental et de zone inondable du site proposé</li>
+        <li>L'empreinte au sol de la tour et de l'enceinte clôturée</li>
+        <li>Le processus de consultation et son calendrier</li>
+        <li>L'expansion future et le partage par d'autres entreprises</li>
+        <li>Le bail municipal proposé</li>
+        <li>Les études et documents à l'appui sur lesquels Bell s'est fondée</li>
+      </ul>
+      <div class="ed-note"><strong>Note de la rédaction</strong> &nbsp; La soumission du 19 juin faisait suite à une demande d'information antérieure, envoyée le 7 juin par l'Observer à la fois à Bell et à la Municipalité, qui portait sur les emplacements de rechange, l'évaluation du château d'eau, la compatibilité du zonage, la cartographie des zones inondables, le bail et la procédure de consultation.</div>
+    </div>
+  </div>
+
+  <!-- LETTRE 2 -->
+  <div class="letter bell">
+    <div class="letter-head">
+      <span class="l-num">Lettre 2</span>
+      <span class="l-dir">Bell → Observer</span>
+      <span class="l-date">19 juin 2026</span>
+    </div>
+    <div class="letter-body">
+      <p>Bell a répondu le même jour. Elle a confirmé plusieurs points et, surtout, a fixé la date limite de réplique.</p>
+      <p>Au sujet du <strong>château d'eau</strong> — la seule structure existante que la trousse de notification de Bell identifiait comme ayant été évaluée — Bell a écrit qu'il « a été évalué par une firme d'ingénierie indépendante mandatée par Bell et jugé structurellement inadéquat », ajoutant que Bell « ne divulgue pas publiquement ses analyses d'ingénierie de nature exclusive ».</p>
+      <p>Au sujet du <strong>rôle de la Municipalité</strong>, Bell a confirmé :</p>
+      <blockquote>« La Municipalité d'Ormstown a participé aux discussions concernant les emplacements potentiels et a collaboré à la sélection du site privilégié. »
+        <cite>— Bell (Robert Minotti), 19 juin 2026</cite>
+      </blockquote>
+      <p>Bell a également confirmé que le numéro cadastral exact du site est le <strong>lot 6 065 483</strong> — réglant une discordance avec le numéro énoncé à la séance du conseil du 2 mars — et a renvoyé les questions cadastrales et de zonage à la Municipalité. Enfin, Bell a fixé au <strong>10 juillet 2026</strong> la date limite des commentaires en réplique dans la période de réponse de 21 jours.</p>
+      <div class="ed-note"><strong>Note de la rédaction</strong> &nbsp; C'est dans cette lettre que Bell établit elle-même la date limite du 10 juillet — la date qui devient centrale dans la Lettre 4.</div>
+    </div>
+  </div>
+
+  <!-- LETTRE 3 -->
+  <div class="letter obs">
+    <div class="letter-head">
+      <span class="l-num">Lettre 3</span>
+      <span class="l-dir">Observer → Bell</span>
+      <span class="l-date">25 juin 2026</span>
+    </div>
+    <div class="letter-body">
+      <p>Six jours plus tard, l'Observer a déposé un suivi, expressément à l'intérieur de la période de réponse que Bell avait ouverte, soulevant huit points précis auxquels la première réponse de Bell n'avait pas entièrement répondu. La lettre débutait ainsi :</p>
+      <blockquote>« Je soumets ce suivi dans la période de réponse de 21 jours mentionnée dans la trousse de consultation de Bell et dans la CPC-2-0-03. »
+        <cite>— L'Observer à Bell, 25 juin 2026</cite>
+      </blockquote>
+      <p>Parmi les huit points, l'Observer demandait à Bell de réconcilier ses deux positions sur le rapport d'ingénierie du château d'eau (disponible à la séance du 10 juin, ou de nature exclusive?); précisait que sa question sur les emplacements candidats privés ne visait que des renseignements agrégés et non identifiants — emplacement général, type de site, distance approximative ou motif technique du rejet — et non les noms de propriétaires; et demandait si l'un des trois ou quatre autres terrains municipaux était zoné pour un usage moins sensible que parc et espace vert, et si ces solutions de rechange étaient techniquement viables.</p>
+      <p>Sur le calendrier, l'Observer a demandé directement :</p>
+      <blockquote>« Veuillez préciser la position de Bell quant à savoir si une concurrence écrite de la Municipalité avant le 10 juillet serait prématurée sur le plan procédural en vertu de la CPC-2-0-03. »
+        <cite>— L'Observer à Bell, 25 juin 2026</cite>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- LETTRE 4 -->
+  <div class="letter bell">
+    <div class="letter-head">
+      <span class="l-num">Lettre 4</span>
+      <span class="l-dir">Bell → Observer</span>
+      <span class="l-date">26 juin 2026</span>
+    </div>
+    <div class="letter-body">
+      <p>Bell a répondu le lendemain, le 26 juin, en abordant les huit points — puis en fermant le dossier.</p>
+      <p>Au sujet des <strong>emplacements de rechange et de l'Annexe A</strong>, Bell a exposé son interprétation de ce qu'elle était tenue de divulguer :</p>
+      <blockquote>« Les emplacements candidats additionnels envisagés au cours du processus de sélection du site étaient des emplacements vierges (greenfield) plutôt que des systèmes d'antennes ou des structures existants visés par l'Annexe A. L'identification, l'évaluation et la négociation des emplacements candidats potentiels font partie du processus confidentiel de sélection de site, de nature commerciale et technique, de Bell, et ne constituent pas des exigences de divulgation en vertu de la CPC-2-0-03. »
+        <cite>— Bell (Robert Minotti), 26 juin 2026</cite>
+      </blockquote>
+      <p>Au sujet des <strong>autres terrains municipaux</strong> :</p>
+      <blockquote>« La Municipalité a identifié plusieurs terrains municipaux à considérer au cours du processus de sélection du site. À la suite de l'évaluation technique et d'ingénierie de Bell, le lot 6 065 483 a été jugé le seul terrain municipal satisfaisant aux exigences techniques, d'ingénierie, opérationnelles et de couverture nécessaires pour atteindre les objectifs du système de télécommunications proposé. »
+        <cite>— Bell (Robert Minotti), 26 juin 2026</cite>
+      </blockquote>
+      <p>Au sujet du <strong>rapport d'ingénierie sur le château d'eau</strong> :</p>
+      <blockquote>« L'évaluation d'ingénierie a servi de fondement à la conclusion de Bell selon laquelle le château d'eau était inadéquat pour l'installation proposée. La conclusion de cette évaluation a été communiquée dans le cadre du processus de consultation et satisfait aux exigences de divulgation de la CPC-2-0-03. Le rapport d'ingénierie sous-jacent est de nature exclusive et ne fait pas partie du dossier de consultation publique. »
+        <cite>— Bell (Robert Minotti), 26 juin 2026</cite>
+      </blockquote>
+      <div class="ed-note"><strong>Note de la rédaction</strong> &nbsp; À la séance d'information du 10 juin, le représentant de Bell avait dit du même rapport : <em>« C'est ici même. […] Vous pouvez le demander à nos relations médias — je peux vous donner l'adresse si vous voulez. »</em> La lettre du 26 juin confirme que le rapport ne sera pas diffusé, mais n'aborde pas la contradiction avec cette déclaration verbale.</div>
+      <p>Au sujet de la <strong>zone inondable</strong>, Bell a expliqué que l'emplacement de l'enceinte reposait sur un relevé professionnel réalisé par un arpenteur-géomètre du Québec, identifiant les limites voisines de cours d'eau, riveraines et de marais, et confirmant que l'enceinte se trouvait à l'extérieur de celles-ci — ajoutant que le portail provincial des zones inondables vise un lot entier, et non l'emplacement précis de l'enceinte. Le relevé lui-même n'a pas été versé au dossier de consultation publique.</p>
+      <p>Au sujet du <strong>zonage et du moment de la décision municipale</strong>, Bell a entièrement renvoyé les questions :</p>
+      <blockquote>« Les questions relatives au zonage municipal, aux résolutions municipales ou au moment des décisions de la Municipalité d'Ormstown relèvent de la compétence de la Municipalité et sont hors de l'autorité de Bell et hors de la portée du processus de consultation publique CPC-2-0-03 d'ISDE. »
+        <cite>— Bell (Robert Minotti), 26 juin 2026</cite>
+      </blockquote>
+      <p>Bell a ensuite fermé le dossier :</p>
+      <blockquote>« Bell considère désormais le dossier de consultation publique comme complet en date d'aujourd'hui, le 26 juin 2026. Par conséquent, Bell considère également le processus de consultation relatif à vos commentaires comme conclu. Aucune autre correspondance sur les questions abordées ci-dessus n'est prévue. »
+        <cite>— Bell (Robert Minotti), 26 juin 2026</cite>
+      </blockquote>
+      <div class="ed-note"><strong>Note de la rédaction</strong> &nbsp; Cette déclaration est survenue <strong style="text-transform:none;letter-spacing:0;font-size:inherit;">quatorze jours avant</strong> la date limite de réplique du 10 juillet que Bell avait fixée dans la Lettre 2, et un jour après le suivi de l'Observer du 25 juin — une soumission déposée à l'intérieur de la période de réponse. En vertu de la CPC-2-0-03, la consultation n'est censée être considérée comme conclue qu'après l'expiration de la période de réponse de 21 jours sans autre commentaire.</div>
+    </div>
+  </div>
+
+  <div class="closing">
+    <h2 class="section-head">Pourquoi ce dossier existe</h2>
+    <p>Ces quatre lettres sont la source primaire derrière la couverture du projet E3640 par l'Observer. Elles sont publiées ici dans leur intégralité afin que les résidents, les conseillers et ISDE puissent lire l'échange directement, plutôt que de s'en remettre à l'interprétation de quiconque — la nôtre y compris.</p>
+    <p>L'analyse de ce que révèle cet échange se trouve dans l'enquête principale : <a href="/fr/bell-tower-pre-vote/"><strong>Avant le vote de lundi : ce qu'on n'a jamais dit aux résidents d'Ormstown au sujet de la tour Bell →</strong></a> La chronologie complète du projet se trouve dans l'<a href="/fr/bell-tower/">enquête Tour Bell</a>.</p>
+  </div>
+
+  <div class="article-footer">
+    <p><strong>L'Ormstown Observer</strong> est une publication civique bilingue indépendante au service d'Ormstown et du Haut-Saint-Laurent. Nous n'acceptons aucune publicité de la Municipalité d'Ormstown ni d'aucune partie impliquée dans le projet E3640. Les quatre lettres citées ici sont conservées en dossier dans leur intégralité et disponibles sur demande.</p>
+    <p style="margin-top:10px;">Questions, conseils, corrections : <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a></p>
+  </div>
+
+</main>
+</body>
+</html>
