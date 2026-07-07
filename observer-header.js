@@ -181,6 +181,10 @@
         class="${isActive('/en/bylaws') || isActive('/fr/bylaws') ? 'is-active' : ''}">
         <span data-en>Bylaws &amp; Regulations</span><span data-fr>Règlements</span>
       </a>
+      <a href="/en/piia/" data-href-en="/en/piia/" data-href-fr="/fr/piia/"
+        class="${isActive('/en/piia') || isActive('/fr/piia') ? 'is-active' : ''}">
+        <span data-en>PIIA Explained</span><span data-fr>Le PIIA expliqué</span>
+      </a>
       <a href="/en/public-notices/" data-href-en="/en/public-notices/" data-href-fr="/fr/public-notices/"
         class="${isActive('/en/public-notices') || isActive('/fr/public-notices') ? 'is-active' : ''}">
         <span data-en>Public Notices</span><span data-fr>Avis publics</span>
