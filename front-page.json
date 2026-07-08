@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-08T01:47:08.649Z",
+  "generated_at": "2026-07-08T02:37:16.274Z",
   "hero": {
     "slug": "bell-tower-pre-vote",
     "path_en": "/en/bell-tower-pre-vote/",
@@ -51,28 +51,22 @@
       }
     },
     {
-      "slug": "council-watch-june-1-2026",
-      "path_en": "/en/council-watch/june-1-2026/",
-      "path_fr": "/fr/conseil-municipal/1-juin-2026/",
+      "slug": "council-watch-july-6-2026- + fr-conseil-municipal-6-juillet-2026",
+      "path_en": "/en/council-watch/july-6-2026/ + fr/conseil-municipal/6-juillet-2026/",
+      "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
       "label_en": "Council Watch",
       "label_fr": "Conseil municipal",
-      "hed_en": "2025 financials tabled, 24-unit housing project proposed",
-      "hed_fr": "États financiers 2025 déposés, projet de 24 logements proposé",
-      "deck_en": "",
-      "deck_fr": "",
-      "meta_en": "June 1, 2026",
-      "meta_fr": "1er juin 2026",
+      "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
+      "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
+      "deck_en": "A recorded 7–0 vote authorized the Bell Mobilité tower lease. Council also authorized a road-works tender under the $3.7M MTQ subsidy, named a new deputy mayor, and moved two PPCMOI housing files to the register stage.",
+      "deck_fr": "Un vote nominal de 7 contre 0 autorise le bail de la tour Bell Mobilité. Le conseil autorise aussi un appel d'offres de voirie dans le cadre de la subvention de 3,7 M$ du MTQ, nomme un nouveau maire suppléant et fait passer deux dossiers PPCMOI à l'étape du registre.",
+      "meta_en": "July 8, 2026 | 8 juillet 2026",
+      "meta_fr": "July 8, 2026 | 8 juillet 2026",
       "cta_en": "Read the recap →",
       "cta_fr": "Lire le compte rendu →",
       "icon": "council",
-      "date_published": "2026-06-01",
-      "image": {
-        "src": "/images/townhall.jpg",
-        "position": "center 55%",
-        "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Ormstown town hall",
-        "alt_fr": "Hôtel de ville d’Ormstown"
-      }
+      "date_published": "2026-07-08",
+      "image": null
     },
     {
       "slug": "bylaws-regulations-animal-control-131-2026",
@@ -175,6 +169,16 @@
   ],
   "latest": [
     {
+      "slug": "council-watch-july-6-2026- + fr-conseil-municipal-6-juillet-2026",
+      "path_en": "/en/council-watch/july-6-2026/ + fr/conseil-municipal/6-juillet-2026/",
+      "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed — July 8, 2026 | 8 juillet 2026",
+      "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure — July 8, 2026 | 8 juillet 2026",
+      "date_published": "2026-07-08"
+    },
+    {
       "slug": "piia-piia-101",
       "path_en": "/en/piia/piia-101/",
       "path_fr": "/fr/piia/piia-101/",
@@ -263,16 +267,6 @@
       "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens — Règlement 131-2026",
       "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises — Règlement 131-2026",
       "date_published": "2026-06-18"
-    },
-    {
-      "slug": "bell-tower-june10",
-      "path_en": "/en/bell-tower-june10/",
-      "path_fr": "/fr/bell-tower-june10/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "Bell’s information session: what was said — Bell Tower · Projet E3640",
-      "hed_fr": "Séance d’information Bell : ce qui a été dit — Bell Tower · Projet E3640",
-      "date_published": "2026-06-15"
     }
   ]
 }
