@@ -11,10 +11,13 @@ This repository contains the static bilingual website for The Ormstown Observer.
 - Keep new content clear, concise, and appropriate for a civic journalism publication.
 
 ## File guidance
-- `index.html` is the homepage.
+- `index.html` is the homepage. Its four story zones (hero / side rail / photo cards / Latest list) are rendered at runtime by `front-page.js` from `front-page.json`; the static markup inside them is only a fallback shown when the JSON fails to load. To change what's on the front page, change the Notion Articles DB (Front Page Slot 1–7 + Headline/Deck/Image fields), not the HTML.
+- **`front-page.json` is generated — never hand-edit it.** The n8n workflow "🗞️ Observer — Front Page Builder" (NEST instance) rebuilds and commits it from Notion via the webhook `https://seneca.strai.ca/webhook/front-page-build` and on a 30-minute schedule. It also downloads any Notion-hosted story image and commits it as `images/<story-slug>.jpg`.
+- `front-page.js` is the renderer: textContent-only DOM building, per-zone fallback, whitelisted SVG icons, `image.src` must match `/images/...`. Update carefully and test with a corrupted/missing JSON (static fallback must survive).
+- `/en/index.html` and `/fr/index.html` are redirect stubs to the bilingual root homepage — do not rebuild them as standalone homepages.
 - `observer-header.js` contains shared header behavior and should be updated carefully.
-- `images/` holds site assets and should be referenced with stable paths.
-- New stories should follow the existing folder pattern for English and French pages.
+- `images/` holds site assets and should be referenced with stable paths. Front-page images are named `<story-slug>.jpg` (GitHub Path minus `en/`, slashes → hyphens).
+- New stories should follow the existing folder pattern for English and French pages, get an Articles row in Notion (Status ✅ Published + GitHub Path + Path FR + Headline EN/FR), and use the `figure.article-figure` pattern from `en/toit-vert-development/index.html` for in-article images (skeleton in `templates/page-template.html`).
 
 ## Local preview
 Use a simple local server from the repository root:
