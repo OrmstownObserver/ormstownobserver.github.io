@@ -1,0 +1,278 @@
+{
+  "version": 1,
+  "generated_at": "2026-07-07T00:00:00Z",
+  "hero": {
+    "slug": "bell-tower-pre-vote",
+    "path_en": "/en/bell-tower-pre-vote/",
+    "path_fr": "/fr/bell-tower-pre-vote/",
+    "label_en": "Investigation",
+    "label_fr": "Enquête",
+    "hed_en": "Before Monday’s vote: what residents were never told about the Bell tower",
+    "hed_fr": "Avant le vote de lundi : ce qu’on n’a jamais dit aux résidents au sujet de la tour Bell",
+    "deck_en": "Council votes Monday on Bell Mobilité’s 36-metre tower. Key information — confirmed in writing — was withheld from residents throughout the consultation. Then Bell shut the process down two weeks early.",
+    "deck_fr": "Le conseil vote lundi sur la tour de 36 mètres de Bell Mobilité. Des renseignements clés — confirmés par écrit — ont été cachés aux résidents tout au long de la consultation. Puis Bell a clos le processus deux semaines trop tôt.",
+    "meta_en": "July 5, 2026",
+    "meta_fr": "5 juillet 2026",
+    "cta_en": "Read the investigation →",
+    "cta_fr": "Lire l’enquête →",
+    "icon": "investigation",
+    "date_published": "2026-07-05",
+    "image": {
+      "src": "/images/tower.jpg",
+      "position": "center 30%",
+      "credit": "Photo: The Ormstown Observer",
+      "alt_en": "Cell tower against blue sky",
+      "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
+    }
+  },
+  "rail": [
+    {
+      "slug": "bell-tower",
+      "path_en": "/en/bell-tower/",
+      "path_fr": "/fr/bell-tower/",
+      "label_en": "Investigation",
+      "label_fr": "Enquête",
+      "hed_en": "A 36-metre tower proposed for an Ormstown park lot",
+      "hed_fr": "Une tour de 36 mètres proposée sur un terrain municipal d’Ormstown",
+      "deck_en": "",
+      "deck_fr": "",
+      "meta_en": "Bell Tower · Projet E3640",
+      "meta_fr": "Bell Tower · Projet E3640",
+      "cta_en": "Read the investigation →",
+      "cta_fr": "Lire l’enquête →",
+      "icon": "investigation",
+      "date_published": "2026-06-09",
+      "image": {
+        "src": "/images/tower.jpg",
+        "position": "center 30%",
+        "credit": "Photo: The Ormstown Observer",
+        "alt_en": "Cell tower against blue sky",
+        "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
+      }
+    },
+    {
+      "slug": "council-watch-june-1-2026",
+      "path_en": "/en/council-watch/june-1-2026/",
+      "path_fr": "/fr/conseil-municipal/1-juin-2026/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "2025 financials tabled, 24-unit housing project proposed",
+      "hed_fr": "États financiers 2025 déposés, projet de 24 logements proposé",
+      "deck_en": "",
+      "deck_fr": "",
+      "meta_en": "June 1, 2026",
+      "meta_fr": "1er juin 2026",
+      "cta_en": "Read the recap →",
+      "cta_fr": "Lire le compte rendu →",
+      "icon": "council",
+      "date_published": "2026-06-01",
+      "image": {
+        "src": "/images/townhall.jpg",
+        "position": "center 55%",
+        "credit": "Photo: The Ormstown Observer",
+        "alt_en": "Ormstown town hall",
+        "alt_fr": "Hôtel de ville d’Ormstown"
+      }
+    },
+    {
+      "slug": "bylaws-regulations-animal-control-131-2026",
+      "path_en": "/en/bylaws-regulations/animal-control-131-2026/",
+      "path_fr": "/fr/bylaws-regulations/reglement-animaux-131-2026/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens",
+      "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises",
+      "deck_en": "",
+      "deck_fr": "",
+      "meta_en": "Règlement 131-2026",
+      "meta_fr": "Règlement 131-2026",
+      "cta_en": "Read the explainer →",
+      "cta_fr": "Lire l’explicateur →",
+      "icon": "bylaws",
+      "date_published": "2026-06-18",
+      "image": {
+        "src": "/images/chickens.jpg",
+        "position": "center 60%",
+        "credit": "Photo: The Ormstown Observer",
+        "alt_en": "Backyard chickens in a garden",
+        "alt_fr": "Poules en liberté dans un jardin"
+      }
+    }
+  ],
+  "cards": [
+    {
+      "slug": "toit-vert-development",
+      "path_en": "/en/toit-vert-development/",
+      "path_fr": "/fr/toit-vert-development/",
+      "label_en": "Investigation",
+      "label_fr": "Enquête",
+      "hed_en": "A 24-unit development next to Le Toit Vert — and almost no one could have known",
+      "hed_fr": "Un projet de 24 logements voisin du Toit Vert — et presque personne ne pouvait le savoir",
+      "deck_en": "Almost no one could have known the public consultation was July 2. Council took the first step on June 1 — in the same meeting it narrowed how the town publishes its notices.",
+      "deck_fr": "Presque personne ne pouvait savoir que la consultation avait lieu le 2 juillet. Le conseil a franchi la première étape le 1er juin — dans la séance même qui a réduit la portée des avis publics.",
+      "meta_en": "PPCMOI 2026-041",
+      "meta_fr": "PPCMOI 2026-041",
+      "cta_en": "Read the investigation →",
+      "cta_fr": "Lire l’enquête →",
+      "icon": "investigation",
+      "date_published": "2026-07-03",
+      "image": {
+        "src": "/images/toit-vert-ppcmoi-sign.jpg",
+        "position": "center",
+        "credit": "Photo: The Ormstown Observer",
+        "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
+        "alt_fr": "Affiche d’avis public sur le terrain vacant au 52 rue Church annonçant le PPCMOI 2026-041"
+      }
+    },
+    {
+      "slug": "bell-tower-correspondence",
+      "path_en": "/en/bell-tower-correspondence/",
+      "path_fr": "/fr/bell-tower-correspondence/",
+      "label_en": "Documentary Record",
+      "label_fr": "Dossier",
+      "hed_en": "The complete correspondence record: the Observer and Bell Mobilité",
+      "hed_fr": "Le dossier de correspondance complet : l’Observer et Bell Mobilité",
+      "deck_en": "Every letter in the written exchange, in order. Four letters over eight days.",
+      "deck_fr": "Chaque lettre de l’échange écrit, dans l’ordre. Quatre lettres en huit jours.",
+      "meta_en": "Bell Tower · Projet E3640",
+      "meta_fr": "Bell Tower · Projet E3640",
+      "cta_en": "Read the letters →",
+      "cta_fr": "Lire les lettres →",
+      "icon": "investigation",
+      "date_published": "2026-07-05",
+      "image": {
+        "src": "/images/tower.jpg",
+        "position": "center 30%",
+        "credit": "Photo: The Ormstown Observer",
+        "alt_en": "Cell tower against blue sky",
+        "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
+      }
+    },
+    {
+      "slug": "editorials-language-policy-2026",
+      "path_en": "/en/editorials/language-policy-2026/",
+      "path_fr": "/fr/editoriaux/politique-linguistique-2026/",
+      "label_en": "Editorial",
+      "label_fr": "Éditorial",
+      "hed_en": "When policy allows more than practice — Ormstown’s language directive and the gap residents live with",
+      "hed_fr": "Quand la politique permet plus que la pratique — la directive linguistique d’Ormstown et l’écart que vivent les résidents",
+      "deck_en": "",
+      "deck_fr": "",
+      "meta_en": "June 25, 2026",
+      "meta_fr": "25 juin 2026",
+      "cta_en": "Read the editorial →",
+      "cta_fr": "Lire l’éditorial →",
+      "icon": "editorial",
+      "date_published": "2026-06-25",
+      "image": {
+        "src": "/images/ormstown-language-policy.jpg",
+        "position": "center top",
+        "credit": "Source: ormstown.ca",
+        "alt_en": "Screenshot of ormstown.ca’s terms of use, published in French only",
+        "alt_fr": "Capture d’écran des conditions d’utilisation d’ormstown.ca, publiées en français seulement"
+      }
+    }
+  ],
+  "latest": [
+    {
+      "slug": "bell-tower-pre-vote",
+      "path_en": "/en/bell-tower-pre-vote/",
+      "path_fr": "/fr/bell-tower-pre-vote/",
+      "label_en": "Investigation",
+      "label_fr": "Enquête",
+      "hed_en": "Before Monday’s vote: what residents were never told about the Bell tower",
+      "hed_fr": "Avant le vote de lundi : ce qu’on n’a jamais dit aux résidents au sujet de la tour Bell",
+      "date_published": "2026-07-05"
+    },
+    {
+      "slug": "bell-tower-correspondence",
+      "path_en": "/en/bell-tower-correspondence/",
+      "path_fr": "/fr/bell-tower-correspondence/",
+      "label_en": "Documentary Record",
+      "label_fr": "Dossier",
+      "hed_en": "The complete correspondence record: the Observer and Bell Mobilité — Bell Tower · Projet E3640",
+      "hed_fr": "Le dossier de correspondance complet : l’Observer et Bell Mobilité — Bell Tower · Projet E3640",
+      "date_published": "2026-07-05"
+    },
+    {
+      "slug": "toit-vert-development",
+      "path_en": "/en/toit-vert-development/",
+      "path_fr": "/fr/toit-vert-development/",
+      "label_en": "Investigation",
+      "label_fr": "Enquête",
+      "hed_en": "A 24-unit development next to Le Toit Vert — and almost no one could have known — PPCMOI 2026-041",
+      "hed_fr": "Un projet de 24 logements voisin du Toit Vert — et presque personne ne pouvait le savoir — PPCMOI 2026-041",
+      "date_published": "2026-07-03"
+    },
+    {
+      "slug": "editorials-language-policy-2026",
+      "path_en": "/en/editorials/language-policy-2026/",
+      "path_fr": "/fr/editoriaux/politique-linguistique-2026/",
+      "label_en": "Editorial",
+      "label_fr": "Éditorial",
+      "hed_en": "When policy allows more than practice — Ormstown’s language directive and the gap residents live with",
+      "hed_fr": "Quand la politique permet plus que la pratique — la directive linguistique d’Ormstown et l’écart que vivent les résidents",
+      "date_published": "2026-06-25"
+    },
+    {
+      "slug": "bylaws-regulations-council-procedure-2-2026",
+      "path_en": "/en/bylaws-regulations/council-procedure-2-2026/",
+      "path_fr": "/fr/bylaws-regulations/reglement-regie-interne-2-2026/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "How Ormstown council meetings actually work now: Bylaw 2-2026 explained — Règlement 2-2026",
+      "hed_fr": "Comment fonctionnent vraiment les séances du conseil d’Ormstown : le Règlement 2-2026 expliqué — Règlement 2-2026",
+      "date_published": "2026-06-21"
+    },
+    {
+      "slug": "bylaws-regulations-piia-152-2023",
+      "path_en": "/en/bylaws-regulations/piia-152-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-piia-152-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "PIIA explained: when a renovation needs council approval first — Règlement 152-2023",
+      "hed_fr": "Le PIIA expliqué : quand une rénovation exige l’accord du conseil — Règlement 152-2023",
+      "date_published": "2026-06-20"
+    },
+    {
+      "slug": "bylaws-regulations-animal-control-131-2026",
+      "path_en": "/en/bylaws-regulations/animal-control-131-2026/",
+      "path_fr": "/fr/bylaws-regulations/reglement-animaux-131-2026/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens — Règlement 131-2026",
+      "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises — Règlement 131-2026",
+      "date_published": "2026-06-18"
+    },
+    {
+      "slug": "bell-tower-june10",
+      "path_en": "/en/bell-tower-june10/",
+      "path_fr": "/fr/bell-tower-june10/",
+      "label_en": "Investigation",
+      "label_fr": "Enquête",
+      "hed_en": "Bell’s information session: what was said — Bell Tower · Projet E3640",
+      "hed_fr": "Séance d’information Bell : ce qui a été dit — Bell Tower · Projet E3640",
+      "date_published": "2026-06-15"
+    },
+    {
+      "slug": "bell-tower",
+      "path_en": "/en/bell-tower/",
+      "path_fr": "/fr/bell-tower/",
+      "label_en": "Investigation",
+      "label_fr": "Enquête",
+      "hed_en": "A 36-metre tower proposed for an Ormstown park lot — Bell Tower · Projet E3640",
+      "hed_fr": "Une tour de 36 mètres proposée sur un terrain municipal d’Ormstown — Bell Tower · Projet E3640",
+      "date_published": "2026-06-09"
+    },
+    {
+      "slug": "bell-tower-explainer",
+      "path_en": "/en/bell-tower-explainer/",
+      "path_fr": "/fr/bell-tower-explainer/",
+      "label_en": "Investigation",
+      "label_fr": "Enquête",
+      "hed_en": "Before you walk into that room — Bell Tower · Projet E3640",
+      "hed_fr": "Avant d’entrer dans cette salle, lisez ceci — Bell Tower · Projet E3640",
+      "date_published": "2026-06-08"
+    }
+  ]
+}
