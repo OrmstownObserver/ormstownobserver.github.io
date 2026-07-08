@@ -175,6 +175,26 @@
   ],
   "latest": [
     {
+      "slug": "piia-piia-101",
+      "path_en": "/en/piia/piia-101/",
+      "path_fr": "/fr/piia/piia-101/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "PIIA 101: the bylaw that judges how your project looks",
+      "hed_fr": "Le PIIA 101 : le règlement qui juge l’apparence de votre projet",
+      "date_published": "2026-07-07"
+    },
+    {
+      "slug": "piia-business-signs",
+      "path_en": "/en/piia/business-signs/",
+      "path_fr": "/fr/piia/enseignes-commerces/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Opening a shop in Ormstown? Your sign and storefront may need council approval first",
+      "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
+      "date_published": "2026-07-07"
+    },
+    {
       "slug": "bell-tower-pre-vote",
       "path_en": "/en/bell-tower-pre-vote/",
       "path_fr": "/fr/bell-tower-pre-vote/",
@@ -253,26 +273,6 @@
       "hed_en": "Bell’s information session: what was said — Bell Tower · Projet E3640",
       "hed_fr": "Séance d’information Bell : ce qui a été dit — Bell Tower · Projet E3640",
       "date_published": "2026-06-15"
-    },
-    {
-      "slug": "bell-tower",
-      "path_en": "/en/bell-tower/",
-      "path_fr": "/fr/bell-tower/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "A 36-metre tower proposed for an Ormstown park lot — Bell Tower · Projet E3640",
-      "hed_fr": "Une tour de 36 mètres proposée sur un terrain municipal d’Ormstown — Bell Tower · Projet E3640",
-      "date_published": "2026-06-09"
-    },
-    {
-      "slug": "bell-tower-explainer",
-      "path_en": "/en/bell-tower-explainer/",
-      "path_fr": "/fr/bell-tower-explainer/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "Before you walk into that room — Bell Tower · Projet E3640",
-      "hed_fr": "Avant d’entrer dans cette salle, lisez ceci — Bell Tower · Projet E3640",
-      "date_published": "2026-06-08"
     }
   ]
 }
