@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-08T22:24:44.000Z",
+  "generated_at": "2026-07-08T22:30:30.000Z",
   "hero": {
     "slug": "council-watch-july-6-2026",
     "path_en": "/en/council-watch/july-6-2026/",
@@ -27,52 +27,40 @@
   },
   "rail": [
     {
-      "slug": "bell-tower",
-      "path_en": "/en/bell-tower/",
-      "path_fr": "/fr/bell-tower/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "A 36-metre tower proposed for an Ormstown park lot",
-      "hed_fr": "Une tour de 36 mètres proposée sur un terrain municipal d’Ormstown",
+      "slug": "piia-business-signs",
+      "path_en": "/en/piia/business-signs/",
+      "path_fr": "/fr/piia/enseignes-commerces/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Opening a shop in Ormstown? Your sign and storefront may need council approval first",
+      "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
       "deck_en": "",
       "deck_fr": "",
-      "meta_en": "Bell Tower · Projet E3640",
-      "meta_fr": "Bell Tower · Projet E3640",
-      "cta_en": "Read the investigation →",
-      "cta_fr": "Lire l’enquête →",
-      "icon": "investigation",
-      "date_published": "2026-06-09",
-      "image": {
-        "src": "/images/tower.jpg",
-        "position": "center 30%",
-        "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Cell tower against blue sky",
-        "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
-      }
+      "meta_en": "PIIA Explained · Part 2",
+      "meta_fr": "Le PIIA expliqué · Partie 2",
+      "cta_en": "Read the explainer →",
+      "cta_fr": "Lire l’explicateur →",
+      "icon": "bylaws",
+      "date_published": "2026-07-07",
+      "image": null
     },
     {
-      "slug": "bell-tower-pre-vote",
-      "path_en": "/en/bell-tower-pre-vote/",
-      "path_fr": "/fr/bell-tower-pre-vote/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "Before Monday’s vote: what residents were never told about the Bell tower",
-      "hed_fr": "Avant le vote de lundi : ce qu’on n’a jamais dit aux résidents au sujet de la tour Bell",
+      "slug": "bylaws-regulations-council-procedure-2-2026",
+      "path_en": "/en/bylaws-regulations/council-procedure-2-2026/",
+      "path_fr": "/fr/bylaws-regulations/reglement-regie-interne-2-2026/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "How Ormstown council meetings actually work now: Bylaw 2-2026 explained",
+      "hed_fr": "Comment fonctionnent vraiment les séances du conseil d’Ormstown : le Règlement 2-2026 expliqué",
       "deck_en": "",
       "deck_fr": "",
-      "meta_en": "July 5, 2026",
-      "meta_fr": "5 juillet 2026",
-      "cta_en": "Read the investigation →",
-      "cta_fr": "Lire l’enquête →",
-      "icon": "investigation",
-      "date_published": "2026-07-05",
-      "image": {
-        "src": "/images/tower.jpg",
-        "position": "center 30%",
-        "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Cell tower against blue sky",
-        "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
-      }
+      "meta_en": "Règlement 2-2026",
+      "meta_fr": "Règlement 2-2026",
+      "cta_en": "Read the explainer →",
+      "cta_fr": "Lire l’explicateur →",
+      "icon": "bylaws",
+      "date_published": "2026-06-21",
+      "image": null
     },
     {
       "slug": "bylaws-regulations-animal-control-131-2026",
@@ -149,27 +137,27 @@
       }
     },
     {
-      "slug": "bell-tower-correspondence",
-      "path_en": "/en/bell-tower-correspondence/",
-      "path_fr": "/fr/bell-tower-correspondence/",
-      "label_en": "Documentary Record",
-      "label_fr": "Dossier",
-      "hed_en": "The complete correspondence record: the Observer and Bell Mobilité",
-      "hed_fr": "Le dossier de correspondance complet : l’Observer et Bell Mobilité",
-      "deck_en": "Every letter in the written exchange, in order. Four letters over eight days.",
-      "deck_fr": "Chaque lettre de l’échange écrit, dans l’ordre. Quatre lettres en huit jours.",
-      "meta_en": "Bell Tower · Projet E3640",
-      "meta_fr": "Bell Tower · Projet E3640",
-      "cta_en": "Read the investigation →",
-      "cta_fr": "Lire l’enquête →",
-      "icon": "investigation",
-      "date_published": "2026-07-05",
+      "slug": "editorials-language-policy-2026",
+      "path_en": "/en/editorials/language-policy-2026/",
+      "path_fr": "/fr/editoriaux/politique-linguistique-2026/",
+      "label_en": "Editorial",
+      "label_fr": "Éditorial",
+      "hed_en": "When policy allows more than practice — Ormstown’s language directive and the gap residents live with",
+      "hed_fr": "Quand la politique permet plus que la pratique — la directive linguistique d’Ormstown et l’écart que vivent les résidents",
+      "deck_en": "",
+      "deck_fr": "",
+      "meta_en": "June 25, 2026",
+      "meta_fr": "25 juin 2026",
+      "cta_en": "Read the editorial →",
+      "cta_fr": "Lire l’éditorial →",
+      "icon": "editorial",
+      "date_published": "2026-06-25",
       "image": {
-        "src": "/images/bell-tower-correspondence.jpg",
-        "position": "center 30%",
-        "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Cell tower against blue sky",
-        "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
+        "src": "/images/ormstown-language-policy.jpg",
+        "position": "center top",
+        "credit": "Source: ormstown.ca",
+        "alt_en": "Screenshot of ormstown.ca’s terms of use, published in French only",
+        "alt_fr": "Capture d’écran des conditions d’utilisation d’ormstown.ca, publiées en français seulement"
       }
     }
   ],
@@ -203,26 +191,6 @@
       "hed_en": "Opening a shop in Ormstown? Your sign and storefront may need council approval first",
       "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
       "date_published": "2026-07-07"
-    },
-    {
-      "slug": "bell-tower-pre-vote",
-      "path_en": "/en/bell-tower-pre-vote/",
-      "path_fr": "/fr/bell-tower-pre-vote/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "Before Monday’s vote: what residents were never told about the Bell tower",
-      "hed_fr": "Avant le vote de lundi : ce qu’on n’a jamais dit aux résidents au sujet de la tour Bell",
-      "date_published": "2026-07-05"
-    },
-    {
-      "slug": "bell-tower-correspondence",
-      "path_en": "/en/bell-tower-correspondence/",
-      "path_fr": "/fr/bell-tower-correspondence/",
-      "label_en": "Documentary Record",
-      "label_fr": "Dossier",
-      "hed_en": "The complete correspondence record: the Observer and Bell Mobilité — Bell Tower · Projet E3640",
-      "hed_fr": "Le dossier de correspondance complet : l’Observer et Bell Mobilité — Bell Tower · Projet E3640",
-      "date_published": "2026-07-05"
     },
     {
       "slug": "toit-vert-development",
@@ -273,6 +241,16 @@
       "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens — Règlement 131-2026",
       "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises — Règlement 131-2026",
       "date_published": "2026-06-18"
+    },
+    {
+      "slug": "council-watch-june-1-2026",
+      "path_en": "/en/council-watch/june-1-2026/",
+      "path_fr": "/fr/conseil-municipal/1-juin-2026/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council Watch: June 1, 2026 — 2025 financials tabled, 24-unit housing project proposed, and new public notice rules",
+      "hed_fr": "Conseil municipal : 1er juin 2026 — états financiers 2025 déposés, projet de 24 logements proposé et nouvelles règles d’avis public",
+      "date_published": "2026-06-01"
     }
   ]
 }
