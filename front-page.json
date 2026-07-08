@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-08T01:42:32.126Z",
+  "generated_at": "2026-07-08T01:47:08.649Z",
   "hero": {
     "slug": "bell-tower-pre-vote",
     "path_en": "/en/bell-tower-pre-vote/",
@@ -141,7 +141,7 @@
       "icon": "investigation",
       "date_published": "2026-07-05",
       "image": {
-        "src": "/images/tower.jpg",
+        "src": "/images/bell-tower-correspondence.jpg",
         "position": "center 30%",
         "credit": "Photo: The Ormstown Observer",
         "alt_en": "Cell tower against blue sky",
