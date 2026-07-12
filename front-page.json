@@ -1,28 +1,28 @@
 {
   "version": 1,
-  "generated_at": "2026-07-08T22:30:30.000Z",
+  "generated_at": "2026-07-12T02:23:27.000Z",
   "hero": {
-    "slug": "council-watch-july-6-2026",
-    "path_en": "/en/council-watch/july-6-2026/",
-    "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
-    "label_en": "Council Watch",
-    "label_fr": "Conseil municipal",
-    "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
-    "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
-    "deck_en": "A recorded 7–0 vote authorized the Bell Mobilité tower lease. Council also authorized a road-works tender under the $3.7M MTQ subsidy, named a new deputy mayor, and moved two PPCMOI housing files to the register stage.",
-    "deck_fr": "Un vote nominal de 7 contre 0 autorise le bail de la tour Bell Mobilité. Le conseil autorise aussi un appel d'offres de voirie dans le cadre de la subvention de 3,7 M$ du MTQ, nomme un nouveau maire suppléant et fait passer deux dossiers PPCMOI à l'étape du registre.",
-    "meta_en": "July 8, 2026",
-    "meta_fr": "8 juillet 2026",
-    "cta_en": "Read the recap →",
-    "cta_fr": "Lire le compte rendu →",
-    "icon": "council",
-    "date_published": "2026-07-08",
+    "slug": "toit-vert-development",
+    "path_en": "/en/toit-vert-development/",
+    "path_fr": "/fr/toit-vert-development/",
+    "label_en": "Investigation",
+    "label_fr": "Enquête",
+    "hed_en": "Council approves 24-unit Church Street project; residents have until July 16 to demand a referendum",
+    "hed_fr": "Le conseil approuve le projet de 24 logements rue Church; les citoyens ont jusqu'au 16 juillet pour demander un référendum",
+    "deck_en": "Council adopted the second draft resolution for PPCMOI 2026-041 on July 6. Residents in zones R-7, R-6 and R-8 now have until 4:30 p.m. on July 16 to require that any of its six zoning departures be submitted to a vote.",
+    "deck_fr": "Le conseil a adopté le second projet de résolution du PPCMOI 2026-041 le 6 juillet. Les citoyens des zones R-7, R-6 et R-8 ont jusqu'à 16 h 30 le 16 juillet pour exiger qu'une des six dérogations soit soumise à un vote.",
+    "meta_en": "PPCMOI 2026-041",
+    "meta_fr": "PPCMOI 2026-041",
+    "cta_en": "Read the investigation →",
+    "cta_fr": "Lire l’enquête →",
+    "icon": "investigation",
+    "date_published": "2026-07-11",
     "image": {
-      "src": "/images/tower.jpg",
-      "position": "center 30%",
+      "src": "/images/toit-vert-development.jpg",
+      "position": "center",
       "credit": "Photo: The Ormstown Observer",
-      "alt_en": "Cell tower against blue sky",
-      "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
+      "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
+      "alt_fr": "Affiche d’avis public sur le terrain vacant au 52 rue Church annonçant le PPCMOI 2026-041"
     }
   },
   "rail": [
@@ -63,32 +63,6 @@
       "image": null
     },
     {
-      "slug": "bylaws-regulations-animal-control-131-2026",
-      "path_en": "/en/bylaws-regulations/animal-control-131-2026/",
-      "path_fr": "/fr/bylaws-regulations/reglement-animaux-131-2026/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens",
-      "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises",
-      "deck_en": "",
-      "deck_fr": "",
-      "meta_en": "Règlement 131-2026",
-      "meta_fr": "Règlement 131-2026",
-      "cta_en": "Read the explainer →",
-      "cta_fr": "Lire l’explicateur →",
-      "icon": "bylaws",
-      "date_published": "2026-06-18",
-      "image": {
-        "src": "/images/chickens.jpg",
-        "position": "center 60%",
-        "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Backyard chickens in a garden",
-        "alt_fr": "Poules en liberté dans un jardin"
-      }
-    }
-  ],
-  "cards": [
-    {
       "slug": "piia-piia-101",
       "path_en": "/en/piia/piia-101/",
       "path_fr": "/fr/piia/piia-101/",
@@ -111,29 +85,55 @@
         "alt_en": "A chalkboard with “PIIA 101” written on it in chalk",
         "alt_fr": "Un tableau noir sur lequel est écrit « PIIA 101 » à la craie"
       }
+    }
+  ],
+  "cards": [
+    {
+      "slug": "council-watch-july-6-2026",
+      "path_en": "/en/council-watch/july-6-2026/",
+      "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
+      "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
+      "deck_en": "A recorded 7–0 vote authorized the Bell Mobilité tower lease. Council also authorized a road-works tender under the $3.7M MTQ subsidy, named a new deputy mayor, and moved two PPCMOI housing files to the register stage.",
+      "deck_fr": "Un vote nominal de 7 contre 0 autorise le bail de la tour Bell Mobilité. Le conseil autorise aussi un appel d'offres de voirie dans le cadre de la subvention de 3,7 M$ du MTQ, nomme un nouveau maire suppléant et fait passer deux dossiers PPCMOI à l'étape du registre.",
+      "meta_en": "July 8, 2026",
+      "meta_fr": "8 juillet 2026",
+      "cta_en": "Read the recap →",
+      "cta_fr": "Lire le compte rendu →",
+      "icon": "council",
+      "date_published": "2026-07-08",
+      "image": {
+        "src": "/images/tower.jpg",
+        "position": "center 30%",
+        "credit": "Photo: The Ormstown Observer",
+        "alt_en": "Cell tower against blue sky",
+        "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
+      }
     },
     {
-      "slug": "toit-vert-development",
-      "path_en": "/en/toit-vert-development/",
-      "path_fr": "/fr/toit-vert-development/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "A 24-unit development next to Le Toit Vert — and almost no one could have known",
-      "hed_fr": "Un projet de 24 logements voisin du Toit Vert — et presque personne ne pouvait le savoir",
-      "deck_en": "Almost no one could have known the public consultation was July 2. Council took the first step on June 1 — in the same meeting it narrowed how the town publishes its notices.",
-      "deck_fr": "Presque personne ne pouvait savoir que la consultation avait lieu le 2 juillet. Le conseil a franchi la première étape le 1er juin — dans la séance même qui a réduit la portée des avis publics.",
-      "meta_en": "PPCMOI 2026-041",
-      "meta_fr": "PPCMOI 2026-041",
-      "cta_en": "Read the investigation →",
-      "cta_fr": "Lire l’enquête →",
-      "icon": "investigation",
-      "date_published": "2026-07-03",
+      "slug": "bylaws-regulations-animal-control-131-2026",
+      "path_en": "/en/bylaws-regulations/animal-control-131-2026/",
+      "path_fr": "/fr/bylaws-regulations/reglement-animaux-131-2026/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens",
+      "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises",
+      "deck_en": "",
+      "deck_fr": "",
+      "meta_en": "Règlement 131-2026",
+      "meta_fr": "Règlement 131-2026",
+      "cta_en": "Read the explainer →",
+      "cta_fr": "Lire l’explicateur →",
+      "icon": "bylaws",
+      "date_published": "2026-06-18",
       "image": {
-        "src": "/images/toit-vert-ppcmoi-sign.jpg",
-        "position": "center",
+        "src": "/images/chickens.jpg",
+        "position": "center 60%",
         "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
-        "alt_fr": "Affiche d’avis public sur le terrain vacant au 52 rue Church annonçant le PPCMOI 2026-041"
+        "alt_en": "Backyard chickens in a garden",
+        "alt_fr": "Poules en liberté dans un jardin"
       }
     },
     {
@@ -162,6 +162,26 @@
     }
   ],
   "latest": [
+    {
+      "slug": "toit-vert-development",
+      "path_en": "/en/toit-vert-development/",
+      "path_fr": "/fr/toit-vert-development/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council approves 24-unit Church Street project; residents have until July 16 to demand a referendum — PPCMOI 2026-041",
+      "hed_fr": "Le conseil approuve le projet de 24 logements rue Church; les citoyens ont jusqu'au 16 juillet pour demander un référendum — PPCMOI 2026-041",
+      "date_published": "2026-07-11"
+    },
+    {
+      "slug": "piia-homeowners-heritage-core",
+      "path_en": "/en/piia/homeowners-heritage-core/",
+      "path_fr": "/fr/piia/proprietaires-noyau-villageois/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Paint, roofs and front galleries: what village-core homeowners must know before they renovate — PIIA Explained — Part 3",
+      "hed_fr": "Peinture, toitures et galeries : ce que les propriétaires du noyau villageois doivent savoir avant de rénover — PIIA Explained — Part 3",
+      "date_published": "2026-07-10"
+    },
     {
       "slug": "council-watch-july-6-2026",
       "path_en": "/en/council-watch/july-6-2026/",
@@ -193,14 +213,24 @@
       "date_published": "2026-07-07"
     },
     {
-      "slug": "toit-vert-development",
-      "path_en": "/en/toit-vert-development/",
-      "path_fr": "/fr/toit-vert-development/",
+      "slug": "bell-tower-pre-vote",
+      "path_en": "/en/bell-tower-pre-vote/",
+      "path_fr": "/fr/bell-tower-pre-vote/",
       "label_en": "Investigation",
       "label_fr": "Enquête",
-      "hed_en": "A 24-unit development next to Le Toit Vert — and almost no one could have known — PPCMOI 2026-041",
-      "hed_fr": "Un projet de 24 logements voisin du Toit Vert — et presque personne ne pouvait le savoir — PPCMOI 2026-041",
-      "date_published": "2026-07-03"
+      "hed_en": "Before Monday’s vote: what residents were never told about the Bell tower",
+      "hed_fr": "Avant le vote de lundi : ce qu’on n’a jamais dit aux résidents au sujet de la tour Bell",
+      "date_published": "2026-07-05"
+    },
+    {
+      "slug": "bell-tower-correspondence",
+      "path_en": "/en/bell-tower-correspondence/",
+      "path_fr": "/fr/bell-tower-correspondence/",
+      "label_en": "Documentary Record",
+      "label_fr": "Dossier",
+      "hed_en": "The complete correspondence record: the Observer and Bell Mobilité — Bell Tower · Projet E3640",
+      "hed_fr": "Le dossier de correspondance complet : l’Observer et Bell Mobilité — Bell Tower · Projet E3640",
+      "date_published": "2026-07-05"
     },
     {
       "slug": "editorials-language-policy-2026",
@@ -221,36 +251,6 @@
       "hed_en": "How Ormstown council meetings actually work now: Bylaw 2-2026 explained — Règlement 2-2026",
       "hed_fr": "Comment fonctionnent vraiment les séances du conseil d’Ormstown : le Règlement 2-2026 expliqué — Règlement 2-2026",
       "date_published": "2026-06-21"
-    },
-    {
-      "slug": "bylaws-regulations-piia-152-2023",
-      "path_en": "/en/bylaws-regulations/piia-152-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-piia-152-2023/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "PIIA explained: when a renovation needs council approval first — Règlement 152-2023",
-      "hed_fr": "Le PIIA expliqué : quand une rénovation exige l’accord du conseil — Règlement 152-2023",
-      "date_published": "2026-06-20"
-    },
-    {
-      "slug": "bylaws-regulations-animal-control-131-2026",
-      "path_en": "/en/bylaws-regulations/animal-control-131-2026/",
-      "path_fr": "/fr/bylaws-regulations/reglement-animaux-131-2026/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens — Règlement 131-2026",
-      "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises — Règlement 131-2026",
-      "date_published": "2026-06-18"
-    },
-    {
-      "slug": "council-watch-june-1-2026",
-      "path_en": "/en/council-watch/june-1-2026/",
-      "path_fr": "/fr/conseil-municipal/1-juin-2026/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Council Watch: June 1, 2026 — 2025 financials tabled, 24-unit housing project proposed, and new public notice rules",
-      "hed_fr": "Conseil municipal : 1er juin 2026 — états financiers 2025 déposés, projet de 24 logements proposé et nouvelles règles d’avis public",
-      "date_published": "2026-06-01"
     }
   ]
 }
