@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-17T02:53:59.000Z",
+  "generated_at": "2026-07-17T03:22:10.341Z",
   "hero": {
     "slug": "bell-tower-complete",
     "path_en": "/en/bell-tower-complete/",
@@ -18,7 +18,7 @@
     "icon": "investigation",
     "date_published": "2026-07-16",
     "image": {
-      "src": "/images/tower.jpg",
+      "src": "/images/bell-tower-complete.jpg",
       "position": "center 30%",
       "credit": "Photo: The Ormstown Observer",
       "alt_en": "Cell tower against blue sky",
@@ -30,17 +30,17 @@
       "slug": "toit-vert-development",
       "path_en": "/en/toit-vert-development/",
       "path_fr": "/fr/toit-vert-development/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
       "hed_en": "Council approves 24-unit Church Street project; residents have until July 16 to demand a referendum",
       "hed_fr": "Le conseil approuve le projet de 24 logements rue Church; les citoyens ont jusqu'au 16 juillet pour demander un référendum",
-      "deck_en": "",
-      "deck_fr": "",
+      "deck_en": "Council adopted the second draft resolution for PPCMOI 2026-041 on July 6. Residents in zones R-7, R-6 and R-8 now have until 4:30 p.m. on July 16 to require that any of its six zoning departures be submitted to a vote.",
+      "deck_fr": "Le conseil a adopté le second projet de résolution du PPCMOI 2026-041 le 6 juillet. Les citoyens des zones R-7, R-6 et R-8 ont jusqu'à 16 h 30 le 16 juillet pour exiger qu'une des six dérogations soit soumise à un vote.",
       "meta_en": "PPCMOI 2026-041",
       "meta_fr": "PPCMOI 2026-041",
-      "cta_en": "Read the investigation →",
-      "cta_fr": "Lire l’enquête →",
-      "icon": "investigation",
+      "cta_en": "Read the recap →",
+      "cta_fr": "Lire le compte rendu →",
+      "icon": "council",
       "date_published": "2026-07-11",
       "image": {
         "src": "/images/toit-vert-development.jpg",
@@ -60,8 +60,8 @@
       "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
       "deck_en": "",
       "deck_fr": "",
-      "meta_en": "PIIA Explained · Part 2",
-      "meta_fr": "Le PIIA expliqué · Partie 2",
+      "meta_en": "July 7, 2026",
+      "meta_fr": "7 juillet 2026",
       "cta_en": "Read the explainer →",
       "cta_fr": "Lire l’explicateur →",
       "icon": "bylaws",
@@ -76,21 +76,15 @@
       "label_fr": "Règlements",
       "hed_en": "PIIA 101: the bylaw that judges how your project looks",
       "hed_fr": "Le PIIA 101 : le règlement qui juge l’apparence de votre projet",
-      "deck_en": "Part one of a six-part series. Before a permit is issued in a PIIA zone, council decides whether your project looks right — here is how that judgement actually gets made.",
-      "deck_fr": "Premier volet d’une série de six. Avant la délivrance d’un permis en zone PIIA, le conseil juge l’apparence de votre projet — voici comment cette décision se prend réellement.",
-      "meta_en": "PIIA Explained · Part 1",
-      "meta_fr": "Le PIIA expliqué · Partie 1",
+      "deck_en": "",
+      "deck_fr": "",
+      "meta_en": "July 7, 2026",
+      "meta_fr": "7 juillet 2026",
       "cta_en": "Read the explainer →",
       "cta_fr": "Lire l’explicateur →",
       "icon": "bylaws",
       "date_published": "2026-07-07",
-      "image": {
-        "src": "/images/piia-101-chalkboard.jpg",
-        "position": "center",
-        "credit": "Illustration: The Ormstown Observer",
-        "alt_en": "A chalkboard with “PIIA 101” written on it in chalk",
-        "alt_fr": "Un tableau noir sur lequel est écrit « PIIA 101 » à la craie"
-      }
+      "image": null
     }
   ],
   "cards": [
@@ -103,7 +97,7 @@
       "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
       "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
       "deck_en": "A recorded 7–0 vote authorized the Bell Mobilité tower lease. Council also authorized a road-works tender under the $3.7M MTQ subsidy, named a new deputy mayor, and moved two PPCMOI housing files to the register stage.",
-      "deck_fr": "Un vote nominal de 7 contre 0 autorise le bail de la tour Bell Mobilité. Le conseil autorise aussi un appel d'offres de voirie dans le cadre de la subvention de 3,7 M$ du MTQ, nomme un nouveau maire suppléant et fait passer deux dossiers PPCMOI à l'étape du registre.",
+      "deck_fr": "Un vote nominal de 7 contre 0 autorise le bail de la tour Bell Mobilité. Le conseil autorise aussi un appel d'offres de voirie dans le cadre de la subvention de 3,7 M$ du MTQ, nomme un nouveau maire suppléant et fait passer deux dossiers PPCMOI à l'étape du registre.",
       "meta_en": "July 8, 2026",
       "meta_fr": "8 juillet 2026",
       "cta_en": "Read the recap →",
@@ -111,11 +105,11 @@
       "icon": "council",
       "date_published": "2026-07-08",
       "image": {
-        "src": "/images/tower.jpg",
-        "position": "center 30%",
+        "src": "/images/council-watch-july-6-2026.jpg",
+        "position": "center 55%",
         "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Cell tower against blue sky",
-        "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
+        "alt_en": "Ormstown town hall",
+        "alt_fr": "Hôtel de ville d'Ormstown"
       }
     },
     {
@@ -209,16 +203,6 @@
       "date_published": "2026-07-08"
     },
     {
-      "slug": "piia-piia-101",
-      "path_en": "/en/piia/piia-101/",
-      "path_fr": "/fr/piia/piia-101/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "PIIA 101: the bylaw that judges how your project looks",
-      "hed_fr": "Le PIIA 101 : le règlement qui juge l’apparence de votre projet",
-      "date_published": "2026-07-07"
-    },
-    {
       "slug": "piia-business-signs",
       "path_en": "/en/piia/business-signs/",
       "path_fr": "/fr/piia/enseignes-commerces/",
@@ -226,6 +210,16 @@
       "label_fr": "Règlements",
       "hed_en": "Opening a shop in Ormstown? Your sign and storefront may need council approval first",
       "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
+      "date_published": "2026-07-07"
+    },
+    {
+      "slug": "piia-piia-101",
+      "path_en": "/en/piia/piia-101/",
+      "path_fr": "/fr/piia/piia-101/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "PIIA 101: the bylaw that judges how your project looks",
+      "hed_fr": "Le PIIA 101 : le règlement qui juge l’apparence de votre projet",
       "date_published": "2026-07-07"
     },
     {
