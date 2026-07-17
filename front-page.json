@@ -1,31 +1,55 @@
 {
   "version": 1,
-  "generated_at": "2026-07-12T02:23:27.000Z",
+  "generated_at": "2026-07-17T02:53:59.000Z",
   "hero": {
-    "slug": "toit-vert-development",
-    "path_en": "/en/toit-vert-development/",
-    "path_fr": "/fr/toit-vert-development/",
+    "slug": "bell-tower-complete",
+    "path_en": "/en/bell-tower-complete/",
+    "path_fr": "/fr/bell-tower-complete/",
     "label_en": "Investigation",
     "label_fr": "Enquête",
-    "hed_en": "Council approves 24-unit Church Street project; residents have until July 16 to demand a referendum",
-    "hed_fr": "Le conseil approuve le projet de 24 logements rue Church; les citoyens ont jusqu'au 16 juillet pour demander un référendum",
-    "deck_en": "Council adopted the second draft resolution for PPCMOI 2026-041 on July 6. Residents in zones R-7, R-6 and R-8 now have until 4:30 p.m. on July 16 to require that any of its six zoning departures be submitted to a vote.",
-    "deck_fr": "Le conseil a adopté le second projet de résolution du PPCMOI 2026-041 le 6 juillet. Les citoyens des zones R-7, R-6 et R-8 ont jusqu'à 16 h 30 le 16 juillet pour exiger qu'une des six dérogations soit soumise à un vote.",
-    "meta_en": "PPCMOI 2026-041",
-    "meta_fr": "PPCMOI 2026-041",
+    "hed_en": "The Bell tower file, from start to finish",
+    "hed_fr": "Le dossier de la tour Bell, du début à la fin",
+    "deck_en": "A single consolidated record of Ormstown’s first federal telecom consultation — the 36-metre Bell Mobilité tower authorized July 6. What the rules required, what was done well, where the documents show gaps, and what residents can take from it for next time.",
+    "deck_fr": "Un dossier unique de la première consultation fédérale en télécommunications d’Ormstown — la tour Bell Mobilité de 36 mètres autorisée le 6 juillet. Ce que les règles exigeaient, ce qui a été bien fait, où les documents montrent des lacunes, et ce que les citoyens peuvent en retenir pour la prochaine fois.",
+    "meta_en": "Bell Tower · Projet E3640",
+    "meta_fr": "Bell Tower · Projet E3640",
     "cta_en": "Read the investigation →",
     "cta_fr": "Lire l’enquête →",
     "icon": "investigation",
-    "date_published": "2026-07-11",
+    "date_published": "2026-07-16",
     "image": {
-      "src": "/images/toit-vert-development.jpg",
-      "position": "center",
+      "src": "/images/tower.jpg",
+      "position": "center 30%",
       "credit": "Photo: The Ormstown Observer",
-      "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
-      "alt_fr": "Affiche d’avis public sur le terrain vacant au 52 rue Church annonçant le PPCMOI 2026-041"
+      "alt_en": "Cell tower against blue sky",
+      "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
     }
   },
   "rail": [
+    {
+      "slug": "toit-vert-development",
+      "path_en": "/en/toit-vert-development/",
+      "path_fr": "/fr/toit-vert-development/",
+      "label_en": "Investigation",
+      "label_fr": "Enquête",
+      "hed_en": "Council approves 24-unit Church Street project; residents have until July 16 to demand a referendum",
+      "hed_fr": "Le conseil approuve le projet de 24 logements rue Church; les citoyens ont jusqu'au 16 juillet pour demander un référendum",
+      "deck_en": "",
+      "deck_fr": "",
+      "meta_en": "PPCMOI 2026-041",
+      "meta_fr": "PPCMOI 2026-041",
+      "cta_en": "Read the investigation →",
+      "cta_fr": "Lire l’enquête →",
+      "icon": "investigation",
+      "date_published": "2026-07-11",
+      "image": {
+        "src": "/images/toit-vert-development.jpg",
+        "position": "center",
+        "credit": "Photo: The Ormstown Observer",
+        "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
+        "alt_fr": "Affiche d’avis public sur le terrain vacant au 52 rue Church annonçant le PPCMOI 2026-041"
+      }
+    },
     {
       "slug": "piia-business-signs",
       "path_en": "/en/piia/business-signs/",
@@ -42,24 +66,6 @@
       "cta_fr": "Lire l’explicateur →",
       "icon": "bylaws",
       "date_published": "2026-07-07",
-      "image": null
-    },
-    {
-      "slug": "bylaws-regulations-council-procedure-2-2026",
-      "path_en": "/en/bylaws-regulations/council-procedure-2-2026/",
-      "path_fr": "/fr/bylaws-regulations/reglement-regie-interne-2-2026/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "How Ormstown council meetings actually work now: Bylaw 2-2026 explained",
-      "hed_fr": "Comment fonctionnent vraiment les séances du conseil d’Ormstown : le Règlement 2-2026 expliqué",
-      "deck_en": "",
-      "deck_fr": "",
-      "meta_en": "Règlement 2-2026",
-      "meta_fr": "Règlement 2-2026",
-      "cta_en": "Read the explainer →",
-      "cta_fr": "Lire l’explicateur →",
-      "icon": "bylaws",
-      "date_published": "2026-06-21",
       "image": null
     },
     {
@@ -162,6 +168,16 @@
     }
   ],
   "latest": [
+    {
+      "slug": "bell-tower-complete",
+      "path_en": "/en/bell-tower-complete/",
+      "path_fr": "/fr/bell-tower-complete/",
+      "label_en": "Investigation",
+      "label_fr": "Enquête",
+      "hed_en": "The Bell tower file, from start to finish — Bell Tower · Projet E3640",
+      "hed_fr": "Le dossier de la tour Bell, du début à la fin — Bell Tower · Projet E3640",
+      "date_published": "2026-07-16"
+    },
     {
       "slug": "toit-vert-development",
       "path_en": "/en/toit-vert-development/",
