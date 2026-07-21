@@ -1,0 +1,2874 @@
+{
+ "version": 1,
+ "generated_at": "2026-07-21T20:07:37.316Z",
+ "document_count": 467,
+ "categories": [
+  {
+   "name": "AVIS PUBLIC",
+   "documents": [
+    {
+     "title": "2026-07-02 public-notice document fr",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/1mFNioedC-0mCVC1jbgG1cIuxY0qRnxv7/view?usp=drivesdk"
+    },
+    {
+     "title": "2026-07-02 public-notice document fr",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/1oAEvm2wu8Mp4ZuhUNxZFUzYc_6HwlZA-/view?usp=drivesdk"
+    },
+    {
+     "title": "12.-avis-public-entree-en-vigueur-signe",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1MzpwA6W3xje3-JhKBZ-jXt7qi-dfymMi/view?usp=drivesdk"
+    },
+    {
+     "title": "2.1-Avis-public-21-08-03",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1nNR3qPDddFMIz_lXkRJvVWI-m9fUv16s/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-01-24-Avis-public-Derogation-mineure-882-Route-201",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1TGDnVpEl8Cn33itZdZXbYTaDpLeNYPV2/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-02-13-Avis-Public-1266-rue-de-la-Vallee",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1DxXNdZxdgC7q1ZWynJTlWwAr4MJfs6wR/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-02-13-Avis-public-Derogation-mineure-10-bridge",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1kN_O-JF57Z9vXEYDhwyEAfkBT7cevFma/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-02-13-Avis-public-Derogation-mineure-73-75-lambton",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/18M928-b8cBjyzDRf47vcKS8hxkZMqNPT/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-10-29-Avis-public-Derogation-mineure-Lot-5-806-011",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1B4g4Nqx7s626jBT206rQlbjgCnkeOH0V/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-Seances-du-Conseil-calendrier",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1n9ggB5k0fqLoALqpNleH_R90iqIYmEMI/view?usp=drivesdk"
+    },
+    {
+     "title": "2e-Avis-public-Appel-de-candidatures",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1hyV-cGy_5D9RFnB_vVqSELJ8gig5fXRP/view?usp=drivesdk"
+    },
+    {
+     "title": "4.-Avis-public-de-depot-de-PR-signe",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1J_nF0OChVHXGjd0j9q_3MpG0r34YzgFn/view?usp=drivesdk"
+    },
+    {
+     "title": "6.-VF-Avis-public-dadoption-et-dentree-en-vigueur-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1qwUU3tEEKze6a3Ijx81SFKg8VwpzInWB/view?usp=drivesdk"
+    },
+    {
+     "title": "Annexe-A-Sommaire-des-couts-travaux-infrastructures",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1ZVAfI5aWy6GonIjPiLyBHxczblNgw0q8/view?usp=drivesdk"
+    },
+    {
+     "title": "Annonce-Formulaire VF FR-",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1WxBwlw29RsJ4nml4MeRdYCSa2glRQ_dy/view?usp=drivesdk"
+    },
+    {
+     "title": "Appel-doffres-pour-vente-du-rouleau-campacteur",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/19pyR8GJHoB4JYak18VDCD8U7b33UOA9m/view?usp=drivesdk"
+    },
+    {
+     "title": "Appel-doffres-pour-vente-du-vehicule-incendie-55",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1O4at_cEJdocQhKygd79F7YY8_Gne9int/view?usp=drivesdk"
+    },
+    {
+     "title": "Appel-offres-souffleur-a-neige",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1ANTsWOXDodlugTXKUDXCKViX_9jxjlsy/view?usp=drivesdk"
+    },
+    {
+     "title": "avis public 2 regl et 2 politiques",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/12rDThUJuwp6hhNbcuNl0c7YL2H6rg39d/view?usp=drivesdk"
+    },
+    {
+     "title": "avis public adoption 4 reglements",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1sPsvkdo057j5D4YUdu3NEEApjK4aEN-h/view?usp=drivesdk"
+    },
+    {
+     "title": "avis public de depot du rapport financier et du rapport du verificateur externe",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1oUJfzzodeGlNs1F6KKUyCEY9fANmQ6nd/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-de-consultation-publique-PPCMOI",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1oaskwK6dFHqkVXPwuPald4_LXCaSaM1L/view?usp=drivesdk"
+    },
+    {
+     "title": "avis-entree-en-vigueur-signe",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1SwU-eyiPA0CSETx846XkXyLFCgbCtcFR/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public Consultation Refonte-reglementaire-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1o1Qk5O-y4hNk4ihk22JL36yyq86qhuRi/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1l2tkMQxsjTlScEjQyYWAnUj8nQzVRgJB/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-1603-rue-Jamestown",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/15QpErq-YQSp6XXfPp8KbNYBfdM-mAKCW/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-23-12-14-Extra-1-2",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1rSSDLXr27Dj9snRlpoZagEEVU81cpk1e/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-1-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1k6rWx3yMQxUWgSRt5pqPihG7arHxDrV9/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-164-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1kXir5mBft07oJOPPJyuKwukUsmIQE85Q/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-165-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1q0CscrVQ2DH_LgRBbb9S9ksDQSFCUqMr/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Adoption-reglement-12-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1qFlwnmCpQkaq64BoERwEFXzHpXJrHKkx/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Adoption-reglement-167-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1ItAHPt9DZ3aabZMfcghp_W4MLJs2XjPA/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Appels-doffres-vente-de-vehicules-usages",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/12-vOKN_Wwt4nY8b0EwGdeLd9TYi_Cfck/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-ApprobationPHV Zonage UC",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1mHPTCSJQuplUCQsgwGHLTdSudllndnle/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-consultation-publique-148.1-2025-23-avril-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1f7LdRTTCjNlH9Dk85I7fAWqmoP0w4QfY/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-consultation-publique-148.2-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1dmFiPpls2vjhtUkxAVu4LTbgaIJklT2B/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-consultation-publique-148.3-2025-octobre-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1wzVX9lar7Bzu13er_UgHzZysL_d3V9CT/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-consultation-publique-signe",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/19u6mWn5x-LtBARTi3eLCTs5SvLugcWRQ/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dadoption",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/16tvJQnh1iczY2MQdp4pEheW31VJ_CyNA/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dadoption-3-regl-et-PPCMOI",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1PrB2xHD6QR39K7tkC-4-VF8T6DJSbx1M/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dadoption-du-budget",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1vZcZzlg1OhImuDtEob0Fz8jrl1F7UR8k/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dadoption-du-Reglement",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1LERkCuWU8Ggl2_FjbhFx-nSdLahZdNB-/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-consultation-ecrite-PPCMOI",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1OqDdjnKTzoTaqgMMlNpf_vTGC3ydmKd7/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-depot-du-projet",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1D0js4O11M3RDBZD1C8EhUJ1dx06h8to6/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-depot-du-projet-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1SzxJTfqiobYoOxyhvL05b9ug683SgBQL/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-depot-du-projet-2",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/17SMD6vxiS1faLAKwk--Qu3UPFGlp9WhU/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-depot-du-projet-3",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/10SbiJDswSHsz5KuajWgxz1I-N1oIfb8B/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-depot-du-projet-4",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1wnoEv-0j0-b9ywat27J2DwVoHP3Rv_ks/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-la-revision",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1JEGkrExleTg_LhMfImvyr5td4BBjroWA/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-scrutin",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1jLxK96Kut7JKOWH86_qoDuLrXX5VEPCP/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-delection-partielle",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/19od8uEAr7eglep4MiBo4anYiToWdFPme/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-delection-partielle-Addenda",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1B3NjKhJgHGCIG2vcnY-qghrr51E_mlsV/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-delection-VF-2",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1x-NYxwb1sZ0DYq4QHv-TLDQsIdmrJBUm/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Demolition-25-Church",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1utpG8vre0QtsWeM5SkShIW7MXIDLHmkL/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Demolition-du-1028-rang-des-Botreaux",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1xV18K0aIpCq8SytmTN-VZ2xVN1-9CelG/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Demolition-du-2-Bridge",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1US4KZhZI_0EIMHdYRyZTUwSP9e-lmOFY/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dentre-en-vigueur",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1yw7pwTR8TqA6md4w8ADi09Fe2QT2Z10-/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dentree-en-vigueur",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1POyPH7U6yKRKqFgf7IjpxRFwGnF_TIAV/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dentree-en-vigueur-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1KC3EIJKDKTNe9qatm8OcPLmHFAfTT5fg/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dentree-en-vigueur-2",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1yX0_QyivT7C4YPhppCXIiA36QD9fPL5K/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dentree-en-vigueur-3",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1PHPzaHiovgX683nSIYWxqWsrwpqH60hB/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dentree-en-vigueur-4",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1yucuZi2wO1SbwsiNcfQ4QcQbRMZRbNfW/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dentree-en-vigueur-5",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1_RY7UMDaJDjyP3d_rXyFQOtpg5Mnzvmx/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dentree-en-vigueur-6",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1hYo2YCVl-AClYi61nDvevW02TJ3T12tJ/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Depot-du-role-devaluation",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/12SE3mVvNV-JXpPH5IslZKtEGlcRXcKEy/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-depot-et-adoption-des-projets-de-reglements refonte",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1_J1uc1mqG6QsWBb4czh2HagKeAmWVopD/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-depot-signe.docx",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1b73amuI1DQ_2GlzlOJggssuaFAqaqupc/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Derogations-mineures",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1U8-NX2X8tKyZ27l8Ns9tNhI7q8mtr_6u/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-entree-en-vigueur-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1SiV4phmaTlq8o5OVEJHMQ8h-cz8ml0aK/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-proprietaires-non-domicilies",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1ycqxlON52ShCcIm-93G-brgAMotv196r/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Recensement-des-chiens-2",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1q6kg9QTLeEjqiiz0qIDFb1omrPLzW-Km/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-report-de-la-seance",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1TJxdWRcug9Z79LfiyiP-_6TTXn93U9wX/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-report-de-la-seance-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1wptvN1lBrLF9VkDc-ut-4ToXc5uhhYbM/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Seance-extra-22-01-24-002",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1TyNkSJi9Y2-MPnYh3DSkxRQ606AJ7Tt_/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Seance-extra-22-02-24",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1iiX99NuWYyj9FMZuTk1TXZmV44cvXAq9/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-seance-extra-ordinaire",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1OSLx4N3X4n_uvJvqJg_RT5RJUcG8pmnc/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-publication-dadoption-reglement-352-2025-MRC",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/10aAdMDnfkFAp_VkIWZtSu8XjSViRVff9/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-publique-Referendum.-PPCMOI",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1xzGeyv-9KYL8Q_lH-xxSPF_RysUIlGtR/view?usp=drivesdk"
+    },
+    {
+     "title": "AvisPublic DemandeReferendum 148.1-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1Rju0PvDsgko19WrT-lyq9Vo5jObCk5CA/view?usp=drivesdk"
+    },
+    {
+     "title": "Derogation-mineure",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1fC4cFIJF9MSfEiec2dMqFADxOxccINRi/view?usp=drivesdk"
+    },
+    {
+     "title": "ORM AP RecoursCMQ Refonte",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/18HGxJ89NU25yJhSOjZFWEGAmeQimm60Q/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-164-2025-Pavage-Botreaux",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1nIRWNbsIeEXNF-KmgU2PAwo5jrgWR_9P/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-165-2025-Travaux-infrastructures",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1oJgwAaDbM981RI8vnSVZ5ndSd4Wtu_JY/view?usp=drivesdk"
+    },
+    {
+     "title": "Role-de-perception-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1WGv8fQy_uD3nOzXUvDQhUoreOSj94UwB/view?usp=drivesdk"
+    },
+    {
+     "title": "Seance-extraordinaire-21-08-23",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1mBYc_630r-XVrCFDSqxwWBidypYaI44-/view?usp=drivesdk"
+    },
+    {
+     "title": "SKM C30823032213131",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1-79Thg2ldsaQmPQKusYZ3rKJy6X2g_q8/view?usp=drivesdk"
+    },
+    {
+     "title": "Vente-terrain-Appel-doffres",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1_xji3ssRzXyge0MK5r4MWgXEuhWW9xCq/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-22-01-10",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1lqB6eFMe-2ODHXnc_FBc4pxHTPBy9gUX/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-22-05-12",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1NBdFIGmUfDCQaT4lsNNw_2hPPxGZ9Z9K/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-22-06-06",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1RXKWE6qrZgnRQLoD2Wi_wFls_vydqLiy/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-22-07-07-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/16IbxjwUfCue2OjertQkEQ-LrwPqIck47/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-22-08-01-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/15h-aXI5uDtttt0YgoLJBdeH52rQdf1j8/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-22-08-24",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1shjZ0hogi8UIEWau9KOYeVysVpxQLyjb/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-22-12-12-BUDGET-2",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1CV7kvPVLdUPxuw8EH0JH-hLH6EphzVJo/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-Avis-public-dadoption-et-dentree-en-vigueur",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/15f-U5HaKBp2Rq1N_kyhL221FXkfA5mpP/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-Avis-public-Procedure-denregistrement-des-personnes-habiles-a-voter-",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1kF9t6a0lpk78k4S0pk8M4wfp7S6S3kCv/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-Reouverture-au-public-des-seances-du-conseil-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1ui2B0re2mUDmmAWO0Hj9vjDR2TAtYHaE/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-05-08-certificat procedure enregistrement",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1NRkoB0U5yPO1w_KEN0aDu0DOqL9PIH9N/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-05-08-certificat procedure enregistrement-1",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1WSfOfyPfWHeEu5TGFOcoZ1G6FCjl9gIE/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-publc-BUDGET-2024",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1HetEF1eFquUFQOyFN_znefbRr8Wc0PKA/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-2024-03-14-Extra certificat publication",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1S2_nJxB_QErco6MWDM8f9CHOy2rWwmOm/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-2024-03-27",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1q-9u2Qz11wI77x14zaU0ZxC5IK_PHXTR/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-2024-10-15-Extra",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1lNEOhQ9sTtM4BeEg0D_k0OVkVAZ3gjgp/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-1-2024",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1MXEt5Aw2AzGB5xSbAeBMNsKqQXYRiB8l/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-1-2024-1",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1PPaGctjKkK06FaUNY06CDJoNLR339M6W/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-39-2024",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1Fl-HECqtnS7ciHYxVH_9JT97MwZXPWdH/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-44-2024",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/14zJ9X3DL1WDc6xN26W865EmlpqPbltCz/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-8-2024-1",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/14Bu7G-uJSPeTOoL8YEf4I3cJdCqYrrHC/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-8-2024.1-2",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1OnEo9ankR65pKuXzqGL6scJIcNnf-mIM/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-86-2024",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1ls18x2rcy1WThJBAFbDha5FIqL5A_Dr4/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Depot-du-Rapport-financier-et-du-rapport-du-verificateur-externe-pour-lexercice-2024-",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/12DW-EYPQdHGNQu4HTnbiD9F2wgYcAX6q/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-projet-8-2024",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1MjkDDOUSbYbBxQdlZCd2GzB6zwepoo7G/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-projet-8-2024.1",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1i_SEBk7s05b4uyWGsULkaU7ed_RpMkkg/view?usp=drivesdk"
+    },
+    {
+     "title": "Role-triennal-2024-2025-2026-1",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1A5yaEoCW8xZ5rfVuzxNyOldffkj1fz8I/view?usp=drivesdk"
+    },
+    {
+     "title": "Role-triennal-2024-2025-2026-2e-annee",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1-MRMmNs0ty4yoMbP9vJWo7h8ElFb5ZmQ/view?usp=drivesdk"
+    },
+    {
+     "title": "1er-avis-public-vente-pour-taxes-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1pzbow9P2OA3UOpcnyzmo71CGkEKHjoJg/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-08-072-Avis-public-Derogation-mineure",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1GilyUjGXNK-oUGXNF6Ca1Kr9xlVFfnpl/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-10-10-25-Liggett",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1t1Oa_RegeD52_MvNqk-Xv3phidVI99bv/view?usp=drivesdk"
+    },
+    {
+     "title": "3.-Avis-public-depot-Projet-Reg.-1-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1tstihVnOY8TDpyr5bpxrxX_Boc7L361y/view?usp=drivesdk"
+    },
+    {
+     "title": "4.-Avis-public-dadoption-du-reg.-1-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1oQ2d64e54lKwesIrS5qggzbTnmQLH7x4/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-2e-projet-de-reglement-25.47-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1fyTJg2mz5WWZhO1H7WHSFOPhMPbGi4-I/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-projet-de-reglement-25.47-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1k8rCrLFUvtFUcRjYY1MJ7uf0A2mxWjp3/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-39-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/12fQzsYkxDDpcK6ZTS6yKUslyz6ud0OqO/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-adoption-du-reglement-8-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1WKGrl_s27aSU8sro8-z9UCTGSiaxcxD-/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-consultation-publique-2023-05-17",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1I7jmJLp0Wc10edAdThYjgPV0DBvJ3IB5/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-depot-du-projet-136-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1KlJz-RxVRoklB7j9RYDFEJ2STYdAnyDY/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-de-depot-du-projet-140.1-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/13zuaZV493W9wzyIR-duYUN6iy0QihYwD/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-projet-8-2023-1",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1tnt2Dd-EXcRf4dBb8tZ1r5lVdlE7LUu8/view?usp=drivesdk"
+    },
+    {
+     "title": "Derogation-mineure-2023-08-23",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1jUzl1yGz7n-PCw39yUNCShw4Bx9oe2Dm/view?usp=drivesdk"
+    },
+    {
+     "title": "Seance-du-15-mai-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1NvqJ48qcwYKJBE86Nac2y5MPn5VXz9hg/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-01-18-Avis-public-Derogation-mineure",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1L8DjEMDl_Du2qXy0KYB1Iz4nyaNHvmHR/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-02-16-Avis-public-Derogation-mineure",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1or9ZpLXct5f5amwdyG8oucRZXlJwPA-6/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-05-17-Avis-public-Derogation-mineure",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1CU0GVaEQstHv3_YarMa0mG9Foh9VlIpt/view?usp=drivesdk"
+    },
+    {
+     "title": "25.45-2022-Avis-public-affiche-signe",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/11uYR6xVbaRCxuZewl6cc7xpDyp9wAgrh/view?usp=drivesdk"
+    },
+    {
+     "title": "2e-Affichage-public-6-decembre-20222",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1cqAzSQbTJrRtDgyD4JioZKLp-UBX2KbC/view?usp=drivesdk"
+    },
+    {
+     "title": "8-juillet-2022-Avis-public",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/16D-4H4yQiLD2YkX9f3j91WH2TXyFZ1f5/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-2022-11-30",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1hrhGyW068XwfbTMHo8Fe5_MjWNlepjkF/view?usp=drivesdk"
+    },
+    {
+     "title": "AVIS-PUBLIC-26-OCTOBRE-2022-DEPOT-DU-SOMMAIRE-DU-ROLE-DEVALUATION-POUR-LEXERCICE-FINANCIER-2023",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/18lz1Ggytc7tLytHCHAYFNogIpMLlEhUd/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-depot-du-rapport-financier-2022",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1o5FFThipJKe2kha6CrM__XAYFKcvGeBY/view?usp=drivesdk"
+    },
+    {
+     "title": "avis-public-entree-en-vigueur-142.1-2022",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1zYXk5b0DDC2_PD1TcwRPS92mX3uCFEZj/view?usp=drivesdk"
+    },
+    {
+     "title": "avis-public-entree-en-vigueur-25.45-202265.6-2022",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1MLaczjrA49S7TrznBKJBY5OWdw_BxwZY/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-seance-20-octobre-2022-1",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/19PTmpQyLfiXGgDSgY9u5wb_RzcHvoi4w/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-publics-Filing-and-presentation-of-draft-by-laws-Avril-2022",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1ZO5h0jIfhCLw3oOpgVKukzk61Pwum7DB/view?usp=drivesdk"
+    },
+    {
+     "title": "FINAL-Affichage-des-resultats-2022-09-26",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1GOvXe01oIsJ6-pRT0orh82own0pBw29s/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-1-2022-taxation-74-2021-dentologie",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/15g_dyBZky42J0H9-hHPN9MiaGFoHjlXW/view?usp=drivesdk"
+    },
+    {
+     "title": "SEANCE-EXTRAORDINAIRE-7-OCT-2022",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1nw8hUMs9a4nH2eh0Mahm0lCDBRe2Te-H/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-15-juillet-2022-Avis-public-dadoption-et-dentree-en-vigueur",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1fzoDGk9zWlh9Ej9kGK_w7M6g41FNO2YZ/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-4-aout-2022-Avis-public-Assemblee-publique-de-consultation",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1t9OZno1cGTC8g6a86bBe9ubV-2LJpsEa/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-Avis-public-de-depot-de-projet-4-mai-2022",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1abbp52dU394R9nE2BHmV7UjSAYmefx9q/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-Avis-public-de-depot-de-projet-8-juin-2022",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1Sf2QZYSmhVIQ1ZYFY-PPOESARIZJ_P0-/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-Reglement-no.-2-2022-Avis-public-dadoption-et-dentree-en-vigueur",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1uPrpJO4PNkEM_bbWQfbM3y-5BHP0fx6X/view?usp=drivesdk"
+    },
+    {
+     "title": "2021-06-17-avis-adoption-reglement-MRC-320-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/18EKdmcnHM-cpYw_-kSPW8NzTV1JGaAXz/view?usp=drivesdk"
+    },
+    {
+     "title": "2021-08-16-Avis-public-Derogation-mineure",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1ZcR6FOH2lLb6JJM6rNm6G_phRXIZAqsc/view?usp=drivesdk"
+    },
+    {
+     "title": "2021-09-15-Avis-public-Derogation-mineure-1",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1YK1NlU-3qL2WsV_mLF1GQu1NFIt_iLKF/view?usp=drivesdk"
+    },
+    {
+     "title": "24.7-2021-Avis-public",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1FWQbeAb1P3zcpfa8BitufN35kGGN0XJ5/view?usp=drivesdk"
+    },
+    {
+     "title": "25.38-2021-avis-public",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1YV-BKqF1Hfi0Mww1Hzj1snbbgOkDAKP5/view?usp=drivesdk"
+    },
+    {
+     "title": "25.39-2021-Avis-public",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1r3NdBH-oxNKNEWvzHxid6vgNNGEUFpxN/view?usp=drivesdk"
+    },
+    {
+     "title": "25.39-2021-Avis-public-referendum-8-avril",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1zfIk5MIjWk3ydjqqBc04W7JS1-5j8NTy/view?usp=drivesdk"
+    },
+    {
+     "title": "25.40-2021-Avis-public",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1nkV-yeZzZbtfpHasrpGk7E6L79f6YoVW/view?usp=drivesdk"
+    },
+    {
+     "title": "25.40-2021-Avis-public-dentree-en-vigueur",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1pmdpGDtJwfDEigEYklG9OKw8Uz5BnwIN/view?usp=drivesdk"
+    },
+    {
+     "title": "25.41-2021-Avis-public-referendum",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1cRVaPiN6iH1QBf-HuxGiEG_6PUWP5-Mk/view?usp=drivesdk"
+    },
+    {
+     "title": "25.42-2021-Avis-public",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1ZLJe2kO9GWJGpNyyW3Rdfb1YpjALwRwv/view?usp=drivesdk"
+    },
+    {
+     "title": "25.42-2021-Avis-public-referendum-fr",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1BJ1GUB2yrw6nXv6irimIabCzxGGXRYlw/view?usp=drivesdk"
+    },
+    {
+     "title": "25.43-2021-Avis-public",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1sQX0QcrkRh3Em3Q2QF7u7AR7tycEzgVQ/view?usp=drivesdk"
+    },
+    {
+     "title": "25.43-2021-Avis-public-referendum",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/19LvDWhQh4KLuB-3PdMjdiiDKdCY0DSHp/view?usp=drivesdk"
+    },
+    {
+     "title": "321-2021-Projet-regl-MRC",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1Bva6HDcpxyXYvGrdCOHPm-YOCC__Z5t2/view?usp=drivesdk"
+    },
+    {
+     "title": "66.2021-Avis-public",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1OR8fRARjftZ8T9qpeNZbBiFLg3dpiI_w/view?usp=drivesdk"
+    },
+    {
+     "title": "avis public adoption du budget 2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1QffqrCXmZ8d5vVUBQFgy3pK6T6R-oN0P/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-dadoption-de-reglements-2021-02-02",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1MfOGyxEtBKYwClUjfQpnBGZTSmXhQ9tl/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Depot-du-projet-de-reglement-7-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1oTmfRpfxBu4luv8kx6F7tDGbAqgNqEpm/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Depot-et-presentation-projet-regl-129-2021-gestion-contractuelle",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1XtGtBJ565_k5nG9nS9k8_bYBjAAc3uWr/view?usp=drivesdk"
+    },
+    {
+     "title": "Calendrier-Seances-du-conseil-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1vwlSpaKtMRqLcwZbZGFHJf7yJ2YnLHPJ/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-Avis-public-dentree-en-vigueur-25.42-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1Enf9D2WVg3CtTvBzEMaSvoCGoqOJ_2aY/view?usp=drivesdk"
+    },
+    {
+     "title": "VF-Seance-reguliere-du-4-octobre-2021-Ouverture-au-public",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1VdYCMYb2tq5Wb_FN8JXGlGXwYW7FEOjp/view?usp=drivesdk"
+    },
+    {
+     "title": "25-37 2020 avis referendum",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1YGK3v64YlhSFCqHJYH30KApDnNnVCLUi/view?usp=drivesdk"
+    },
+    {
+     "title": "25.36-2020-Avis-public-dentree-en-vigueur",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1Aaf51dcW1z4KAmntrTe6jO_hPzhFcO8j/view?usp=drivesdk"
+    },
+    {
+     "title": "25.37-2020-Avis-public-dentree-en-vigueur-25.37-2020",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1klpf-TK7wptjlBEAqBtrPx8rx0aCl-Rr/view?usp=drivesdk"
+    },
+    {
+     "title": "avis public adoption 317 2020 mrc",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1NeYl_yX29-XsJFW1qzltJEBO9uPwWiq7/view?usp=drivesdk"
+    },
+    {
+     "title": "avis public reglement 80 2020 et 120 2020",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1DVX6NvBauDCiDw4EyX_RAqQYGSeAjx5P/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Depot-rapport-de-leau-2020",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1lvqwT4ZKMf6W5r-aKGa1WQfoNCKFWOBp/view?usp=drivesdk"
+    },
+    {
+     "title": "reglement 317 2020 mrc",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/15tA8TDzdsw-_JIcZgqHXIQfDma1Ms5IH/view?usp=drivesdk"
+    },
+    {
+     "title": "117 2019 avis public emprunt asphalte routes",
+     "lang": "fr",
+     "year": "2019",
+     "url": "https://drive.google.com/file/d/1HfsLpnvE8b80SuAbY9nPskGwCp7tjvc1/view?usp=drivesdk"
+    },
+    {
+     "title": "41-2018 regl emprunt route 201",
+     "lang": "fr",
+     "year": "2018",
+     "url": "https://drive.google.com/file/d/1yTgS5qsUuKeL49f9od4JhRb-3zHK58OY/view?usp=drivesdk"
+    },
+    {
+     "title": "Avis-public-Retrait-reglement-25.39-2006",
+     "lang": "fr",
+     "year": "2006",
+     "url": "https://drive.google.com/file/d/1BI_-Z83ntwXMC5QLkO6gzNn1pePPsP35/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "BUDGETS",
+   "documents": [
+    {
+     "title": "Budget 2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/16xBN15gS6rB5zUkqpVxdsbiKUFKbusGD/view?usp=drivesdk"
+    },
+    {
+     "title": "PTI-2025-2027",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1UcaF2lTs4uRFvVJuDZfYuO4SsfRM4ltT/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "BUDGETS LONGLIST",
+   "documents": [
+    {
+     "title": "2.-Programme-triennal-dimmobilisations",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1TT8cYATPQcby-0BdlnOlvAP_FR94KVzC/view?usp=drivesdk"
+    },
+    {
+     "title": "2.-Programme-triennal-dimmobilisations (1)",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1gC9vmJ2ZjokgjG37eVoFj1q5kPyoHcZL/view?usp=drivesdk"
+    },
+    {
+     "title": "Budget 2025 8x14",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1Nxnvv6SRY3kZOlNEiovbUxNpeUOyf-sl/view?usp=drivesdk"
+    },
+    {
+     "title": "PTI-2025-2027",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1HkFJJqUq9Mno-lzETa0dgc9Xb4bdM_xp/view?usp=drivesdk"
+    },
+    {
+     "title": "PTI-2025-2027 (1)",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/16G0MNt8H1LcfT3zCSshRdwhiMfHIkAGq/view?usp=drivesdk"
+    },
+    {
+     "title": "Budget-2024",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/12br8bejG2umZl-KXNyi0a0BHayi38HYK/view?usp=drivesdk"
+    },
+    {
+     "title": "reso 22-12-413-budget 2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1VqGCktL8M5MVjsJaGQJMGjtqAsqJ1KX9/view?usp=drivesdk"
+    },
+    {
+     "title": "Presentation-Budget-2022",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1aeVJCk_0-AqGizALNgLTr4YNIQFyvhYf/view?usp=drivesdk"
+    },
+    {
+     "title": "1.-Budget-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1x9nxHKubYjWFno6eIp_dscGUKPZHpIg9/view?usp=drivesdk"
+    },
+    {
+     "title": "Budget-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1M_BO1RJpKZPFmLo3rjejxaJI9ntDeTLc/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2020",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1Mdwaf6vitVulwiLDyBiejEp2mJ86aydR/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2020-2022",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1YgipK019CGi8i22FqRxHfAaoLJFpdqc5/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2020-2022 (1)",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1Xi2qplf-7bfiACGCythRp6mzhYFhRwPo/view?usp=drivesdk"
+    },
+    {
+     "title": "Budget-2020",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/117mXXehITgLE2AXlO8JHdykyS-A8lOsf/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2019",
+     "lang": "fr",
+     "year": "2019",
+     "url": "https://drive.google.com/file/d/1mx853ID1FLaG2TN_leaw-1TEXcGSnyJ_/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2019-2021",
+     "lang": "fr",
+     "year": "2019",
+     "url": "https://drive.google.com/file/d/1sjj4qRjpPJQv3yw6Ja9ijWyvYe6K3-I-/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2019-2021 (1)",
+     "lang": "fr",
+     "year": "2019",
+     "url": "https://drive.google.com/file/d/1Aq6_MSip-knbXmQC74n-LQedzHOYWW6H/view?usp=drivesdk"
+    },
+    {
+     "title": "Budget-2019",
+     "lang": "fr",
+     "year": "2019",
+     "url": "https://drive.google.com/file/d/1KOE7MmCCyL9I_VvfWPmh6qawjMbBcF4v/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2018",
+     "lang": "fr",
+     "year": "2018",
+     "url": "https://drive.google.com/file/d/1MPlG-6BVU5J6WWYYl48JdTMvPIpOScUe/view?usp=drivesdk"
+    },
+    {
+     "title": "Budget-2018",
+     "lang": "fr",
+     "year": "2018",
+     "url": "https://drive.google.com/file/d/17N6FqK7Yjg6GXhMSs0peRf-F4rME5kyC/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2017",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/1zyIQizDpqWPeK3cdUaxkk6Us-4ddRt8f/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2017-2019",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/1OqoBgQ_BoBwou4ET75uJXtI6gGiZm6TQ/view?usp=drivesdk"
+    },
+    {
+     "title": "budget 2017-2019 (1)",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/1EMvYxFGIhFaUXDBBr7PvHaj0G1DgPDkD/view?usp=drivesdk"
+    },
+    {
+     "title": "Budget-2017",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/1fuXnGrans21sDVqw1p9r0uGe-JxUFbSO/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "CONSULTATIONS",
+   "documents": [
+    {
+     "title": "2026-07-03 consultation consultation fr",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/1vIvKwB8jS-xoQi1LhgUMlIjfHFaeFrsO/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "FINANCIAL REPORTS",
+   "documents": [
+    {
+     "title": "Profil-financier-2023-69037",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1Wn_RLmsBN-lK_c1zejGTFWaj5uZn53NV/view?usp=drivesdk"
+    },
+    {
+     "title": "Rapport-financier-2023-et-autres-69037",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/15wWhB7L_nJD3Js0Zj0nrTPpCkYK5BuPH/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "LIBRARY",
+   "documents": [
+    {
+     "title": "Accusé réception de la demande d accès",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1snoII0M5QVzfhtMh3VrLk4NKn04BzL81/view?usp=drivesdk"
+    },
+    {
+     "title": "CAIQ - Ormstown",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1NyMud6oRihS84YDzxusecHPC1bMg79yX/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "MEETING AGENDAS",
+   "documents": [
+    {
+     "title": "2026-07-04 agenda ordre-du-jour-seance-ordinaire-du-consei fr",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/1A1RvR8Gqflce1mvI-WKt-ODts04tZJps/view?usp=drivesdk"
+    },
+    {
+     "title": "Ordre-du-jour 2026-04-13",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/1DyPm-C5yd3i9dhwIRfE9SZJQLvPR9uMu/view?usp=drivesdk"
+    },
+    {
+     "title": "000-Ordre-du-jour-22",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1zO54LQ3_7Tt22I5I4oY3srRmgqJEekUB/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-01-20",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1uctiM0qZXpRQZTqaydBa-8aDSWf0uY53/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-02-03",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/19pjtEg4MNz-ks4kwfFrCwJBjV7obopMw/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-02-10",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1LXls8Kblyky_G2LJKoAS3MCghl7mOjzx/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-02-10 ODJ-SE",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1U5xrcPuvXisDXq7TnXvCqnRBXTtqMqSy/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-03-03 ODJ",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1QaaoneD3ybZRDFYEX8O2j2vdP5wPztJZ/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-03-13 ODJ-SE",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1WmqDVyKCZLHBmC2Y7-2OAGHYDoFdo5Tt/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-04-03 ODJ-SE",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1U6SfR7fuvfcxiEM5zv8HTd4377WDkixa/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-04-07 ODJ",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1IdlbYOYLWUyuT8vLVcgCPnIFE43T3ghR/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-05-05 ODJ-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1CGfdZCKTgy_53Ur5l2Sq0kvglKb97cFe/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-06-02 ODJ",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1ZFp0oiPfGPTTuq7O-t5KZcm_qwb1jo_w/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-07-14 ODJ",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1s7ZcHYv1IkF4GI2yl_7MQV9WKoYrdmO2/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-08-04 ODJ",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1rpq0gA7xd5Ss1BPaZnIFL6Te2NA2LwED/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-09-08 ODJ",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/16JXmfGufVNP6Dv_DemHETGx6CBJq3m8U/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-11-01",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1JiYsUlFLfaeexYruhG1MurNQU8TcA3rs/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-11-17",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1y-l1AZ3jwvv_IcYKYx5PMpT0Z_yksvgI/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-12-05-Avis-public-Extra-Budget (1)",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1bkmrsoejg8sRBNBVRD9gAD45x5hiBvBa/view?usp=drivesdk"
+    },
+    {
+     "title": "jan 15 ordre du jour",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1qf2tv5eim8JmCco3H3QBSlOdXZrrujM0/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-01-15",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1ZPrYxI12rK5e9SV8AktEXgemAq6sEpJX/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-02-05",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1fSeuyfj0hsQYg25AaiI6VOXscaTVtTG5/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-03-11",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1DLqqXNtcjZjXNWrpm_tONqeaytQcRtPB/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-03-14-Extraordinaire",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1Ugo1_xFlHu7dE1g2F7VOqPPP3jG-XmRP/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-03-27-Extraordinaire",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1OrV4vlH6q9sy4FVQ4db4Rpkj_GeirEuO/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-04-02-Extraordinaire-2",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1Ku2fYgZZ49wvHVjJYhpgvoJN-DNr0r0n/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-04-08",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1xEETTRTKYX1Tow7mUKyX11jM36cxxnBy/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-05-06",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1hteELoGtXnFOZyK-dTRsVh6iwsbaoB-0/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-06-03",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1Rm9rPpOZ86P2EsXrFVePEUaousAlxeSR/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-07-08-Extrrodinare",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1nPU6Vd27JVc11rgQmO5ySRgT4Pn4Bwzq/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-07-15",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1ehyGBwviNf76XZqpptCqhDlllSinhmEE/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-08-05",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/16YtJHLhKp6bd-n8pXIRJTRuLmeDeRL02/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-09-09",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/19vn8kEEa6l5VPf4v40btpCzWxbTYvqAX/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-09-27-Extra",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/15Zzq1mUt5nvd-p-fTgLRVN9mHZEDvydN/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-10-15-Extra",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1hVAL-AnQ3wl-HF6kVjkHIEbuP-kUwFo1/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-10-7",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1xm6oOauHs4ATmHtrjIjmyzvawaFkm0cH/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-11-11",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1e-wlOYSxBxpaYMj3B24gLewCZ8_YUosU/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-02",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1GPGmkYQAX3_1-I40KSy02GRfTuR7V0jT/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-09-Extra",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1hLiSFLdGk1HNMjiD9iyyOaMfma1jEWjz/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-11-BUDGET",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1lthzPxYJm2lZeuD6JZ-BkpHq2zydFlIW/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-11-Extra",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1XIvAqRtos4ymGFjHPGcjzz9z0m5bK5xT/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-16-Extra",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/12ZJYjhof1q26T_F8ury7L_QMaInR9T4O/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "MEETING MINUTES",
+   "documents": [
+    {
+     "title": "000-Ordre-du-jour-2026-01-19-v3",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/168l95uDpJfOZ-BPvciYnooeTungBeSBy/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-01-20 PV",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1bwnre0rRAnmgqKMzq2zf1FSIDn5DVk0E/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-02-03 PV",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1ezVFRcJaJi-rq_ZZKswhKS9h7qNMJoaS/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-02-10 PV-SE",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/18-mLwtdmaW8jMqsmRwKz_4w8XMwIa5BL/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-03-03 PV-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1ArNA4q1Ohc21dzw_yB_SVYsnyBtxa8Y4/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-03-13 PV-SE-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/11Ow1oxG5-6M225fcQkVXj1D4mkGbwvFg/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-04-03 PV-SE-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1-StBMSvx2etbWBaKLEGwHEwP_CiP9Opq/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-04-07 PV",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/10QEpcbE9wptR0DkxaEn3hX6HRzyKghT9/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-05-05 PV",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1-hAv4o5sUTrgpupn2XCu3Kg2A6VNOstO/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-05-27 PV-SE",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/15b8s1n1j8vVt7cxPaqzzMwjHONlfCDZK/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-06-02",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1KRd6vtqY5GJPKz1QziSthUpWeVSHYcgL/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-06-10-Extraordinaire-1",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/18-Yk2Z2jvmQpqv6xxYqs9rfKFaipiCXe/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-07-14",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1tAeRMu74EVz8x92Z3AxjKRRDG5t_rz9J/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-08-04 PV",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/18P4wUuaWJB4HyY3hIx7IkvSFRQ-XTcQ6/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-09-08",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/16eKfBaEaGKt64lYquGw_1nOQ634w4UV1/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-10-02-Extra",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1Oah5OW7LJgDSU2d8DG8k-UorU2nvUg12/view?usp=drivesdk"
+    },
+    {
+     "title": "2025-11-17",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1MuyEJP8Z10ZOaDgfiMZDzSDukGgWfcZf/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-01-15",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1sew5DShdczuwOpX6ACcl9hO4LVUMFlmH/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-02-05",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1HayBzfr-aofziOs6uS5vw4uhCLtG9LA3/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-03-11",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1xhIrijvqkO88b6hmmAOiG6euJL8m3c0p/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-03-14-Extraordinaire",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1Uh3AoXtXfzzlUk8cKJqhiHlOZ4nSNaCg/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-03-27-Extraordinaire",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1XsetZXC3-ylDC9-a48eJzw78iGqEZjoC/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-04-02-Extraordinaire-2",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1mBXU5DAr8xrKrgkuTXoWB3XQQCvoMvWu/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-04-08",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1OEp56N1T8fsGEaz2yn7USXvt4dMPKDRU/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-05-06",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1i89uoTs4nwdGE2GnHj2KHC5MdcjL2PEu/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-06-03",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1PV6IimiSWJotuCBBO8dt-yoUgEq5Ay0T/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-07-08",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1RlD1MW_fglDNftGQbh-ipfi5gqdJswJn/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-07-15-Extraordinaire",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/173ff4w27ff8MXl8TVtmzKHEt8tTGBWtF/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-08-05",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1edlI1wAFyIECzWmUy1oBtfF1EVqW0zQ2/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-09-09",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1G0vTzAU4MeX5wuvv7_Opz2ptnRjexFyK/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-09-30",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/149wGMhqhTn9-wwJ6MGmfGOKAshOc0m3d/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-10-07",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1qIBPpWJ01UcaQSDIDHv0g7AAbdagewnB/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-10-15",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1HidWm5BDUGJrwN8jfXGCh6Ys3Uvlez2t/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-11-11",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/10aNqquaLQhgkNhuficNp6d2AWTGMTM08/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-02-1",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1XyZ9d-O0dViWzS8xKJeB_gsw-Ix94Lkc/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-09-Extraordinaire",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1NX68XGUdfyA2_An5kve4DolNbruwRVvC/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-11-Budget",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/116l1_dFb2zR2nIeQV7NClHxy0pm00kyu/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-11-Extraordinaire",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1C1dTd7d9bxwp248Qam69AaGdP97C7Ur4/view?usp=drivesdk"
+    },
+    {
+     "title": "2024-12-16-Extraordinaire",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1LFOHeE325_wuut_mTCq2BDnCmfL7zppF/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-01-09-Seance-Extra",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1rWWm-Br6R5ZxxsC-4HhiEHdSc10NeG_A/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-01-16",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1R4oPysxsfU5oHYalrmKvZot7PDP6n7l5/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-01-23-Seance-Extra",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/19egFZ0tYZF7T4mqXv0oLR3RfcLya-b-u/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-02-01-Seance-Extra",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1-UpPmCNexXFZFYVflfCQHnQCtA_EH-Xk/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-02-06-",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1kw7PLQe82iCHZRSHWRcTGsGdBwf4sgUK/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-02-20-Seance-Extra",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1CAivrz1ig0PY-hQdPWowDSD9uYm_s2-D/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-03-06",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1hWQGjK6f7pMqr6sx_mE9eAK2268yg38y/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-03-14-Seance-Extra",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1CZLcHf4eXrF73KLUQfh3f7gsBrkiVjhQ/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-04-03.dox",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1aRnpKDDCsnQ5yYLmCscLuZl3gZCgXAjG/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-04-17-Seance-Extra",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1JYzRZ_Ng1xNTCVEF8JsHb_OGPaCYwH0u/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-05-01.dox",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1GlolM1kg8IhcmdRX7A4WQ2u5NjDTMfAH/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-05-15-Seance-Extra",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1s5ymVYBWd0xZhIyfQccbSP_MdQencvDy/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-06-05.dox -3",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1fsEe_w0Jf0d8FaQ4WO2DO2p5q7BrTjLI/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-07-03.dox",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1yb1CBX-l2iV9uYyNXSM3qTt7xkjUJR7l/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-08-07.dox",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1QpItVFVI-E53YHlK80IGQNM8NOgtKINZ/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-09-05.dox",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1v_TI0ZRbNpOcZ_KlSPRMg84qb51HKlQR/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-10-02.dox",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1Roanw9vRZ7xhpNqFolWHz6jeZRrotWjn/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-11-06",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/14rMYrboBQb6df9X7Xth2A9AxUVrctrFD/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-12-04",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1NHiRvkzJe_TbPDZ2YcuvBL5sNgeEIwCj/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-12-14-Seance-Budget-.dox -1",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1bBsq6yLMrNxhfIoj8kIDSnBHffUEjYMr/view?usp=drivesdk"
+    },
+    {
+     "title": "2023-12-14-Seance-Extra-1-.dox",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1Jo5sc1e5vSuX1ed-mX3WH5-cCW2meZf2/view?usp=drivesdk"
+    },
+    {
+     "title": "1.2.1-PV-2022-06-06-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1w6pb-P9ZNYSgZbiJ_v190bUypybWpceg/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-01-10-1",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1cuZtm1LFmIMZ0gZEgi5zUxj9-X__Iohc/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-01-24-Seance-Extra-1-Budget",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1k6GpZ3r2ydr2mY4ma9F9T-f5P7SVz91B/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-01-24-Seance-Extra-2-Taxation",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1aJEkRP6LQsPDP9G5nzcKFB7uXbc4pgVl/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-02-07",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/16rVCHSHRPQ2JjPIjyMPKNmIcguxMVb5v/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-02-24-Seance-Extra-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/17YGOOx85NScHfETEO2gU82dKpgn2kZpu/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-03-07-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1rY3EtLKqX1vFuAPO2xOTqpnEXvrJk0D9/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-04-04-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1Hbv_-LvzxkuSbnNSmN_ySXgLZ8R40eG7/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-05-02-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1-HruK2OGbJfckvqVSBRyzAK_KPcAYnfe/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-05-12-Seance-Extra-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1WmC0fFsHdW1TXHecxdzg2zPFbWJNCO_Y/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-07-04-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1-p4VwXNDcEZVv5nhqPSGemi1nb6fn4Gg/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-07-07-Seance-Extra-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1oi31mGkzUjU5z7oqU3cXR5Q46rQZs0YX/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-08-01",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/15JWsB60vcDJ7pjm25M2ujkc1WfUWHAOK/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-08-04-Seance-Extra-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1A7us5Y7EB-_91mnRrPPCoxyU1Fspso69/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-08-29-Seance-Extra-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1-d5XDFijKy9oT1QHdDVaO-2oUyajOEyN/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-09-06",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1wfQJgRbTErYRj4ebuZSc_Hmx-Z5z0pN4/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-09-13-Seance-Extra",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/17k1x3p0b0RS7WllvUl03y2a4t50UJSXR/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-10-03",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1L2-igVXrWXmwZphPV42Nguy3fWu4TAqz/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-10-13-Seance-Extra",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1IFanObnB2XkkcFuvdys95biNk5xQjN7H/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-10-20-Seance-Extra",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1vKEppwFbmwpy6S8NTUm4Au96oS5qUHXB/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-11-07-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1vWz3j-KbGYddZCWCGi8Gi1EXwzqRsEY2/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-12-05",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/15T3sVznJcwQyL4Dby938TmaaMtSufoiR/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-12-12-Budget-2023",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1er0OVWj06ztsO8TySijCHIq_49Xi8pl5/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-12-14-Speciale",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1_6f2PpoHY0VwwTmhNRPoO5U75_FKGrPb/view?usp=drivesdk"
+    },
+    {
+     "title": "2022-12-19-Seance-Extra",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1ZE9vJz8xnLHz8Ivp5Oi9Ztr-mCiLi2Pz/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "MERGED TEXT MINUTES",
+   "documents": [
+    {
+     "title": "AGENDAS   merged",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://docs.google.com/document/d/1Z-BjbSX30iyLXLG5dMljIle8E026hLyk/edit?usp=drivesdk&ouid=106456895204723183577&rtpof=true&sd=true"
+    },
+    {
+     "title": "BYLAWS MERGED",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://docs.google.com/document/d/1HOx4KqnRnVikJo4J5r5v54kvdZCu-2oM/edit?usp=drivesdk&ouid=106456895204723183577&rtpof=true&sd=true"
+    },
+    {
+     "title": "MINUTES   merged",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://docs.google.com/document/d/1SL_pz9NqENIBMIx7GbRtDXz5D6By6ND8/edit?usp=drivesdk&ouid=106456895204723183577&rtpof=true&sd=true"
+    }
+   ]
+  },
+  {
+   "name": "MRC HAUT-SAINT-LAURENT",
+   "documents": [
+    {
+     "title": "Figure-10-11-Zone-inondation-rivières-Outardes-et-Châteauguay-Ormstown",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/1mSqhDcoPTWCCHK-0xayYX6Mqfmp00439/view?usp=drivesdk"
+    },
+    {
+     "title": "Figure-10-12-Zone-inondation-rivière-Châteauguay-Ormstown-TSS",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/1jpC5A5iQiyqEWWXAKfGsnncIjo_PV3g9/view?usp=drivesdk"
+    },
+    {
+     "title": "Figure-11-1-Derogation-dans-la-zone-inondable-pont-riviere-aux-Ourtardes-Est-Ormstown",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/19_xsF7RZtivsStVgwgR0gFhLHm5OSK3m/view?usp=drivesdk"
+    },
+    {
+     "title": "Figure-13-5-Puits-Julie-Ormstown",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/1MjzyFnJx3o_WDQip9SjD3QOGputJvzyU/view?usp=drivesdk"
+    },
+    {
+     "title": "Figure-13-6-Puits-Dumas-Ormstown",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://drive.google.com/file/d/1zD7oUuZ494ktYovAVZaJaLI8B9GDuqkZ/view?usp=drivesdk"
+    },
+    {
+     "title": "SAR-revise-juin-2025-p",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1m6LYl0DgmN-BQNBJIzL_oL8xSw2ihM4A/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "ORMSTOWN BYLAWS",
+   "documents": [
+    {
+     "title": "ORMSTOWN BYLAW SUMMARIES",
+     "lang": "fr",
+     "year": "2026",
+     "url": "https://docs.google.com/spreadsheets/d/17jVQqBmxYpcTJUT4fTJ7LNfhmjSYeX93vMvqwWuzG_A/edit?usp=drivesdk"
+    },
+    {
+     "title": "Attestation-de-formation",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1_FpwRvZKSfXVnd4ta0ioRDUjyBzcpN_k/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-1-2025-Taxation",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1inyrrOkZYUcD_ucK0PUJp47UsvRP7t9O/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-1-2025-Taxation (1)",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1lqTKMrYB6kNdxF5jdpViem5ShrpnfPi6/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-12-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1vYMbTBzH46maBvbIDE7V6nYgOAfk16AO/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-12-2025 (1)",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/17Hgw9BtayNAr-pSZrIP5YFf58QWVse9-/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-167-2025",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1czh4OUCwXX4FH-MAz-qiLtNBH3STYyLF/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-Regie-interne-",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1uXGyjdlUZd7tSREeHXHAKIt8bXnpWmXs/view?usp=drivesdk"
+    },
+    {
+     "title": "Resume-du-Plan-durbanisme-de-la-Municipalite-dOrmstown",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1hL08kyt9tCA50OkE0Bw5pd6al7Oo4qsD/view?usp=drivesdk"
+    },
+    {
+     "title": "Resume-du-Plan-durbanisme-de-la-Municipalite-dOrmstown (1)",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1rUurmYGQwuDDzaQ33XYv0rHAEP-NnSrC/view?usp=drivesdk"
+    },
+    {
+     "title": "Resume-du-Plan-durbanisme-de-la-Municipalite-dOrmstown (2)",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1JijubT3KAOgNoEjjdNjo-JvPIzUnLD1l/view?usp=drivesdk"
+    },
+    {
+     "title": "Projet-de-reglement-no.-8-2024",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1nGVFJ88-oPwnRRIwmKyZEkcvWW0s-Sit/view?usp=drivesdk"
+    },
+    {
+     "title": "Reg.-39-2024-Tarification-des-services-municipaux",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/18Ogyr1yXvIrc55p8I5gDbLiq-N9gW1Ke/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-44-2024",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1XzY1bqWeevX2iE2bhSWUsIItPnOD0wM9/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-44-2024 (1)",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1z8Bo03W5pwFgDnrJMJgKMnJoTcxluXqU/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-86-2024-Utilisation-de-leau-potable",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1whrHSvaa7x7w309KdzJrg6vkHOGlbthz/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-8-2024-2",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1d3yJb0Ymj1ogWSucxkXO6MgNAik3Eg9u/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-8-2024.1",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1puuSVMSN9Tr0MCcX3NzZnO5iH524MaLr/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-8-2024.1-2",
+     "lang": "fr",
+     "year": "2024",
+     "url": "https://drive.google.com/file/d/1B9KMU525pGlw7TV5rkpcqCQb01bJtiU-/view?usp=drivesdk"
+    },
+    {
+     "title": "2e Projet 25.47-2023 Affichage-2",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/18F9CKGLA5zXm4Fa9shv7koF1w5Uc0-NK/view?usp=drivesdk"
+    },
+    {
+     "title": "2e Projet 25.47-2023 Affichage-2 (1)",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1XpuzJniiej09dWCtpZDMi7MM1D3_dLR1/view?usp=drivesdk"
+    },
+    {
+     "title": "2e Projet 25.47-2023 Affichage-2 (2)",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1tgtyGgC06UBJLp1JUHyRE_-Mh5Lp-nUw/view?usp=drivesdk"
+    },
+    {
+     "title": "3.-PR146-2023 RCI-with-signature",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1EH-NUtF6up01Xd6pvImAlPtbe0ifT3wH/view?usp=drivesdk"
+    },
+    {
+     "title": "3.-Regl.-130-2023-Delegation-du-pouvoir-de-depenser",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1QaDN421o1df65G7f0oiu5oMoticGqwhk/view?usp=drivesdk"
+    },
+    {
+     "title": "3.-Reglement-142.2-2023-signe",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1yecSoC_MVCWe0vARm7jKDfFmmpVnbkkd/view?usp=drivesdk"
+    },
+    {
+     "title": "3.-Reglement-142.2-2023-signe (1)",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1WWVaa1ie1xy13JEYR_JK4ogopSapc6Eq/view?usp=drivesdk"
+    },
+    {
+     "title": "9.-REG.-146-2023 RCI-signed",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1MSA_gwBkI5HmWNTzGhK3S4cXaAcLETVU/view?usp=drivesdk"
+    },
+    {
+     "title": "Projet-de-reglement-145-2023 Demolition",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1EKhIDlIsxat1iNIrQwTLiB_923PQLuxR/view?usp=drivesdk"
+    },
+    {
+     "title": "Projet-de-reglement-154-2023-sur-les-emprises-municipales",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/14Dwnc__so36XxZ8sJfIyvkV0nT_ozhBn/view?usp=drivesdk"
+    },
+    {
+     "title": "Projet-de-reglement-155-2023Prevention-des-incendies",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1vqpVv4MbPevjAmDgt-EB4xpOIni8yGWN/view?usp=drivesdk"
+    },
+    {
+     "title": "Projet-de-reglement-6.1-2023-Fonds-de-roulement",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1jl3301zbWzaiG0ywpG1IUJLtpuWEWdwT/view?usp=drivesdk"
+    },
+    {
+     "title": "Projet-de-reglement-no.-2-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1cNq4DDsvJOMI2_HT-5VuCh_v3eSbvrDr/view?usp=drivesdk"
+    },
+    {
+     "title": "Projet-de-reglement-Politique-RH-99-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1yGLzaRperzgYzLOd73wmnuC36tvLVYuy/view?usp=drivesdk"
+    },
+    {
+     "title": "Reg.-39-2023-Tarification-des-services-municipaux-1",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1zhvHGRxxDDBOREypPKszuD1-m65sX2pR/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-140.1-2023-Tarification-Incendie-non-resident-",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1gRy4uE6jf5KciT-YSi214DUdOmtBvfnL/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-145-2023-relatif-a-la-demolition-dimmeubles-1",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1qDXBvOcOyC6WPoy3QrL-BA2pGXPzUquE/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-145-2023-relatif-a-la-demolition-dimmeubles-1 (1)",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1Mde7DwKwIKgZukYkV45yYwAhFjfIE6vF/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-145-2023-relatif-a-la-demolition-dimmeubles-1 (2)",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1JuABewp8tXfiIGF-RcAkGdjILtl68zvz/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-6-2023-Fonds-de-roulement",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1M180Ts7f7usRwF9Lsokr-fspNJT7Jw74/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-62.2-2023-Centres-9-1-1",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1jfuthjyemsxLATU3Rz0T78wezVM5cQ2X/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-62.2-2023-Centres-9-1-1 (1)",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1VzNfukyryHaUwnTyfdzoHWGMAWGykpln/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-136-2023-Cours-deau-J.W.-Martin-br.-3",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/11UoT_R0RVXSFzvKVLi4xcriaesCceMrw/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-146.1-2023",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/12ckYBaDrnTpTiETZEnhCmFDBqPA_5oqM/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-154-2023-sur-les-emprises-municipales",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1vvU5JYj2wWb7djsMtIGHxauz75CWanzW/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-155-2023-sur-la-prevention-des-incendie",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1-LL7Jyy5u1c5ZgY6AKfoXyl1EMHc7zpE/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-158-2023-sur-lembauche-du-personnel-salarie",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1cOHeutJ9uxtZ1F1DQ8ja6zbHJOs8Aga4/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-8-2023-Traitement-des-elus-municipaux",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1dr6dq7B4HSa2Xr6SabIa9aOCMKrmkrDc/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-99-2023-Politique-RH -3",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1ziBf2Kj81y0oBtrplNzo2dt92Yk1Kiem/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no.-99-2023-Politique-RH-",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1S9B2O8kAk1etAhGIFPTP22qOaNCtaGRO/view?usp=drivesdk"
+    },
+    {
+     "title": "142-2022-Reglement-de-controle-interimaire",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1SI4BzogQ_Tmi1BqZTehQu__l2kRS4Tmw/view?usp=drivesdk"
+    },
+    {
+     "title": "142-2022-Reglement-de-controle-interimaire  (1)",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1c3-o6Y75Mi4wnKLYFFSn7F1z5UoItKQb/view?usp=drivesdk"
+    },
+    {
+     "title": "142-2022-Reglement-de-controle-interimaire  (2)",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1Xc29jENAunzZXAbYaxt9qR5mL5rVLGUy/view?usp=drivesdk"
+    },
+    {
+     "title": "2.-Projet-Reg-142.1-2022-signe",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1EhILLTLppAe05W2fDFuZvhidyTmRkOkF/view?usp=drivesdk"
+    },
+    {
+     "title": "3.-Reg.-142.-2022-RCI-signe",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1kRxaka6c4hf24asiyanNBjMZmO477hbW/view?usp=drivesdk"
+    },
+    {
+     "title": "4.-Reglement-no.-12-2022-Circulation-et-limites-de-vitesse",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1IzsGWqwcvFMjGsSkQw8AfvXR6b2f1FJP/view?usp=drivesdk"
+    },
+    {
+     "title": "4.-Reglement-no.-12-2022-Circulation-et-limites-de-vitesse (1)",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1vGzFFOpbt4oEGNftDm_qdfAzX6b5TW_L/view?usp=drivesdk"
+    },
+    {
+     "title": "4.-Reglement-no.-80-2022-Code-dethique-des-employes-municipaux-1",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1YyBD3fh5X_eXTpLq3P01zX_z6abCkC6j/view?usp=drivesdk"
+    },
+    {
+     "title": "5.-142-2022-Reglement-de-controle-interimaire-signe",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/14mWHGXqNgQ5Q2mzvcjJqYtdGJ41Kpslb/view?usp=drivesdk"
+    },
+    {
+     "title": "5.-Reglement-140-2022-Tarification-Incendie-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1lnWmPqlWPopJpnDPAhoElv7XBj819h6f/view?usp=drivesdk"
+    },
+    {
+     "title": "PR-142-2022-Reglement-de-controle-interimaire-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1tuQSlhbJmoNWZSY-vP0E97w3KZV0lUXU/view?usp=drivesdk"
+    },
+    {
+     "title": "PR-143-2022-Reglement-Occupation-et-entretien-immeubles-Recuperation-automatique-luc",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1qWkfjRAH-NtOfdtV-fm2OmGlt6NxY1HH/view?usp=drivesdk"
+    },
+    {
+     "title": "PR-65.6-2022-PIIA-affichage-1",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1nOrxqE1JBn4sC8b1rk75mRPBqjPolCev/view?usp=drivesdk"
+    },
+    {
+     "title": "PR-8-2022-Traitement-des-elus-municipaux",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/10V2TA6x4w2OPJtxu_HENcGTI11QKzw0Y/view?usp=drivesdk"
+    },
+    {
+     "title": "PR.-141-2022-Regl.-demprunt-ph-2-luc-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1xrcxrybEcy-B4CQEshlEDUSuw1IgTIWf/view?usp=drivesdk"
+    },
+    {
+     "title": "projet-reg.-25.45-2022-affichage",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/12YU_WbESPWeouHr-74IA2uHZZk0RWTXu/view?usp=drivesdk"
+    },
+    {
+     "title": "projet-Reglement-120-2022-Branchements-",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/16jd53oODsgKSxrZY3sWc_Z3liuampp5i/view?usp=drivesdk"
+    },
+    {
+     "title": "R-65.6-2022-PIIA-Word-Press",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1C3oVdEy3jyfrHz2DJAWnVvIziv3_YWRI/view?usp=drivesdk"
+    },
+    {
+     "title": "reg.-25.45-2022-wordpress",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1J4IuagquAPu1SDGcfzSVczah3MGN3f4i/view?usp=drivesdk"
+    },
+    {
+     "title": "Regl.-no.132-2022-Prevention-incendie-luc",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1u7PbBMz-KWHvkvXhoCbT4GNc9x5inqpL/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-140-2022-Tarification-Incendie",
+     "lang": "fr",
+     "year": "2022",
+     "url": "https://drive.google.com/file/d/1QqkD90vx7Yj4WPOHSmPvR0HJbPgkIVwk/view?usp=drivesdk"
+    },
+    {
+     "title": "1e-Projet-25.40-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1og8CHehqCsEsSCXb0VsCyrvEAKMRJlKy/view?usp=drivesdk"
+    },
+    {
+     "title": "25.41-2021-Avis-public",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1XqL2LS5YnAzNhtI8GK2A9txdtgZQ8EbL/view?usp=drivesdk"
+    },
+    {
+     "title": "4.-Regl.-n-2-2021-Regie-interne-VF",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1q0bMSN0RY1mSOcWYbpaS7ECYU4bLCEw2/view?usp=drivesdk"
+    },
+    {
+     "title": "4.-Reglement-n°-134-2021-Compteurs-deau",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1vIIDbNt1Gl_dMEgKoB8Bl4F66NF_KErA/view?usp=drivesdk"
+    },
+    {
+     "title": "4.-Reglement-no.-74-2021-Ethique-et-deontologie-des-elus.e.s",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/13QqPKjzZbL3SoQcKV4o-T7HWHBqC0iQb/view?usp=drivesdk"
+    },
+    {
+     "title": "Deuxieme-projet-Regl..-25.41-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1ZuCi-noY82GbER64RO-BnCtYDnGE_Voo/view?usp=drivesdk"
+    },
+    {
+     "title": "PR-66-2021-PAE",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/12XtoNALpDTCCyO99jtM2wa2SyLlUAAjg/view?usp=drivesdk"
+    },
+    {
+     "title": "Premier-projet-reg.-25.41-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1FNL2lw5OWwWm3YSRARFKfWahWPz-4IsK/view?usp=drivesdk"
+    },
+    {
+     "title": "R-114-2021-PPCMOI-signe.docx",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/11eytpXD2xkvU5wRLlQ4uc8qCe8jbmPH7/view?usp=drivesdk"
+    },
+    {
+     "title": "R-114-2021-PPCMOI-signe.docx (1)",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1IHj0zj33zrcuoriUFCdmW9ta0JqQPah6/view?usp=drivesdk"
+    },
+    {
+     "title": "R-114-2021-PPCMOI-signe.docx (2)",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1zqt30FKWrBbfgXgE1knAQsst_nlPm4fE/view?usp=drivesdk"
+    },
+    {
+     "title": "Regl.-n°-1-2021-Taxation-2021-",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1AuMyrnFRhxUJDc2lyhH1uUOvyazE4L2R/view?usp=drivesdk"
+    },
+    {
+     "title": "Regl.-no.-22-2021-Demolition-dimmeubles",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1r2kH7JoBd5rSaVN4jIHPLweAGSgYbEAh/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-7-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1vGpIW7Y0wyOINZKFoXvcf1pYwz4rSQdo/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-no..129-2021",
+     "lang": "fr",
+     "year": "2021",
+     "url": "https://drive.google.com/file/d/1huDh2xhGeFdUSVhNGrWFBu_TMK6MIqoS/view?usp=drivesdk"
+    },
+    {
+     "title": "125 2020 taxation 2020",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1aRZR85y50avaLNHzgU3fzlHjRS_bBdos/view?usp=drivesdk"
+    },
+    {
+     "title": "39 2020 tarifs",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1d_I8tfUhDZERZ8ikFWjlCqAsMsR_Zkrj/view?usp=drivesdk"
+    },
+    {
+     "title": "Codification-administrative-129-2020",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1AI_tc59X1-uUdcSBNEDJlsBAw0IUT1UK/view?usp=drivesdk"
+    },
+    {
+     "title": "Codification-administrative-129-2020 (1)",
+     "lang": "fr",
+     "year": "2020",
+     "url": "https://drive.google.com/file/d/1lf0-jqqE0NYzjj96eW99gEYvQbT9-5cI/view?usp=drivesdk"
+    },
+    {
+     "title": "8-6 2019 remuneration des elus",
+     "lang": "fr",
+     "year": "2019",
+     "url": "https://drive.google.com/file/d/1G1ZSuVp7v3iB_ddTFelmjz2yZhDNix29/view?usp=drivesdk"
+    },
+    {
+     "title": "118 2018 modalites publications avis publics",
+     "lang": "fr",
+     "year": "2018",
+     "url": "https://drive.google.com/file/d/12RbY1yduWbTTcpleJMLsCK2VtNr9Qa6O/view?usp=drivesdk"
+    },
+    {
+     "title": "41 2018 route 201 sud",
+     "lang": "fr",
+     "year": "2018",
+     "url": "https://drive.google.com/file/d/1XA_jdEiHX4zCRL5JOIP5iSZUZmKnTX2C/view?usp=drivesdk"
+    },
+    {
+     "title": "44-1 2018 controle budgetaire",
+     "lang": "fr",
+     "year": "2018",
+     "url": "https://drive.google.com/file/d/1Y4jQ9DHunAegC03c8JoZJFfbS52Wuiol/view?usp=drivesdk"
+    },
+    {
+     "title": "74-4 2018 code ethique elus",
+     "lang": "fr",
+     "year": "2018",
+     "url": "https://drive.google.com/file/d/1TRGzzfTmPXzk342burodKBesXUUumyos/view?usp=drivesdk"
+    },
+    {
+     "title": "91-1 2018 nuisances",
+     "lang": "fr",
+     "year": "2018",
+     "url": "https://drive.google.com/file/d/18ztkrMzjJ2R4SZdKemvZuHZfe1gla-sN/view?usp=drivesdk"
+    },
+    {
+     "title": "101-1 2017 regl emprunt eclairage pont",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/1hCPqPoZM2zI1iyNlkLGsQMwg3dL1Y3oN/view?usp=drivesdk"
+    },
+    {
+     "title": "110-1 2017 emprunt eclairage bordures vallee outardes",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/1lzXOKfFriQctAgO35vIZdtkZms618pZS/view?usp=drivesdk"
+    },
+    {
+     "title": "60-2 2017 abroge 60 2009 et 60-1 2016 piscine",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/1Qv_vRIekaK5h2nxStczS9A-esUzTPsfY/view?usp=drivesdk"
+    },
+    {
+     "title": "97-1 2017 tecq 2014 2018",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/12I7oK1HU2ZYxVZWFqYS3JNN9gVs_PHNH/view?usp=drivesdk"
+    },
+    {
+     "title": "Reg.-110.1-2017-modifie-par-MAMROT-signe-Luc",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/12sL2_JSbZ24GQ7gIoyMAFGTY5WmXiy4Q/view?usp=drivesdk"
+    },
+    {
+     "title": "Reg.-110.1-2017-modifie-par-MAMROT-signe-Luc (1)",
+     "lang": "fr",
+     "year": "2017",
+     "url": "https://drive.google.com/file/d/1SWLPsMkvvIhSIAW-BwNXtvfWif7jA9GF/view?usp=drivesdk"
+    },
+    {
+     "title": "100-1 2016 hotel de ville",
+     "lang": "fr",
+     "year": "2016",
+     "url": "https://drive.google.com/file/d/1xhpIU6CMh5P0jZkxPbUZizsavIA0bA2c/view?usp=drivesdk"
+    },
+    {
+     "title": "80-1-1 2016 code ethique employes",
+     "lang": "fr",
+     "year": "2016",
+     "url": "https://drive.google.com/file/d/1ID2GBMq1aN-RM1eW8qL82doLbbxi30WJ/view?usp=drivesdk"
+    },
+    {
+     "title": "102 2015 emprunt pont tullochgorum",
+     "lang": "fr",
+     "year": "2015",
+     "url": "https://drive.google.com/file/d/1b7W1SoYs80m0tp4-Vz8YhGg_OQkuStQM/view?usp=drivesdk"
+    },
+    {
+     "title": "87 2015 regl emprunt tecq",
+     "lang": "fr",
+     "year": "2015",
+     "url": "https://drive.google.com/file/d/1LWmLbmpQPGzlbhO52yJht_5FxK3P_1kj/view?usp=drivesdk"
+    },
+    {
+     "title": "93 2015 reglement sur occupation du domaine public",
+     "lang": "fr",
+     "year": "2015",
+     "url": "https://drive.google.com/file/d/15FsaOYtatVgh9jAhmpmmlTmt7bKh3rEU/view?usp=drivesdk"
+    },
+    {
+     "title": "93 2015 reglement sur occupation du domaine public (1)",
+     "lang": "fr",
+     "year": "2015",
+     "url": "https://drive.google.com/file/d/1HUuJWW5xTCdxABsSYdK73bl6EbBr_oZe/view?usp=drivesdk"
+    },
+    {
+     "title": "93 2015 reglement sur occupation du domaine public (2)",
+     "lang": "fr",
+     "year": "2015",
+     "url": "https://drive.google.com/file/d/1wzXzKC1Q1y4AQhVHPFtU8gvO8tA_71zQ/view?usp=drivesdk"
+    },
+    {
+     "title": "2-1 2014 seances-du-conseil",
+     "lang": "fr",
+     "year": "2014",
+     "url": "https://drive.google.com/file/d/1514210moCD5io6SFR7XddydAoBIGtbB5/view?usp=drivesdk"
+    },
+    {
+     "title": "57-1 2014-taxes carrieres et sablieres",
+     "lang": "fr",
+     "year": "2014",
+     "url": "https://drive.google.com/file/d/1OpjWX6JpPdmicokLQxIMe-4-lPHIkLaB/view?usp=drivesdk"
+    },
+    {
+     "title": "73 2011 protocole entente vallee-de-outardes",
+     "lang": "fr",
+     "year": "2011",
+     "url": "https://drive.google.com/file/d/10LuZbanXPQwnFNU5_UBnvKM9IzSertFq/view?usp=drivesdk"
+    },
+    {
+     "title": "16 2001 regie intermunicipale-patinoire-regionale",
+     "lang": "fr",
+     "year": "2001",
+     "url": "https://drive.google.com/file/d/1YJGz7jnwHdngJCTpojOiDhe81ZRedKKw/view?usp=drivesdk"
+    },
+    {
+     "title": "3 2000 comite-consultatif-agricole",
+     "lang": "fr",
+     "year": "2000",
+     "url": "https://drive.google.com/file/d/1e0_VR98SjfhSt1xI2ZX0775Yk8oNx1Lr/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "TAXATION",
+   "documents": [
+    {
+     "title": "FORM Procuration 20250415",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/1UeZSpAoG3fFH20nBg6QlU8wv4oViIBMz/view?usp=drivesdk"
+    },
+    {
+     "title": "Reglement-1-2025-Taxation",
+     "lang": "fr",
+     "year": "2025",
+     "url": "https://drive.google.com/file/d/17mAgueIatki-C3DE5cdKrHzLPD1Bqri-/view?usp=drivesdk"
+    }
+   ]
+  },
+  {
+   "name": "ZONING",
+   "documents": [
+    {
+     "title": "Microsoft Word - ORM R148-2023 Zonage AnnexeB Grilles",
+     "lang": "fr",
+     "year": "2023",
+     "url": "https://drive.google.com/file/d/1K2e85TrsGsxYtEbcwIjnNMgeUG3zYox4/view?usp=drivesdk"
+    }
+   ]
+  }
+ ]
+}
