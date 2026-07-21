@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demandez à l'Observer — L'Ormstown Observer</title>
+<meta name="description" content="Posez vos questions sur les règlements, budgets, procès-verbaux et avis publics d'Ormstown — des réponses tirées des documents municipaux eux-mêmes, avec les sources.">
+<link rel="canonical" href="https://ormstownobserver.ca/fr/posez-une-question/">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/ask/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/posez-une-question/">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#1a1a1a;--ink-light:#444;--accent:#b5161b;--accent-light:#f5e8e8;
+    --paper:#faf8f4;--paper-dark:#f0ece4;--rule:#c8b97a;--border:#d4c9b8;--muted:#555;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;}
+  a{color:var(--accent);}
+  h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;}
+
+  .page-wrap{max-width:760px;margin:0 auto;padding:32px 24px 80px;}
+  .back-link{display:inline-block;font-family:sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-decoration:none;margin-bottom:24px;}
+  .back-link:hover{color:var(--accent);}
+
+  .section-label{display:inline-block;background:var(--accent);color:#fff;font-family:sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;margin-bottom:18px;}
+  .section-head h1{font-size:clamp(26px,4.5vw,38px);font-weight:900;margin-bottom:10px;}
+  .section-head p{font-size:16px;color:var(--ink-light);max-width:640px;line-height:1.65;margin:0 0 8px;}
+
+  .disclaimer{background:var(--paper-dark);border-left:3px solid var(--accent);padding:14px 18px;margin:26px 0;font-size:13.5px;color:var(--ink-light);line-height:1.6;}
+  .disclaimer strong{color:var(--ink);}
+
+  /* ── CHAT ── */
+  .chat-panel{border-top:2px solid var(--ink);margin-top:8px;}
+  #ask-thread{padding:6px 0 2px;}
+  .msg{border-left:3px solid var(--border);padding:10px 16px;margin:18px 0;}
+  .msg-user{border-left-color:var(--ink);}
+  .msg-bot{border-left-color:var(--accent);}
+  .msg-error{border-left-color:var(--rule);background:var(--paper-dark);}
+  .msg-who{font-family:sans-serif;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:6px;}
+  .msg-text p{margin:0 0 10px;font-size:15.5px;line-height:1.65;}
+  .msg-text p:last-child{margin-bottom:0;}
+  .msg-text ul{margin:0 0 10px;padding-left:20px;font-size:15.5px;}
+  .msg-cites{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;}
+  .cite-chip{display:inline-block;font-family:sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border:1px solid var(--border);background:var(--paper-dark);color:var(--ink-light);text-decoration:none;}
+  a.cite-chip:hover{border-color:var(--accent);color:var(--accent);}
+
+  .starter-chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px;}
+  .starter-chip{font-family:'Source Serif 4',serif;font-size:13px;font-style:italic;text-align:left;padding:8px 14px;border:1px solid var(--border);background:var(--paper-dark);color:var(--ink-light);cursor:pointer;transition:border-color .12s,color .12s;}
+  .starter-chip:hover{border-color:var(--accent);color:var(--accent);}
+
+  #ask-form{display:flex;gap:10px;align-items:flex-end;margin-top:16px;}
+  #ask-q{flex:1;padding:10px 12px;font-family:'Source Serif 4',serif;font-size:15px;line-height:1.5;border:1px solid var(--border);background:#fff;color:var(--ink);resize:vertical;min-height:64px;outline:none;}
+  #ask-q:focus{border-color:var(--accent);}
+  #ask-send{font-family:sans-serif;font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.12em;padding:12px 22px;border:none;background:var(--accent);color:#fff;cursor:pointer;}
+  #ask-send:hover{background:#8f1115;}
+  #ask-send:disabled{background:var(--border);cursor:wait;}
+  #ask-status{font-family:sans-serif;font-size:11px;color:var(--muted);min-height:18px;margin-top:8px;font-style:italic;}
+
+  /* ── SOURCES ── */
+  .sources{margin-top:56px;border-top:2px solid var(--ink);padding-top:18px;}
+  .sources h2{font-size:20px;font-weight:700;margin-bottom:8px;}
+  .sources > p{font-size:14px;color:var(--ink-light);line-height:1.6;}
+  #ask-doc-count{font-family:sans-serif;font-size:11px;color:var(--muted);}
+  .src-cat{margin:10px 0;border:1px solid var(--border);background:var(--paper-dark);}
+  .src-cat summary{cursor:pointer;font-family:sans-serif;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-light);padding:9px 14px;}
+  .src-cat[open] summary{border-bottom:1px solid var(--border);}
+  .src-list{margin:0;padding:10px 14px 12px 32px;font-size:13.5px;line-height:1.7;}
+  .src-list a{color:var(--ink-light);}
+  .src-list a:hover{color:var(--accent);}
+
+  .fine-print{margin-top:40px;font-family:sans-serif;font-size:10.5px;color:var(--muted);line-height:1.6;border-top:1px solid var(--border);padding-top:14px;}
+
+  @media(max-width:600px){
+    .page-wrap{padding:20px 14px 60px;}
+    #ask-form{flex-direction:column;align-items:stretch;}
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+<script src="/ask.js" defer></script>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <a class="back-link" href="/">← Accueil</a>
+
+  <div class="section-head">
+    <span class="section-label">Outil lecteur · Bêta</span>
+    <h1>Demandez à l'Observer</h1>
+    <p>Posez une question sur les règlements, budgets, procès-verbaux, taxes, zonage ou avis publics d'Ormstown. L'assistant répond à partir des documents municipaux eux-mêmes et vous montre ses sources.</p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>À lire avant de vous fier à une réponse.</strong> Les réponses sont générées par un assistant d'IA à partir de documents municipaux officiels. Il peut se tromper, et la collection de documents peut être incomplète ou périmée. Vérifiez toujours la réponse dans le document source lié. Il s'agit d'information civique, <strong>pas d'un avis juridique</strong>.
+  </div>
+
+  <div class="chat-panel">
+    <div id="ask-thread">
+      <div class="msg msg-bot">
+        <div class="msg-who">L'Observer</div>
+        <div class="msg-text">
+          <p>Bonjour — posez-moi vos questions sur les documents municipaux d'Ormstown. Essayez une des questions ci-dessous, ou écrivez la vôtre en français ou en anglais.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="starter-chips">
+      <button type="button" class="starter-chip" data-q="Est-ce que la direction générale peut entamer des procédures judiciaires contre un citoyen sans résolution approuvée par le conseil ?">La DG peut-elle entamer des procédures judiciaires sans résolution du conseil ?</button>
+      <button type="button" class="starter-chip" data-q="Que dit le règlement sur les animaux au sujet des poules en cour arrière ?">Que dit le règlement sur les animaux au sujet des poules ?</button>
+      <button type="button" class="starter-chip" data-q="Combien Ormstown a-t-elle budgété pour la voirie cette année ?">Combien Ormstown a-t-elle budgété pour la voirie cette année ?</button>
+    </div>
+
+    <form id="ask-form">
+      <textarea id="ask-q" maxlength="600" rows="3" placeholder="Votre question… (Entrée pour envoyer, Maj+Entrée pour une nouvelle ligne)" autocomplete="off"></textarea>
+      <button type="submit" id="ask-send">Demander</button>
+    </form>
+    <div id="ask-status" aria-live="polite"></div>
+    <noscript><p style="font-family:sans-serif;font-size:12px;color:#721c24;">Cet outil nécessite JavaScript. Vous pouvez tout de même <a href="/fr/bylaws-regulations/">consulter l'index des règlements</a>.</p></noscript>
+  </div>
+
+  <section class="sources" id="ask-sources">
+    <h2>Sur quoi puis-je poser des questions ?</h2>
+    <p>L'assistant ne lit que des documents publics officiels rassemblés par l'Observer : règlements d'Ormstown, procès-verbaux et ordres du jour du conseil, budgets, rapports financiers, documents de taxation, documents de zonage, avis publics, consultations et documents de la MRC du Haut-Saint-Laurent. <span id="ask-doc-count"></span></p>
+    <div id="ask-sources-list">
+      <p>Vous préférez naviguer ? <a href="/fr/bylaws-regulations/">Consultez l'index des règlements</a>.</p>
+    </div>
+  </section>
+
+  <p class="fine-print">Les réponses sont générées par IA à partir de documents officiels et peuvent contenir des erreurs. Vérifiez toute information importante dans les documents sources ou auprès de la Municipalité d'Ormstown. Rien ici ne constitue un avis juridique. Les questions sont consignées de façon anonyme (aucun compte, aucun identifiant durable) pour améliorer l'outil et éclairer le travail journalistique de l'Observer.</p>
+
+</div>
+
+</body>
+</html>
