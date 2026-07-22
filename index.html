@@ -81,6 +81,28 @@
   }
   .site-nav a:first-child { border-left: 1px solid var(--border); }
   .site-nav a:hover, .site-nav a.is-active { background: var(--accent); color: #fff; }
+  .site-nav a.nav-ogpt { color: var(--accent); font-weight: 700; }
+  .site-nav a.nav-ogpt:hover, .site-nav a.nav-ogpt.is-active { color: #fff; }
+
+  /* ── ORMSTOWNGPT BANNER ── */
+  .ogpt-banner {
+    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+    background: var(--ink); color: #fff;
+    padding: 16px 24px; border-bottom: 3px solid var(--accent);
+  }
+  .ogpt-banner .ogpt-mark {
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 900;
+    font-size: clamp(20px, 3vw, 26px); line-height: 1; white-space: nowrap;
+  }
+  .ogpt-banner .ogpt-mark em { color: var(--accent); font-style: normal; }
+  .ogpt-banner .ogpt-copy { flex: 1; min-width: 220px; font-size: 14px; line-height: 1.5; color: #e8e2d6; }
+  .ogpt-banner .ogpt-cta {
+    font-family: sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    background: var(--accent); color: #fff; padding: 11px 22px; white-space: nowrap;
+    transition: background .12s;
+  }
+  .ogpt-banner .ogpt-cta:hover { background: #8f1115; }
+  @media (max-width: 620px) { .ogpt-banner { gap: 12px; padding: 14px 16px; } .ogpt-banner .ogpt-cta { width: 100%; text-align: center; } }
 
   /* ── HERO ── */
   .hero {
@@ -300,10 +322,23 @@
   <a data-href-en="/en/events/" data-href-fr="/fr/events/" href="/en/events/">
     <span data-en>Events</span><span data-fr>&Eacute;v&eacute;nements</span>
   </a>
+  <a class="nav-ogpt" data-href-en="/en/ask/" data-href-fr="/fr/posez-une-question/" href="/en/ask/">
+    <span data-en>OrmstownGPT</span><span data-fr>OrmstownGPT</span>
+  </a>
   <a href="mailto:ormstownobserver@gmail.com">
     <span data-en>Tips &amp; Contact</span><span data-fr>Conseils &amp; contact</span>
   </a>
 </nav>
+
+<!-- ORMSTOWNGPT BANNER -->
+<a class="ogpt-banner" data-href-en="/en/ask/" data-href-fr="/fr/posez-une-question/" href="/en/ask/" aria-label="Open OrmstownGPT">
+  <span class="ogpt-mark">Ormstown<em>GPT</em></span>
+  <span class="ogpt-copy">
+    <span data-en>Ask questions about Ormstown&rsquo;s bylaws, taxes, zoning and council decisions &mdash; answered from the town&rsquo;s official documents, with sources.</span>
+    <span data-fr>Posez vos questions sur les r&egrave;glements, taxes, zonage et d&eacute;cisions du conseil d&rsquo;Ormstown &mdash; r&eacute;ponses tir&eacute;es des documents officiels, avec sources.</span>
+  </span>
+  <span class="ogpt-cta"><span data-en>Ask now &rarr;</span><span data-fr>Demander &rarr;</span></span>
+</a>
 
 <!-- HERO -->
 <section class="hero" aria-label="Featured stories">
