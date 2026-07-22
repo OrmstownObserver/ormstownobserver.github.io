@@ -10,7 +10,10 @@
 
   var ENDPOINT = 'https://seneca.strai.ca/webhook/observer-ask';
   var SOURCES_URL = '/ogpt-sources.json';
-  var LANG = document.documentElement.getAttribute('lang') === 'fr' ? 'fr' : 'en';
+  /* Language follows the PAGE (separate EN/FR files), read from the URL — not
+     the <html lang> attribute, which the shared header can rewrite from a saved
+     site-wide preference and desync the Q&A from the page. */
+  var LANG = /\/fr\//.test(location.pathname) ? 'fr' : 'en';
   var MAX_HISTORY = 8; /* 4 exchanges per assistant */
   var TIMEOUT_MS = 45000;
 
@@ -24,6 +27,10 @@
       bad: 'Please check your question — it must be between 3 and 600 characters.',
       limited: "The Observer's reading room is at capacity for today — please come back tomorrow.",
       switched: { legal: 'Now answering as the Legal & Regulations assistant.', council: 'Now answering as the Council & Community assistant.' },
+      followHead: 'You might also ask:',
+      officialFr: 'official · FR',
+      enVersion: 'English version',
+      enVersionPrompt: function (t) { return 'Give me an unofficial English version of the document titled "' + t + '", section by section.'; },
       docCount: function (n) { return n + ' official documents indexed.'; }
     },
     fr: {
@@ -35,6 +42,10 @@
       bad: 'Veuillez vérifier votre question — elle doit contenir entre 3 et 600 caractères.',
       limited: "La salle de lecture de l'Observer est au maximum pour aujourd'hui — revenez demain.",
       switched: { legal: 'Réponses fournies par l’assistant Règlements & taxes.', council: 'Réponses fournies par l’assistant Conseil & communauté.' },
+      followHead: 'Vous pourriez aussi demander :',
+      officialFr: 'officiel · FR',
+      enVersion: null,
+      enVersionPrompt: null,
       docCount: function (n) { return n + ' documents officiels indexés.'; }
     }
   }[LANG];
@@ -76,7 +87,7 @@
     });
   }
 
-  function addMessage(role, text, citations, isError) {
+  function addMessage(role, text, citations, followups, isError) {
     var thread = document.getElementById('ask-thread');
     if (!thread) return null;
     var msg = el('div', 'msg ' + (role === 'user' ? 'msg-user' : 'msg-bot') + (isError ? ' msg-error' : ''), thread);
@@ -86,16 +97,37 @@
       var wrap = el('div', 'msg-cites', msg);
       citations.forEach(function (c) {
         if (!c || typeof c.title !== 'string' || !c.title) return;
+        var line = el('span', 'cite-line', wrap);
         var node;
         if (validCiteUrl(c.url)) {
-          node = el('a', 'cite-chip', wrap);
+          node = el('a', 'cite-chip', line);
           node.setAttribute('href', c.url);
           node.setAttribute('target', '_blank');
           node.setAttribute('rel', 'noopener');
+          node.title = STRINGS.officialFr;
         } else {
-          node = el('span', 'cite-chip', wrap);
+          node = el('span', 'cite-chip', line);
         }
         node.textContent = '\u{1F4C4} ' + c.title;
+        /* On the English page, offer an on-demand unofficial English rendering
+           of the (official French) document. */
+        if (STRINGS.enVersion && !busy) {
+          var enBtn = el('button', 'cite-en', line);
+          enBtn.setAttribute('type', 'button');
+          enBtn.textContent = STRINGS.enVersion;
+          enBtn.addEventListener('click', function () { ask(STRINGS.enVersionPrompt(c.title)); });
+        }
+      });
+    }
+    if (followups && followups.length) {
+      var fwrap = el('div', 'msg-follow', msg);
+      el('div', 'follow-head', fwrap).textContent = STRINGS.followHead;
+      followups.forEach(function (q) {
+        if (typeof q !== 'string' || !q) return;
+        var b = el('button', 'follow-chip', fwrap);
+        b.setAttribute('type', 'button');
+        b.textContent = q;
+        b.addEventListener('click', function () { ask(q); });
       });
     }
     msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -125,7 +157,7 @@
     if (busy) return;
     question = String(question || '').trim();
     if (question.length < 3 || question.length > 600) {
-      addMessage('bot', STRINGS.bad, null, true);
+      addMessage('bot', STRINGS.bad, null, null, true);
       return;
     }
     announceSwitch();
@@ -153,19 +185,20 @@
         var serverMsg = LANG === 'fr' ? data.message_fr : data.message_en;
         if (res.status === 200 && typeof data.answer === 'string' && data.answer) {
           var cites = Array.isArray(data.citations) ? data.citations : [];
-          addMessage('bot', data.answer, cites);
+          var follows = Array.isArray(data.followups) ? data.followups : [];
+          addMessage('bot', data.answer, cites, follows);
           histories[current].push({ role: 'user', text: question });
           histories[current].push({ role: 'model', text: data.answer.slice(0, 1200) });
           if (histories[current].length > MAX_HISTORY) histories[current] = histories[current].slice(-MAX_HISTORY);
         } else if (res.status === 429) {
-          addMessage('bot', serverMsg || STRINGS.limited, null, true);
+          addMessage('bot', serverMsg || STRINGS.limited, null, null, true);
         } else if (res.status === 400) {
-          addMessage('bot', serverMsg || STRINGS.bad, null, true);
+          addMessage('bot', serverMsg || STRINGS.bad, null, null, true);
         } else {
-          addMessage('bot', serverMsg || STRINGS.upstream, null, true);
+          addMessage('bot', serverMsg || STRINGS.upstream, null, null, true);
         }
       })
-      .catch(function () { addMessage('bot', STRINGS.network, null, true); })
+      .catch(function () { addMessage('bot', STRINGS.network, null, null, true); })
       .then(function () {
         if (timer) clearTimeout(timer);
         setBusy(false);

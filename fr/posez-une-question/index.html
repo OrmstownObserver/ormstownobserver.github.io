@@ -41,9 +41,17 @@
   .msg-text p{margin:0 0 10px;font-size:15.5px;line-height:1.65;}
   .msg-text p:last-child{margin-bottom:0;}
   .msg-text ul{margin:0 0 10px;padding-left:20px;font-size:15.5px;}
-  .msg-cites{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px;}
+  .msg-cites{margin-top:10px;display:flex;flex-direction:column;gap:6px;}
+  .cite-line{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;}
   .cite-chip{display:inline-block;font-family:sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border:1px solid var(--border);background:var(--paper-dark);color:var(--ink-light);text-decoration:none;}
   a.cite-chip:hover{border-color:var(--accent);color:var(--accent);}
+  .cite-en{font-family:sans-serif;font-size:9.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:3px 8px;border:1px dashed var(--border);background:none;color:var(--muted);cursor:pointer;}
+  .cite-en:hover{border-color:var(--accent);color:var(--accent);}
+
+  .msg-follow{margin-top:12px;padding-top:10px;border-top:1px dotted var(--border);}
+  .follow-head{font-family:sans-serif;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:6px;}
+  .follow-chip{display:block;width:100%;text-align:left;font-family:'Source Serif 4',serif;font-size:13.5px;font-style:italic;color:var(--accent);padding:6px 0;border:none;background:none;cursor:pointer;border-bottom:1px dotted var(--border);}
+  .follow-chip:hover{color:var(--ink);}
 
   /* ── ASSISTANT TABS ── */
   .ask-tabs{display:flex;gap:0;border-bottom:2px solid var(--ink);margin-bottom:0;}
@@ -107,6 +115,10 @@
     <strong>À lire avant de vous fier à une réponse.</strong> Les réponses sont générées par IA à partir des documents officiels de la Municipalité d'Ormstown. Elle peut se tromper, et la collection peut être incomplète ou périmée. Vérifiez toujours dans le document officiel lié. Il s'agit d'information civique, <strong>pas d'un avis juridique</strong>.
   </div>
 
+  <div class="disclaimer" style="border-left-color:var(--rule);">
+    <strong>La version française est officielle.</strong> En vertu de la <em>Charte de la langue française</em> (RLRQ, c. C-11, art. 1 et 7), le français est la langue officielle du Québec et le texte français d'un règlement ou d'un acte public constitue la version officielle. Les citations ci-dessous renvoient au document officiel en français sur <a href="https://www.ormstown.ca/" target="_blank" rel="noopener">ormstown.ca</a>. Une version anglaise non officielle est offerte sur la <a href="/en/ask/">page anglaise</a> dans le cadre de la mission de l'Observer de rendre l'information accessible à tous.
+  </div>
+
   <div class="chat-panel" id="ask-panel" data-assistant="legal">
     <div class="ask-tabs" role="tablist">
       <button type="button" class="ask-tab is-active" role="tab" aria-selected="true" data-assistant="legal">Règlements &amp; taxes<small>Règlements · Zonage · Taxes · Budgets</small></button>
@@ -152,7 +164,7 @@
     </div>
   </section>
 
-  <p class="fine-print">Les réponses sont générées par IA à partir de documents officiels et peuvent contenir des erreurs. Vérifiez toute information importante dans les documents sources ou auprès de la Municipalité d'Ormstown. Rien ici ne constitue un avis juridique. Les questions sont consignées de façon anonyme (aucun compte, aucun identifiant durable) pour améliorer l'outil et éclairer le travail journalistique de l'Observer.</p>
+  <p class="fine-print">Les réponses sont générées par IA à partir de documents officiels et peuvent contenir des erreurs. Vérifiez toute information importante dans les documents sources ou auprès de la Municipalité d'Ormstown. Rien ici ne constitue un avis juridique. Les questions sont consignées de façon anonyme (aucun compte, aucun identifiant durable) pour améliorer l'outil et éclairer le travail journalistique de l'Observer.<br><br>OrmstownGPT est développé par <a href="https://strai.ca" target="_blank" rel="noopener">strAI.ca</a> et présenté par l'Ormstown Observer.</p>
 
 </div>
 
