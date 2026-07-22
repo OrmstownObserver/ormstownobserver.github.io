@@ -1,0 +1,764 @@
+{
+ "version": 2,
+ "generated_at": "2026-07-22T02:34:19.973Z",
+ "document_count": 133,
+ "assistants": {
+  "legal": {
+   "name_en": "Legal & Regulations",
+   "name_fr": "Règlements & taxes",
+   "categories": [
+    {
+     "type": "budget",
+     "documents": [
+      {
+       "title": "FEUILLET Budget 2026 VF",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/FEUILLET_Budget_2026_VF.pdf"
+      },
+      {
+       "title": "FEUILLET PTI 2026 VF",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/FEUILLET_PTI_2026_VF.pdf"
+      },
+      {
+       "title": "2025 12 17 Budget",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-12-17-Budget.pdf"
+      },
+      {
+       "title": "Budget 2025 8x14",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Budget_2025_8x14.pdf"
+      },
+      {
+       "title": "PTI 2025 2027",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PTI-2025-2027.pdf"
+      },
+      {
+       "title": "2024 12 11 Budget",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-12-11-Budget.pdf"
+      },
+      {
+       "title": "Budget 2024",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Budget-2024.pdf"
+      },
+      {
+       "title": "Faits saillants 2024",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Faits-saillants-2024.pdf"
+      },
+      {
+       "title": "2023 12 14 Seance Budget .dox 1",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-12-14-Seance-Budget-.dox_-1.pdf"
+      },
+      {
+       "title": "Faits saillants 2023",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Faits-saillants-2023.pdf"
+      },
+      {
+       "title": "ormstown budget 2023",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ormstown-budget_2023.pdf"
+      },
+      {
+       "title": "Faits saillants pour lannee 2022",
+       "year": "2022",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Faits-saillants-pour-lannee-2022.pdf"
+      }
+     ]
+    },
+    {
+     "type": "bylaw",
+     "documents": [
+      {
+       "title": "Ajout Regl. 173 2026.1",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Ajout_Regl.-173-2026.1.pdf"
+      },
+      {
+       "title": "Avis de promulgation Regl 131 2026 pour site web",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-de-promulgation-Regl-131-2026-pour-site-web.pdf"
+      },
+      {
+       "title": "Avis promulgation Regl 167.1 2026 et 39 2026 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-promulgation_Regl-167.1-2026-et-39-2026_WEB.pdf"
+      },
+      {
+       "title": "Reglement 131 2026 VF refondu pour side web",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-131-2026-VF-refondu-pour-side-web.pdf"
+      },
+      {
+       "title": "Reglement 167.1 2026 modifiant 167 2025 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-167.1-2026-modifiant-167-2025_WEB.pdf"
+      },
+      {
+       "title": "2025 12 17 Extra regl. signe",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-12-17-Extra-regl.-signe.pdf"
+      },
+      {
+       "title": "Reglement 12 2025",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-12-2025.pdf"
+      },
+      {
+       "title": "Reglement 352 2025 MRC",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-352-2025_MRC.pdf"
+      },
+      {
+       "title": "Reglement 44 2024",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-44-2024.pdf"
+      },
+      {
+       "title": "Reglement 86 2024 Utilisation de leau potable",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-86-2024-Utilisation-de-leau-potable.pdf"
+      },
+      {
+       "title": "3. Regl. 130 2023 Delegation du pouvoir de depenser",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/3.-Regl.-130-2023-Delegation-du-pouvoir-de-depenser.pdf"
+      },
+      {
+       "title": "3. Regl. 130 2023 Delegation du pouvoir de depenser 1",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/3.-Regl.-130-2023-Delegation-du-pouvoir-de-depenser-1.pdf"
+      },
+      {
+       "title": "Reglement 140.1 2023 Tarification Incendie non resident",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-140.1-2023-Tarification-Incendie-non-resident-.pdf"
+      },
+      {
+       "title": "Reglement 145 2023 relatif a la demolition dimmeubles 1",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-145-2023-relatif-a-la-demolition-dimmeubles-1.pdf"
+      },
+      {
+       "title": "Reglement 6 2023 Fonds de roulement",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-6-2023-Fonds-de-roulement.pdf"
+      },
+      {
+       "title": "Reglement 62.2 2023 Centres 9 1 1",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-62.2-2023-Centres-9-1-1.pdf"
+      },
+      {
+       "title": "Reglement no. 155 2023 sur la prevention des incendie",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.-155-2023-sur-la-prevention-des-incendie.pdf"
+      },
+      {
+       "title": "142 2022 Reglement de controle interimaire",
+       "year": "2022",
+       "url": "https://www.ormstown.ca/wp-content/uploads/142-2022-Reglement-de-controle-interimaire_.pdf"
+      },
+      {
+       "title": "5. Reglement 140 2022 Tarification Incendie",
+       "year": "2022",
+       "url": "https://www.ormstown.ca/wp-content/uploads/5.-Reglement-140-2022-Tarification-Incendie-.pdf"
+      },
+      {
+       "title": "4. Reglement n° 134 2021 Compteurs deau",
+       "year": "2021",
+       "url": "https://www.ormstown.ca/wp-content/uploads/4.-Reglement-n°-134-2021-Compteurs-deau.pdf"
+      },
+      {
+       "title": "Reglement 7 2021",
+       "year": "2021",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-7-2021.pdf"
+      },
+      {
+       "title": "Reglement no.129 2021",
+       "year": "2021",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.129-2021.pdf"
+      },
+      {
+       "title": "Reglement no.129 2021 1",
+       "year": "2021",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.129-2021-1.pdf"
+      },
+      {
+       "title": "Reg. 129 2020 Gestion contractuelle ok 1",
+       "year": "2020",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reg.-129-2020-Gestion-contractuelle-ok-1.pdf"
+      },
+      {
+       "title": "reglement 120 2019 branchements",
+       "year": "2019",
+       "url": "https://www.ormstown.ca/wp-content/uploads/reglement_120_2019_branchements.pdf"
+      },
+      {
+       "title": "103 2015 creation du service de securite indendie",
+       "year": "2015",
+       "url": "https://www.ormstown.ca/wp-content/uploads/103_2015_creation_du_service_de_securite_indendie.pdf"
+      },
+      {
+       "title": "93 2015 reglement sur occupation du domaine public",
+       "year": "2015",
+       "url": "https://www.ormstown.ca/wp-content/uploads/93_2015_reglement_sur_occupation_du_domaine_public.pdf"
+      },
+      {
+       "title": "Regl. Regie interne VF adopte 1",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Regl.-Regie-interne-VF-adopte-1.pdf"
+      }
+     ]
+    },
+    {
+     "type": "notice",
+     "documents": [
+      {
+       "title": "Avis de promulgation 2 2026 regie interne conseil pour site web",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-de-promulgation-2-2026-regie-interne-conseil-pour-site-web.pdf"
+      },
+      {
+       "title": "Avis public Regl.173 2026 PHV",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis_public_Regl.173-2026_PHV.pdf"
+      },
+      {
+       "title": "Avis public Seance dinformation Tour Bell 2026 06 10 WEB 2",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public_Seance-dinformation_Tour-Bell_2026-06-10_WEB-2.pdf"
+      },
+      {
+       "title": "Avis public 147 2025 pour site web",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-147-2025-pour-site-web.pdf"
+      },
+      {
+       "title": "Avis public 148.4 2025 pour site web",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-148.4-2025-pour-site-web.pdf"
+      },
+      {
+       "title": "Avis public reg. 151.1 2025 pour site web",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-reg.-151.1-2025-pour-site-web.pdf"
+      }
+     ]
+    },
+    {
+     "type": "taxation",
+     "documents": [
+      {
+       "title": "Reglement 1.1 2026 Taxation WEB 1",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-1.1-2026_Taxation_WEB-1.pdf"
+      },
+      {
+       "title": "Reglement 1 2025 Taxation",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-1-2025-Taxation.pdf"
+      }
+     ]
+    },
+    {
+     "type": "tender",
+     "documents": [
+      {
+       "title": "Appel doffres 2026 08",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Appel-doffres-2026-08.pdf"
+      },
+      {
+       "title": "Formulaire dappel doffres 2026 08",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Formulaire-dappel-doffres-2026-08.pdf"
+      },
+      {
+       "title": "Liste des contrats 2022 Finale",
+       "year": "2022",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Liste-des-contrats-2022-Finale.pdf"
+      },
+      {
+       "title": "Liste des contrats pour 2021",
+       "year": "2021",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Liste-des-contrats-pour-2021.pdf"
+      },
+      {
+       "title": "Reg. 129 2020 Gestion contractuelle ok",
+       "year": "2020",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reg.-129-2020-Gestion-contractuelle-ok.pdf"
+      }
+     ]
+    },
+    {
+     "type": "zoning",
+     "documents": [
+      {
+       "title": "2026 03 11 Avis public Derogation mineure Lot 5 806 510 signe",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2026-03-11-Avis-public-Derogation-mineure-Lot-5-806-510-signe.pdf"
+      },
+      {
+       "title": "2026 03 11 Avis public Derogation mineure Lot 6 228 622 signe",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2026-03-11-Avis-public-Derogation-mineure-Lot-6-228-622-signe.pdf"
+      },
+      {
+       "title": "1 ORM R148 2023 Zonage AnnexeB Grilles",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/1-ORM_R148-2023_Zonage_AnnexeB_Grilles.pdf"
+      },
+      {
+       "title": "ORM R147 2023 PU Mars2024",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R147-2023_PU_Mars2024.pdf"
+      },
+      {
+       "title": "ORM R148 2023 Zonage AnnexeA F1 General",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_AnnexeA_F1-General.pdf"
+      },
+      {
+       "title": "ORM R148 2023 Zonage AnnexeA F2 PerimetreUrbain",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_AnnexeA_F2-PerimetreUrbain.pdf"
+      },
+      {
+       "title": "ORM R148 2023 Zonage Mars2024",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_Mars2024.pdf"
+      },
+      {
+       "title": "ORM R149 2023 Lotissement Mars2024",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R149-2023_Lotissement_Mars2024.pdf"
+      },
+      {
+       "title": "ORM R150 2023 Construction Mars2024",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R150-2023_Construction_Mars2024.pdf"
+      },
+      {
+       "title": "ORM R151 2023 Permis Mars2024 1",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R151-2023_Permis_Mars2024-1.pdf"
+      },
+      {
+       "title": "ORM R152 2023 PIIA Mars2024",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R152-2023_PIIA_Mars2024.pdf"
+      },
+      {
+       "title": "ORM R153 2023 PAE Mars2024",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R153-2023_PAE_Mars2024.pdf"
+      },
+      {
+       "title": "ORM R156 2023 UC Mars2024",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R156-2023_UC_Mars2024.pdf"
+      },
+      {
+       "title": "FORM Demande certificat occupation",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/FORM_Demande-certificat-occupation.pdf"
+      },
+      {
+       "title": "Resume du Plan durbanisme de la Municipalite dOrmstown",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Resume-du-Plan-durbanisme-de-la-Municipalite-dOrmstown.pdf"
+      }
+     ]
+    }
+   ]
+  },
+  "council": {
+   "name_en": "Council & Community",
+   "name_fr": "Conseil & communauté",
+   "categories": [
+    {
+     "type": "agenda",
+     "documents": [
+      {
+       "title": "000 Avis de convocation 2026 06 15",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/000-Avis-de-convocation-2026-06-15.pdf"
+      },
+      {
+       "title": "000 Ordre du jour 2026 06 01 Avec certificat de publication",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/000-Ordre-du-jour-2026-06-01_Avec-certificat-de-publication.pdf"
+      },
+      {
+       "title": "000 Ordre du jour 2026 07 06 V2",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/000-Ordre-du-jour-2026-07-06_V2.pdf"
+      }
+     ]
+    },
+    {
+     "type": "consultation",
+     "documents": [
+      {
+       "title": "AvisPublic DemandeReferendum PPCMOI 2026 039 Legion finale",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_PPCMOI-2026-039-Legion-finale.pdf"
+      },
+      {
+       "title": "AvisPublic DemandeReferendum PPCMOI 2026 041 Toit vert",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_PPCMOI-2026-041-Toit-vert.pdf"
+      },
+      {
+       "title": "1 Avis public consultation publique 151.1 2025 signe",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/1-Avis-public-consultation-publique-151.1-2025-signe.pdf"
+      },
+      {
+       "title": "2025 09 24 Ormstown Bibliotheque Consultation Citoyenne Presentation R02",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-09-24_Ormstown_Bibliotheque_Consultation-Citoyenne_Presentation_R02.pdf"
+      },
+      {
+       "title": "AVIS Consultation publique bibliotheque 20250917",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Consultation-publique-bibliotheque_20250917.pdf"
+      },
+      {
+       "title": "R 114 2021 PPCMOI signe.docx",
+       "year": "2021",
+       "url": "https://www.ormstown.ca/wp-content/uploads/R-114-2021-PPCMOI-signe.docx.pdf"
+      },
+      {
+       "title": "1 Avis public consultation publique PPCMOI Legion",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/1-Avis-public-consultation-publique-PPCMOI-Legion.pdf"
+      },
+      {
+       "title": "1 Avis public consultation publique PPCMOI Toit Vert",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/1-Avis-public-consultation-publique-PPCMOI-Toit-Vert.pdf"
+      }
+     ]
+    },
+    {
+     "type": "minutes",
+     "documents": [
+      {
+       "title": "2026 01 19 Signe",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2026-01-19-Signe.pdf"
+      },
+      {
+       "title": "2026 02 02",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2026-02-02.pdf"
+      },
+      {
+       "title": "AVIS Calendrier seances ordinaires 2026",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Calendrier-seances-ordinaires_2026.pdf"
+      },
+      {
+       "title": "PV 2026 03 02 pour site web",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf"
+      },
+      {
+       "title": "PV 2026 03 23 Extraoridinaire pour site web",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PV-2026-03-23-Extraoridinaire-pour-site-web.pdf"
+      },
+      {
+       "title": "PV 2026 04 13 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PV_2026-04-13_WEB.pdf"
+      },
+      {
+       "title": "PV 2026 05 04 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PV_2026-05-04_WEB.pdf"
+      },
+      {
+       "title": "2025 01 20 PV",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-01-20_PV.pdf"
+      },
+      {
+       "title": "2025 02 03 PV",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-02-03_PV.pdf"
+      },
+      {
+       "title": "2025 02 10 PV SE",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-02-10_PV-SE.pdf"
+      },
+      {
+       "title": "2025 03 03 PV 1",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-03-03_PV-1.pdf"
+      },
+      {
+       "title": "2025 03 13 PV SE 1",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-03-13_PV-SE-1.pdf"
+      },
+      {
+       "title": "2025 04 03 PV SE 1",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-04-03_PV-SE-1.pdf"
+      },
+      {
+       "title": "2025 04 07 PV",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-04-07_PV.pdf"
+      },
+      {
+       "title": "2025 05 05 PV",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-05-05_PV.pdf"
+      },
+      {
+       "title": "2025 05 27 PV SE",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-05-27_PV-SE.pdf"
+      },
+      {
+       "title": "2025 06 02 PV",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-06-02_PV.pdf"
+      },
+      {
+       "title": "2025 06 10 PV SE",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-06-10_PV-SE.pdf"
+      },
+      {
+       "title": "2025 07 14 PV",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-07-14_PV.pdf"
+      },
+      {
+       "title": "2025 08 04 PV",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-08-04_PV.pdf"
+      },
+      {
+       "title": "2025 09 08",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-09-08.pdf"
+      },
+      {
+       "title": "2025 10 02 Extra",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-10-02-Extra.pdf"
+      },
+      {
+       "title": "2025 11 17",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-11-17.pdf"
+      },
+      {
+       "title": "2025 12 17 extra signe",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-12-17-extra-signe.pdf"
+      },
+      {
+       "title": "PV 2025 12 01 Signe",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PV-2025-12-01-Signe.pdf"
+      },
+      {
+       "title": "2024 01 15",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-01-15.pdf"
+      },
+      {
+       "title": "2024 09 30",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-09-30.pdf"
+      },
+      {
+       "title": "2024 10 07",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-10-07.pdf"
+      },
+      {
+       "title": "2024 10 15",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-10-15.pdf"
+      },
+      {
+       "title": "2024 11 11",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-11-11.pdf"
+      },
+      {
+       "title": "2024 12 02 1",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-12-02-1.pdf"
+      },
+      {
+       "title": "2024 12 09 Extraordinaire",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-12-09-Extraordinaire.pdf"
+      },
+      {
+       "title": "2024 12 11 Extraordinaire",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-12-11-Extraordinaire.pdf"
+      },
+      {
+       "title": "2024 12 16 Extraordinaire",
+       "year": "2024",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2024-12-16-Extraordinaire.pdf"
+      },
+      {
+       "title": "2023 01 09 Seance Extra",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-01-09-Seance-Extra.pdf"
+      },
+      {
+       "title": "2023 01 16",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-01-16.pdf"
+      },
+      {
+       "title": "2023 01 23 Seance Extra",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-01-23-Seance-Extra.pdf"
+      },
+      {
+       "title": "2023 02 01 Seance Extra",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-02-01-Seance-Extra.pdf"
+      },
+      {
+       "title": "2023 02 06",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-02-06-.pdf"
+      },
+      {
+       "title": "2023 02 20 Seance Extra",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-02-20-Seance-Extra.pdf"
+      },
+      {
+       "title": "2023 03 06",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-03-06.pdf"
+      },
+      {
+       "title": "2023 03 14 Seance Extra",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-03-14-Seance-Extra.pdf"
+      },
+      {
+       "title": "2023 04 03.dox",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-04-03.dox_.pdf"
+      },
+      {
+       "title": "2023 04 17 Seance Extra",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-04-17-Seance-Extra.pdf"
+      },
+      {
+       "title": "2023 05 01.dox",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-05-01.dox_.pdf"
+      },
+      {
+       "title": "2023 05 15 Seance Extra",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-05-15-Seance-Extra.pdf"
+      },
+      {
+       "title": "2023 06 05.dox 3",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-06-05.dox_-3.pdf"
+      },
+      {
+       "title": "2023 07 03.dox",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-07-03.dox_.pdf"
+      },
+      {
+       "title": "2023 08 07.dox",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-08-07.dox_.pdf"
+      },
+      {
+       "title": "2023 09 05.dox",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-09-05.dox_.pdf"
+      },
+      {
+       "title": "2023 10 02.dox",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-10-02.dox_.pdf"
+      },
+      {
+       "title": "2023 11 06",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-11-06.pdf"
+      },
+      {
+       "title": "2023 12 04",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-12-04.pdf"
+      },
+      {
+       "title": "2023 12 14 Seance Extra 1 .dox",
+       "year": "2023",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2023-12-14-Seance-Extra-1-.dox_.pdf"
+      }
+     ]
+    },
+    {
+     "type": "notice",
+     "documents": [
+      {
+       "title": "Avis de promulgation 2 2026 regie interne conseil pour site web",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-de-promulgation-2-2026-regie-interne-conseil-pour-site-web.pdf"
+      },
+      {
+       "title": "Avis public Regl.173 2026 PHV",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis_public_Regl.173-2026_PHV.pdf"
+      },
+      {
+       "title": "Avis public Seance dinformation Tour Bell 2026 06 10 WEB 2",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public_Seance-dinformation_Tour-Bell_2026-06-10_WEB-2.pdf"
+      },
+      {
+       "title": "Avis public 147 2025 pour site web",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-147-2025-pour-site-web.pdf"
+      },
+      {
+       "title": "Avis public 148.4 2025 pour site web",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-148.4-2025-pour-site-web.pdf"
+      },
+      {
+       "title": "Avis public reg. 151.1 2025 pour site web",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-reg.-151.1-2025-pour-site-web.pdf"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
