@@ -45,9 +45,21 @@
   .cite-chip{display:inline-block;font-family:sans-serif;font-size:10px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border:1px solid var(--border);background:var(--paper-dark);color:var(--ink-light);text-decoration:none;}
   a.cite-chip:hover{border-color:var(--accent);color:var(--accent);}
 
-  .starter-chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px;}
+  /* ── ASSISTANT TABS ── */
+  .ask-tabs{display:flex;gap:0;border-bottom:2px solid var(--ink);margin-bottom:0;}
+  .ask-tab{flex:1;font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:15px;text-align:center;padding:12px 10px 10px;border:none;background:none;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .12s,border-color .12s;}
+  .ask-tab small{display:block;font-family:sans-serif;font-weight:600;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;margin-top:3px;opacity:.7;}
+  .ask-tab:hover{color:var(--ink);}
+  .ask-tab.is-active{color:var(--accent);border-bottom-color:var(--accent);}
+  .tab-desc{font-size:13.5px;color:var(--ink-light);line-height:1.6;margin:14px 0 4px;font-style:italic;}
+  [data-assistant="legal"] .only-council,[data-assistant="council"] .only-legal{display:none;}
+
+  .msg-switch{font-family:sans-serif;font-size:11px;color:var(--muted);text-align:center;margin:14px 0;padding:0;font-style:italic;}
+
+  .starter-chips{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 6px;}
   .starter-chip{font-family:'Source Serif 4',serif;font-size:13px;font-style:italic;text-align:left;padding:8px 14px;border:1px solid var(--border);background:var(--paper-dark);color:var(--ink-light);cursor:pointer;transition:border-color .12s,color .12s;}
   .starter-chip:hover{border-color:var(--accent);color:var(--accent);}
+  .src-group-head{font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:var(--ink);margin:16px 0 6px;}
 
   #ask-form{display:flex;gap:10px;align-items:flex-end;margin-top:16px;}
   #ask-q{flex:1;padding:10px 12px;font-family:'Source Serif 4',serif;font-size:15px;line-height:1.5;border:1px solid var(--border);background:#fff;color:var(--ink);resize:vertical;min-height:64px;outline:none;}
@@ -86,29 +98,42 @@
   <a class="back-link" href="/">← Accueil</a>
 
   <div class="section-head">
-    <span class="section-label">Outil lecteur · Bêta</span>
-    <h1>Demandez à l'Observer</h1>
-    <p>Posez une question sur les règlements, budgets, procès-verbaux, taxes, zonage ou avis publics d'Ormstown. L'assistant répond à partir des documents municipaux eux-mêmes et vous montre ses sources.</p>
+    <span class="section-label">OrmstownGPT · Bêta · présenté par l'Ormstown Observer</span>
+    <h1>OrmstownGPT</h1>
+    <p>Deux assistants formés sur les documents publics officiels d'Ormstown. Posez une question et obtenez une réponse avec des liens vers les documents sources sur le site de la municipalité.</p>
   </div>
 
   <div class="disclaimer">
-    <strong>À lire avant de vous fier à une réponse.</strong> Les réponses sont générées par un assistant d'IA à partir de documents municipaux officiels. Il peut se tromper, et la collection de documents peut être incomplète ou périmée. Vérifiez toujours la réponse dans le document source lié. Il s'agit d'information civique, <strong>pas d'un avis juridique</strong>.
+    <strong>À lire avant de vous fier à une réponse.</strong> Les réponses sont générées par IA à partir des documents officiels de la Municipalité d'Ormstown. Elle peut se tromper, et la collection peut être incomplète ou périmée. Vérifiez toujours dans le document officiel lié. Il s'agit d'information civique, <strong>pas d'un avis juridique</strong>.
   </div>
 
-  <div class="chat-panel">
+  <div class="chat-panel" id="ask-panel" data-assistant="legal">
+    <div class="ask-tabs" role="tablist">
+      <button type="button" class="ask-tab is-active" role="tab" aria-selected="true" data-assistant="legal">Règlements &amp; taxes<small>Règlements · Zonage · Taxes · Budgets</small></button>
+      <button type="button" class="ask-tab" role="tab" aria-selected="false" data-assistant="council">Conseil &amp; communauté<small>Procès-verbaux · Ordres du jour · Consultations</small></button>
+    </div>
+
+    <p class="tab-desc only-legal">Posez des questions sur les règlements municipaux, l'urbanisme et les permis, la taxation et l'évaluation, les budgets et rapports financiers.</p>
+    <p class="tab-desc only-council">Posez des questions sur les procès-verbaux et ordres du jour du conseil, les consultations publiques, et les avis &amp; événements communautaires.</p>
+
     <div id="ask-thread">
       <div class="msg msg-bot">
-        <div class="msg-who">L'Observer</div>
+        <div class="msg-who">OrmstownGPT</div>
         <div class="msg-text">
-          <p>Bonjour — posez-moi vos questions sur les documents municipaux d'Ormstown. Essayez une des questions ci-dessous, ou écrivez la vôtre en français ou en anglais.</p>
+          <p>Bonjour — choisissez un thème ci-dessus et posez une question sur les documents officiels d'Ormstown, en français ou en anglais. Les réponses renvoient à la source sur ormstown.ca.</p>
         </div>
       </div>
     </div>
 
-    <div class="starter-chips">
-      <button type="button" class="starter-chip" data-q="Est-ce que la direction générale peut entamer des procédures judiciaires contre un citoyen sans résolution approuvée par le conseil ?">La DG peut-elle entamer des procédures judiciaires sans résolution du conseil ?</button>
-      <button type="button" class="starter-chip" data-q="Que dit le règlement sur les animaux au sujet des poules en cour arrière ?">Que dit le règlement sur les animaux au sujet des poules ?</button>
-      <button type="button" class="starter-chip" data-q="Combien Ormstown a-t-elle budgété pour la voirie cette année ?">Combien Ormstown a-t-elle budgété pour la voirie cette année ?</button>
+    <div class="starter-chips only-legal">
+      <button type="button" class="starter-chip" data-assistant="legal" data-q="Que dit le règlement sur les animaux au sujet des poules en cour arrière ?">Que dit le règlement sur les animaux au sujet des poules ?</button>
+      <button type="button" class="starter-chip" data-assistant="legal" data-q="Quel est le taux de taxe foncière résidentielle d'Ormstown cette année ?">Quel est le taux de taxe foncière résidentielle cette année ?</button>
+      <button type="button" class="starter-chip" data-assistant="legal" data-q="Que exige le règlement de zonage pour une rénovation dans un secteur patrimonial ?">Que exige le zonage pour une rénovation en secteur patrimonial ?</button>
+    </div>
+    <div class="starter-chips only-council">
+      <button type="button" class="starter-chip" data-assistant="council" data-q="Qu'a décidé le conseil au sujet de la tour 5G de Bell ?">Qu'a décidé le conseil au sujet de la tour 5G de Bell ?</button>
+      <button type="button" class="starter-chip" data-assistant="council" data-q="Quand aura lieu la prochaine consultation publique et sur quel sujet ?">Quand aura lieu la prochaine consultation publique ?</button>
+      <button type="button" class="starter-chip" data-assistant="council" data-q="Qu'y avait-il à l'ordre du jour de la dernière séance du conseil ?">Qu'y avait-il au dernier ordre du jour du conseil ?</button>
     </div>
 
     <form id="ask-form">
@@ -121,7 +146,7 @@
 
   <section class="sources" id="ask-sources">
     <h2>Sur quoi puis-je poser des questions ?</h2>
-    <p>L'assistant ne lit que des documents publics officiels rassemblés par l'Observer : règlements d'Ormstown, procès-verbaux et ordres du jour du conseil, budgets, rapports financiers, documents de taxation, documents de zonage, avis publics, consultations et documents de la MRC du Haut-Saint-Laurent. <span id="ask-doc-count"></span></p>
+    <p>OrmstownGPT ne lit que les documents publics officiels publiés par la Municipalité d'Ormstown — règlements, zonage et permis, taxation, budgets et rapports financiers, procès-verbaux et ordres du jour, consultations et avis publics. Chaque citation renvoie au document sur ormstown.ca. <span id="ask-doc-count"></span></p>
     <div id="ask-sources-list">
       <p>Vous préférez naviguer ? <a href="/fr/bylaws-regulations/">Consultez l'index des règlements</a>.</p>
     </div>
