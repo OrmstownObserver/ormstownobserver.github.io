@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-07-17T03:22:10.341Z",
+  "generated_at": "2026-07-24T05:00:43.865Z",
   "hero": {
     "slug": "bell-tower-complete",
     "path_en": "/en/bell-tower-complete/",
@@ -163,6 +163,36 @@
   ],
   "latest": [
     {
+      "slug": "piia-route-201-corridor",
+      "path_en": "/en/piia/route-201-corridor/",
+      "path_fr": "/fr/piia/corridor-route-201/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "One storey, close to the road: what the PIIA asks of builders on the Route 201 South corridor",
+      "hed_fr": "Un étage, près de la route : ce que le PIIA exige des bâtisseurs du corridor de la route 201 Sud",
+      "date_published": "2026-07-24"
+    },
+    {
+      "slug": "piia-who-decides",
+      "path_en": "/en/piia/who-decides/",
+      "path_fr": "/fr/piia/qui-decide/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Who actually decides: the CCU, council, and what happens when a PIIA is refused",
+      "hed_fr": "Qui décide vraiment : le CCU, le conseil et ce qui arrive quand un PIIA est refusé",
+      "date_published": "2026-07-24"
+    },
+    {
+      "slug": "piia-accessory-dwelling-units",
+      "path_en": "/en/piia/accessory-dwelling-units/",
+      "path_fr": "/fr/piia/unites-habitation-accessoires/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "A second home in the back yard: the PIIA rules for detached accessory dwelling units",
+      "hed_fr": "Une seconde maison dans la cour arrière : les règles PIIA des unités d'habitation accessoires détachées",
+      "date_published": "2026-07-24"
+    },
+    {
       "slug": "bell-tower-complete",
       "path_en": "/en/bell-tower-complete/",
       "path_fr": "/fr/bell-tower-complete/",
@@ -231,36 +261,6 @@
       "hed_en": "Before Monday’s vote: what residents were never told about the Bell tower",
       "hed_fr": "Avant le vote de lundi : ce qu’on n’a jamais dit aux résidents au sujet de la tour Bell",
       "date_published": "2026-07-05"
-    },
-    {
-      "slug": "bell-tower-correspondence",
-      "path_en": "/en/bell-tower-correspondence/",
-      "path_fr": "/fr/bell-tower-correspondence/",
-      "label_en": "Documentary Record",
-      "label_fr": "Dossier",
-      "hed_en": "The complete correspondence record: the Observer and Bell Mobilité — Bell Tower · Projet E3640",
-      "hed_fr": "Le dossier de correspondance complet : l’Observer et Bell Mobilité — Bell Tower · Projet E3640",
-      "date_published": "2026-07-05"
-    },
-    {
-      "slug": "editorials-language-policy-2026",
-      "path_en": "/en/editorials/language-policy-2026/",
-      "path_fr": "/fr/editoriaux/politique-linguistique-2026/",
-      "label_en": "Editorial",
-      "label_fr": "Éditorial",
-      "hed_en": "When policy allows more than practice — Ormstown’s language directive and the gap residents live with",
-      "hed_fr": "Quand la politique permet plus que la pratique — la directive linguistique d’Ormstown et l’écart que vivent les résidents",
-      "date_published": "2026-06-25"
-    },
-    {
-      "slug": "bylaws-regulations-council-procedure-2-2026",
-      "path_en": "/en/bylaws-regulations/council-procedure-2-2026/",
-      "path_fr": "/fr/bylaws-regulations/reglement-regie-interne-2-2026/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "How Ormstown council meetings actually work now: Bylaw 2-2026 explained — Règlement 2-2026",
-      "hed_fr": "Comment fonctionnent vraiment les séances du conseil d’Ormstown : le Règlement 2-2026 expliqué — Règlement 2-2026",
-      "date_published": "2026-06-21"
     }
   ]
 }
