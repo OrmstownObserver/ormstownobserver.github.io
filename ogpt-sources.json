@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-07-29T16:39:24.490Z",
- "document_count": 133,
+ "generated_at": "2026-07-29T16:47:23.965Z",
+ "document_count": 153,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -106,6 +106,11 @@
        "url": "https://www.ormstown.ca/wp-content/uploads/2025-12-17-Extra-regl.-signe.pdf"
       },
       {
+       "title": "Avis de promulgation adoption regl 170 2025",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-de-promulgation-adoption-regl-170-2025.pdf"
+      },
+      {
        "title": "Reglement 12 2025",
        "year": "2025",
        "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-12-2025.pdf"
@@ -196,6 +201,11 @@
        "url": "https://www.ormstown.ca/wp-content/uploads/Reg.-129-2020-Gestion-contractuelle-ok-1.pdf"
       },
       {
+       "title": "regl 131 2020 animaux domestiques chiens dangereux",
+       "year": "2020",
+       "url": "https://www.ormstown.ca/wp-content/uploads/regl_131-2020_animaux-domestiques-chiens-dangereux.pdf"
+      },
+      {
        "title": "reglement 120 2019 branchements",
        "year": "2019",
        "url": "https://www.ormstown.ca/wp-content/uploads/reglement_120_2019_branchements.pdf"
@@ -221,9 +231,19 @@
      "type": "notice",
      "documents": [
       {
+       "title": "avis de promulgation 171 2026",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/avis-de-promulgation-171-2026.pdf"
+      },
+      {
        "title": "Avis de promulgation 2 2026 regie interne conseil pour site web",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-de-promulgation-2-2026-regie-interne-conseil-pour-site-web.pdf"
+      },
+      {
+       "title": "Avis public Appel de candidatures CCU 2026",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-Appel-de-candidatures-CCU-2026.pdf"
       },
       {
        "title": "Avis public Regl.173 2026 PHV",
@@ -234,6 +254,11 @@
        "title": "Avis public Seance dinformation Tour Bell 2026 06 10 WEB 2",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public_Seance-dinformation_Tour-Bell_2026-06-10_WEB-2.pdf"
+      },
+      {
+       "title": "2025 10 29 Avis Public 1266 rue de la Vallee",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-10-29-Avis-Public-1266-rue-de-la-Vallee.pdf"
       },
       {
        "title": "Avis public 147 2025 pour site web",
@@ -249,6 +274,31 @@
        "title": "Avis public reg. 151.1 2025 pour site web",
        "year": "2025",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-reg.-151.1-2025-pour-site-web.pdf"
+      },
+      {
+       "title": "AvisPublic DemandeReferendum 148.1 2025",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_148.1-2025.pdf"
+      },
+      {
+       "title": "AvisPublic DemandeReferendum 148.2 2025 SW",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_148.2-2025_SW.pdf"
+      },
+      {
+       "title": "AvisPublic DemandeReferendum 148.3 2025 SW",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_148.3-2025_SW.pdf"
+      },
+      {
+       "title": "Avis public Demolition du 1396 1400 rue de Jamestown",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-Demolition-du-1396-1400-rue-de-Jamestown.pdf"
+      },
+      {
+       "title": "Avis public MRC Modification de lavis du 27 janvier Vision strategique",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-MRC-Modification-de-lavis-du-27-janvier-Vision-strategique.pdf"
       }
      ]
     },
@@ -309,6 +359,11 @@
        "title": "2026 03 11 Avis public Derogation mineure Lot 6 228 622 signe",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/2026-03-11-Avis-public-Derogation-mineure-Lot-6-228-622-signe.pdf"
+      },
+      {
+       "title": "2025 10 29 Avis public Derogation mineure Lot 5 806 011",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-10-29-Avis-public-Derogation-mineure-Lot-5-806-011.pdf"
       },
       {
        "title": "1 ORM R148 2023 Zonage AnnexeB Grilles",
@@ -417,6 +472,16 @@
        "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_PPCMOI-2026-041-Toit-vert.pdf"
       },
       {
+       "title": "1 Avis public consultation publique 147.1 2025 signe",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/1-Avis-public-consultation-publique-147.1-2025-signe.pdf"
+      },
+      {
+       "title": "1 Avis public consultation publique 148.4 2025 signe",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/1-Avis-public-consultation-publique-148.4-2025-signe.pdf"
+      },
+      {
        "title": "1 Avis public consultation publique 151.1 2025 signe",
        "year": "2025",
        "url": "https://www.ormstown.ca/wp-content/uploads/1-Avis-public-consultation-publique-151.1-2025-signe.pdf"
@@ -430,6 +495,31 @@
        "title": "AVIS Consultation publique bibliotheque 20250917",
        "year": "2025",
        "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Consultation-publique-bibliotheque_20250917.pdf"
+      },
+      {
+       "title": "Avis de promulgation adoption reg 169 2025 PPCMOI",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-de-promulgation-adoption-reg-169-2025-PPCMOI.pdf"
+      },
+      {
+       "title": "Avis public consultation publique 148.2 2025",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-consultation-publique-148.2-2025.pdf"
+      },
+      {
+       "title": "Avis public consultation publique 148.3 2025 octobre 2025",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-consultation-publique-148.3-2025-octobre-2025.pdf"
+      },
+      {
+       "title": "Avis public consultation publique regl 169 2025",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-consultation-publique-regl-169-2025.pdf"
+      },
+      {
+       "title": "Avis public consultation publique regl 170 2025",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-consultation-publique-regl-170-2025.pdf"
       },
       {
        "title": "R 114 2021 PPCMOI signe.docx",
@@ -724,12 +814,37 @@
      ]
     },
     {
+     "type": "news",
+     "documents": [
+      {
+       "title": "Politique Dons et Commandites",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Politique-Dons-et-Commandites.pdf"
+      },
+      {
+       "title": "Programme Aide et Soutien logistique",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Programme-Aide-et-Soutien-logistique.pdf"
+      }
+     ]
+    },
+    {
      "type": "notice",
      "documents": [
+      {
+       "title": "avis de promulgation 171 2026",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/avis-de-promulgation-171-2026.pdf"
+      },
       {
        "title": "Avis de promulgation 2 2026 regie interne conseil pour site web",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-de-promulgation-2-2026-regie-interne-conseil-pour-site-web.pdf"
+      },
+      {
+       "title": "Avis public Appel de candidatures CCU 2026",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-Appel-de-candidatures-CCU-2026.pdf"
       },
       {
        "title": "Avis public Regl.173 2026 PHV",
@@ -740,6 +855,11 @@
        "title": "Avis public Seance dinformation Tour Bell 2026 06 10 WEB 2",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public_Seance-dinformation_Tour-Bell_2026-06-10_WEB-2.pdf"
+      },
+      {
+       "title": "2025 10 29 Avis Public 1266 rue de la Vallee",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2025-10-29-Avis-Public-1266-rue-de-la-Vallee.pdf"
       },
       {
        "title": "Avis public 147 2025 pour site web",
@@ -755,6 +875,31 @@
        "title": "Avis public reg. 151.1 2025 pour site web",
        "year": "2025",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-reg.-151.1-2025-pour-site-web.pdf"
+      },
+      {
+       "title": "AvisPublic DemandeReferendum 148.1 2025",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_148.1-2025.pdf"
+      },
+      {
+       "title": "AvisPublic DemandeReferendum 148.2 2025 SW",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_148.2-2025_SW.pdf"
+      },
+      {
+       "title": "AvisPublic DemandeReferendum 148.3 2025 SW",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_148.3-2025_SW.pdf"
+      },
+      {
+       "title": "Avis public Demolition du 1396 1400 rue de Jamestown",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-Demolition-du-1396-1400-rue-de-Jamestown.pdf"
+      },
+      {
+       "title": "Avis public MRC Modification de lavis du 27 janvier Vision strategique",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-MRC-Modification-de-lavis-du-27-janvier-Vision-strategique.pdf"
       }
      ]
     }
