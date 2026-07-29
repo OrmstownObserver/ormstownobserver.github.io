@@ -31,7 +31,8 @@
       officialFr: 'official · FR',
       enVersion: 'English version',
       enVersionPrompt: function (t) { return 'Give me an unofficial English version of the document titled "' + t + '", section by section.'; },
-      docCount: function (n) { return n + ' official documents indexed.'; }
+      docCount: function (n) { return n + ' official documents indexed.'; },
+      notAdvice: 'BETA · AI-generated from official documents and may be wrong or incomplete. This is in no way legal advice — verify with the Municipality of Ormstown before acting on it.'
     },
     fr: {
       bot: 'OrmstownGPT',
@@ -46,7 +47,8 @@
       officialFr: 'officiel · FR',
       enVersion: null,
       enVersionPrompt: null,
-      docCount: function (n) { return n + ' documents officiels indexés.'; }
+      docCount: function (n) { return n + ' documents officiels indexés.'; },
+      notAdvice: 'BÊTA · Généré par IA à partir de documents officiels; peut être erroné ou incomplet. Ne constitue en aucun cas un avis juridique — vérifiez auprès de la Municipalité d’Ormstown avant d’agir.'
     }
   }[LANG];
 
@@ -129,6 +131,11 @@
         b.textContent = q;
         b.addEventListener('click', function () { ask(q); });
       });
+    }
+    /* Every substantive answer carries the beta + not-legal-advice notice, so it
+       travels with the answer when it is screenshotted, copied or quoted. */
+    if (role !== 'user' && !isError) {
+      el('div', 'msg-note', msg).textContent = STRINGS.notAdvice;
     }
     msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     return msg;
