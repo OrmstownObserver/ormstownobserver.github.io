@@ -239,26 +239,77 @@
     items.forEach(function (a) { wrap.appendChild(a); });
   }
 
-  function renderLatest(list) {
-    if (!Array.isArray(list) || !list.length) return;
+  /* One row of the Latest list. Numbered files lead with "Part n"; everything
+     else keeps the section label it always had. */
+  function latItem(s, showPart) {
+    var a = el('a', 'lat-item');
+    setHrefs(a, s);
+    if (showPart && s.part != null) {
+      biSpan(el('span', 'lat-part', a), 'Part ' + s.part, 'Partie ' + s.part);
+    } else {
+      biSpan(el('span', 'lat-cat', a), s.label_en, s.label_fr);
+    }
+    biSpan(el('span', 'lat-hed', a), s.hed_en, s.hed_fr);
+    return a;
+  }
+
+  /* Grouped-by-file rendering (front-page.json v2). Falls back to the flat list
+     when the feed predates grouping, so the renderer and the builder can ship
+     independently without ever leaving a blank column. */
+  function buildGroups(groups) {
+    var out = [];
+    groups.forEach(function (g) {
+      if (!g || !Array.isArray(g.items) || !g.items.length) return;
+      var wrap = el('div', 'lat-group');
+      var showPart = g.items.every(function (i) { return i.part != null; });
+      if (g.file) {
+        var head = el('div', 'lat-group-head', wrap);
+        biSpan(el('span', 'lat-file', head), g.file, g.file_fr || g.file);
+        if (g.status_en) {
+          var open = g.status_en === 'Open';
+          var st = el('span', 'lat-status' + (open ? ' is-open' : ''), head);
+          var n = g.total || g.items.length;
+          biSpan(st,
+            g.status_en + ' · ' + n + (n === 1 ? ' part' : ' parts'),
+            (g.status_fr || g.status_en) + ' · ' + n + (n === 1 ? ' partie' : ' parties'));
+          /* Progress ticks only where the count means something — a finished
+             file. An open file has no known total to measure against. */
+          if (showPart && !open && n > 1) {
+            var prog = el('span', 'lat-prog', head);
+            prog.setAttribute('aria-hidden', 'true');
+            for (var i = 0; i < n; i++) el('i', 'on', prog);
+          }
+        }
+      }
+      g.items.forEach(function (s) {
+        if (!validStory(s)) return;
+        wrap.appendChild(latItem(s, showPart));
+      });
+      if (wrap.querySelector('a.lat-item')) out.push(wrap);
+    });
+    return out;
+  }
+
+  function renderLatest(list, groups) {
     var col = document.querySelector('.latest-col');
     if (!col) return;
-    var items = [];
-    list.slice(0, 12).forEach(function (s) {
-      if (!validStory(s)) return;
-      var a = el('a', 'lat-item');
-      setHrefs(a, s);
-      biSpan(el('span', 'lat-cat', a), s.label_en, s.label_fr);
-      biSpan(el('span', 'lat-hed', a), s.hed_en, s.hed_fr);
-      items.push(a);
-    });
-    if (!items.length) return;
-    /* Remove only the static list items; #pn-teaser (public-notices feed)
-       and the column head stay untouched. */
+    var nodes = [];
+    if (Array.isArray(groups) && groups.length) {
+      nodes = buildGroups(groups);
+    } else if (Array.isArray(list) && list.length) {
+      list.slice(0, 12).forEach(function (s) {
+        if (!validStory(s)) return;
+        nodes.push(latItem(s, false));
+      });
+    }
+    if (!nodes.length) return;
+    /* Remove only the static list items and any previous groups; #pn-teaser
+       (public-notices feed) and the column head stay untouched. */
     col.querySelectorAll('a.lat-item').forEach(function (n) {
       if (!n.closest('#pn-teaser')) n.parentNode.removeChild(n);
     });
-    items.forEach(function (a) { col.appendChild(a); });
+    col.querySelectorAll('.lat-group').forEach(function (n) { n.parentNode.removeChild(n); });
+    nodes.forEach(function (n) { col.appendChild(n); });
   }
 
   function wrapLangToggles() {
@@ -285,7 +336,7 @@
       try { renderHero(data.hero); } catch (e) {}
       try { renderRail(data.rail); } catch (e) {}
       try { renderCards(data.cards); } catch (e) {}
-      try { renderLatest(data.latest); } catch (e) {}
+      try { renderLatest(data.latest, data.latest_groups); } catch (e) {}
       try { syncAria(); } catch (e) {}
       try { wrapLangToggles(); } catch (e) {}
     })
