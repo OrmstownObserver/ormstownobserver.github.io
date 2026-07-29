@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "generated_at": "2026-07-29T23:30:49.227Z",
+  "version": 2,
+  "generated_at": "2026-07-29T23:44:13.103Z",
   "hero": {
     "slug": "toit-vert-development",
     "path_en": "/en/toit-vert-development/",
@@ -243,6 +243,278 @@
       "hed_en": "Before Monday’s vote: what residents were never told about the Bell tower",
       "hed_fr": "Avant le vote de lundi : ce qu’on n’a jamais dit aux résidents au sujet de la tour Bell",
       "date_published": "2026-07-05"
+    }
+  ],
+  "latest_groups": [
+    {
+      "file": "PIIA Explained",
+      "file_fr": "Le PIIA expliqué",
+      "status_en": "Complete",
+      "status_fr": "Complet",
+      "items": [
+        {
+          "slug": "piia-piia-101",
+          "path_en": "/en/piia/piia-101/",
+          "path_fr": "/fr/piia/piia-101/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "PIIA 101: the bylaw that judges how your project looks",
+          "hed_fr": "Le PIIA 101 : le règlement qui juge l’apparence de votre projet",
+          "date_published": "2026-07-07",
+          "part": 1
+        },
+        {
+          "slug": "piia-business-signs",
+          "path_en": "/en/piia/business-signs/",
+          "path_fr": "/fr/piia/enseignes-commerces/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Opening a shop in Ormstown? Your sign and storefront may need council approval first",
+          "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
+          "date_published": "2026-07-07",
+          "part": 2
+        },
+        {
+          "slug": "piia-homeowners-heritage-core",
+          "path_en": "/en/piia/homeowners-heritage-core/",
+          "path_fr": "/fr/piia/proprietaires-noyau-villageois/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Paint, roofs and front galleries: what village-core homeowners must know before they renovate",
+          "hed_fr": "Peinture, toitures et galeries : ce que les propriétaires du noyau villageois doivent savoir avant de rénover",
+          "date_published": "2026-07-10",
+          "part": 3
+        },
+        {
+          "slug": "piia-route-201-corridor",
+          "path_en": "/en/piia/route-201-corridor/",
+          "path_fr": "/fr/piia/corridor-route-201/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "One storey, close to the road: what the PIIA asks of builders on the Route 201 South corridor",
+          "hed_fr": "Un étage, près de la route : ce que le PIIA exige des bâtisseurs du corridor de la route 201 Sud",
+          "date_published": "2026-07-24",
+          "part": 4
+        },
+        {
+          "slug": "piia-accessory-dwelling-units",
+          "path_en": "/en/piia/accessory-dwelling-units/",
+          "path_fr": "/fr/piia/unites-habitation-accessoires/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "A second home in the back yard: the PIIA rules for detached accessory dwelling units",
+          "hed_fr": "Une seconde maison dans la cour arrière : les règles PIIA des unités d'habitation accessoires détachées",
+          "date_published": "2026-07-24",
+          "part": 5
+        },
+        {
+          "slug": "piia-who-decides",
+          "path_en": "/en/piia/who-decides/",
+          "path_fr": "/fr/piia/qui-decide/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Who actually decides: the CCU, council, and what happens when a PIIA is refused",
+          "hed_fr": "Qui décide vraiment : le CCU, le conseil et ce qui arrive quand un PIIA est refusé",
+          "date_published": "2026-07-24",
+          "part": 6
+        }
+      ],
+      "newest": "2026-07-24",
+      "total": 6
+    },
+    {
+      "file": "Bell Tower",
+      "file_fr": "Tour Bell",
+      "status_en": "Closed",
+      "status_fr": "Clos",
+      "items": [
+        {
+          "slug": "bell-tower",
+          "path_en": "/en/bell-tower/",
+          "path_fr": "/fr/bell-tower/",
+          "label_en": "Investigation",
+          "label_fr": "Enquête",
+          "hed_en": "A 36-metre tower proposed for an Ormstown park lot",
+          "hed_fr": "Une tour de 36 mètres proposée sur un terrain municipal d’Ormstown",
+          "date_published": "2026-06-09",
+          "part": 1
+        },
+        {
+          "slug": "bell-tower-explainer",
+          "path_en": "/en/bell-tower-explainer/",
+          "path_fr": "/fr/bell-tower-explainer/",
+          "label_en": "Investigation",
+          "label_fr": "Enquête",
+          "hed_en": "Before you walk into that room",
+          "hed_fr": "Avant d’entrer dans cette salle, lisez ceci",
+          "date_published": "2026-06-08",
+          "part": 2
+        },
+        {
+          "slug": "bell-tower-june10",
+          "path_en": "/en/bell-tower-june10/",
+          "path_fr": "/fr/bell-tower-june10/",
+          "label_en": "Investigation",
+          "label_fr": "Enquête",
+          "hed_en": "Bell’s information session: what was said",
+          "hed_fr": "Séance d’information Bell : ce qui a été dit",
+          "date_published": "2026-06-15",
+          "part": 3
+        },
+        {
+          "slug": "bell-tower-pre-vote",
+          "path_en": "/en/bell-tower-pre-vote/",
+          "path_fr": "/fr/bell-tower-pre-vote/",
+          "label_en": "Investigation",
+          "label_fr": "Enquête",
+          "hed_en": "Before Monday’s vote: what residents were never told about the Bell tower",
+          "hed_fr": "Avant le vote de lundi : ce qu’on n’a jamais dit aux résidents au sujet de la tour Bell",
+          "date_published": "2026-07-05",
+          "part": 4
+        },
+        {
+          "slug": "bell-tower-correspondence",
+          "path_en": "/en/bell-tower-correspondence/",
+          "path_fr": "/fr/bell-tower-correspondence/",
+          "label_en": "Documentary Record",
+          "label_fr": "Dossier",
+          "hed_en": "The complete correspondence record: the Observer and Bell Mobilité",
+          "hed_fr": "Le dossier de correspondance complet : l’Observer et Bell Mobilité",
+          "date_published": "2026-07-05",
+          "part": 5
+        },
+        {
+          "slug": "bell-tower-complete",
+          "path_en": "/en/bell-tower-complete/",
+          "path_fr": "/fr/bell-tower-complete/",
+          "label_en": "Investigation",
+          "label_fr": "Enquête",
+          "hed_en": "The Bell tower file, from start to finish",
+          "hed_fr": "Le dossier de la tour Bell, du début à la fin",
+          "date_published": "2026-07-16",
+          "part": 6
+        }
+      ],
+      "newest": "2026-07-16",
+      "total": 6
+    },
+    {
+      "file": "Church Street",
+      "file_fr": "Rue Church",
+      "status_en": "Open",
+      "status_fr": "En cours",
+      "items": [
+        {
+          "slug": "toit-vert-development",
+          "path_en": "/en/toit-vert-development/",
+          "path_fr": "/fr/toit-vert-development/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Council approved the 24-unit Church Street project — and the referendum window has now closed",
+          "hed_fr": "Le conseil a approuvé le projet de 24 logements rue Church — et la fenêtre référendaire est maintenant close",
+          "date_published": "2026-07-11",
+          "part": 1
+        }
+      ],
+      "newest": "2026-07-11",
+      "total": 1
+    },
+    {
+      "file": "Council Watch",
+      "file_fr": "Conseil municipal",
+      "status_en": "Open",
+      "status_fr": "En cours",
+      "items": [
+        {
+          "slug": "council-watch-july-6-2026",
+          "path_en": "/en/council-watch/july-6-2026/",
+          "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
+          "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
+          "date_published": "2026-07-08",
+          "part": null
+        },
+        {
+          "slug": "council-watch-june-1-2026",
+          "path_en": "/en/council-watch/june-1-2026/",
+          "path_fr": "/fr/conseil-municipal/1-juin-2026/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Ormstown borrows $4.8M for Prince-Albert, Cullen & Oliver street infrastructure",
+          "hed_fr": "Ormstown emprunte 4,8 M$ pour les rues Prince-Albert, Cullen et Oliver",
+          "date_published": "2026-06-01",
+          "part": null
+        },
+        {
+          "slug": "council-watch-april-13-2026",
+          "path_en": "/en/council-watch/april-13-2026/",
+          "path_fr": "/fr/conseil-municipal/13-avril-2026/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Council Watch: April 13, 2026 — a full regulatory cycle, $20,000 for the fire department, and questions on staff turnover",
+          "hed_fr": "Conseil municipal du 13 avril 2026 — un cycle réglementaire complet, 20 000 $ pour les pompiers et des questions sur le roulement de personnel",
+          "date_published": "2026-04-13",
+          "part": null
+        }
+      ],
+      "newest": "2026-07-08",
+      "total": 3
+    },
+    {
+      "file": "",
+      "file_fr": "",
+      "status_en": "",
+      "status_fr": "",
+      "total": 4,
+      "items": [
+        {
+          "slug": "editorials-language-policy-2026",
+          "path_en": "/en/editorials/language-policy-2026/",
+          "path_fr": "/fr/editoriaux/politique-linguistique-2026/",
+          "label_en": "Editorial",
+          "label_fr": "Éditorial",
+          "hed_en": "When policy allows more than practice — Ormstown’s language directive and the gap residents live with",
+          "hed_fr": "Quand la politique permet plus que la pratique — la directive linguistique d’Ormstown et l’écart que vivent les résidents",
+          "date_published": "2026-06-25",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-council-procedure-2-2026",
+          "path_en": "/en/bylaws-regulations/council-procedure-2-2026/",
+          "path_fr": "/fr/bylaws-regulations/reglement-regie-interne-2-2026/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "How Ormstown council meetings actually work now: Bylaw 2-2026 explained",
+          "hed_fr": "Comment fonctionnent vraiment les séances du conseil d’Ormstown : le Règlement 2-2026 expliqué",
+          "date_published": "2026-06-21",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-piia-152-2023",
+          "path_en": "/en/bylaws-regulations/piia-152-2023/",
+          "path_fr": "/fr/bylaws-regulations/reglement-piia-152-2023/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "PIIA explained: when a renovation needs council approval first",
+          "hed_fr": "Le PIIA expliqué : quand une rénovation exige l’accord du conseil",
+          "date_published": "2026-06-20",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-animal-control-131-2026",
+          "path_en": "/en/bylaws-regulations/animal-control-131-2026/",
+          "path_fr": "/fr/bylaws-regulations/reglement-animaux-131-2026/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens",
+          "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises",
+          "date_published": "2026-06-18",
+          "part": null
+        }
+      ],
+      "newest": ""
     }
   ]
 }
