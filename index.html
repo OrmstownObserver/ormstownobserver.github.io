@@ -146,7 +146,10 @@
   }
   .hero-cta:hover { color: #fff; border-color: #fff; }
 
-  /* ── HERO RAIL — icon-based category cards ── */
+  /* ── HERO RAIL — two secondary stories.
+     Was three icon+text blocks, which read as leftovers on desktop and became a
+     horizontal scroll strip on mobile. Now two, larger, with a thumbnail when the
+     story has an image and the accent icon panel as the fallback when it does not. ── */
   .hero-rail { display: flex; flex-direction: column; background: var(--paper); }
   .rail-item {
     display: flex; align-items: stretch; flex: 1;
@@ -165,13 +168,19 @@
   }
   .rail-icon svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
-  .rail-body { padding: 14px 16px; display: flex; flex-direction: column; justify-content: center; }
+  /* Photo panel — preferred over the icon panel whenever the story has an image */
+  .rail-thumb {
+    width: 118px; flex-shrink: 0; background-size: cover; background-position: center;
+    background-color: var(--paper-dark); border-right: 1px solid var(--border);
+  }
+
+  .rail-body { padding: 16px 18px; display: flex; flex-direction: column; justify-content: center; }
   .rail-label {
     font-family: sans-serif; font-size: 9px; font-weight: 800;
     text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 5px;
   }
-  .rail-hed { font-size: 13px; font-weight: 700; line-height: 1.3; color: var(--ink); }
-  .rail-date { font-family: sans-serif; font-size: 10px; color: #999; margin-top: 5px; }
+  .rail-hed { font-size: 15px; font-weight: 700; line-height: 1.28; color: var(--ink); }
+  .rail-date { font-family: sans-serif; font-size: 10px; color: #999; margin-top: 6px; }
 
   /* ── LATEST STORIES — photo grid below hero ── */
   .latest-stories {
@@ -261,9 +270,14 @@
   @media (max-width: 720px) {
     .hero { grid-template-columns: 1fr; }
     .hero-main { min-height: 280px; }
-    .hero-rail { flex-direction: row; overflow-x: auto; border-top: 1px solid var(--border); }
-    .rail-item { min-width: 200px; border-right: 1px solid var(--border); border-bottom: none; flex: none; }
-    .rail-item:last-child { border-right: none; }
+    /* Stack the rail on a phone. It used to scroll sideways, which cramped the
+       cards and hid the second and third stories behind a gesture most readers
+       never make. */
+    .hero-rail { flex-direction: column; overflow-x: visible; border-top: 1px solid var(--border); }
+    .rail-item { min-width: 0; border-right: none; border-bottom: 1px solid var(--border); flex: none; }
+    .rail-item:last-child { border-bottom: none; }
+    .rail-thumb { width: 104px; min-height: 92px; }
+    .rail-icon { width: 64px; }
     .latest-stories { grid-template-columns: 1fr; }
     .story-card { border-right: none; border-bottom: 1px solid var(--border); }
     .story-card:last-child { border-bottom: none; }
@@ -371,7 +385,9 @@
     </div>
   </a>
 
-  <!-- HERO RAIL: 3 category cards with SVG icons -->
+  <!-- HERO RAIL: 2 secondary stories (static fallback; front-page.js replaces
+       these from Notion slots 2-3 and swaps the icon panel for a thumbnail when
+       the story has an image) -->
   <div class="hero-rail">
 
     <!-- Investigation -->
@@ -416,26 +432,6 @@
       </div>
     </a>
 
-    <!-- Bylaws -->
-    <a class="rail-item"
-       data-href-en="/en/bylaws-regulations/animal-control-131-2026/"
-       data-href-fr="/fr/bylaws-regulations/reglement-animaux-131-2026/"
-       href="/en/bylaws-regulations/animal-control-131-2026/">
-      <div class="rail-icon" aria-hidden="true">
-        <!-- Document / scroll -->
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/></svg>
-      </div>
-      <div class="rail-body">
-        <div class="rail-label">
-          <span data-en>Bylaws</span><span data-fr>R&egrave;glements</span>
-        </div>
-        <div class="rail-hed">
-          <span data-en>New animal bylaw: lifetime pet licenses, legal backyard chickens</span>
-          <span data-fr>Nouveau r&egrave;glement animalier&nbsp;: permis &agrave; vie, poules permises</span>
-        </div>
-        <div class="rail-date">R&egrave;glement 131-2026</div>
-      </div>
-    </a>
 
   </div>
 </section>

@@ -186,13 +186,23 @@
     var rail = document.querySelector('.hero-rail');
     if (!rail) return;
     var items = [];
-    list.slice(0, 3).forEach(function (s) {
+    /* Two secondary stories, not three. A thumbnail carries the story when it has
+       an image; the accent icon panel remains the fallback so a story without one
+       still renders cleanly rather than leaving a hole. */
+    list.slice(0, 2).forEach(function (s) {
       if (!validStory(s)) return;
       var a = el('a', 'rail-item');
       setHrefs(a, s);
-      var icon = el('div', 'rail-icon', a);
-      icon.setAttribute('aria-hidden', 'true');
-      icon.appendChild(svgIcon(s.icon));
+      if (validImg(s.image)) {
+        var thumb = el('div', 'rail-thumb', a);
+        thumb.setAttribute('role', 'img');
+        applyBackground(thumb, s.image);
+        setAria(thumb, s.image.alt_en, s.image.alt_fr);
+      } else {
+        var icon = el('div', 'rail-icon', a);
+        icon.setAttribute('aria-hidden', 'true');
+        icon.appendChild(svgIcon(s.icon));
+      }
       var body = el('div', 'rail-body', a);
       biSpan(el('div', 'rail-label', body), s.label_en, s.label_fr);
       biSpan(el('div', 'rail-hed', body), s.hed_en, s.hed_fr);
