@@ -332,7 +332,12 @@
       return r.json();
     })
     .then(function (data) {
-      if (!data || data.version !== 1) return;
+      /* Accept any v1+ feed. This used to be a hard `!== 1`, so bumping the
+         builder to v2 for grouped Latest silently bailed out of the whole
+         render and left every zone showing static fallback markup. The
+         renderer is defensive per-zone anyway (each render is try/caught and
+         validates its own fields), so a version floor is the right check. */
+      if (!data || typeof data.version !== 'number' || data.version < 1) return;
       try { renderHero(data.hero); } catch (e) {}
       try { renderRail(data.rail); } catch (e) {}
       try { renderCards(data.cards); } catch (e) {}
