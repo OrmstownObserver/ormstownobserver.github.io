@@ -15,17 +15,22 @@
     } catch(e) {}
   })();
 </script>
+<script>
+  (function(){
+    try {
+      var t = localStorage.getItem('observerTheme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch(e) {}
+  })();
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<!-- Design tokens, spacing scale and base type live in observer.css.
+     Do NOT re-declare :root tokens below — see the notes in that file. -->
+<link rel="stylesheet" href="/observer.css">
 <style>
-  :root {
-    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
-    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8; --muted: #666;
-  }
-  * { box-sizing: border-box; }
-  html, body { margin: 0; padding: 0; }
-  body { background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  html, body { padding: 0; }
   a { color: inherit; text-decoration: none; }
-  h1,h2,h3,h4 { font-family: 'Playfair Display', Georgia, serif; margin: 0; }
+  h1,h2,h3,h4 { margin: 0; }
   p { margin: 0; }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
@@ -87,7 +92,7 @@
   /* ── ORMSTOWNGPT BANNER ── */
   .ogpt-banner {
     display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-    background: var(--ink); color: #fff;
+    background: var(--chrome-bg); color: var(--chrome-text);
     padding: 16px 24px; border-bottom: 3px solid var(--accent);
   }
   .ogpt-banner .ogpt-mark {
@@ -95,8 +100,8 @@
     font-size: clamp(20px, 3vw, 26px); line-height: 1; white-space: nowrap;
   }
   .ogpt-banner .ogpt-mark em { color: var(--accent); font-style: normal; }
-  .ogpt-banner .ogpt-beta { display: inline-block; margin-left: 8px; background: #c9a227; color: #1a1a1a; font-size: 9.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 3px 7px; border-radius: 2px; vertical-align: middle; }
-  .ogpt-banner .ogpt-copy { flex: 1; min-width: 220px; font-size: 14px; line-height: 1.5; color: #e8e2d6; }
+  .ogpt-banner .ogpt-beta { display: inline-block; margin-left: 8px; background: #c9a227; color: #17150f; font-size: 9.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 3px 7px; border-radius: 2px; vertical-align: middle; }
+  .ogpt-banner .ogpt-copy { flex: 1; min-width: 220px; font-size: 14px; line-height: 1.5; color: var(--chrome-soft); }
   .ogpt-banner .ogpt-cta {
     font-family: sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
     background: var(--accent); color: #fff; padding: 11px 22px; white-space: nowrap;
@@ -181,7 +186,7 @@
     text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 5px;
   }
   .rail-hed { font-size: 15px; font-weight: 700; line-height: 1.28; color: var(--ink); }
-  .rail-date { font-family: sans-serif; font-size: 10px; color: #999; margin-top: 6px; }
+  .rail-date { font-family: sans-serif; font-size: 10px; color: var(--ink-soft); margin-top: 6px; }
 
   /* ── LATEST STORIES — photo grid below hero ── */
   .latest-stories {
@@ -215,7 +220,7 @@
     font-size: 15px; font-weight: 700; line-height: 1.28;
     color: var(--ink); margin-bottom: 6px; flex: 1;
   }
-  .story-date { font-family: sans-serif; font-size: 10px; color: #999; }
+  .story-date { font-family: sans-serif; font-size: 10px; color: var(--ink-soft); }
   .story-cta {
     font-family: sans-serif; font-size: 10px; font-weight: 800;
     text-transform: uppercase; letter-spacing: .06em;
@@ -235,7 +240,7 @@
   }
   .lat-item {
     display: flex; gap: 14px; padding: 11px 0;
-    border-bottom: 1px solid #eee; align-items: baseline;
+    border-bottom: 1px solid var(--hair); align-items: baseline;
     transition: opacity .12s;
   }
   .lat-item:last-child { border-bottom: none; }
@@ -278,9 +283,9 @@
 
   /* About */
   .about-col { padding: 24px 22px; background: var(--paper-dark); }
-  .about-col p { font-size: 12.5px; color: #555; line-height: 1.68; margin-bottom: 14px; }
+  .about-col p { font-size: 12.5px; color: var(--ink-soft); line-height: 1.68; margin-bottom: 14px; }
   .tip-btn {
-    display: inline-block; background: var(--ink); color: #fff;
+    display: inline-block; background: var(--chrome-bg); color: var(--chrome-text);
     font-family: sans-serif; font-size: 10px; font-weight: 800;
     text-transform: uppercase; letter-spacing: .06em; padding: 9px 18px;
     transition: background .15s;

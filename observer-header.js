@@ -85,6 +85,27 @@
     .obs-lang button.is-active{background:var(--accent);color:#fff;}
     .obs-lang button:not(.is-active):hover{background:var(--paper-dark);}
 
+    /* ── THEME TOGGLE (mirrors the lang toggle, right side) ──
+       Only injected on pages that link observer.css. */
+    .obs-theme{
+      position:absolute; right:0; top:50%; transform:translateY(-50%);
+      display:inline-flex; align-items:center; justify-content:center;
+      width:32px; height:29px;
+      border:1.5px solid var(--ink); background:var(--paper);
+      color:var(--ink); cursor:pointer; padding:0;
+      transition:background .15s,color .15s;
+    }
+    .obs-theme:hover{background:var(--paper-dark);}
+    .obs-theme svg{width:15px;height:15px;display:block;}
+    .obs-theme .obs-moon{display:none;}
+    html[data-theme=dark] .obs-theme .obs-moon{display:block;}
+    html[data-theme=dark] .obs-theme .obs-sun{display:none;}
+    @media (prefers-color-scheme:dark){
+      html:not([data-theme=light]) .obs-theme .obs-moon{display:block;}
+      html:not([data-theme=light]) .obs-theme .obs-sun{display:none;}
+    }
+    @media (max-width:520px){ .obs-theme{width:28px;height:26px;} }
+
     /* ── DRAWER NAV ── */
     .obs-drawer{
       position:fixed; top:0; right:0; bottom:0; width:min(300px,85vw);
@@ -151,6 +172,18 @@
       <button class="obs-lang" id="obs-lang-group" role="group" aria-label="Language / Langue">
         <button type="button" id="obs-btn-en" onclick="obsSetLang('en')">EN</button>
         <button type="button" id="obs-btn-fr" onclick="obsSetLang('fr')">FR</button>
+      </button>
+      <button class="obs-theme" id="obs-theme-btn" type="button" hidden
+        aria-label="Toggle light or dark theme" title="Light / dark">
+        <svg class="obs-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path>
+        </svg>
+        <svg class="obs-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
       </button>
       <div class="obs-rule-double"></div>
       <div class="obs-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
@@ -276,6 +309,46 @@
   closeBtn.addEventListener('click', closeDrawer);
   scrim.addEventListener('click', closeDrawer);
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDrawer(); });
+
+  // ── THEME LOGIC ──
+  // The toggle is only offered on pages that link observer.css. Legacy pages
+  // still carry hardcoded colours in their inline <style>, so flipping them to
+  // dark would leave white boxes and unreadable text — they stay light-only
+  // until converted. observer.css advertises itself with --obs-css.
+  var themeBtn = document.getElementById('obs-theme-btn');
+  var hasDesignSystem = false;
+  try{
+    hasDesignSystem = getComputedStyle(document.documentElement)
+      .getPropertyValue('--obs-css').trim() !== '';
+  }catch(e){}
+
+  if(themeBtn && hasDesignSystem){
+    themeBtn.hidden = false;
+
+    var systemDark = function(){
+      try{ return window.matchMedia('(prefers-color-scheme: dark)').matches; }
+      catch(e){ return false; }
+    };
+    var currentTheme = function(){
+      var set = document.documentElement.getAttribute('data-theme');
+      if(set === 'dark' || set === 'light') return set;
+      return systemDark() ? 'dark' : 'light';
+    };
+
+    themeBtn.addEventListener('click', function(){
+      var next = currentTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try{ localStorage.setItem('observerTheme', next); } catch(e){}
+    });
+
+    // Follow the system if the reader has never chosen explicitly.
+    try{
+      var savedTheme = localStorage.getItem('observerTheme');
+      if(savedTheme !== 'dark' && savedTheme !== 'light'){
+        document.documentElement.removeAttribute('data-theme');
+      }
+    }catch(e){}
+  }
 
   // ── LANG LOGIC ──
   window.obsSetLang = function(lang){
