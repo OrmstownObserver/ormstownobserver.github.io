@@ -105,17 +105,16 @@
   .ogpt-banner .ogpt-cta:hover { background: #8f1115; }
   @media (max-width: 620px) { .ogpt-banner { gap: 12px; padding: 14px 16px; } .ogpt-banner .ogpt-cta { width: 100%; text-align: center; } }
 
-  /* ── HERO ── */
+  /* ── HERO — Option A: full-width lead, then two secondary cards BELOW.
+     The old 3fr/2fr grid put a side column next to the lead; that column is
+     what read as leftovers on desktop and collapsed badly on mobile. ── */
   .hero {
-    display: grid;
-    grid-template-columns: 3fr 2fr;
     border-bottom: 2px solid var(--ink);
-    min-height: 380px;
   }
   .hero-main {
-    position: relative; overflow: hidden;
+    position: relative; overflow: hidden; display: block;
+    width: 100%; aspect-ratio: 21 / 9; min-height: 320px; max-height: 540px;
     background: url('/images/tower.jpg') center 30% / cover no-repeat;
-    border-right: 1px solid var(--border);
   }
   .hero-gradient {
     position: absolute; inset: 0;
@@ -146,17 +145,19 @@
   }
   .hero-cta:hover { color: #fff; border-color: #fff; }
 
-  /* ── HERO RAIL — two secondary stories.
-     Was three icon+text blocks, which read as leftovers on desktop and became a
-     horizontal scroll strip on mobile. Now two, larger, with a thumbnail when the
-     story has an image and the accent icon panel as the fallback when it does not. ── */
-  .hero-rail { display: flex; flex-direction: column; background: var(--paper); }
+  /* ── SECONDARY BAND — the two stories under the lead. Side by side on
+     desktop, stacked on mobile. Thumbnail when the story has an image; the
+     accent icon panel is the fallback when it does not. ── */
+  .hero-rail {
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--paper); border-top: 1px solid var(--border);
+  }
   .rail-item {
-    display: flex; align-items: stretch; flex: 1;
-    border-bottom: 1px solid var(--border);
+    display: flex; align-items: stretch;
+    border-right: 1px solid var(--border);
     transition: background .12s;
   }
-  .rail-item:last-child { border-bottom: none; }
+  .rail-item:last-child { border-right: none; }
   a.rail-item:hover { background: var(--paper-dark); }
   a.rail-item:hover .rail-icon { background: var(--ink); }
 
@@ -174,7 +175,7 @@
     background-color: var(--paper-dark); border-right: 1px solid var(--border);
   }
 
-  .rail-body { padding: 16px 18px; display: flex; flex-direction: column; justify-content: center; }
+  .rail-body { padding: 18px 20px; display: flex; flex-direction: column; justify-content: center; min-height: 104px; }
   .rail-label {
     font-family: sans-serif; font-size: 9px; font-weight: 800;
     text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 5px;
@@ -297,16 +298,15 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 720px) {
-    .hero { grid-template-columns: 1fr; }
-    .hero-main { min-height: 280px; }
-    /* Stack the rail on a phone. It used to scroll sideways, which cramped the
-       cards and hid the second and third stories behind a gesture most readers
-       never make. */
-    .hero-rail { flex-direction: column; overflow-x: visible; border-top: 1px solid var(--border); }
-    .rail-item { min-width: 0; border-right: none; border-bottom: 1px solid var(--border); flex: none; }
+    .hero-main { aspect-ratio: auto; min-height: 300px; }
+    /* Stack the two secondary cards on a phone — no side column, no sideways
+       scroll, just the lead then two full-width cards. */
+    .hero-rail { grid-template-columns: 1fr; }
+    .rail-item { border-right: none; border-bottom: 1px solid var(--border); }
     .rail-item:last-child { border-bottom: none; }
     .rail-thumb { width: 104px; min-height: 92px; }
     .rail-icon { width: 64px; }
+    .rail-body { min-height: 0; padding: 14px 16px; }
     .latest-stories { grid-template-columns: 1fr; }
     .story-card { border-right: none; border-bottom: 1px solid var(--border); }
     .story-card:last-child { border-bottom: none; }
