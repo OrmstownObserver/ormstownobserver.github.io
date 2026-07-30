@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-07-29T16:47:23.965Z",
- "document_count": 153,
+ "generated_at": "2026-07-30T09:53:24.413Z",
+ "document_count": 154,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -419,6 +419,11 @@
        "title": "ORM R156 2023 UC Mars2024",
        "year": "2023",
        "url": "https://www.ormstown.ca/wp-content/uploads/ORM_R156-2023_UC_Mars2024.pdf"
+      },
+      {
+       "title": "Avis public Derogation mineure 1876 4e Rang 003",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-Derogation-mineure-1876-4e-Rang-003.pdf"
       },
       {
        "title": "FORM Demande certificat occupation",
