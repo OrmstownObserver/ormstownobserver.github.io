@@ -316,7 +316,11 @@
   }
 </style>
 <script src="/observer-header.js" defer></script>
-<script src="/front-page.js" defer></script>
+<!-- Version query pins this HTML to the matching renderer. GitHub Pages caches
+     both for 10 min (max-age=600); without the pin, a cached old front-page.js
+     can pair with a new front-page.json and abort the render, leaving the static
+     fallback on screen. Bump the v= whenever front-page.js changes. -->
+<script src="/front-page.js?v=20260729-2" defer></script>
 </head>
 <body>
 
