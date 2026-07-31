@@ -69,9 +69,17 @@
     .obs-hamburger[aria-expanded=true] span:nth-child(2){opacity:0;}
     .obs-hamburger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
+    /* ── MASTHEAD CONTROLS ──
+       Language and theme are both reader preferences, so they sit together
+       on the LEFT. The right edge belongs to the hamburger alone — both were
+       previously absolute at right:0 and drew on top of each other. */
+    .obs-controls{
+      position:absolute; left:0; top:50%; transform:translateY(-50%);
+      display:flex; align-items:center; gap:8px; z-index:210;
+    }
+
     /* ── LANG TOGGLE (compact, in masthead) ── */
     .obs-lang{
-      position:absolute; left:0; top:50%; transform:translateY(-50%);
       display:inline-flex; border:1.5px solid var(--ink); overflow:hidden;
     }
     .obs-lang button{
@@ -85,10 +93,13 @@
     .obs-lang button.is-active{background:var(--accent);color:#fff;}
     .obs-lang button:not(.is-active):hover{background:var(--paper-dark);}
 
-    /* ── THEME TOGGLE (mirrors the lang toggle, right side) ──
-       Only injected on pages that link observer.css. */
+    /* ── THEME TOGGLE (sits beside the lang toggle) ──
+       Only shown on pages that link observer.css. The [hidden] guard is
+       load-bearing: a bare display:inline-flex would out-order the UA's
+       [hidden]{display:none} and leave a dead button on the ~58 pages that
+       have not been converted yet. */
+    .obs-theme[hidden]{display:none;}
     .obs-theme{
-      position:absolute; right:0; top:50%; transform:translateY(-50%);
       display:inline-flex; align-items:center; justify-content:center;
       width:32px; height:29px;
       border:1.5px solid var(--ink); background:var(--paper);
@@ -104,7 +115,7 @@
       html:not([data-theme=light]) .obs-theme .obs-moon{display:block;}
       html:not([data-theme=light]) .obs-theme .obs-sun{display:none;}
     }
-    @media (max-width:520px){ .obs-theme{width:28px;height:26px;} }
+    @media (max-width:520px){ .obs-theme{width:28px;height:26px;} .obs-controls{gap:6px;} }
 
     /* ── DRAWER NAV ── */
     .obs-drawer{
@@ -169,22 +180,24 @@
   var header = `
   <div class="obs-masthead">
     <div class="obs-masthead-inner">
-      <button class="obs-lang" id="obs-lang-group" role="group" aria-label="Language / Langue">
-        <button type="button" id="obs-btn-en" onclick="obsSetLang('en')">EN</button>
-        <button type="button" id="obs-btn-fr" onclick="obsSetLang('fr')">FR</button>
-      </button>
-      <button class="obs-theme" id="obs-theme-btn" type="button" hidden
-        aria-label="Toggle light or dark theme" title="Light / dark">
-        <svg class="obs-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4"></circle>
-          <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path>
-        </svg>
-        <svg class="obs-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
-        </svg>
-      </button>
+      <div class="obs-controls">
+        <div class="obs-lang" id="obs-lang-group" role="group" aria-label="Language / Langue">
+          <button type="button" id="obs-btn-en" onclick="obsSetLang('en')">EN</button>
+          <button type="button" id="obs-btn-fr" onclick="obsSetLang('fr')">FR</button>
+        </div>
+        <button class="obs-theme" id="obs-theme-btn" type="button" hidden
+          aria-label="Toggle light or dark theme" title="Light / dark">
+          <svg class="obs-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path>
+          </svg>
+          <svg class="obs-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+          </svg>
+        </button>
+      </div>
       <div class="obs-rule-double"></div>
       <div class="obs-flag">Ormstown &amp; Haut-Saint-Laurent · Québec</div>
       <a class="obs-name" href="${rootHref}">
