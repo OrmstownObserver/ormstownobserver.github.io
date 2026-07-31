@@ -14,16 +14,19 @@
    authoritative for shipped code. When you carry a change
    across, update that project's github.md "Last sync".
 
-   TWO DELIBERATE DIVERGENCES from the Design project, pending a
-   decision — do not "fix" them by syncing blindly:
-     1. Display face. Design sets --serif-display to Libre
-        Baskerville; the site still ships Playfair Display.
-        Switching means 90 `font-weight:900` declarations across
-        55 files would faux-bold (Libre Baskerville stops at 700)
-        and 54 pages' Google Fonts URLs would need changing.
-     2. Type scale. Design's --size-body is 17.5px; body here is
-        still 16px. Adopting the scale changes reading size on
-        every page and wants a proof page first.
+   DISPLAY FACE — migrated to Libre Baskerville on 2026-07-31,
+   matching the Design project. Playfair Display is gone from the
+   repo. Because Libre Baskerville stops at 700 (and its italic
+   exists at 400 only), every display weight was moved 900 -> 700
+   across 55 files, and all 54 pages' Google Fonts URLs now request
+   Libre+Baskerville:ital,wght@0,400;0,700;1,400. NEVER set a
+   display heading above 700: the browser will synthesise a smeared
+   faux-bold instead of refusing.
+
+   ONE DELIBERATE DIVERGENCE remains — do not "fix" it by syncing
+   blindly: the type scale. Design's --size-body is 17.5px; body
+   here is still 16px. Adopting the scale changes reading size on
+   every page and wants a proof page first.
 
    Opting a page in:
      1. <link rel="stylesheet" href="/observer.css">  (in <head>,
@@ -153,10 +156,10 @@
   --ease-drawer: cubic-bezier(.4,0,.2,1);
 
   /* ── Type: families ──
-     NOTE: the Design project sets --serif-display to Libre Baskerville.
-     The site still ships Playfair Display — see the divergence note at
-     the top of this file before changing it. */
-  --serif-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+     Libre Baskerville is a sturdier, lower-contrast broadsheet face than
+     the Playfair Display it replaced. It runs wider and has a larger
+     x-height, so it reads bigger at the same px size. */
+  --serif-display: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --serif-body:    'Source Serif 4', Georgia, 'Times New Roman', serif;
   --sans:          ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
@@ -186,10 +189,10 @@
   --size-label-lg: 11px;
 
   /* ── Type: weights ──
-     900 is correct for Playfair Display, which is what ships. If the
-     display face ever becomes Libre Baskerville, --weight-black must
-     drop to 700 or the browser will synthesise a smeared faux-bold. */
-  --weight-black: 900;
+     Libre Baskerville tops out at 700, so "black" IS 700 here. Do not
+     raise this to 900: the browser will synthesise a smeared faux-bold
+     rather than fall back cleanly. Italic exists at 400 only. */
+  --weight-black: 700;
   --weight-bold:  700;
   --weight-semi:  600;
   --weight-light: 300;

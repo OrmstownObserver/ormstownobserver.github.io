@@ -11,7 +11,7 @@
     html,body{margin:0;padding:0;}
     body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
     a{color:inherit;text-decoration:none;}
-    h1,h2,h3{font-family:'Playfair Display',Georgia,serif;margin:0;}
+    h1,h2,h3{font-family:'Libre Baskerville',Georgia,serif;margin:0;}
     p{margin:0;}
     a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
     @media(prefers-reduced-motion:reduce){*{transition:none!important;}}
@@ -36,11 +36,11 @@
       margin:0 auto 20px;
     }
     .obs-flag{
-      font-family:'Playfair Display',serif; font-size:11.5px; letter-spacing:.26em;
+      font-family:'Libre Baskerville',serif; font-size:11.5px; letter-spacing:.26em;
       text-transform:uppercase; color:var(--muted); margin-bottom:8px;
     }
     .obs-name{
-      font-family:'Playfair Display',serif; font-weight:900;
+      font-family:'Libre Baskerville',serif; font-weight:700;
       font-size:clamp(32px,6vw,60px); letter-spacing:.03em; line-height:1.05;
       color:var(--ink); display:inline-block; text-decoration:none;
       transition:color .15s;
@@ -75,7 +75,7 @@
       display:inline-flex; border:1.5px solid var(--ink); overflow:hidden;
     }
     .obs-lang button{
-      font-family:'Playfair Display',serif; font-weight:700; font-size:11px;
+      font-family:'Libre Baskerville',serif; font-weight:700; font-size:11px;
       letter-spacing:.06em; text-transform:uppercase;
       color:var(--ink); background:var(--paper); border:none;
       border-right:1px solid var(--ink); padding:6px 12px; cursor:pointer;
@@ -123,11 +123,11 @@
       padding:8px; line-height:1;
     }
     .obs-drawer-title{
-      font-family:'Playfair Display',serif; font-size:11px; letter-spacing:.22em;
+      font-family:'Libre Baskerville',serif; font-size:11px; letter-spacing:.22em;
       text-transform:uppercase; color:var(--muted); margin-bottom:24px;
     }
     .obs-drawer nav a{
-      display:block; font-family:'Playfair Display',serif; font-weight:700;
+      display:block; font-family:'Libre Baskerville',serif; font-weight:700;
       font-size:18px; color:var(--ink); padding:14px 0;
       border-bottom:1px solid var(--border); letter-spacing:.02em;
       transition:color .12s;
@@ -156,7 +156,7 @@
     }
     .obs-footer a{color:var(--accent);}
     .obs-footer-name{
-      font-family:'Playfair Display',serif; font-weight:700;
+      font-family:'Libre Baskerville',serif; font-weight:700;
       font-size:17px; color:var(--ink); margin-bottom:4px;
     }
   `;
@@ -243,7 +243,7 @@
       </a>
     </nav>
     <div class="obs-drawer-contact">
-      <div style="font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:4px;">
+      <div style="font-family:'Libre Baskerville',serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:4px;">
         <span data-en>The Ormstown Observer</span><span data-fr>L'Ormstown Observer</span>
       </div>
       <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a><br>
@@ -266,10 +266,10 @@
   styleEl.textContent = css;
   document.head.appendChild(styleEl);
 
-  if(!document.querySelector('link[href*="Playfair+Display"]')){
+  if(!document.querySelector('link[href*="Libre+Baskerville"]')){
     var fontLink = document.createElement('link');
     fontLink.rel = 'stylesheet';
-    fontLink.href = 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap';
+    fontLink.href = 'https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap';
     document.head.appendChild(fontLink);
   }
 
