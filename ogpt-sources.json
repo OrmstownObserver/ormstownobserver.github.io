@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-07-30T09:53:24.413Z",
- "document_count": 154,
+ "generated_at": "2026-07-31T10:42:35.463Z",
+ "document_count": 155,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -244,6 +244,11 @@
        "title": "Avis public Appel de candidatures CCU 2026",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-Appel-de-candidatures-CCU-2026.pdf"
+      },
+      {
+       "title": "Avis public Demolition du 2 Bridge 2026",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-Demolition-du-2-Bridge-2026.pdf"
       },
       {
        "title": "Avis public Regl.173 2026 PHV",
@@ -850,6 +855,11 @@
        "title": "Avis public Appel de candidatures CCU 2026",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-Appel-de-candidatures-CCU-2026.pdf"
+      },
+      {
+       "title": "Avis public Demolition du 2 Bridge 2026",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-Demolition-du-2-Bridge-2026.pdf"
       },
       {
        "title": "Avis public Regl.173 2026 PHV",
