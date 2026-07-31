@@ -7,12 +7,31 @@
    page and #555 in the header). Pages that link this file MUST
    NOT re-declare :root tokens.
 
+   PROVENANCE — token values are maintained in the Claude Design
+   project "Ormstown Observer Design System"
+   (7100bbed-cc8c-49af-8e4c-1188988a3d67), files tokens/*.css.
+   Design is authoritative for visual decisions; this repo is
+   authoritative for shipped code. When you carry a change
+   across, update that project's github.md "Last sync".
+
+   TWO DELIBERATE DIVERGENCES from the Design project, pending a
+   decision — do not "fix" them by syncing blindly:
+     1. Display face. Design sets --serif-display to Libre
+        Baskerville; the site still ships Playfair Display.
+        Switching means 90 `font-weight:900` declarations across
+        55 files would faux-bold (Libre Baskerville stops at 700)
+        and 54 pages' Google Fonts URLs would need changing.
+     2. Type scale. Design's --size-body is 17.5px; body here is
+        still 16px. Adopting the scale changes reading size on
+        every page and wants a proof page first.
+
    Opting a page in:
      1. <link rel="stylesheet" href="/observer.css">  (in <head>,
         BEFORE the page's own inline <style> so page rules win)
      2. add the pre-paint theme script (see below)
      3. delete the page's inline :root token block
-     4. replace hardcoded colours (#fff, #444, #666 …) with tokens,
+     4. replace hardcoded colours with tokens — #fff card grounds
+        become var(--surface-card), greys become var(--ink-soft) —
         or they will not adapt in dark mode
 
    Pages that do NOT link this file keep their inline tokens and
@@ -38,14 +57,16 @@
   color-scheme: light;
 
   /* ── Ink & paper ── */
-  --ink:        #1a1a1a;
-  --ink-soft:   #575048;   /* warm secondary text */
-  --paper:      #faf8f4;
-  --paper-dark: #f0ece4;
-  --accent:     #b5161b;
-  --accent-bg:  #f5e8e8;
-  --rule:       #c8b97a;   /* gold editorial rule */
-  --hair:       #ddd7ca;   /* light divider */
+  --ink:         #1a1a1a;
+  --ink-soft:    #575048;   /* warm secondary text */
+  --paper:       #faf8f4;
+  --paper-dark:  #f0ece4;
+  --accent:      #b5161b;
+  --accent-bg:   #f5e8e8;
+  --accent-press:#8f1115;   /* accent hover/active */
+  --rule:        #c8b97a;   /* gold editorial rule */
+  --hair:        #ddd7ca;   /* light divider */
+  --border-warm: #d4c9b8;   /* the older, heavier border */
 
   /* ── Back-compat aliases ──
      Older page rules still reference these names. Keeping them as
@@ -66,10 +87,37 @@
   --chrome-text: #f3efe6;
   --chrome-soft: #a49a88;
 
-  /* ── Status colours (used by notices / filter chips) ── */
-  --confirm: #155724;
-  --warn:    #721c24;
-  --pending: #856404;
+  /* ── Status ── */
+  --confirm:      #155724;
+  --warn:         #721c24;
+  --pending:      #856404;
+  --confirm-bg:   #e6f4ea;
+  --confirm-hair: #a8d5b5;
+  --pending-bg:   #fff3cd;
+  --pending-hair: #ffd680;
+  --beta:         #c9a227;
+
+  /* ── Notice categories ── */
+  --cat-consultation: #b5161b;
+  --cat-bylaw:        #2f6b4f;
+  --cat-tender:       #8a6d1f;
+  --cat-other:        #555555;
+
+  /* ── Semantic aliases ──
+     --surface-card is the one to reach for instead of a bare #fff:
+     it is white on paper and near-black in dark mode. */
+  --text-body:      var(--ink);
+  --text-muted:     var(--ink-soft);
+  --text-on-accent: #ffffff;
+  --surface-page:   var(--paper);
+  --surface-sunk:   var(--paper-dark);
+  --surface-card:   #ffffff;
+  --link:           var(--accent);
+  --link-hover:     var(--ink);
+  --divider:        var(--hair);
+  --divider-strong: var(--ink);
+  --scrim:          rgba(0,0,0,.35);
+  --hero-gradient:  linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.5) 45%, rgba(0,0,0,.15) 100%);
 
   /* ── Spacing scale ── */
   --s1: 6px;
@@ -79,14 +127,99 @@
   --s5: 36px;
   --s6: 56px;
 
-  /* ── Type ── */
+  /* ── Rules & borders ── */
+  --rule-hair:     1px;
+  --rule-strong:   2px;
+  --rule-heavy:    3px;
+  --border-accent: 3px;
+  --border-fact:   4px;
+  --masthead-top:  5px;
+
+  /* ── Radii — the Observer is a newspaper: square by default.
+     Only chips, expandable panels and beta tags round at all. ── */
+  --radius-0:    0;
+  --radius-1:    2px;
+  --radius-2:    3px;
+  --radius-3:    4px;
+  --radius-pill: 50%;
+
+  /* ── Elevation — one shadow in the whole system (the nav drawer). ── */
+  --shadow-drawer: -4px 0 24px rgba(0,0,0,.15);
+
+  /* ── Motion ── */
+  --dur-fast:    .12s;
+  --dur-base:    .15s;
+  --dur-drawer:  .25s;
+  --ease-drawer: cubic-bezier(.4,0,.2,1);
+
+  /* ── Type: families ──
+     NOTE: the Design project sets --serif-display to Libre Baskerville.
+     The site still ships Playfair Display — see the divergence note at
+     the top of this file before changing it. */
   --serif-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --serif-body:    'Source Serif 4', Georgia, 'Times New Roman', serif;
   --sans:          ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
-  /* ── Measure & container ── */
-  --measure:   68ch;
-  --container: 1180px;
+  --font-display: var(--serif-display);
+  --font-body:    var(--serif-body);
+  --font-label:   var(--sans);
+
+  /* ── Type: display sizes (fluid) ── */
+  --size-masthead:      clamp(32px, 6vw, 60px);
+  --size-headline:      clamp(28px, 5vw, 46px);
+  --size-page-title:    clamp(28px, 4.5vw, 44px);
+  --size-section-title: clamp(24px, 4vw, 36px);
+  --size-section-head:  22px;
+  --size-pull-quote:    22px;
+
+  /* ── Type: body ── */
+  --size-deck:    19px;
+  --size-lede:    19.5px;
+  --size-body:    17.5px;
+  --size-body-sm: 15.5px;
+  --size-caption: 13.5px;
+  --size-fine:    12.5px;
+
+  /* ── Type: sans labels — the Observer's "kicker" register ── */
+  --size-label:    10px;
+  --size-label-sm: 9px;
+  --size-label-lg: 11px;
+
+  /* ── Type: weights ──
+     900 is correct for Playfair Display, which is what ships. If the
+     display face ever becomes Libre Baskerville, --weight-black must
+     drop to 700 or the browser will synthesise a smeared faux-bold. */
+  --weight-black: 900;
+  --weight-bold:  700;
+  --weight-semi:  600;
+  --weight-light: 300;
+
+  /* ── Type: line heights ── */
+  --leading-tight: 1.12;
+  --leading-hed:   1.28;
+  --leading-body:  1.7;
+  --leading-loose: 2;
+
+  /* ── Type: tracking — the paper's uppercase micro-labels ── */
+  --track-label:      .1em;
+  --track-label-wide: .14em;
+  --track-kicker:     .22em;
+  --track-flag:       .26em;
+  --track-masthead:   .03em;
+
+  /* ── Layout ── */
+  --measure:       68ch;    /* comfortable reading measure */
+  --container:     1180px;  /* full-width page shell */
+  --column:        680px;   /* article column */
+  --wrap-wide:     1100px;  /* index pages (notices, masthead inner) */
+  --wrap-mid:      900px;   /* council watch */
+  --wrap-narrow:   760px;   /* OrmstownGPT */
+  --hero-ratio:    21 / 9;
+  --hero-min:      320px;
+  --hero-max:      540px;
+  --rail-thumb:    118px;
+  --rail-icon:     80px;
+  --story-thumb-h: 160px;
 }
 
 /* ── Dark palette ──
@@ -95,58 +228,64 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --ink:        #ece7dc;
-    --ink-soft:   #a9a294;
-    --paper:      #16150f;
-    --paper-dark: #201e18;
-    --accent:     #e8686c;
-    --accent-bg:  #2e1c1c;
-    --rule:       #8a7c48;
-    --hair:       #35322a;
-    --confirm:    #7dc98f;
-    --warn:       #f0908f;
-    --pending:    #e0bd6a;
+    --ink:         #ece7dc;
+    --ink-soft:    #a9a294;
+    --paper:       #16150f;
+    --paper-dark:  #201e18;
+    --accent:      #e8686c;
+    --accent-bg:   #2e1c1c;
+    --rule:        #8a7c48;
+    --hair:        #35322a;
+    --border-warm: #35322a;
+    --confirm:     #7dc98f;
+    --warn:        #f0908f;
+    --pending:     #e0bd6a;
     --chrome-bg:   #0e0d0a;
     --chrome-text: #ece7dc;
     --chrome-soft: #8c8474;
+    --surface-card:#201e18;
   }
 }
 
 /* Explicit choice from the header toggle always wins. */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --ink:        #ece7dc;
-  --ink-soft:   #a9a294;
-  --paper:      #16150f;
-  --paper-dark: #201e18;
-  --accent:     #e8686c;
-  --accent-bg:  #2e1c1c;
-  --rule:       #8a7c48;
-  --hair:       #35322a;
-  --confirm:    #7dc98f;
-  --warn:       #f0908f;
-  --pending:    #e0bd6a;
+  --ink:         #ece7dc;
+  --ink-soft:    #a9a294;
+  --paper:       #16150f;
+  --paper-dark:  #201e18;
+  --accent:      #e8686c;
+  --accent-bg:   #2e1c1c;
+  --rule:        #8a7c48;
+  --hair:        #35322a;
+  --border-warm: #35322a;
+  --confirm:     #7dc98f;
+  --warn:        #f0908f;
+  --pending:     #e0bd6a;
   --chrome-bg:   #0e0d0a;
   --chrome-text: #ece7dc;
   --chrome-soft: #8c8474;
+  --surface-card:#201e18;
 }
 
 :root[data-theme="light"] {
   color-scheme: light;
-  --ink:        #1a1a1a;
-  --ink-soft:   #575048;
-  --paper:      #faf8f4;
-  --paper-dark: #f0ece4;
-  --accent:     #b5161b;
-  --accent-bg:  #f5e8e8;
-  --rule:       #c8b97a;
-  --hair:       #ddd7ca;
-  --confirm:    #155724;
-  --warn:       #721c24;
-  --pending:    #856404;
+  --ink:         #1a1a1a;
+  --ink-soft:    #575048;
+  --paper:       #faf8f4;
+  --paper-dark:  #f0ece4;
+  --accent:      #b5161b;
+  --accent-bg:   #f5e8e8;
+  --rule:        #c8b97a;
+  --hair:        #ddd7ca;
+  --border-warm: #d4c9b8;
+  --confirm:     #155724;
+  --warn:        #721c24;
+  --pending:     #856404;
   --chrome-bg:   #2a2723;
   --chrome-text: #f3efe6;
   --chrome-soft: #a49a88;
+  --surface-card:#ffffff;
 }
 
 /* ── Base ── */
@@ -157,7 +296,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--serif-body);
-  font-size: 16px;
+  font-size: 16px;   /* Design's --size-body is 17.5px — see divergence note */
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -175,11 +314,11 @@ img { max-width: 100%; }
 
 hr {
   border: 0;
-  border-top: 1px solid var(--hair);
+  border-top: var(--rule-hair) solid var(--hair);
   margin: var(--s4) 0;
 }
 
-::selection { background: var(--accent); color: #fff; }
+::selection { background: var(--accent); color: var(--text-on-accent); }
 
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
