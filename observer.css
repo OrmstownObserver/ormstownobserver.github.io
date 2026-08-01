@@ -82,7 +82,7 @@
   --border:       var(--hair);
 
   /* ── Chrome ──
-     For deliberately dark strips (the OrmstownGPT banner, tool bars).
+     For deliberately dark strips (the Community Compass banner, tool bars).
      These must NOT be built from --ink/--paper: those invert in dark
      mode, which would turn a dark banner light and hide its white text.
      Chrome stays dark in both themes, only deepening at night. */
@@ -216,7 +216,7 @@
   --column:        680px;   /* article column */
   --wrap-wide:     1100px;  /* index pages (notices, masthead inner) */
   --wrap-mid:      900px;   /* council watch */
-  --wrap-narrow:   760px;   /* OrmstownGPT */
+  --wrap-narrow:   760px;   /* Community Compass */
   --hero-ratio:    21 / 9;
   --hero-min:      320px;
   --hero-max:      540px;
