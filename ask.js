@@ -1,4 +1,4 @@
-/* OrmstownGPT — chat client for /en/ask/ and /fr/posez-une-question/.
+/* Community Compass — chat client for /en/ask/ and /fr/posez-une-question/.
    Two assistants (legal / council) selected by a tab; each POST carries an
    `assistant` field. Same discipline as front-page.js: everything from the
    network (answers, citation titles, source lists) renders with textContent
@@ -19,7 +19,7 @@
 
   var STRINGS = {
     en: {
-      bot: 'OrmstownGPT',
+      bot: 'Community Compass',
       you: 'You',
       thinking: 'Consulting the documents…',
       network: 'The assistant could not be reached. Check your connection and try again, or browse the bylaws index below.',
@@ -35,7 +35,7 @@
       notAdvice: 'BETA · AI-generated from official documents and may be wrong or incomplete. This is in no way legal advice — verify with the Municipality of Ormstown before acting on it.'
     },
     fr: {
-      bot: 'OrmstownGPT',
+      bot: 'Community Compass',
       you: 'Vous',
       thinking: 'Consultation des documents…',
       network: "Impossible de joindre l'assistant. Vérifiez votre connexion et réessayez, ou consultez l'index des règlements ci-dessous.",

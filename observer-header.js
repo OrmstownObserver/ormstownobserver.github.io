@@ -249,7 +249,7 @@
       </a>
       <a href="/en/ask/" data-href-en="/en/ask/" data-href-fr="/fr/posez-une-question/"
         class="${isActive('/en/ask') || isActive('/fr/posez-une-question') ? 'is-active' : ''}">
-        <span data-en>OrmstownGPT</span><span data-fr>OrmstownGPT</span>
+        <span data-en>Community Compass</span><span data-fr>Community Compass</span>
       </a>
       <a href="mailto:ormstownobserver@gmail.com">
         <span data-en>Contact</span><span data-fr>Contact</span>
