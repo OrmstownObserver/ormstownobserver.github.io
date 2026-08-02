@@ -1,28 +1,28 @@
 {
   "version": 2,
-  "generated_at": "2026-07-29T23:44:13.103Z",
+  "generated_at": "2026-08-02T03:50:55.900Z",
   "hero": {
-    "slug": "toit-vert-development",
-    "path_en": "/en/toit-vert-development/",
-    "path_fr": "/fr/toit-vert-development/",
-    "label_en": "Council Watch",
-    "label_fr": "Conseil municipal",
-    "hed_en": "Council approved the 24-unit Church Street project — and the referendum window has now closed",
-    "hed_fr": "Le conseil a approuvé le projet de 24 logements rue Church — et la fenêtre référendaire est maintenant close",
-    "deck_en": "Council adopted the second draft resolution for PPCMOI 2026-041 on July 6. Residents in zones R-7, R-6 and R-8 had eight days to require a vote on any of its six zoning departures. That window closed on July 16; the Observer is reporting on what followed.",
-    "deck_fr": "Le conseil a adopté le second projet de résolution du PPCMOI 2026-041 le 6 juillet. Les citoyens des zones R-7, R-6 et R-8 disposaient de huit jours pour exiger un vote sur l'une de ses six dérogations. Cette période s'est terminée le 16 juillet; l'Observer poursuit son travail sur la suite du dossier.",
-    "meta_en": "PPCMOI 2026-041",
-    "meta_fr": "PPCMOI 2026-041",
+    "slug": "council-watch-august-3-2026-preview",
+    "path_en": "/en/council-watch/august-3-2026-preview/",
+    "path_fr": "/fr/conseil-municipal/3-aout-2026-apercu/",
+    "label_en": "Council Watch · Preview",
+    "label_fr": "Conseil municipal · Aperçu",
+    "hed_en": "Council Meeting Preview: August 3, 2026",
+    "hed_fr": "Aperçu de la séance du conseil : 3 août 2026",
+    "deck_en": "The full agenda reproduced as published, with links to every public document. Item 9.3 returns PPCMOI 2026-041 — the 24-unit Church Street project — to council, after a referendum demand signed by thirty-five residents was refused in July.",
+    "deck_fr": "L'ordre du jour complet reproduit tel que publié, avec les liens vers chaque document public. Le point 9.3 ramène au conseil le PPCMOI 2026-041 — le projet de 24 logements de la rue Church — après le refus en juillet d'une demande de référendum signée par trente-cinq citoyens.",
+    "meta_en": "Monday, August 3 · 6:30 p.m.",
+    "meta_fr": "Monday, August 3 · 6:30 p.m.",
     "cta_en": "Read the recap →",
     "cta_fr": "Lire le compte rendu →",
     "icon": "council",
-    "date_published": "2026-07-11",
+    "date_published": "2026-08-01",
     "image": {
-      "src": "/images/toit-vert-development.jpg",
+      "src": "/images/toit-vert-ppcmoi-sign.jpg",
       "position": "center",
       "credit": "Photo: The Ormstown Observer",
       "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
-      "alt_fr": "Affiche d’avis public sur le terrain vacant au 52 rue Church annonçant le PPCMOI 2026-041"
+      "alt_fr": "Affiche d'avis public sur le terrain vacant au 52, rue Church annonçant le PPCMOI 2026-041"
     }
   },
   "rail": [
@@ -145,6 +145,16 @@
   ],
   "latest": [
     {
+      "slug": "council-watch-august-3-2026-preview",
+      "path_en": "/en/council-watch/august-3-2026-preview/",
+      "path_fr": "/fr/conseil-municipal/3-aout-2026-apercu/",
+      "label_en": "Council Watch · Preview",
+      "label_fr": "Conseil municipal · Aperçu",
+      "hed_en": "Council Meeting Preview: August 3, 2026 — Monday, August 3 · 6:30 p.m.",
+      "hed_fr": "Aperçu de la séance du conseil : 3 août 2026 — Monday, August 3 · 6:30 p.m.",
+      "date_published": "2026-08-01"
+    },
+    {
       "slug": "piia-route-201-corridor",
       "path_en": "/en/piia/route-201-corridor/",
       "path_fr": "/fr/piia/corridor-route-201/",
@@ -233,19 +243,63 @@
       "hed_en": "PIIA 101: the bylaw that judges how your project looks",
       "hed_fr": "Le PIIA 101 : le règlement qui juge l’apparence de votre projet",
       "date_published": "2026-07-07"
-    },
-    {
-      "slug": "bell-tower-pre-vote",
-      "path_en": "/en/bell-tower-pre-vote/",
-      "path_fr": "/fr/bell-tower-pre-vote/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "Before Monday’s vote: what residents were never told about the Bell tower",
-      "hed_fr": "Avant le vote de lundi : ce qu’on n’a jamais dit aux résidents au sujet de la tour Bell",
-      "date_published": "2026-07-05"
     }
   ],
   "latest_groups": [
+    {
+      "file": "Council Watch",
+      "file_fr": "Conseil municipal",
+      "status_en": "Open",
+      "status_fr": "En cours",
+      "items": [
+        {
+          "slug": "council-watch-august-3-2026-preview",
+          "path_en": "/en/council-watch/august-3-2026-preview/",
+          "path_fr": "/fr/conseil-municipal/3-aout-2026-apercu/",
+          "label_en": "Council Watch · Preview",
+          "label_fr": "Conseil municipal · Aperçu",
+          "hed_en": "Council Meeting Preview: August 3, 2026",
+          "hed_fr": "Aperçu de la séance du conseil : 3 août 2026",
+          "date_published": "2026-08-01",
+          "part": null
+        },
+        {
+          "slug": "council-watch-july-6-2026",
+          "path_en": "/en/council-watch/july-6-2026/",
+          "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
+          "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
+          "date_published": "2026-07-08",
+          "part": null
+        },
+        {
+          "slug": "council-watch-june-1-2026",
+          "path_en": "/en/council-watch/june-1-2026/",
+          "path_fr": "/fr/conseil-municipal/1-juin-2026/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Ormstown borrows $4.8M for Prince-Albert, Cullen & Oliver street infrastructure",
+          "hed_fr": "Ormstown emprunte 4,8 M$ pour les rues Prince-Albert, Cullen et Oliver",
+          "date_published": "2026-06-01",
+          "part": null
+        },
+        {
+          "slug": "council-watch-april-13-2026",
+          "path_en": "/en/council-watch/april-13-2026/",
+          "path_fr": "/fr/conseil-municipal/13-avril-2026/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Council Watch: April 13, 2026 — a full regulatory cycle, $20,000 for the fire department, and questions on staff turnover",
+          "hed_fr": "Conseil municipal du 13 avril 2026 — un cycle réglementaire complet, 20 000 $ pour les pompiers et des questions sur le roulement de personnel",
+          "date_published": "2026-04-13",
+          "part": null
+        }
+      ],
+      "newest": "2026-08-01",
+      "total": 4
+    },
     {
       "file": "PIIA Explained",
       "file_fr": "Le PIIA expliqué",
@@ -418,49 +472,6 @@
       ],
       "newest": "2026-07-11",
       "total": 1
-    },
-    {
-      "file": "Council Watch",
-      "file_fr": "Conseil municipal",
-      "status_en": "Open",
-      "status_fr": "En cours",
-      "items": [
-        {
-          "slug": "council-watch-july-6-2026",
-          "path_en": "/en/council-watch/july-6-2026/",
-          "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
-          "label_en": "Council Watch",
-          "label_fr": "Conseil municipal",
-          "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
-          "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
-          "date_published": "2026-07-08",
-          "part": null
-        },
-        {
-          "slug": "council-watch-june-1-2026",
-          "path_en": "/en/council-watch/june-1-2026/",
-          "path_fr": "/fr/conseil-municipal/1-juin-2026/",
-          "label_en": "Council Watch",
-          "label_fr": "Conseil municipal",
-          "hed_en": "Ormstown borrows $4.8M for Prince-Albert, Cullen & Oliver street infrastructure",
-          "hed_fr": "Ormstown emprunte 4,8 M$ pour les rues Prince-Albert, Cullen et Oliver",
-          "date_published": "2026-06-01",
-          "part": null
-        },
-        {
-          "slug": "council-watch-april-13-2026",
-          "path_en": "/en/council-watch/april-13-2026/",
-          "path_fr": "/fr/conseil-municipal/13-avril-2026/",
-          "label_en": "Council Watch",
-          "label_fr": "Conseil municipal",
-          "hed_en": "Council Watch: April 13, 2026 — a full regulatory cycle, $20,000 for the fire department, and questions on staff turnover",
-          "hed_fr": "Conseil municipal du 13 avril 2026 — un cycle réglementaire complet, 20 000 $ pour les pompiers et des questions sur le roulement de personnel",
-          "date_published": "2026-04-13",
-          "part": null
-        }
-      ],
-      "newest": "2026-07-08",
-      "total": 3
     },
     {
       "file": "",
