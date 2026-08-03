@@ -6,37 +6,6 @@
 (function () {
   'use strict';
 
-  var SVG_NS = 'http://www.w3.org/2000/svg';
-
-  /* Icon shapes are whitelisted here and keyed by the JSON `icon` field;
-     the JSON can never inject markup. Same 24x24 stroke style as the
-     hand-authored rail icons. */
-  var ICONS = {
-    investigation: [
-      ['circle', { cx: '10.5', cy: '10.5', r: '6.5' }],
-      ['line', { x1: '15.5', y1: '15.5', x2: '21', y2: '21' }]
-    ],
-    council: [
-      ['rect', { x: '3', y: '10', width: '18', height: '11', rx: '1' }],
-      ['polyline', { points: '3 10 12 3 21 10' }],
-      ['line', { x1: '9', y1: '21', x2: '9', y2: '14' }],
-      ['line', { x1: '15', y1: '21', x2: '15', y2: '14' }]
-    ],
-    bylaws: [
-      ['path', { d: 'M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z' }],
-      ['polyline', { points: '14 2 14 8 20 8' }],
-      ['line', { x1: '8', y1: '13', x2: '16', y2: '13' }],
-      ['line', { x1: '8', y1: '17', x2: '12', y2: '17' }]
-    ],
-    editorial: [
-      ['path', { d: 'M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z' }]
-    ],
-    notice: [
-      ['path', { d: 'M3 11l18-5v12L3 14v-3z' }],
-      ['path', { d: 'M11.6 16.8a3 3 0 1 1-5.8-1.6' }]
-    ]
-  };
-  ICONS['default'] = ICONS.bylaws;
 
   var EMOJI = {
     investigation: '🔍',
@@ -113,21 +82,6 @@
     });
   }
 
-  function svgIcon(key) {
-    var spec = ICONS[key] || ICONS['default'];
-    var svg = document.createElementNS(SVG_NS, 'svg');
-    svg.setAttribute('viewBox', '0 0 24 24');
-    spec.forEach(function (part) {
-      var n = document.createElementNS(SVG_NS, part[0]);
-      var attrs = part[1];
-      for (var k in attrs) {
-        if (Object.prototype.hasOwnProperty.call(attrs, k)) n.setAttribute(k, attrs[k]);
-      }
-      svg.appendChild(n);
-    });
-    return svg;
-  }
-
   function labelWithEmoji(s, lang) {
     var label = lang === 'fr' ? (s.label_fr || s.label_en || '') : (s.label_en || '');
     var emoji = EMOJI[s.icon];
@@ -179,39 +133,6 @@
     clearChildren(content);
     content.appendChild(frag);
     if (gradient && gradient.parentNode !== a) a.insertBefore(gradient, content);
-  }
-
-  function renderRail(list) {
-    if (!Array.isArray(list) || !list.length) return;
-    var rail = document.querySelector('.hero-rail');
-    if (!rail) return;
-    var items = [];
-    /* Two secondary stories, not three. A thumbnail carries the story when it has
-       an image; the accent icon panel remains the fallback so a story without one
-       still renders cleanly rather than leaving a hole. */
-    list.slice(0, 2).forEach(function (s) {
-      if (!validStory(s)) return;
-      var a = el('a', 'rail-item');
-      setHrefs(a, s);
-      if (validImg(s.image)) {
-        var thumb = el('div', 'rail-thumb', a);
-        thumb.setAttribute('role', 'img');
-        applyBackground(thumb, s.image);
-        setAria(thumb, s.image.alt_en, s.image.alt_fr);
-      } else {
-        var icon = el('div', 'rail-icon', a);
-        icon.setAttribute('aria-hidden', 'true');
-        icon.appendChild(svgIcon(s.icon));
-      }
-      var body = el('div', 'rail-body', a);
-      biSpan(el('div', 'rail-label', body), s.label_en, s.label_fr);
-      biSpan(el('div', 'rail-hed', body), s.hed_en, s.hed_fr);
-      biSpan(el('div', 'rail-date', body), s.meta_en, s.meta_fr);
-      items.push(a);
-    });
-    if (!items.length) return;
-    clearChildren(rail);
-    items.forEach(function (a) { rail.appendChild(a); });
   }
 
   function renderCards(list) {
@@ -339,7 +260,6 @@
          validates its own fields), so a version floor is the right check. */
       if (!data || typeof data.version !== 'number' || data.version < 1) return;
       try { renderHero(data.hero); } catch (e) {}
-      try { renderRail(data.rail); } catch (e) {}
       try { renderCards(data.cards); } catch (e) {}
       try { renderLatest(data.latest, data.latest_groups); } catch (e) {}
       try { syncAria(); } catch (e) {}

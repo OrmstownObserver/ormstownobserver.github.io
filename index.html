@@ -160,41 +160,6 @@
   /* ── SECONDARY BAND — the two stories under the lead. Side by side on
      desktop, stacked on mobile. Thumbnail when the story has an image; the
      accent icon panel is the fallback when it does not. ── */
-  .hero-rail {
-    display: grid; grid-template-columns: 1fr 1fr;
-    background: var(--paper); border-top: 1px solid var(--border);
-  }
-  .rail-item {
-    display: flex; align-items: stretch;
-    border-right: 1px solid var(--border);
-    transition: background .12s;
-  }
-  .rail-item:last-child { border-right: none; }
-  a.rail-item:hover { background: var(--paper-dark); }
-  a.rail-item:hover .rail-icon { background: var(--ink); }
-
-  /* Icon panel — accent-coloured block with SVG */
-  .rail-icon {
-    width: 80px; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    background: var(--accent); transition: background .12s;
-  }
-  .rail-icon svg { width: 28px; height: 28px; fill: none; stroke: #fff; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-  /* Photo panel — preferred over the icon panel whenever the story has an image */
-  .rail-thumb {
-    width: 118px; flex-shrink: 0; background-size: cover; background-position: center;
-    background-color: var(--paper-dark); border-right: 1px solid var(--border);
-  }
-
-  .rail-body { padding: 18px 20px; display: flex; flex-direction: column; justify-content: center; min-height: 104px; }
-  .rail-label {
-    font-family: sans-serif; font-size: 9px; font-weight: 800;
-    text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: 5px;
-  }
-  .rail-hed { font-size: 15px; font-weight: 700; line-height: 1.28; color: var(--ink); }
-  .rail-date { font-family: sans-serif; font-size: 10px; color: var(--ink-soft); margin-top: 6px; }
-
   /* ── LATEST STORIES — photo grid below hero ── */
   .latest-stories {
     display: grid; grid-template-columns: repeat(3, 1fr);
@@ -311,14 +276,7 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 720px) {
     .hero-main { aspect-ratio: auto; min-height: 300px; }
-    /* Stack the two secondary cards on a phone — no side column, no sideways
-       scroll, just the lead then two full-width cards. */
-    .hero-rail { grid-template-columns: 1fr; }
-    .rail-item { border-right: none; border-bottom: 1px solid var(--border); }
-    .rail-item:last-child { border-bottom: none; }
-    .rail-thumb { width: 104px; min-height: 92px; }
-    .rail-icon { width: 64px; }
-    .rail-body { min-height: 0; padding: 14px 16px; }
+    /* On a phone the three cards stack under the lead — no sideways scroll. */
     .latest-stories { grid-template-columns: 1fr; }
     .story-card { border-right: none; border-bottom: 1px solid var(--border); }
     .story-card:last-child { border-bottom: none; }
@@ -332,7 +290,7 @@
      both for 10 min (max-age=600); without the pin, a cached old front-page.js
      can pair with a new front-page.json and abort the render, leaving the static
      fallback on screen. Bump the v= whenever front-page.js changes. -->
-<script src="/front-page.js?v=20260729-2" defer></script>
+<script src="/front-page.js?v=20260802-1" defer></script>
 </head>
 <body>
 
@@ -430,55 +388,6 @@
     </div>
   </a>
 
-  <!-- HERO RAIL: 2 secondary stories (static fallback; front-page.js replaces
-       these from Notion slots 2-3 and swaps the icon panel for a thumbnail when
-       the story has an image) -->
-  <div class="hero-rail">
-
-    <!-- Investigation -->
-    <a class="rail-item"
-       data-href-en="/en/investigations/"
-       data-href-fr="/fr/bell-tower/"
-       href="/en/investigations/">
-      <div class="rail-icon" aria-hidden="true">
-        <!-- Magnifying glass -->
-        <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
-      </div>
-      <div class="rail-body">
-        <div class="rail-label">
-          <span data-en>Investigation</span><span data-fr>Enqu&ecirc;te</span>
-        </div>
-        <div class="rail-hed">
-          <span data-en>A 36-metre tower proposed for an Ormstown park lot</span>
-          <span data-fr>Une tour de 36 m&egrave;tres propos&eacute;e sur un terrain municipal d&rsquo;Ormstown</span>
-        </div>
-        <div class="rail-date">Bell Tower &middot; Projet E3640</div>
-      </div>
-    </a>
-
-    <!-- Council Watch -->
-    <a class="rail-item"
-       data-href-en="/en/council-watch/july-6-2026/"
-       data-href-fr="/fr/conseil-municipal/6-juillet-2026/"
-       href="/en/council-watch/july-6-2026/">
-      <div class="rail-icon" aria-hidden="true">
-        <!-- Building / pillars -->
-        <svg viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="11" rx="1"/><polyline points="3 10 12 3 21 10"/><line x1="9" y1="21" x2="9" y2="14"/><line x1="15" y1="21" x2="15" y2="14"/></svg>
-      </div>
-      <div class="rail-body">
-        <div class="rail-label">
-          <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>
-        </div>
-        <div class="rail-hed">
-          <span data-en>Council votes unanimously to sign Bell tower lease</span>
-          <span data-fr>Le conseil vote &agrave; l&rsquo;unanimit&eacute; la signature du bail de la tour Bell</span>
-        </div>
-        <div class="rail-date"><span data-en>July 8, 2026</span><span data-fr>8 juillet 2026</span></div>
-      </div>
-    </a>
-
-
-  </div>
 </section>
 
 <!-- LATEST STORIES — photo cards -->
