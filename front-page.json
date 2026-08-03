@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-08-02T03:50:55.900Z",
+  "generated_at": "2026-08-03T01:28:20.994Z",
   "hero": {
     "slug": "council-watch-august-3-2026-preview",
     "path_en": "/en/council-watch/august-3-2026-preview/",
@@ -25,7 +25,8 @@
       "alt_fr": "Affiche d'avis public sur le terrain vacant au 52, rue Church annonçant le PPCMOI 2026-041"
     }
   },
-  "rail": [
+  "rail": [],
+  "cards": [
     {
       "slug": "bell-tower-complete",
       "path_en": "/en/bell-tower-complete/",
@@ -51,25 +52,29 @@
       }
     },
     {
-      "slug": "piia-business-signs",
-      "path_en": "/en/piia/business-signs/",
-      "path_fr": "/fr/piia/enseignes-commerces/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Opening a shop in Ormstown? Your sign and storefront may need council approval first",
-      "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
-      "deck_en": "",
-      "deck_fr": "",
-      "meta_en": "July 7, 2026",
-      "meta_fr": "7 juillet 2026",
-      "cta_en": "Read the explainer →",
-      "cta_fr": "Lire l’explicateur →",
-      "icon": "bylaws",
-      "date_published": "2026-07-07",
-      "image": null
-    }
-  ],
-  "cards": [
+      "slug": "toit-vert-development",
+      "path_en": "/en/toit-vert-development/",
+      "path_fr": "/fr/toit-vert-development/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council approved the 24-unit Church Street project — and the referendum window has now closed",
+      "hed_fr": "Le conseil a approuvé le projet de 24 logements rue Church — et la fenêtre référendaire est maintenant close",
+      "deck_en": "Council adopted the second draft resolution for PPCMOI 2026-041 on July 6. Residents in zones R-7, R-6 and R-8 had eight days to require a vote on any of its six zoning departures. That window closed on July 16; the Observer is reporting on what followed.",
+      "deck_fr": "Le conseil a adopté le second projet de résolution du PPCMOI 2026-041 le 6 juillet. Les citoyens des zones R-7, R-6 et R-8 disposaient de huit jours pour exiger un vote sur l'une de ses six dérogations. Cette période s'est terminée le 16 juillet; l'Observer poursuit son travail sur la suite du dossier.",
+      "meta_en": "PPCMOI 2026-041",
+      "meta_fr": "PPCMOI 2026-041",
+      "cta_en": "Read the recap →",
+      "cta_fr": "Lire le compte rendu →",
+      "icon": "council",
+      "date_published": "2026-07-11",
+      "image": {
+        "src": "/images/toit-vert-development.jpg",
+        "position": "center",
+        "credit": "Photo: The Ormstown Observer",
+        "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
+        "alt_fr": "Affiche d’avis public sur le terrain vacant au 52 rue Church annonçant le PPCMOI 2026-041"
+      }
+    },
     {
       "slug": "council-watch-july-6-2026",
       "path_en": "/en/council-watch/july-6-2026/",
@@ -92,54 +97,6 @@
         "credit": "Photo: The Ormstown Observer",
         "alt_en": "Ormstown town hall",
         "alt_fr": "Hôtel de ville d'Ormstown"
-      }
-    },
-    {
-      "slug": "bylaws-regulations-animal-control-131-2026",
-      "path_en": "/en/bylaws-regulations/animal-control-131-2026/",
-      "path_fr": "/fr/bylaws-regulations/reglement-animaux-131-2026/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens",
-      "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises",
-      "deck_en": "",
-      "deck_fr": "",
-      "meta_en": "Règlement 131-2026",
-      "meta_fr": "Règlement 131-2026",
-      "cta_en": "Read the explainer →",
-      "cta_fr": "Lire l’explicateur →",
-      "icon": "bylaws",
-      "date_published": "2026-06-18",
-      "image": {
-        "src": "/images/chickens.jpg",
-        "position": "center 60%",
-        "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Backyard chickens in a garden",
-        "alt_fr": "Poules en liberté dans un jardin"
-      }
-    },
-    {
-      "slug": "editorials-language-policy-2026",
-      "path_en": "/en/editorials/language-policy-2026/",
-      "path_fr": "/fr/editoriaux/politique-linguistique-2026/",
-      "label_en": "Editorial",
-      "label_fr": "Éditorial",
-      "hed_en": "When policy allows more than practice — Ormstown’s language directive and the gap residents live with",
-      "hed_fr": "Quand la politique permet plus que la pratique — la directive linguistique d’Ormstown et l’écart que vivent les résidents",
-      "deck_en": "",
-      "deck_fr": "",
-      "meta_en": "June 25, 2026",
-      "meta_fr": "25 juin 2026",
-      "cta_en": "Read the editorial →",
-      "cta_fr": "Lire l’éditorial →",
-      "icon": "editorial",
-      "date_published": "2026-06-25",
-      "image": {
-        "src": "/images/ormstown-language-policy.jpg",
-        "position": "center top",
-        "credit": "Source: ormstown.ca",
-        "alt_en": "Screenshot of ormstown.ca’s terms of use, published in French only",
-        "alt_fr": "Capture d’écran des conditions d’utilisation d’ormstown.ca, publiées en français seulement"
       }
     }
   ],
@@ -225,16 +182,6 @@
       "date_published": "2026-07-08"
     },
     {
-      "slug": "piia-business-signs",
-      "path_en": "/en/piia/business-signs/",
-      "path_fr": "/fr/piia/enseignes-commerces/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Opening a shop in Ormstown? Your sign and storefront may need council approval first",
-      "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
-      "date_published": "2026-07-07"
-    },
-    {
       "slug": "piia-piia-101",
       "path_en": "/en/piia/piia-101/",
       "path_fr": "/fr/piia/piia-101/",
@@ -242,6 +189,16 @@
       "label_fr": "Règlements",
       "hed_en": "PIIA 101: the bylaw that judges how your project looks",
       "hed_fr": "Le PIIA 101 : le règlement qui juge l’apparence de votre projet",
+      "date_published": "2026-07-07"
+    },
+    {
+      "slug": "piia-business-signs",
+      "path_en": "/en/piia/business-signs/",
+      "path_fr": "/fr/piia/enseignes-commerces/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Opening a shop in Ormstown? Your sign and storefront may need council approval first",
+      "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
       "date_published": "2026-07-07"
     }
   ],
