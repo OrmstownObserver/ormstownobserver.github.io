@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-08-03T01:28:20.994Z",
+  "generated_at": "2026-08-03T02:26:26.646Z",
   "hero": {
     "slug": "council-watch-august-3-2026-preview",
     "path_en": "/en/council-watch/august-3-2026-preview/",
@@ -52,6 +52,30 @@
       }
     },
     {
+      "slug": "council-watch-borrowing-172-173-2026",
+      "path_en": "/en/council-watch/borrowing-172-173-2026/",
+      "path_fr": "/fr/conseil-municipal/emprunts-172-173-2026/",
+      "label_en": "Public money",
+      "label_fr": "Fonds publics",
+      "hed_en": "Two borrowing by-laws, $4.8 million, and one amount that has never been published",
+      "hed_fr": "Deux règlements d'emprunt, 4,8 millions $, et un montant jamais publié",
+      "deck_en": "What by-laws 172-2026 and 173-2026 pay for, over what term, and who repays them. By-law 173-2026 borrows $4,800,000 over 40 years for Prince-Albert, Cullen and Oliver, repaid 80% inside the taxation basin and 20% municipality-wide. For 172-2026, no published municipal document states the amount.",
+      "deck_fr": "Ce que financent les règlements 172-2026 et 173-2026, sur quel terme et qui les rembourse. Le 173-2026 emprunte 4 800 000 $ sur 40 ans pour les rues Prince-Albert, Cullen et Oliver, remboursé à 80 % dans le bassin de taxation et à 20 % à l'échelle de la Municipalité. Pour le 172-2026, aucun document municipal publié n'indique le montant.",
+      "meta_en": "By-laws 172-2026 & 173-2026",
+      "meta_fr": "By-laws 172-2026 & 173-2026",
+      "cta_en": "Read the recap →",
+      "cta_fr": "Lire le compte rendu →",
+      "icon": "council",
+      "date_published": "2026-08-02",
+      "image": {
+        "src": "/images/council-watch-borrowing-172-173-2026.jpg",
+        "position": "center",
+        "credit": "Source: Municipality of Ormstown",
+        "alt_en": "The Municipality of Ormstown's 2026-2028 capital plan table, listing each project with the share funded by a borrowing by-law and the share expected from a grant programme, above a footnote reading that the subsidies are indicative only.",
+        "alt_fr": "Le tableau du programme triennal d'immobilisations 2026-2028 de la Municipalité d'Ormstown, indiquant pour chaque projet la part financée par un règlement d'emprunt et la part attendue d'un programme de subvention, au-dessus d'une note précisant que les subventions sont à titre indicatif seulement."
+      }
+    },
+    {
       "slug": "toit-vert-development",
       "path_en": "/en/toit-vert-development/",
       "path_fr": "/fr/toit-vert-development/",
@@ -74,33 +98,19 @@
         "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
         "alt_fr": "Affiche d’avis public sur le terrain vacant au 52 rue Church annonçant le PPCMOI 2026-041"
       }
-    },
-    {
-      "slug": "council-watch-july-6-2026",
-      "path_en": "/en/council-watch/july-6-2026/",
-      "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
-      "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
-      "deck_en": "A recorded 7–0 vote authorized the Bell Mobilité tower lease. Council also authorized a road-works tender under the $3.7M MTQ subsidy, named a new deputy mayor, and moved two PPCMOI housing files to the register stage.",
-      "deck_fr": "Un vote nominal de 7 contre 0 autorise le bail de la tour Bell Mobilité. Le conseil autorise aussi un appel d'offres de voirie dans le cadre de la subvention de 3,7 M$ du MTQ, nomme un nouveau maire suppléant et fait passer deux dossiers PPCMOI à l'étape du registre.",
-      "meta_en": "July 8, 2026",
-      "meta_fr": "8 juillet 2026",
-      "cta_en": "Read the recap →",
-      "cta_fr": "Lire le compte rendu →",
-      "icon": "council",
-      "date_published": "2026-07-08",
-      "image": {
-        "src": "/images/council-watch-july-6-2026.jpg",
-        "position": "center 55%",
-        "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Ormstown town hall",
-        "alt_fr": "Hôtel de ville d'Ormstown"
-      }
     }
   ],
   "latest": [
+    {
+      "slug": "council-watch-borrowing-172-173-2026",
+      "path_en": "/en/council-watch/borrowing-172-173-2026/",
+      "path_fr": "/fr/conseil-municipal/emprunts-172-173-2026/",
+      "label_en": "Public money",
+      "label_fr": "Fonds publics",
+      "hed_en": "Two borrowing by-laws, $4.8 million, and one amount that has never been published — By-laws 172-2026 & 173-2026",
+      "hed_fr": "Deux règlements d'emprunt, 4,8 millions $, et un montant jamais publié — By-laws 172-2026 & 173-2026",
+      "date_published": "2026-08-02"
+    },
     {
       "slug": "council-watch-august-3-2026-preview",
       "path_en": "/en/council-watch/august-3-2026-preview/",
@@ -190,16 +200,6 @@
       "hed_en": "PIIA 101: the bylaw that judges how your project looks",
       "hed_fr": "Le PIIA 101 : le règlement qui juge l’apparence de votre projet",
       "date_published": "2026-07-07"
-    },
-    {
-      "slug": "piia-business-signs",
-      "path_en": "/en/piia/business-signs/",
-      "path_fr": "/fr/piia/enseignes-commerces/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Opening a shop in Ormstown? Your sign and storefront may need council approval first",
-      "hed_fr": "Ouvrir un commerce à Ormstown? Votre enseigne pourrait exiger l’approbation du conseil",
-      "date_published": "2026-07-07"
     }
   ],
   "latest_groups": [
@@ -209,6 +209,17 @@
       "status_en": "Open",
       "status_fr": "En cours",
       "items": [
+        {
+          "slug": "council-watch-borrowing-172-173-2026",
+          "path_en": "/en/council-watch/borrowing-172-173-2026/",
+          "path_fr": "/fr/conseil-municipal/emprunts-172-173-2026/",
+          "label_en": "Public money",
+          "label_fr": "Fonds publics",
+          "hed_en": "Two borrowing by-laws, $4.8 million, and one amount that has never been published",
+          "hed_fr": "Deux règlements d'emprunt, 4,8 millions $, et un montant jamais publié",
+          "date_published": "2026-08-02",
+          "part": null
+        },
         {
           "slug": "council-watch-august-3-2026-preview",
           "path_en": "/en/council-watch/august-3-2026-preview/",
@@ -254,8 +265,8 @@
           "part": null
         }
       ],
-      "newest": "2026-08-01",
-      "total": 4
+      "newest": "2026-08-02",
+      "total": 5
     },
     {
       "file": "PIIA Explained",
