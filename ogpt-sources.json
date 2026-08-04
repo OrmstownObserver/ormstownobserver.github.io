@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-08-03T09:31:31.017Z",
- "document_count": 156,
+ "generated_at": "2026-08-04T15:41:39.409Z",
+ "document_count": 158,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -590,6 +590,16 @@
        "title": "PV 2026 05 04 WEB",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/PV_2026-05-04_WEB.pdf"
+      },
+      {
+       "title": "PV 2026 06 01 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-01_WEB.pdf"
+      },
+      {
+       "title": "PV 2026 06 15 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-15_WEB.pdf"
       },
       {
        "title": "2025 01 20 PV",
