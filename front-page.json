@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-08-03T02:33:43.053Z",
+  "generated_at": "2026-08-05T13:14:07.089Z",
   "hero": {
     "slug": "council-watch-august-3-2026-preview",
     "path_en": "/en/council-watch/august-3-2026-preview/",
@@ -102,6 +102,36 @@
   ],
   "latest": [
     {
+      "slug": "bylaws-regulations-drinking-water-86-2024",
+      "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
+      "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "The last digit of your address decides which day you can water your lawn",
+      "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
+      "date_published": "2026-08-04"
+    },
+    {
+      "slug": "bylaws-regulations-environment-trees-148-2023",
+      "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Did you know? Cutting down a tree in Ormstown requires a permit",
+      "hed_fr": "Savez-vous? Abattre un arbre à Ormstown exige un certificat",
+      "date_published": "2026-08-04"
+    },
+    {
+      "slug": "council-watch-august-3-2026",
+      "path_en": "/en/council-watch/august-3-2026/",
+      "path_fr": "/fr/conseil-municipal/3-aout-2026/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council approves the 24-unit Church Street project, over one councillor's objection",
+      "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church, malgré l'opposition d'un conseiller",
+      "date_published": "2026-08-04"
+    },
+    {
       "slug": "council-watch-borrowing-172-173-2026",
       "path_en": "/en/council-watch/borrowing-172-173-2026/",
       "path_fr": "/fr/conseil-municipal/emprunts-172-173-2026/",
@@ -170,36 +200,6 @@
       "hed_en": "Council approved the 24-unit Church Street project — and the referendum window has now closed — PPCMOI 2026-041",
       "hed_fr": "Le conseil a approuvé le projet de 24 logements rue Church — et la fenêtre référendaire est maintenant close — PPCMOI 2026-041",
       "date_published": "2026-07-11"
-    },
-    {
-      "slug": "piia-homeowners-heritage-core",
-      "path_en": "/en/piia/homeowners-heritage-core/",
-      "path_fr": "/fr/piia/proprietaires-noyau-villageois/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Paint, roofs and front galleries: what village-core homeowners must know before they renovate — PIIA Explained — Part 3",
-      "hed_fr": "Peinture, toitures et galeries : ce que les propriétaires du noyau villageois doivent savoir avant de rénover — PIIA Explained — Part 3",
-      "date_published": "2026-07-10"
-    },
-    {
-      "slug": "council-watch-july-6-2026",
-      "path_en": "/en/council-watch/july-6-2026/",
-      "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
-      "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
-      "date_published": "2026-07-08"
-    },
-    {
-      "slug": "piia-piia-101",
-      "path_en": "/en/piia/piia-101/",
-      "path_fr": "/fr/piia/piia-101/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "PIIA 101: the bylaw that judges how your project looks",
-      "hed_fr": "Le PIIA 101 : le règlement qui juge l’apparence de votre projet",
-      "date_published": "2026-07-07"
     }
   ],
   "latest_groups": [
@@ -209,6 +209,17 @@
       "status_en": "Open",
       "status_fr": "En cours",
       "items": [
+        {
+          "slug": "council-watch-august-3-2026",
+          "path_en": "/en/council-watch/august-3-2026/",
+          "path_fr": "/fr/conseil-municipal/3-aout-2026/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Council approves the 24-unit Church Street project, over one councillor's objection",
+          "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church, malgré l'opposition d'un conseiller",
+          "date_published": "2026-08-04",
+          "part": null
+        },
         {
           "slug": "council-watch-borrowing-172-173-2026",
           "path_en": "/en/council-watch/borrowing-172-173-2026/",
@@ -265,8 +276,8 @@
           "part": null
         }
       ],
-      "newest": "2026-08-02",
-      "total": 5
+      "newest": "2026-08-04",
+      "total": 6
     },
     {
       "file": "PIIA Explained",
@@ -446,8 +457,30 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 4,
+      "total": 6,
       "items": [
+        {
+          "slug": "bylaws-regulations-drinking-water-86-2024",
+          "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
+          "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "The last digit of your address decides which day you can water your lawn",
+          "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
+          "date_published": "2026-08-04",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-environment-trees-148-2023",
+          "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
+          "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Did you know? Cutting down a tree in Ormstown requires a permit",
+          "hed_fr": "Savez-vous? Abattre un arbre à Ormstown exige un certificat",
+          "date_published": "2026-08-04",
+          "part": null
+        },
         {
           "slug": "editorials-language-policy-2026",
           "path_en": "/en/editorials/language-policy-2026/",
@@ -479,17 +512,6 @@
           "hed_en": "PIIA explained: when a renovation needs council approval first",
           "hed_fr": "Le PIIA expliqué : quand une rénovation exige l’accord du conseil",
           "date_published": "2026-06-20",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-animal-control-131-2026",
-          "path_en": "/en/bylaws-regulations/animal-control-131-2026/",
-          "path_fr": "/fr/bylaws-regulations/reglement-animaux-131-2026/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "New animal bylaw: lifetime pet licenses, legal backyard chickens",
-          "hed_fr": "Nouveau règlement animalier : permis à vie, poules permises",
-          "date_published": "2026-06-18",
           "part": null
         }
       ],
