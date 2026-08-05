@@ -1,24 +1,24 @@
 {
   "version": 2,
-  "generated_at": "2026-08-05T13:14:07.089Z",
+  "generated_at": "2026-08-05T17:31:15.671Z",
   "hero": {
-    "slug": "council-watch-august-3-2026-preview",
-    "path_en": "/en/council-watch/august-3-2026-preview/",
-    "path_fr": "/fr/conseil-municipal/3-aout-2026-apercu/",
-    "label_en": "Council Watch · Preview",
-    "label_fr": "Conseil municipal · Aperçu",
-    "hed_en": "Council Meeting Preview: August 3, 2026",
-    "hed_fr": "Aperçu de la séance du conseil : 3 août 2026",
-    "deck_en": "The full agenda reproduced as published, with links to every public document. Item 9.3 returns PPCMOI 2026-041 — the 24-unit Church Street project — to council, after a referendum demand signed by thirty-five residents was refused in July.",
-    "deck_fr": "L'ordre du jour complet reproduit tel que publié, avec les liens vers chaque document public. Le point 9.3 ramène au conseil le PPCMOI 2026-041 — le projet de 24 logements de la rue Church — après le refus en juillet d'une demande de référendum signée par trente-cinq citoyens.",
-    "meta_en": "Monday, August 3 · 6:30 p.m.",
-    "meta_fr": "Monday, August 3 · 6:30 p.m.",
+    "slug": "council-watch-august-3-2026",
+    "path_en": "/en/council-watch/august-3-2026/",
+    "path_fr": "/fr/conseil-municipal/3-aout-2026/",
+    "label_en": "Council Watch",
+    "label_fr": "Conseil municipal",
+    "hed_en": "Council approves 24-unit Church Street project",
+    "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church",
+    "deck_en": "PPCMOI 2026-041 carried on August 3. Before the first question period, the mayor told residents council had obtained a legal opinion and that no valid referendum demand had come from zone R-7 — the only zone, he said, that the law counts. The councillor for seat 4 voted against, the sitting's only dissent.",
+    "deck_fr": "Le PPCMOI 2026-041 a été adopté le 3 août. Avant la première période de questions, le maire a expliqué aux citoyens que le conseil avait obtenu un avis juridique et qu'aucune demande valide n'était provenue de la zone R-7 — la seule zone, a-t-il dit, que la loi prend en compte. Le conseiller du siège 4 a voté contre, seule dissidence de la séance.",
+    "meta_en": "August 4, 2026",
+    "meta_fr": "4 août 2026",
     "cta_en": "Read the recap →",
     "cta_fr": "Lire le compte rendu →",
     "icon": "council",
-    "date_published": "2026-08-01",
+    "date_published": "2026-08-04",
     "image": {
-      "src": "/images/council-watch-august-3-2026-preview.jpg",
+      "src": "/images/council-watch-august-3-2026.jpg",
       "position": "center",
       "credit": "Photo: The Ormstown Observer",
       "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
@@ -28,27 +28,27 @@
   "rail": [],
   "cards": [
     {
-      "slug": "bell-tower-complete",
-      "path_en": "/en/bell-tower-complete/",
-      "path_fr": "/fr/bell-tower-complete/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "The Bell tower file, from start to finish",
-      "hed_fr": "Le dossier de la tour Bell, du début à la fin",
-      "deck_en": "A single consolidated record of Ormstown’s first federal telecom consultation — the 36-metre Bell Mobilité tower authorized July 6. What the rules required, what was done well, where the documents show gaps, and what residents can take from it for next time.",
-      "deck_fr": "Un dossier unique de la première consultation fédérale en télécommunications d’Ormstown — la tour Bell Mobilité de 36 mètres autorisée le 6 juillet. Ce que les règles exigeaient, ce qui a été bien fait, où les documents montrent des lacunes, et ce que les citoyens peuvent en retenir pour la prochaine fois.",
-      "meta_en": "Bell Tower · Projet E3640",
-      "meta_fr": "Bell Tower · Projet E3640",
-      "cta_en": "Read the investigation →",
-      "cta_fr": "Lire l’enquête →",
-      "icon": "investigation",
-      "date_published": "2026-07-16",
+      "slug": "bylaws-regulations-environment-trees-148-2023",
+      "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Did you know? Cutting down a tree in Ormstown requires a permit",
+      "hed_fr": "Savez-vous? Abattre un arbre à Ormstown exige un certificat",
+      "deck_en": "There is no standalone tree bylaw in Ormstown. The rules are buried in Chapter 12 of the zoning bylaw and in the permits bylaw, and they cover far more than trees: shorelines, flood plains, drinking-water intakes, snow dumping, and contaminated land.",
+      "deck_fr": "Il n'existe pas de règlement sur les arbres comme tel à Ormstown. Les règles sont enfouies dans le chapitre 12 du règlement de zonage et dans le règlement sur les permis, et elles couvrent bien plus que les arbres : les rives, les plaines inondables, les prises d'eau potable, le déversement de neige et les terrains contaminés.",
+      "meta_en": "August 4, 2026",
+      "meta_fr": "4 août 2026",
+      "cta_en": "Read the explainer →",
+      "cta_fr": "Lire l’explicateur →",
+      "icon": "bylaws",
+      "date_published": "2026-08-04",
       "image": {
-        "src": "/images/bell-tower-complete.jpg",
-        "position": "center 30%",
-        "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Cell tower against blue sky",
-        "alt_fr": "Tour de télécommunication sur fond de ciel bleu"
+        "src": "/images/bylaws-regulations-environment-trees-148-2023.jpg",
+        "position": "center",
+        "credit": "",
+        "alt_en": "",
+        "alt_fr": ""
       }
     },
     {
@@ -76,32 +76,6 @@
       }
     },
     {
-      "slug": "toit-vert-development",
-      "path_en": "/en/toit-vert-development/",
-      "path_fr": "/fr/toit-vert-development/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Council approved the 24-unit Church Street project — and the referendum window has now closed",
-      "hed_fr": "Le conseil a approuvé le projet de 24 logements rue Church — et la fenêtre référendaire est maintenant close",
-      "deck_en": "Council adopted the second draft resolution for PPCMOI 2026-041 on July 6. Residents in zones R-7, R-6 and R-8 had eight days to require a vote on any of its six zoning departures. That window closed on July 16; the Observer is reporting on what followed.",
-      "deck_fr": "Le conseil a adopté le second projet de résolution du PPCMOI 2026-041 le 6 juillet. Les citoyens des zones R-7, R-6 et R-8 disposaient de huit jours pour exiger un vote sur l'une de ses six dérogations. Cette période s'est terminée le 16 juillet; l'Observer poursuit son travail sur la suite du dossier.",
-      "meta_en": "PPCMOI 2026-041",
-      "meta_fr": "PPCMOI 2026-041",
-      "cta_en": "Read the recap →",
-      "cta_fr": "Lire le compte rendu →",
-      "icon": "council",
-      "date_published": "2026-07-11",
-      "image": {
-        "src": "/images/toit-vert-development.jpg",
-        "position": "center",
-        "credit": "Photo: The Ormstown Observer",
-        "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
-        "alt_fr": "Affiche d’avis public sur le terrain vacant au 52 rue Church annonçant le PPCMOI 2026-041"
-      }
-    }
-  ],
-  "latest": [
-    {
       "slug": "bylaws-regulations-drinking-water-86-2024",
       "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
       "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
@@ -109,6 +83,32 @@
       "label_fr": "Règlements",
       "hed_en": "The last digit of your address decides which day you can water your lawn",
       "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
+      "deck_en": "Règlement 86-2024 governs every drop of municipal water in Ormstown — watering days by civic number, pool filling on alternating dates, spring driveway washing for six weeks only, and a February 1, 2027 deadline to rip out water-cooled air conditioners. Fines start at $250 and each day counts separately.",
+      "deck_fr": "Le Règlement 86-2024 encadre chaque goutte d'eau municipale à Ormstown — jours d'arrosage selon le numéro civique, remplissage des piscines en dates alternées, nettoyage printanier des entrées pendant six semaines seulement, et une échéance au 1er février 2027 pour se débarrasser des climatiseurs à l'eau potable.",
+      "meta_en": "August 4, 2026",
+      "meta_fr": "4 août 2026",
+      "cta_en": "Read the explainer →",
+      "cta_fr": "Lire l’explicateur →",
+      "icon": "bylaws",
+      "date_published": "2026-08-04",
+      "image": {
+        "src": "/images/bylaws-regulations-drinking-water-86-2024.jpg",
+        "position": "center",
+        "credit": "",
+        "alt_en": "",
+        "alt_fr": ""
+      }
+    }
+  ],
+  "latest": [
+    {
+      "slug": "council-watch-august-3-2026",
+      "path_en": "/en/council-watch/august-3-2026/",
+      "path_fr": "/fr/conseil-municipal/3-aout-2026/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council approves 24-unit Church Street project",
+      "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church",
       "date_published": "2026-08-04"
     },
     {
@@ -122,13 +122,13 @@
       "date_published": "2026-08-04"
     },
     {
-      "slug": "council-watch-august-3-2026",
-      "path_en": "/en/council-watch/august-3-2026/",
-      "path_fr": "/fr/conseil-municipal/3-aout-2026/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Council approves the 24-unit Church Street project, over one councillor's objection",
-      "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church, malgré l'opposition d'un conseiller",
+      "slug": "bylaws-regulations-drinking-water-86-2024",
+      "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
+      "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "The last digit of your address decides which day you can water your lawn",
+      "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
       "date_published": "2026-08-04"
     },
     {
@@ -215,8 +215,8 @@
           "path_fr": "/fr/conseil-municipal/3-aout-2026/",
           "label_en": "Council Watch",
           "label_fr": "Conseil municipal",
-          "hed_en": "Council approves the 24-unit Church Street project, over one councillor's objection",
-          "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church, malgré l'opposition d'un conseiller",
+          "hed_en": "Council approves 24-unit Church Street project",
+          "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church",
           "date_published": "2026-08-04",
           "part": null
         },
@@ -460,17 +460,6 @@
       "total": 6,
       "items": [
         {
-          "slug": "bylaws-regulations-drinking-water-86-2024",
-          "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
-          "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "The last digit of your address decides which day you can water your lawn",
-          "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
-          "date_published": "2026-08-04",
-          "part": null
-        },
-        {
           "slug": "bylaws-regulations-environment-trees-148-2023",
           "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
           "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
@@ -478,6 +467,17 @@
           "label_fr": "Règlements",
           "hed_en": "Did you know? Cutting down a tree in Ormstown requires a permit",
           "hed_fr": "Savez-vous? Abattre un arbre à Ormstown exige un certificat",
+          "date_published": "2026-08-04",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-drinking-water-86-2024",
+          "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
+          "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "The last digit of your address decides which day you can water your lawn",
+          "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
           "date_published": "2026-08-04",
           "part": null
         },
