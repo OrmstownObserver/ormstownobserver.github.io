@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!-- Manual/headless responsive check: serve the repo root, open
+     /finances/tests/viewport-harness.html and read the PASS/FAIL line
+     over each frame (it compares the page's scrollWidth to the frame width). -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>finances — viewport harness</title>
+<style>
+body{font:13px -apple-system,sans-serif;margin:12px;background:#eee}
+.row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.slot p{margin:4px 0;font-weight:700}
+iframe{border:2px solid #333;background:#fff}
+.ok{color:#1a7f4b}.bad{color:#b3261e}
+</style>
+</head>
+<body>
+<h1>Responsive overflow check — /finances/</h1>
+<div class="row" id="row"></div>
+<script>
+var widths = [320, 375, 390, 768, 1024, 1440];
+var row = document.getElementById('row');
+widths.forEach(function (w) {
+  var slot = document.createElement('div'); slot.className = 'slot';
+  var p = document.createElement('p'); p.textContent = w + 'px — loading…'; p.id = 'r' + w;
+  var f = document.createElement('iframe');
+  f.width = w; f.height = w < 700 ? 900 : 700;
+  f.src = '/finances/?lang=' + (w === 375 ? 'en' : 'fr');
+  f.onload = function () {
+    setTimeout(function () {
+      try {
+        var d = f.contentDocument.documentElement;
+        var sw = Math.max(d.scrollWidth, f.contentDocument.body.scrollWidth);
+        var okFlag = sw <= w + 1;
+        p.textContent = w + 'px — scrollWidth ' + sw + ' — ' + (okFlag ? 'PASS' : 'FAIL (overflow ' + (sw - w) + 'px)');
+        p.className = okFlag ? 'ok' : 'bad';
+        document.title = document.title.replace(/ \| results:.*$/, '') + ' | results: ' +
+          widths.map(function (x) { var e = document.getElementById('r' + x); return x + ':' + (/PASS/.test(e.textContent) ? 'PASS' : (/FAIL/.test(e.textContent) ? 'FAIL' : '…')); }).join(' ');
+      } catch (e) { p.textContent = w + 'px — check failed: ' + e.message; }
+    }, 2500);
+  };
+  slot.appendChild(p); slot.appendChild(f); row.appendChild(slot);
+});
+</script>
+</body>
+</html>

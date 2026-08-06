@@ -12,6 +12,15 @@
 // ============================================================
 window.OO_SPENDING = {
  "generated": "2026-08-06",
+ "provenance": {
+  "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
+  "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
+  "observer_fields": "categories, gloss (descriptions), entries grouping, months[].note_fr/note_en",
+  "categories_method": "observer-manual-v1",
+  "gloss_method": "observer-editorial-v1",
+  "tolerances": { "2026-01": 0.12 },
+  "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS)."
+ },
  "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'aux séances de <strong>juin 2026</strong> (1<sup>er</sup> et 15 juin). Cette page détaille les listes de dépenses jusqu'à la séance du <strong>4 mai 2026</strong>; les listes des séances de juin sont en cours d'ajout. Les PV paraissent normalement de 4 à 6 semaines après leur adoption; les dépenses les plus récentes s'ajoutent donc ici au fil de leur publication.",
  "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>June 2026</strong> sittings (June 1 and 15). This page itemizes the spending lists up to the <strong>May 4, 2026</strong> sitting; the June lists are being added. Minutes normally appear 4–6 weeks after adoption; the most recent spending is added here as it is published.",
  "budget": {
