@@ -72,6 +72,12 @@
   .cat-summary .big { font-weight:800; font-size:1.3rem; color:var(--accent) }
   .cat-summary .caveat { color:#8a6116; font-size:.82rem; display:block; margin-top:4px }
   td.sitting a { color:var(--accent); text-decoration:none; font:600 .8rem -apple-system,sans-serif; white-space:nowrap }
+  tr.cat-row td{cursor:pointer;background:var(--accent-soft);font-family:-apple-system,sans-serif;border-bottom:1px solid var(--line)}
+  tr.cat-row:hover td{background:#e0ebf1}
+  tr.cat-row .chev{display:inline-block;width:15px;font-size:.68rem;color:var(--ink-soft);transition:transform .15s}
+  tr.cat-row.open .chev{transform:rotate(90deg)}
+  tr.sup-row td:first-child{padding-left:36px}
+  .share{color:var(--ink-soft);font-size:.78rem;margin-left:8px;font-weight:400}
   @media (max-width: 720px) { .toolbar { position:static; grid-template-columns:1fr 1fr }.toolbar input{grid-column:1/-1}.status{grid-template-columns:1fr}.chartbox.tall{height:280px} section.card{padding:16px} table{font-size:.82rem} .col-lines{display:none}.kpis{grid-template-columns:1fr 1fr}.kpi{padding:13px}.kpi .v{font-size:1.12rem} }
   @media print { .toolbar,.langbar,.chips,.table-actions{display:none!important} body{background:#fff} section.card,.kpi{break-inside:avoid;box-shadow:none} }
 </style>
@@ -141,7 +147,6 @@
   <section class="card">
     <h2 data-i18n="h_payees"></h2>
     <p class="sub" id="payees-sub"></p>
-    <div class="chips sans" id="cat-chips"></div>
     <div class="cat-summary sans" id="cat-summary"></div>
     <div class="table-actions sans"><input id="vendor-search" type="search" oninput="vendorSearch(this.value)" placeholder="Filtrer les fournisseurs / Filter vendors"><a class="linkbtn" id="source-link" target="_blank" rel="noopener">Voir le document source ↗</a></div>
     <div style="overflow-x:auto"><table id="payee-table">
@@ -205,7 +210,7 @@ const I18N = {
     legend_monthly: "Barres foncées : mois entièrement détaillés ligne par ligne. Barres pâles : total officiel connu, détail en cours d'ajout.",
     h_month: "Où va l'argent ?",
     s_month: "Choisissez un mois pour voir la répartition par type de dépense.",
-    h_payees: "Dépenses par fournisseur",
+    h_payees: "Dépenses par catégorie, puis par fournisseur",
     th_payee: "Fournisseur", th_cat: "Catégorie", th_lines: "Lignes", th_amount: "Montant",
     payee_footnote: "Les montants regroupent toutes les lignes d'un même fournisseur pour le mois choisi. La liste complète, ligne par ligne, se trouve dans le procès-verbal (lien ci-dessous).",
     h_meth: "Comment lire ces chiffres",
@@ -231,7 +236,7 @@ const I18N = {
     note_pref: "À noter — ",
     footer: "Ormstown Observer · Données tirées des procès-verbaux officiels de la Municipalité d'Ormstown · Mise à jour :",
     all_cats: "Toutes",
-    payees_sub: (m) => `Toutes les dépenses par fournisseur — ${m}. Cliquez une catégorie (ou une pointe du graphique) pour filtrer; le total de la sélection s'affiche au-dessus du tableau.`
+    payees_sub: (m) => `${m}, par type de dépense. Cliquez une catégorie (ou une pointe du graphique) pour voir le détail par fournisseur; la recherche ouvre automatiquement les catégories concernées.`
   },
   en: {
     title: "Ormstown's finances, made clear",
@@ -241,7 +246,7 @@ const I18N = {
     legend_monthly: "Dark bars: months fully itemized line by line. Light bars: official total known, line detail still being added.",
     h_month: "Where does the money go?",
     s_month: "Pick a month to see the breakdown by type of expense.",
-    h_payees: "Spending by supplier",
+    h_payees: "Spending by category, then by supplier",
     th_payee: "Supplier", th_cat: "Category", th_lines: "Lines", th_amount: "Amount",
     payee_footnote: "Amounts group all lines for the same supplier in the selected month. The complete line-by-line list is in the minutes (linked below).",
     h_meth: "How to read these numbers",
@@ -267,7 +272,7 @@ const I18N = {
     note_pref: "Worth noting — ",
     footer: "Ormstown Observer · Data drawn from the official minutes of the Municipality of Ormstown · Updated:",
     all_cats: "All",
-    payees_sub: (m) => `All spending by supplier — ${m}. Click a category (or a slice of the chart) to filter; the selection's total appears above the table.`
+    payees_sub: (m) => `${m}, by type of expense. Click a category (or a slice of the chart) to see the supplier detail; searching opens the matching categories automatically.`
   }
 };
 
@@ -284,7 +289,7 @@ let lang = (() => {
   return (navigator.language || 'fr').startsWith('en') ? 'en' : 'fr';
 })();
 let selMonth = FYM().filter(x => x.coverage === 'full').slice(-1)[0].m;
-let selCat = null;
+let expandedCats = new Set();
 let searchTerm = '';
 let chMonthly = null, chCats = null;
 
@@ -366,7 +371,7 @@ function render() {
   document.getElementById('kpis').innerHTML = kpiDefs.map((k, i) =>
     `<div class="kpi"><div class="v">${kv[i]}</div><div class="l"><strong>${k[0]}</strong><br>${k[1]}</div></div>`).join('');
 
-  renderSelectors(); renderMonthly(); renderMonthChips(); renderCats(); renderCatChips(); renderPayees(); renderCoverage(); renderStatus(); renderInsights(); renderBudget();
+  renderSelectors(); renderMonthly(); renderMonthChips(); renderCats(); renderPayees(); renderCoverage(); renderStatus(); renderInsights(); renderBudget();
   document.getElementById('gen-date').textContent = D.generated;
 }
 
@@ -426,7 +431,7 @@ function renderMonthChips() {
   document.getElementById('month-chips').innerHTML = [...FYM(),...D.views].map(m =>
     `<button class="chip ${m.isYTD ? 'ytd' : ''} ${m.m === selMonth ? 'on' : ''}" onclick="pickMonth('${m.m}')">${mo(m)} <span class="cov">· ${m.coverage === 'full' ? t.full : t.partial}</span></button>`).join('');
 }
-function pickMonth(m) { selMonth = m; selCat = null; renderSelectors(); renderMonthChips(); renderCats(); renderCatChips(); renderPayees(); renderStatus(); renderInsights(); }
+function pickMonth(m) { selMonth = m; expandedCats.clear(); renderSelectors(); renderMonthChips(); renderCats(); renderPayees(); renderStatus(); renderInsights(); }
 
 function renderCats() {
   const t = I18N[lang], m = getMonth();
@@ -446,7 +451,7 @@ function renderCats() {
     data: { labels, datasets: [{ data, backgroundColor: colors, borderColor: '#fff', borderWidth: 2 }] },
     options: {
       maintainAspectRatio: false, cutout: '55%',
-      onClick: (e, els) => { if (els.length && catKeys[els[0].index]) { pickCat(selCat === catKeys[els[0].index] ? null : catKeys[els[0].index]); } },
+      onClick: (e, els) => { if (els.length && catKeys[els[0].index]) { openCat(catKeys[els[0].index]); } },
       plugins: {
         legend: { position: 'right', labels: { boxWidth: 14, font: { family: '-apple-system, sans-serif', size: 12 } } },
         tooltip: { callbacks: { label: (c) => ` ${c.label}: ${fmt$c(c.parsed)} (${(100 * c.parsed / m.total).toFixed(1)} %)` } }
@@ -458,51 +463,69 @@ function renderCats() {
   if (note) { noteEl.style.display = ''; noteEl.innerHTML = `<strong>${t.note_pref}</strong>${note}`; } else noteEl.style.display = 'none';
 }
 
-function renderCatChips() {
-  const t = I18N[lang], m = getMonth();
-  const cats = Object.keys(m.cats);
-  let html = `<button class="chip ${selCat === null ? 'on' : ''}" onclick="pickCat(null)">${t.all_cats}</button>`;
-  html += cats.map(c => `<button class="chip ${selCat === c ? 'on' : ''}" onclick="pickCat('${c.replace(/'/g, "\\'")}')"><span class="dot" style="background:${D.categories[c].color}"></span>${catName(c)}</button>`).join('');
-  document.getElementById('cat-chips').innerHTML = html;
+function pickCat(c) { if (expandedCats.has(c)) expandedCats.delete(c); else expandedCats.add(c); renderPayees(); }
+// Donut-slice click: make sure the category is open, then bring the table into view.
+function openCat(c) {
+  expandedCats.add(c); renderPayees();
+  document.getElementById('payee-table').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
-function pickCat(c) { selCat = c; renderCatChips(); renderPayees(); }
 
 function renderPayees() {
   const t = I18N[lang], m = getMonth();
   document.getElementById('payees-sub').textContent = t.payees_sub(mo(m));
-  const showM = !!m.isYTD;
   document.querySelector('#payee-table thead tr').innerHTML =
-    (showM ? `<th>${lang==='fr'?'Séance':'Sitting'}</th>` : '') +
-    `<th>${t.th_payee}</th><th>${t.th_cat}</th><th class="num col-lines">${t.th_lines}</th><th class="num">${t.th_amount}</th>`;
-  const rows = m.payees.filter(p => (!selCat || p[1] === selCat) && (!searchTerm || (p[0]+' '+catName(p[1])+' '+((D.gloss[p[0]]||{})[lang]||'')).toLowerCase().includes(searchTerm)));
+    `<th>${lang==='fr'?'Catégorie / Fournisseur':'Category / Supplier'}</th><th class="num col-lines">${t.th_lines}</th><th class="num">${t.th_amount}</th>`;
+
+  const q = searchTerm;
+  const matches = p => !q || (p[0]+' '+catName(p[1])+' '+((D.gloss[p[0]]||{})[lang]||'')).toLowerCase().includes(q);
+  const mById = id => D.months.find(x => x.m === id);
+
+  // Group the month's supplier rows by category, biggest category first.
+  const groups = {};
+  m.payees.forEach(p => { (groups[p[1]] = groups[p[1]] || []).push(p); });
+  const ordered = Object.entries(groups)
+    .map(([c, ps]) => ({ c, ps, amt: ps.reduce((a, p) => a + p[2], 0) }))
+    .sort((a, b) => b.amt - a.amt);
+
+  let html = '', selTot = 0, selLines = 0, nCats = 0, nSup = 0;
+  for (const g of ordered) {
+    const ps = g.ps.filter(matches).sort((a, b) => b[2] - a[2]);
+    if (q && !ps.length) continue;
+    const shown = q ? ps : g.ps;
+    const amt = shown.reduce((a, p) => a + p[2], 0);
+    const nl = shown.reduce((a, p) => a + p[3], 0);
+    selTot += amt; selLines += nl; nCats++; nSup += ps.length;
+    const isOpen = q ? true : expandedCats.has(g.c);
+    const share = 100 * g.amt / m.total;
+    html += `<tr class="cat-row ${isOpen ? 'open' : ''}" onclick="pickCat('${g.c.replace(/'/g, "\\'")}')">
+      <td><span class="chev">▶</span><span class="dot" style="background:${D.categories[g.c].color}"></span><strong>${catName(g.c)}</strong><span class="share">${share.toFixed(1)} % · ${(q?ps:g.ps).length} ${lang==='fr'?'fournisseurs':'suppliers'}</span></td>
+      <td class="num col-lines">${nl}</td>
+      <td class="num"><strong>${fmt$c(amt)}</strong></td></tr>`;
+    if (isOpen) html += ps.map(p => {
+      const gl = D.gloss[p[0]], src = m.isYTD ? mById(p[4]) : null;
+      return `<tr class="sup-row">
+        <td>${p[0]}${gl ? `<span class="gloss">${gl[lang]}</span>` : ''}${src ? `<span class="gloss"><a href="${src.url}" target="_blank" rel="noopener">${lang==='fr'?src.label_fr:src.label_en} ↗</a></span>` : ''}</td>
+        <td class="num col-lines">${p[3]}</td>
+        <td class="num">${fmt$c(p[2])}</td></tr>`;
+    }).join('');
+  }
+  document.querySelector('#payee-table tbody').innerHTML =
+    html || `<tr><td colspan="3" class="empty">${lang==='fr'?'Aucun résultat':'No results'}</td></tr>`;
 
   // Running total for the current selection — the "how much on X over Y" answer.
-  const tot = rows.reduce((a,p)=>a+p[2],0), nl = rows.reduce((a,p)=>a+p[3],0);
-  const scope = selCat ? `${catName(selCat)} — ${mo(m)}` : mo(m);
+  const scope = q ? `${mo(m)} — « ${q} »` : mo(m);
   let caveat = '';
   if (m.coverage !== 'full') caveat = `<span class="caveat">${lang==='fr'
     ? '⚠︎ Période partiellement détaillée : le vrai total de cette sélection peut être plus élevé.'
     : '⚠︎ Period only partially itemized: the true total for this selection may be higher.'}</span>`;
   document.getElementById('cat-summary').innerHTML =
-    `${scope} · <span class="big">${fmt$c(tot)}</span> · ${rows.length} ${lang==='fr'?'entrées':'entries'} · ${nl} ${lang==='fr'?'lignes au PV':'lines in the minutes'}${caveat}`;
-
-  const mById = id => D.months.find(x => x.m === id);
-  document.querySelector('#payee-table tbody').innerHTML = rows.map(p => {
-    const g = D.gloss[p[0]], src = mById(p[4]);
-    return `<tr>
-      ${showM ? `<td class="sitting"><a href="${src.url}" target="_blank" rel="noopener" title="${lang==='fr'?'PV officiel':'Official minutes'}">${lang==='fr'?src.label_fr:src.label_en} ↗</a></td>` : ''}
-      <td><strong>${p[0]}</strong>${g ? `<span class="gloss">${g[lang]}</span>` : ''}</td>
-      <td><span class="dot" style="background:${D.categories[p[1]].color}"></span>${catName(p[1])}</td>
-      <td class="num col-lines">${p[3]}</td>
-      <td class="num"><strong>${fmt$c(p[2])}</strong></td>
-    </tr>`;
-  }).join('') || `<tr><td colspan="5" class="empty">${lang==='fr'?'Aucun résultat':'No results'}</td></tr>`;
+    `${scope} · <span class="big">${fmt$c(selTot)}</span> · ${nCats} ${lang==='fr'?'catégories':'categories'}${q?` · ${nSup} ${lang==='fr'?'fournisseurs':'suppliers'}`:''} · ${selLines} ${lang==='fr'?'lignes au PV':'lines in the minutes'}${caveat}`;
 }
 
 function vendorSearch(v){ searchTerm=v.trim().toLowerCase(); renderPayees(); }
 function globalSearch(v){ searchTerm=v.trim().toLowerCase(); document.getElementById('vendor-search').value=v; renderPayees(); if(v.length===1) document.getElementById('payee-table').scrollIntoView({behavior:'smooth',block:'center'}); }
 function downloadCSV(){
-  const match=p=>(!selCat||p[1]===selCat)&&(!searchTerm||(p[0]+' '+catName(p[1])+' '+((D.gloss[p[0]]||{})[lang]||'')).toLowerCase().includes(searchTerm));
+  const match=p=>(!searchTerm||(p[0]+' '+catName(p[1])+' '+((D.gloss[p[0]]||{})[lang]||'')).toLowerCase().includes(searchTerm));
   const rows=[]; FYM().forEach(mm=>mm.payees.filter(match).forEach(p=>rows.push([mo(mm),p[0],((D.gloss[p[0]]||{})[lang]||''),catName(p[1]),p[3],p[2].toFixed(2),mm.coverage==='full'?(lang==='fr'?'Détaillé':'Itemized'):(lang==='fr'?'Partiel':'Partial'),mm.url])));
   const head=lang==='fr'?['Séance','Fournisseur','Description','Catégorie','Lignes','Montant CAD','Couverture','Source']:['Sitting','Vendor','Description','Category','Lines','Amount CAD','Coverage','Source'];
   const esc=v=>'"'+String(v).replaceAll('"','""')+'"';
