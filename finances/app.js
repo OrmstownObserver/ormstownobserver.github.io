@@ -73,18 +73,35 @@
       url: 'https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal',
       payees: MONTHS.reduce(function (a, m) { return a.concat(m.payees); }, [])
     };
-    // The period picker offers exactly the year-to-date view plus each
-    // sitting of the current fiscal year (older sittings stay in the
-    // coverage table and the full CSV).
-    PERIODS = [YTD].concat(MONTHS);
+    // The period picker offers the year-to-date view plus each sitting of
+    // the current fiscal year; months and categories are both multi-select
+    // (older sittings stay in the coverage table and the full CSV).
+    CAT_ORDER = catAggregates(YTD.payees).map(function (a) { return a.key; });
   }
-  function periodObj() {
-    return PERIODS.filter(function (p) { return p.m === state.period; })[0] || YTD;
+  var CAT_ORDER = [];
+  // The combined view for whatever months/categories are pressed.
+  function selection() {
+    var ms = state.months.length
+      ? MONTHS.filter(function (m) { return state.months.indexOf(m.m) >= 0; })
+      : MONTHS;
+    return {
+      months: ms,
+      isYTD: !state.months.length,
+      single: ms.length === 1 ? ms[0] : null,
+      total: Math.round(ms.reduce(function (a, m) { return a + m.total; }, 0) * 100) / 100,
+      coverage: ms.every(function (m) { return m.coverage === 'full'; }) ? 'full' : 'partial',
+      payees: ms.reduce(function (a, m) { return a.concat(m.payees); }, []),
+      url: ms.length === 1 ? ms[0].url : YTD.url
+    };
   }
-  function periodBtnLabel(p) {
-    if (p.isYTD) return tpl(T().ytdShort, { year: FY });
-    var s = monthShort(p.m);
+  function monthBtnLabel(m) {
+    var s = monthShort(m.m);
     return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  function selectionLabel(sel) {
+    if (sel.isYTD) return tpl(T().ytdLabel, { year: FY });
+    if (sel.single) return periodLabel(sel.single);
+    return sel.months.map(monthBtnLabel).join(' + ') + ' ' + FY;
   }
   function periodLabel(p) {
     if (p.isYTD) return tpl(T().ytdLabel, { year: FY });
@@ -93,25 +110,40 @@
   function monthById(id) { return D.months.filter(function (m) { return m.m === id; })[0]; }
 
   // ---------- state <-> URL ----------
-  // Sorting is fixed: categories and suppliers always largest amount first.
-  var state = { lang: 'fr', period: null, category: null };
+  // Sorting is fixed: categories and payees always largest amount first.
+  // months: [] means the full year to date; categories: [] means all.
+  var state = { lang: 'fr', months: [], categories: [] };
 
   function readURL() {
     var p = new URLSearchParams(location.search);
     var lang = p.get('lang'); if (lang === 'fr' || lang === 'en') state.lang = lang;
     else { try { var l = localStorage.getItem('observerLang'); if (l === 'fr' || l === 'en') state.lang = l; else state.lang = (navigator.language || 'fr').indexOf('en') === 0 ? 'en' : 'fr'; } catch (e) {} }
-    var period = p.get('period');
-    state.period = PERIODS.some(function (x) { return x.m === period; }) ? period : YTD.m;
-    var cat = p.get('category');
-    state.category = KEY_BY_SLUG[cat] ? cat : null;
+    var per = (p.get('period') || '').split(',').filter(function (id) {
+      return MONTHS.some(function (m) { return m.m === id; });
+    });
+    state.months = (per.length && per.length < MONTHS.length) ? per.sort() : [];
+    state.categories = (p.get('category') || '').split(',').filter(function (c) { return KEY_BY_SLUG[c]; });
   }
   function writeURL(push) {
     var p = new URLSearchParams();
     p.set('lang', state.lang);
-    if (state.period !== YTD.m) p.set('period', state.period);
-    if (state.category) p.set('category', state.category);
+    if (state.months.length) p.set('period', state.months.join(','));
+    if (state.categories.length) p.set('category', state.categories.join(','));
     var url = location.pathname + '?' + p.toString();
     try { history[push ? 'pushState' : 'replaceState'](null, '', url); } catch (e) {}
+  }
+  function toggleMonth(id) {
+    var ms = state.months.slice();
+    if (!ms.length) ms = [id]; // leaving the year-to-date view for one month
+    else { var i = ms.indexOf(id); if (i >= 0) ms.splice(i, 1); else ms.push(id); }
+    if (ms.length === 0 || ms.length === MONTHS.length) ms = [];
+    setState({ months: ms.sort() }, { push: true });
+  }
+  function toggleCat(slug) {
+    var cs = state.categories.slice();
+    var i = cs.indexOf(slug);
+    if (i >= 0) cs.splice(i, 1); else cs.push(slug);
+    setState({ categories: cs }, { push: true });
   }
   function setState(patch, opts) {
     opts = opts || {};
@@ -127,10 +159,9 @@
   }
 
   // ---------- filtering ----------
-  function currentRows() {
-    var p = periodObj();
-    var catKey = state.category ? KEY_BY_SLUG[state.category] : null;
-    return p.payees.filter(function (r) { return !catKey || r.cat === catKey; });
+  function currentRows(sel) {
+    var keys = state.categories.map(function (s) { return KEY_BY_SLUG[s]; });
+    return sel.payees.filter(function (r) { return !keys.length || keys.indexOf(r.cat) >= 0; });
   }
   function sortRows(rows) {
     return rows.slice().sort(function (a, b) { return b.amt - a.amt; });
@@ -170,8 +201,8 @@
           datasets: [{
             data: MONTHS.map(function (m) { return m.total; }),
             backgroundColor: MONTHS.map(function (m) { return m.coverage === 'full' ? accent : hatch(ctx, accent); }),
-            borderColor: MONTHS.map(function (m) { return m.m === state.period ? ink : 'transparent'; }),
-            borderWidth: MONTHS.map(function (m) { return m.m === state.period ? 3 : 0; }),
+            borderColor: MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? ink : 'transparent'; }),
+            borderWidth: MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? 3 : 0; }),
             borderRadius: 3
           }]
         },
@@ -179,7 +210,7 @@
           maintainAspectRatio: false,
           scales: { y: { beginAtZero: true, ticks: { callback: function (v) { return money0(v); } } } },
           plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return money(c.parsed.y); } } } },
-          onClick: function (e, els) { if (els.length) setState({ period: MONTHS[els[0].index].m }, { push: true }); }
+          onClick: function (e, els) { if (els.length) toggleMonth(MONTHS[els[0].index].m); }
         }
       });
     } catch (e) { chartFail('trend-legend'); }
@@ -187,8 +218,8 @@
   function updateTrend() {
     if (!charts.trend) { drawTrend(); return; }
     var ink = '#1f2733';
-    charts.trend.data.datasets[0].borderColor = MONTHS.map(function (m) { return m.m === state.period ? ink : 'transparent'; });
-    charts.trend.data.datasets[0].borderWidth = MONTHS.map(function (m) { return m.m === state.period ? 3 : 0; });
+    charts.trend.data.datasets[0].borderColor = MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? ink : 'transparent'; });
+    charts.trend.data.datasets[0].borderWidth = MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? 3 : 0; });
     charts.trend.update(REDUCED ? 'none' : undefined);
   }
 
@@ -203,12 +234,12 @@
     if (!chartDefaults()) { chartFail('cats-caption'); return; }
     try {
       var ctx = $('chart-cats').getContext('2d');
-      var selKey = state.category ? KEY_BY_SLUG[state.category] : null;
+      var selKeys = state.categories.map(function (s) { return KEY_BY_SLUG[s]; });
       var labels = aggs.map(function (a) { return catName(a.key); });
       var data = aggs.map(function (a) { return a.amt; });
       var colors = aggs.map(function (a) {
         var c = (D.categories[a.key] || {}).color || '#888888';
-        return (selKey && a.key !== selKey) ? c + '4d' : c; // dim unselected to keep chart and list in sync
+        return (selKeys.length && selKeys.indexOf(a.key) < 0) ? c + '4d' : c; // dim unselected to keep chart and list in sync
       });
       if (restAmt > 0.5) { labels.push(D.categories.__rest[state.lang]); data.push(restAmt); colors.push(D.categories.__rest.color); }
       charts.cats = new Chart(ctx, {
@@ -221,8 +252,7 @@
           onClick: function (e, els) {
             if (!els.length) return;
             var a = aggs[els[0].index]; if (!a) return;
-            var slug = SLUGS[a.key];
-            setState({ category: state.category === slug ? null : slug }, { push: true });
+            toggleCat(SLUGS[a.key]);
           }
         }
       });
@@ -387,19 +417,32 @@
   function buildControls() {
     var t = T();
     $('l-period').textContent = t.periodLabel;
-    $('period-group').innerHTML = PERIODS.map(function (p) {
-      return '<button type="button" data-period="' + p.m + '" aria-pressed="' + (p.m === state.period) + '">' + periodBtnLabel(p) + '</button>';
-    }).join('');
-    var cats = Object.keys(SLUGS);
-    $('f-category').innerHTML = '<option value="">' + t.allCategories + '</option>' + cats.map(function (k) {
-      return '<option value="' + SLUGS[k] + '">' + catName(k) + '</option>';
-    }).join('');
-    $('f-category').value = state.category || '';
+    $('period-group').innerHTML =
+      '<button type="button" data-period="__ytd__">' + tpl(t.ytdShort, { year: FY }) + '</button>' +
+      MONTHS.map(function (m) {
+        return '<button type="button" data-period="' + m.m + '">' + monthBtnLabel(m) + '</button>';
+      }).join('');
+    $('l-category').textContent = t.categoryLabel;
+    $('category-group').innerHTML =
+      '<button type="button" data-cat="__all__">' + t.catAllShort + '</button>' +
+      CAT_ORDER.map(function (k) {
+        return '<button type="button" data-cat="' + SLUGS[k] + '"><span class="dot" style="background:' + ((D.categories[k] || {}).color || '#888') + '"></span>' + catName(k) + '</button>';
+      }).join('');
+  }
+  function syncPills() {
+    document.querySelectorAll('#period-group button').forEach(function (b) {
+      var id = b.getAttribute('data-period');
+      b.setAttribute('aria-pressed', String(id === '__ytd__' ? !state.months.length : state.months.indexOf(id) >= 0));
+    });
+    document.querySelectorAll('#category-group button').forEach(function (b) {
+      var s = b.getAttribute('data-cat');
+      b.setAttribute('aria-pressed', String(s === '__all__' ? !state.categories.length : state.categories.indexOf(s) >= 0));
+    });
   }
 
   // ---------- rendering: snapshot ----------
   function renderSnapshot() {
-    var t = T(), p = periodObj();
+    var t = T(), p = selection();
     var rows = p.payees;
     var payroll = rows.filter(function (r) { return isPayroll(r.payee); }).reduce(function (a, r) { return a + r.amt; }, 0);
     var top = rows.filter(function (r) { return !isPayroll(r.payee) && !isRest(r.payee); })
@@ -411,8 +454,10 @@
     var facts = [];
     facts.push({
       l: t.factTotal, v: money(p.total),
-      s: p.isYTD ? tpl(t.factTotalSubYtd, { n: p.nSittings, year: FY })
-        : periodLabel(p) + (p.resolution ? ' · ' + t.resLabel + ' ' + p.resolution : '')
+      s: p.isYTD ? tpl(t.factTotalSubYtd, { n: p.months.length, year: FY })
+        : (p.single
+          ? periodLabel(p.single) + (p.single.resolution ? ' · ' + t.resLabel + ' ' + p.single.resolution : '')
+          : tpl(t.factTotalSubSel, { n: p.months.length }) + ' — ' + selectionLabel(p))
     });
     facts.push({
       l: t.factPayroll,
@@ -425,12 +470,12 @@
       s: top ? (localPayee(top.payee) + ((D.gloss[top.payee] || {})[state.lang] ? ' — ' + D.gloss[top.payee][state.lang] : '')) : '—'
     });
     var reconV, reconS;
-    if (p.isYTD) {
-      var ok = MONTHS.filter(function (m) {
+    if (!p.single) {
+      var ok = p.months.filter(function (m) {
         var s = m.payees.reduce(function (a, r) { return a + r.amt; }, 0);
         return m.coverage === 'full' && Math.abs(s - m.total) <= tol(m.m);
       }).length;
-      reconV = tpl(t.reconYtd, { ok: ok, n: MONTHS.length }); reconS = tpl(t.reconLines, { n: nLines.toLocaleString(locale()) });
+      reconV = tpl(t.reconYtd, { ok: ok, n: p.months.length }); reconS = tpl(t.reconLines, { n: nLines.toLocaleString(locale()) });
     } else if (p.coverage === 'full') {
       reconV = Math.abs(gap) < 0.005 ? t.reconOk : tpl(t.reconOkGap, { gap: money(Math.abs(gap)) });
       reconS = tpl(t.reconLines, { n: nLines.toLocaleString(locale()) });
@@ -444,12 +489,12 @@
     }).join('');
 
     var ev;
-    if (p.isYTD && p.coverage === 'full') ev = tpl(t.evidenceYtd, { n: nLines.toLocaleString(locale()), sittings: p.nSittings });
-    else if (p.isYTD) ev = tpl(t.evidencePartial, { n: nLines.toLocaleString(locale()), amt: money(itemized), total: money(p.total) });
+    if (!p.single && p.coverage === 'full') ev = tpl(t.evidenceYtd, { n: nLines.toLocaleString(locale()), sittings: p.months.length });
+    else if (!p.single) ev = tpl(t.evidencePartial, { n: nLines.toLocaleString(locale()), amt: money(itemized), total: money(p.total) });
     else if (p.coverage !== 'full') ev = tpl(t.evidencePartial, { n: nLines.toLocaleString(locale()), amt: money(itemized), total: money(p.total) });
     else if (Math.abs(gap) < 0.005) ev = tpl(t.evidence, { n: nLines.toLocaleString(locale()), amt: money(itemized) });
     else ev = tpl(t.evidenceGap, { n: nLines.toLocaleString(locale()), amt: money(itemized), total: money(p.total), gap: money(Math.abs(gap)) });
-    var src = p.isYTD ? '' : ' <a href="' + p.url + '" target="_blank" rel="noopener">' + t.openPV + '</a>';
+    var src = p.single ? ' <a href="' + p.url + '" target="_blank" rel="noopener">' + t.openPV + '</a>' : '';
     $('evidence').innerHTML = ev + src;
   }
   function tol(monthId) {
@@ -459,16 +504,14 @@
 
   // ---------- rendering: explore ----------
   function renderExplore() {
-    var t = T(), p = periodObj();
+    var t = T(), sel = selection();
     // controls reflect state (they may have been changed by URL/back navigation)
-    document.querySelectorAll('#period-group button').forEach(function (b) {
-      b.setAttribute('aria-pressed', String(b.getAttribute('data-period') === state.period));
-    });
-    $('f-category').value = state.category || '';
+    syncPills();
 
-    // tokens
-    var tokens = [];
-    if (state.category) tokens.push({ label: tpl(t.filterCat, { name: catName(KEY_BY_SLUG[state.category]) }), clear: { category: null } });
+    // tokens: one per pressed category, removable
+    var tokens = state.categories.map(function (slug) {
+      return { label: tpl(t.filterCat, { name: catName(KEY_BY_SLUG[slug]) }), slug: slug };
+    });
     var tk = $('tokens');
     if (tokens.length) {
       tk.hidden = false;
@@ -477,32 +520,34 @@
       }).join('') + '<button type="button" class="btn secondary" id="clear-all" style="min-height:44px">' + t.clearAll + '</button>';
       tk.querySelectorAll('button[data-tk]').forEach(function (b) {
         b.addEventListener('click', function () {
-          setState(tokens[+b.getAttribute('data-tk')].clear, { push: true });
+          toggleCat(tokens[+b.getAttribute('data-tk')].slug);
           $('f-reset').focus();
         });
       });
-      $('clear-all').addEventListener('click', function () { resetFilters(); });
+      $('clear-all').addEventListener('click', function () { setState({ categories: [] }, { push: true }); });
     } else { tk.hidden = true; tk.innerHTML = ''; }
 
-    var rows = currentRows();
-    var aggs = catAggregates(rows);
+    var rows = currentRows(sel);
     var totSel = Math.round(rows.reduce(function (a, r) { return a + r.amt; }, 0) * 100) / 100;
     var linesSel = rows.reduce(function (a, r) { return a + r.lines; }, 0);
-    var scope = state.category ? catName(KEY_BY_SLUG[state.category]) : t.scopeAll;
+    var scope = state.categories.length
+      ? state.categories.map(function (s) { return catName(KEY_BY_SLUG[s]); }).join(' + ')
+      : t.scopeAll;
     $('summary').innerHTML = tpl(t.summary, {
       nSup: '<span class="big">' + rows.length.toLocaleString(locale()) + '</span>',
       amt: '<span class="big">' + money(totSel) + '</span>',
-      scope: scope + ', ' + periodLabel(p)
+      scope: scope + ', ' + selectionLabel(sel)
     }) + ' ' + tpl(t.summaryLines, { n: linesSel.toLocaleString(locale()) });
 
-    // category chart + list reflect the current period (all categories) with rest for partial
-    var allAggs = catAggregates(p.payees);
+    // category chart + list reflect the selected months (all categories) with rest for partial
+    var p = sel;
+    var allAggs = catAggregates(sel.payees);
     var knownAmt = allAggs.reduce(function (a, x) { return a + x.amt; }, 0);
-    var restAmt = (p.coverage !== 'full' && !p.isYTD) ? Math.max(0, Math.round((p.total - knownAmt) * 100) / 100) : 0;
+    var restAmt = (sel.coverage !== 'full') ? Math.max(0, Math.round((sel.total - knownAmt) * 100) / 100) : 0;
     drawCats(allAggs, restAmt);
     $('cat-list').innerHTML = allAggs.map(function (a) {
       var slug = SLUGS[a.key];
-      var selected = state.category === slug;
+      var selected = state.categories.indexOf(slug) >= 0;
       return '<li><button type="button" class="catbtn" data-cat="' + slug + '" aria-pressed="' + selected + '"><span class="rowline">' +
         '<span class="dot" style="background:' + ((D.categories[a.key] || {}).color || '#888') + '"></span>' +
         '<span class="nm">' + catName(a.key) + '</span>' +
@@ -512,16 +557,16 @@
       ? '<li><span class="rowline"><span class="dot" style="background:' + D.categories.__rest.color + '"></span><span class="nm">' + D.categories.__rest[state.lang] + '</span><span class="share">' + pct(restAmt / p.total) + '</span><span class="num" style="font-weight:700">' + money(restAmt) + '</span></span></li>'
       : '');
 
-    renderResults(rows);
-    renderSignals(p, rows);
+    renderResults(rows, sel);
+    renderSignals(sel);
 
-    $('src-link').href = p.url;
+    $('src-link').href = sel.url;
     $('src-link').textContent = t.viewSource;
-    renderPrintMeta(tokens);
+    renderPrintMeta(tokens, sel);
   }
 
-  function renderResults(rows) {
-    var t = T(), p = periodObj();
+  function renderResults(rows, sel) {
+    var t = T(), p = sel;
     var table = $('results'), empty = $('results-empty');
     if (!rows.length) {
       table.hidden = true; empty.hidden = false; empty.textContent = t.empty;
@@ -544,7 +589,7 @@
       var mth = monthById(r.month);
       var sub = [];
       if (g) sub.push(g);
-      if (p.isYTD && mth) sub.push('<a href="' + mth.url + '" target="_blank" rel="noopener">' + periodLabel(mth) + ' ' + t.newTab + '</a>');
+      if (p.months.length > 1 && mth) sub.push('<a href="' + mth.url + '" target="_blank" rel="noopener">' + periodLabel(mth) + ' ' + t.newTab + '</a>');
       return '<tr><th scope="row" data-l="' + t.thSupplier + '">' + localPayee(r.payee) +
         (sub.length ? '<span class="gloss">' + sub.join(' · ') + '</span>' : '') + '</th>' +
         '<td data-l="' + t.thCategory + '"><span class="dot" style="background:' + ((D.categories[r.cat] || {}).color || '#888') + '"></span>' + catName(r.cat) + '</td>' +
@@ -560,17 +605,17 @@
     document.querySelector('#results tbody').innerHTML = html;
   }
 
-  function renderSignals(p, rows) {
+  function renderSignals(p) {
     var t = T(), items = [];
     if (p.coverage !== 'full') items.push(t.sigPartial);
     var top = p.payees.filter(function (r) { return !isPayroll(r.payee) && !isRest(r.payee); })
       .sort(function (a, b) { return b.amt - a.amt; })[0];
     if (top) items.push(tpl(t.sigTop, { name: localPayee(top.payee), pct: pct(top.amt / p.total) }));
-    if (!p.isYTD) {
+    if (p.single) {
       var fulls = MONTHS.filter(function (m) { return m.coverage === 'full'; });
       if (fulls.length > 1) {
         var avg = fulls.reduce(function (a, m) { return a + m.total; }, 0) / fulls.length;
-        items.push(tpl(p.total >= avg ? t.sigAbove : t.sigBelow, { period: periodLabel(p), avg: money0(avg) }));
+        items.push(tpl(p.total >= avg ? t.sigAbove : t.sigBelow, { period: periodLabel(p.single), avg: money0(avg) }));
       }
     }
     var rec = {};
@@ -618,7 +663,7 @@
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
   }
   function csvRow(r) {
-    var t = T(), m = monthById(r.month), p = periodObj();
+    var t = T(), m = monthById(r.month);
     var method = (D.provenance && D.provenance.categories_method) || 'observer-manual-v1';
     return [
       localPayee(r.payee),
@@ -626,18 +671,18 @@
       catName(r.cat),
       r.lines,
       r.amt.toFixed(2),
-      p.isYTD ? tpl(t.ytdLabel, { year: FY }) : periodLabel(m || p),
-      (m || p).sittingDate || '',
-      (m || p).resolution || '',
-      (m || p).url || '',
-      ((m || p).coverage === 'full') ? t.csvItemFull : t.csvItemPartial,
+      periodLabel(m),
+      m.sittingDate || '',
+      m.resolution || '',
+      m.url || '',
+      (m.coverage === 'full') ? t.csvItemFull : t.csvItemPartial,
       method,
       D.generated
     ];
   }
-  function renderPrintMeta(tokens) {
+  function renderPrintMeta(tokens, sel) {
     var t = T();
-    var f = tokens && tokens.length ? tokens.map(function (x) { return x.label; }).join(' · ') : t.printNoFilters;
+    var f = selectionLabel(sel) + (tokens && tokens.length ? ' · ' + tokens.map(function (x) { return x.label; }).join(' · ') : ' · ' + t.printNoFilters);
     $('print-meta').innerHTML = '<strong>' + t.printFilters + '</strong> ' + f +
       ' · ' + tpl(t.updated, { date: dateLong(D.generated) }) +
       '<br>' + $('acct-note').textContent;
@@ -645,7 +690,7 @@
 
   // ---------- reset / events ----------
   function resetFilters() {
-    setState({ category: null, period: YTD.m }, { push: true });
+    setState({ months: [], categories: [] }, { push: true });
     var first = document.querySelector('#period-group button');
     if (first) first.focus();
   }
@@ -654,19 +699,27 @@
     $('btn-en').addEventListener('click', function () { setState({ lang: 'en' }, { push: true }); });
     $('period-group').addEventListener('click', function (e) {
       var b = e.target.closest('button[data-period]');
-      if (b) setState({ period: b.getAttribute('data-period') }, { push: true });
+      if (!b) return;
+      var id = b.getAttribute('data-period');
+      if (id === '__ytd__') setState({ months: [] }, { push: true });
+      else toggleMonth(id);
+    });
+    $('category-group').addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-cat]');
+      if (!b) return;
+      var s = b.getAttribute('data-cat');
+      if (s === '__all__') setState({ categories: [] }, { push: true });
+      else toggleCat(s);
     });
     $('cat-list').addEventListener('click', function (e) {
       var b = e.target.closest('button[data-cat]');
-      if (!b) return;
-      var slug = b.getAttribute('data-cat');
-      setState({ category: state.category === slug ? null : slug }, { push: true });
+      if (b) toggleCat(b.getAttribute('data-cat'));
     });
-    $('f-category').addEventListener('change', function () { setState({ category: this.value || null }, { push: true }); });
     $('f-reset').addEventListener('click', resetFilters);
     $('b-sort').addEventListener('change', function () { budgetSort = this.value; drawBudget(); });
     $('dl-view').addEventListener('click', function () {
-      downloadCSV(sortRows(currentRows()).map(csvRow), T().fileView + '_' + state.period + '.csv');
+      var suffix = state.months.length ? state.months.join('+') : 'ytd-' + FY;
+      downloadCSV(sortRows(currentRows(selection())).map(csvRow), T().fileView + '_' + suffix + '.csv');
     });
     $('dl-all').addEventListener('click', function () {
       var all = [];
