@@ -8,6 +8,7 @@
 // named payees ≥ ~1 000 $; smaller lines grouped per category as
 // «Autres fournisseurs», so every month sums exactly to its
 // category totals and (for full-coverage months) to the adopted total.
+// Categories are Observer-assigned (see provenance + tools/apply-category-rules.js).
 // Generated: 2026-08-06
 // ============================================================
 window.OO_SPENDING = {
@@ -16,10 +17,13 @@ window.OO_SPENDING = {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
   "observer_fields": "categories, gloss (descriptions), entries grouping, months[].note_fr/note_en",
-  "categories_method": "observer-manual-v1",
+  "categories_method": "observer-rules-v2",
   "gloss_method": "observer-editorial-v1",
-  "tolerances": { "2026-01": 0.12 },
-  "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS)."
+  "tolerances": {
+   "2026-01": 0.12
+  },
+  "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS).",
+  "categories_note": "v2 (2026-08-06): payee-based refinement rules split Utilities, Vehicle fuel & maintenance, and Waste & recycling collection out of the broad categories. Rules live in finances/tools/apply-category-rules.js and are re-applied after each data regeneration. Grouped small-line rest rows keep their original broad category."
  },
  "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'aux séances de <strong>juin 2026</strong> (1<sup>er</sup> et 15 juin). Cette page détaille les listes de dépenses jusqu'à la séance du <strong>4 mai 2026</strong>; les listes des séances de juin sont en cours d'ajout. Les PV paraissent normalement de 4 à 6 semaines après leur adoption; les dépenses les plus récentes s'ajoutent donc ici au fil de leur publication.",
  "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>June 2026</strong> sittings (June 1 and 15). This page itemizes the spending lists up to the <strong>May 4, 2026</strong> sitting; the June lists are being added. Minutes normally appear 4–6 weeks after adoption; the most recent spending is added here as it is published.",
@@ -197,6 +201,21 @@ window.OO_SPENDING = {
    "fr": "Pas encore détaillé",
    "en": "Not yet itemized",
    "color": "#d9d9d9"
+  },
+  "Utilities": {
+   "fr": "Services publics (électricité, télécom, propane)",
+   "en": "Utilities (electricity, telecom, propane)",
+   "color": "#8175aa"
+  },
+  "Vehicle fuel & maintenance": {
+   "fr": "Carburant et entretien des véhicules",
+   "en": "Vehicle fuel & maintenance",
+   "color": "#9c755f"
+  },
+  "Waste & recycling": {
+   "fr": "Collecte des ordures et du recyclage",
+   "en": "Garbage & recycling collection",
+   "color": "#d37295"
   }
  },
  "gloss": {
@@ -425,20 +444,28 @@ window.OO_SPENDING = {
    "note_en": "A documented 0.12 $ gap: two amounts whose last digit is unreadable in the scan (BCGO, ICS). A separate 386,621.55 $ progress payment (Rang des Botreaux, credit line) is approved separately and excluded from this total.",
    "cats": {
     "Contracts — works": [
-     459474.31,
-     21
+     350191.29,
+     16
     ],
     "Salaries & HR": [
      310513.95,
      22
     ],
-    "Supplies & operations": [
-     121126.88,
-     191
+    "Waste & recycling": [
+     109283.02,
+     5
     ],
     "Professional services": [
      105219.31,
      49
+    ],
+    "Supplies & operations": [
+     76880.95,
+     106
+    ],
+    "Utilities": [
+     27655.12,
+     10
     ],
     "Legal — external counsel": [
      21642.12,
@@ -447,6 +474,10 @@ window.OO_SPENDING = {
     "Other": [
      17919.04,
      22
+    ],
+    "Vehicle fuel & maintenance": [
+     16590.81,
+     75
     ],
     "Subsidies & community": [
      1500,
@@ -467,13 +498,17 @@ window.OO_SPENDING = {
      217108.32,
      43
     ],
-    "Contracts — works": [
-     51357.04,
-     4
+    "Waste & recycling": [
+     48220.1,
+     2
+    ],
+    "Utilities": [
+     18417.23,
+     2
     ],
     "Supplies & operations": [
-     37602.31,
-     52
+     15441.71,
+     22
     ],
     "Legal — external counsel": [
      13380.26,
@@ -482,6 +517,14 @@ window.OO_SPENDING = {
     "Professional services": [
      10898.2,
      5
+    ],
+    "Vehicle fuel & maintenance": [
+     3743.37,
+     28
+    ],
+    "Contracts — works": [
+     3136.94,
+     2
     ],
     "Other": [
      1204.42,
@@ -505,8 +548,8 @@ window.OO_SPENDING = {
      11
     ],
     "Supplies & operations": [
-     174878.82,
-     233
+     136567.21,
+     129
     ],
     "Contracts — works": [
      67745.82,
@@ -523,6 +566,14 @@ window.OO_SPENDING = {
     "Subsidies & community": [
      31430.38,
      2
+    ],
+    "Vehicle fuel & maintenance": [
+     19572.78,
+     92
+    ],
+    "Utilities": [
+     18738.83,
+     12
     ],
     "Legal — external counsel": [
      2065.87,
@@ -551,17 +602,29 @@ window.OO_SPENDING = {
      115904.88,
      36
     ],
-    "Supplies & operations": [
-     113033.42,
-     149
-    ],
     "Contracts — works": [
-     112515.28,
-     13
+     80681.84,
+     12
+    ],
+    "Vehicle fuel & maintenance": [
+     42179.12,
+     63
+    ],
+    "Supplies & operations": [
+     41005.44,
+     82
     ],
     "Legal — external counsel": [
      32422.11,
      10
+    ],
+    "Waste & recycling": [
+     31833.44,
+     1
+    ],
+    "Utilities": [
+     29848.86,
+     4
     ],
     "Other": [
      7026.08,
@@ -582,17 +645,25 @@ window.OO_SPENDING = {
      152311.18,
      1
     ],
-    "Contracts — works": [
-     80747.31,
-     13
-    ],
     "Professional services": [
      63925.44,
      27
     ],
+    "Contracts — works": [
+     49792.84,
+     12
+    ],
     "Supplies & operations": [
-     56780.72,
-     78
+     37927.88,
+     75
+    ],
+    "Waste & recycling": [
+     30954.47,
+     1
+    ],
+    "Utilities": [
+     18852.84,
+     3
     ],
     "Legal — external counsel": [
      18508.14,
@@ -630,7 +701,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Robert Daoust Et Fils Inc.",
-   "Contracts — works",
+   "Waste & recycling",
    109283.02,
    5
   ],
@@ -665,7 +736,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Hydro-Québec",
-   "Supplies & operations",
+   "Utilities",
    26385.61,
    4
   ],
@@ -756,7 +827,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "9534-8702 Québec Inc. (Petro Canada)",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    7394.16,
    47
   ],
@@ -812,7 +883,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Remorquage Brunette",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    4058.62,
    2
   ],
@@ -847,7 +918,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "C. S. Brunette Inc.",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    3402.09,
    25
   ],
@@ -959,7 +1030,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Harnois Énergies Inc.",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    1735.94,
    1
   ],
@@ -1050,7 +1121,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Énergie P38 Inc. / Budget Propane",
-   "Supplies & operations",
+   "Utilities",
    1269.51,
    6
   ],
@@ -1148,7 +1219,7 @@ window.OO_SPENDING = {
   [
    "2026-02",
    "Robert Daoust Et Fils Inc.",
-   "Contracts — works",
+   "Waste & recycling",
    48220.1,
    2
   ],
@@ -1169,7 +1240,7 @@ window.OO_SPENDING = {
   [
    "2026-02",
    "Hydro-Québec",
-   "Supplies & operations",
+   "Utilities",
    18417.23,
    2
   ],
@@ -1204,7 +1275,7 @@ window.OO_SPENDING = {
   [
    "2026-02",
    "9534-8702 Québec Inc. (Petro Canada)",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    3743.37,
    28
   ],
@@ -1323,21 +1394,21 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "Robert Daoust Et Fils Inc.",
-   "Contracts — works",
+   "Waste & recycling",
    31833.44,
    1
   ],
   [
    "2026-04",
    "Hydro-Québec",
-   "Supplies & operations",
+   "Utilities",
    29848.86,
    4
   ],
   [
    "2026-04",
    "SAAQ Société ass. Automobile",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    22428.16,
    1
   ],
@@ -1386,7 +1457,7 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "9141855 Canada Inc.",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    11501.29,
    7
   ],
@@ -1407,7 +1478,7 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "9534-8702 Québec Inc. (Petro Canada)",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    8249.67,
    55
   ],
@@ -1645,7 +1716,7 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "Robert Daoust Et Fils Inc.",
-   "Contracts — works",
+   "Waste & recycling",
    30954.47,
    1
   ],
@@ -1659,7 +1730,7 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "Hydro-Québec",
-   "Supplies & operations",
+   "Utilities",
    18852.84,
    3
   ],
@@ -1799,7 +1870,7 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "Hydro-Québec",
-   "Supplies & operations",
+   "Utilities",
    15399.33,
    2
   ],
@@ -1813,7 +1884,7 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "9534-8702 Québec Inc. (Petro Canada)",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    13855.18,
    86
   ],
@@ -1848,7 +1919,7 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "Garage C.P. & Fils Inc.",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    5717.6,
    6
   ],
@@ -1876,7 +1947,7 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "Énergie P38 Inc. / Budget Propane",
-   "Supplies & operations",
+   "Utilities",
    3339.5,
    10
   ],

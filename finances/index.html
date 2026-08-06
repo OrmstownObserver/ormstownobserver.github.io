@@ -61,7 +61,7 @@ section > h2{font-size:1.3rem;font-weight:700;padding-bottom:6px;border-bottom:1
 figure{margin:0}
 .chartbox{position:relative;width:100%}
 .chartbox.trend{height:230px}
-.chartbox.cats{height:300px}
+.chartbox.cats{height:380px}
 .chartbox.budget{height:430px}
 figcaption{font:.8rem/1.5 -apple-system,sans-serif;color:var(--ink-soft);margin-top:6px}
 .legend-cues{display:flex;flex-wrap:wrap;gap:4px 18px;list-style:none}
@@ -82,7 +82,7 @@ tbody th[scope=row]{font-size:.88rem;text-transform:none;letter-spacing:0;color:
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;flex:none;vertical-align:baseline}
 
 /* ---------- Explore controls ---------- */
-.controls{display:grid;grid-template-columns:1fr 1fr 1.4fr 1fr auto;gap:10px;align-items:end;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
+.controls{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
 .field label{display:block;font:600 .74rem/1.4 -apple-system,sans-serif;color:var(--ink);margin-bottom:3px}
 .field select,.field input{width:100%;min-height:44px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);padding:0 10px;font:.9rem -apple-system,sans-serif}
 .btn{min-height:44px;padding:0 16px;border-radius:7px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:700 .84rem -apple-system,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
@@ -149,7 +149,7 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);font:.8
   .snap-grid{grid-template-columns:1fr 1fr}
   .explore-grid{grid-template-columns:1fr}
   .controls{grid-template-columns:1fr 1fr}
-  .controls .field.search{grid-column:1/-1}
+  .controls button{grid-column:1/-1;justify-content:center}
 }
 @media (max-width:640px){
   .wrap{padding:8px 12px 48px}
@@ -200,32 +200,7 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);font:.8
   <div id="data-error" class="acct-note" hidden></div>
   <div class="print-meta" id="print-meta"></div>
 
-  <!-- 2 · Snapshot -->
-  <section id="snapshot" aria-labelledby="snap-h">
-    <h2 id="snap-h" class="visually-hidden">La séance en un coup d'œil</h2>
-    <div class="snap-grid" id="snap-grid"></div>
-    <p class="evidence" id="evidence"></p>
-  </section>
-
-  <!-- 3 · Monthly trend -->
-  <section id="trend" aria-labelledby="trend-h">
-    <h2 id="trend-h"></h2>
-    <p class="section-sub" id="trend-sub"></p>
-    <figure>
-      <div class="chartbox trend"><canvas id="chart-trend"></canvas></div>
-      <figcaption><ul class="legend-cues" id="trend-legend"></ul></figcaption>
-    </figure>
-    <details class="datatable" id="trend-details">
-      <summary id="trend-summary"></summary>
-      <table class="stack" id="trend-table">
-        <caption id="trend-caption"></caption>
-        <thead><tr></tr></thead>
-        <tbody></tbody>
-      </table>
-    </details>
-  </section>
-
-  <!-- 4 · Explore -->
+  <!-- 2 · Explore (hero: fast glance by category) -->
   <section id="explore" aria-labelledby="explore-h">
     <span class="layer-tag" id="explore-tag"></span>
     <h2 id="explore-h"></h2>
@@ -234,8 +209,6 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);font:.8
     <div class="controls sans" id="controls">
       <div class="field"><label for="f-period" id="l-period"></label><select id="f-period"></select></div>
       <div class="field"><label for="f-category" id="l-category"></label><select id="f-category"></select></div>
-      <div class="field search"><label for="f-q" id="l-q"></label><input type="search" id="f-q" autocomplete="off"></div>
-      <div class="field"><label for="f-sort" id="l-sort"></label><select id="f-sort"></select></div>
       <button type="button" class="btn secondary" id="f-reset"></button>
     </div>
     <div class="tokens sans" id="tokens" hidden></div>
@@ -272,6 +245,31 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);font:.8
       <p class="note" id="signals-note"></p>
       <ul id="signals-list"></ul>
     </div>
+  </section>
+
+  <!-- 3 · Snapshot of the selected period -->
+  <section id="snapshot" aria-labelledby="snap-h">
+    <h2 id="snap-h" class="visually-hidden">La séance en un coup d'œil</h2>
+    <div class="snap-grid" id="snap-grid"></div>
+    <p class="evidence" id="evidence"></p>
+  </section>
+
+  <!-- 3 · Monthly trend -->
+  <section id="trend" aria-labelledby="trend-h">
+    <h2 id="trend-h"></h2>
+    <p class="section-sub" id="trend-sub"></p>
+    <figure>
+      <div class="chartbox trend"><canvas id="chart-trend"></canvas></div>
+      <figcaption><ul class="legend-cues" id="trend-legend"></ul></figcaption>
+    </figure>
+    <details class="datatable" id="trend-details">
+      <summary id="trend-summary"></summary>
+      <table class="stack" id="trend-table">
+        <caption id="trend-caption"></caption>
+        <thead><tr></tr></thead>
+        <tbody></tbody>
+      </table>
+    </details>
   </section>
 
   <!-- 5 · Annual context -->

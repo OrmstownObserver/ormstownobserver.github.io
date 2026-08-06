@@ -1,8 +1,9 @@
 /* ============================================================
    Ormstown Observer — public money explorer.
-   One normalized state {lang, period, category, q, sort} drives
-   summary, charts, results, exports and the URL. Official values
-   come from spending-data.js and are never altered here.
+   One normalized state {lang, period, category} drives summary,
+   charts, results, exports and the URL. Sorting is fixed (largest
+   amount first) and the default period is the year-to-date view.
+   Official values come from spending-data.js and are never altered here.
    ============================================================ */
 (function () {
   'use strict';
@@ -31,6 +32,9 @@
     'Legal — external counsel': 'legal-services',
     'Subsidies & community': 'subsidies-community',
     'Financing & debt': 'financing-debt',
+    'Utilities': 'utilities',
+    'Vehicle fuel & maintenance': 'vehicle-fuel-maintenance',
+    'Waste & recycling': 'waste-recycling',
     'Other': 'other'
   };
   var KEY_BY_SLUG = {};
@@ -81,28 +85,23 @@
   function monthById(id) { return D.months.filter(function (m) { return m.m === id; })[0]; }
 
   // ---------- state <-> URL ----------
-  var SORTS = ['amount-desc', 'name-asc', 'lines-desc'];
-  var state = { lang: 'fr', period: null, category: null, q: '', sort: 'amount-desc' };
+  // Sorting is fixed: categories and suppliers always largest amount first.
+  var state = { lang: 'fr', period: null, category: null };
 
   function readURL() {
     var p = new URLSearchParams(location.search);
     var lang = p.get('lang'); if (lang === 'fr' || lang === 'en') state.lang = lang;
     else { try { var l = localStorage.getItem('observerLang'); if (l === 'fr' || l === 'en') state.lang = l; else state.lang = (navigator.language || 'fr').indexOf('en') === 0 ? 'en' : 'fr'; } catch (e) {} }
     var period = p.get('period');
-    state.period = PERIODS.some(function (x) { return x.m === period; }) ? period : LAST_FULL.m;
+    state.period = PERIODS.some(function (x) { return x.m === period; }) ? period : YTD.m;
     var cat = p.get('category');
     state.category = KEY_BY_SLUG[cat] ? cat : null;
-    state.q = (p.get('q') || '').slice(0, 80);
-    var sort = p.get('sort');
-    state.sort = SORTS.indexOf(sort) >= 0 ? sort : 'amount-desc';
   }
   function writeURL(push) {
     var p = new URLSearchParams();
     p.set('lang', state.lang);
-    if (state.period !== LAST_FULL.m) p.set('period', state.period);
+    if (state.period !== YTD.m) p.set('period', state.period);
     if (state.category) p.set('category', state.category);
-    if (state.q) p.set('q', state.q);
-    if (state.sort !== 'amount-desc') p.set('sort', state.sort);
     var url = location.pathname + '?' + p.toString();
     try { history[push ? 'pushState' : 'replaceState'](null, '', url); } catch (e) {}
   }
@@ -123,21 +122,10 @@
   function currentRows() {
     var p = periodObj();
     var catKey = state.category ? KEY_BY_SLUG[state.category] : null;
-    var q = state.q.trim().toLowerCase();
-    return p.payees.filter(function (r) {
-      if (catKey && r.cat !== catKey) return false;
-      if (!q) return true;
-      var g = (D.gloss[r.payee] || {})[state.lang] || '';
-      return (localPayee(r.payee) + ' ' + r.payee + ' ' + catName(r.cat) + ' ' + g).toLowerCase().indexOf(q) >= 0;
-    });
+    return p.payees.filter(function (r) { return !catKey || r.cat === catKey; });
   }
   function sortRows(rows) {
-    var s = state.sort;
-    return rows.slice().sort(function (a, b) {
-      if (s === 'name-asc') return localPayee(a.payee).localeCompare(localPayee(b.payee), locale());
-      if (s === 'lines-desc') return b.lines - a.lines || b.amt - a.amt;
-      return b.amt - a.amt;
-    });
+    return rows.slice().sort(function (a, b) { return b.amt - a.amt; });
   }
 
   // ---------- charts ----------
@@ -301,8 +289,6 @@
     $('explore-sub').textContent = t.exploreSub;
     $('l-period').textContent = t.periodLabel;
     $('l-category').textContent = t.categoryLabel;
-    $('l-q').textContent = t.searchLabel;
-    $('l-sort').textContent = t.sortLabel;
     $('f-reset').textContent = t.reset;
     buildControls();
     $('cats-caption').textContent = t.catChartCaption;
@@ -397,12 +383,6 @@
       return '<option value="' + SLUGS[k] + '">' + catName(k) + '</option>';
     }).join('');
     $('f-category').value = state.category || '';
-    $('f-q').value = state.q;
-    $('f-sort').innerHTML =
-      '<option value="amount-desc">' + t.sortAmount + '</option>' +
-      '<option value="name-asc">' + t.sortName + '</option>' +
-      '<option value="lines-desc">' + t.sortLines + '</option>';
-    $('f-sort').value = state.sort;
   }
 
   // ---------- rendering: snapshot ----------
@@ -452,7 +432,8 @@
     }).join('');
 
     var ev;
-    if (p.isYTD) ev = tpl(t.evidencePartial, { n: nLines.toLocaleString(locale()), amt: money(itemized), total: money(p.total) });
+    if (p.isYTD && p.coverage === 'full') ev = tpl(t.evidenceYtd, { n: nLines.toLocaleString(locale()), sittings: p.nSittings });
+    else if (p.isYTD) ev = tpl(t.evidencePartial, { n: nLines.toLocaleString(locale()), amt: money(itemized), total: money(p.total) });
     else if (p.coverage !== 'full') ev = tpl(t.evidencePartial, { n: nLines.toLocaleString(locale()), amt: money(itemized), total: money(p.total) });
     else if (Math.abs(gap) < 0.005) ev = tpl(t.evidence, { n: nLines.toLocaleString(locale()), amt: money(itemized) });
     else ev = tpl(t.evidenceGap, { n: nLines.toLocaleString(locale()), amt: money(itemized), total: money(p.total), gap: money(Math.abs(gap)) });
@@ -470,13 +451,10 @@
     // controls reflect state (they may have been changed by URL/back navigation)
     $('f-period').value = state.period;
     $('f-category').value = state.category || '';
-    if ($('f-q').value !== state.q) $('f-q').value = state.q;
-    $('f-sort').value = state.sort;
 
     // tokens
     var tokens = [];
     if (state.category) tokens.push({ label: tpl(t.filterCat, { name: catName(KEY_BY_SLUG[state.category]) }), clear: { category: null } });
-    if (state.q.trim()) tokens.push({ label: tpl(t.filterQ, { q: state.q.trim() }), clear: { q: '' } });
     var tk = $('tokens');
     if (tokens.length) {
       tk.hidden = false;
@@ -500,7 +478,7 @@
     $('summary').innerHTML = tpl(t.summary, {
       nSup: '<span class="big">' + rows.length.toLocaleString(locale()) + '</span>',
       amt: '<span class="big">' + money(totSel) + '</span>',
-      scope: scope + (state.q.trim() ? ' · ' + tpl(t.filterQ, { q: state.q.trim() }) : '') + ', ' + periodLabel(p)
+      scope: scope + ', ' + periodLabel(p)
     }) + ' ' + tpl(t.summaryLines, { n: linesSel.toLocaleString(locale()) });
 
     // category chart + list reflect the current period (all categories) with rest for partial
@@ -527,12 +505,6 @@
     renderPrintMeta(tokens);
   }
 
-  function ariaSort(col) {
-    if (state.sort === 'amount-desc' && col === 'amount') return 'descending';
-    if (state.sort === 'lines-desc' && col === 'lines') return 'descending';
-    if (state.sort === 'name-asc' && col === 'name') return 'ascending';
-    return 'none';
-  }
   function renderResults(rows) {
     var t = T(), p = periodObj();
     var table = $('results'), empty = $('results-empty');
@@ -542,18 +514,11 @@
     }
     table.hidden = false; empty.hidden = true;
 
-    var headBtn = function (col, label, sortVal) {
-      return '<th scope="col" class="' + (col === 'name' ? '' : 'num') + '" aria-sort="' + ariaSort(col) + '">' +
-        '<button type="button" class="sortbtn" data-sort="' + sortVal + '" title="' + t.sortHint + '">' + label + '</button></th>';
-    };
     document.querySelector('#results thead tr').innerHTML =
-      headBtn('name', t.thSupplier, 'name-asc') +
+      '<th scope="col">' + t.thSupplier + '</th>' +
       '<th scope="col">' + t.thCategory + '</th>' +
-      headBtn('lines', t.thLines, 'lines-desc') +
-      headBtn('amount', t.thAmount, 'amount-desc');
-    document.querySelectorAll('#results .sortbtn').forEach(function (b) {
-      b.addEventListener('click', function () { setState({ sort: b.getAttribute('data-sort') }, { push: true }); });
-    });
+      '<th scope="col" class="num">' + t.thLines + '</th>' +
+      '<th scope="col" class="num" aria-sort="descending">' + t.thAmount + '</th>';
 
     var sorted = sortRows(rows);
     var payrollRows = sorted.filter(function (r) { return isPayroll(r.payee); });
@@ -665,7 +630,7 @@
 
   // ---------- reset / events ----------
   function resetFilters() {
-    setState({ category: null, q: '', sort: 'amount-desc' }, { push: true });
+    setState({ category: null, period: YTD.m }, { push: true });
     $('f-period').focus();
   }
   function bindEvents() {
@@ -673,14 +638,6 @@
     $('btn-en').addEventListener('click', function () { setState({ lang: 'en' }, { push: true }); });
     $('f-period').addEventListener('change', function () { setState({ period: this.value }, { push: true }); });
     $('f-category').addEventListener('change', function () { setState({ category: this.value || null }, { push: true }); });
-    var qTimer = null;
-    $('f-q').addEventListener('input', function () {
-      var v = this.value;
-      clearTimeout(qTimer);
-      qTimer = setTimeout(function () { setState({ q: v }, { push: false }); }, 200);
-    });
-    $('f-q').addEventListener('change', function () { setState({ q: this.value }, { push: true }); });
-    $('f-sort').addEventListener('change', function () { setState({ sort: this.value }, { push: true }); });
     $('f-reset').addEventListener('click', resetFilters);
     $('b-sort').addEventListener('change', function () { budgetSort = this.value; drawBudget(); });
     $('dl-view').addEventListener('click', function () {
