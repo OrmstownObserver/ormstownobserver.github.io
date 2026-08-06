@@ -12,8 +12,8 @@
 // ============================================================
 window.OO_SPENDING = {
  "generated": "2026-08-06",
- "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'aux séances de <strong>juin 2026</strong> (1<sup>er</sup> et 15 juin). Cette page détaille les listes de dépenses jusqu'à la séance du <strong>4 mai 2026</strong>; les listes des séances de juin sont en cours d'ajout. Les PV paraissent normalement de 4 à 6 semaines après leur adoption — les dépenses les plus récentes ne sont donc jamais encore au dossier public.",
- "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>June 2026</strong> sittings (June 1 and 15). This page itemizes the spending lists up to the <strong>May 4, 2026</strong> sitting; the June lists are being added. Minutes normally appear 4–6 weeks after adoption — so the most recent spending is never yet on the public record.",
+ "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'aux séances de <strong>juin 2026</strong> (1<sup>er</sup> et 15 juin). Cette page détaille les listes de dépenses jusqu'à la séance du <strong>4 mai 2026</strong>; les listes des séances de juin sont en cours d'ajout. Les PV paraissent normalement de 4 à 6 semaines après leur adoption; les dépenses les plus récentes s'ajoutent donc ici au fil de leur publication.",
+ "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>June 2026</strong> sittings (June 1 and 15). This page itemizes the spending lists up to the <strong>May 4, 2026</strong> sitting; the June lists are being added. Minutes normally appear 4–6 weeks after adoption; the most recent spending is added here as it is published.",
  "budget": {
   "year": 2026,
   "adopted": "2025-12-17",
@@ -117,8 +117,8 @@ window.OO_SPENDING = {
     "y2026": 3617295,
     "total": 13026043,
     "fund": "66 % règl. emprunt · 34 % subvention (TECQ 24-28, PAVL)",
-    "note_fr": "Écart interne au feuillet : la somme des trois années imprimées (13 351 833 $) dépasse le total imprimé de 325 790 $.",
-    "note_en": "Internal gap in the town's leaflet: the three printed years sum to 13,351,833 $, 325,790 $ above the printed total."
+    "note_fr": "À noter : au feuillet, la somme des trois années imprimées (13 351 833 $) diffère du total imprimé (écart de 325 790 $).",
+    "note_en": "Note: in the leaflet, the three printed years sum to 13,351,833 $, which differs from the printed total by 325,790 $."
    },
    {
     "fr": "Réseau routier et pavage",

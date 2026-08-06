@@ -105,7 +105,8 @@
     <button onclick="window.print()" id="print-btn">Imprimer</button>
   </div>
 
-  <div class="data-caveat sans" id="availability" role="note" style="margin:16px 0"><span aria-hidden="true">⚠️</span><span id="availability-text"></span></div>
+  <div class="note sans" id="courtesy" role="note" style="margin:16px 0 0"></div>
+  <div class="data-caveat sans" id="availability" role="note" style="margin:16px 0"><span aria-hidden="true">ℹ️</span><span id="availability-text"></span></div>
 
   <div class="status">
     <section class="card" style="margin:0">
@@ -115,13 +116,13 @@
       <div class="sub sans" id="coverage-help"></div>
     </section>
     <section class="card" style="margin:0">
-      <div class="eyebrow" id="evidence-title">Preuve primaire</div>
+      <div class="eyebrow" id="evidence-title">Document source</div>
       <div id="evidence-box" class="sans"></div>
     </section>
   </div>
 
   <section class="card">
-    <div class="eyebrow" id="signals-title">Signaux à examiner</div>
+    <div class="eyebrow" id="signals-title">Repères de lecture</div>
     <h2 id="signals-head"></h2>
     <p class="sub" id="signals-sub"></p>
     <div class="insights" id="insights"></div>
@@ -234,7 +235,7 @@ const I18N = {
       ["Plus grosse dépense suivie", "rénovation de l'hôtel de ville (janv.)"]
     ],
     note_pref: "À noter — ",
-    footer: "Ormstown Observer · Données tirées des procès-verbaux officiels de la Municipalité d'Ormstown · Mise à jour :",
+    footer: "Ormstown Observer — publication indépendante · Document non officiel, offert à titre gracieux pour favoriser la participation citoyenne · Données tirées des procès-verbaux officiels de la Municipalité d'Ormstown · Mise à jour :",
     all_cats: "Toutes",
     payees_sub: (m) => `${m}, par type de dépense. Cliquez une catégorie (ou une pointe du graphique) pour voir le détail par fournisseur; la recherche ouvre automatiquement les catégories concernées.`
   },
@@ -270,7 +271,7 @@ const I18N = {
       ["Largest single expense tracked", "town hall renovation (Jan.)"]
     ],
     note_pref: "Worth noting — ",
-    footer: "Ormstown Observer · Data drawn from the official minutes of the Municipality of Ormstown · Updated:",
+    footer: "Ormstown Observer — an independent publication · Not an official document; offered as a courtesy to encourage civic engagement · Data drawn from the official minutes of the Municipality of Ormstown · Updated:",
     all_cats: "All",
     payees_sub: (m) => `${m}, by type of expense. Click a category (or a slice of the chart) to see the supplier detail; searching opens the matching categories automatically.`
   }
@@ -344,10 +345,13 @@ function render() {
   document.getElementById('download-btn').textContent = lang==='fr'?'Télécharger CSV':'Download CSV';
   document.getElementById('print-btn').textContent = lang==='fr'?'Imprimer':'Print';
   document.getElementById('coverage-title').textContent = lang==='fr'?'Qualité des données':'Data quality';
-  document.getElementById('evidence-title').textContent = lang==='fr'?'Preuve primaire':'Primary evidence';
-  document.getElementById('signals-title').textContent = lang==='fr'?'Signaux à examiner':'Signals to examine';
-  document.getElementById('signals-head').textContent = lang==='fr'?'Ce qui ressort — sans tirer de conclusion':'What stands out — without jumping to conclusions';
-  document.getElementById('signals-sub').textContent = lang==='fr'?'Repères automatiques pour orienter la lecture. Un signal n’est pas une preuve d’irrégularité.':'Automated prompts for closer reading. A signal is not evidence of wrongdoing.';
+  document.getElementById('evidence-title').textContent = lang==='fr'?'Document source':'Source document';
+  document.getElementById('signals-title').textContent = lang==='fr'?'Repères de lecture':'Reading guideposts';
+  document.getElementById('signals-head').textContent = lang==='fr'?'Ce qui ressort ce mois-ci':'What stands out this month';
+  document.getElementById('signals-sub').textContent = lang==='fr'?'Quelques repères générés automatiquement pour situer les chiffres — de simples points de départ pour mieux comprendre.':'A few automatically generated pointers to help put the numbers in context — simple starting points for understanding.';
+  document.getElementById('courtesy').innerHTML = lang==='fr'
+    ? "<strong>À propos de cette page —</strong> ce tableau de bord n'est pas un rapport officiel de la Municipalité d'Ormstown et n'émane d'aucune instance municipale. L'Ormstown Observer, une publication indépendante, l'offre à titre gracieux pour favoriser la participation citoyenne et une meilleure compréhension des finances publiques. En cas de différence, les documents officiels font foi."
+    : "<strong>About this page —</strong> this dashboard is not an official report of the Municipality of Ormstown and does not come from any municipal body. The Ormstown Observer, an independent publication, provides it as a courtesy to encourage civic engagement and a better understanding of public finances. If anything differs, the official documents govern.";
   document.getElementById('vendor-search').placeholder = lang==='fr'?'Filtrer les fournisseurs':'Filter vendors';
   document.getElementById('global-search').placeholder = lang==='fr'?'Rechercher un fournisseur':'Search a vendor';
   document.getElementById('eyebrow-top').textContent = lang==='fr'?'Ormstown Observer · Explorateur des fonds publics':'Ormstown Observer · Public money explorer';
@@ -384,7 +388,7 @@ function renderStatus(){
   const m=getMonth(), known=Object.values(m.cats).reduce((a,c)=>a+c[0],0), pct=Math.min(100,100*known/m.total);
   document.getElementById('coverage-summary').innerHTML=`<strong>${m.coverage==='full'?(lang==='fr'?'Détaillé ligne par ligne':'Itemized line by line'):(lang==='fr'?'Couverture partielle':'Partial coverage')}</strong> · ${fmt$c(known)} / ${fmt$c(m.total)}`;
   document.getElementById('coverage-bar').style.width=`${pct}%`;
-  document.getElementById('coverage-help').textContent=m.coverage==='full'?(lang==='fr'?'Les catégories couvrent le total adopté.':'Categories cover the adopted total.'):(lang==='fr'?`${pct.toFixed(1)} % du total a été catégorisé; le reste demeure explicitement inconnu.`:`${pct.toFixed(1)}% of the total has been categorized; the remainder is explicitly unknown.`);
+  document.getElementById('coverage-help').textContent=m.coverage==='full'?(lang==='fr'?'Les catégories couvrent le total adopté.':'Categories cover the adopted total.'):(lang==='fr'?`${pct.toFixed(1)} % du total a été catégorisé; le reste sera ajouté à mesure que la saisie avance.`:`${pct.toFixed(1)}% of the total has been categorized; the rest will be added as data entry continues.`);
   document.getElementById('evidence-box').innerHTML=`<strong>${mo(m)}</strong><br><span style="color:var(--ink-soft)">${m.session}</span><br><a class="linkbtn" style="margin-top:10px" href="${m.url}" target="_blank" rel="noopener">${lang==='fr'?'Ouvrir le PV officiel':'Open official minutes'} ↗</a>`;
   const sl=document.getElementById('source-link'); sl.href=m.url; sl.textContent=(lang==='fr'?'Voir le document source':'View source document')+' ↗';
 }
@@ -395,8 +399,8 @@ function renderInsights(){
   const recurring={}; FYM().forEach(x=>x.payees.forEach(p=>{if(!p[0].startsWith('—'))recurring[p[0]]=(recurring[p[0]]||0)+1}));
   const repeat=Object.entries(recurring).filter(x=>x[1]>=3).sort((a,b)=>b[1]-a[1]).slice(0,3);
   const items=[];
-  if(m.coverage==='partial') items.push(`<div class="insight warn"><strong>${lang==='fr'?'Prudence':'Caution'}:</strong> ${lang==='fr'?'ce mois est incomplet; les classements et parts sont provisoires.':'this month is incomplete; rankings and shares are provisional.'}</div>`);
-  if(top) items.push(`<div class="insight"><strong>${lang==='fr'?'Concentration (hors paie)':'Concentration (excl. payroll)'}:</strong> ${top[0]} ${lang==='fr'?'représente':'accounts for'} ${share.toFixed(1)} % ${lang==='fr'?'du total adopté ce mois-ci':'of this month’s adopted total'}.</div>`);
+  if(m.coverage==='partial') items.push(`<div class="insight warn"><strong>${lang==='fr'?'À noter':'Note'}:</strong> ${lang==='fr'?'ce mois est encore en cours de saisie; les classements et parts sont provisoires.':'this month is still being entered; rankings and shares are provisional.'}</div>`);
+  if(top) items.push(`<div class="insight"><strong>${lang==='fr'?'Principal fournisseur (hors paie)':'Largest supplier (excl. payroll)'}:</strong> ${top[0]} ${lang==='fr'?'représente':'accounts for'} ${share.toFixed(1)} % ${lang==='fr'?'du total adopté ce mois-ci':'of this month’s adopted total'}.</div>`);
   if(m.isYTD) items.push(`<div class="insight"><strong>${lang==='fr'?'Moyenne par séance':'Average per sitting'}:</strong> ${fmt$(m.total/m.nSittings)} ${lang==='fr'?`sur ${m.nSittings} séances`:`across ${m.nSittings} sittings`}.</div>`);
   else items.push(`<div class="insight"><strong>${lang==='fr'?'Écart au repère':'Difference from benchmark'}:</strong> ${mo(m)} ${m.total>=avg?(lang==='fr'?'est au-dessus':'is above'):(lang==='fr'?'est sous':'is below')} ${lang==='fr'?'la moyenne des mois entièrement détaillés':'the average of fully itemized months'} (${fmt$(avg)}).</div>`);
   if(repeat.length) items.push(`<div class="insight"><strong>${lang==='fr'?'Fournisseurs récurrents':'Recurring vendors'}:</strong> ${repeat.map(x=>`${x[0]} (${x[1]})`).join(' · ')}</div>`);
@@ -516,8 +520,8 @@ function renderPayees() {
   const scope = q ? `${mo(m)} — « ${q} »` : mo(m);
   let caveat = '';
   if (m.coverage !== 'full') caveat = `<span class="caveat">${lang==='fr'
-    ? '⚠︎ Période partiellement détaillée : le vrai total de cette sélection peut être plus élevé.'
-    : '⚠︎ Period only partially itemized: the true total for this selection may be higher.'}</span>`;
+    ? 'ℹ︎ Période encore en cours de saisie : le total de cette sélection pourra augmenter à mesure que les lignes sont ajoutées.'
+    : 'ℹ︎ Period still being entered: this selection\'s total may grow as more lines are added.'}</span>`;
   document.getElementById('cat-summary').innerHTML =
     `${scope} · <span class="big">${fmt$c(selTot)}</span> · ${nCats} ${lang==='fr'?'catégories':'categories'}${q?` · ${nSup} ${lang==='fr'?'fournisseurs':'suppliers'}`:''} · ${selLines} ${lang==='fr'?'lignes au PV':'lines in the minutes'}${caveat}`;
 }
@@ -574,7 +578,7 @@ function renderBudget() {
   document.querySelector('#pti-table thead tr').innerHTML =
     `<th>${fr?'Projet':'Project'}</th><th class="num">2026</th><th class="num">Total 2026-2028</th><th>${fr?'Financement prévu':'Planned funding'}</th>`;
   document.querySelector('#pti-table tbody').innerHTML = B.pti.map(p =>
-    `<tr><td>${fr?p.fr:p.en}${p.note_fr?`<span class="gloss">⚠︎ ${fr?p.note_fr:p.note_en}</span>`:''}</td><td class="num">${p.y2026!=null?fmt$(p.y2026):'—'}</td><td class="num">${fmt$(p.total)}</td><td class="gloss" style="font-size:.8rem">${p.fund}</td></tr>`).join('');
+    `<tr><td>${fr?p.fr:p.en}${p.note_fr?`<span class="gloss">${fr?p.note_fr:p.note_en}</span>`:''}</td><td class="num">${p.y2026!=null?fmt$(p.y2026):'—'}</td><td class="num">${fmt$(p.total)}</td><td class="gloss" style="font-size:.8rem">${p.fund}</td></tr>`).join('');
   document.getElementById('budget-src').innerHTML =
     `${fr?'Sources officielles':'Official sources'}: <a href="${B.url}" target="_blank" rel="noopener">${fr?'Feuillet budgétaire':'Budget leaflet'} ${B.year} ↗</a> · <a href="${B.url_pti}" target="_blank" rel="noopener">PTI 2026-2028 ↗</a>`;
 }
