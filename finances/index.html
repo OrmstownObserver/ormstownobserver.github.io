@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les finances d'Ormstown, en clair — Ormstown Observer</title>
+<meta name="description" content="Les dépenses de la Municipalité d'Ormstown, mois par mois, tirées des procès-verbaux officiels — chaque chiffre relié à sa source. / Ormstown's municipal spending, month by month, from the official minutes.">
+<link rel="canonical" href="https://ormstownobserver.ca/finances/">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="spending-data.js"></script>
+<style>
+  :root {
+    --ink: #1f2733; --ink-soft: #5a6572; --paper: #fafaf7; --card: #ffffff;
+    --line: #e4e2dc; --accent: #2c5f7c; --accent-soft: #eaf1f5; --full: #2c5f7c; --partial: #a8c4d4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; background: var(--paper); color: var(--ink); line-height: 1.55; }
+  .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 24px 16px 64px; }
+  header.masthead { text-align: center; padding: 28px 8px 20px; border-bottom: 3px double var(--ink); margin-bottom: 8px; }
+  header.masthead h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: .3px; }
+  header.masthead p.dek { color: var(--ink-soft); margin-top: 8px; font-size: 1.05rem; max-width: 640px; margin-left:auto; margin-right:auto; }
+  .langbar { display:flex; justify-content:flex-end; gap:6px; padding: 10px 0; }
+  .langbar button { font: 600 .8rem/1 -apple-system, sans-serif; padding: 6px 12px; border: 1px solid var(--line); background: var(--card); border-radius: 999px; cursor: pointer; color: var(--ink-soft); }
+  .langbar button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 22px 0; }
+  .kpi { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+  .kpi .v { font: 700 1.45rem/1.2 -apple-system, sans-serif; color: var(--accent); }
+  .kpi .l { font-size: .85rem; color: var(--ink-soft); margin-top: 4px; }
+  section.card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 22px; margin: 18px 0; }
+  section.card h2 { font-size: 1.25rem; margin-bottom: 4px; }
+  section.card p.sub { color: var(--ink-soft); font-size: .92rem; margin-bottom: 14px; }
+  .chartbox { position: relative; width: 100%; }
+  .chartbox.tall { height: 380px; }
+  .chartbox.donut { height: 320px; max-width: 640px; margin: 0 auto; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 16px; }
+  .chip { font: 600 .8rem/1 -apple-system, sans-serif; padding: 7px 13px; border-radius: 999px; border: 1px solid var(--line); background: var(--paper); cursor: pointer; color: var(--ink-soft); }
+  .chip.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .chip.ytd { border-style: dashed; }
+  .chip .cov { font-weight: 400; opacity: .75; }
+  table { width: 100%; border-collapse: collapse; font-family: -apple-system, sans-serif; font-size: .9rem; }
+  th { text-align: left; font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-soft); padding: 8px 10px; border-bottom: 2px solid var(--line); }
+  th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td .gloss { display: block; color: var(--ink-soft); font-size: .8rem; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 7px; vertical-align: baseline; }
+  .note { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: .9rem; margin-top: 14px; }
+  .meth { font-size: .92rem; }
+  .meth li { margin: 8px 0 8px 18px; }
+  .meth a { color: var(--accent); }
+  .covtable td, .covtable th { font-size: .85rem; }
+  .badge { font: 600 .7rem/1 -apple-system, sans-serif; padding: 3px 9px; border-radius: 999px; }
+  .badge.full { background: #e3efe6; color: #22633a; }
+  .badge.partial { background: #fdf3dd; color: #8a6116; }
+  footer { text-align: center; color: var(--ink-soft); font-size: .85rem; margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .toolbar { position:sticky; top:0; z-index:20; background:rgba(250,250,247,.96); backdrop-filter:blur(10px); border:1px solid var(--line); border-radius:14px; padding:12px; margin:16px 0; display:grid; grid-template-columns:2fr 1fr auto auto; gap:10px; box-shadow:0 8px 28px rgba(31,39,51,.08) }
+  .toolbar input,.toolbar select,.toolbar button { min-height:44px; border:1px solid var(--line); border-radius:9px; background:#fff; padding:0 12px; font:600 .86rem -apple-system,sans-serif; color:var(--ink) }
+  .toolbar button { cursor:pointer; background:var(--accent); color:#fff; border-color:var(--accent) }
+  .status { display:grid; grid-template-columns:2fr 1fr; gap:14px; margin:18px 0 }
+  .coverage-meter { height:10px; background:#eceae5; border-radius:999px; overflow:hidden; margin:10px 0 6px }
+  .coverage-meter span { display:block; height:100%; background:var(--accent); border-radius:inherit }
+  .insights { display:grid; gap:9px; margin-top:12px }
+  .insight { border-left:4px solid var(--accent); padding:10px 12px; background:var(--accent-soft); border-radius:0 8px 8px 0; font: .88rem/1.4 -apple-system,sans-serif }
+  .insight.warn { border-color:#d27a22; background:#fff4e8 }
+  .eyebrow { font:700 .72rem/1 -apple-system,sans-serif; text-transform:uppercase; letter-spacing:.12em; color:var(--accent); margin-bottom:9px }
+  .data-caveat { display:flex; gap:10px; align-items:flex-start; background:#fff8e8; border:1px solid #edd7a5; border-radius:10px; padding:12px; font: .84rem/1.45 -apple-system,sans-serif }
+  .table-actions { display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:10px }
+  .table-actions input { min-height:40px; min-width:min(100%,280px); border:1px solid var(--line); border-radius:8px; padding:0 11px }
+  .linkbtn { display:inline-flex; align-items:center; min-height:40px; padding:0 12px; border-radius:8px; border:1px solid var(--accent); color:var(--accent); text-decoration:none; font:700 .8rem -apple-system,sans-serif }
+  .empty { color:var(--ink-soft); text-align:center; padding:24px }
+  .cat-summary { background:var(--accent-soft); border:1px solid var(--line); border-radius:10px; padding:12px 16px; margin-bottom:12px; font:.95rem/1.45 -apple-system,sans-serif }
+  .cat-summary .big { font-weight:800; font-size:1.3rem; color:var(--accent) }
+  .cat-summary .caveat { color:#8a6116; font-size:.82rem; display:block; margin-top:4px }
+  td.sitting a { color:var(--accent); text-decoration:none; font:600 .8rem -apple-system,sans-serif; white-space:nowrap }
+  @media (max-width: 720px) { .toolbar { position:static; grid-template-columns:1fr 1fr }.toolbar input{grid-column:1/-1}.status{grid-template-columns:1fr}.chartbox.tall{height:280px} section.card{padding:16px} table{font-size:.82rem} .col-lines{display:none}.kpis{grid-template-columns:1fr 1fr}.kpi{padding:13px}.kpi .v{font-size:1.12rem} }
+  @media print { .toolbar,.langbar,.chips,.table-actions{display:none!important} body{background:#fff} section.card,.kpi{break-inside:avoid;box-shadow:none} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="langbar sans" style="justify-content:space-between;align-items:center">
+    <a id="home-link" href="/" style="font:700 .72rem/1 -apple-system,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-soft);text-decoration:none">← Accueil</a>
+    <span>
+      <button id="btn-fr" onclick="setLang('fr')">FR</button>
+      <button id="btn-en" onclick="setLang('en')">EN</button>
+    </span>
+  </div>
+
+  <header class="masthead">
+    <div class="eyebrow" id="eyebrow-top">Ormstown Observer</div>
+    <h1 data-i18n="title"></h1>
+    <p class="dek" data-i18n="dek"></p>
+  </header>
+
+  <div class="toolbar sans" aria-label="Explorer controls">
+    <input id="global-search" type="search" placeholder="Rechercher un fournisseur / Search a vendor" oninput="globalSearch(this.value)">
+    <select id="month-select" onchange="pickMonth(this.value)" aria-label="Month"></select>
+    <button onclick="downloadCSV()" id="download-btn">Télécharger CSV</button>
+    <button onclick="window.print()" id="print-btn">Imprimer</button>
+  </div>
+
+  <div class="data-caveat sans" id="availability" role="note" style="margin:16px 0"><span aria-hidden="true">⚠️</span><span id="availability-text"></span></div>
+
+  <div class="status">
+    <section class="card" style="margin:0">
+      <div class="eyebrow" id="coverage-title">Qualité des données</div>
+      <div id="coverage-summary" class="sans"></div>
+      <div class="coverage-meter"><span id="coverage-bar"></span></div>
+      <div class="sub sans" id="coverage-help"></div>
+    </section>
+    <section class="card" style="margin:0">
+      <div class="eyebrow" id="evidence-title">Preuve primaire</div>
+      <div id="evidence-box" class="sans"></div>
+    </section>
+  </div>
+
+  <section class="card">
+    <div class="eyebrow" id="signals-title">Signaux à examiner</div>
+    <h2 id="signals-head"></h2>
+    <p class="sub" id="signals-sub"></p>
+    <div class="insights" id="insights"></div>
+  </section>
+
+  <div class="kpis sans" id="kpis"></div>
+
+  <section class="card">
+    <h2 data-i18n="h_monthly"></h2>
+    <p class="sub" data-i18n="s_monthly"></p>
+    <div class="chartbox tall"><canvas id="chart-monthly" role="img" aria-label="Dépenses mensuelles approuvées / Monthly approved spending"></canvas></div>
+    <p class="sub sans" style="margin-top:10px" data-i18n="legend_monthly"></p>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="h_month"></h2>
+    <p class="sub" data-i18n="s_month"></p>
+    <div class="chips sans" id="month-chips"></div>
+    <div class="chartbox donut"><canvas id="chart-cats" role="img" aria-label="Répartition par catégorie / Breakdown by category"></canvas></div>
+    <div class="note sans" id="month-note" style="display:none"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="h_payees"></h2>
+    <p class="sub" id="payees-sub"></p>
+    <div class="chips sans" id="cat-chips"></div>
+    <div class="cat-summary sans" id="cat-summary"></div>
+    <div class="table-actions sans"><input id="vendor-search" type="search" oninput="vendorSearch(this.value)" placeholder="Filtrer les fournisseurs / Filter vendors"><a class="linkbtn" id="source-link" target="_blank" rel="noopener">Voir le document source ↗</a></div>
+    <div style="overflow-x:auto"><table id="payee-table">
+      <thead><tr></tr></thead>
+      <tbody></tbody>
+    </table></div>
+    <p class="sub sans" style="margin-top:10px" data-i18n="payee_footnote"></p>
+  </section>
+
+  <section class="card" id="budget-card">
+    <div class="eyebrow" id="budget-eyebrow"></div>
+    <h2 id="budget-head"></h2>
+    <p class="sub" id="budget-sub"></p>
+    <div class="coverage-meter" style="height:14px"><span id="budget-bar" style="background:var(--accent)"></span></div>
+    <div class="sub sans" id="budget-pace"></div>
+    <div class="note sans" id="budget-caveat"></div>
+    <div style="overflow-x:auto;margin-top:16px"><table id="budget-table">
+      <thead><tr></tr></thead><tbody></tbody>
+    </table></div>
+    <h2 style="margin-top:24px" id="pti-head"></h2>
+    <p class="sub" id="pti-sub"></p>
+    <div style="overflow-x:auto"><table id="pti-table">
+      <thead><tr></tr></thead><tbody></tbody>
+    </table></div>
+    <p class="sub sans" style="margin-top:10px" id="budget-src"></p>
+  </section>
+
+  <section class="card meth sans">
+    <h2 data-i18n="h_meth"></h2>
+    <ul id="meth-list"></ul>
+    <h2 style="margin-top:20px" data-i18n="h_cov"></h2>
+    <p class="sub" data-i18n="s_cov"></p>
+    <table class="covtable" id="cov-table">
+      <thead><tr>
+        <th data-i18n="th_session"></th>
+        <th data-i18n="th_status"></th>
+        <th class="num" data-i18n="th_total"></th>
+        <th data-i18n="th_source"></th>
+      </tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <footer class="sans">
+    <span data-i18n="footer"></span> <span id="gen-date"></span>
+  </footer>
+</div>
+
+<script>
+const D = window.OO_SPENDING;
+// The page shows the current fiscal year (calendar year, per municipal practice).
+// Older sittings stay in the data file but are excluded from charts and totals.
+const FY = D.months.map(m => m.m.slice(0,4)).sort().slice(-1)[0];
+const FYM = () => D.months.filter(m => m.m.startsWith(FY));
+const I18N = {
+  fr: {
+    title: "Les finances d'Ormstown, en clair",
+    dek: "L'argent public devrait être facile à suivre. L'Observer rassemble les chiffres officiels de la Municipalité dans une seule base de données facile à explorer, pour que la communauté sache où va l'argent d'Ormstown — chaque chiffre relié à sa source officielle.",
+    h_monthly: "Les dépenses approuvées, mois par mois",
+    s_monthly: "Le montant total de la liste des opérations financières adoptée à chaque séance du conseil.",
+    legend_monthly: "Barres foncées : mois entièrement détaillés ligne par ligne. Barres pâles : total officiel connu, détail en cours d'ajout.",
+    h_month: "Où va l'argent ?",
+    s_month: "Choisissez un mois pour voir la répartition par type de dépense.",
+    h_payees: "Dépenses par fournisseur",
+    th_payee: "Fournisseur", th_cat: "Catégorie", th_lines: "Lignes", th_amount: "Montant",
+    payee_footnote: "Les montants regroupent toutes les lignes d'un même fournisseur pour le mois choisi. La liste complète, ligne par ligne, se trouve dans le procès-verbal (lien ci-dessous).",
+    h_meth: "Comment lire ces chiffres",
+    meth: [
+      "Toutes les données proviennent des <strong>procès-verbaux officiels</strong> publiés sur ormstown.ca — aucune autre source.",
+      "Chaque « mois » correspond à la <strong>séance du conseil</strong> qui a approuvé la liste; les factures elles-mêmes datent souvent des semaines précédentes.",
+      "Pour les mois marqués <em>détaillé</em>, chaque ligne de l'annexe a été saisie et la somme <strong>correspond au sou près</strong> au total adopté par le conseil (janvier : écart documenté de 0,12 $ dû à deux chiffres illisibles au scan).",
+      "Les décomptes financés par marge de crédit (ex. Rang des Botreaux) sont approuvés séparément et <strong>exclus</strong> des totaux mensuels, comme dans les résolutions.",
+      "Les catégories sont attribuées par l'Observer pour faciliter la lecture; le document source fait toujours foi.",
+      "Une dépense n'est ni bonne ni mauvaise en soi — cette page vise à rendre l'information <strong>accessible</strong>, pas à la juger."
+    ],
+    h_cov: "Couverture des données",
+    s_cov: "Ce qui est déjà détaillé et ce qui reste à saisir. La page s'enrichit à mesure que les procès-verbaux sont traités.",
+    th_session: "Séance", th_status: "État", th_total: "Total adopté", th_source: "Source",
+    full: "Détaillé", partial: "Partiel", pv: "PV officiel",
+    rest_label: "Pas encore détaillé",
+    kpi: [
+      ["Total des listes approuvées", "sur les 6 séances suivies"],
+      ["Mois entièrement détaillés", "lignes vérifiées au sou près"],
+      ["Lignes de dépenses saisies", "chacune liée à son procès-verbal"],
+      ["Plus grosse dépense suivie", "rénovation de l'hôtel de ville (janv.)"]
+    ],
+    note_pref: "À noter — ",
+    footer: "Ormstown Observer · Données tirées des procès-verbaux officiels de la Municipalité d'Ormstown · Mise à jour :",
+    all_cats: "Toutes",
+    payees_sub: (m) => `Toutes les dépenses par fournisseur — ${m}. Cliquez une catégorie (ou une pointe du graphique) pour filtrer; le total de la sélection s'affiche au-dessus du tableau.`
+  },
+  en: {
+    title: "Ormstown's finances, made clear",
+    dek: "Public money should be easy to follow. The Observer brings the official numbers together in one easy-to-explore database, so community members can see where Ormstown's money is being spent — every figure linked to its official source.",
+    h_monthly: "Approved spending, month by month",
+    s_monthly: "The total of the financial-operations list adopted at each council sitting.",
+    legend_monthly: "Dark bars: months fully itemized line by line. Light bars: official total known, line detail still being added.",
+    h_month: "Where does the money go?",
+    s_month: "Pick a month to see the breakdown by type of expense.",
+    h_payees: "Spending by supplier",
+    th_payee: "Supplier", th_cat: "Category", th_lines: "Lines", th_amount: "Amount",
+    payee_footnote: "Amounts group all lines for the same supplier in the selected month. The complete line-by-line list is in the minutes (linked below).",
+    h_meth: "How to read these numbers",
+    meth: [
+      "All data comes from the <strong>official minutes</strong> published on ormstown.ca — no other source.",
+      "Each “month” is the <strong>council sitting</strong> that approved the list; the underlying invoices are often from the preceding weeks.",
+      "For months marked <em>itemized</em>, every line of the annex was entered and the sum <strong>matches the adopted total to the penny</strong> (January: a documented 0.12 $ gap from two scan-obscured digits).",
+      "Progress payments financed by credit line (e.g. Rang des Botreaux) are approved separately and <strong>excluded</strong> from monthly totals, as in the resolutions.",
+      "Categories are assigned by the Observer for readability; the source document always governs.",
+      "No expense is inherently good or bad — this page aims to make the information <strong>accessible</strong>, not to judge it."
+    ],
+    h_cov: "Data coverage",
+    s_cov: "What is already itemized and what remains to be entered. The page grows as minutes are processed.",
+    th_session: "Sitting", th_status: "Status", th_total: "Adopted total", th_source: "Source",
+    full: "Itemized", partial: "Partial", pv: "Official minutes",
+    rest_label: "Not yet itemized",
+    kpi: [
+      ["Total of approved lists", "across the 6 sittings tracked"],
+      ["Months fully itemized", "lines verified to the penny"],
+      ["Expense lines captured", "each tied to its official minutes"],
+      ["Largest single expense tracked", "town hall renovation (Jan.)"]
+    ],
+    note_pref: "Worth noting — ",
+    footer: "Ormstown Observer · Data drawn from the official minutes of the Municipality of Ormstown · Updated:",
+    all_cats: "All",
+    payees_sub: (m) => `All spending by supplier — ${m}. Click a category (or a slice of the chart) to filter; the selection's total appears above the table.`
+  }
+};
+
+// Language preference: URL ?lang → site-wide observerLang → this page's own key → browser.
+let lang = (() => {
+  const q = new URLSearchParams(location.search).get('lang');
+  if (q === 'fr' || q === 'en') return q;
+  try {
+    const site = localStorage.getItem('observerLang');
+    if (site === 'fr' || site === 'en') return site;
+    const own = localStorage.getItem('oo_lang');
+    if (own === 'fr' || own === 'en') return own;
+  } catch (e) {}
+  return (navigator.language || 'fr').startsWith('en') ? 'en' : 'fr';
+})();
+let selMonth = FYM().filter(x => x.coverage === 'full').slice(-1)[0].m;
+let selCat = null;
+let searchTerm = '';
+let chMonthly = null, chCats = null;
+
+const fmt$ = (v) => new Intl.NumberFormat(lang === 'fr' ? 'fr-CA' : 'en-CA', { style: 'currency', currency: 'CAD', maximumFractionDigits: 0 }).format(v);
+const fmt$c = (v) => new Intl.NumberFormat(lang === 'fr' ? 'fr-CA' : 'en-CA', { style: 'currency', currency: 'CAD' }).format(v);
+const mo = (m) => lang === 'fr' ? m.label_fr : m.label_en;
+const catName = (k) => (D.categories[k] ? D.categories[k][lang] : k);
+const getMonth = () => D.months.find(x => x.m === selMonth) || D.views.find(x => x.m === selMonth);
+
+// Build synthetic year-to-date views by aggregating monthly data (no change to source data).
+function buildAggregates(){
+  // Attach the complete entry list to each month: [payee, cat, amount, lines, sitting]
+  D.months.forEach(m => { m.payees = D.entries.filter(e => e[0] === m.m).map(e => [e[1], e[2], e[3], e[4], m.m]); });
+  D.views = [];
+  const years = [...new Set(D.months.map(m => m.m.slice(0,4)))];
+  for (const y of years) {
+    const ms = D.months.filter(m => m.m.startsWith(y));
+    if (ms.length < 2) continue;
+    const cats = {};
+    ms.forEach(m => Object.entries(m.cats).forEach(([k,v]) => {
+      cats[k] = cats[k] || [0,0];
+      cats[k][0] = Math.round((cats[k][0]+v[0])*100)/100;
+      cats[k][1] += v[1];
+    }));
+    const partials = ms.filter(m => m.coverage !== 'full');
+    D.views.push({
+      m: 'ytd-'+y, isYTD: true, nSittings: ms.length,
+      label_fr: `Année ${y} — cumul`, label_en: `${y} year to date`,
+      total: Math.round(ms.reduce((a,m)=>a+m.total,0)*100)/100,
+      coverage: partials.length ? 'partial' : 'full',
+      session: `${ms.length} séances / sittings`,
+      url: 'https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal',
+      note_fr: partials.length ? `Cumul des séances suivies de ${y}. ${partials.map(mo=>mo.label_fr).join(', ')} n'est que partiellement détaillé — les parts par catégorie sont donc légèrement sous-estimées; le total adopté, lui, est complet.` : `Cumul des séances suivies de ${y}.`,
+      note_en: partials.length ? `Running total of the tracked ${y} sittings. ${partials.map(mo=>mo.label_en).join(', ')} is only partially itemized — category shares are slightly understated; the adopted total itself is complete.` : `Running total of the tracked ${y} sittings.`,
+      cats, payees: ms.flatMap(m => m.payees).sort((a,b) => b[2]-a[2])
+    });
+  }
+}
+
+function setLang(l) {
+  lang = l;
+  try { localStorage.setItem('oo_lang', l); localStorage.setItem('observerLang', l); } catch (e) {}
+  document.documentElement.lang = l;
+  render();
+}
+
+function render() {
+  const t = I18N[lang];
+  document.getElementById('btn-fr').classList.toggle('on', lang === 'fr');
+  document.getElementById('btn-en').classList.toggle('on', lang === 'en');
+  document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (t[k]) el.innerHTML = t[k]; });
+  document.getElementById('download-btn').textContent = lang==='fr'?'Télécharger CSV':'Download CSV';
+  document.getElementById('print-btn').textContent = lang==='fr'?'Imprimer':'Print';
+  document.getElementById('coverage-title').textContent = lang==='fr'?'Qualité des données':'Data quality';
+  document.getElementById('evidence-title').textContent = lang==='fr'?'Preuve primaire':'Primary evidence';
+  document.getElementById('signals-title').textContent = lang==='fr'?'Signaux à examiner':'Signals to examine';
+  document.getElementById('signals-head').textContent = lang==='fr'?'Ce qui ressort — sans tirer de conclusion':'What stands out — without jumping to conclusions';
+  document.getElementById('signals-sub').textContent = lang==='fr'?'Repères automatiques pour orienter la lecture. Un signal n’est pas une preuve d’irrégularité.':'Automated prompts for closer reading. A signal is not evidence of wrongdoing.';
+  document.getElementById('vendor-search').placeholder = lang==='fr'?'Filtrer les fournisseurs':'Filter vendors';
+  document.getElementById('global-search').placeholder = lang==='fr'?'Rechercher un fournisseur':'Search a vendor';
+  document.getElementById('eyebrow-top').textContent = lang==='fr'?'Ormstown Observer · Explorateur des fonds publics':'Ormstown Observer · Public money explorer';
+  document.getElementById('home-link').textContent = lang==='fr'?'← Accueil':'← Home';
+  document.getElementById('availability-text').innerHTML = (lang==='fr' ? D.availability_fr : D.availability_en) || '';
+
+  // KPIs
+  const fym = FYM();
+  const totalAll = fym.reduce((a, m) => a + m.total, 0);
+  const nFull = fym.filter(m => m.coverage === 'full').length;
+  const nLines = fym.reduce((a, m) => a + Object.values(m.cats).reduce((b, c) => b + c[1], 0), 0);
+  let big = null, bigM = null;
+  fym.forEach(m => m.payees.forEach(p => { if (!p[0].startsWith('—') && (!big || p[2] > big[2])) { big = p; bigM = m; } }));
+  const kv = [fmt$(totalAll), `${nFull} / ${fym.length}`, nLines.toLocaleString(lang==='fr'?'fr-CA':'en-CA'), fmt$(big ? big[2] : 0)];
+  const kpiDefs = [
+    [t.kpi[0][0], lang==='fr' ? `sur les ${fym.length} séances de ${FY}` : `across the ${fym.length} sittings of ${FY}`],
+    [t.kpi[1][0], t.kpi[1][1]],
+    [t.kpi[2][0], t.kpi[2][1]],
+    [t.kpi[3][0], big ? `${((D.gloss[big[0]]||{})[lang]) || big[0]} (${mo(bigM)})` : '']
+  ];
+  document.getElementById('kpis').innerHTML = kpiDefs.map((k, i) =>
+    `<div class="kpi"><div class="v">${kv[i]}</div><div class="l"><strong>${k[0]}</strong><br>${k[1]}</div></div>`).join('');
+
+  renderSelectors(); renderMonthly(); renderMonthChips(); renderCats(); renderCatChips(); renderPayees(); renderCoverage(); renderStatus(); renderInsights(); renderBudget();
+  document.getElementById('gen-date').textContent = D.generated;
+}
+
+function renderSelectors(){
+  const s=document.getElementById('month-select');
+  s.innerHTML=[...FYM(),...D.views].map(m=>`<option value="${m.m}" ${m.m===selMonth?'selected':''}>${mo(m)}</option>`).join('');
+}
+
+function renderStatus(){
+  const m=getMonth(), known=Object.values(m.cats).reduce((a,c)=>a+c[0],0), pct=Math.min(100,100*known/m.total);
+  document.getElementById('coverage-summary').innerHTML=`<strong>${m.coverage==='full'?(lang==='fr'?'Détaillé ligne par ligne':'Itemized line by line'):(lang==='fr'?'Couverture partielle':'Partial coverage')}</strong> · ${fmt$c(known)} / ${fmt$c(m.total)}`;
+  document.getElementById('coverage-bar').style.width=`${pct}%`;
+  document.getElementById('coverage-help').textContent=m.coverage==='full'?(lang==='fr'?'Les catégories couvrent le total adopté.':'Categories cover the adopted total.'):(lang==='fr'?`${pct.toFixed(1)} % du total a été catégorisé; le reste demeure explicitement inconnu.`:`${pct.toFixed(1)}% of the total has been categorized; the remainder is explicitly unknown.`);
+  document.getElementById('evidence-box').innerHTML=`<strong>${mo(m)}</strong><br><span style="color:var(--ink-soft)">${m.session}</span><br><a class="linkbtn" style="margin-top:10px" href="${m.url}" target="_blank" rel="noopener">${lang==='fr'?'Ouvrir le PV officiel':'Open official minutes'} ↗</a>`;
+  const sl=document.getElementById('source-link'); sl.href=m.url; sl.textContent=(lang==='fr'?'Voir le document source':'View source document')+' ↗';
+}
+
+function renderInsights(){
+  const m=getMonth(), full=FYM().filter(x=>x.coverage==='full'), avg=full.reduce((a,x)=>a+x.total,0)/full.length;
+  const top=[...m.payees].filter(p=>!p[0].startsWith('—')).sort((a,b)=>b[2]-a[2])[0], share=top?100*top[2]/m.total:0;
+  const recurring={}; FYM().forEach(x=>x.payees.forEach(p=>{if(!p[0].startsWith('—'))recurring[p[0]]=(recurring[p[0]]||0)+1}));
+  const repeat=Object.entries(recurring).filter(x=>x[1]>=3).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  const items=[];
+  if(m.coverage==='partial') items.push(`<div class="insight warn"><strong>${lang==='fr'?'Prudence':'Caution'}:</strong> ${lang==='fr'?'ce mois est incomplet; les classements et parts sont provisoires.':'this month is incomplete; rankings and shares are provisional.'}</div>`);
+  if(top) items.push(`<div class="insight"><strong>${lang==='fr'?'Concentration (hors paie)':'Concentration (excl. payroll)'}:</strong> ${top[0]} ${lang==='fr'?'représente':'accounts for'} ${share.toFixed(1)} % ${lang==='fr'?'du total adopté ce mois-ci':'of this month’s adopted total'}.</div>`);
+  if(m.isYTD) items.push(`<div class="insight"><strong>${lang==='fr'?'Moyenne par séance':'Average per sitting'}:</strong> ${fmt$(m.total/m.nSittings)} ${lang==='fr'?`sur ${m.nSittings} séances`:`across ${m.nSittings} sittings`}.</div>`);
+  else items.push(`<div class="insight"><strong>${lang==='fr'?'Écart au repère':'Difference from benchmark'}:</strong> ${mo(m)} ${m.total>=avg?(lang==='fr'?'est au-dessus':'is above'):(lang==='fr'?'est sous':'is below')} ${lang==='fr'?'la moyenne des mois entièrement détaillés':'the average of fully itemized months'} (${fmt$(avg)}).</div>`);
+  if(repeat.length) items.push(`<div class="insight"><strong>${lang==='fr'?'Fournisseurs récurrents':'Recurring vendors'}:</strong> ${repeat.map(x=>`${x[0]} (${x[1]})`).join(' · ')}</div>`);
+  document.getElementById('insights').innerHTML=items.join('');
+}
+
+function renderMonthly() {
+  const ctx = document.getElementById('chart-monthly');
+  if (chMonthly) chMonthly.destroy();
+  chMonthly = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: FYM().map(mo),
+      datasets: [{
+        data: FYM().map(m => m.total),
+        backgroundColor: FYM().map(m => m.coverage === 'full' ? getCss('--full') : getCss('--partial')),
+        borderRadius: 5
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false },
+        tooltip: { callbacks: { label: (c) => fmt$c(c.parsed.y) } } },
+      scales: { y: { ticks: { callback: (v) => fmt$(v) } } },
+      onClick: (e, els) => { if (els.length) pickMonth(FYM()[els[0].index].m); }
+    }
+  });
+}
+
+function renderMonthChips() {
+  const t = I18N[lang];
+  document.getElementById('month-chips').innerHTML = [...FYM(),...D.views].map(m =>
+    `<button class="chip ${m.isYTD ? 'ytd' : ''} ${m.m === selMonth ? 'on' : ''}" onclick="pickMonth('${m.m}')">${mo(m)} <span class="cov">· ${m.coverage === 'full' ? t.full : t.partial}</span></button>`).join('');
+}
+function pickMonth(m) { selMonth = m; selCat = null; renderSelectors(); renderMonthChips(); renderCats(); renderCatChips(); renderPayees(); renderStatus(); renderInsights(); }
+
+function renderCats() {
+  const t = I18N[lang], m = getMonth();
+  const entries = Object.entries(m.cats).sort((a, b) => b[1][0] - a[1][0]);
+  const labels = entries.map(e => catName(e[0]));
+  const data = entries.map(e => e[1][0]);
+  const colors = entries.map(e => D.categories[e[0]].color);
+  const known = data.reduce((a, b) => a + b, 0);
+  if (m.coverage !== 'full' && m.total - known > 0.5) {
+    labels.push(D.categories['__rest'][lang]); data.push(+(m.total - known).toFixed(2)); colors.push(D.categories['__rest'].color);
+  }
+  const ctx = document.getElementById('chart-cats');
+  if (chCats) chCats.destroy();
+  const catKeys = entries.map(e => e[0]);
+  chCats = new Chart(ctx, {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data, backgroundColor: colors, borderColor: '#fff', borderWidth: 2 }] },
+    options: {
+      maintainAspectRatio: false, cutout: '55%',
+      onClick: (e, els) => { if (els.length && catKeys[els[0].index]) { pickCat(selCat === catKeys[els[0].index] ? null : catKeys[els[0].index]); } },
+      plugins: {
+        legend: { position: 'right', labels: { boxWidth: 14, font: { family: '-apple-system, sans-serif', size: 12 } } },
+        tooltip: { callbacks: { label: (c) => ` ${c.label}: ${fmt$c(c.parsed)} (${(100 * c.parsed / m.total).toFixed(1)} %)` } }
+      }
+    }
+  });
+  const noteEl = document.getElementById('month-note');
+  const note = lang === 'fr' ? m.note_fr : m.note_en;
+  if (note) { noteEl.style.display = ''; noteEl.innerHTML = `<strong>${t.note_pref}</strong>${note}`; } else noteEl.style.display = 'none';
+}
+
+function renderCatChips() {
+  const t = I18N[lang], m = getMonth();
+  const cats = Object.keys(m.cats);
+  let html = `<button class="chip ${selCat === null ? 'on' : ''}" onclick="pickCat(null)">${t.all_cats}</button>`;
+  html += cats.map(c => `<button class="chip ${selCat === c ? 'on' : ''}" onclick="pickCat('${c.replace(/'/g, "\\'")}')"><span class="dot" style="background:${D.categories[c].color}"></span>${catName(c)}</button>`).join('');
+  document.getElementById('cat-chips').innerHTML = html;
+}
+function pickCat(c) { selCat = c; renderCatChips(); renderPayees(); }
+
+function renderPayees() {
+  const t = I18N[lang], m = getMonth();
+  document.getElementById('payees-sub').textContent = t.payees_sub(mo(m));
+  const showM = !!m.isYTD;
+  document.querySelector('#payee-table thead tr').innerHTML =
+    (showM ? `<th>${lang==='fr'?'Séance':'Sitting'}</th>` : '') +
+    `<th>${t.th_payee}</th><th>${t.th_cat}</th><th class="num col-lines">${t.th_lines}</th><th class="num">${t.th_amount}</th>`;
+  const rows = m.payees.filter(p => (!selCat || p[1] === selCat) && (!searchTerm || (p[0]+' '+catName(p[1])+' '+((D.gloss[p[0]]||{})[lang]||'')).toLowerCase().includes(searchTerm)));
+
+  // Running total for the current selection — the "how much on X over Y" answer.
+  const tot = rows.reduce((a,p)=>a+p[2],0), nl = rows.reduce((a,p)=>a+p[3],0);
+  const scope = selCat ? `${catName(selCat)} — ${mo(m)}` : mo(m);
+  let caveat = '';
+  if (m.coverage !== 'full') caveat = `<span class="caveat">${lang==='fr'
+    ? '⚠︎ Période partiellement détaillée : le vrai total de cette sélection peut être plus élevé.'
+    : '⚠︎ Period only partially itemized: the true total for this selection may be higher.'}</span>`;
+  document.getElementById('cat-summary').innerHTML =
+    `${scope} · <span class="big">${fmt$c(tot)}</span> · ${rows.length} ${lang==='fr'?'entrées':'entries'} · ${nl} ${lang==='fr'?'lignes au PV':'lines in the minutes'}${caveat}`;
+
+  const mById = id => D.months.find(x => x.m === id);
+  document.querySelector('#payee-table tbody').innerHTML = rows.map(p => {
+    const g = D.gloss[p[0]], src = mById(p[4]);
+    return `<tr>
+      ${showM ? `<td class="sitting"><a href="${src.url}" target="_blank" rel="noopener" title="${lang==='fr'?'PV officiel':'Official minutes'}">${lang==='fr'?src.label_fr:src.label_en} ↗</a></td>` : ''}
+      <td><strong>${p[0]}</strong>${g ? `<span class="gloss">${g[lang]}</span>` : ''}</td>
+      <td><span class="dot" style="background:${D.categories[p[1]].color}"></span>${catName(p[1])}</td>
+      <td class="num col-lines">${p[3]}</td>
+      <td class="num"><strong>${fmt$c(p[2])}</strong></td>
+    </tr>`;
+  }).join('') || `<tr><td colspan="5" class="empty">${lang==='fr'?'Aucun résultat':'No results'}</td></tr>`;
+}
+
+function vendorSearch(v){ searchTerm=v.trim().toLowerCase(); renderPayees(); }
+function globalSearch(v){ searchTerm=v.trim().toLowerCase(); document.getElementById('vendor-search').value=v; renderPayees(); if(v.length===1) document.getElementById('payee-table').scrollIntoView({behavior:'smooth',block:'center'}); }
+function downloadCSV(){
+  const match=p=>(!selCat||p[1]===selCat)&&(!searchTerm||(p[0]+' '+catName(p[1])+' '+((D.gloss[p[0]]||{})[lang]||'')).toLowerCase().includes(searchTerm));
+  const rows=[]; FYM().forEach(mm=>mm.payees.filter(match).forEach(p=>rows.push([mo(mm),p[0],((D.gloss[p[0]]||{})[lang]||''),catName(p[1]),p[3],p[2].toFixed(2),mm.coverage==='full'?(lang==='fr'?'Détaillé':'Itemized'):(lang==='fr'?'Partiel':'Partial'),mm.url])));
+  const head=lang==='fr'?['Séance','Fournisseur','Description','Catégorie','Lignes','Montant CAD','Couverture','Source']:['Sitting','Vendor','Description','Category','Lines','Amount CAD','Coverage','Source'];
+  const esc=v=>'"'+String(v).replaceAll('"','""')+'"';
+  const csv='\ufeff'+[head,...rows].map(r=>r.map(esc).join(',')).join('\n');
+  const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'})); a.download='ormstown-depenses-fournisseurs.csv'; a.click(); URL.revokeObjectURL(a.href);
+}
+
+function renderCoverage() {
+  const t = I18N[lang];
+  document.getElementById('meth-list').innerHTML = t.meth.map(x => `<li>${x}</li>`).join('');
+  document.querySelector('#cov-table tbody').innerHTML = FYM().map(m => `<tr>
+    <td>${mo(m)}<span class="gloss">${m.session}</span></td>
+    <td><span class="badge ${m.coverage}">${m.coverage === 'full' ? t.full : t.partial}</span></td>
+    <td class="num">${fmt$c(m.total)}</td>
+    <td><a href="${m.url}" target="_blank" rel="noopener">${t.pv} ↗</a></td>
+  </tr>`).join('');
+}
+
+function renderBudget() {
+  const B = D.budget; if (!B) { document.getElementById('budget-card').style.display = 'none'; return; }
+  const fr = lang === 'fr';
+  const cum = FYM().reduce((a, m) => a + m.total, 0);
+  const pct = 100 * cum / B.expenses_total;
+  document.getElementById('budget-eyebrow').textContent = fr ? `Budget ${B.year} — le repère annuel` : `${B.year} budget — the annual benchmark`;
+  document.getElementById('budget-head').textContent = fr ? 'Dépenses approuvées vs budget adopté' : 'Approved spending vs. adopted budget';
+  document.getElementById('budget-sub').textContent = fr
+    ? `Le conseil a adopté un budget de dépenses de ${fmt$(B.expenses_total)} pour ${B.year} (17 décembre 2025).`
+    : `Council adopted a ${fmt$(B.expenses_total)} expense budget for ${B.year} (December 17, 2025).`;
+  document.getElementById('budget-bar').style.width = Math.min(100, pct) + '%';
+  document.getElementById('budget-pace').innerHTML = fr
+    ? `Les ${FYM().length} séances publiées à ce jour ont approuvé <strong>${fmt$(cum)}</strong>, soit <strong>${pct.toFixed(1)} %</strong> du budget annuel de dépenses.`
+    : `The ${FYM().length} published sittings so far have approved <strong>${fmt$(cum)}</strong> — <strong>${pct.toFixed(1)} %</strong> of the annual expense budget.`;
+  document.getElementById('budget-caveat').innerHTML = fr
+    ? `<strong>Comment lire ce repère —</strong> les listes mensuelles incluent des dépenses d'immobilisation financées par règlement d'emprunt ou subvention, et le budget fonctionne en comptabilité d'exercice : ce n'est donc pas un calcul d'écart, mais un ordre de grandeur. La ventilation officielle par fonction viendra du rapport financier.`
+    : `<strong>How to read this benchmark —</strong> the monthly lists include capital items financed by loan bylaws or grants, and the budget works on an accrual basis: this is an order of magnitude, not a variance calculation. The official breakdown by function will come from the annual financial report.`;
+  document.querySelector('#budget-table thead tr').innerHTML =
+    `<th>${fr?'Fonction (selon le budget)':'Function (as budgeted)'}</th><th class="num">${B.year}</th><th class="num">${B.year-1}</th><th class="num">${fr?'Écart':'Change'}</th>`;
+  document.querySelector('#budget-table tbody').innerHTML = B.functions.map(f => {
+    const d = f.prev ? 100*(f.b-f.prev)/Math.abs(f.prev) : 0;
+    return `<tr><td>${fr?f.fr:f.en}</td><td class="num">${fmt$(f.b)}</td><td class="num">${fmt$(f.prev)}</td><td class="num" style="color:${d>0?'#8a4a16':'#22633a'}">${d>0?'+':''}${d.toFixed(1)} %</td></tr>`;
+  }).join('') + `<tr style="font-weight:700"><td>${fr?'Total des dépenses':'Total expenses'}</td><td class="num">${fmt$(B.expenses_total)}</td><td class="num">${fmt$(B.expenses_total_prev)}</td><td class="num">${(100*(B.expenses_total-B.expenses_total_prev)/B.expenses_total_prev).toFixed(1)} %</td></tr>`;
+  document.getElementById('pti-head').textContent = fr ? 'Grands projets — programme triennal 2026-2028' : 'Major projects — 2026-2028 capital program';
+  document.getElementById('pti-sub').textContent = fr
+    ? 'Les enveloppes approuvées pour les immobilisations. Les décomptes payés (ex. Rang des Botreaux, rénovation de l\'hôtel de ville) se retrouvent dans les listes mensuelles ci-dessus.'
+    : 'The approved capital envelopes. Progress payments (e.g. Rang des Botreaux, town hall renovation) appear in the monthly lists above.';
+  document.querySelector('#pti-table thead tr').innerHTML =
+    `<th>${fr?'Projet':'Project'}</th><th class="num">2026</th><th class="num">Total 2026-2028</th><th>${fr?'Financement prévu':'Planned funding'}</th>`;
+  document.querySelector('#pti-table tbody').innerHTML = B.pti.map(p =>
+    `<tr><td>${fr?p.fr:p.en}${p.note_fr?`<span class="gloss">⚠︎ ${fr?p.note_fr:p.note_en}</span>`:''}</td><td class="num">${p.y2026!=null?fmt$(p.y2026):'—'}</td><td class="num">${fmt$(p.total)}</td><td class="gloss" style="font-size:.8rem">${p.fund}</td></tr>`).join('');
+  document.getElementById('budget-src').innerHTML =
+    `${fr?'Sources officielles':'Official sources'}: <a href="${B.url}" target="_blank" rel="noopener">${fr?'Feuillet budgétaire':'Budget leaflet'} ${B.year} ↗</a> · <a href="${B.url_pti}" target="_blank" rel="noopener">PTI 2026-2028 ↗</a>`;
+}
+
+function getCss(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+buildAggregates();
+setLang(lang);
+</script>
+</body>
+</html>
