@@ -183,13 +183,25 @@
     x.beginPath(); x.moveTo(-2, 10); x.lineTo(10, -2); x.stroke();
     return ctx.createPattern(c, 'repeat');
   }
-  function killChart(name) { if (charts[name]) { charts[name].destroy(); charts[name] = null; } }
+  // Destroy both our reference AND whatever Chart.js has attached to the
+  // canvas — if a rebuild ever failed halfway, the canvas would otherwise
+  // stay "in use" and every later rebuild would fail too (blank chart).
+  function killChart(name, canvasId) {
+    if (charts[name]) { try { charts[name].destroy(); } catch (e) {} charts[name] = null; }
+    if (typeof Chart !== 'undefined' && Chart.getChart) {
+      var attached = Chart.getChart($(canvasId));
+      if (attached) { try { attached.destroy(); } catch (e) {} }
+    }
+  }
+  // Never rebuild charts from inside their own click handlers: destroying a
+  // chart while it is still dispatching its event corrupts it. Defer instead.
+  function deferred(fn) { return function () { var args = arguments; setTimeout(function () { fn.apply(null, args); }, 0); }; }
   function chartFail(figId) {
     var cap = $(figId); if (cap) cap.textContent = T().chartFail;
   }
 
   function drawTrend() {
-    killChart('trend');
+    killChart('trend', 'chart-trend');
     if (!chartDefaults()) { chartFail('trend-legend'); return; }
     try {
       var ctx = $('chart-trend').getContext('2d');
@@ -210,7 +222,7 @@
           maintainAspectRatio: false,
           scales: { y: { beginAtZero: true, ticks: { callback: function (v) { return money0(v); } } } },
           plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return money(c.parsed.y); } } } },
-          onClick: function (e, els) { if (els.length) toggleMonth(MONTHS[els[0].index].m); }
+          onClick: function (e, els) { if (els.length) deferred(toggleMonth)(MONTHS[els[0].index].m); }
         }
       });
     } catch (e) { chartFail('trend-legend'); }
@@ -230,7 +242,7 @@
       .sort(function (a, b) { return b.amt - a.amt; });
   }
   function drawCats(aggs, restAmt) {
-    killChart('cats');
+    killChart('cats', 'chart-cats');
     if (!chartDefaults()) { chartFail('cats-caption'); return; }
     try {
       var ctx = $('chart-cats').getContext('2d');
@@ -252,7 +264,7 @@
           onClick: function (e, els) {
             if (!els.length) return;
             var a = aggs[els[0].index]; if (!a) return;
-            toggleCat(SLUGS[a.key]);
+            deferred(toggleCat)(SLUGS[a.key]);
           }
         }
       });
@@ -261,7 +273,7 @@
 
   var budgetSort = 'amount';
   function drawBudget() {
-    killChart('budget');
+    killChart('budget', 'chart-budget');
     var B = D.budget;
     var fns = B.functions.slice().sort(function (a, b) {
       if (budgetSort === 'change') return (b.b - b.prev) - (a.b - a.prev);
@@ -508,25 +520,6 @@
     // controls reflect state (they may have been changed by URL/back navigation)
     syncPills();
 
-    // tokens: one per pressed category, removable
-    var tokens = state.categories.map(function (slug) {
-      return { label: tpl(t.filterCat, { name: catName(KEY_BY_SLUG[slug]) }), slug: slug };
-    });
-    var tk = $('tokens');
-    if (tokens.length) {
-      tk.hidden = false;
-      tk.innerHTML = '<span>' + t.activeFilters + '</span>' + tokens.map(function (x, i) {
-        return '<span class="token">' + x.label + '<button type="button" data-tk="' + i + '" aria-label="' + tpl(t.removeFilter, { name: x.label }) + '">×</button></span>';
-      }).join('') + '<button type="button" class="btn secondary" id="clear-all" style="min-height:44px">' + t.clearAll + '</button>';
-      tk.querySelectorAll('button[data-tk]').forEach(function (b) {
-        b.addEventListener('click', function () {
-          toggleCat(tokens[+b.getAttribute('data-tk')].slug);
-          $('f-reset').focus();
-        });
-      });
-      $('clear-all').addEventListener('click', function () { setState({ categories: [] }, { push: true }); });
-    } else { tk.hidden = true; tk.innerHTML = ''; }
-
     var rows = currentRows(sel);
     var totSel = Math.round(rows.reduce(function (a, r) { return a + r.amt; }, 0) * 100) / 100;
     var linesSel = rows.reduce(function (a, r) { return a + r.lines; }, 0);
@@ -562,7 +555,7 @@
 
     $('src-link').href = sel.url;
     $('src-link').textContent = t.viewSource;
-    renderPrintMeta(tokens, sel);
+    renderPrintMeta(sel);
   }
 
   function renderResults(rows, sel) {
@@ -680,9 +673,10 @@
       D.generated
     ];
   }
-  function renderPrintMeta(tokens, sel) {
+  function renderPrintMeta(sel) {
     var t = T();
-    var f = selectionLabel(sel) + (tokens && tokens.length ? ' · ' + tokens.map(function (x) { return x.label; }).join(' · ') : ' · ' + t.printNoFilters);
+    var cats = state.categories.map(function (s) { return catName(KEY_BY_SLUG[s]); }).join(' + ');
+    var f = selectionLabel(sel) + ' · ' + (cats || t.printNoFilters);
     $('print-meta').innerHTML = '<strong>' + t.printFilters + '</strong> ' + f +
       ' · ' + tpl(t.updated, { date: dateLong(D.generated) }) +
       '<br>' + $('acct-note').textContent;

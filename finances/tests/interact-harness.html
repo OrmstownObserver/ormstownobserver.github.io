@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- Interaction regression check: repeatedly toggles category/month pills
+     AND clicks the category chart canvas (the sequence that once killed the
+     chart), then verifies a live chart is still attached to each canvas.
+     Serve the repo root and open this page; result lands in the title and
+     the status line. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>finances — interaction harness</title>
+<style>body{font:14px -apple-system,sans-serif;margin:12px}iframe{border:2px solid #333;width:1200px;height:800px}</style>
+</head>
+<body>
+<p id="status">running…</p>
+<iframe id="f" src="/finances/?lang=fr"></iframe>
+<script>
+var f = document.getElementById('f');
+var statusEl = document.getElementById('status');
+function report(msg, ok) {
+  statusEl.textContent = msg;
+  statusEl.style.color = ok ? '#1a7f4b' : '#b3261e';
+  document.title = 'interact: ' + (ok ? 'PASS' : 'FAIL') + ' — ' + msg;
+}
+f.onload = function () {
+  setTimeout(function () {
+    try {
+      var w = f.contentWindow, d = f.contentDocument;
+      function clickCanvas(id, x, y) {
+        var c = d.getElementById(id), r = c.getBoundingClientRect();
+        ['mousedown', 'mouseup', 'click'].forEach(function (type) {
+          c.dispatchEvent(new w.MouseEvent(type, { bubbles: true, clientX: r.left + x, clientY: r.top + y }));
+        });
+      }
+      function pill(group, n) {
+        var b = d.querySelectorAll('#' + group + ' button')[n];
+        if (b) b.click();
+      }
+      var step = 0;
+      var steps = [
+        function () { pill('category-group', 2); },              // toggle a category pill
+        function () { clickCanvas('chart-cats', 120, 40); },     // click top bar of the category chart
+        function () { pill('period-group', 2); },                // toggle a month
+        function () { clickCanvas('chart-cats', 120, 80); },     // click another bar
+        function () { clickCanvas('chart-trend', 200, 120); },   // click a trend bar
+        function () { pill('category-group', 0); },              // All
+        function () { clickCanvas('chart-cats', 120, 40); },     // click again after reset
+        function () { pill('period-group', 0); },                // YTD
+        function () { clickCanvas('chart-cats', 140, 60); },
+        function () { clickCanvas('chart-cats', 140, 60); }      // toggle same bar twice
+      ];
+      var timer = setInterval(function () {
+        if (step < steps.length) { steps[step++](); return; }
+        clearInterval(timer);
+        setTimeout(function () {
+          var Chart = w.Chart;
+          var catsAlive = Chart && Chart.getChart(d.getElementById('chart-cats'));
+          var trendAlive = Chart && Chart.getChart(d.getElementById('chart-trend'));
+          var listRows = d.querySelectorAll('#cat-list li').length;
+          var ok = !!catsAlive && !!trendAlive && listRows > 0;
+          report('after ' + steps.length + ' interactions — category chart ' + (catsAlive ? 'alive' : 'DEAD') +
+            ', trend chart ' + (trendAlive ? 'alive' : 'DEAD') + ', ' + listRows + ' list rows', ok);
+        }, 700);
+      }, 350);
+    } catch (e) { report('harness error: ' + e.message, false); }
+  }, 2500);
+};
+</script>
+</body>
+</html>

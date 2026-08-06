@@ -25,6 +25,11 @@ node --check finances/app.js      # syntax
 Responsive check: serve the repo root (`python3 -m http.server 8000`) and open
 `/finances/tests/viewport-harness.html` — it renders the page at 320/375/390/768/1024/1440 px
 and prints PASS/FAIL for page-level horizontal overflow over each frame.
+
+Interaction check: `/finances/tests/interact-harness.html` toggles pills and clicks the
+chart canvases repeatedly, then verifies both charts are still alive (regression guard
+for the destroy-during-chart-click bug). Charts must never be rebuilt synchronously from
+inside their own onClick — state changes there go through `deferred()`.
 There is no build step; the site is served as-is by GitHub Pages.
 
 ## Accounting rule (do not regress)
