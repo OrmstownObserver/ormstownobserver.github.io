@@ -73,10 +73,18 @@
       url: 'https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal',
       payees: MONTHS.reduce(function (a, m) { return a.concat(m.payees); }, [])
     };
-    PERIODS = D.months.slice().concat([YTD]);
+    // The period picker offers exactly the year-to-date view plus each
+    // sitting of the current fiscal year (older sittings stay in the
+    // coverage table and the full CSV).
+    PERIODS = [YTD].concat(MONTHS);
   }
   function periodObj() {
-    return PERIODS.filter(function (p) { return p.m === state.period; })[0] || LAST_FULL;
+    return PERIODS.filter(function (p) { return p.m === state.period; })[0] || YTD;
+  }
+  function periodBtnLabel(p) {
+    if (p.isYTD) return tpl(T().ytdShort, { year: FY });
+    var s = monthShort(p.m);
+    return s.charAt(0).toUpperCase() + s.slice(1);
   }
   function periodLabel(p) {
     if (p.isYTD) return tpl(T().ytdLabel, { year: FY });
@@ -195,9 +203,13 @@
     if (!chartDefaults()) { chartFail('cats-caption'); return; }
     try {
       var ctx = $('chart-cats').getContext('2d');
+      var selKey = state.category ? KEY_BY_SLUG[state.category] : null;
       var labels = aggs.map(function (a) { return catName(a.key); });
       var data = aggs.map(function (a) { return a.amt; });
-      var colors = aggs.map(function (a) { return (D.categories[a.key] || {}).color || '#888'; });
+      var colors = aggs.map(function (a) {
+        var c = (D.categories[a.key] || {}).color || '#888888';
+        return (selKey && a.key !== selKey) ? c + '4d' : c; // dim unselected to keep chart and list in sync
+      });
       if (restAmt > 0.5) { labels.push(D.categories.__rest[state.lang]); data.push(restAmt); colors.push(D.categories.__rest.color); }
       charts.cats = new Chart(ctx, {
         type: 'bar',
@@ -374,10 +386,10 @@
 
   function buildControls() {
     var t = T();
-    $('f-period').innerHTML = PERIODS.map(function (p) {
-      return '<option value="' + p.m + '">' + periodLabel(p) + '</option>';
+    $('l-period').textContent = t.periodLabel;
+    $('period-group').innerHTML = PERIODS.map(function (p) {
+      return '<button type="button" data-period="' + p.m + '" aria-pressed="' + (p.m === state.period) + '">' + periodBtnLabel(p) + '</button>';
     }).join('');
-    $('f-period').value = state.period;
     var cats = Object.keys(SLUGS);
     $('f-category').innerHTML = '<option value="">' + t.allCategories + '</option>' + cats.map(function (k) {
       return '<option value="' + SLUGS[k] + '">' + catName(k) + '</option>';
@@ -449,7 +461,9 @@
   function renderExplore() {
     var t = T(), p = periodObj();
     // controls reflect state (they may have been changed by URL/back navigation)
-    $('f-period').value = state.period;
+    document.querySelectorAll('#period-group button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-period') === state.period));
+    });
     $('f-category').value = state.category || '';
 
     // tokens
@@ -487,14 +501,15 @@
     var restAmt = (p.coverage !== 'full' && !p.isYTD) ? Math.max(0, Math.round((p.total - knownAmt) * 100) / 100) : 0;
     drawCats(allAggs, restAmt);
     $('cat-list').innerHTML = allAggs.map(function (a) {
-      var selected = state.category === SLUGS[a.key];
-      return '<li' + (selected ? ' style="background:var(--accent-soft)"' : '') + '>' +
+      var slug = SLUGS[a.key];
+      var selected = state.category === slug;
+      return '<li><button type="button" class="catbtn" data-cat="' + slug + '" aria-pressed="' + selected + '"><span class="rowline">' +
         '<span class="dot" style="background:' + ((D.categories[a.key] || {}).color || '#888') + '"></span>' +
         '<span class="nm">' + catName(a.key) + '</span>' +
         '<span class="share">' + pct(a.amt / p.total) + '</span>' +
-        '<span class="num" style="font-weight:700">' + money(a.amt) + '</span></li>';
+        '<span class="num" style="font-weight:700">' + money(a.amt) + '</span></span></button></li>';
     }).join('') + (restAmt > 0.5
-      ? '<li><span class="dot" style="background:' + D.categories.__rest.color + '"></span><span class="nm">' + D.categories.__rest[state.lang] + '</span><span class="share">' + pct(restAmt / p.total) + '</span><span class="num" style="font-weight:700">' + money(restAmt) + '</span></li>'
+      ? '<li><span class="rowline"><span class="dot" style="background:' + D.categories.__rest.color + '"></span><span class="nm">' + D.categories.__rest[state.lang] + '</span><span class="share">' + pct(restAmt / p.total) + '</span><span class="num" style="font-weight:700">' + money(restAmt) + '</span></span></li>'
       : '');
 
     renderResults(rows);
@@ -631,12 +646,22 @@
   // ---------- reset / events ----------
   function resetFilters() {
     setState({ category: null, period: YTD.m }, { push: true });
-    $('f-period').focus();
+    var first = document.querySelector('#period-group button');
+    if (first) first.focus();
   }
   function bindEvents() {
     $('btn-fr').addEventListener('click', function () { setState({ lang: 'fr' }, { push: true }); });
     $('btn-en').addEventListener('click', function () { setState({ lang: 'en' }, { push: true }); });
-    $('f-period').addEventListener('change', function () { setState({ period: this.value }, { push: true }); });
+    $('period-group').addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-period]');
+      if (b) setState({ period: b.getAttribute('data-period') }, { push: true });
+    });
+    $('cat-list').addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-cat]');
+      if (!b) return;
+      var slug = b.getAttribute('data-cat');
+      setState({ category: state.category === slug ? null : slug }, { push: true });
+    });
     $('f-category').addEventListener('change', function () { setState({ category: this.value || null }, { push: true }); });
     $('f-reset').addEventListener('click', resetFilters);
     $('b-sort').addEventListener('change', function () { budgetSort = this.value; drawBudget(); });

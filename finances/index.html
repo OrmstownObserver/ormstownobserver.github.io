@@ -83,7 +83,12 @@ tbody th[scope=row]{font-size:.88rem;text-transform:none;letter-spacing:0;color:
 
 /* ---------- Explore controls ---------- */
 .controls{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px}
-.field label{display:block;font:600 .74rem/1.4 -apple-system,sans-serif;color:var(--ink);margin-bottom:3px}
+.field label,.field .field-label{display:block;font:600 .74rem/1.4 -apple-system,sans-serif;color:var(--ink);margin-bottom:3px}
+.controls .field.period{grid-column:1/-1}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{min-height:44px;padding:0 16px;border:1px solid var(--line);background:var(--card);border-radius:999px;font:600 .84rem -apple-system,sans-serif;color:var(--ink-soft);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.seg button:hover{border-color:var(--accent)}
 .field select,.field input{width:100%;min-height:44px;border:1px solid var(--line);border-radius:7px;background:#fff;color:var(--ink);padding:0 10px;font:.9rem -apple-system,sans-serif}
 .btn{min-height:44px;padding:0 16px;border-radius:7px;border:1px solid var(--accent);background:var(--accent);color:#fff;font:700 .84rem -apple-system,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
 .btn.secondary{background:var(--card);color:var(--accent)}
@@ -96,7 +101,11 @@ tbody th[scope=row]{font-size:.88rem;text-transform:none;letter-spacing:0;color:
 .summary .big{font-weight:800;color:var(--accent);font-size:1.1rem}
 .explore-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px;align-items:start}
 .cat-list{list-style:none;font-family:-apple-system,sans-serif;font-size:.86rem}
-.cat-list li{display:flex;align-items:baseline;gap:8px;padding:7px 2px;border-bottom:1px solid var(--line)}
+.cat-list li{display:block;border-bottom:1px solid var(--line)}
+.cat-list .rowline{display:flex;align-items:baseline;gap:8px;width:100%;padding:10px 6px;min-height:44px}
+.catbtn{background:none;border:0;cursor:pointer;font:inherit;font-family:-apple-system,sans-serif;font-size:.86rem;color:var(--ink);text-align:left;width:100%}
+.catbtn:hover .rowline{background:var(--paper-dark)}
+.catbtn[aria-pressed="true"] .rowline{background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
 .cat-list .nm{flex:1;min-width:0}
 .cat-list .share{color:var(--ink-soft);font-size:.78rem}
 .results-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
@@ -207,7 +216,7 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);font:.8
     <p class="section-sub" id="explore-sub"></p>
 
     <div class="controls sans" id="controls">
-      <div class="field"><label for="f-period" id="l-period"></label><select id="f-period"></select></div>
+      <div class="field period"><span class="field-label" id="l-period"></span><div class="seg" id="period-group" role="group" aria-labelledby="l-period"></div></div>
       <div class="field"><label for="f-category" id="l-category"></label><select id="f-category"></select></div>
       <button type="button" class="btn secondary" id="f-reset"></button>
     </div>
