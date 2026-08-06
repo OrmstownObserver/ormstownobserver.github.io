@@ -17,6 +17,12 @@
 3. Update the "June minutes are being added" status line in `i18n.js` (`status` key, both languages).
 4. Run the tests (below) — they fail loudly if any itemized month stops reconciling.
 
+## Cache busting (do not skip)
+`index.html` references `i18n.js`, `spending-data.js` and `app.js` with a `?v=` query
+string. **Bump the version in all three tags whenever any of those files change** —
+GitHub Pages caches for ~10 minutes and browsers longer, and a stale script paired
+with a fresh page (or vice versa) renders without charts.
+
 ## Tests / checks
 ```bash
 node finances/tests/validate.js   # data reconciliation, schema, i18n parity, budget sums
