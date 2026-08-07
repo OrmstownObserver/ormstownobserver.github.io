@@ -171,7 +171,13 @@
   var charts = {};
   function chartDefaults() {
     if (typeof Chart === 'undefined') return false;
-    Chart.defaults.animation = REDUCED ? false : { duration: 350 };
+    if (REDUCED) {
+      Chart.defaults.animation = false;
+    } else if (Chart.defaults.animation && typeof Chart.defaults.animation === 'object') {
+      // Mutate, never replace: assigning a bare {duration} object wipes the
+      // easing config and Chart.js later throws "this._fn is not a function".
+      Chart.defaults.animation.duration = 350;
+    }
     Chart.defaults.font.family = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif";
     return true;
   }
@@ -200,40 +206,45 @@
     var cap = $(figId); if (cap) cap.textContent = T().chartFail;
   }
 
+  // Charts are created ONCE per canvas and updated in place afterwards —
+  // destroy/recreate cycles proved fragile (a failed rebuild left the canvas
+  // dead). If an update ever throws, the chart is torn down and recreated
+  // fresh on the next render (self-healing).
   function drawTrend() {
-    killChart('trend', 'chart-trend');
     if (!chartDefaults()) { chartFail('trend-legend'); return; }
+    var accent = '#2c5f7c', ink = '#1f2733';
+    var labels = MONTHS.map(function (m) { return monthShort(m.m) + (m.coverage !== 'full' ? ' *' : ''); });
+    var borderColor = MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? ink : 'transparent'; });
+    var borderWidth = MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? 3 : 0; });
     try {
-      var ctx = $('chart-trend').getContext('2d');
-      var accent = '#2c5f7c', ink = '#1f2733';
-      charts.trend = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: MONTHS.map(function (m) { return monthShort(m.m) + (m.coverage !== 'full' ? ' *' : ''); }),
-          datasets: [{
-            data: MONTHS.map(function (m) { return m.total; }),
-            backgroundColor: MONTHS.map(function (m) { return m.coverage === 'full' ? accent : hatch(ctx, accent); }),
-            borderColor: MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? ink : 'transparent'; }),
-            borderWidth: MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? 3 : 0; }),
-            borderRadius: 3
-          }]
-        },
-        options: {
-          maintainAspectRatio: false,
-          scales: { y: { beginAtZero: true, ticks: { callback: function (v) { return money0(v); } } } },
-          plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return money(c.parsed.y); } } } },
-          onClick: function (e, els) { if (els.length) deferred(toggleMonth)(MONTHS[els[0].index].m); }
-        }
-      });
-    } catch (e) { chartFail('trend-legend'); }
+      if (!charts.trend) {
+        var ctx = $('chart-trend').getContext('2d');
+        charts.trend = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: MONTHS.map(function (m) { return m.total; }),
+              backgroundColor: MONTHS.map(function (m) { return m.coverage === 'full' ? accent : hatch(ctx, accent); }),
+              borderColor: borderColor, borderWidth: borderWidth, borderRadius: 3
+            }]
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: { y: { beginAtZero: true, ticks: { callback: function (v) { return money0(v); } } } },
+            plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return money(c.parsed.y); } } } },
+            onClick: function (e, els) { if (els.length) deferred(toggleMonth)(MONTHS[els[0].index].m); }
+          }
+        });
+      } else {
+        charts.trend.data.labels = labels;
+        charts.trend.data.datasets[0].borderColor = borderColor;
+        charts.trend.data.datasets[0].borderWidth = borderWidth;
+        charts.trend.update(REDUCED ? 'none' : undefined);
+      }
+    } catch (e) { killChart('trend', 'chart-trend'); chartFail('trend-legend'); }
   }
-  function updateTrend() {
-    if (!charts.trend) { drawTrend(); return; }
-    var ink = '#1f2733';
-    charts.trend.data.datasets[0].borderColor = MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? ink : 'transparent'; });
-    charts.trend.data.datasets[0].borderWidth = MONTHS.map(function (m) { return state.months.indexOf(m.m) >= 0 ? 3 : 0; });
-    charts.trend.update(REDUCED ? 'none' : undefined);
-  }
+  function updateTrend() { drawTrend(); }
 
   function catAggregates(rows) {
     var by = {};
@@ -241,39 +252,46 @@
     return Object.keys(by).map(function (k) { return { key: k, amt: Math.round(by[k].amt * 100) / 100, lines: by[k].lines, n: by[k].n }; })
       .sort(function (a, b) { return b.amt - a.amt; });
   }
+  var CUR_AGGS = [];
   function drawCats(aggs, restAmt) {
-    killChart('cats', 'chart-cats');
     if (!chartDefaults()) { chartFail('cats-caption'); return; }
+    CUR_AGGS = aggs;
+    var selKeys = state.categories.map(function (s) { return KEY_BY_SLUG[s]; });
+    var labels = aggs.map(function (a) { return catName(a.key); });
+    var data = aggs.map(function (a) { return a.amt; });
+    var colors = aggs.map(function (a) {
+      var c = (D.categories[a.key] || {}).color || '#888888';
+      return (selKeys.length && selKeys.indexOf(a.key) < 0) ? c + '4d' : c; // dim unselected to keep chart and list in sync
+    });
+    if (restAmt > 0.5) { labels.push(D.categories.__rest[state.lang]); data.push(restAmt); colors.push(D.categories.__rest.color); }
     try {
-      var ctx = $('chart-cats').getContext('2d');
-      var selKeys = state.categories.map(function (s) { return KEY_BY_SLUG[s]; });
-      var labels = aggs.map(function (a) { return catName(a.key); });
-      var data = aggs.map(function (a) { return a.amt; });
-      var colors = aggs.map(function (a) {
-        var c = (D.categories[a.key] || {}).color || '#888888';
-        return (selKeys.length && selKeys.indexOf(a.key) < 0) ? c + '4d' : c; // dim unselected to keep chart and list in sync
-      });
-      if (restAmt > 0.5) { labels.push(D.categories.__rest[state.lang]); data.push(restAmt); colors.push(D.categories.__rest.color); }
-      charts.cats = new Chart(ctx, {
-        type: 'bar',
-        data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderRadius: 3 }] },
-        options: {
-          indexAxis: 'y', maintainAspectRatio: false,
-          scales: { x: { beginAtZero: true, ticks: { callback: function (v) { return money0(v); } } } },
-          plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return money(c.parsed.x); } } } },
-          onClick: function (e, els) {
-            if (!els.length) return;
-            var a = aggs[els[0].index]; if (!a) return;
-            deferred(toggleCat)(SLUGS[a.key]);
+      if (!charts.cats) {
+        var ctx = $('chart-cats').getContext('2d');
+        charts.cats = new Chart(ctx, {
+          type: 'bar',
+          data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderRadius: 3 }] },
+          options: {
+            indexAxis: 'y', maintainAspectRatio: false,
+            scales: { x: { beginAtZero: true, ticks: { callback: function (v) { return money0(v); } } } },
+            plugins: { legend: { display: false }, tooltip: { callbacks: { label: function (c) { return money(c.parsed.x); } } } },
+            onClick: function (e, els) {
+              if (!els.length) return;
+              var a = CUR_AGGS[els[0].index]; if (!a) return;
+              deferred(toggleCat)(SLUGS[a.key]);
+            }
           }
-        }
-      });
-    } catch (e) { chartFail('cats-caption'); }
+        });
+      } else {
+        charts.cats.data.labels = labels;
+        charts.cats.data.datasets[0].data = data;
+        charts.cats.data.datasets[0].backgroundColor = colors;
+        charts.cats.update(REDUCED ? 'none' : undefined);
+      }
+    } catch (e) { killChart('cats', 'chart-cats'); chartFail('cats-caption'); }
   }
 
   var budgetSort = 'amount';
   function drawBudget() {
-    killChart('budget', 'chart-budget');
     var B = D.budget;
     var fns = B.functions.slice().sort(function (a, b) {
       if (budgetSort === 'change') return (b.b - b.prev) - (a.b - a.prev);
@@ -281,25 +299,35 @@
     });
     buildBudgetTable(fns);
     if (!chartDefaults()) { chartFail('budget-figcap'); return; }
+    var labels = fns.map(function (f) { return state.lang === 'fr' ? f.fr : f.en; });
+    var cur = fns.map(function (f) { return f.b; });
+    var prev = fns.map(function (f) { return f.prev; });
     try {
-      var ctx = $('chart-budget').getContext('2d');
-      charts.budget = new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: fns.map(function (f) { return state.lang === 'fr' ? f.fr : f.en; }),
-          datasets: [
-            { label: String(B.year), data: fns.map(function (f) { return f.b; }), backgroundColor: '#2c5f7c', borderRadius: 2 },
-            { label: String(B.year - 1), data: fns.map(function (f) { return f.prev; }), backgroundColor: '#a8c4d4', borderRadius: 2 }
-          ]
-        },
-        options: {
-          indexAxis: 'y', maintainAspectRatio: false,
-          scales: { x: { ticks: { callback: function (v) { return money0(v); } } } },
-          plugins: { tooltip: { callbacks: { label: function (c) { return c.dataset.label + ' : ' + money0(c.parsed.x); } } } }
-        }
-      });
+      if (!charts.budget) {
+        var ctx = $('chart-budget').getContext('2d');
+        charts.budget = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [
+              { label: String(B.year), data: cur, backgroundColor: '#2c5f7c', borderRadius: 2 },
+              { label: String(B.year - 1), data: prev, backgroundColor: '#a8c4d4', borderRadius: 2 }
+            ]
+          },
+          options: {
+            indexAxis: 'y', maintainAspectRatio: false,
+            scales: { x: { ticks: { callback: function (v) { return money0(v); } } } },
+            plugins: { tooltip: { callbacks: { label: function (c) { return c.dataset.label + ' : ' + money0(c.parsed.x); } } } }
+          }
+        });
+      } else {
+        charts.budget.data.labels = labels;
+        charts.budget.data.datasets[0].data = cur;
+        charts.budget.data.datasets[1].data = prev;
+        charts.budget.update(REDUCED ? 'none' : undefined);
+      }
       $('budget-figcap').textContent = '';
-    } catch (e) { chartFail('budget-figcap'); }
+    } catch (e) { killChart('budget', 'chart-budget'); chartFail('budget-figcap'); }
   }
 
   // ---------- rendering: chrome (language-dependent, filter-independent) ----------

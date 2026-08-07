@@ -1,66 +1,76 @@
 <!DOCTYPE html>
-<!-- Interaction regression check: repeatedly toggles category/month pills
-     AND clicks the category chart canvas (the sequence that once killed the
-     chart), then verifies a live chart is still attached to each canvas.
-     Serve the repo root and open this page; result lands in the title and
-     the status line. -->
+<!-- Interaction regression check: clicks EVERY category pill and EVERY month
+     pill (plus chart-canvas clicks), verifying after each step that the
+     category chart is alive and holds data. Serve the repo root and open
+     this page; the verdict lands in the title and the status line. -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>finances — interaction harness</title>
-<style>body{font:14px -apple-system,sans-serif;margin:12px}iframe{border:2px solid #333;width:1200px;height:800px}</style>
+<style>body{font:14px -apple-system,sans-serif;margin:12px}iframe{border:2px solid #333;width:1200px;height:800px}#log{white-space:pre-wrap;font-size:12px;color:#555}</style>
 </head>
 <body>
 <p id="status">running…</p>
+<div id="log"></div>
 <iframe id="f" src="/finances/?lang=fr"></iframe>
 <script>
 var f = document.getElementById('f');
 var statusEl = document.getElementById('status');
+var logEl = document.getElementById('log');
+var pageErrors = [];
 function report(msg, ok) {
   statusEl.textContent = msg;
   statusEl.style.color = ok ? '#1a7f4b' : '#b3261e';
   document.title = 'interact: ' + (ok ? 'PASS' : 'FAIL') + ' — ' + msg;
 }
 f.onload = function () {
+  var w = f.contentWindow, d = f.contentDocument;
+  w.addEventListener('error', function (e) { pageErrors.push(e.message); });
   setTimeout(function () {
     try {
-      var w = f.contentWindow, d = f.contentDocument;
       function clickCanvas(id, x, y) {
         var c = d.getElementById(id), r = c.getBoundingClientRect();
         ['mousedown', 'mouseup', 'click'].forEach(function (type) {
           c.dispatchEvent(new w.MouseEvent(type, { bubbles: true, clientX: r.left + x, clientY: r.top + y }));
         });
       }
-      function pill(group, n) {
-        var b = d.querySelectorAll('#' + group + ' button')[n];
-        if (b) b.click();
-      }
-      var step = 0;
-      var steps = [
-        function () { pill('category-group', 2); },              // toggle a category pill
-        function () { clickCanvas('chart-cats', 120, 40); },     // click top bar of the category chart
-        function () { pill('period-group', 2); },                // toggle a month
-        function () { clickCanvas('chart-cats', 120, 80); },     // click another bar
-        function () { clickCanvas('chart-trend', 200, 120); },   // click a trend bar
-        function () { pill('category-group', 0); },              // All
-        function () { clickCanvas('chart-cats', 120, 40); },     // click again after reset
-        function () { pill('period-group', 0); },                // YTD
-        function () { clickCanvas('chart-cats', 140, 60); },
-        function () { clickCanvas('chart-cats', 140, 60); }      // toggle same bar twice
-      ];
+      // Build the full step list: every category pill, every month pill,
+      // interleaved with chart clicks, then reset.
+      var steps = [];
+      d.querySelectorAll('#category-group button').forEach(function (b, i) {
+        steps.push({ name: 'cat pill: ' + b.textContent.trim(), fn: function () { b.click(); } });
+        if (i % 3 === 1) steps.push({ name: 'canvas click after ' + b.textContent.trim(), fn: function () { clickCanvas('chart-cats', 140, 60); } });
+      });
+      steps.push({ name: 'cat all', fn: function () { d.querySelector('#category-group button').click(); } });
+      d.querySelectorAll('#period-group button').forEach(function (b) {
+        steps.push({ name: 'month pill: ' + b.textContent.trim(), fn: function () { b.click(); } });
+      });
+      steps.push({ name: 'trend canvas click', fn: function () { clickCanvas('chart-trend', 200, 120); } });
+      steps.push({ name: 'reset', fn: function () { d.getElementById('f-reset').click(); } });
+
+      var i = 0, failures = [];
       var timer = setInterval(function () {
-        if (step < steps.length) { steps[step++](); return; }
-        clearInterval(timer);
-        setTimeout(function () {
-          var Chart = w.Chart;
-          var catsAlive = Chart && Chart.getChart(d.getElementById('chart-cats'));
-          var trendAlive = Chart && Chart.getChart(d.getElementById('chart-trend'));
-          var listRows = d.querySelectorAll('#cat-list li').length;
-          var ok = !!catsAlive && !!trendAlive && listRows > 0;
-          report('after ' + steps.length + ' interactions — category chart ' + (catsAlive ? 'alive' : 'DEAD') +
-            ', trend chart ' + (trendAlive ? 'alive' : 'DEAD') + ', ' + listRows + ' list rows', ok);
-        }, 700);
-      }, 350);
+        // check state AFTER the previous step settled
+        if (i > 0) {
+          var prev = steps[i - 1];
+          var ch = w.Chart && w.Chart.getChart(d.getElementById('chart-cats'));
+          var n = ch && ch.data && ch.data.datasets[0].data.length;
+          var ok = !!ch && n > 0;
+          logEl.textContent += (ok ? 'ok   ' : 'FAIL ') + prev.name + ' (chart ' + (ch ? 'alive, ' + n + ' bars' : 'DEAD') + ')\n';
+          if (!ok) failures.push(prev.name);
+        }
+        if (i >= steps.length) {
+          clearInterval(timer);
+          var trend = w.Chart && w.Chart.getChart(d.getElementById('chart-trend'));
+          if (!trend) failures.push('trend chart dead at end');
+          if (pageErrors.length) failures.push('page errors: ' + pageErrors.join(' | '));
+          report(failures.length ? failures.length + ' failure(s): ' + failures.join('; ')
+            : 'all ' + steps.length + ' pill/canvas steps kept the charts alive', failures.length === 0);
+          return;
+        }
+        try { steps[i].fn(); } catch (e) { failures.push(steps[i].name + ' threw ' + e.message); }
+        i++;
+      }, 320);
     } catch (e) { report('harness error: ' + e.message, false); }
   }, 2500);
 };
