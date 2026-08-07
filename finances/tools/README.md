@@ -14,8 +14,12 @@
    add the month + entries to `spending-data.js` (named payees ≥ ~$1,000, smaller lines
    grouped per category as the rest sentinel), update `generated` and, if needed,
    `provenance.tolerances`.
-3. Update the "June minutes are being added" status line in `i18n.js` (`status` key, both languages).
-4. Run the tests (below) — they fail loudly if any itemized month stops reconciling.
+3. Update the pending-minutes status line in `i18n.js` (`status` key, both languages).
+4. Regenerate `payments.json` (per-line payee detail behind the expandable rows): export the
+   sitting's included line items from the ledger as `[Payee, Entry, Amount]` triplets and add
+   them under the month key. Every month's lines must sum exactly to that month's entries —
+   validate.js enforces this.
+5. Run the tests (below) — they fail loudly if any itemized month stops reconciling.
 
 ## Cache busting (do not skip)
 `index.html` references `i18n.js`, `spending-data.js` and `app.js` with a `?v=` query

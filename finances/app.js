@@ -158,6 +158,38 @@
     }
   }
 
+  // ---------- per-payee payment detail (lazy-loaded) ----------
+  // payments.json holds every included ledger line: {month: [[payee, entry, amount], ...]}.
+  var PAYMENTS_URL = 'payments.json?v=20260806-10';
+  var PAY = { data: null, index: null, loading: false, error: false };
+  var openRows = {};
+  function normKey(name) {
+    return String(name).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  }
+  function ensurePayments() {
+    if (PAY.data || PAY.loading || PAY.error) return;
+    PAY.loading = true;
+    fetch(PAYMENTS_URL).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    }).then(function (j) {
+      PAY.data = j; PAY.index = {};
+      Object.keys(j).forEach(function (mo) {
+        var idx = PAY.index[mo] = {};
+        j[mo].forEach(function (row) {
+          var k = normKey(row[0]);
+          (idx[k] = idx[k] || []).push(row);
+        });
+      });
+      PAY.loading = false;
+      renderExplore();
+    }).catch(function () { PAY.loading = false; PAY.error = true; renderExplore(); });
+  }
+  function paymentsFor(month, payee) {
+    if (!PAY.index || !PAY.index[month]) return null;
+    return PAY.index[month][normKey(payee)] || null;
+  }
+
   // ---------- filtering ----------
   function currentRows(sel) {
     var keys = state.categories.map(function (s) { return KEY_BY_SLUG[s]; });
@@ -605,17 +637,41 @@
     var payrollRows = sorted.filter(function (r) { return isPayroll(r.payee); });
     var others = sorted.filter(function (r) { return !isPayroll(r.payee); });
 
+    function detailHtml(r, key) {
+      var inner;
+      if (PAY.error) inner = '<p class="det-head">' + t.detailError + '</p>';
+      else if (!PAY.data) { ensurePayments(); inner = '<p class="det-head">' + t.detailLoading + '</p>'; }
+      else {
+        var lines = paymentsFor(r.month, r.payee);
+        if (!lines || !lines.length) inner = '<p class="det-head">' + t.detailNone + '</p>';
+        else {
+          var tot = Math.round(lines.reduce(function (a, l) { return a + l[2]; }, 0) * 100) / 100;
+          inner = '<p class="det-head">' + tpl(t.detailHead, { n: lines.length.toLocaleString(locale()), amt: money(tot) }) + '</p>' +
+            '<ul class="paylines">' + lines.slice().sort(function (a, b) { return b[2] - a[2]; }).map(function (l) {
+              return '<li><span class="d">' + l[1] + '</span><span class="num">' + money(l[2]) + '</span></li>';
+            }).join('') + '</ul>';
+        }
+      }
+      return '<tr class="det" id="det-' + key + '"><td colspan="4">' + inner + '</td></tr>';
+    }
     function rowHtml(r) {
       var g = (D.gloss[r.payee] || {})[state.lang];
       var mth = monthById(r.month);
       var sub = [];
       if (g) sub.push(g);
       if (p.months.length > 1 && mth) sub.push('<a href="' + mth.url + '" target="_blank" rel="noopener">' + periodLabel(mth) + ' ' + t.newTab + '</a>');
-      return '<tr><th scope="row" data-l="' + t.thSupplier + '">' + localPayee(r.payee) +
+      var expandable = !isRest(r.payee);
+      var key = r.month + '-' + normKey(r.payee);
+      var open = expandable && !!openRows[key];
+      var name = expandable
+        ? '<button type="button" class="payee-btn" data-det="' + key + '" aria-expanded="' + open + '" aria-controls="det-' + key + '" aria-label="' + tpl(t.detailAria, { name: localPayee(r.payee) }) + '"><span class="chev" aria-hidden="true">▶</span><span>' + localPayee(r.payee) + '</span></button>'
+        : localPayee(r.payee);
+      return '<tr><th scope="row" data-l="' + t.thSupplier + '">' + name +
         (sub.length ? '<span class="gloss">' + sub.join(' · ') + '</span>' : '') + '</th>' +
         '<td data-l="' + t.thCategory + '"><span class="dot" style="background:' + ((D.categories[r.cat] || {}).color || '#888') + '"></span>' + catName(r.cat) + '</td>' +
         '<td class="num" data-l="' + t.thLines + '">' + r.lines.toLocaleString(locale()) + '</td>' +
-        '<td class="num" data-l="' + t.thAmount + '"><strong>' + money(r.amt) + '</strong></td></tr>';
+        '<td class="num" data-l="' + t.thAmount + '"><strong>' + money(r.amt) + '</strong></td></tr>' +
+        (open ? detailHtml(r, key) : '');
     }
     var html = '';
     if (payrollRows.length) {
@@ -736,6 +792,14 @@
     $('cat-list').addEventListener('click', function (e) {
       var b = e.target.closest('button[data-cat]');
       if (b) toggleCat(b.getAttribute('data-cat'));
+    });
+    $('results').addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-det]');
+      if (!b) return;
+      var key = b.getAttribute('data-det');
+      openRows[key] = !openRows[key];
+      if (openRows[key]) ensurePayments();
+      renderExplore();
     });
     $('f-reset').addEventListener('click', resetFilters);
     $('b-sort').addEventListener('change', function () { budgetSort = this.value; drawBudget(); });

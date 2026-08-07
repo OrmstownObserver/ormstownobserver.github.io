@@ -97,6 +97,28 @@ for (const c of usedCats) {
 }
 ok('every used category has a URL slug in app.js');
 
+// ---- 8. payments.json (per-line detail): every month's lines sum to that
+// month's itemized entries sum exactly (both derive from the ledger).
+const payPath = path.join(dir, 'payments.json');
+if (fs.existsSync(payPath)) {
+  const P = JSON.parse(fs.readFileSync(payPath, 'utf8'));
+  for (const m of D.months) {
+    const entriesSum = r2(D.entries.filter(e => e[0] === m.m).reduce((a, e) => a + e[3], 0));
+    const lines = P[m.m];
+    if (!lines) { fail(`payments.json missing month ${m.m}`); continue; }
+    const linesSum = r2(lines.reduce((a, l) => a + l[2], 0));
+    if (linesSum !== entriesSum) fail(`payments.json ${m.m}: lines sum ${linesSum} != entries sum ${entriesSum}`);
+    else ok(`payments.json ${m.m}: ${lines.length} lines sum to entries (${linesSum})`);
+    for (const l of lines) {
+      if (!Array.isArray(l) || l.length !== 3 || typeof l[0] !== 'string' || typeof l[1] !== 'string' || !Number.isFinite(l[2])) {
+        fail(`payments.json ${m.m}: malformed line ${JSON.stringify(l)}`); break;
+      }
+    }
+  }
+} else {
+  ok('payments.json not present (per-line detail disabled)');
+}
+
 // ---- Result
 if (failures) { console.error(`\n${failures} check(s) failed.`); process.exit(1); }
 console.log('\nAll checks passed.');

@@ -85,6 +85,11 @@ window.OO_I18N = {
   viewSource: "Voir le document source (PDF, nouvel onglet)",
   payeePayroll: "— (paie municipale)",
   payeeRest: "— Petites lignes regroupées (voir le procès-verbal)",
+  detailAria: "Afficher les paiements de {name}",
+  detailLoading: "Chargement du détail des paiements…",
+  detailError: "Impossible de charger le détail pour l'instant — le procès-verbal officiel contient toutes les lignes.",
+  detailHead: "{n} paiement(s) à ce bénéficiaire pour cette séance · total {amt}",
+  detailNone: "Détail non disponible pour cette ligne.",
 
   // Signals
   signalsH: "À regarder de plus près",
@@ -249,6 +254,11 @@ window.OO_I18N = {
   viewSource: "View the source document (PDF, new tab)",
   payeePayroll: "— (municipal payroll)",
   payeeRest: "— Small lines grouped (see the minutes)",
+  detailAria: "Show payments to {name}",
+  detailLoading: "Loading payment detail…",
+  detailError: "The detail could not be loaded right now — the official minutes contain every line.",
+  detailHead: "{n} payment(s) to this payee for this sitting · total {amt}",
+  detailNone: "Detail not available for this line.",
 
   signalsH: "Worth a closer look",
   signalsNote: "These automated observations help readers find patterns. They do not imply error or wrongdoing.",
