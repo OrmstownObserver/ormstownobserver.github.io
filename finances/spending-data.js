@@ -25,7 +25,7 @@ window.OO_SPENDING = {
   "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS).",
   "categories_note": "v2 (2026-08-06): payee-based refinement rules split Utilities, Vehicle fuel & maintenance, and Waste & recycling collection out of the broad categories. Rules live in finances/tools/apply-category-rules.js and are re-applied after each data regeneration. Grouped small-line rest rows keep their original broad category.",
   "months_direct": {
-   "2026-06": "Extracted directly from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines) and reconciled to every printed subtotal; Notion ledger line-item backfill pending."
+   "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
  },
  "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'aux séances de <strong>juin 2026</strong>, et cette page détaille les listes de dépenses jusqu'à la séance du <strong>1<sup>er</sup> juin 2026</strong>. Les PV des séances de juillet et d'août paraîtront de 4 à 6 semaines après leur adoption; leurs listes s'ajouteront ici dès leur publication.",
