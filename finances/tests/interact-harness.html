@@ -50,6 +50,8 @@ f.onload = function () {
       steps.push({ name: 'expand payee row', fn: function () { var b = d.querySelector('#results .payee-btn'); if (b) b.click(); } });
       steps.push({ name: 'wait for payment detail', fn: function () {} });
       steps.push({ name: 'wait for payment detail 2', fn: function () {} });
+      steps.push({ name: 'drill into category', fn: function () { var b = d.querySelectorAll('#cat-list .catbtn')[1]; if (b) b.click(); } });
+      steps.push({ name: 'wait for category drill', fn: function () {} });
 
       var i = 0, failures = [];
       var timer = setInterval(function () {
@@ -67,6 +69,7 @@ f.onload = function () {
           var trend = w.Chart && w.Chart.getChart(d.getElementById('chart-trend'));
           if (!trend) failures.push('trend chart dead at end');
           if (!d.querySelector('#results tr.det .paylines li')) failures.push('payee detail rows did not render');
+          if (!d.querySelector('#cat-list .cat-drill .drill-payee .paylines li')) failures.push('category drill-down did not render');
           if (pageErrors.length) failures.push('page errors: ' + pageErrors.join(' | '));
           report(failures.length ? failures.length + ' failure(s): ' + failures.join('; ')
             : 'all ' + steps.length + ' pill/canvas steps kept the charts alive', failures.length === 0);

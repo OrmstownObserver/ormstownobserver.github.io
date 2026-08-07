@@ -17,13 +17,13 @@ window.OO_SPENDING = {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
   "observer_fields": "categories, gloss (descriptions), entries grouping, months[].note_fr/note_en",
-  "categories_method": "observer-rules-v2",
+  "categories_method": "observer-rules-v2.1",
   "gloss_method": "observer-editorial-v1",
   "tolerances": {
    "2026-01": 0.12
   },
   "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS).",
-  "categories_note": "v2 (2026-08-06): payee-based refinement rules split Utilities, Vehicle fuel & maintenance, and Waste & recycling collection out of the broad categories. Rules live in finances/tools/apply-category-rules.js and are re-applied after each data regeneration. Grouped small-line rest rows keep their original broad category.",
+  "categories_note": "v2.1 (2026-08-07): entries and category totals are regenerated from the line-level ledger export (finances/tools/rebuild-entries.js), with the payee rules of apply-category-rules.js applied per line. Unlike v2, grouped small lines now carry their line-accurate category, so refined categories (Utilities, Vehicle fuel & maintenance, Waste & recycling) are exact rather than floors.",
   "months_direct": {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
@@ -507,12 +507,12 @@ window.OO_SPENDING = {
      49
     ],
     "Supplies & operations": [
-     76880.95,
-     106
+     75585.14,
+     102
     ],
     "Utilities": [
-     27655.12,
-     10
+     28102.04,
+     12
     ],
     "Legal — external counsel": [
      21642.12,
@@ -523,8 +523,8 @@ window.OO_SPENDING = {
      22
     ],
     "Vehicle fuel & maintenance": [
-     16590.81,
-     75
+     17439.7,
+     77
     ],
     "Subsidies & community": [
      1500,
@@ -550,12 +550,12 @@ window.OO_SPENDING = {
      2
     ],
     "Utilities": [
-     18417.23,
-     2
+     18659.91,
+     4
     ],
     "Supplies & operations": [
-     15441.71,
-     22
+     15050.99,
+     18
     ],
     "Legal — external counsel": [
      13380.26,
@@ -566,8 +566,8 @@ window.OO_SPENDING = {
      5
     ],
     "Vehicle fuel & maintenance": [
-     3743.37,
-     28
+     3891.41,
+     30
     ],
     "Contracts — works": [
      3136.94,
@@ -595,8 +595,8 @@ window.OO_SPENDING = {
      11
     ],
     "Supplies & operations": [
-     136567.21,
-     129
+     135152.23,
+     117
     ],
     "Contracts — works": [
      67745.82,
@@ -615,12 +615,12 @@ window.OO_SPENDING = {
      2
     ],
     "Vehicle fuel & maintenance": [
-     19572.78,
-     92
+     20743.43,
+     102
     ],
     "Utilities": [
-     18738.83,
-     12
+     18983.16,
+     14
     ],
     "Legal — external counsel": [
      2065.87,
@@ -654,12 +654,12 @@ window.OO_SPENDING = {
      12
     ],
     "Vehicle fuel & maintenance": [
-     42179.12,
-     63
+     42496.4,
+     65
     ],
     "Supplies & operations": [
-     41005.44,
-     82
+     39833.37,
+     76
     ],
     "Legal — external counsel": [
      32422.11,
@@ -670,8 +670,8 @@ window.OO_SPENDING = {
      1
     ],
     "Utilities": [
-     29848.86,
-     4
+     30703.65,
+     8
     ],
     "Other": [
      7026.08,
@@ -701,16 +701,16 @@ window.OO_SPENDING = {
      12
     ],
     "Supplies & operations": [
-     37927.88,
-     75
+     33478.58,
+     60
     ],
     "Waste & recycling": [
      30954.47,
      1
     ],
     "Utilities": [
-     18852.84,
-     3
+     20409.19,
+     11
     ],
     "Legal — external counsel": [
      18508.14,
@@ -719,6 +719,10 @@ window.OO_SPENDING = {
     "Other": [
      6553.87,
      5
+    ],
+    "Vehicle fuel & maintenance": [
+     2892.95,
+     7
     ]
    }
   },
@@ -867,13 +871,6 @@ window.OO_SPENDING = {
    "Contracts — works",
    14703.37,
    1
-  ],
-  [
-   "2026-01",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Supplies & operations",
-   11852.15,
-   66
   ],
   [
    "2026-01",
@@ -1150,13 +1147,6 @@ window.OO_SPENDING = {
   ],
   [
    "2026-01",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Other",
-   1578.21,
-   11
-  ],
-  [
-   "2026-01",
    "Équipements Colpron Inc. (Les)",
    "Supplies & operations",
    1559.86,
@@ -1164,24 +1154,10 @@ window.OO_SPENDING = {
   ],
   [
    "2026-01",
-   "DR Conseils s.e.c.",
-   "Professional services",
-   1535.46,
-   2
-  ],
-  [
-   "2026-01",
    "Club Lions Ormstown",
    "Subsidies & community",
    1500,
    1
-  ],
-  [
-   "2026-01",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Professional services",
-   1469.23,
-   6
   ],
   [
    "2026-01",
@@ -1269,10 +1245,10 @@ window.OO_SPENDING = {
   ],
   [
    "2026-01",
-   "Service Informatique D.L. Inc",
-   "Supplies & operations",
-   1106.06,
-   2
+   "DR Conseils s.e.c.",
+   "Professional services",
+   1113.21,
+   1
   ],
   [
    "2026-01",
@@ -1297,6 +1273,41 @@ window.OO_SPENDING = {
   ],
   [
    "2026-01",
+   "Service Informatique D.L. Inc",
+   "Supplies & operations",
+   1014.08,
+   1
+  ],
+  [
+   "2026-01",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   10648.32,
+   63
+  ],
+  [
+   "2026-01",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   848.89,
+   2
+  ],
+  [
+   "2026-01",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   1891.48,
+   7
+  ],
+  [
+   "2026-01",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Other",
+   1578.21,
+   11
+  ],
+  [
+   "2026-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Salaries & HR",
    956.01,
@@ -1308,6 +1319,13 @@ window.OO_SPENDING = {
    "Legal — external counsel",
    422.25,
    1
+  ],
+  [
+   "2026-01",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   446.92,
+   2
   ],
   [
    "2026-02",
@@ -1367,13 +1385,6 @@ window.OO_SPENDING = {
   ],
   [
    "2026-02",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Salaries & HR",
-   4237.92,
-   34
-  ],
-  [
-   "2026-02",
    "9534-8702 Québec Inc. (Petro Canada)",
    "Vehicle fuel & maintenance",
    3743.37,
@@ -1409,13 +1420,6 @@ window.OO_SPENDING = {
   ],
   [
    "2026-02",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Supplies & operations",
-   2413.45,
-   15
-  ],
-  [
-   "2026-02",
    "Nature Action Québec Inc.",
    "Professional services",
    2174.08,
@@ -1423,7 +1427,7 @@ window.OO_SPENDING = {
   ],
   [
    "2026-02",
-   "Ouellett Samantha",
+   "Ouellet Samantha",
    "Professional services",
    1752.68,
    1
@@ -1434,13 +1438,6 @@ window.OO_SPENDING = {
    "Supplies & operations",
    1660.09,
    2
-  ],
-  [
-   "2026-02",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Other",
-   1204.42,
-   4
   ],
   [
    "2026-02",
@@ -1459,8 +1456,43 @@ window.OO_SPENDING = {
   [
    "2026-02",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   2022.73,
+   11
+  ],
+  [
+   "2026-02",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   148.04,
+   2
+  ],
+  [
+   "2026-02",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   4237.92,
+   34
+  ],
+  [
+   "2026-02",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Other",
+   1204.42,
+   4
+  ],
+  [
+   "2026-02",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Professional services",
    678.44,
+   2
+  ],
+  [
+   "2026-02",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   242.68,
    2
   ],
   [
@@ -1469,447 +1501,6 @@ window.OO_SPENDING = {
    "Contracts — works",
    550,
    1
-  ],
-  [
-   "2026-04",
-   "— (paie municipale)",
-   "Salaries & HR",
-   153529.43,
-   1
-  ],
-  [
-   "2026-04",
-   "Forage Wellpuits",
-   "Contracts — works",
-   51297.07,
-   1
-  ],
-  [
-   "2026-04",
-   "Artelia Canada Inc.",
-   "Professional services",
-   40364.85,
-   2
-  ],
-  [
-   "2026-04",
-   "Robert Daoust Et Fils Inc.",
-   "Waste & recycling",
-   31833.44,
-   1
-  ],
-  [
-   "2026-04",
-   "Hydro-Québec",
-   "Utilities",
-   29848.86,
-   4
-  ],
-  [
-   "2026-04",
-   "SAAQ Société ass. Automobile",
-   "Vehicle fuel & maintenance",
-   22428.16,
-   1
-  ],
-  [
-   "2026-04",
-   "9483-3100 Québec Inc.",
-   "Contracts — works",
-   21313.51,
-   2
-  ],
-  [
-   "2026-04",
-   "Beneva Inc.",
-   "Salaries & HR",
-   20913.51,
-   2
-  ],
-  [
-   "2026-04",
-   "2547-0857 Québec Inc. (Infotech)",
-   "Professional services",
-   18738.39,
-   9
-  ],
-  [
-   "2026-04",
-   "Cmlex Conseil Inc.",
-   "Legal — external counsel",
-   17318.15,
-   2
-  ],
-  [
-   "2026-04",
-   "Dunton Rainville S.E.N.C.R.L.",
-   "Legal — external counsel",
-   14248.58,
-   6
-  ],
-  [
-   "2026-04",
-   "AEDIFICA",
-   "Professional services",
-   12293.13,
-   1
-  ],
-  [
-   "2026-04",
-   "9141855 Canada Inc.",
-   "Vehicle fuel & maintenance",
-   11501.29,
-   7
-  ],
-  [
-   "2026-04",
-   "Orflow Géosciences Inc.",
-   "Professional services",
-   10060.31,
-   1
-  ],
-  [
-   "2026-04",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Supplies & operations",
-   9546.46,
-   52
-  ],
-  [
-   "2026-04",
-   "9534-8702 Québec Inc. (Petro Canada)",
-   "Vehicle fuel & maintenance",
-   8249.67,
-   55
-  ],
-  [
-   "2026-04",
-   "Pyritest Inc. - Multitest",
-   "Professional services",
-   8165.11,
-   1
-  ],
-  [
-   "2026-04",
-   "Visa Desjardins",
-   "Supplies & operations",
-   7561.92,
-   7
-  ],
-  [
-   "2026-04",
-   "Pg Solutions",
-   "Professional services",
-   7444.65,
-   1
-  ],
-  [
-   "2026-04",
-   "Guy Dandurand",
-   "Supplies & operations",
-   6916.12,
-   1
-  ],
-  [
-   "2026-04",
-   "Gestion MSDM Inc.",
-   "Supplies & operations",
-   5334.84,
-   2
-  ],
-  [
-   "2026-04",
-   "Ouellett Samantha",
-   "Professional services",
-   5258.04,
-   3
-  ],
-  [
-   "2026-04",
-   "A.E.M.F.S.Q.",
-   "Other",
-   3500,
-   1
-  ],
-  [
-   "2026-04",
-   "Bauval Carrières Régionales",
-   "Supplies & operations",
-   3179.44,
-   4
-  ],
-  [
-   "2026-04",
-   "BCGO S.E.N.C.R.L.",
-   "Professional services",
-   3018.09,
-   1
-  ],
-  [
-   "2026-04",
-   "Gleaner, The",
-   "Professional services",
-   2888.18,
-   2
-  ],
-  [
-   "2026-04",
-   "Caisse Desjardins",
-   "Salaries & HR",
-   2838.11,
-   2
-  ],
-  [
-   "2026-04",
-   "Technivolt Électrique Inc.",
-   "Contracts — works",
-   2661.39,
-   4
-  ],
-  [
-   "2026-04",
-   "Services de Rebuts Soulanges Inc.",
-   "Contracts — works",
-   2510.66,
-   2
-  ],
-  [
-   "2026-04",
-   "Solution Informatique de la Montérégie",
-   "Professional services",
-   2252.72,
-   2
-  ],
-  [
-   "2026-04",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Professional services",
-   2234.57,
-   9
-  ],
-  [
-   "2026-04",
-   "Nova Mobilier Environnement Inc.",
-   "Supplies & operations",
-   2224.77,
-   1
-  ],
-  [
-   "2026-04",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Other",
-   2163.63,
-   7
-  ],
-  [
-   "2026-04",
-   "TD Canada Trust",
-   "Salaries & HR",
-   2043.46,
-   1
-  ],
-  [
-   "2026-04",
-   "Groupe SGM Inc.",
-   "Contracts — works",
-   2041.4,
-   2
-  ],
-  [
-   "2026-04",
-   "Mission Communications",
-   "Professional services",
-   1611.68,
-   1
-  ],
-  [
-   "2026-04",
-   "Eurofins Environex",
-   "Professional services",
-   1575.16,
-   3
-  ],
-  [
-   "2026-04",
-   "CNESST",
-   "Salaries & HR",
-   1435.74,
-   1
-  ],
-  [
-   "2026-04",
-   "JBF Javel-Bois-Franc Inc.",
-   "Supplies & operations",
-   1385.46,
-   1
-  ],
-  [
-   "2026-04",
-   "9386-0120 Québec Inc",
-   "Supplies & operations",
-   1379.7,
-   1
-  ],
-  [
-   "2026-04",
-   "Union des Municipalités du Québec",
-   "Other",
-   1362.45,
-   1
-  ],
-  [
-   "2026-04",
-   "Sécurité & Serrurier Clément",
-   "Supplies & operations",
-   1241.76,
-   6
-  ],
-  [
-   "2026-04",
-   "Prud'homme Technologies Inc.",
-   "Supplies & operations",
-   1153.97,
-   1
-  ],
-  [
-   "2026-04",
-   "Bottier du Cinq (Le)",
-   "Supplies & operations",
-   1081,
-   6
-  ],
-  [
-   "2026-04",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Contracts — works",
-   857.81,
-   1
-  ],
-  [
-   "2026-04",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Legal — external counsel",
-   855.38,
-   2
-  ],
-  [
-   "2026-05",
-   "— (paie municipale)",
-   "Salaries & HR",
-   152311.18,
-   1
-  ],
-  [
-   "2026-05",
-   "Excavation Usereau Inc.",
-   "Contracts — works",
-   34176.32,
-   1
-  ],
-  [
-   "2026-05",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Supplies & operations",
-   31144.55,
-   74
-  ],
-  [
-   "2026-05",
-   "Robert Daoust Et Fils Inc.",
-   "Waste & recycling",
-   30954.47,
-   1
-  ],
-  [
-   "2026-05",
-   "Pg Solutions",
-   "Professional services",
-   23358.17,
-   3
-  ],
-  [
-   "2026-05",
-   "Hydro-Québec",
-   "Utilities",
-   18852.84,
-   3
-  ],
-  [
-   "2026-05",
-   "Orflow Géosciences Inc.",
-   "Professional services",
-   18121.55,
-   1
-  ],
-  [
-   "2026-05",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Professional services",
-   16553.25,
-   22
-  ],
-  [
-   "2026-05",
-   "Dunton Rainville S.E.N.C.R.L.",
-   "Legal — external counsel",
-   13351.2,
-   9
-  ],
-  [
-   "2026-05",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Contracts — works",
-   11046.94,
-   9
-  ],
-  [
-   "2026-05",
-   "Complexe Médical Ormstown inc",
-   "Supplies & operations",
-   6783.33,
-   1
-  ],
-  [
-   "2026-05",
-   "Agence Denis Lepine Inc.",
-   "Professional services",
-   5892.47,
-   1
-  ],
-  [
-   "2026-05",
-   "FQM",
-   "Other",
-   5517.62,
-   1
-  ],
-  [
-   "2026-05",
-   "Mcclintock, les Entreprises",
-   "Contracts — works",
-   4569.58,
-   2
-  ],
-  [
-   "2026-05",
-   "Cmlex Conseil Inc.",
-   "Legal — external counsel",
-   4239.72,
-   1
-  ],
-  [
-   "2026-05",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Other",
-   1036.25,
-   4
-  ],
-  [
-   "2026-05",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Legal — external counsel",
-   917.22,
-   3
   ],
   [
    "2026-03",
@@ -1948,7 +1539,7 @@ window.OO_SPENDING = {
   ],
   [
    "2026-03",
-   "Complexe Médical Ormstown inc",
+   "Complexe Médical Ormstown",
    "Supplies & operations",
    19845.2,
    1
@@ -2102,7 +1693,7 @@ window.OO_SPENDING = {
   ],
   [
    "2026-03",
-   "Service Informatique D.L. Inc.",
+   "Service Informatique D.L. Inc",
    "Professional services",
    2028.16,
    2
@@ -2180,9 +1771,16 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   223.34,
+   1
+  ],
+  [
+   "2026-03",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   15171.12,
-   98
+   13756.14,
+   86
   ],
   [
    "2026-03",
@@ -2194,9 +1792,16 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Legal — external counsel",
-   223.34,
-   1
+   "Vehicle fuel & maintenance",
+   1170.65,
+   10
+  ],
+  [
+   "2026-03",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   244.33,
+   2
   ],
   [
    "2026-03",
@@ -2211,6 +1816,650 @@ window.OO_SPENDING = {
    "Contracts — works",
    550,
    1
+  ],
+  [
+   "2026-04",
+   "— (paie municipale)",
+   "Salaries & HR",
+   153529.43,
+   1
+  ],
+  [
+   "2026-04",
+   "Forage Wellpuits",
+   "Contracts — works",
+   51297.07,
+   1
+  ],
+  [
+   "2026-04",
+   "Artelia Canada Inc.",
+   "Professional services",
+   40364.85,
+   2
+  ],
+  [
+   "2026-04",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   31833.44,
+   1
+  ],
+  [
+   "2026-04",
+   "Hydro-Québec",
+   "Utilities",
+   29848.86,
+   4
+  ],
+  [
+   "2026-04",
+   "SAAQ Société ass. Automobile",
+   "Vehicle fuel & maintenance",
+   22428.16,
+   1
+  ],
+  [
+   "2026-04",
+   "9483-3100 Québec Inc.",
+   "Contracts — works",
+   21313.51,
+   2
+  ],
+  [
+   "2026-04",
+   "Beneva Inc.",
+   "Salaries & HR",
+   20913.51,
+   2
+  ],
+  [
+   "2026-04",
+   "2547-0857 Québec Inc. (Infotech)",
+   "Professional services",
+   18738.39,
+   9
+  ],
+  [
+   "2026-04",
+   "Cmlex Conseil Inc.",
+   "Legal — external counsel",
+   17318.15,
+   2
+  ],
+  [
+   "2026-04",
+   "Dunton Rainville S.E.N.C.R.L.",
+   "Legal — external counsel",
+   14248.58,
+   6
+  ],
+  [
+   "2026-04",
+   "AEDIFICA",
+   "Professional services",
+   12293.13,
+   1
+  ],
+  [
+   "2026-04",
+   "9141855 Canada Inc.",
+   "Vehicle fuel & maintenance",
+   11501.29,
+   7
+  ],
+  [
+   "2026-04",
+   "Orflow Géosciences Inc.",
+   "Professional services",
+   10060.31,
+   1
+  ],
+  [
+   "2026-04",
+   "9534-8702 Québec Inc. (Petro Canada)",
+   "Vehicle fuel & maintenance",
+   8249.67,
+   55
+  ],
+  [
+   "2026-04",
+   "Pyritest Inc. - Multitest",
+   "Professional services",
+   8165.11,
+   1
+  ],
+  [
+   "2026-04",
+   "Visa Desjardins",
+   "Supplies & operations",
+   7561.92,
+   7
+  ],
+  [
+   "2026-04",
+   "Pg Solutions",
+   "Professional services",
+   7444.65,
+   1
+  ],
+  [
+   "2026-04",
+   "Guy Dandurand",
+   "Supplies & operations",
+   6916.12,
+   1
+  ],
+  [
+   "2026-04",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   5334.84,
+   2
+  ],
+  [
+   "2026-04",
+   "Ouellett Samantha",
+   "Professional services",
+   5258.04,
+   3
+  ],
+  [
+   "2026-04",
+   "A.E.M.F.S.Q.",
+   "Other",
+   3500,
+   1
+  ],
+  [
+   "2026-04",
+   "Bauval Carrières Régionales",
+   "Supplies & operations",
+   3179.44,
+   4
+  ],
+  [
+   "2026-04",
+   "BCGO S.E.N.C.R.L.",
+   "Professional services",
+   3018.09,
+   1
+  ],
+  [
+   "2026-04",
+   "Gleaner, The",
+   "Professional services",
+   2888.18,
+   2
+  ],
+  [
+   "2026-04",
+   "Caisse Desjardins",
+   "Salaries & HR",
+   2838.11,
+   2
+  ],
+  [
+   "2026-04",
+   "Technivolt Électrique Inc.",
+   "Contracts — works",
+   2661.39,
+   4
+  ],
+  [
+   "2026-04",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   2510.66,
+   2
+  ],
+  [
+   "2026-04",
+   "Solution Informatique de la Montérégie",
+   "Professional services",
+   2252.72,
+   2
+  ],
+  [
+   "2026-04",
+   "Nova Mobilier Environnement Inc.",
+   "Supplies & operations",
+   2224.77,
+   1
+  ],
+  [
+   "2026-04",
+   "TD Canada Trust",
+   "Salaries & HR",
+   2043.46,
+   1
+  ],
+  [
+   "2026-04",
+   "Groupe SGM Inc.",
+   "Contracts — works",
+   2041.4,
+   2
+  ],
+  [
+   "2026-04",
+   "Mission Communications",
+   "Professional services",
+   1611.68,
+   1
+  ],
+  [
+   "2026-04",
+   "Eurofins Environex",
+   "Professional services",
+   1575.16,
+   3
+  ],
+  [
+   "2026-04",
+   "CNESST",
+   "Salaries & HR",
+   1435.74,
+   1
+  ],
+  [
+   "2026-04",
+   "JBF Javel-Bois-Franc Inc.",
+   "Supplies & operations",
+   1385.46,
+   1
+  ],
+  [
+   "2026-04",
+   "9386-0120 Québec Inc",
+   "Supplies & operations",
+   1379.7,
+   1
+  ],
+  [
+   "2026-04",
+   "Union des Municipalités du Québec",
+   "Other",
+   1362.45,
+   1
+  ],
+  [
+   "2026-04",
+   "Sécurité & Serrurier Clément",
+   "Supplies & operations",
+   1241.76,
+   6
+  ],
+  [
+   "2026-04",
+   "Prud'homme Technologies Inc.",
+   "Supplies & operations",
+   1153.97,
+   1
+  ],
+  [
+   "2026-04",
+   "Bottier du Cinq (Le)",
+   "Supplies & operations",
+   1081,
+   6
+  ],
+  [
+   "2026-04",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   855.38,
+   2
+  ],
+  [
+   "2026-04",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   854.79,
+   4
+  ],
+  [
+   "2026-04",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   8374.39,
+   46
+  ],
+  [
+   "2026-04",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   317.28,
+   2
+  ],
+  [
+   "2026-04",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   2234.57,
+   9
+  ],
+  [
+   "2026-04",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Other",
+   2163.63,
+   7
+  ],
+  [
+   "2026-04",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   857.81,
+   1
+  ],
+  [
+   "2026-05",
+   "— (paie municipale)",
+   "Salaries & HR",
+   152311.18,
+   1
+  ],
+  [
+   "2026-05",
+   "Excavation Usereau Inc.",
+   "Contracts — works",
+   34176.32,
+   1
+  ],
+  [
+   "2026-05",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   30954.47,
+   1
+  ],
+  [
+   "2026-05",
+   "Pg Solutions",
+   "Professional services",
+   23358.17,
+   3
+  ],
+  [
+   "2026-05",
+   "Hydro-Québec",
+   "Utilities",
+   18852.84,
+   3
+  ],
+  [
+   "2026-05",
+   "Orflow Géosciences Inc.",
+   "Professional services",
+   18121.55,
+   1
+  ],
+  [
+   "2026-05",
+   "Dunton Rainville S.E.N.C.R.L.",
+   "Legal — external counsel",
+   13351.2,
+   9
+  ],
+  [
+   "2026-05",
+   "Complexe Médical Ormstown inc",
+   "Supplies & operations",
+   6783.33,
+   1
+  ],
+  [
+   "2026-05",
+   "Agence Denis Lepine Inc.",
+   "Professional services",
+   5892.47,
+   1
+  ],
+  [
+   "2026-05",
+   "FQM",
+   "Other",
+   5517.62,
+   1
+  ],
+  [
+   "2026-05",
+   "Mcclintock, les Entreprises",
+   "Contracts — works",
+   4569.58,
+   2
+  ],
+  [
+   "2026-05",
+   "Cmlex Conseil Inc.",
+   "Legal — external counsel",
+   4239.72,
+   1
+  ],
+  [
+   "2026-05",
+   "9483-3100 Québec Inc.",
+   "Contracts — works",
+   3506.75,
+   2
+  ],
+  [
+   "2026-05",
+   "Pompaction Inc.",
+   "Supplies & operations",
+   3221.26,
+   1
+  ],
+  [
+   "2026-05",
+   "Eurofins Environex",
+   "Professional services",
+   3002.58,
+   3
+  ],
+  [
+   "2026-05",
+   "9188-0781 Québec Inc",
+   "Contracts — works",
+   2989.35,
+   1
+  ],
+  [
+   "2026-05",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2667.42,
+   1
+  ],
+  [
+   "2026-05",
+   "AGRÉBEC INC.",
+   "Supplies & operations",
+   2539.8,
+   1
+  ],
+  [
+   "2026-05",
+   "Bauval Carrières Régionales",
+   "Supplies & operations",
+   2367.85,
+   4
+  ],
+  [
+   "2026-05",
+   "Chartrand Fanny",
+   "Professional services",
+   2328.24,
+   2
+  ],
+  [
+   "2026-05",
+   "Technivolt Électrique Inc.",
+   "Contracts — works",
+   2308.48,
+   4
+  ],
+  [
+   "2026-05",
+   "Discair Productions",
+   "Professional services",
+   2184.52,
+   2
+  ],
+  [
+   "2026-05",
+   "Laurentide Environnement Inc.",
+   "Supplies & operations",
+   1968.48,
+   1
+  ],
+  [
+   "2026-05",
+   "Garage C.P. & Fils Inc.",
+   "Vehicle fuel & maintenance",
+   1917.25,
+   1
+  ],
+  [
+   "2026-05",
+   "Ouellett Samantha",
+   "Professional services",
+   1752.68,
+   1
+  ],
+  [
+   "2026-05",
+   "Ducore Expertise Inc.",
+   "Professional services",
+   1707.38,
+   1
+  ],
+  [
+   "2026-05",
+   "2547-0857 Québec Inc. (Infotech)",
+   "Professional services",
+   1701.64,
+   1
+  ],
+  [
+   "2026-05",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   1532.39,
+   1
+  ],
+  [
+   "2026-05",
+   "Service Informatique D.L. Inc",
+   "Professional services",
+   1324.52,
+   4
+  ],
+  [
+   "2026-05",
+   "Énergie P38 Inc. / Budget Propane",
+   "Utilities",
+   1311.37,
+   6
+  ],
+  [
+   "2026-05",
+   "9386-0120 Québec Inc",
+   "Supplies & operations",
+   1220.17,
+   1
+  ],
+  [
+   "2026-05",
+   "Équip. Albert Billette Inc. (Les)",
+   "Supplies & operations",
+   1172.72,
+   1
+  ],
+  [
+   "2026-05",
+   "Distribution Lazure Inc.",
+   "Supplies & operations",
+   1133.81,
+   1
+  ],
+  [
+   "2026-05",
+   "Solution Informatique de la Montérégie",
+   "Professional services",
+   1070.11,
+   2
+  ],
+  [
+   "2026-05",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   1034.75,
+   1
+  ],
+  [
+   "2026-05",
+   "Service Informatique D.L. Inc",
+   "Supplies & operations",
+   1014.08,
+   1
+  ],
+  [
+   "2026-05",
+   "Bottier du Cinq (Le)",
+   "Supplies & operations",
+   1009.77,
+   1
+  ],
+  [
+   "2026-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   7345.14,
+   45
+  ],
+  [
+   "2026-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   917.22,
+   3
+  ],
+  [
+   "2026-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   709.97,
+   1
+  ],
+  [
+   "2026-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   975.7,
+   6
+  ],
+  [
+   "2026-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   1481.58,
+   6
+  ],
+  [
+   "2026-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Other",
+   1036.25,
+   4
+  ],
+  [
+   "2026-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   244.98,
+   2
   ],
   [
    "2026-06",
@@ -2536,24 +2785,10 @@ window.OO_SPENDING = {
   ],
   [
    "2026-06",
-   "Service Informatique D.L. Inc.",
+   "Service Informatique D.L. Inc",
    "Professional services",
    1014.08,
    1
-  ],
-  [
-   "2026-06",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Supplies & operations",
-   8048.06,
-   55
-  ],
-  [
-   "2026-06",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Contracts — works",
-   2142.37,
-   4
   ],
   [
    "2026-06",
@@ -2565,13 +2800,6 @@ window.OO_SPENDING = {
   [
    "2026-06",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Legal — external counsel",
-   646.74,
-   1
-  ],
-  [
-   "2026-06",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Subsidies & community",
    2387.69,
    8
@@ -2579,9 +2807,9 @@ window.OO_SPENDING = {
   [
    "2026-06",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Professional services",
-   993.67,
-   4
+   "Supplies & operations",
+   8048.06,
+   55
   ],
   [
    "2026-06",
@@ -2593,9 +2821,30 @@ window.OO_SPENDING = {
   [
    "2026-06",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   2142.37,
+   4
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   993.67,
+   4
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Utilities",
    282.99,
    3
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   646.74,
+   1
   ]
  ]
 };

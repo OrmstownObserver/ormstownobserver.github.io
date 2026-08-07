@@ -159,10 +159,20 @@
   }
 
   // ---------- per-payee payment detail (lazy-loaded) ----------
-  // payments.json holds every included ledger line: {month: [[payee, entry, amount], ...]}.
-  var PAYMENTS_URL = 'payments.json?v=20260806-10';
-  var PAY = { data: null, index: null, loading: false, error: false };
+  // payments.json holds every included ledger line:
+  // {month: [[payee, entry, amount, category], ...]} with v2 categories.
+  var PAYMENTS_URL = 'payments.json?v=20260807-11';
+  var PAY = { data: null, index: null, catIndex: null, loading: false, error: false };
   var openRows = {};
+  var openCats = {};
+  var CANON = null; // normalized payee key -> display spelling used by the site
+  function canonName(raw) {
+    if (!CANON) {
+      CANON = {};
+      D.entries.forEach(function (e) { var k = normKey(e[1]); if (!CANON[k]) CANON[k] = e[1]; });
+    }
+    return CANON[normKey(raw)] || raw;
+  }
   function normKey(name) {
     return String(name).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
   }
@@ -173,12 +183,15 @@
       if (!r.ok) throw new Error(r.status);
       return r.json();
     }).then(function (j) {
-      PAY.data = j; PAY.index = {};
+      PAY.data = j; PAY.index = {}; PAY.catIndex = {};
       Object.keys(j).forEach(function (mo) {
         var idx = PAY.index[mo] = {};
+        var cidx = PAY.catIndex[mo] = {};
         j[mo].forEach(function (row) {
           var k = normKey(row[0]);
           (idx[k] = idx[k] || []).push(row);
+          var c = row[3];
+          (cidx[c] = cidx[c] || []).push(row);
         });
       });
       PAY.loading = false;
@@ -598,14 +611,50 @@
     var knownAmt = allAggs.reduce(function (a, x) { return a + x.amt; }, 0);
     var restAmt = (sel.coverage !== 'full') ? Math.max(0, Math.round((sel.total - knownAmt) * 100) / 100) : 0;
     drawCats(allAggs, restAmt);
+    // Category list: clicking a row drills into everyone paid in that
+    // category for the selected period (the pills and the chart do the
+    // filtering; this list is for reading down into the lines).
+    function catDrillHtml(catKey) {
+      if (PAY.error) return '<div class="cat-drill"><p class="det-head">' + t.detailError + '</p></div>';
+      if (!PAY.data) { ensurePayments(); return '<div class="cat-drill"><p class="det-head">' + t.detailLoading + '</p></div>'; }
+      var multi = sel.months.length > 1;
+      var groups = {};
+      sel.months.forEach(function (m) {
+        var rows = (PAY.catIndex[m.m] || {})[catKey] || [];
+        rows.forEach(function (row) {
+          var k = normKey(row[0]);
+          var g = groups[k] = groups[k] || { name: canonName(row[0]), total: 0, lines: [] };
+          g.total = Math.round((g.total + row[2]) * 100) / 100;
+          g.lines.push({ d: row[1], amt: row[2], month: m });
+        });
+      });
+      var list = Object.keys(groups).map(function (k) { return groups[k]; })
+        .sort(function (a, b) { return b.total - a.total; });
+      if (!list.length) return '<div class="cat-drill"><p class="det-head">' + t.detailNone + '</p></div>';
+      var nLines = list.reduce(function (a, g) { return a + g.lines.length; }, 0);
+      var tot = Math.round(list.reduce(function (a, g) { return a + g.total; }, 0) * 100) / 100;
+      return '<div class="cat-drill"><p class="det-head">' +
+        tpl(t.drillHead, { nPay: list.length.toLocaleString(locale()), nLines: nLines.toLocaleString(locale()), amt: money(tot) }) + '</p>' +
+        list.map(function (g) {
+          return '<div class="drill-payee"><p class="drill-name">' + localPayee(g.name) +
+            ' <span class="num">' + money(g.total) + '</span></p><ul class="paylines">' +
+            g.lines.sort(function (a, b) { return b.amt - a.amt; }).map(function (l) {
+              var suffix = multi ? ' <span class="gloss" style="display:inline">· ' + periodLabel(l.month) + '</span>' : '';
+              return '<li><span class="d">' + l.d + suffix + '</span><span class="num">' + money(l.amt) + '</span></li>';
+            }).join('') + '</ul></div>';
+        }).join('') + '</div>';
+    }
     $('cat-list').innerHTML = allAggs.map(function (a) {
       var slug = SLUGS[a.key];
-      var selected = state.categories.indexOf(slug) >= 0;
-      return '<li><button type="button" class="catbtn" data-cat="' + slug + '" aria-pressed="' + selected + '"><span class="rowline">' +
+      var filtered = state.categories.indexOf(slug) >= 0;
+      var open = !!openCats[a.key];
+      return '<li' + (filtered ? ' class="filtered"' : '') + '><button type="button" class="catbtn" data-drill="' + slug + '" aria-expanded="' + open + '" aria-label="' + tpl(t.drillAria, { name: catName(a.key) }) + '"><span class="rowline">' +
+        '<span class="chev" aria-hidden="true">▶</span>' +
         '<span class="dot" style="background:' + ((D.categories[a.key] || {}).color || '#888') + '"></span>' +
         '<span class="nm">' + catName(a.key) + '</span>' +
         '<span class="share">' + pct(a.amt / p.total) + '</span>' +
-        '<span class="num" style="font-weight:700">' + money(a.amt) + '</span></span></button></li>';
+        '<span class="num" style="font-weight:700">' + money(a.amt) + '</span></span></button>' +
+        (open ? catDrillHtml(a.key) : '') + '</li>';
     }).join('') + (restAmt > 0.5
       ? '<li><span class="rowline"><span class="dot" style="background:' + D.categories.__rest.color + '"></span><span class="nm">' + D.categories.__rest[state.lang] + '</span><span class="share">' + pct(restAmt / p.total) + '</span><span class="num" style="font-weight:700">' + money(restAmt) + '</span></span></li>'
       : '');
@@ -790,8 +839,12 @@
       else toggleCat(s);
     });
     $('cat-list').addEventListener('click', function (e) {
-      var b = e.target.closest('button[data-cat]');
-      if (b) toggleCat(b.getAttribute('data-cat'));
+      var b = e.target.closest('button[data-drill]');
+      if (!b) return;
+      var key = KEY_BY_SLUG[b.getAttribute('data-drill')];
+      openCats[key] = !openCats[key];
+      if (openCats[key]) ensurePayments();
+      renderExplore();
     });
     $('results').addEventListener('click', function (e) {
       var b = e.target.closest('button[data-det]');

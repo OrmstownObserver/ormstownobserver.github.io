@@ -24,7 +24,8 @@ const NEW_CATS = {
 
 // ---- Payee rules: regex on the payee name → new category.
 // Grouped "— Autres fournisseurs" rest lines are never touched (mixed payees).
-const RULES = [
+// Exported for build-payments.js, which applies the same mapping per line.
+const RULES = module.exports.RULES = [
   [/^Hydro-Québec$/i, 'Utilities'],
   [/^Bell Canada$/i, 'Utilities'],
   [/^Bell Mobilité$/i, 'Utilities'],
@@ -41,6 +42,10 @@ const RULES = [
   [/^SAAQ/i, 'Vehicle fuel & maintenance'],               // vehicle registrations
   [/^Robert Daoust/i, 'Waste & recycling']                // garbage & recycling collection
 ];
+
+// Everything below runs only when invoked directly (node apply-category-rules.js);
+// requiring this file just exposes RULES.
+if (require.main === module) {
 
 Object.keys(NEW_CATS).forEach(function (k) { if (!D.categories[k]) D.categories[k] = NEW_CATS[k]; });
 
@@ -104,3 +109,5 @@ fs.writeFileSync(FILE, header + 'window.OO_SPENDING = ' + JSON.stringify(D, null
 console.log(moved + ' entry group(s) recategorized:');
 Object.keys(moves).sort().forEach(function (k) { console.log('  ' + k + ' (' + moves[k] + ')'); });
 console.log('Category totals recomputed for ' + D.months.length + ' months; all reconciliation checks pass.');
+
+} // require.main guard

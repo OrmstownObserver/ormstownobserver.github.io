@@ -110,9 +110,18 @@ if (fs.existsSync(payPath)) {
     if (linesSum !== entriesSum) fail(`payments.json ${m.m}: lines sum ${linesSum} != entries sum ${entriesSum}`);
     else ok(`payments.json ${m.m}: ${lines.length} lines sum to entries (${linesSum})`);
     for (const l of lines) {
-      if (!Array.isArray(l) || l.length !== 3 || typeof l[0] !== 'string' || typeof l[1] !== 'string' || !Number.isFinite(l[2])) {
+      if (!Array.isArray(l) || l.length !== 4 || typeof l[0] !== 'string' || typeof l[1] !== 'string' || !Number.isFinite(l[2]) || typeof l[3] !== 'string') {
         fail(`payments.json ${m.m}: malformed line ${JSON.stringify(l)}`); break;
       }
+    }
+    // per-category line sums must reproduce the published category totals
+    const byCat = {};
+    lines.forEach(l => { byCat[l[3]] = r2((byCat[l[3]] || 0) + l[2]); });
+    for (const [cat, [amt]] of Object.entries(m.cats)) {
+      if (r2(byCat[cat] || 0) !== r2(amt)) fail(`payments.json ${m.m}/${cat}: lines ${byCat[cat] || 0} != published ${amt}`);
+    }
+    for (const cat of Object.keys(byCat)) {
+      if (!(cat in m.cats)) fail(`payments.json ${m.m}: unknown category "${cat}" in lines`);
     }
   }
 } else {

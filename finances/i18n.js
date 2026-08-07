@@ -72,7 +72,7 @@ window.OO_I18N = {
   scopeAll: "toutes catégories",
   empty: "Aucun bénéficiaire ne correspond à ces filtres. Retirez un filtre ou essayez une autre orthographe.",
   catChartCaption: "Répartition par catégorie — valeurs exactes ci-contre",
-  catListCaption: "Montant et part par catégorie",
+  catListCaption: "Montant et part par catégorie — cliquez une catégorie pour voir qui a été payé, ligne par ligne",
   payrollGroup: "Paie municipale",
   suppliersGroup: "Fournisseurs et autres bénéficiaires",
   resultsCaption: "Dépenses par bénéficiaire pour la sélection courante",
@@ -90,6 +90,8 @@ window.OO_I18N = {
   detailError: "Impossible de charger le détail pour l'instant — le procès-verbal officiel contient toutes les lignes.",
   detailHead: "{n} paiement(s) à ce bénéficiaire pour cette séance · total {amt}",
   detailNone: "Détail non disponible pour cette ligne.",
+  drillAria: "Voir qui a été payé — {name}",
+  drillHead: "{nPay} bénéficiaire(s), {nLines} ligne(s) · total {amt}",
 
   // Signals
   signalsH: "À regarder de plus près",
@@ -241,7 +243,7 @@ window.OO_I18N = {
   scopeAll: "all categories",
   empty: "No payees match these filters. Clear a filter or try another spelling.",
   catChartCaption: "Breakdown by category — exact values alongside",
-  catListCaption: "Amount and share by category",
+  catListCaption: "Amount and share by category — click a category to see who was paid, line by line",
   payrollGroup: "Municipal payroll",
   suppliersGroup: "Suppliers and other payees",
   resultsCaption: "Spending by payee for the current selection",
@@ -259,6 +261,8 @@ window.OO_I18N = {
   detailError: "The detail could not be loaded right now — the official minutes contain every line.",
   detailHead: "{n} payment(s) to this payee for this sitting · total {amt}",
   detailNone: "Detail not available for this line.",
+  drillAria: "See who was paid — {name}",
+  drillHead: "{nPay} payee(s), {nLines} line(s) · total {amt}",
 
   signalsH: "Worth a closer look",
   signalsNote: "These automated observations help readers find patterns. They do not imply error or wrongdoing.",
