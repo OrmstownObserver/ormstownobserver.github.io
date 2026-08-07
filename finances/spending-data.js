@@ -23,10 +23,13 @@ window.OO_SPENDING = {
    "2026-01": 0.12
   },
   "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS).",
-  "categories_note": "v2 (2026-08-06): payee-based refinement rules split Utilities, Vehicle fuel & maintenance, and Waste & recycling collection out of the broad categories. Rules live in finances/tools/apply-category-rules.js and are re-applied after each data regeneration. Grouped small-line rest rows keep their original broad category."
+  "categories_note": "v2 (2026-08-06): payee-based refinement rules split Utilities, Vehicle fuel & maintenance, and Waste & recycling collection out of the broad categories. Rules live in finances/tools/apply-category-rules.js and are re-applied after each data regeneration. Grouped small-line rest rows keep their original broad category.",
+  "months_direct": {
+   "2026-06": "Extracted directly from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines) and reconciled to every printed subtotal; Notion ledger line-item backfill pending."
+  }
  },
- "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'aux séances de <strong>juin 2026</strong> (1<sup>er</sup> et 15 juin). Cette page détaille les listes de dépenses jusqu'à la séance du <strong>4 mai 2026</strong>; les listes des séances de juin sont en cours d'ajout. Les PV paraissent normalement de 4 à 6 semaines après leur adoption; les dépenses les plus récentes s'ajoutent donc ici au fil de leur publication.",
- "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>June 2026</strong> sittings (June 1 and 15). This page itemizes the spending lists up to the <strong>May 4, 2026</strong> sitting; the June lists are being added. Minutes normally appear 4–6 weeks after adoption; the most recent spending is added here as it is published.",
+ "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'aux séances de <strong>juin 2026</strong>, et cette page détaille les listes de dépenses jusqu'à la séance du <strong>1<sup>er</sup> juin 2026</strong>. Les PV des séances de juillet et d'août paraîtront de 4 à 6 semaines après leur adoption; leurs listes s'ajouteront ici dès leur publication.",
+ "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>June 2026</strong> sittings, and this page itemizes the spending lists up to the <strong>June 1, 2026</strong> sitting. Minutes of the July and August sittings will appear 4–6 weeks after adoption; their lists will be added here as soon as they are published.",
  "budget": {
   "year": 2026,
   "adopted": "2025-12-17",
@@ -414,6 +417,50 @@ window.OO_SPENDING = {
   "Bauval Carrières Régionales": {
    "fr": "pierre et matériaux granulaires",
    "en": "stone & granular materials"
+  },
+  "M.R.C. Haut Saint Laurent": {
+   "fr": "quote-part annuelle — MRC du Haut-Saint-Laurent",
+   "en": "annual share — Haut-Saint-Laurent RCM"
+  },
+  "FQM Assurances Inc.": {
+   "fr": "assurances municipales (FQM)",
+   "en": "municipal insurance (FQM)"
+  },
+  "Compteurs d'Eau du Québec": {
+   "fr": "compteurs d'eau (réso 26-04-112)",
+   "en": "water meters (res. 26-04-112)"
+  },
+  "Groupe Charlebois Inc.": {
+   "fr": "organisation des évènements municipaux 2026 (1er versement)",
+   "en": "2026 municipal events organization (1st instalment)"
+  },
+  "Robmusic": {
+   "fr": "spectacle — Fête nationale du Québec 2026",
+   "en": "show — Fête nationale du Québec 2026"
+  },
+  "9437-7843 Québec Inc.": {
+   "fr": "remboursement d'un dépôt de garantie — projet rue Isabelle",
+   "en": "guarantee-deposit refund — rue Isabelle project"
+  },
+  "CAUCA": {
+   "fr": "répartition des appels d'urgence — service incendie",
+   "en": "emergency-call dispatch — fire service"
+  },
+  "S.N.G. Services Mécaniques Inc.": {
+   "fr": "entretien des véhicules municipaux",
+   "en": "municipal vehicle maintenance"
+  },
+  "Meubles Burotic Inc.": {
+   "fr": "mobilier — hôtel de ville et salle du conseil",
+   "en": "furniture — town hall and council room"
+  },
+  "Bétonel / Dulux": {
+   "fr": "peinture de marquage — parcs et rues",
+   "en": "line-marking paint — parks and streets"
+  },
+  "Cégep de Saint-Laurent": {
+   "fr": "formation du personnel — travaux publics",
+   "en": "staff training — public works"
   }
  },
  "months": [
@@ -672,6 +719,59 @@ window.OO_SPENDING = {
     "Other": [
      6553.87,
      5
+    ]
+   }
+  },
+  {
+   "m": "2026-06",
+   "label_fr": "Juin 2026",
+   "label_en": "June 2026",
+   "total": 857483.73,
+   "coverage": "full",
+   "session": "Séance ordinaire 2026-06-01, rés. 26-06-150",
+   "url": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-01_WEB.pdf",
+   "note_fr": "À noter : la résolution 26-06-150 mentionne « des montants totalisant 387 570,97 $ », soit le sous-total d'un seul des blocs de l'annexe A. Le GRAND TOTAL de l'annexe jointe au procès-verbal est de 857 483,73 $ (paiements à effectuer 229 343,09 $, salaires 188 397,20 $, paiements effectués 387 570,97 $ et remboursement d'un dépôt de garantie 52 172,47 $); c'est ce total, conforme à la méthode des autres mois, qui est présenté ici.",
+   "note_en": "Note: resolution 26-06-150 reads “amounts totalling $387,570.97”, which corresponds to the subtotal of only one block of Annex A. The GRAND TOTAL of the annex attached to the minutes is $857,483.73 (payments to be made $229,343.09, salaries $188,397.20, payments made $387,570.97 and a guarantee-deposit refund $52,172.47); that total, consistent with the other months' method, is what is shown here.",
+   "cats": {
+    "Other": [
+     334131.13,
+     4
+    ],
+    "Salaries & HR": [
+     200566.42,
+     11
+    ],
+    "Professional services": [
+     108833.57,
+     29
+    ],
+    "Supplies & operations": [
+     102272.01,
+     70
+    ],
+    "Waste & recycling": [
+     45489.22,
+     1
+    ],
+    "Utilities": [
+     24220.25,
+     29
+    ],
+    "Contracts — works": [
+     16299.03,
+     12
+    ],
+    "Vehicle fuel & maintenance": [
+     12676.69,
+     44
+    ],
+    "Subsidies & community": [
+     10803.69,
+     11
+    ],
+    "Legal — external counsel": [
+     2191.72,
+     3
     ]
    }
   }
@@ -2111,6 +2211,391 @@ window.OO_SPENDING = {
    "Contracts — works",
    550,
    1
+  ],
+  [
+   "2026-06",
+   "— (paie municipale)",
+   "Salaries & HR",
+   188397.2,
+   1
+  ],
+  [
+   "2026-06",
+   "M.R.C. Haut Saint Laurent",
+   "Other",
+   183336.75,
+   1
+  ],
+  [
+   "2026-06",
+   "FQM Assurances Inc.",
+   "Other",
+   97472.16,
+   1
+  ],
+  [
+   "2026-06",
+   "Compteurs d'Eau du Québec",
+   "Supplies & operations",
+   57843,
+   1
+  ],
+  [
+   "2026-06",
+   "9437-7843 Québec Inc.",
+   "Other",
+   52172.47,
+   1
+  ],
+  [
+   "2026-06",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   45489.22,
+   1
+  ],
+  [
+   "2026-06",
+   "Groupe Charlebois Inc.",
+   "Professional services",
+   29893.5,
+   1
+  ],
+  [
+   "2026-06",
+   "Hydro-Québec",
+   "Utilities",
+   23937.26,
+   26
+  ],
+  [
+   "2026-06",
+   "AEDIFICA",
+   "Professional services",
+   18439.7,
+   1
+  ],
+  [
+   "2026-06",
+   "Pg Solutions",
+   "Professional services",
+   17654.47,
+   1
+  ],
+  [
+   "2026-06",
+   "Robmusic",
+   "Professional services",
+   10863.99,
+   1
+  ],
+  [
+   "2026-06",
+   "Bétonel / Dulux",
+   "Supplies & operations",
+   8668.93,
+   1
+  ],
+  [
+   "2026-06",
+   "CAUCA",
+   "Professional services",
+   7967.23,
+   2
+  ],
+  [
+   "2026-06",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   7286.54,
+   2
+  ],
+  [
+   "2026-06",
+   "2547-0857 Québec Inc. (Infotech)",
+   "Professional services",
+   7092.28,
+   5
+  ],
+  [
+   "2026-06",
+   "Complexe Médical Ormstown inc",
+   "Supplies & operations",
+   7012.12,
+   1
+  ],
+  [
+   "2026-06",
+   "Meubles Burotic Inc.",
+   "Supplies & operations",
+   6953.4,
+   1
+  ],
+  [
+   "2026-06",
+   "Ouellet Samantha",
+   "Professional services",
+   5258.04,
+   3
+  ],
+  [
+   "2026-06",
+   "9141855 Canada Inc.",
+   "Vehicle fuel & maintenance",
+   5141.47,
+   5
+  ],
+  [
+   "2026-06",
+   "Livestock Breeders Association",
+   "Subsidies & community",
+   5000,
+   1
+  ],
+  [
+   "2026-06",
+   "Cégep de Saint-Laurent",
+   "Salaries & HR",
+   4127.6,
+   1
+  ],
+  [
+   "2026-06",
+   "9534-8702 Québec Inc. (Petro Canada)",
+   "Vehicle fuel & maintenance",
+   3675.09,
+   28
+  ],
+  [
+   "2026-06",
+   "S.N.G. Services Mécaniques Inc.",
+   "Vehicle fuel & maintenance",
+   3643.93,
+   4
+  ],
+  [
+   "2026-06",
+   "Environor Canada Inc.",
+   "Supplies & operations",
+   3057.02,
+   1
+  ],
+  [
+   "2026-06",
+   "Solution Informatique de la Montérégie",
+   "Professional services",
+   2782.82,
+   2
+  ],
+  [
+   "2026-06",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2667.42,
+   1
+  ],
+  [
+   "2026-06",
+   "Sécurité Rousse Inc.",
+   "Contracts — works",
+   2535.05,
+   3
+  ],
+  [
+   "2026-06",
+   "Bottier du Cinq (Le)",
+   "Supplies & operations",
+   2418.54,
+   3
+  ],
+  [
+   "2026-06",
+   "Gleaner, The",
+   "Professional services",
+   2414.48,
+   1
+  ],
+  [
+   "2026-06",
+   "COMAQ",
+   "Salaries & HR",
+   2242.01,
+   1
+  ],
+  [
+   "2026-06",
+   "FQM Assurances Inc.",
+   "Salaries & HR",
+   2148.39,
+   1
+  ],
+  [
+   "2026-06",
+   "Pompaction Inc.",
+   "Supplies & operations",
+   2094.07,
+   2
+  ],
+  [
+   "2026-06",
+   "Légion royale canadienne — Ormstown",
+   "Subsidies & community",
+   2000,
+   1
+  ],
+  [
+   "2026-06",
+   "Bionest Inc.",
+   "Contracts — works",
+   1779.75,
+   1
+  ],
+  [
+   "2026-06",
+   "Eurofins Environex",
+   "Professional services",
+   1763.15,
+   5
+  ],
+  [
+   "2026-06",
+   "Chartrand Fanny",
+   "Professional services",
+   1603.9,
+   1
+  ],
+  [
+   "2026-06",
+   "Dunton Rainville S.E.N.C.R.L.",
+   "Legal — external counsel",
+   1544.98,
+   2
+  ],
+  [
+   "2026-06",
+   "Formation R.C.R. RF",
+   "Salaries & HR",
+   1513.3,
+   2
+  ],
+  [
+   "2026-06",
+   "Ambioterra",
+   "Subsidies & community",
+   1416,
+   1
+  ],
+  [
+   "2026-06",
+   "JBF Javel-Bois-Franc Inc.",
+   "Supplies & operations",
+   1385.46,
+   1
+  ],
+  [
+   "2026-06",
+   "Construction J. Théoret Inc.",
+   "Contracts — works",
+   1382.57,
+   1
+  ],
+  [
+   "2026-06",
+   "Mcclintock, les Entreprises",
+   "Contracts — works",
+   1172.75,
+   1
+  ],
+  [
+   "2026-06",
+   "Ouimet Johane",
+   "Other",
+   1149.75,
+   1
+  ],
+  [
+   "2026-06",
+   "Discair Productions",
+   "Professional services",
+   1092.26,
+   1
+  ],
+  [
+   "2026-06",
+   "Prud'homme Technologies Inc.",
+   "Supplies & operations",
+   1078.16,
+   1
+  ],
+  [
+   "2026-06",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   1045.83,
+   2
+  ],
+  [
+   "2026-06",
+   "Service Informatique D.L. Inc.",
+   "Professional services",
+   1014.08,
+   1
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   8048.06,
+   55
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   2142.37,
+   4
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   2137.92,
+   5
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   646.74,
+   1
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Subsidies & community",
+   2387.69,
+   8
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   993.67,
+   4
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   216.2,
+   7
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   282.99,
+   3
   ]
  ]
 };
