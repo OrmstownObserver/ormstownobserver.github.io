@@ -17,13 +17,13 @@ window.OO_SPENDING = {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
   "observer_fields": "categories, gloss (descriptions), entries grouping, months[].note_fr/note_en",
-  "categories_method": "observer-rules-v2.1",
+  "categories_method": "observer-rules-v3",
   "gloss_method": "observer-editorial-v1",
   "tolerances": {
    "2026-01": 0.12
   },
   "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS).",
-  "categories_note": "v2.1 (2026-08-07): entries and category totals are regenerated from the line-level ledger export (finances/tools/rebuild-entries.js), with the payee rules of apply-category-rules.js applied per line. Unlike v2, grouped small lines now carry their line-accurate category, so refined categories (Utilities, Vehicle fuel & maintenance, Waste & recycling) are exact rather than floors.",
+  "categories_note": "v3 (2026-08-07): content-aware mapping (finances/tools/category-rules.js) applied per ledger line by rebuild-entries.js. Adds Regional shares & memberships and Insurance; assigns each line by its payee AND entry text (e.g. quote-parts vs supplies from the same body, training vs dues), leaving Other for genuinely unclassifiable items such as resident damage reimbursements.",
   "months_direct": {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
@@ -219,6 +219,16 @@ window.OO_SPENDING = {
    "fr": "Collecte des ordures et du recyclage",
    "en": "Garbage & recycling collection",
    "color": "#d37295"
+  },
+  "Regional shares & memberships": {
+   "fr": "Quotes-parts, adhésions et cotisations",
+   "en": "Regional shares & memberships",
+   "color": "#767f4f"
+  },
+  "Insurance": {
+   "fr": "Assurances",
+   "en": "Insurance",
+   "color": "#b3823e"
   }
  },
  "gloss": {
@@ -491,12 +501,12 @@ window.OO_SPENDING = {
    "note_en": "A documented 0.12 $ gap: two amounts whose last digit is unreadable in the scan (BCGO, ICS). A separate 386,621.55 $ progress payment (Rang des Botreaux, credit line) is approved separately and excluded from this total.",
    "cats": {
     "Contracts — works": [
-     350191.29,
-     16
+     352728.24,
+     17
     ],
     "Salaries & HR": [
-     310513.95,
-     22
+     316212.98,
+     24
     ],
     "Waste & recycling": [
      109283.02,
@@ -507,28 +517,24 @@ window.OO_SPENDING = {
      49
     ],
     "Supplies & operations": [
-     75585.14,
-     102
+     85181.46,
+     119
     ],
     "Utilities": [
-     28102.04,
-     12
+     28138.78,
+     13
     ],
     "Legal — external counsel": [
      21642.12,
      10
-    ],
-    "Other": [
-     17919.04,
-     22
     ],
     "Vehicle fuel & maintenance": [
      17439.7,
      77
     ],
     "Subsidies & community": [
-     1500,
-     1
+     1550,
+     2
     ]
    }
   },
@@ -550,12 +556,12 @@ window.OO_SPENDING = {
      2
     ],
     "Utilities": [
-     18659.91,
-     4
+     18696.65,
+     5
     ],
     "Supplies & operations": [
-     15050.99,
-     18
+     15043.63,
+     19
     ],
     "Legal — external counsel": [
      13380.26,
@@ -573,9 +579,9 @@ window.OO_SPENDING = {
      3136.94,
      2
     ],
-    "Other": [
-     1204.42,
-     4
+    "Regional shares & memberships": [
+     1175.04,
+     2
     ]
    },
    "note_fr": "Un décompte Solmatech de 7 599,85 $ (marge de crédit, Rang des Botreaux) est approuvé séparément et exclu de ce total. Une facture Infotech de 5 170,73 $, inscrite aussi à la liste de mars, n'est comptée qu'en mars, où le total réconcilie au sou près.",
@@ -595,28 +601,24 @@ window.OO_SPENDING = {
      11
     ],
     "Supplies & operations": [
-     135152.23,
-     117
+     134575.86,
+     116
+    ],
+    "Regional shares & memberships": [
+     70817.38,
+     3
     ],
     "Contracts — works": [
      67745.82,
      17
     ],
-    "Other": [
-     39387,
-     1
-    ],
     "Professional services": [
      35658.24,
      16
     ],
-    "Subsidies & community": [
-     31430.38,
-     2
-    ],
     "Vehicle fuel & maintenance": [
-     20743.43,
-     102
+     21319.8,
+     103
     ],
     "Utilities": [
      18983.16,
@@ -642,8 +644,8 @@ window.OO_SPENDING = {
    "note_en": "Three progress payments financed by the Rang des Botreaux credit line (58,748.41 $) are approved separately and excluded from this total.",
    "cats": {
     "Salaries & HR": [
-     180760.25,
-     7
+     161209.19,
+     6
     ],
     "Professional services": [
      115904.88,
@@ -658,8 +660,8 @@ window.OO_SPENDING = {
      65
     ],
     "Supplies & operations": [
-     39833.37,
-     76
+     40859.47,
+     79
     ],
     "Legal — external counsel": [
      32422.11,
@@ -670,12 +672,20 @@ window.OO_SPENDING = {
      1
     ],
     "Utilities": [
-     30703.65,
-     8
+     30777.13,
+     10
+    ],
+    "Insurance": [
+     20913.51,
+     2
+    ],
+    "Regional shares & memberships": [
+     3650,
+     2
     ],
     "Other": [
-     7026.08,
-     9
+     914.05,
+     1
     ]
    }
   },
@@ -701,28 +711,28 @@ window.OO_SPENDING = {
      12
     ],
     "Supplies & operations": [
-     33478.58,
-     60
+     33140.3,
+     61
     ],
     "Waste & recycling": [
      30954.47,
      1
     ],
     "Utilities": [
-     20409.19,
-     11
+     20445.93,
+     12
     ],
     "Legal — external counsel": [
      18508.14,
      13
     ],
-    "Other": [
-     6553.87,
-     5
+    "Regional shares & memberships": [
+     6178.73,
+     2
     ],
     "Vehicle fuel & maintenance": [
-     2892.95,
-     7
+     3569.63,
+     8
     ]
    }
   },
@@ -737,13 +747,13 @@ window.OO_SPENDING = {
    "note_fr": "À noter : la résolution 26-06-150 mentionne « des montants totalisant 387 570,97 $ », soit le sous-total d'un seul des blocs de l'annexe A. Le GRAND TOTAL de l'annexe jointe au procès-verbal est de 857 483,73 $ (paiements à effectuer 229 343,09 $, salaires 188 397,20 $, paiements effectués 387 570,97 $ et remboursement d'un dépôt de garantie 52 172,47 $); c'est ce total, conforme à la méthode des autres mois, qui est présenté ici.",
    "note_en": "Note: resolution 26-06-150 reads “amounts totalling $387,570.97”, which corresponds to the subtotal of only one block of Annex A. The GRAND TOTAL of the annex attached to the minutes is $857,483.73 (payments to be made $229,343.09, salaries $188,397.20, payments made $387,570.97 and a guarantee-deposit refund $52,172.47); that total, consistent with the other months' method, is what is shown here.",
    "cats": {
-    "Other": [
-     334131.13,
-     4
-    ],
     "Salaries & HR": [
-     200566.42,
-     11
+     198418.03,
+     10
+    ],
+    "Regional shares & memberships": [
+     183336.75,
+     1
     ],
     "Professional services": [
      108833.57,
@@ -753,6 +763,14 @@ window.OO_SPENDING = {
      102272.01,
      70
     ],
+    "Insurance": [
+     99620.55,
+     2
+    ],
+    "Contracts — works": [
+     68471.5,
+     13
+    ],
     "Waste & recycling": [
      45489.22,
      1
@@ -760,10 +778,6 @@ window.OO_SPENDING = {
     "Utilities": [
      24220.25,
      29
-    ],
-    "Contracts — works": [
-     16299.03,
-     12
     ],
     "Vehicle fuel & maintenance": [
      12676.69,
@@ -776,6 +790,10 @@ window.OO_SPENDING = {
     "Legal — external counsel": [
      2191.72,
      3
+    ],
+    "Other": [
+     1149.75,
+     1
     ]
    }
   }
@@ -959,7 +977,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "FQM",
-   "Other",
+   "Salaries & HR",
    5699.03,
    2
   ],
@@ -1008,7 +1026,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Les Formulaires Ducharme Inc.",
-   "Other",
+   "Supplies & operations",
    3708.29,
    1
   ],
@@ -1064,7 +1082,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "M.R.C. Haut Saint Laurent",
-   "Other",
+   "Contracts — works",
    2536.95,
    1
   ],
@@ -1113,7 +1131,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Traiteur Pelchat Inc.",
-   "Other",
+   "Supplies & operations",
    1846.5,
    1
   ],
@@ -1190,7 +1208,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Manoir d'Youville",
-   "Other",
+   "Supplies & operations",
    1326.86,
    1
   ],
@@ -1211,7 +1229,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Librairies Boyer",
-   "Other",
+   "Supplies & operations",
    1223.2,
    5
   ],
@@ -1282,8 +1300,8 @@ window.OO_SPENDING = {
    "2026-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   10648.32,
-   63
+   12139.79,
+   72
   ],
   [
    "2026-01",
@@ -1302,16 +1320,16 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Other",
-   1578.21,
-   11
+   "Salaries & HR",
+   956.01,
+   6
   ],
   [
    "2026-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Salaries & HR",
-   956.01,
-   6
+   "Subsidies & community",
+   50,
+   1
   ],
   [
    "2026-01",
@@ -1324,8 +1342,8 @@ window.OO_SPENDING = {
    "2026-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Utilities",
-   446.92,
-   2
+   483.66,
+   3
   ],
   [
    "2026-02",
@@ -1457,8 +1475,8 @@ window.OO_SPENDING = {
    "2026-02",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   2022.73,
-   11
+   2015.37,
+   12
   ],
   [
    "2026-02",
@@ -1477,9 +1495,9 @@ window.OO_SPENDING = {
   [
    "2026-02",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Other",
-   1204.42,
-   4
+   "Regional shares & memberships",
+   1175.04,
+   2
   ],
   [
    "2026-02",
@@ -1492,8 +1510,8 @@ window.OO_SPENDING = {
    "2026-02",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Utilities",
-   242.68,
-   2
+   279.42,
+   3
   ],
   [
    "2026-02",
@@ -1519,14 +1537,14 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "Régie intermunicipale de la patinoire",
-   "Other",
+   "Regional shares & memberships",
    39387,
    1
   ],
   [
    "2026-03",
    "CRSBP Montérégie Inc.",
-   "Subsidies & community",
+   "Regional shares & memberships",
    31430.38,
    2
   ],
@@ -1779,8 +1797,8 @@ window.OO_SPENDING = {
    "2026-03",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   13756.14,
-   86
+   13179.77,
+   85
   ],
   [
    "2026-03",
@@ -1793,8 +1811,8 @@ window.OO_SPENDING = {
    "2026-03",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Vehicle fuel & maintenance",
-   1170.65,
-   10
+   1747.02,
+   11
   ],
   [
    "2026-03",
@@ -1869,7 +1887,7 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "Beneva Inc.",
-   "Salaries & HR",
+   "Insurance",
    20913.51,
    2
   ],
@@ -1967,7 +1985,7 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "A.E.M.F.S.Q.",
-   "Other",
+   "Regional shares & memberships",
    3500,
    1
   ],
@@ -2079,7 +2097,7 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "Union des Municipalités du Québec",
-   "Other",
+   "Salaries & HR",
    1362.45,
    1
   ],
@@ -2115,15 +2133,15 @@ window.OO_SPENDING = {
    "2026-04",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Utilities",
-   854.79,
-   4
+   928.27,
+   6
   ],
   [
    "2026-04",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   8374.39,
-   46
+   9400.49,
+   49
   ],
   [
    "2026-04",
@@ -2142,15 +2160,22 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Other",
-   2163.63,
-   7
+   "Contracts — works",
+   857.81,
+   1
   ],
   [
    "2026-04",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Contracts — works",
-   857.81,
+   "Regional shares & memberships",
+   150,
+   1
+  ],
+  [
+   "2026-04",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Other",
+   914.05,
    1
   ],
   [
@@ -2219,7 +2244,7 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "FQM",
-   "Other",
+   "Regional shares & memberships",
    5517.62,
    1
   ],
@@ -2416,8 +2441,8 @@ window.OO_SPENDING = {
    "2026-05",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   7345.14,
-   45
+   7006.86,
+   46
   ],
   [
    "2026-05",
@@ -2429,16 +2454,16 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Contracts — works",
-   709.97,
-   1
+   "Vehicle fuel & maintenance",
+   1652.38,
+   7
   ],
   [
    "2026-05",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Vehicle fuel & maintenance",
-   975.7,
-   6
+   "Contracts — works",
+   709.97,
+   1
   ],
   [
    "2026-05",
@@ -2450,16 +2475,16 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Other",
-   1036.25,
-   4
+   "Utilities",
+   281.72,
+   3
   ],
   [
    "2026-05",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Utilities",
-   244.98,
-   2
+   "Regional shares & memberships",
+   661.11,
+   1
   ],
   [
    "2026-06",
@@ -2471,16 +2496,16 @@ window.OO_SPENDING = {
   [
    "2026-06",
    "M.R.C. Haut Saint Laurent",
-   "Other",
+   "Regional shares & memberships",
    183336.75,
    1
   ],
   [
    "2026-06",
    "FQM Assurances Inc.",
-   "Other",
-   97472.16,
-   1
+   "Insurance",
+   99620.55,
+   2
   ],
   [
    "2026-06",
@@ -2492,7 +2517,7 @@ window.OO_SPENDING = {
   [
    "2026-06",
    "9437-7843 Québec Inc.",
-   "Other",
+   "Contracts — works",
    52172.47,
    1
   ],
@@ -2669,13 +2694,6 @@ window.OO_SPENDING = {
    "COMAQ",
    "Salaries & HR",
    2242.01,
-   1
-  ],
-  [
-   "2026-06",
-   "FQM Assurances Inc.",
-   "Salaries & HR",
-   2148.39,
    1
   ],
   [

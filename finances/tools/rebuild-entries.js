@@ -10,7 +10,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const { RULES } = require('./apply-category-rules.js');
+const { NEW_CATS, mapCategory, METHOD } = require('./category-rules.js');
 
 const rawPath = process.argv[2];
 if (!rawPath) { console.error('usage: node rebuild-entries.js <raw-export.json>'); process.exit(1); }
@@ -28,11 +28,6 @@ const normKey = (s) => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowe
 const CANON = {};
 D.entries.forEach(e => { const k = normKey(e[1]); if (!CANON[k]) CANON[k] = e[1]; });
 function canonical(name) { return CANON[normKey(name)] || String(name).normalize('NFC'); }
-function mappedCat(payee, ledgerCat) {
-  if (/^—/.test(payee)) return ledgerCat;
-  for (const [re, cat] of RULES) if (re.test(payee)) return cat;
-  return ledgerCat;
-}
 const isPayroll = (n) => /paie municipale|municipal payroll/i.test(n);
 
 let allOk = true;
@@ -45,7 +40,7 @@ for (const month of Object.keys(raw).sort()) {
   const groups = {};
   for (const rrow of raw[month]) {
     const payee = canonical(rrow[0]);
-    const cat = mappedCat(payee, rrow[3]);
+    const cat = mapCategory(payee, rrow[1], rrow[3]);
     const k = normKey(payee) + '|' + cat;
     const g = groups[k] = groups[k] || { payee, cat, amt: 0, lines: 0 };
     g.amt = r2(g.amt + r2(Number(rrow[2])));
@@ -72,8 +67,9 @@ for (const month of Object.keys(raw).sort()) {
 if (!allOk) { console.error('aborting — month totals changed'); process.exit(1); }
 
 D.entries = newEntries;
-D.provenance.categories_method = 'observer-rules-v2.1';
-D.provenance.categories_note = 'v2.1 (2026-08-07): entries and category totals are regenerated from the line-level ledger export (finances/tools/rebuild-entries.js), with the payee rules of apply-category-rules.js applied per line. Unlike v2, grouped small lines now carry their line-accurate category, so refined categories (Utilities, Vehicle fuel & maintenance, Waste & recycling) are exact rather than floors.';
+Object.keys(NEW_CATS).forEach(k => { if (!D.categories[k]) D.categories[k] = NEW_CATS[k]; });
+D.provenance.categories_method = METHOD;
+D.provenance.categories_note = 'v3 (2026-08-07): content-aware mapping (finances/tools/category-rules.js) applied per ledger line by rebuild-entries.js. Adds Regional shares & memberships and Insurance; assigns each line by its payee AND entry text (e.g. quote-parts vs supplies from the same body, training vs dues), leaving Other for genuinely unclassifiable items such as resident damage reimbursements.';
 
 const src = fs.readFileSync(FILE, 'utf8');
 const idx = src.search(/^window\.OO_SPENDING/m);

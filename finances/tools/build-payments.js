@@ -8,7 +8,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
-const { RULES } = require('./apply-category-rules.js');
+const { mapCategory } = require('./category-rules.js');
 
 const rawPath = process.argv[2];
 if (!rawPath) { console.error('usage: node build-payments.js <raw-export.json>'); process.exit(1); }
@@ -19,18 +19,13 @@ eval(fs.readFileSync(path.join(dir, 'spending-data.js'), 'utf8'));
 const D = window.OO_SPENDING;
 const r2 = (x) => Math.round(x * 100) / 100;
 
-function mappedCat(payee, ledgerCat) {
-  if (/^—/.test(payee)) return ledgerCat; // sentinels keep their category
-  for (const [re, cat] of RULES) if (re.test(payee)) return cat;
-  return ledgerCat;
-}
 
 const out = {};
 let failures = 0;
 for (const month of Object.keys(raw).sort()) {
   const rows = raw[month].map(r => {
     if (!Array.isArray(r) || r.length !== 4) { console.error('bad row', month, JSON.stringify(r)); process.exit(1); }
-    return [r[0], r[1], r2(Number(r[2])), mappedCat(r[0], r[3])];
+    return [r[0], r[1], r2(Number(r[2])), mapCategory(r[0], r[1], r[3])];
   });
   out[month] = rows;
   const m = D.months.find(x => x.m === month);
