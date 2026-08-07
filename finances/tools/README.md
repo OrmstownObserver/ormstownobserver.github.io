@@ -21,6 +21,17 @@
    validate.js enforces this.
 5. Run the tests (below) — they fail loudly if any itemized month stops reconciling.
 
+## Ledger sync (standing rule — do not skip)
+The Notion ledger's Category field is kept in lockstep with `category-rules.js`
+(observer-rules-v3). **Whenever a category rule changes, or a new sitting is
+ingested, sync the ledger:** export each sitting's included line items with ids
+(`json_group_array(json_array(id, Payee, Entry, Amount, Category))`), compute
+`mapCategory(Payee, Entry, Category)` per row, and update every row where the
+result differs. Then verify: per sitting, the ledger's per-Category (count, sum)
+must exactly match `months[].cats` in spending-data.js. This keeps the Cowork
+Finance Tracker (which reads the ledger) showing the same categories as the
+public page.
+
 ## Cache busting (do not skip)
 `index.html` references `i18n.js`, `spending-data.js` and `app.js` with a `?v=` query
 string. **Bump the version in all three tags whenever any of those files change** —
