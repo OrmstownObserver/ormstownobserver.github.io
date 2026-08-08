@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-08-07T10:29:23.696Z",
- "document_count": 158,
+ "generated_at": "2026-08-08T17:37:31.883Z",
+ "document_count": 160,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -572,6 +572,11 @@
        "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Calendrier-seances-ordinaires_2026.pdf"
       },
       {
+       "title": "AVIS Modification calendrier seances ordinaires 2026 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Modification-calendrier-seances-ordinaires_2026_WEB.pdf"
+      },
+      {
        "title": "PV 2026 03 02 pour site web",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf"
@@ -600,6 +605,11 @@
        "title": "PV 2026 06 15 WEB",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-15_WEB.pdf"
+      },
+      {
+       "title": "PV 2026 07 06 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PV-2026-07-06-WEB.pdf"
       },
       {
        "title": "2025 01 20 PV",
