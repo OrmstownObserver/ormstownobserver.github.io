@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-08-11T14:59:48.693Z",
- "document_count": 160,
+ "generated_at": "2026-08-13T20:11:54.722Z",
+ "document_count": 161,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -476,6 +476,11 @@
     {
      "type": "consultation",
      "documents": [
+      {
+       "title": "Avis public consultation publique 149.1 2026",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public-consultation-publique-149.1-2026.pdf"
+      },
       {
        "title": "AvisPublic DemandeReferendum PPCMOI 2026 039 Legion finale",
        "year": "2026",
