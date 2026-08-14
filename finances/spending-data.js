@@ -12,7 +12,7 @@
 // Generated: 2026-08-06
 // ============================================================
 window.OO_SPENDING = {
- "generated": "2026-08-06",
+ "generated": "2026-08-14",
  "provenance": {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
@@ -28,8 +28,8 @@ window.OO_SPENDING = {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
  },
- "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'aux séances de <strong>juin 2026</strong>, et cette page détaille les listes de dépenses jusqu'à la séance du <strong>1<sup>er</sup> juin 2026</strong>. Les PV des séances de juillet et d'août paraîtront de 4 à 6 semaines après leur adoption; leurs listes s'ajouteront ici dès leur publication.",
- "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>June 2026</strong> sittings, and this page itemizes the spending lists up to the <strong>June 1, 2026</strong> sitting. Minutes of the July and August sittings will appear 4–6 weeks after adoption; their lists will be added here as soon as they are published.",
+ "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>6 juillet 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance du 3 août paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication.",
+ "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>July 6, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the August 3 sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published.",
  "budget": {
   "year": 2026,
   "adopted": "2025-12-17",
@@ -471,6 +471,14 @@ window.OO_SPENDING = {
   "Cégep de Saint-Laurent": {
    "fr": "formation du personnel — travaux publics",
    "en": "staff training — public works"
+  },
+  "Ministre des Finances": {
+   "fr": "facturation des services de la Sûreté du Québec",
+   "en": "Sûreté du Québec policing bill"
+  },
+  "Installation Jeux-Tec Inc.": {
+   "fr": "construction des jeux d'eau (phase 2)",
+   "en": "splash pad construction (phase 2)"
   }
  },
  "months": [
@@ -794,6 +802,55 @@ window.OO_SPENDING = {
     "Other": [
      1149.75,
      1
+    ]
+   }
+  },
+  {
+   "m": "2026-07",
+   "label_fr": "Juillet 2026",
+   "label_en": "July 2026",
+   "total": 1206322.39,
+   "coverage": "full",
+   "session": "Séance ordinaire 2026-07-06, rés. 26-07-187",
+   "url": "https://www.ormstown.ca/wp-content/uploads/PV-2026-07-06-WEB.pdf",
+   "note_fr": "À noter : la résolution 26-07-187 mentionne « des montants totalisant 601 832,15 $ », soit le sous-total d'un seul des blocs de l'annexe A — la même particularité qu'en juin. Le GRAND TOTAL de l'annexe jointe au procès-verbal est de 1 206 322,39 $ (paiements à effectuer 370 830,22 $, salaires 233 660,02 $ et paiements effectués 601 832,15 $); c'est ce total, conforme à la méthode des autres mois, qui est présenté ici.",
+   "note_en": "Note: resolution 26-07-187 reads “amounts totalling $601,832.15”, which corresponds to the subtotal of only one block of Annex A — the same quirk as in June. The GRAND TOTAL of the annex attached to the minutes is $1,206,322.39 (payments to be made $370,830.22, salaries $233,660.02 and payments made $601,832.15); that total, consistent with the other months’ method, is what is shown here.",
+   "cats": {
+    "Regional shares & memberships": [
+     540401.85,
+     4
+    ],
+    "Salaries & HR": [
+     233872.71,
+     2
+    ],
+    "Contracts — works": [
+     209551.34,
+     11
+    ],
+    "Professional services": [
+     78993.87,
+     32
+    ],
+    "Supplies & operations": [
+     54669.81,
+     125
+    ],
+    "Waste & recycling": [
+     44125.65,
+     1
+    ],
+    "Utilities": [
+     18798.34,
+     20
+    ],
+    "Legal — external counsel": [
+     16982.72,
+     7
+    ],
+    "Vehicle fuel & maintenance": [
+     8926.1,
+     46
     ]
    }
   }
@@ -2863,6 +2920,377 @@ window.OO_SPENDING = {
    "Legal — external counsel",
    646.74,
    1
+  ],
+  [
+   "2026-07",
+   "Ministre des Finances",
+   "Regional shares & memberships",
+   356381,
+   1
+  ],
+  [
+   "2026-07",
+   "— (paie municipale)",
+   "Salaries & HR",
+   233660.02,
+   1
+  ],
+  [
+   "2026-07",
+   "M.R.C. Haut Saint Laurent",
+   "Regional shares & memberships",
+   183336.75,
+   1
+  ],
+  [
+   "2026-07",
+   "Installation Jeux-Tec Inc.",
+   "Contracts — works",
+   149346.78,
+   1
+  ],
+  [
+   "2026-07",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   44125.65,
+   1
+  ],
+  [
+   "2026-07",
+   "Marquage Et Traçage du Québec Inc.",
+   "Contracts — works",
+   29504.02,
+   1
+  ],
+  [
+   "2026-07",
+   "AEDIFICA",
+   "Professional services",
+   26398.83,
+   2
+  ],
+  [
+   "2026-07",
+   "Hydro-Québec",
+   "Utilities",
+   18581.14,
+   18
+  ],
+  [
+   "2026-07",
+   "Archives Lanaudière",
+   "Professional services",
+   14581.24,
+   1
+  ],
+  [
+   "2026-07",
+   "Cmlex Conseil Inc.",
+   "Legal — external counsel",
+   11784.97,
+   1
+  ],
+  [
+   "2026-07",
+   "Groupe Villeneuve",
+   "Contracts — works",
+   10659.04,
+   2
+  ],
+  [
+   "2026-07",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   9947.32,
+   2
+  ],
+  [
+   "2026-07",
+   "Robmusic",
+   "Professional services",
+   8147.99,
+   1
+  ],
+  [
+   "2026-07",
+   "Complexe Médical Ormstown inc",
+   "Supplies & operations",
+   7517.76,
+   2
+  ],
+  [
+   "2026-07",
+   "Pelouse Alex Gaulin",
+   "Contracts — works",
+   6663.33,
+   1
+  ],
+  [
+   "2026-07",
+   "SIMO Management Inc.",
+   "Professional services",
+   6612.84,
+   1
+  ],
+  [
+   "2026-07",
+   "9534-8702 Québec Inc. (Petro Canada)",
+   "Vehicle fuel & maintenance",
+   5857.63,
+   32
+  ],
+  [
+   "2026-07",
+   "Distribution Lazure Inc.",
+   "Supplies & operations",
+   5292.2,
+   1
+  ],
+  [
+   "2026-07",
+   "Dunton Rainville S.E.N.C.R.L.",
+   "Legal — external counsel",
+   4014.36,
+   4
+  ],
+  [
+   "2026-07",
+   "Sanibert",
+   "Supplies & operations",
+   3986.94,
+   4
+  ],
+  [
+   "2026-07",
+   "Pg Solutions",
+   "Professional services",
+   3828.69,
+   1
+  ],
+  [
+   "2026-07",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   3580.91,
+   2
+  ],
+  [
+   "2026-07",
+   "Ouellet Samantha",
+   "Professional services",
+   3505.36,
+   2
+  ],
+  [
+   "2026-07",
+   "Drumco Énergie",
+   "Supplies & operations",
+   3055.76,
+   6
+  ],
+  [
+   "2026-07",
+   "Shellex Groupe Conseil",
+   "Professional services",
+   2716.29,
+   1
+  ],
+  [
+   "2026-07",
+   "Gleaner, The",
+   "Professional services",
+   2414.48,
+   1
+  ],
+  [
+   "2026-07",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   2274.66,
+   2
+  ],
+  [
+   "2026-07",
+   "Décors Véronneau",
+   "Supplies & operations",
+   2270.73,
+   1
+  ],
+  [
+   "2026-07",
+   "Jardins Gemelas Inc. (Les)",
+   "Supplies & operations",
+   2069.55,
+   1
+  ],
+  [
+   "2026-07",
+   "Eurofins Environex",
+   "Professional services",
+   1910.32,
+   4
+  ],
+  [
+   "2026-07",
+   "Mission Communications",
+   "Professional services",
+   1818.74,
+   1
+  ],
+  [
+   "2026-07",
+   "G.P. ag Distribution",
+   "Supplies & operations",
+   1804.46,
+   1
+  ],
+  [
+   "2026-07",
+   "Robitaille Equipement Inc.",
+   "Supplies & operations",
+   1673.47,
+   1
+  ],
+  [
+   "2026-07",
+   "Paquet, Lyne",
+   "Professional services",
+   1615,
+   1
+  ],
+  [
+   "2026-07",
+   "Tremblay Grues Service Inc",
+   "Contracts — works",
+   1441.79,
+   1
+  ],
+  [
+   "2026-07",
+   "Gérard Maheu Inc.",
+   "Supplies & operations",
+   1328.15,
+   2
+  ],
+  [
+   "2026-07",
+   "Phaneuf Équipement Agricole",
+   "Supplies & operations",
+   1296.87,
+   1
+  ],
+  [
+   "2026-07",
+   "D'Amour & Fils Inc. (R.S)",
+   "Supplies & operations",
+   1241.81,
+   16
+  ],
+  [
+   "2026-07",
+   "Mécamobile Inc.",
+   "Vehicle fuel & maintenance",
+   1192.28,
+   4
+  ],
+  [
+   "2026-07",
+   "DHC Avocats",
+   "Legal — external counsel",
+   1183.39,
+   2
+  ],
+  [
+   "2026-07",
+   "9141855 Canada Inc.",
+   "Vehicle fuel & maintenance",
+   1173.84,
+   1
+  ],
+  [
+   "2026-07",
+   "Martech Inc.",
+   "Supplies & operations",
+   1164.98,
+   1
+  ],
+  [
+   "2026-07",
+   "Jalec Inc.",
+   "Supplies & operations",
+   1141.7,
+   1
+  ],
+  [
+   "2026-07",
+   "Service Informatique D.L. Inc",
+   "Professional services",
+   1129.06,
+   2
+  ],
+  [
+   "2026-07",
+   "Discair Productions",
+   "Professional services",
+   1092.26,
+   1
+  ],
+  [
+   "2026-07",
+   "9339-0953 Qc Inc",
+   "Supplies & operations",
+   1034.77,
+   1
+  ],
+  [
+   "2026-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   13935.09,
+   82
+  ],
+  [
+   "2026-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   1989.06,
+   3
+  ],
+  [
+   "2026-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   3222.77,
+   13
+  ],
+  [
+   "2026-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   702.35,
+   9
+  ],
+  [
+   "2026-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   212.69,
+   1
+  ],
+  [
+   "2026-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   217.2,
+   2
+  ],
+  [
+   "2026-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Regional shares & memberships",
+   684.1,
+   2
   ]
  ]
 };
