@@ -17,13 +17,13 @@ window.OO_SPENDING = {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
   "observer_fields": "categories, gloss (descriptions), entries grouping, months[].note_fr/note_en",
-  "categories_method": "observer-rules-v3",
+  "categories_method": "observer-rules-v4",
   "gloss_method": "observer-editorial-v1",
   "tolerances": {
    "2026-01": 0.12
   },
   "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS).",
-  "categories_note": "v3 (2026-08-07): content-aware mapping (finances/tools/category-rules.js) applied per ledger line by rebuild-entries.js. Adds Regional shares & memberships and Insurance; assigns each line by its payee AND entry text (e.g. quote-parts vs supplies from the same body, training vs dues), leaving Other for genuinely unclassifiable items such as resident damage reimbursements.",
+  "categories_note": "v4 (2026-08-14): content-aware mapping (finances/tools/category-rules.js) applied per ledger line by rebuild-entries.js. v3 added Regional shares & memberships and Insurance; v4 adds Policing — Sûreté du Québec (the provincial policing bill, previously inside Regional shares) and Software & IT (software, subscriptions and IT services previously split between Professional services and Supplies & operations). Each line is assigned by its payee AND entry text, leaving Other for genuinely unclassifiable items such as resident damage reimbursements.",
   "months_direct": {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
@@ -229,6 +229,16 @@ window.OO_SPENDING = {
    "fr": "Assurances",
    "en": "Insurance",
    "color": "#b3823e"
+  },
+  "Policing — SQ": {
+   "fr": "Police — Sûreté du Québec",
+   "en": "Policing — Sûreté du Québec",
+   "color": "#499894"
+  },
+  "Software & IT": {
+   "fr": "Logiciels et informatique",
+   "en": "Software & IT",
+   "color": "#a0cbe8"
   }
  },
  "gloss": {
@@ -521,12 +531,16 @@ window.OO_SPENDING = {
      5
     ],
     "Professional services": [
-     105219.31,
-     49
+     77965.72,
+     33
     ],
     "Supplies & operations": [
-     85181.46,
-     119
+     72504.96,
+     113
+    ],
+    "Software & IT": [
+     39930.09,
+     22
     ],
     "Utilities": [
      28138.78,
@@ -568,8 +582,8 @@ window.OO_SPENDING = {
      5
     ],
     "Supplies & operations": [
-     15043.63,
-     19
+     14180.57,
+     18
     ],
     "Legal — external counsel": [
      13380.26,
@@ -590,6 +604,10 @@ window.OO_SPENDING = {
     "Regional shares & memberships": [
      1175.04,
      2
+    ],
+    "Software & IT": [
+     863.06,
+     1
     ]
    },
    "note_fr": "Un décompte Solmatech de 7 599,85 $ (marge de crédit, Rang des Botreaux) est approuvé séparément et exclu de ce total. Une facture Infotech de 5 170,73 $, inscrite aussi à la liste de mars, n'est comptée qu'en mars, où le total réconcilie au sou près.",
@@ -620,10 +638,6 @@ window.OO_SPENDING = {
      67745.82,
      17
     ],
-    "Professional services": [
-     35658.24,
-     16
-    ],
     "Vehicle fuel & maintenance": [
      21319.8,
      103
@@ -631,6 +645,14 @@ window.OO_SPENDING = {
     "Utilities": [
      18983.16,
      14
+    ],
+    "Professional services": [
+     17976.91,
+     6
+    ],
+    "Software & IT": [
+     17681.33,
+     10
     ],
     "Legal — external counsel": [
      2065.87,
@@ -656,8 +678,8 @@ window.OO_SPENDING = {
      6
     ],
     "Professional services": [
-     115904.88,
-     36
+     87161.96,
+     22
     ],
     "Contracts — works": [
      80681.84,
@@ -668,8 +690,8 @@ window.OO_SPENDING = {
      65
     ],
     "Supplies & operations": [
-     40859.47,
-     79
+     38318.66,
+     74
     ],
     "Legal — external counsel": [
      32422.11,
@@ -678,6 +700,10 @@ window.OO_SPENDING = {
     "Waste & recycling": [
      31833.44,
      1
+    ],
+    "Software & IT": [
+     31283.73,
+     19
     ],
     "Utilities": [
      30777.13,
@@ -710,21 +736,25 @@ window.OO_SPENDING = {
      152311.18,
      1
     ],
-    "Professional services": [
-     63925.44,
-     27
-    ],
     "Contracts — works": [
      49792.84,
      12
     ],
+    "Professional services": [
+     36471,
+     17
+    ],
     "Supplies & operations": [
-     33140.3,
-     61
+     31717.65,
+     58
     ],
     "Waste & recycling": [
      30954.47,
      1
+    ],
+    "Software & IT": [
+     28877.09,
+     13
     ],
     "Utilities": [
      20445.93,
@@ -763,17 +793,17 @@ window.OO_SPENDING = {
      183336.75,
      1
     ],
-    "Professional services": [
-     108833.57,
-     29
-    ],
     "Supplies & operations": [
-     102272.01,
-     70
+     102134.38,
+     69
     ],
     "Insurance": [
      99620.55,
      2
+    ],
+    "Professional services": [
+     79946.14,
+     19
     ],
     "Contracts — works": [
      68471.5,
@@ -782,6 +812,10 @@ window.OO_SPENDING = {
     "Waste & recycling": [
      45489.22,
      1
+    ],
+    "Software & IT": [
+     29025.06,
+     11
     ],
     "Utilities": [
      24220.25,
@@ -816,9 +850,9 @@ window.OO_SPENDING = {
    "note_fr": "À noter : la résolution 26-07-187 mentionne « des montants totalisant 601 832,15 $ », soit le sous-total d'un seul des blocs de l'annexe A — la même particularité qu'en juin. Le GRAND TOTAL de l'annexe jointe au procès-verbal est de 1 206 322,39 $ (paiements à effectuer 370 830,22 $, salaires 233 660,02 $ et paiements effectués 601 832,15 $); c'est ce total, conforme à la méthode des autres mois, qui est présenté ici.",
    "note_en": "Note: resolution 26-07-187 reads “amounts totalling $601,832.15”, which corresponds to the subtotal of only one block of Annex A — the same quirk as in June. The GRAND TOTAL of the annex attached to the minutes is $1,206,322.39 (payments to be made $370,830.22, salaries $233,660.02 and payments made $601,832.15); that total, consistent with the other months’ method, is what is shown here.",
    "cats": {
-    "Regional shares & memberships": [
-     540401.85,
-     4
+    "Policing — SQ": [
+     356381,
+     1
     ],
     "Salaries & HR": [
      233872.71,
@@ -828,13 +862,17 @@ window.OO_SPENDING = {
      209551.34,
      11
     ],
+    "Regional shares & memberships": [
+     184020.85,
+     3
+    ],
     "Professional services": [
-     78993.87,
-     32
+     72776.62,
+     22
     ],
     "Supplies & operations": [
-     54669.81,
-     125
+     52689.44,
+     118
     ],
     "Waste & recycling": [
      44125.65,
@@ -851,6 +889,10 @@ window.OO_SPENDING = {
     "Vehicle fuel & maintenance": [
      8926.1,
      46
+    ],
+    "Software & IT": [
+     8197.62,
+     17
     ]
    }
   }
@@ -929,7 +971,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Pg Solutions",
-   "Professional services",
+   "Software & IT",
    21103.11,
    1
   ],
@@ -950,7 +992,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "Ics Inc.",
-   "Supplies & operations",
+   "Software & IT",
    10031.53,
    2
   ],
@@ -977,13 +1019,6 @@ window.OO_SPENDING = {
   ],
   [
    "2026-01",
-   "Visa Desjardins",
-   "Supplies & operations",
-   8575.9,
-   5
-  ],
-  [
-   "2026-01",
    "Bohemen Jamie (Enr.)",
    "Contracts — works",
    7853.11,
@@ -1002,6 +1037,13 @@ window.OO_SPENDING = {
    "Vehicle fuel & maintenance",
    7394.16,
    47
+  ],
+  [
+   "2026-01",
+   "Visa Desjardins",
+   "Supplies & operations",
+   7288.79,
+   3
   ],
   [
    "2026-01",
@@ -1027,7 +1069,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "2547-0857 Québec Inc. (Infotech)",
-   "Professional services",
+   "Software & IT",
    6058.5,
    14
   ],
@@ -1271,6 +1313,13 @@ window.OO_SPENDING = {
   ],
   [
    "2026-01",
+   "Visa Desjardins",
+   "Software & IT",
+   1287.11,
+   2
+  ],
+  [
+   "2026-01",
    "Énergie P38 Inc. / Budget Propane",
    "Utilities",
    1269.51,
@@ -1327,6 +1376,13 @@ window.OO_SPENDING = {
   ],
   [
    "2026-01",
+   "Service Informatique D.L. Inc",
+   "Software & IT",
+   1106.06,
+   2
+  ],
+  [
+   "2026-01",
    "Paquet, Lyne",
    "Professional services",
    1105,
@@ -1348,17 +1404,10 @@ window.OO_SPENDING = {
   ],
   [
    "2026-01",
-   "Service Informatique D.L. Inc",
-   "Supplies & operations",
-   1014.08,
-   1
-  ],
-  [
-   "2026-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   12139.79,
-   72
+   11796.01,
+   71
   ],
   [
    "2026-01",
@@ -1370,9 +1419,16 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   343.78,
+   1
+  ],
+  [
+   "2026-01",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Professional services",
-   1891.48,
-   7
+   1799.5,
+   6
   ],
   [
    "2026-01",
@@ -1532,8 +1588,8 @@ window.OO_SPENDING = {
    "2026-02",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   2015.37,
-   12
+   1152.31,
+   11
   ],
   [
    "2026-02",
@@ -1569,6 +1625,13 @@ window.OO_SPENDING = {
    "Utilities",
    279.42,
    3
+  ],
+  [
+   "2026-02",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   863.06,
+   1
   ],
   [
    "2026-02",
@@ -1664,7 +1727,7 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "Solution Informatique de la Montérégie",
-   "Professional services",
+   "Software & IT",
    9748.89,
    4
   ],
@@ -1699,7 +1762,7 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "2547-0857 Québec Inc. (Infotech)",
-   "Professional services",
+   "Software & IT",
    5170.73,
    1
   ],
@@ -1769,7 +1832,7 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "Service Informatique D.L. Inc",
-   "Professional services",
+   "Software & IT",
    2028.16,
    2
   ],
@@ -1881,7 +1944,7 @@ window.OO_SPENDING = {
   [
    "2026-03",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Professional services",
+   "Software & IT",
    733.55,
    3
   ],
@@ -1951,7 +2014,7 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "2547-0857 Québec Inc. (Infotech)",
-   "Professional services",
+   "Software & IT",
    18738.39,
    9
   ],
@@ -2006,15 +2069,8 @@ window.OO_SPENDING = {
   ],
   [
    "2026-04",
-   "Visa Desjardins",
-   "Supplies & operations",
-   7561.92,
-   7
-  ],
-  [
-   "2026-04",
    "Pg Solutions",
-   "Professional services",
+   "Software & IT",
    7444.65,
    1
   ],
@@ -2024,6 +2080,13 @@ window.OO_SPENDING = {
    "Supplies & operations",
    6916.12,
    1
+  ],
+  [
+   "2026-04",
+   "Visa Desjardins",
+   "Supplies & operations",
+   5663.31,
+   5
   ],
   [
    "2026-04",
@@ -2091,7 +2154,7 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "Solution Informatique de la Montérégie",
-   "Professional services",
+   "Software & IT",
    2252.72,
    2
   ],
@@ -2114,6 +2177,13 @@ window.OO_SPENDING = {
    "Groupe SGM Inc.",
    "Contracts — works",
    2041.4,
+   2
+  ],
+  [
+   "2026-04",
+   "Visa Desjardins",
+   "Software & IT",
+   1898.61,
    2
   ],
   [
@@ -2197,8 +2267,8 @@ window.OO_SPENDING = {
    "2026-04",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   9400.49,
-   49
+   8758.29,
+   46
   ],
   [
    "2026-04",
@@ -2211,8 +2281,15 @@ window.OO_SPENDING = {
    "2026-04",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Professional services",
-   2234.57,
-   9
+   1927.41,
+   7
+  ],
+  [
+   "2026-04",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   949.36,
+   5
   ],
   [
    "2026-04",
@@ -2259,7 +2336,7 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "Pg Solutions",
-   "Professional services",
+   "Software & IT",
    23358.17,
    3
   ],
@@ -2370,6 +2447,13 @@ window.OO_SPENDING = {
   ],
   [
    "2026-05",
+   "Service Informatique D.L. Inc",
+   "Software & IT",
+   2338.6,
+   5
+  ],
+  [
+   "2026-05",
    "Chartrand Fanny",
    "Professional services",
    2328.24,
@@ -2420,7 +2504,7 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "2547-0857 Québec Inc. (Infotech)",
-   "Professional services",
+   "Software & IT",
    1701.64,
    1
   ],
@@ -2430,13 +2514,6 @@ window.OO_SPENDING = {
    "Contracts — works",
    1532.39,
    1
-  ],
-  [
-   "2026-05",
-   "Service Informatique D.L. Inc",
-   "Professional services",
-   1324.52,
-   4
   ],
   [
    "2026-05",
@@ -2469,7 +2546,7 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "Solution Informatique de la Montérégie",
-   "Professional services",
+   "Software & IT",
    1070.11,
    2
   ],
@@ -2478,13 +2555,6 @@ window.OO_SPENDING = {
    "Carrière Ali Inc.",
    "Supplies & operations",
    1034.75,
-   1
-  ],
-  [
-   "2026-05",
-   "Service Informatique D.L. Inc",
-   "Supplies & operations",
-   1014.08,
    1
   ],
   [
@@ -2498,8 +2568,8 @@ window.OO_SPENDING = {
    "2026-05",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   7006.86,
-   46
+   6598.29,
+   44
   ],
   [
    "2026-05",
@@ -2528,6 +2598,13 @@ window.OO_SPENDING = {
    "Professional services",
    1481.58,
    6
+  ],
+  [
+   "2026-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   408.57,
+   2
   ],
   [
    "2026-05",
@@ -2609,7 +2686,7 @@ window.OO_SPENDING = {
   [
    "2026-06",
    "Pg Solutions",
-   "Professional services",
+   "Software & IT",
    17654.47,
    1
   ],
@@ -2644,7 +2721,7 @@ window.OO_SPENDING = {
   [
    "2026-06",
    "2547-0857 Québec Inc. (Infotech)",
-   "Professional services",
+   "Software & IT",
    7092.28,
    5
   ],
@@ -2714,7 +2791,7 @@ window.OO_SPENDING = {
   [
    "2026-06",
    "Solution Informatique de la Montérégie",
-   "Professional services",
+   "Software & IT",
    2782.82,
    2
   ],
@@ -2861,7 +2938,7 @@ window.OO_SPENDING = {
   [
    "2026-06",
    "Service Informatique D.L. Inc",
-   "Professional services",
+   "Software & IT",
    1014.08,
    1
   ],
@@ -2883,8 +2960,15 @@ window.OO_SPENDING = {
    "2026-06",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   8048.06,
-   55
+   7910.43,
+   54
+  ],
+  [
+   "2026-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   481.41,
+   2
   ],
   [
    "2026-06",
@@ -2904,8 +2988,8 @@ window.OO_SPENDING = {
    "2026-06",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Professional services",
-   993.67,
-   4
+   649.89,
+   3
   ],
   [
    "2026-06",
@@ -2924,7 +3008,7 @@ window.OO_SPENDING = {
   [
    "2026-07",
    "Ministre des Finances",
-   "Regional shares & memberships",
+   "Policing — SQ",
    356381,
    1
   ],
@@ -3064,7 +3148,7 @@ window.OO_SPENDING = {
   [
    "2026-07",
    "Pg Solutions",
-   "Professional services",
+   "Software & IT",
    3828.69,
    1
   ],
@@ -3161,6 +3245,13 @@ window.OO_SPENDING = {
   ],
   [
    "2026-07",
+   "Jalec Inc.",
+   "Software & IT",
+   1485.48,
+   2
+  ],
+  [
+   "2026-07",
    "Tremblay Grues Service Inc",
    "Contracts — works",
    1441.79,
@@ -3217,15 +3308,8 @@ window.OO_SPENDING = {
   ],
   [
    "2026-07",
-   "Jalec Inc.",
-   "Supplies & operations",
-   1141.7,
-   1
-  ],
-  [
-   "2026-07",
    "Service Informatique D.L. Inc",
-   "Professional services",
+   "Software & IT",
    1129.06,
    2
   ],
@@ -3247,8 +3331,8 @@ window.OO_SPENDING = {
    "2026-07",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   13935.09,
-   82
+   13096.42,
+   76
   ],
   [
    "2026-07",
@@ -3261,8 +3345,15 @@ window.OO_SPENDING = {
    "2026-07",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Professional services",
-   3222.77,
-   13
+   1963.27,
+   6
+  ],
+  [
+   "2026-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   1754.39,
+   12
   ],
   [
    "2026-07",

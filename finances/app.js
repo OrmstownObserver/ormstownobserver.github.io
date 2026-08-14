@@ -37,6 +37,8 @@
     'Waste & recycling': 'waste-recycling',
     'Regional shares & memberships': 'regional-shares',
     'Insurance': 'insurance',
+    'Policing — SQ': 'policing-sq',
+    'Software & IT': 'software-it',
     'Other': 'other'
   };
   var KEY_BY_SLUG = {};

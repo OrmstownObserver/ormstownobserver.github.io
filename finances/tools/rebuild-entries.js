@@ -69,7 +69,7 @@ if (!allOk) { console.error('aborting — month totals changed'); process.exit(1
 D.entries = newEntries;
 Object.keys(NEW_CATS).forEach(k => { if (!D.categories[k]) D.categories[k] = NEW_CATS[k]; });
 D.provenance.categories_method = METHOD;
-D.provenance.categories_note = 'v3 (2026-08-07): content-aware mapping (finances/tools/category-rules.js) applied per ledger line by rebuild-entries.js. Adds Regional shares & memberships and Insurance; assigns each line by its payee AND entry text (e.g. quote-parts vs supplies from the same body, training vs dues), leaving Other for genuinely unclassifiable items such as resident damage reimbursements.';
+D.provenance.categories_note = 'v4 (2026-08-14): content-aware mapping (finances/tools/category-rules.js) applied per ledger line by rebuild-entries.js. v3 added Regional shares & memberships and Insurance; v4 adds Policing — Sûreté du Québec (the provincial policing bill, previously inside Regional shares) and Software & IT (software, subscriptions and IT services previously split between Professional services and Supplies & operations). Each line is assigned by its payee AND entry text, leaving Other for genuinely unclassifiable items such as resident damage reimbursements.';
 
 const src = fs.readFileSync(FILE, 'utf8');
 const idx = src.search(/^window\.OO_SPENDING/m);

@@ -2,7 +2,8 @@
 // ledger line by rebuild-entries.js and build-payments.js.
 // Precedence: sentinel payees keep their ledger category; LINE_RULES
 // (payee + entry content) win over PAYEE_RULES (payee only); otherwise the
-// ledger's category stands. Method: observer-rules-v3 (content-aware).
+// ledger's category stands. Method: observer-rules-v4 (content-aware;
+// adds Policing — SQ and Software & IT).
 'use strict';
 
 // Categories introduced by the Observer (added to the data file if missing).
@@ -11,7 +12,9 @@ const NEW_CATS = {
   'Vehicle fuel & maintenance': { fr: 'Carburant et entretien des véhicules', en: 'Vehicle fuel & maintenance', color: '#9c755f' },
   'Waste & recycling': { fr: 'Collecte des ordures et du recyclage', en: 'Garbage & recycling collection', color: '#d37295' },
   'Regional shares & memberships': { fr: 'Quotes-parts, adhésions et cotisations', en: 'Regional shares & memberships', color: '#767f4f' },
-  'Insurance': { fr: 'Assurances', en: 'Insurance', color: '#b3823e' }
+  'Insurance': { fr: 'Assurances', en: 'Insurance', color: '#b3823e' },
+  'Policing — SQ': { fr: 'Police — Sûreté du Québec', en: 'Policing — Sûreté du Québec', color: '#499894' },
+  'Software & IT': { fr: 'Logiciels et informatique', en: 'Software & IT', color: '#a0cbe8' }
 };
 
 // [payeeRegex, entryRegex, category] — content-based, checked first.
@@ -24,7 +27,9 @@ const LINE_RULES = [
   [/^(UMQ|Union des Municipalités)/i, /formation/i, 'Salaries & HR'],
   [/^ADMQ/i, /cotisation|adhésion/i, 'Regional shares & memberships'],
   [/^Réseau [Dd].[Ii]nformation Municipale/i, /affichage|poste/i, 'Salaries & HR'], // job postings
-  [/^9437-7843/, /dépôt de garantie/i, 'Contracts — works'] // guarantee-deposit refund tied to the rue Isabelle works project
+  [/^9437-7843/, /dépôt de garantie/i, 'Contracts — works'], // guarantee-deposit refund tied to the rue Isabelle works project
+  [/^Ministre des Finances/, /\bSQ\b|Sûreté/i, 'Policing — SQ'], // provincial policing bill (versements)
+  [/^Visa Desjardins/, /Adobe|logiciel/i, 'Software & IT'] // software purchased on the municipal credit card
 ];
 
 // [payeeRegex, category] — whole payee.
@@ -60,6 +65,19 @@ const PAYEE_RULES = [
   // insurance
   [/^FQM Assurances/i, 'Insurance'],
   [/^Beneva/i, 'Insurance'],
+  // policing
+  [/^Ministère de la Sécurité publique/i, 'Policing — SQ'],
+  // software & IT
+  [/^Pg Solutions/i, 'Software & IT'],
+  [/^2547-0857/, 'Software & IT'],                        // Infotech (Sygem)
+  [/^Service Informatique D\.?L\.?/i, 'Software & IT'],
+  [/^Solution Informatique de la Montérégie/i, 'Software & IT'],
+  [/^Nethris/i, 'Software & IT'],                         // payroll-software fees
+  [/^Ics Inc/i, 'Software & IT'],
+  [/^Jalec/i, 'Software & IT'],                           // network access & radio/IT equipment
+  [/^Adobe Inc/i, 'Software & IT'],
+  [/^Microsoft Canada/i, 'Software & IT'],
+  [/^CANVA$/i, 'Software & IT'],
   // content-identified reassignments out of "Other"
   [/^Librairie Renaud-Bray/i, 'Supplies & operations'],   // library books
   [/^Librairies Boyer/i, 'Supplies & operations'],        // library books
@@ -85,4 +103,4 @@ function mapCategory(payee, entry, ledgerCat) {
   return ledgerCat;
 }
 
-module.exports = { NEW_CATS, LINE_RULES, PAYEE_RULES, mapCategory, METHOD: 'observer-rules-v3' };
+module.exports = { NEW_CATS, LINE_RULES, PAYEE_RULES, mapCategory, METHOD: 'observer-rules-v4' };
