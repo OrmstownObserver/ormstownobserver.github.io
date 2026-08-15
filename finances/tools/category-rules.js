@@ -53,6 +53,7 @@ const PAYEE_RULES = [
   [/^S\.N\.G\. Services Mécaniques/i, 'Vehicle fuel & maintenance'],
   [/^SuperPass/i, 'Vehicle fuel & maintenance'],
   [/^SAAQ/i, 'Vehicle fuel & maintenance'],
+  [/^Gauthier,? René/i, 'Vehicle fuel & maintenance'],
   // waste
   [/^Robert Daoust/i, 'Waste & recycling'],
   // regional bodies, associations, subscriptions
