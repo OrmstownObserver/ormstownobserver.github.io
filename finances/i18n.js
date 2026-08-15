@@ -7,12 +7,12 @@
 window.OO_I18N = {
  fr: {
   langName: "Français",
-  htmlTitle: "Où va l'argent d'Ormstown — Ormstown Observer",
-  eyebrow: "Ormstown Observer · Explorateur des fonds publics",
+  htmlTitle: "Grand livre municipal — Ormstown Observer",
+  eyebrow: "Ormstown Observer · Finances municipales",
   back: "← Accueil",
   langGroup: "Langue / Language",
   skip: "Aller à l'exploration des dépenses",
-  title: "Où va l'argent d'Ormstown",
+  title: "Grand livre municipal",
   deck: "Explorez les listes de dépenses approuvées par le conseil, comparez les mois et les fournisseurs, et vérifiez chaque total dans les procès-verbaux officiels.",
   status: "Dernière séance entièrement détaillée : {date}. Le procès-verbal de la séance d'août n'est pas encore publié; sa liste s'ajoutera dès sa publication.",
   updated: "Mise à jour : {date}",
@@ -59,8 +59,9 @@ window.OO_I18N = {
   statusPartial: "Saisie en cours",
 
   // Explore
-  exploreH: "Où va l'argent, en un coup d'œil",
+  exploreH: "Les dépenses, en un coup d'œil",
   exploreSub: "Combinez librement plusieurs mois et plusieurs catégories — tout est trié du plus grand au plus petit montant. Les catégories sont attribuées par l'Observer pour faciliter la lecture; le document officiel fait toujours foi.",
+  yearLabel: "Année",
   periodLabel: "Période",
   ytdLabel: "Année {year} — cumul",
   ytdShort: "{year} — cumul",
@@ -181,12 +182,12 @@ window.OO_I18N = {
  },
  en: {
   langName: "English",
-  htmlTitle: "Where Ormstown's money goes — Ormstown Observer",
-  eyebrow: "Ormstown Observer · Public money explorer",
+  htmlTitle: "Municipal Ledger — Ormstown Observer",
+  eyebrow: "Ormstown Observer · Municipal finances",
   back: "← Home",
   langGroup: "Langue / Language",
   skip: "Skip to spending explorer",
-  title: "Where Ormstown's money goes",
+  title: "Municipal Ledger",
   deck: "Explore the expense lists approved by council, compare months and suppliers, and verify every total in the official minutes.",
   status: "Latest fully itemized sitting: {date}. Minutes of the August sitting are not yet published; its list will be added as soon as it appears.",
   updated: "Updated: {date}",
@@ -230,8 +231,9 @@ window.OO_I18N = {
   statusFull: "Itemized line by line",
   statusPartial: "Entry in progress",
 
-  exploreH: "Where the money goes, at a glance",
+  exploreH: "The spending, at a glance",
   exploreSub: "Freely combine several months and several categories — everything is sorted largest to smallest. Categories are assigned by the Observer for readability; the official document always governs.",
+  yearLabel: "Year",
   periodLabel: "Period",
   ytdLabel: "{year} year to date",
   ytdShort: "{year} to date",

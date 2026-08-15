@@ -57,7 +57,7 @@
   }
 
   // ---------- data preparation (derived only; official values untouched) ----------
-  var FY, MONTHS = [], PERIODS = [], YTD = null, LAST_FULL = null;
+  var FY, YEARS = [], MONTHS = [], PERIODS = [], YTD = null, LAST_FULL = null;
   function prepare() {
     D.months.forEach(function (m) {
       m.payees = D.entries.filter(function (e) { return e[0] === m.m; })
@@ -65,10 +65,18 @@
       var d = /(\d{4}-\d{2}-\d{2})/.exec(m.session); m.sittingDate = d ? d[1] : (m.m + '-01');
       var r = /rés\.\s*([0-9\-]+)/.exec(m.session); m.resolution = r ? r[1] : '';
     });
-    FY = D.months.map(function (m) { return m.m.slice(0, 4); }).sort().slice(-1)[0];
+    YEARS = D.months.map(function (m) { return m.m.slice(0, 4); })
+      .filter(function (y, i, a) { return a.indexOf(y) === i; }).sort();
+    // The status line always reflects the most recent itemized sitting,
+    // whatever year the explorer is showing.
+    var fulls = D.months.filter(function (m) { return m.coverage === 'full'; });
+    LAST_FULL = fulls[fulls.length - 1] || D.months[D.months.length - 1];
+    applyYear(YEARS[YEARS.length - 1]);
+  }
+  function applyYear(y) {
+    FY = y;
+    state.year = y;
     MONTHS = D.months.filter(function (m) { return m.m.slice(0, 4) === FY; });
-    var fulls = MONTHS.filter(function (m) { return m.coverage === 'full'; });
-    LAST_FULL = fulls[fulls.length - 1] || MONTHS[MONTHS.length - 1];
     YTD = {
       m: 'ytd-' + FY, isYTD: true,
       total: Math.round(MONTHS.reduce(function (a, m) { return a + m.total; }, 0) * 100) / 100,
@@ -78,8 +86,8 @@
       payees: MONTHS.reduce(function (a, m) { return a.concat(m.payees); }, [])
     };
     // The period picker offers the year-to-date view plus each sitting of
-    // the current fiscal year; months and categories are both multi-select
-    // (older sittings stay in the coverage table and the full CSV).
+    // the selected year; months and categories are both multi-select
+    // (other years stay one year-pill away, and everything is in the full CSV).
     CAT_ORDER = catAggregates(YTD.payees).map(function (a) { return a.key; });
   }
   var CAT_ORDER = [];
@@ -116,12 +124,15 @@
   // ---------- state <-> URL ----------
   // Sorting is fixed: categories and payees always largest amount first.
   // months: [] means the full year to date; categories: [] means all.
-  var state = { lang: 'fr', months: [], categories: [] };
+  var state = { lang: 'fr', year: null, months: [], categories: [] };
 
   function readURL() {
     var p = new URLSearchParams(location.search);
     var lang = p.get('lang'); if (lang === 'fr' || lang === 'en') state.lang = lang;
     else { try { var l = localStorage.getItem('observerLang'); if (l === 'fr' || l === 'en') state.lang = l; else state.lang = (navigator.language || 'fr').indexOf('en') === 0 ? 'en' : 'fr'; } catch (e) {} }
+    var y = p.get('year');
+    if (YEARS.indexOf(y) < 0) y = YEARS[YEARS.length - 1];
+    if (y !== FY) applyYear(y);
     var per = (p.get('period') || '').split(',').filter(function (id) {
       return MONTHS.some(function (m) { return m.m === id; });
     });
@@ -131,6 +142,7 @@
   function writeURL(push) {
     var p = new URLSearchParams();
     p.set('lang', state.lang);
+    if (state.year && state.year !== YEARS[YEARS.length - 1]) p.set('year', state.year);
     if (state.months.length) p.set('period', state.months.join(','));
     if (state.categories.length) p.set('category', state.categories.join(','));
     var url = location.pathname + '?' + p.toString();
@@ -142,6 +154,13 @@
     else { var i = ms.indexOf(id); if (i >= 0) ms.splice(i, 1); else ms.push(id); }
     if (ms.length === 0 || ms.length === MONTHS.length) ms = [];
     setState({ months: ms.sort() }, { push: true });
+  }
+  function setYear(y) {
+    if (y === FY || YEARS.indexOf(y) < 0) return;
+    applyYear(y);
+    state.months = []; // period selection is per-year; category filters carry over
+    writeURL(true);
+    renderAll();
   }
   function toggleCat(slug) {
     var cs = state.categories.slice();
@@ -287,6 +306,8 @@
         });
       } else {
         charts.trend.data.labels = labels;
+        charts.trend.data.datasets[0].data = MONTHS.map(function (m) { return m.total; });
+        charts.trend.data.datasets[0].backgroundColor = MONTHS.map(function (m) { return m.coverage === 'full' ? accent : hatch(charts.trend.ctx, accent); });
         charts.trend.data.datasets[0].borderColor = borderColor;
         charts.trend.data.datasets[0].borderWidth = borderWidth;
         charts.trend.update(REDUCED ? 'none' : undefined);
@@ -505,6 +526,14 @@
 
   function buildControls() {
     var t = T();
+    var yf = $('year-field');
+    if (yf) {
+      yf.hidden = YEARS.length < 2;
+      $('l-year').textContent = t.yearLabel;
+      $('year-group').innerHTML = YEARS.map(function (y) {
+        return '<button type="button" data-year="' + y + '">' + y + '</button>';
+      }).join('');
+    }
     $('l-period').textContent = t.periodLabel;
     $('period-group').innerHTML =
       '<button type="button" data-period="__ytd__">' + tpl(t.ytdShort, { year: FY }) + '</button>' +
@@ -519,6 +548,9 @@
       }).join('');
   }
   function syncPills() {
+    document.querySelectorAll('#year-group button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-year') === FY));
+    });
     document.querySelectorAll('#period-group button').forEach(function (b) {
       var id = b.getAttribute('data-period');
       b.setAttribute('aria-pressed', String(id === '__ytd__' ? !state.months.length : state.months.indexOf(id) >= 0));
@@ -828,6 +860,11 @@
   function bindEvents() {
     $('btn-fr').addEventListener('click', function () { setState({ lang: 'fr' }, { push: true }); });
     $('btn-en').addEventListener('click', function () { setState({ lang: 'en' }, { push: true }); });
+    var yg = $('year-group');
+    if (yg) yg.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-year]');
+      if (b) setYear(b.getAttribute('data-year'));
+    });
     $('period-group').addEventListener('click', function (e) {
       var b = e.target.closest('button[data-period]');
       if (!b) return;

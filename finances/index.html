@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Où va l'argent d'Ormstown — Ormstown Observer</title>
+<title>Grand livre municipal — Ormstown Observer</title>
 <meta name="description" content="Les listes de dépenses approuvées par le conseil d'Ormstown, mois par mois, avec chaque total vérifiable dans les procès-verbaux officiels. / Ormstown's council-approved expense lists, verifiable in the official minutes.">
 <link rel="canonical" href="https://ormstownobserver.ca/finances/">
 <style>
@@ -206,13 +206,13 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);font:.8
   <header class="masthead" role="banner">
     <div class="topbar sans">
       <a class="back-link" id="home-link" href="/">← Accueil</a>
-      <span class="eyebrow" id="eyebrow">Ormstown Observer · Explorateur des fonds publics</span>
+      <span class="eyebrow" id="eyebrow">Ormstown Observer · Finances municipales</span>
       <div class="lang-group" role="group" aria-label="Langue / Language" id="lang-group">
         <button type="button" id="btn-fr" aria-pressed="true">FR</button>
         <button type="button" id="btn-en" aria-pressed="false">EN</button>
       </div>
     </div>
-    <h1 id="title">Où va l'argent d'Ormstown</h1>
+    <h1 id="title">Grand livre municipal</h1>
     <p class="dek" id="deck"></p>
     <p class="statusline"><span id="status"></span> <span class="upd" id="updated"></span></p>
     <p class="courtesy" id="courtesy"></p>
@@ -228,6 +228,7 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);font:.8
     <p class="section-sub" id="explore-sub"></p>
 
     <div class="controls sans" id="controls">
+      <div class="field" id="year-field" hidden><span class="field-label" id="l-year"></span><div class="seg" id="year-group" role="group" aria-labelledby="l-year"></div></div>
       <div class="field"><span class="field-label" id="l-period"></span><div class="seg" id="period-group" role="group" aria-labelledby="l-period"></div></div>
       <div class="field"><span class="field-label" id="l-category"></span><div class="seg" id="category-group" role="group" aria-labelledby="l-category"></div></div>
       <div><button type="button" class="btn secondary" id="f-reset"></button></div>
