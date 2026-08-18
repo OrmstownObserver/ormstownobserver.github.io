@@ -219,8 +219,8 @@
     <button class="obs-drawer-close" id="obs-drawer-close" aria-label="Close menu">✕</button>
     <div class="obs-drawer-title"><span data-en>Navigate</span><span data-fr>Navigation</span></div>
     <nav>
-      <a href="/en/bell-tower/" data-href-en="/en/bell-tower/" data-href-fr="/fr/bell-tower/"
-        class="${isActive('/en/bell-tower') || isActive('/fr/bell-tower') ? 'is-active' : ''}">
+      <a href="/en/investigations/" data-href-en="/en/investigations/" data-href-fr="/fr/investigations/"
+        class="${isActive('/en/investigations') || isActive('/fr/investigations') || isActive('/en/bell-tower') || isActive('/fr/bell-tower') || isActive('/en/toit-vert') || isActive('/fr/toit-vert') ? 'is-active' : ''}">
         <span data-en>Investigations</span><span data-fr>Enquêtes</span>
       </a>
       <a href="/en/bylaws-regulations/" data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/"
@@ -238,6 +238,10 @@
       <a href="/en/council-watch/" data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/"
         class="${isActive('/en/council') || isActive('/fr/conseil') ? 'is-active' : ''}">
         <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>
+      </a>
+      <a href="/finances/?lang=en" data-href-en="/finances/?lang=en" data-href-fr="/finances/?lang=fr"
+        class="${isActive('/finances') ? 'is-active' : ''}">
+        <span data-en>Municipal Ledger</span><span data-fr>Grand livre municipal</span>
       </a>
       <a href="/en/editorials/" data-href-en="/en/editorials/" data-href-fr="/fr/editoriaux/"
         class="${isActive('/en/editorials') || isActive('/fr/editoriaux') ? 'is-active' : ''}">

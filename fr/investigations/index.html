@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquêtes — L'Ormstown Observer</title>
+<meta name="description" content="Journalisme d'enquête original, fondé sur les documents, sur les affaires municipales à Ormstown et dans le Haut-Saint-Laurent.">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/investigations/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/investigations/">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#1a1a1a;--ink-light:#444;--accent:#b5161b;--accent-light:#f5e8e8;
+    --paper:#faf8f4;--paper-dark:#f0ece4;--rule:#c8b97a;--border:#d4c9b8;--muted:#555;
+    --confirm:#155724;--warn:#721c24;--pending:#856404;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  h1,h2,h3{font-family:'Libre Baskerville',Georgia,serif;margin:0;}
+
+  .page-wrap{max-width:900px;margin:0 auto;padding:32px 24px 80px;}
+  .back-link{display:inline-block;font-family:sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:24px;}
+  .back-link:hover{color:var(--accent);}
+  .section-head{margin-bottom:40px;}
+  .section-head h1{font-size:clamp(24px,4vw,36px);font-weight:700;margin-bottom:8px;}
+  .section-head p{font-size:15px;color:var(--muted);max-width:620px;line-height:1.65;}
+
+  /* ── DOSSIER D'ENQUÊTE ── */
+  .inv-file{border:2px solid var(--ink);margin-bottom:48px;}
+  .inv-file-header{
+    background:var(--ink);color:#fff;
+    padding:16px 22px;
+    display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+    flex-wrap:wrap;
+  }
+  .inv-file-name{font-family:'Libre Baskerville',serif;font-weight:700;font-size:18px;}
+  .inv-file-status{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.1em;
+    padding:3px 10px;border:1px solid rgba(255,255,255,.4);
+    flex-shrink:0;
+  }
+  .inv-status-active{color:#7ee8a2;border-color:#7ee8a2;}
+  .inv-status-closed{color:#aaa;border-color:#aaa;}
+
+  .inv-summary{
+    padding:16px 22px;border-bottom:1px solid var(--border);
+    font-size:13.5px;color:var(--ink-light);line-height:1.65;
+    background:var(--paper-dark);
+  }
+
+  /* Chronologie des articles */
+  .inv-timeline{padding:0;}
+  .inv-article{
+    display:grid;grid-template-columns:80px 1fr;
+    border-bottom:1px solid var(--border);
+    transition:background .1s;
+  }
+  .inv-article:last-child{border-bottom:none;}
+  a.inv-article:hover{background:var(--accent-light);}
+
+  .inv-art-num{
+    border-right:1px solid var(--border);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:18px 10px;
+    font-family:'Libre Baskerville',serif;font-weight:700;
+    font-size:22px;color:var(--border);
+    flex-shrink:0;
+  }
+  .inv-art-num span{font-family:sans-serif;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:2px;}
+
+  .inv-art-body{padding:18px 20px;}
+  .inv-art-type{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:5px;
+  }
+  .inv-art-hed{
+    font-family:'Libre Baskerville',serif;font-weight:700;
+    font-size:15px;line-height:1.28;color:var(--ink);margin-bottom:5px;
+  }
+  .inv-art-desc{font-size:12.5px;color:var(--ink-light);line-height:1.6;margin-bottom:8px;}
+  .inv-art-date{font-family:sans-serif;font-size:10px;color:#aaa;}
+  .inv-art-cta{
+    font-family:sans-serif;font-size:10px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-top:6px;display:inline-block;
+  }
+
+  /* Article à venir */
+  .inv-article.pending{opacity:.55;}
+  .inv-article.pending .inv-art-hed{font-style:italic;}
+  .pending-badge{
+    font-family:sans-serif;font-size:9px;font-weight:800;
+    text-transform:uppercase;letter-spacing:.06em;
+    padding:2px 8px;background:#fff3cd;color:var(--pending);border:1px solid #ffd680;
+    display:inline-block;margin-bottom:5px;
+  }
+
+  @media(max-width:600px){
+    .inv-article{grid-template-columns:50px 1fr;}
+    .inv-art-num{font-size:16px;}
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <a class="back-link" href="/">← Accueil</a>
+
+  <div class="section-head">
+    <h1>Enquêtes</h1>
+    <p>Reportages originaux, fondés sur les documents, sur les décisions, les processus et les acteurs qui façonnent Ormstown et le Haut-Saint-Laurent. Chaque affirmation est reliée à une source primaire.</p>
+  </div>
+
+  <!-- ── DOSSIER TOIT VERT / RUE CHURCH ── -->
+  <div class="inv-file">
+    <div class="inv-file-header">
+      <div class="inv-file-name">Le Toit Vert — projet de 24 logements, rue Church</div>
+      <span class="inv-file-status inv-status-active">● Dossier actif</span>
+    </div>
+    <div class="inv-summary">
+      Un projet résidentiel de 24 logements (quatre bâtiments de trois étages) sur le lot vacant 6 455 729, voisin du restaurant Le Toit Vert, en zone R-7. Le conseil a adopté un premier projet de résolution le 1<sup>er</sup> juin; la consultation publique a eu lieu le 2 juillet; la période référendaire s'est terminée le 16 juillet; et le conseil a approuvé définitivement le PPCMOI 2026-041 le 3 août. L'Observer examine comment un projet susceptible d'approbation référendaire a franchi son étape de participation publique sans que la population en soit pratiquement informée — lors de la même séance qui a retiré le bureau de poste comme lieu d'affichage des avis.
+    </div>
+    <div class="inv-timeline">
+
+      <a class="inv-article" href="/fr/toit-vert-development/">
+        <div class="inv-art-num">1<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Enquête · Transparence</div>
+          <div class="inv-art-hed">Le conseil a approuvé le projet de 24 logements rue Church. Les citoyens avaient jusqu'au 16 juillet pour demander un référendum.</div>
+          <div class="inv-art-desc">Le premier projet de résolution du 1<sup>er</sup> juin, la consultation du 2 juillet annoncée uniquement à l'hôtel de ville et sur le site web, et le règlement 167.1-2026 qui a retiré le bureau de poste comme lieu d'affichage — avec des résidents qui demandaient, procès-verbal à l'appui, un meilleur avis. Le conseil a adopté le second projet de résolution le 6 juillet; les citoyens des zones R-7, R-6 et R-8 avaient jusqu'à 16 h 30 le 16 juillet pour exiger un vote sur l'une des six dérogations.</div>
+          <div class="inv-art-date">3 juillet 2026</div>
+          <span class="inv-art-cta">Lire →</span>
+        </div>
+      </a>
+
+      <a class="inv-article" href="/fr/conseil-municipal/3-aout-2026/">
+        <div class="inv-art-num">2<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Conseil municipal · Dénouement</div>
+          <div class="inv-art-hed">Le conseil approuve le projet de 24 logements de la rue Church, malgré l'objection d'un conseiller</div>
+          <div class="inv-art-desc">Le PPCMOI 2026-041 a été adopté le 3 août. Avant la première période de questions, le maire a expliqué aux citoyens que le conseil avait obtenu un avis juridique et qu'aucune demande valide n'était provenue de la zone R-7 — la seule zone, a-t-il dit, que la loi prend en compte. Le conseiller du siège 4 a voté contre, seule dissidence de la séance.</div>
+          <div class="inv-art-date">4 août 2026</div>
+          <span class="inv-art-cta">Lire le compte rendu →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ── DOSSIER TOUR BELL ── -->
+  <div class="inv-file">
+    <div class="inv-file-header">
+      <div class="inv-file-name">Tour Bell E3640 — Ormstown</div>
+      <span class="inv-file-status inv-status-active">● Dossier actif</span>
+    </div>
+    <div class="inv-summary">
+      Le projet de Bell Mobilité d'installer un pylône monopole de 36 mètres sur un terrain municipal en zone P-15. L'Observer a examiné tous les documents disponibles — le bail signé avant la consultation, le processus fédéral CPC-2-0-03, la question du zonage et la correspondance de suivi. Les articles sont publiés en séquence ci-dessous.
+    </div>
+    <div class="inv-timeline">
+
+      <a class="inv-article" href="/fr/bell-tower/">
+        <div class="inv-art-num">1<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Enquête</div>
+          <div class="inv-art-hed">Une tour de télécommunications de 36 mètres est proposée sur un terrain municipal zoné parc. Voici tout ce que vous devez savoir.</div>
+          <div class="inv-art-desc">Le dossier documentaire complet : le bail, la question du zonage, l'écart sur le numéro de lot, la séquence des événements et les questions que les résidents devraient poser.</div>
+          <div class="inv-art-date">8 juin 2026</div>
+          <span class="inv-art-cta">Lire →</span>
+        </div>
+      </a>
+
+      <a class="inv-article" href="/fr/bell-tower-explainer/">
+        <div class="inv-art-num">2<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Explication · Contexte</div>
+          <div class="inv-art-hed">Avant d'entrer dans cette salle mercredi, lisez ceci.</div>
+          <div class="inv-art-desc">Comment fonctionnent réellement les tours cellulaires, ce que dit la science sur la 5G et la santé, ce que le processus fédéral CPC-2-0-03 exige de Bell — et exactement ce que vous pouvez et ne pouvez pas demander lors d'une séance d'information publique.</div>
+          <div class="inv-art-date">8 juin 2026</div>
+          <span class="inv-art-cta">Lire →</span>
+        </div>
+      </a>
+
+      <a class="inv-article" href="/fr/bell-tower-june10/">
+        <div class="inv-art-num">3<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Compte rendu de séance</div>
+          <div class="inv-art-hed">La séance d'information de Bell du 10 juin : ce qui a été dit, et la suite.</div>
+          <div class="inv-art-desc">Une vingtaine de résidents se sont réunis au 5, rue Gale. L'Observer était présent et a enregistré l'intégralité de la séance : ce qui a été répondu, ce qui ne l'a pas été, les questions soumises à Bell avant la date limite de commentaires écrits, et les prochaines étapes du processus fédéral.</div>
+          <div class="inv-art-date">15 juin 2026</div>
+          <span class="inv-art-cta">Lire →</span>
+        </div>
+      </a>
+
+      <a class="inv-article" href="/fr/bell-tower-pre-vote/">
+        <div class="inv-art-num">4<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Enquête · Avant le vote</div>
+          <div class="inv-art-hed">Avant le vote de lundi : ce qu'on n'a jamais dit aux résidents d'Ormstown au sujet de la tour Bell</div>
+          <div class="inv-art-desc">Cinq manquements documentés dans la consultation CPC-2-0-03 de Bell — les autres sites municipaux passés sous silence, le rapport d'ingénierie du château d'eau passé de « il est juste ici » à « confidentiel », l'assurance non sourcée sur la zone inondable, la période de réponse fermée deux semaines à l'avance, et la municipalité jugeant un processus qu'elle a contribué à concevoir. Chaque manquement tiré du dossier écrit.</div>
+          <div class="inv-art-date">5 juillet 2026</div>
+          <span class="inv-art-cta">Lire →</span>
+        </div>
+      </a>
+
+      <a class="inv-article" href="/fr/bell-tower-correspondence/">
+        <div class="inv-art-num">📄<span>Source</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Source primaire · Dossier documentaire</div>
+          <div class="inv-art-hed">Le dossier de correspondance complet : l'Observer et Bell Mobilité</div>
+          <div class="inv-art-desc">Chaque lettre de l'échange écrit, dans l'ordre — la soumission de l'Observer du 19 juin, la réponse de Bell du 19 juin, le suivi de l'Observer du 25 juin et la clôture de Bell du 26 juin. Quatre lettres en huit jours, les positions écrites de Bell citées textuellement.</div>
+          <div class="inv-art-date">19–26 juin 2026 · publié le 5 juillet</div>
+          <span class="inv-art-cta">Lire les lettres →</span>
+        </div>
+      </a>
+
+      <a class="inv-article" href="/fr/conseil-municipal/6-juillet-2026/">
+        <div class="inv-art-num">5<span>Article</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Conseil municipal · Dénouement</div>
+          <div class="inv-art-hed">Le conseil vote à l'unanimité la signature du bail de la tour Bell</div>
+          <div class="inv-art-desc">Le bail de la tour Bell Mobilité a fait l'objet d'un vote nominal formel le 6 juillet et a été adopté à l'unanimité — avant la fermeture de la période de commentaires publics du 10 juillet. Le conseil a aussi autorisé un important appel d'offres de voirie, octroyé les contrats d'hiver et de laboratoire, et nommé un nouveau maire suppléant.</div>
+          <div class="inv-art-date">6 juillet 2026</div>
+          <span class="inv-art-cta">Lire le compte rendu →</span>
+        </div>
+      </a>
+
+      <a class="inv-article" href="/fr/bell-tower-complete/">
+        <div class="inv-art-num">📕<span>Dossier</span></div>
+        <div class="inv-art-body">
+          <div class="inv-art-type">Dossier complet · Bilingue</div>
+          <div class="inv-art-hed">Le dossier de la tour Bell, du début à la fin : ce que le processus exigeait, ce qui s'est passé, et ce qu'il nous a appris</div>
+          <div class="inv-art-desc">Le récit consolidé de tout le dossier en une seule page — le bail signé avant la consultation, le processus fédéral CPC-2-0-03, les cinq manquements documentés, la correspondance avec Bell et le vote du 6 juillet. Remplace la couverture au fil des événements ci-dessus.</div>
+          <div class="inv-art-date">17 juillet 2026</div>
+          <span class="inv-art-cta">Lire le dossier complet →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
