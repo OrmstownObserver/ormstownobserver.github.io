@@ -51,7 +51,7 @@
 
   var store = null, loading = true, linesFailed = false;
   var state = {
-    lang: 'fr', tab: 'payments', scope: 'all',
+    lang: 'fr', tab: 'categories', scope: '',
     sittings: [], categories: [], q: '', min: '', max: '',
     sort: 'amount:desc', payee: '', payeeScope: ''
   };
@@ -66,8 +66,17 @@
   /* ============================================================
      URL
      ============================================================ */
-  var DEFAULTS = { tab: 'payments', scope: 'all', sort: 'amount:desc' };
-  var TABS = ['payments', 'payees', 'categories', 'sittings'];
+  // Tab order runs from the overview to the raw record: where the money went,
+  // which sitting approved it, who was paid, then every individual line.
+  var DEFAULTS = { tab: 'categories', sort: 'amount:desc' };
+  var TABS = ['categories', 'sittings', 'payees', 'payments'];
+  // The default year is the most recent one in the data, not a hardcoded
+  // year — this must not need editing when 2027's first sitting lands.
+  // "All" stays one pill away, and it is what cross-year work uses.
+  function defaultScope() {
+    var y = years();
+    return y[y.length - 1] || 'all';
+  }
 
   function readURL() {
     var p = new URLSearchParams(location.search);
@@ -83,11 +92,11 @@
     }
 
     var tab = p.get('tab');
-    state.tab = TABS.indexOf(tab) >= 0 ? tab : 'payments';
+    state.tab = TABS.indexOf(tab) >= 0 ? tab : DEFAULTS.tab;
 
     // scope, with ?year= as a permanent alias
-    var scope = p.get('scope') || p.get('year') || 'all';
-    state.scope = (scope === 'all' || years().indexOf(scope) >= 0) ? scope : 'all';
+    var scope = p.get('scope') || p.get('year') || defaultScope();
+    state.scope = (scope === 'all' || years().indexOf(scope) >= 0) ? scope : defaultScope();
 
     // sitting, with ?period= as a permanent alias
     var sit = (p.get('sitting') || p.get('period') || '').split(',')
@@ -128,7 +137,7 @@
     var p = new URLSearchParams();
     p.set('lang', state.lang);
     if (state.tab !== DEFAULTS.tab) p.set('tab', state.tab);
-    if (state.scope !== DEFAULTS.scope) p.set('scope', state.scope);
+    if (state.scope !== defaultScope()) p.set('scope', state.scope);
     if (state.sittings.length) p.set('sitting', state.sittings.join(','));
     if (state.categories.length) p.set('category', state.categories.join(','));
     if (state.q) p.set('q', state.q);
@@ -182,7 +191,7 @@
   }
 
   function hasFilters() {
-    return !!(state.q || state.scope !== 'all' || state.sittings.length ||
+    return !!(state.q || state.scope !== defaultScope() || state.sittings.length ||
               state.categories.length || state.min !== '' || state.max !== '');
   }
   function filterSpec(over) {
@@ -446,7 +455,7 @@
   function resetFilters() {
     // Reset clears the FILTERS; language, tab and sort are the reader's
     // workspace, not a filter, so they survive.
-    setState({ q: '', scope: 'all', sittings: [], categories: [], min: '', max: '', payee: '', payeeScope: '' });
+    setState({ q: '', scope: defaultScope(), sittings: [], categories: [], min: '', max: '', payee: '', payeeScope: '' });
     closeSheet();
     var q = $('q'); if (q) { q.value = ''; q.focus(); }
   }
@@ -561,11 +570,14 @@
 
   // Preset links are just v2 URLs. They cost nothing, they teach the tool by
   // example, and they give an article something specific to link to.
+  // Each preset carries its own tab, so following the LINK lands exactly
+  // where clicking it does. (They used to disagree: the click handler forced
+  // Payments while the href inherited the default tab.)
   var PRESETS = [
-    { key: 'presetLegal',   q: { category: 'legal-services', scope: 'all' } },
-    { key: 'presetBig',     q: { min: '100000', scope: 'all' } },
+    { key: 'presetLegal',   q: { category: 'legal-services', scope: 'all', tab: 'payments' } },
+    { key: 'presetBig',     q: { min: '100000', scope: 'all', tab: 'payments' } },
     { key: 'presetPayroll', q: { payee: 'paie-municipale', scope: 'all' } },
-    { key: 'presetCredits', q: { max: '-0.01', scope: 'all' } }
+    { key: 'presetCredits', q: { max: '-0.01', scope: 'all', tab: 'payments' } }
   ];
   function renderPresets() {
     var box = $('presets'); if (!box) return;
@@ -585,7 +597,8 @@
     return p.toString();
   }
   function applyPreset(q) {
-    var patch = { q: '', scope: 'all', sittings: [], categories: [], min: '', max: '', payee: '', tab: 'payments' };
+    // Start from a clean slate so presets never compound with each other.
+    var patch = { q: '', scope: 'all', sittings: [], categories: [], min: '', max: '', payee: '', payeeScope: '', tab: DEFAULTS.tab };
     Object.keys(q).forEach(function (k) {
       if (k === 'category') patch.categories = [q[k]];
       else if (k === 'sitting') patch.sittings = String(q[k]).split(',');
@@ -739,7 +752,7 @@
   function activeFilterCount() {
     var n = 0;
     if (state.q) n++;
-    if (state.scope !== 'all') n++;
+    if (state.scope !== defaultScope()) n++;
     n += state.sittings.length + state.categories.length;
     if (state.min !== '') n++;
     if (state.max !== '') n++;

@@ -88,28 +88,61 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 (async function main() {
   await tick(); await tick(); await tick();
 
-  // ---- 1. it booted and rendered the default view
+  // ---- 1. it booted into the DEFAULT view: Categories, current year
   const L = win.OO_LEDGER;
   if (!win.OO_LEDGER_VIEWS) { fail('views never loaded'); process.exit(1); }
-  const pt = rowsIn('payments-table');
-  eq(pt.length, 150, 'Payments renders the 150-row first page, not all 2,138');
+  if (panel('categories').hidden) fail('the default view is not Categories');
+  else ok('the default view is Categories');
+  if ($('tab-categories').getAttribute('aria-selected') !== 'true') fail('the Categories tab is not selected on load');
+  if (!panel('payments') || !panel('payments').hidden) fail('Payments is not hidden on load');
+  else ok('Payments is one tab away, not the landing view');
 
-  const status = textOf($('results-status'));
-  if (!/2\s?138/.test(status.replace(/ | /g, ' '))) fail('status line does not report 2,138 lines: ' + status);
-  else ok('status line reports the full 2,138-line result set');
-  if (!/7[\s  ]?257[\s  ]?152/.test(status)) fail('status line total is not the itemized grand total: ' + status);
-  else ok('status line total is the itemized grand total');
+  // tab order, left to right: overview -> raw record
+  {
+    const order = document.body.find((n) => n.getAttribute && n.getAttribute('role') === 'tab')
+      .map((n) => n.getAttribute('data-tab'));
+    eq(order.join(' '), 'categories sittings payees payments', 'tabs run Categories, Sittings, Suppliers, Payments');
+  }
 
-  // ---- 2. default scope is ALL years (the cross-year job)
-  const st = win.OO_LEDGER_APP_STATE || null; void st;
-  if (!/10/.test(textOf($('tab-sittings')))) fail('Sittings tab count is not 10: ' + textOf($('tab-sittings')));
-  else ok('all 10 sittings are in scope by default (cross-year)');
+  // ---- 2. default scope is the most recent year in the data, and "All"
+  // widens. The default must never be a hardcoded year.
+  {
+    const years = [...new Set(win.OO_SPENDING.months.map((m) => m.m.slice(0, 4)))].sort();
+    const latest = years[years.length - 1];
+    if (!win.location.search.includes('scope=')) ok(`the default year (${latest}) is implied, not written into the URL`);
+    const chips = textOf($('chips'));
+    if (!chips.includes(latest)) fail(`the active-filter chips do not show the default year: "${chips}"`);
+    else ok(`the default year ${latest} is visible as a removable chip, so the reader can see and widen it`);
 
-  // ---- 3. the rail is populated
+    const scopedStatus = textOf($('results-status'));
+    if (/7[\s  ]?257[\s  ]?152/.test(scopedStatus)) fail('the default view shows the all-years total, not the current year');
+    else ok('the default view is scoped to the current year, not all years: ' + scopedStatus.slice(0, 50));
+
+    // the header status line still describes the WHOLE dataset
+    const head = textOf($('status'));
+    if (!/2[\s  ]?138/.test(head)) fail('the page head no longer states the full dataset: ' + head);
+    else ok('the page head still states the whole dataset (2,138 lines, 10 sittings)');
+  }
+
+  // ---- 3. the rail is populated (it lists every sitting and category,
+  // whatever the current scope is)
   eq(rowsChildren('sitting-list'), 12, 'sitting checklist lists 10 sittings under 2 year headings');
   eq(rowsChildren('category-list'), 14, 'category checklist lists all 14 used categories');
   if (!textOf($('q-help'))) fail('search help text is empty');
   else ok('search help text explains what is and is not searched');
+
+  // ---- 3b. from here on, the payments assertions need the Payments tab and
+  // the full record, so ask for both explicitly.
+  navigateTo('?lang=fr&tab=payments&scope=all');
+  await tick();
+  eq(rowsIn('payments-table').length, 150, 'Payments renders the 150-row first page, not all 2,138');
+  {
+    const status = textOf($('results-status'));
+    if (!/2\s?138/.test(status.replace(/ | /g, ' '))) fail('status line does not report 2,138 lines: ' + status);
+    else ok('status line reports the full 2,138-line result set');
+    if (!/7[\s  ]?257[\s  ]?152/.test(status)) fail('status line total is not the itemized grand total: ' + status);
+    else ok('status line total is the itemized grand total');
+  }
 
   // ---- 4. a hidden payee is reachable by search - the whole point
   const q = $('q');
@@ -147,6 +180,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // ---- 7. reset restores the default sort target and clears filters
   $('reset').click();
   await tick();
+  if (!textOf($('chips')).includes('2026')) fail('reset did not return to the default year');
+  else ok('reset returns to the default year rather than to every year');
+  navigateTo('?lang=fr&tab=payments&scope=all');
+  await tick();
   eq(rowsIn('payments-table').length, 150, 'reset restores the unfiltered view');
 
   // ---- 8. amount filter + credits
@@ -162,7 +199,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   await tick();
 
   // ---- 9. tabs
-  for (const tab of ['payees', 'categories', 'sittings']) {
+  for (const tab of ['payees', 'categories', 'sittings', 'payments']) {
     $('tab-' + tab).click();
     await tick();
     if (panel(tab).hidden) fail(`the ${tab} panel is still hidden after selecting its tab`);
@@ -171,7 +208,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   }
   ok('all four tabs select, unhide and render');
 
-  // ---- 10. the Sittings view states the reconciliation in public
+  // ---- 10. the Sittings view states the reconciliation in public.
+  // (The tab loop above ends on Payments, so ask for Sittings again.)
+  $('tab-sittings').click();
+  await tick();
   const sitRows = rowsIn('sittings-table');
   const sitText = textOf($('panel-sittings'));
   if (!/0[.,]12/.test(sitText)) fail('the Sittings view does not show the documented 0.12 gap');
@@ -205,7 +245,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   else ok('the profile ignores the rail: a shared link means the same thing to everyone');
 
   // ---- 12. legacy URLs
-  navigateTo('?lang=en&year=2025&period=2025-11&category=legal-services');
+  navigateTo('?lang=en&tab=payments&year=2025&period=2025-11&category=legal-services');
   await tick();
   const legacyStatus = textOf($('results-status'));
   if (!legacyStatus) fail('a legacy ?year=/?period=/?category= URL rendered nothing');
@@ -214,7 +254,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   else ok('the legacy URL resolves to a non-empty result set');
 
   // the classic bug: a sitting outside the year must widen, not vanish
-  navigateTo('?lang=fr&scope=2026&sitting=2025-11');
+  navigateTo('?lang=fr&tab=payments&scope=2026&sitting=2025-11');
   await tick();
   const widened = rowsIn('payments-table');
   if (!widened.length) fail('an out-of-scope sitting still resolves to an empty page');
@@ -254,19 +294,20 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     navigateTo(href);
     await tick();
     const showing = $('profile').hidden
-      ? rowsIn('payments-table').length + rowsIn('payees-table').length + rowsIn('sittings-table').length
+      ? ['payments-table', 'payees-table', 'categories-table', 'sittings-table']
+          .reduce((n, t) => n + rowsIn(t).length, 0)
       : $('profile').children.length;
     if (!showing) fail(`preset "${label}" (${href}) resolves to an empty view`);
     else ok(`preset "${label}" resolves to a populated view`);
   }
 
   // ---- 13. both languages render, and the columns are translated
-  navigateTo('?lang=en');
+  navigateTo('?lang=en&tab=payments');
   await tick();
   const enHead = textOf($('panel-payments')).slice(0, 400);
   if (!/Supplier/.test(enHead)) fail('English column headers not rendered: ' + enHead.slice(0, 120));
   else ok('English renders with English column headers');
-  navigateTo('?lang=fr');
+  navigateTo('?lang=fr&tab=payments');
   await tick();
   if (!/Fournisseur/.test(textOf($('panel-payments')))) fail('French column headers not rendered');
   else ok('French renders with French column headers');
@@ -307,6 +348,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   if (!badLink) ok('every external link points at ormstown.ca and carries rel=noopener');
 
   // ---- 15. accessibility surface
+  navigateTo('?lang=fr&tab=payments');
+  await tick();
   const sorted = document.body.find((n) => n.hasAttribute && n.hasAttribute('aria-sort'));
   if (sorted.length < 5) fail('sortable headers do not carry aria-sort (' + sorted.length + ')');
   else ok(`${sorted.length} sortable headers carry aria-sort`);

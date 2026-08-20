@@ -139,10 +139,10 @@ if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)
     <!-- ── main ─────────────────────────────────────────────── -->
     <main class="lw-main">
       <div class="lw-tabs" role="tablist" aria-label="Vues">
-        <button type="button" role="tab" id="tab-payments"   aria-controls="panel-payments"   aria-selected="true"  data-tab="payments"></button>
-        <button type="button" role="tab" id="tab-payees"     aria-controls="panel-payees"     aria-selected="false" data-tab="payees"   tabindex="-1"></button>
-        <button type="button" role="tab" id="tab-categories" aria-controls="panel-categories" aria-selected="false" data-tab="categories" tabindex="-1"></button>
+        <button type="button" role="tab" id="tab-categories" aria-controls="panel-categories" aria-selected="true"  data-tab="categories"></button>
         <button type="button" role="tab" id="tab-sittings"   aria-controls="panel-sittings"   aria-selected="false" data-tab="sittings" tabindex="-1"></button>
+        <button type="button" role="tab" id="tab-payees"     aria-controls="panel-payees"     aria-selected="false" data-tab="payees"   tabindex="-1"></button>
+        <button type="button" role="tab" id="tab-payments"   aria-controls="panel-payments"   aria-selected="false" data-tab="payments" tabindex="-1"></button>
       </div>
 
       <p class="lw-orient" id="orient"></p>
@@ -150,10 +150,10 @@ if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)
       <p class="lw-status" id="results-status" aria-live="polite"></p>
 
       <div id="results">
-        <div role="tabpanel" id="panel-payments"   aria-labelledby="tab-payments"   tabindex="-1"></div>
-        <div role="tabpanel" id="panel-payees"     aria-labelledby="tab-payees"     tabindex="-1" hidden></div>
-        <div role="tabpanel" id="panel-categories" aria-labelledby="tab-categories" tabindex="-1" hidden></div>
+        <div role="tabpanel" id="panel-categories" aria-labelledby="tab-categories" tabindex="-1"></div>
         <div role="tabpanel" id="panel-sittings"   aria-labelledby="tab-sittings"   tabindex="-1" hidden></div>
+        <div role="tabpanel" id="panel-payees"     aria-labelledby="tab-payees"     tabindex="-1" hidden></div>
+        <div role="tabpanel" id="panel-payments"   aria-labelledby="tab-payments"   tabindex="-1" hidden></div>
         <div class="profile" id="profile" role="region" aria-labelledby="profile-h" tabindex="-1" hidden></div>
       </div>
     </main>
