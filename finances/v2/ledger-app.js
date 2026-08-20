@@ -547,6 +547,8 @@
     setText('eyebrow', t.eyebrow);
     setText('title', t.title);
     setText('deck', t.wsDeck);
+    setText('disclaimer-h', t.devBannerH);
+    setText('disclaimer-b', t.devBanner);
     setText('ref-lbl', t.refLabel);
     setText('ref-budget', t.refBudget);
     setText('preset-lbl', t.presetLabel);
@@ -892,6 +894,7 @@
     box.textContent = '';
     box.appendChild(V.el('div', { text: L.tpl(t.printActiveFilters, { v: bits.length ? bits.join(' · ') : t.printNone }) }));
     box.appendChild(V.el('div', { text: T().printSource }));
+    box.appendChild(V.el('div', { text: t.devBannerH + ' — ' + t.devBanner }));
   }
 
   /* ============================================================

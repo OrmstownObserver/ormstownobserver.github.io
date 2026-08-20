@@ -340,7 +340,15 @@ window.OO_I18N = {
   tocCoverage: "Couverture",
   tocMethod: "Méthode",
   tocDocuments: "Documents",
-  tocDictionary: "Lexique"
+  tocDictionary: "Lexique",
+
+  // ── standing disclaimer ──
+  // Shown, unmissable and undismissable, on every workspace surface.
+  // The Observer is an independent paper publishing a municipality's
+  // figures: a reader must never be able to mistake this for an
+  // official municipal record.
+  devBannerH: "En développement — ne pas utiliser comme référence",
+  devBanner: "Cette page est un prototype de l'Ormstown Observer, encore en construction et en cours de vérification. Elle n'est pas un document officiel et n'émane ni de la Municipalité d'Ormstown ni d'aucune instance municipale. Elle peut contenir des erreurs, des omissions ou des chiffres périmés. Ne vous en servez pas comme source de référence, ne la citez pas, et ne fondez aucune décision sur elle. Seuls les procès-verbaux officiels publiés par la Municipalité font foi — chaque ligne renvoie au sien."
  },
  en: {
   htmlTitle: "Municipal Ledger — Ormstown Observer",
@@ -670,6 +678,14 @@ window.OO_I18N = {
   tocCoverage: "Coverage",
   tocMethod: "Method",
   tocDocuments: "Documents",
-  tocDictionary: "Dictionary"
+  tocDictionary: "Dictionary",
+
+  // ── standing disclaimer ──
+  // Shown, unmissable and undismissable, on every workspace surface.
+  // The Observer is an independent paper publishing a municipality's
+  // figures: a reader must never be able to mistake this for an
+  // official municipal record.
+  devBannerH: "Under development — not a reference source",
+  devBanner: "This page is an Ormstown Observer prototype, still being built and still being checked. It is not an official document and does not come from the Municipality of Ormstown or any municipal body. It may contain errors, omissions or out-of-date figures. Do not use it as a reference source, do not cite it, and do not base any decision on it. Only the official minutes published by the Municipality are authoritative — every line here links to its own."
  }
 };

@@ -49,6 +49,17 @@ const txt = (id) => ($(id) ? $(id).textContent : '');
 const D = win.OO_SPENDING;
 
 setTimeout(() => {
+  // ---- the reference page carries the same standing disclaimer
+  {
+    const d = $('disclaimer');
+    const body = ($('disclaimer-h') ? $('disclaimer-h').textContent : '') + ' ' +
+                 ($('disclaimer-b') ? $('disclaimer-b').textContent : '');
+    if (!d || d.hidden || !body.trim()) fail('the reference page has no visible disclaimer');
+    else if (!/pas un document officiel/i.test(body)) fail('the disclaimer does not say the page is unofficial');
+    else if (!/référence/i.test(body)) fail('the disclaimer does not say not to use it as a reference');
+    else ok('the reference page carries the same standing disclaimer');
+  }
+
   // ---- the accounting rule, which is the reason this section is careful
   if (!txt('acct-note')) fail('the explanatory accounting note is missing');
   else ok('the accounting note is present');

@@ -51,6 +51,14 @@ if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)
     <p class="lw-deck" id="deck"></p>
     <p class="lw-status-line"><span id="status"></span> <span class="upd" id="updated"></span></p>
 
+    <!-- The text below is a no-JS fallback in both languages; ledger-app.js
+         replaces it with the reader's language. A disclaimer must never
+         depend on a script having run, so it ships in the HTML. -->
+    <div class="lw-disclaimer" id="disclaimer" role="note">
+      <strong class="h" id="disclaimer-h">En développement — ne pas utiliser comme référence · Under development — not a reference source</strong>
+      <span class="b" id="disclaimer-b">Prototype de l'Ormstown Observer, en construction. Ce n'est pas un document officiel et il n'émane pas de la Municipalité d'Ormstown. Ne vous en servez pas comme référence : seuls les procès-verbaux officiels font foi. — An Ormstown Observer prototype, still being built. This is not an official document and does not come from the Municipality of Ormstown. Do not use it as a reference: only the official minutes are authoritative.</span>
+    </div>
+
     <nav class="lw-ref" id="ref-strip" aria-label="Contexte et méthode">
       <span class="lbl" id="ref-lbl">Contexte</span>
       <a href="/finances/budget/" id="ref-budget">Budget 2026, méthode et sources</a>

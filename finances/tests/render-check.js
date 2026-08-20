@@ -331,6 +331,55 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     }
   }
 
+  // ---- 13c. the standing disclaimer. This is the one element on the page
+  // whose absence would be a real-world problem, so it is checked hard: it
+  // exists, it is visible, it is not collapsed behind anything, it says all
+  // three things, and it survives a language switch.
+  for (const lang of ['fr', 'en']) {
+    navigateTo('?lang=' + lang);
+    await tick();
+    // NB the shim mounts id-bearing elements as flat siblings, so the
+    // heading and body are read directly rather than through the container.
+    // That the two ARE nested inside it is markup, checked below.
+    const d = $('disclaimer');
+    if (!d) { fail(`no disclaimer element (${lang})`); continue; }
+    if (d.hidden) fail(`the disclaimer is hidden (${lang})`);
+    if (d.tagName === 'DETAILS') fail('the disclaimer is collapsible - it must always be open');
+    const body = $('disclaimer-h').textContent + ' ' + $('disclaimer-b').textContent;
+    const must = lang === 'fr'
+      ? [/en construction|développement/i, /pas un document officiel/i, /référence/i, /procès-verbaux officiels/i]
+      : [/still being built|under development/i, /not an official document/i, /reference/i, /official minutes/i];
+    const missing = must.filter((re) => !re.test(body));
+    if (missing.length) fail(`the ${lang} disclaimer is missing ${missing.length} required point(s): ${body.slice(0, 80)}`);
+    else ok(`the ${lang} disclaimer states: under development, unofficial, not a reference, minutes are authoritative`);
+  }
+  navigateTo('?lang=fr');
+  await tick();
+
+  // The container must actually wrap the text, be a plain always-visible
+  // block, and sit above the fold on every surface. Checked against the
+  // shipped HTML rather than the shim's flattened tree.
+  {
+    const fsMod = require('fs');
+    for (const page of ['v2/index.html', 'budget/index.html']) {
+      const html = fsMod.readFileSync(path.join(dir, page), 'utf8');
+      const m = /<div class="lw-disclaimer"[^>]*>([\s\S]*?)<\/div>/.exec(html);
+      if (!m) { fail(`${page} has no .lw-disclaimer block`); continue; }
+      if (!/id="disclaimer-h"/.test(m[1]) || !/id="disclaimer-b"/.test(m[1])) fail(`${page}: the disclaimer text is not inside the disclaimer box`);
+      else if (/hidden/.test(m[0])) fail(`${page}: the disclaimer ships hidden`);
+      else ok(`${page} ships the disclaimer as an always-visible block`);
+      // it must say something even if no script ever runs
+      const staticText = m[1].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+      if (staticText.length < 80) fail(`${page}: the disclaimer is empty without JS ("${staticText}")`);
+      else if (!/officiel/i.test(staticText) || !/official/i.test(staticText)) fail(`${page}: the no-JS fallback is not bilingual`);
+      else ok(`${page} states the disclaimer in both languages with no JS at all`);
+      // above the fold: before the first tab/section of real content
+      const marker = page.startsWith('v2') ? '<div class="lw-tabs"' : '<section id="budget"';
+      if (html.indexOf('lw-disclaimer') > html.indexOf(marker)) fail(`${page}: the disclaimer sits below the main content`);
+      else ok(`${page} puts the disclaimer above the content`);
+    }
+  }
+
   // ---- 14. NOTHING is injected as markup
   const html = document.body.innerHTML;
   const suspicious = html.match(/<(script|iframe|object|embed)\b/gi);
