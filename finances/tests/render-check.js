@@ -346,9 +346,13 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     if (d.hidden) fail(`the disclaimer is hidden (${lang})`);
     if (d.tagName === 'DETAILS') fail('the disclaimer is collapsible - it must always be open');
     const body = $('disclaimer-h').textContent + ' ' + $('disclaimer-b').textContent;
+    // The non-affiliation sentence is the point of the whole block: it is
+    // what stops a reader taking this for a municipal publication.
     const must = lang === 'fr'
-      ? [/en construction|développement/i, /pas un document officiel/i, /référence/i, /procès-verbaux officiels/i]
-      : [/still being built|under development/i, /not an official document/i, /reference/i, /official minutes/i];
+      ? [/ni affiliée à la Municipalité/i, /ni approuvée/i, /ne parle pas en son nom/i,
+         /prototype|en construction/i, /pas un document officiel/i, /référence/i, /procès-verbaux officiels/i]
+      : [/not affiliated with/i, /endorsed by/i, /speaking for/i,
+         /prototype|under construction/i, /not an official document/i, /reference/i, /official minutes/i];
     const missing = must.filter((re) => !re.test(body));
     if (missing.length) fail(`the ${lang} disclaimer is missing ${missing.length} required point(s): ${body.slice(0, 80)}`);
     else ok(`the ${lang} disclaimer states: under development, unofficial, not a reference, minutes are authoritative`);
@@ -372,6 +376,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       const staticText = m[1].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
       if (staticText.length < 80) fail(`${page}: the disclaimer is empty without JS ("${staticText}")`);
       else if (!/officiel/i.test(staticText) || !/official/i.test(staticText)) fail(`${page}: the no-JS fallback is not bilingual`);
+      else if (!/ni affiliée/i.test(staticText) || !/not affiliated with/i.test(staticText)) fail(`${page}: the no-JS fallback omits the non-affiliation sentence`);
       else ok(`${page} states the disclaimer in both languages with no JS at all`);
       // above the fold: before the first tab/section of real content
       const marker = page.startsWith('v2') ? '<div class="lw-tabs"' : '<section id="budget"';

@@ -14,7 +14,7 @@ window.OO_I18N = {
   deck: "Explorez les listes de dépenses approuvées par le conseil, comparez les mois et les fournisseurs, et vérifiez chaque total dans les procès-verbaux officiels.",
   status: "Dernière séance entièrement détaillée : {date}. Le procès-verbal de la séance d'août n'est pas encore publié; sa liste s'ajoutera dès sa publication. Vers le passé, 2025 est détaillé jusqu'à la séance du 2 octobre 2025.",
   updated: "Mise à jour : {date}",
-  courtesy: "<strong>À propos de cette page —</strong> ce tableau de bord n'est pas un rapport officiel de la Municipalité d'Ormstown et n'émane d'aucune instance municipale. L'Ormstown Observer, une publication indépendante, l'offre à titre gracieux pour favoriser la participation citoyenne et une meilleure compréhension des finances publiques. En cas de différence, les documents officiels font foi.",
+  courtesy: "<strong>L'Ormstown Observer est une publication indépendante. Elle n'est ni affiliée à la Municipalité d'Ormstown, ni approuvée par celle-ci, et ne parle pas en son nom.</strong> Cette page n'est pas un document officiel et n'émane d'aucune instance municipale; l'Observer l'offre à titre de service public pour favoriser la participation citoyenne. Ne vous en servez pas comme source de référence et ne fondez aucune décision sur elle : seuls les procès-verbaux officiels publiés par la Municipalité font foi, et chaque montant y renvoie. L'Observer corrigera publiquement toute erreur : ormstownobserver@gmail.com",
   errorData: "Les données n'ont pas pu être chargées. Rechargez la page, ou consultez les procès-verbaux officiels sur ormstown.ca.",
   chartFail: "Graphique indisponible — les valeurs exactes figurent au tableau ci-dessous.",
 
@@ -347,8 +347,8 @@ window.OO_I18N = {
   // The Observer is an independent paper publishing a municipality's
   // figures: a reader must never be able to mistake this for an
   // official municipal record.
-  devBannerH: "En développement — ne pas utiliser comme référence",
-  devBanner: "Cette page est un prototype de l'Ormstown Observer, encore en construction et en cours de vérification. Elle n'est pas un document officiel et n'émane ni de la Municipalité d'Ormstown ni d'aucune instance municipale. Elle peut contenir des erreurs, des omissions ou des chiffres périmés. Ne vous en servez pas comme source de référence, ne la citez pas, et ne fondez aucune décision sur elle. Seuls les procès-verbaux officiels publiés par la Municipalité font foi — chaque ligne renvoie au sien."
+  devBannerH: "Publication indépendante — page non officielle, en développement",
+  devBanner: "L'Ormstown Observer est une publication indépendante. Elle n'est ni affiliée à la Municipalité d'Ormstown, ni approuvée par celle-ci, et ne parle pas en son nom. Cette page est un prototype en construction, offert à titre de service public : ce n'est pas un document officiel et elle peut contenir des erreurs, des omissions ou des chiffres périmés. Ne vous en servez pas comme source de référence, ne la citez pas et ne fondez aucune décision sur elle — seuls les procès-verbaux officiels publiés par la Municipalité font foi, et chaque ligne renvoie au sien. L'Observer corrigera publiquement toute erreur : ormstownobserver@gmail.com"
  },
  en: {
   htmlTitle: "Municipal Ledger — Ormstown Observer",
@@ -359,7 +359,7 @@ window.OO_I18N = {
   deck: "Explore the expense lists approved by council, compare months and suppliers, and verify every total in the official minutes.",
   status: "Latest fully itemized sitting: {date}. Minutes of the August sitting are not yet published; its list will be added as soon as it appears. Going back, 2025 is itemized down to the October 2, 2025 sitting.",
   updated: "Updated: {date}",
-  courtesy: "<strong>About this page —</strong> this dashboard is not an official report of the Municipality of Ormstown and does not come from any municipal body. The Ormstown Observer, an independent publication, provides it as a courtesy to encourage civic engagement and a better understanding of public finances. If anything differs, the official documents govern.",
+  courtesy: "<strong>The Ormstown Observer is an independent publication. It is not affiliated with, endorsed by, or speaking for the Municipality of Ormstown.</strong> This page is not an official document and does not come from any municipal body; the Observer offers it as a public service to support civic participation. Do not use it as a reference source and do not base any decision on it: only the official minutes published by the Municipality are authoritative, and every figure links back to them. The Observer will correct any error on the record: ormstownobserver@gmail.com",
   errorData: "The data could not be loaded. Reload the page, or consult the official minutes on ormstown.ca.",
   chartFail: "Chart unavailable — exact values are in the table below.",
 
@@ -685,7 +685,7 @@ window.OO_I18N = {
   // The Observer is an independent paper publishing a municipality's
   // figures: a reader must never be able to mistake this for an
   // official municipal record.
-  devBannerH: "Under development — not a reference source",
-  devBanner: "This page is an Ormstown Observer prototype, still being built and still being checked. It is not an official document and does not come from the Municipality of Ormstown or any municipal body. It may contain errors, omissions or out-of-date figures. Do not use it as a reference source, do not cite it, and do not base any decision on it. Only the official minutes published by the Municipality are authoritative — every line here links to its own."
+  devBannerH: "An independent publication — unofficial, and under development",
+  devBanner: "The Ormstown Observer is an independent publication. It is not affiliated with, endorsed by, or speaking for the Municipality of Ormstown. This page is a prototype under construction, published as a public service: it is not an official document and may contain errors, omissions or out-of-date figures. Do not use it as a reference source, do not cite it, and do not base any decision on it — only the official minutes published by the Municipality are authoritative, and every line links to its own. The Observer will correct any error on the record: ormstownobserver@gmail.com"
  }
 };

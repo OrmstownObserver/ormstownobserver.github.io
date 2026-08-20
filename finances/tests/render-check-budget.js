@@ -55,6 +55,7 @@ setTimeout(() => {
     const body = ($('disclaimer-h') ? $('disclaimer-h').textContent : '') + ' ' +
                  ($('disclaimer-b') ? $('disclaimer-b').textContent : '');
     if (!d || d.hidden || !body.trim()) fail('the reference page has no visible disclaimer');
+    else if (!/ni affiliée à la Municipalité/i.test(body)) fail('the disclaimer omits the non-affiliation sentence');
     else if (!/pas un document officiel/i.test(body)) fail('the disclaimer does not say the page is unofficial');
     else if (!/référence/i.test(body)) fail('the disclaimer does not say not to use it as a reference');
     else ok('the reference page carries the same standing disclaimer');
