@@ -201,6 +201,54 @@ if (fs.existsSync(payPath)) {
   }
 }
 
+// ---- 11. The dark-mode category palette. The first attempt lifted the light
+// hues at runtime and produced two categories 3 ΔE apart — indistinguishable.
+// This asserts the shipped set stays separable and legible, so that failure
+// cannot come back quietly.
+{
+  const src = fs.readFileSync(path.join(dir, 'v2', 'ledger-charts.js'), 'utf8');
+  const block = /var DARK_CATS = \{([\s\S]*?)\n  \};/.exec(src);
+  if (!block) fail('ledger-charts.js has no DARK_CATS palette');
+  else {
+    const dark = {};
+    for (const m of block[1].matchAll(/'((?:[^'\\]|\\.)*)':\s*'(#[0-9a-f]{6})'/g)) dark[m[1]] = m[2];
+
+    const used = new Set(D.entries.map(e => e[2]));
+    for (const c of used) if (!dark[c]) fail(`category "${c}" has no dark-mode colour — it would fall back to the runtime lift`);
+
+    const h2r = (h) => [1, 3, 5].map(i => parseInt(h.substr(i, 2), 16));
+    const lin = (c) => { c /= 255; return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); };
+    const lum = (h) => { const [r, g, b] = h2r(h); return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b); };
+    const cr = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
+    const fl = (t) => t > 0.008856 ? Math.cbrt(t) : (7.787 * t + 16 / 116);
+    const lab = (h) => {
+      const [r, g, b] = h2r(h).map(v => { v /= 255; return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+      const X = (r * 0.4124 + g * 0.3576 + b * 0.1805) / 0.95047,
+            Y = r * 0.2126 + g * 0.7152 + b * 0.0722,
+            Z = (r * 0.0193 + g * 0.1192 + b * 0.9505) / 1.08883;
+      return [116 * fl(Y) - 16, 500 * (fl(X) - fl(Y)), 200 * (fl(Y) - fl(Z))];
+    };
+    const dE = (a, b) => { const A = lab(a), B = lab(b); return Math.hypot(A[0] - B[0], A[1] - B[1], A[2] - B[2]); };
+
+    const keys = Object.keys(dark);
+    let min = Infinity, pair = null;
+    for (let i = 0; i < keys.length; i++) for (let j = i + 1; j < keys.length; j++) {
+      const d = dE(dark[keys[i]], dark[keys[j]]);
+      if (d < min) { min = d; pair = [keys[i], keys[j]]; }
+    }
+    const MIN_DE = 12;
+    if (min < MIN_DE) fail(`dark palette: "${pair[0]}" and "${pair[1]}" are only ${min.toFixed(1)} ΔE apart (floor ${MIN_DE})`);
+
+    // 4.5:1 against BOTH dark grounds observer.css defines
+    let low = null;
+    for (const g of ['#16150f', '#201e18']) {
+      for (const k of keys) if (cr(dark[k], g) < 4.5) low = `${k} is ${cr(dark[k], g).toFixed(2)}:1 on ${g}`;
+    }
+    if (low) fail(`dark palette contrast below 4.5:1 — ${low}`);
+    if (min >= MIN_DE && !low) ok(`dark palette: ${keys.length} colours, worst pair ${min.toFixed(1)} ΔE, all >= 4.5:1 on both dark grounds`);
+  }
+}
+
 // ---- Result
 if (failures) { console.error(`\n${failures} check(s) failed.`); process.exit(1); }
 console.log('\nAll checks passed.');

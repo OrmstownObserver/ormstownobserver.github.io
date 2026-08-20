@@ -44,14 +44,76 @@
     } catch (e) { return fallback; }
   }
 
-  var DARK_L_FLOOR = 0.60;
+  /* ---------- the dark-mode category palette ----------
+     NOT a filter over the light colours. The first version lifted each hue's
+     lightness at runtime, which pushed everything into one mid band and
+     collapsed the distinctions: "Supplies & operations" and "Policing — SQ"
+     came out 3 ΔE apart — the same colour to any eye. This set was solved
+     instead: maximise the minimum perceptual distance, weighted toward the
+     categories that dominate every chart, subject to a 4.5:1 contrast floor
+     on the dark ground and a bounded hue drift so each category stays
+     recognisably itself when the reader flips themes.
+
+       worst pair   ΔE 15.6  (was 3.0)
+       contrast     5.2:1 on --paper #16150f, 4.8:1 on --surface-card #201e18
+
+     Two are deliberate rather than solved: "Other" is pinned to a neutral
+     grey because it is a residual bucket and must not compete with a real
+     category, and the yellow of "Subsidies & community" is held tight so it
+     cannot drift into the orange that "Contracts — works" already owns.
+
+     Fifteen categories is past what colour alone can separate (~8-10 is the
+     honest ceiling). That is survivable here only because colour is never
+     the sole carrier: every dot, segment and bar in this UI is labelled.
+
+     A category added by a future ingest simply will not be in this map and
+     falls back to the runtime lift, which is poor but not broken —
+     validate.js check 11 fails the build so it gets a real colour.
+     Regenerate with the solver in tools/, not by eye. */
+  var DARK_CATS = {
+    'Salaries & HR':                 '#7fa3cf',   // Salaries & HR
+    'Contracts — works':             '#e19447',   // Contracts & works
+    'Supplies & operations':         '#54aab6',   // Supplies & operations
+    'Professional services':         '#78b86f',   // Professional services
+    'Legal — external counsel':      '#e98687',   // Legal services
+    'Subsidies & community':         '#e1bf47',   // Grants & community
+    'Financing & debt':              '#d09fc2',   // Financing & debt
+    'Other':                         '#9c948b',   // Other
+    'Utilities':                     '#aa9fd0',   // Utilities (electricity, telecom, propane)
+    'Vehicle fuel & maintenance':    '#b88a6f',   // Vehicle fuel & maintenance
+    'Waste & recycling':             '#ca6b8f',   // Garbage & recycling collection
+    'Regional shares & memberships': '#abb86f',   // Regional shares & memberships
+    'Insurance':                     '#dabd95',   // Insurance
+    'Policing — SQ':                 '#93d0b2',   // Policing — Sûreté du Québec
+    'Software & IT':                 '#a8d9e6',   // Software & IT
+  };
+  var BY_SOURCE = null;   // source hex -> dark hex, so callers may pass either
+
+  var DARK_L_FLOOR = 0.60;   // fallback only, for a category not in the map
   var palette = null, paletteMode = null;
-  function catColor(hex) {
+  // Accepts a category KEY or its light-mode hex, so call sites can pass
+  // whichever they already hold.
+  function catColor(keyOrHex) {
     var m = mode();
     if (paletteMode !== m) { palette = {}; paletteMode = m; }
-    if (palette[hex] != null) return palette[hex];
-    var out = m === 'dark' ? L.liftHex(hex, DARK_L_FLOOR) : String(hex);
-    palette[hex] = out;
+    if (palette[keyOrHex] != null) return palette[keyOrHex];
+
+    if (!BY_SOURCE) {
+      BY_SOURCE = {};
+      var cats = (global.OO_SPENDING && global.OO_SPENDING.categories) || {};
+      Object.keys(DARK_CATS).forEach(function (k) {
+        if (cats[k] && cats[k].color) BY_SOURCE[cats[k].color] = DARK_CATS[k];
+      });
+    }
+
+    var out;
+    if (m === 'dark') {
+      out = DARK_CATS[keyOrHex] || BY_SOURCE[keyOrHex] || L.liftHex(keyOrHex, DARK_L_FLOOR);
+    } else {
+      var cats2 = (global.OO_SPENDING && global.OO_SPENDING.categories) || {};
+      out = (cats2[keyOrHex] && cats2[keyOrHex].color) || String(keyOrHex);
+    }
+    palette[keyOrHex] = out;
     return out;
   }
   // Same hue, translucent — used to dim categories the reader has
