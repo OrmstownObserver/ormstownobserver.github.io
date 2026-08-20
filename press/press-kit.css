@@ -425,6 +425,18 @@ a.kit-srcref:hover { border-color: var(--accent); color: var(--accent); }
 .kit-narrative ul li { position: relative; padding: 4px 0 4px 22px; font-size: var(--size-body); line-height: 1.6; }
 .kit-narrative ul li::before { content: '▸'; position: absolute; left: 0; top: 5px; color: var(--accent); font-size: 12px; }
 
+/* Bulleted list inside any prose body (see paras() in press-kit.js). */
+.kit-bullets { margin: 0 0 var(--s3); padding-left: 0; list-style: none; }
+.kit-bullets li {
+  position: relative; padding: 5px 0 5px 22px;
+  font-size: var(--size-body); line-height: 1.6;
+}
+.kit-bullets li::before {
+  content: '\25B8'; position: absolute; left: 0; top: 5px;
+  color: var(--accent); font-size: 12px;
+}
+.kit-bullets:last-child { margin-bottom: 0; }
+
 .kit-callout {
   background: var(--surface-sunk); border-left: var(--border-fact) solid var(--accent);
   padding: var(--s3) var(--s4); margin: var(--s4) 0;

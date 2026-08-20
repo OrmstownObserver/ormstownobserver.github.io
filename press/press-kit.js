@@ -209,10 +209,19 @@
     if (last < s.length) parent.appendChild(document.createTextNode(s.slice(last)));
     return parent;
   }
-  /* Accepts a string or an array of strings; emits one <p> each. */
+  /* Accepts a string, or an array whose items are either a string (one <p>)
+     or {list:[...]} (a bulleted list). Lets a right-of-reply body set out a
+     party's requested relief as points instead of a wall of prose. */
   function paras(parent, value, cls) {
     var arr = Array.isArray(value) ? value : (value ? [value] : []);
-    arr.forEach(function (p) { if (p) inline(el('p', cls || null, parent), p); });
+    arr.forEach(function (p) {
+      if (p && typeof p === 'object' && Array.isArray(p.list)) {
+        var ul = el('ul', 'kit-bullets', parent);
+        p.list.forEach(function (it) { if (it) inline(el('li', null, ul), it); });
+        return;
+      }
+      if (p) inline(el('p', cls || null, parent), p);
+    });
     return parent;
   }
 

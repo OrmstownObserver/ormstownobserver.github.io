@@ -7,12 +7,12 @@
   "case_fr": "Municipalité d'Ormstown c. Roskies · Dossier 760-17-007472-254",
   "hed_en": "A municipality asks the court to restrain the newspaper that covers it",
   "hed_fr": "Une municipalité demande au tribunal de restreindre le journal qui la couvre",
-  "deck_en": "A Quebec municipality of about 3,700 people has been in Superior Court twice in ten months against the publisher of its only independent news outlet, seeking removal of his plain-language by-law section, prospective publication restrictions, a no-contact order covering municipal staff and elected officials, and roughly $30,000 in legal fees. He is self-represented and has cross-demanded for abuse of procedure. Five hours are fixed for November 6, 2026. Nothing has been decided on the merits.",
-  "deck_fr": "Une municipalité québécoise d'environ 3 700 habitants s'est retrouvée deux fois en dix mois en Cour supérieure contre l'éditeur de son seul média indépendant, demandant le retrait de sa section d'explication des règlements en langage clair, des restrictions de publication pour l'avenir, une ordonnance de non-contact visant le personnel municipal et les élus, et environ 30 000 $ en frais juridiques. Il se représente seul et a déposé une demande reconventionnelle pour abus de procédure. Cinq heures sont fixées au 6 novembre 2026. Rien n'a été décidé au fond.",
+  "deck_en": "A Quebec municipality of about 4,200 people has been in Superior Court twice in ten months against the publisher of its only independent news outlet, seeking removal of his plain-language by-law section, prospective publication restrictions, a no-contact order covering municipal staff and elected officials, and roughly $30,000 in legal fees. He is self-represented and has cross-demanded for abuse of procedure. Five hours are fixed for November 6, 2026. Nothing has been decided on the merits.",
+  "deck_fr": "Une municipalité québécoise d'environ 4 200 habitants s'est retrouvée deux fois en dix mois en Cour supérieure contre l'éditeur de son seul média indépendant, demandant le retrait de sa section d'explication des règlements en langage clair, des restrictions de publication pour l'avenir, une ordonnance de non-contact visant le personnel municipal et les élus, et environ 30 000 $ en frais juridiques. Il se représente seul et a déposé une demande reconventionnelle pour abus de procédure. Cinq heures sont fixées au 6 novembre 2026. Rien n'a été décidé au fond.",
   "standing_en": "Case management complete · Merits fixed for November 6, 2026",
   "standing_fr": "Gestion d'instance complétée · Fond fixé au 6 novembre 2026",
   "date_published": "2026-08-19",
-  "date_updated": "2026-08-19",
+  "date_updated": "2026-08-20",
   "notices": [
     {
       "tone": "update",
@@ -134,12 +134,12 @@
       "note_fr": "En sus de sa déclaration écrite sous serment, à la suite d'un avis fondé sur l'art. 292 al. 2."
     },
     {
-      "value_en": "~3,700",
-      "value_fr": "~3 700",
+      "value_en": "~4,200",
+      "value_fr": "~4 200",
       "label_en": "Residents of Ormstown",
       "label_fr": "Résidents d'Ormstown",
-      "note_en": "Montérégie, Quebec (2021 census), governed under the *Code municipal du Québec*.",
-      "note_fr": "Montérégie, Québec (recensement de 2021), régie par le *Code municipal du Québec*."
+      "note_en": "Montérégie, Québec — governed under the *Code municipal du Québec*.",
+      "note_fr": "Montérégie (Québec) — régie par le *Code municipal du Québec*."
     },
     {
       "value_en": "5 weeks",
@@ -169,8 +169,8 @@
   "people": [
     {
       "name": "Municipalité d'Ormstown",
-      "role_en": "*Demanderesse*. A municipality of roughly 3,700 in the Montérégie, governed under the *Code municipal du Québec*. Represented by Dunton Rainville S.E.N.C.R.L. (Me Joanie Lévesque, Me Alice Touzin).",
-      "role_fr": "*Demanderesse*. Municipalité d'environ 3 700 habitants en Montérégie, régie par le *Code municipal du Québec*. Représentée par Dunton Rainville S.E.N.C.R.L. (Me Joanie Lévesque, Me Alice Touzin)."
+      "role_en": "*Demanderesse*. A municipality of roughly 4,200 in the Montérégie, governed under the *Code municipal du Québec*. Represented by Dunton Rainville S.E.N.C.R.L. (Me Joanie Lévesque, Me Alice Touzin).",
+      "role_fr": "*Demanderesse*. Municipalité d'environ 4 200 habitants en Montérégie, régie par le *Code municipal du Québec*. Représentée par Dunton Rainville S.E.N.C.R.L. (Me Joanie Lévesque, Me Alice Touzin)."
     },
     {
       "name": "Jesse Roskies",
@@ -421,15 +421,6 @@
           "text_fr": "Trois questions distinctes, que les journalistes devraient garder séparées :"
         },
         {
-          "type": "quote",
-          "speaker": "Jesse Roskies",
-          "role_en": "Publisher, The Ormstown Observer; defendant and cross-plaintiff, self-represented",
-          "role_fr": "Éditeur, L'Ormstown Observer; défendeur et demandeur reconventionnel, se représentant seul",
-          "date": "2026-08-19",
-          "text_en": "The Court has now set a date, and that is welcome. What is at stake on November 6 is not whether one resident and one municipality get along. It is whether a municipal government can use the courts to obtain broad restrictions on a local publisher who reports on its decisions, asks questions of its officials, and examines whether its actions comply with the law.",
-          "text_fr": "La Cour a maintenant fixé une date, et c'est une bonne chose. Ce qui est en jeu le 6 novembre, ce n'est pas de savoir si un résident et une municipalité s'entendent. C'est de savoir si un gouvernement municipal peut recourir aux tribunaux pour obtenir de larges restrictions contre un éditeur local qui rend compte de ses décisions, pose des questions à ses représentants, et examine si ses actes sont conformes à la loi."
-        },
-        {
           "type": "list",
           "items": [
             {
@@ -455,31 +446,18 @@
           "body_fr": "La contestation cite *Prud'homme c. Rawdon (Municipalité de)*, 2010 QCCA 584, où la Cour d'appel a infirmé une injonction obtenue par une municipalité ayant fait fermer un forum de discussion citoyen, jugeant qu'une ordonnance générale interdisant la diffamation « a nécessairement un effet de bâillon ». La question de savoir si cette autorité s'applique ici est contestée et relève de la Cour. Toutes les autorités citées aux actes de procédure sont sur CanLII et peuvent être consultées de façon indépendante."
         },
         {
-          "type": "quote",
-          "speaker": "Jesse Roskies",
-          "role_en": "Publisher, The Ormstown Observer; defendant and cross-plaintiff, self-represented",
-          "role_fr": "Éditeur, L'Ormstown Observer; défendeur et demandeur reconventionnel, se représentant seul",
-          "date": "2026-08-19",
-          "text_en": "Residents are entitled to ask two straightforward questions: who authorized this proceeding, and what is it costing them. Those questions matter more, not less, when the orders being sought would restrict a news outlet that covers the Municipality.",
-          "text_fr": "Les résidents ont le droit de poser deux questions simples : qui a autorisé cette procédure, et combien leur coûte-t-elle. Ces questions comptent davantage, et non moins, quand les ordonnances demandées restreindraient un média qui couvre la Municipalité."
+          "type": "p",
+          "text_en": "Each side has framed the case publicly, and the two framings do not meet. The defence presents it as a question about the breadth of the orders sought against a publisher, and about who authorized the litigation and what it costs; the Municipality presents it, as set out below, as the enforcement of obligations already agreed and homologated. Which characterisation the Court accepts is part of what November 6 will settle.",
+          "text_fr": "Chaque partie a présenté publiquement sa lecture de l'affaire, et les deux ne se rejoignent pas. La défense y voit une question portant sur l'étendue des ordonnances demandées contre un éditeur, ainsi que sur l'autorisation et le coût du litige; la Municipalité y voit, comme exposé ci-dessous, l'exécution d'obligations déjà convenues et homologuées. Laquelle de ces lectures la Cour retiendra fait partie de ce que le 6 novembre tranchera."
         }
       ]
     }
   ],
-  "questions_title_en": "Five questions worth asking",
-  "questions_title_fr": "Cinq questions à poser",
-  "questions_sub_en": "Put these to the Municipality and to its counsel. Their answers, if given, will be published in the responses section below.",
-  "questions_sub_fr": "Posez-les à la Municipalité et à ses procureurs. Leurs réponses, le cas échéant, seront publiées dans la section des réponses ci-dessous.",
+  "questions_title_en": "Questions the file leaves open",
+  "questions_title_fr": "Questions que le dossier laisse ouvertes",
+  "questions_sub_en": "Three matters the public record does not settle. They are set out as questions rather than conclusions — each may have an ordinary answer that simply has not been published. Any answer the Municipality or its counsel provides will appear in the responses section below.",
+  "questions_sub_fr": "Trois éléments que le dossier public ne tranche pas. Ils sont présentés comme des questions plutôt que comme des conclusions — chacun peut avoir une réponse ordinaire qui n'a simplement pas été publiée. Toute réponse fournie par la Municipalité ou ses procureurs figurera dans la section des réponses ci-dessous.",
   "questions": [
-    {
-      "status": "unanswered",
-      "asked_of_en": "Municipality of Ormstown",
-      "asked_of_fr": "Municipalité d'Ormstown",
-      "q_en": "What specific statement does the Municipality say is false, and what evidence establishes its falsity?",
-      "q_fr": "Quelle déclaration précise la Municipalité tient-elle pour fausse, et quelle preuve en établit la fausseté?",
-      "why_en": "The undertakings at issue apply to statements that are defamatory or false. Identifying one is the starting point of the case.",
-      "why_fr": "Les engagements en cause visent les déclarations diffamatoires ou fausses. En identifier une est le point de départ de l'affaire."
-    },
     {
       "status": "unanswered",
       "asked_of_en": "Municipality of Ormstown",
@@ -487,18 +465,18 @@
       "asked_on": "2026-07-09",
       "q_en": "Which council resolution authorized the July 2026 application, and what is the scope of the mandate given to counsel?",
       "q_fr": "Quelle résolution du conseil a autorisé la demande de juillet 2026, et quelle est la portée du mandat confié aux procureurs?",
-      "why_en": "Sought by access-to-information request filed July 9, 2026. No such resolution has been identified in the public council record reviewed to date. Resolution 25-10-289 of October 2, 2025 is a general retainer naming no proceeding.",
-      "why_fr": "Demandé par une demande d'accès à l'information déposée le 9 juillet 2026. Aucune telle résolution n'a été repérée dans le registre public du conseil examiné à ce jour. La résolution 25-10-289 du 2 octobre 2025 est un mandat général ne nommant aucune instance.",
+      "why_en": "Sought by access-to-information request filed July 9, 2026. Resolution 25-10-289 of October 2, 2025 is a general retainer that names no proceeding, and no later authorizing resolution has been identified in the published council record. It may exist without having been published.",
+      "why_fr": "Demandé par une demande d'accès à l'information déposée le 9 juillet 2026. La résolution 25-10-289 du 2 octobre 2025 est un mandat général qui ne nomme aucune instance, et aucune résolution d'autorisation postérieure n'a été repérée au registre publié du conseil. Elle peut exister sans avoir été publiée.",
       "source_ref": "atip-2026-07-09"
     },
     {
       "status": "unanswered",
       "asked_of_en": "Municipality of Ormstown",
       "asked_of_fr": "Municipalité d'Ormstown",
-      "q_en": "How much public money has been spent on this court file, and how was that spending approved?",
-      "q_fr": "Combien de fonds publics ont été consacrés à ce dossier judiciaire, et comment cette dépense a-t-elle été approuvée?",
-      "why_en": "Published municipal accounts show payments to outside counsel, but the amount attributable specifically to this file has not been established. The $30,000 figure is the fee claim in the application, which is not the same thing.",
-      "why_fr": "Les comptes municipaux publiés montrent des paiements à des procureurs externes, mais le montant attribuable spécifiquement à ce dossier n'a pas été établi. Le chiffre de 30 000 $ est la réclamation de frais figurant à la demande, ce qui n'est pas la même chose."
+      "q_en": "How much has this court file cost to date, and how is that spending recorded?",
+      "q_fr": "Combien ce dossier judiciaire a-t-il coûté à ce jour, et comment cette dépense est-elle consignée?",
+      "why_en": "Published municipal accounts show payments to outside counsel, but no figure attributable specifically to this file has been published. The $30,000 in the application is a claim for fees, which is a different figure from what the litigation has cost.",
+      "why_fr": "Les comptes municipaux publiés montrent des paiements à des procureurs externes, mais aucun montant attribuable spécifiquement à ce dossier n'a été publié. Les 30 000 $ figurant à la demande sont une réclamation de frais, ce qui est un chiffre différent de ce que le litige a coûté."
     },
     {
       "status": "unanswered",
@@ -506,17 +484,8 @@
       "asked_of_fr": "Municipalité d'Ormstown",
       "q_en": "How would a no-contact order covering municipal employees and elected officials affect ordinary reporting and requests for comment?",
       "q_fr": "Comment une ordonnance de non-contact visant les employés municipaux et les élus affecterait-elle le travail journalistique courant et les demandes de commentaires?",
-      "why_en": "The Observer's principal subject is the Municipality itself. A restriction on contact reaches the mechanics of seeking comment and access to records.",
-      "why_fr": "Le sujet principal de l'Observer est la Municipalité elle-même. Une restriction de contact touche le mécanisme même de la demande de commentaires et d'accès aux documents."
-    },
-    {
-      "status": "unanswered",
-      "asked_of_en": "Both parties",
-      "asked_of_fr": "Les deux parties",
-      "q_en": "What relief can properly be granted through an enforcement proceeding under art. 657 C.p.c., rather than through a fresh action?",
-      "q_fr": "Quelles conclusions peuvent valablement être accordées par une procédure d'exécution fondée sur l'art. 657 C.p.c., plutôt que par une nouvelle action?",
-      "why_en": "This is the central procedural question on November 6, and it is contested. It is a question for the Court, not for either party.",
-      "why_fr": "C'est la question procédurale centrale du 6 novembre, et elle est contestée. C'est une question qui relève de la Cour, non des parties."
+      "why_en": "The Observer's principal subject is the Municipality itself, so the scope of any such order would bear on routine requests for comment and for records. The Municipality may well have a narrower scope in mind than the wording suggests; that is worth asking.",
+      "why_fr": "Le sujet principal de l'Observer est la Municipalité elle-même; la portée d'une telle ordonnance toucherait donc les demandes courantes de commentaires et de documents. La Municipalité a peut-être en tête une portée plus étroite que ne le laisse entendre le libellé; cela vaut la peine d'être demandé."
     }
   ],
   "documents_title_en": "Document evidence",
@@ -768,12 +737,30 @@
       "source_ref": "app-2026-07-03",
       "body_en": [
         "The Municipality's position, as set out in its application, is that publications and communications by the Observer in May and June 2026 breached obligations arising from the settlement homologated on February 4, 2026. It asks the Court to facilitate execution of that judgment under art. 657 C.p.c.",
-        "On that basis it seeks removal of the identified content, restrictions on publishing material it considers defamatory or false, a declaration that the conduct constitutes civil harassment, restrictions on contact with municipal employees and elected officials, and approximately $30,000 in extrajudicial legal fees.",
+        "On that basis it asks the Court for:",
+        {
+          "list": [
+            "removal of the identified content, including the Observer's *Explicateur de règlement* section in its entirety;",
+            "restrictions on publishing material the Municipality considers defamatory or false, including commentary on the legality of municipal acts;",
+            "a declaration that the conduct constitutes civil harassment;",
+            "restrictions on contact with municipal employees and elected officials;",
+            "approximately $30,000 in extrajudicial legal fees, *à parfaire*."
+          ]
+        },
         "Its application is supported by the sworn declaration of its director general. It is represented by Dunton Rainville S.E.N.C.R.L."
       ],
       "body_fr": [
         "La position de la Municipalité, telle qu'exposée dans sa demande, est que des publications et des communications de l'Observer en mai et juin 2026 ont contrevenu à des obligations découlant du règlement homologué le 4 février 2026. Elle demande à la Cour de faciliter l'exécution de ce jugement en vertu de l'art. 657 C.p.c.",
-        "Sur cette base, elle réclame le retrait des contenus identifiés, des restrictions sur la publication de matériel qu'elle juge diffamatoire ou faux, une déclaration voulant que la conduite constitue du harcèlement civil, des restrictions de contact avec les employés municipaux et les élus, et environ 30 000 $ en frais juridiques extrajudiciaires.",
+        "Sur cette base, elle demande à la Cour :",
+        {
+          "list": [
+            "le retrait des contenus identifiés, dont l'entière section *Explicateur de règlement* de l'Observer;",
+            "des restrictions sur la publication de matériel que la Municipalité juge diffamatoire ou faux, incluant le commentaire sur la légalité des actes municipaux;",
+            "une déclaration voulant que la conduite constitue du harcèlement civil;",
+            "des restrictions de contact avec les employés municipaux et les élus;",
+            "environ 30 000 $ en frais juridiques extrajudiciaires, *à parfaire*."
+          ]
+        },
         "Sa demande est appuyée par la déclaration sous serment de son directeur général. Elle est représentée par Dunton Rainville S.E.N.C.R.L."
       ],
       "note_en": "Summarised by the defence from the Municipality's public pleading — **not a statement given to this briefing, and not a verbatim quotation.** The pleading itself is public; read it rather than this summary.",
