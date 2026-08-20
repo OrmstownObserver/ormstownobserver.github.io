@@ -70,28 +70,45 @@
     .obs-hamburger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
     /* ── MASTHEAD CONTROLS ──
-       Language and theme are both reader preferences, so they sit together
-       on the LEFT. The right edge belongs to the hamburger alone — both were
-       previously absolute at right:0 and drew on top of each other. */
+       The theme toggle sits alone at the LEFT; the right edge belongs to the
+       hamburger. Language used to share this corner, but a bilingual paper's
+       language choice is not a minor control — it now has its own centred bar
+       under the masthead rule (.obs-langbar) with the languages named in full. */
     .obs-controls{
       position:absolute; left:0; top:50%; transform:translateY(-50%);
       display:flex; align-items:center; gap:8px; z-index:210;
     }
 
-    /* ── LANG TOGGLE (compact, in masthead) ── */
+    /* ── LANG BAR (centred, under the masthead) ── */
+    .obs-langbar{
+      display:flex; justify-content:center; margin-top:18px;
+    }
     .obs-lang{
       display:inline-flex; border:1.5px solid var(--ink); overflow:hidden;
     }
     .obs-lang button{
-      font-family:'Libre Baskerville',serif; font-weight:700; font-size:11px;
-      letter-spacing:.06em; text-transform:uppercase;
+      font-family:'Libre Baskerville',serif; font-weight:700; font-size:12px;
+      letter-spacing:.06em;
       color:var(--ink); background:var(--paper); border:none;
-      border-right:1px solid var(--ink); padding:6px 12px; cursor:pointer;
+      border-right:1px solid var(--ink); padding:9px 20px; cursor:pointer;
+      min-height:40px; line-height:1;
       transition:background .15s,color .15s;
     }
     .obs-lang button:last-child{border-right:none;}
     .obs-lang button.is-active{background:var(--accent);color:#fff;}
     .obs-lang button:not(.is-active):hover{background:var(--paper-dark);}
+    /* Dark mode lifts --accent to a pale #e8686c, on which #fff is ~2.4:1.
+       Scoped to html.obs-ds — the class is only set on pages that link
+       observer.css, so the ~80 legacy light-only pages (where --accent stays
+       #b5161b and #fff is correct) are never touched, even when the reader's
+       OS is dark. */
+    html.obs-ds[data-theme=dark] .obs-lang button.is-active{color:#16150f;}
+    @media (prefers-color-scheme:dark){
+      html.obs-ds:not([data-theme=light]) .obs-lang button.is-active{color:#16150f;}
+    }
+    @media (max-width:420px){
+      .obs-lang button{padding:9px 14px;font-size:11.5px;}
+    }
 
     /* ── THEME TOGGLE (sits beside the lang toggle) ──
        Only shown on pages that link observer.css. The [hidden] guard is
@@ -181,10 +198,6 @@
   <div class="obs-masthead">
     <div class="obs-masthead-inner">
       <div class="obs-controls">
-        <div class="obs-lang" id="obs-lang-group" role="group" aria-label="Language / Langue">
-          <button type="button" id="obs-btn-en" onclick="obsSetLang('en')">EN</button>
-          <button type="button" id="obs-btn-fr" onclick="obsSetLang('fr')">FR</button>
-        </div>
         <button class="obs-theme" id="obs-theme-btn" type="button" hidden
           aria-label="Toggle light or dark theme" title="Light / dark">
           <svg class="obs-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -208,6 +221,14 @@
         <span data-fr>Responsabilité civique · Journalisme indépendant</span>
       </div>
       <div class="obs-rule-bottom"></div>
+      <div class="obs-langbar">
+        <div class="obs-lang" id="obs-lang-group" role="group" aria-label="Language / Langue">
+          <button type="button" id="obs-btn-en" aria-pressed="false" lang="en"
+            onclick="obsSetLang('en')">English</button>
+          <button type="button" id="obs-btn-fr" aria-pressed="false" lang="fr"
+            onclick="obsSetLang('fr')">Fran&ccedil;ais</button>
+        </div>
+      </div>
       <button class="obs-hamburger" id="obs-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="obs-drawer">
         <span></span><span></span><span></span>
       </button>
@@ -339,6 +360,11 @@
       .getPropertyValue('--obs-css').trim() !== '';
   }catch(e){}
 
+  if(hasDesignSystem){
+    // Lets CSS above target only pages whose tokens actually invert.
+    document.documentElement.classList.add('obs-ds');
+  }
+
   if(themeBtn && hasDesignSystem){
     themeBtn.hidden = false;
 
@@ -385,8 +411,10 @@
     try{ localStorage.setItem('observerLang', lang); } catch(e){}
     var btnEn = document.getElementById('obs-btn-en');
     var btnFr = document.getElementById('obs-btn-fr');
-    if(btnEn) btnEn.classList.toggle('is-active', lang==='en');
-    if(btnFr) btnFr.classList.toggle('is-active', lang==='fr');
+    if(btnEn){ btnEn.classList.toggle('is-active', lang==='en');
+               btnEn.setAttribute('aria-pressed', String(lang==='en')); }
+    if(btnFr){ btnFr.classList.toggle('is-active', lang==='fr');
+               btnFr.setAttribute('aria-pressed', String(lang==='fr')); }
     // Update lang-aware hrefs in drawer
     document.querySelectorAll('[data-href-en]').forEach(function(el){
       el.setAttribute('href', lang==='fr' ? el.getAttribute('data-href-fr') : el.getAttribute('data-href-en'));
@@ -404,8 +432,10 @@
       html.setAttribute('lang', lang);
       var btnEn = document.getElementById('obs-btn-en');
       var btnFr = document.getElementById('obs-btn-fr');
-      if(btnEn) btnEn.classList.toggle('is-active', lang==='en');
-      if(btnFr) btnFr.classList.toggle('is-active', lang==='fr');
+      if(btnEn){ btnEn.classList.toggle('is-active', lang==='en');
+                 btnEn.setAttribute('aria-pressed', String(lang==='en')); }
+      if(btnFr){ btnFr.classList.toggle('is-active', lang==='fr');
+                 btnFr.setAttribute('aria-pressed', String(lang==='fr')); }
       document.querySelectorAll('[data-href-en]').forEach(function(el){
         el.setAttribute('href', lang==='fr' ? el.getAttribute('data-href-fr') : el.getAttribute('data-href-en'));
       });
