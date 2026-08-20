@@ -880,9 +880,9 @@
     s.setAttribute('aria-labelledby', 'contact-h');
     var grid = el('div', 'kit-contact-grid', box);
 
-    function cell(label, value, href) {
+    function cell(label, value, href, wide) {
       if (!value) return;
-      var cl = el('div', 'kit-contact-cell', grid);
+      var cl = el('div', 'kit-contact-cell' + (wide ? ' is-wide' : ''), grid);
       txt('div', 'c-label', cl, label);
       var v = el('div', 'c-value', cl);
       var safe = href ? safeUrl(href) : null;
@@ -899,7 +899,9 @@
     cell(T.contactEmail, c.email, c.email ? 'mailto:' + c.email : null);
     cell(T.contactPhone, c.phone, c.phone ? 'tel:' + String(c.phone).replace(/[^+0-9]/g, '') : null);
     cell(T.contactWeb, L(c, 'website_label') || L(c, 'website') || c.website, pickUrl(c, 'website'));
-    cell(T.contactAvail, L(c, 'availability'));
+    /* Availability is prose, not a field — give it the full row rather
+       than a 220px column with the rest of the row left empty. */
+    cell(T.contactAvail, L(c, 'availability'), null, true);
     if (has(c, 'note')) paras(el('div', 'kit-contact-note', box), L(c, 'note'));
 
     if (has(KIT, 'terms')) paras(el('div', 'kit-terms kit-column', w), L(KIT, 'terms'));

@@ -653,6 +653,8 @@ a.kit-srcref:hover { border-color: var(--accent); color: var(--accent); }
 .kit-contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); }
 .kit-contact-cell { padding: var(--s3) var(--s4); border-right: var(--rule-hair) solid var(--hair); border-bottom: var(--rule-hair) solid var(--hair); }
 .kit-contact-cell:last-child { border-right: none; }
+.kit-contact-cell.is-wide { grid-column: 1 / -1; border-right: none; }
+.kit-contact-cell.is-wide .c-value { max-width: 78ch; }
 .kit-contact-cell .c-label {
   font-family: var(--font-label); font-size: var(--size-label-sm); font-weight: 700;
   letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-soft);
