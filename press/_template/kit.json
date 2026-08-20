@@ -1,0 +1,223 @@
+{
+  "_readme": "STARTER PRESS KIT. Copy this whole folder to /press/<your-slug>/, then replace the content. Every section is OPTIONAL — delete a key and its section disappears from the page and from the sticky nav. Every human string is a pair of sibling keys, x_en / x_fr; a missing _fr falls back to _en. Inside any text you may use **bold**, *italic* and [link text](https://…). Status values: confirmed | documented | disputed | alleged | unanswered | analysis. Images must live under /images/, /press/ or /downloads/ — anything else is rejected by the renderer. The placeholder images below point at /images/townhall.jpg so the starter renders cleanly; swap them for your own. See /PRESS-KIT.md.",
+
+  "version": 1,
+  "slug": "REPLACE-ME",
+
+  "kicker_en": "Media briefing",
+  "kicker_fr": "Dossier de presse",
+  "case_en": "Case name · Ormstown, Québec",
+  "case_fr": "Nom du dossier · Ormstown, Québec",
+
+  "hed_en": "The headline of the briefing",
+  "hed_fr": "Le titre du dossier",
+  "deck_en": "Two or three sentences a reporter can read in fifteen seconds: what happened, who is involved, and why it is in the public interest.",
+  "deck_fr": "Deux ou trois phrases qu'un journaliste peut lire en quinze secondes : ce qui s'est passé, qui est impliqué, et pourquoi c'est d'intérêt public.",
+
+  "standing_en": "Ongoing",
+  "standing_fr": "En cours",
+
+  "date_published": "2026-01-01",
+  "date_updated": "2026-01-01",
+
+  "hero": {
+    "src": "/images/townhall.jpg",
+    "alt_en": "One sentence describing the image for a screen reader.",
+    "alt_fr": "Une phrase décrivant l'image pour un lecteur d'écran.",
+    "caption_en": "What the reader is looking at.",
+    "caption_fr": "Ce que le lecteur regarde.",
+    "credit_en": "Photo: The Ormstown Observer.",
+    "credit_fr": "Photo : L'Ormstown Observer."
+  },
+
+  "glance": {
+    "title_en": "The story at a glance",
+    "title_fr": "L'essentiel en un coup d'œil",
+    "items": [
+      {
+        "status": "documented",
+        "text_en": "Four to six facts, each one sentence. Put the strongest news angle first.",
+        "text_fr": "Quatre à six faits, une phrase chacun. Le meilleur angle en premier."
+      },
+      {
+        "status": "unanswered",
+        "text_en": "A fact whose evidentiary status is different gets a different label.",
+        "text_fr": "Un fait dont le statut probatoire diffère reçoit une étiquette différente."
+      }
+    ]
+  },
+
+  "numbers": [
+    {
+      "value_en": "$0", "value_fr": "0 $",
+      "label_en": "What the number is", "label_fr": "Ce qu'est le chiffre",
+      "note_en": "Where it comes from, in one line.", "note_fr": "D'où il vient, en une ligne.",
+      "source_ref": "doc-1"
+    }
+  ],
+
+  "why": {
+    "body_en": ["One to three paragraphs on the public interest. Not advocacy — the reason a reader who has no stake in the file should still care."],
+    "body_fr": ["Un à trois paragraphes sur l'intérêt public. Pas de plaidoyer — la raison pour laquelle un lecteur sans intérêt dans le dossier devrait tout de même s'en soucier."]
+  },
+
+  "people": [
+    { "name": "Organisation or person",
+      "role_en": "One or two sentences on their role in the file.",
+      "role_fr": "Une ou deux phrases sur leur rôle dans le dossier." }
+  ],
+
+  "timeline": [
+    {
+      "date": "2026-01-01",
+      "status": "documented",
+      "doc": "doc-1",
+      "hed_en": "What happened", "hed_fr": "Ce qui s'est passé",
+      "summary_en": "Two or three sentences. Every entry should trace to a document or a recording.",
+      "summary_fr": "Deux ou trois phrases. Chaque entrée devrait remonter à un document ou à un enregistrement."
+    }
+  ],
+
+  "narrative": [
+    {
+      "type": "section",
+      "hed_en": "A section heading", "hed_fr": "Un intertitre",
+      "blocks": [
+        { "type": "p", "lede": true, "text_en": "The opening paragraph.", "text_fr": "Le paragraphe d'ouverture." },
+        { "type": "p", "text_en": "A normal paragraph with **bold**, *italic* and a [link](https://example.org).", "text_fr": "Un paragraphe normal avec du **gras**, de l'*italique* et un [lien](https://example.org)." },
+        { "type": "list", "items": [
+            { "text_en": "A bullet.", "text_fr": "Une puce." },
+            { "text_en": "Another bullet.", "text_fr": "Une autre puce." }
+        ]},
+        { "type": "callout",
+          "head_en": "A highlighted aside", "head_fr": "Un encadré",
+          "body_en": "Context that would interrupt the flow if it sat in a paragraph.",
+          "body_fr": "Un contexte qui romprait le fil s'il se trouvait dans un paragraphe." },
+        { "type": "fact", "status": "documented", "source_ref": "doc-1",
+          "head_en": "A highlighted fact", "head_fr": "Un fait mis en évidence",
+          "body_en": "A single claim, labelled with its evidentiary status and pointing at the document that supports it.",
+          "body_fr": "Une seule affirmation, étiquetée selon son statut probatoire et pointant vers le document qui l'appuie." },
+        { "type": "quote", "speaker": "Name of speaker",
+          "role_en": "Their role", "role_fr": "Leur rôle",
+          "date": "2026-01-01", "source_ref": "doc-1",
+          "text_en": "The exact words. Quotation marks are added for you — do not type them.",
+          "text_fr": "Les mots exacts. Les guillemets sont ajoutés automatiquement — ne les tapez pas." },
+        { "type": "quote", "paraphrase": true, "speaker": "Name of speaker",
+          "role_en": "Their role", "role_fr": "Leur rôle",
+          "text_en": "A summary of what someone said. Set paraphrase:true and it is rendered WITHOUT quotation marks and labelled as a paraphrase — never dress a summary as a direct quote.",
+          "text_fr": "Un résumé de ce que quelqu'un a dit. Avec paraphrase:true, le rendu se fait SANS guillemets et porte l'étiquette paraphrase — ne présentez jamais un résumé comme une citation directe." },
+        { "type": "figure", "src": "/images/townhall.jpg",
+          "alt_en": "Description for a screen reader.", "alt_fr": "Description pour un lecteur d'écran.",
+          "caption_en": "Caption.", "caption_fr": "Légende.",
+          "credit_en": "Photo: The Ormstown Observer.", "credit_fr": "Photo : L'Ormstown Observer." },
+        { "type": "sources", "refs": ["doc-1"] }
+      ]
+    }
+  ],
+
+  "questions": [
+    {
+      "status": "unanswered",
+      "asked_of_en": "Who it was put to", "asked_of_fr": "À qui elle a été posée",
+      "asked_on": "2026-01-01",
+      "q_en": "The question, phrased so a reporter could put it verbatim.",
+      "q_fr": "La question, formulée pour qu'un journaliste puisse la poser telle quelle.",
+      "why_en": "Why it is unresolved and what turns on the answer.",
+      "why_fr": "Pourquoi elle demeure ouverte et ce qui dépend de la réponse."
+    }
+  ],
+
+  "responses": [
+    {
+      "status": "received",
+      "date": "2026-01-01",
+      "party_en": "The other party", "party_fr": "L'autre partie",
+      "role_en": "How the response was given.", "role_fr": "Comment la réponse a été donnée.",
+      "source_ref": "doc-1",
+      "body_en": ["Their position, in full and in their own framing. This section carries the same visual weight as the Observer's own findings — that is deliberate."],
+      "body_fr": ["Leur position, intégralement et dans leurs propres termes. Cette section porte le même poids visuel que les constats de l'Observer — c'est délibéré."],
+      "note_en": "Say here if this is a summary rather than a verbatim statement.",
+      "note_fr": "Précisez ici s'il s'agit d'un résumé plutôt que d'une déclaration verbatim."
+    },
+    {
+      "status": "invited",
+      "date": "2026-01-01",
+      "party_en": "A party that has not replied", "party_fr": "Une partie qui n'a pas répondu",
+      "body_en": ["When and how they were invited to respond, and that no response has been received as of the update date. Any response will be published here in full."],
+      "body_fr": ["Quand et comment ils ont été invités à répondre, et qu'aucune réponse n'a été reçue à la date de mise à jour. Toute réponse sera publiée ici intégralement."]
+    }
+  ],
+
+  "context": [
+    {
+      "label_en": "In plain language", "label_fr": "En langage clair",
+      "title_en": "A procedure the reader may not know",
+      "title_fr": "Une procédure que le lecteur peut ignorer",
+      "body_en": ["Two short paragraphs translating a municipal or court procedure into plain language."],
+      "body_fr": ["Deux courts paragraphes traduisant une procédure municipale ou judiciaire en langage clair."],
+      "source_ref": "doc-1"
+    }
+  ],
+
+  "documents": [
+    {
+      "id": "doc-1",
+      "ref": "Res. 00-00-000",
+      "primary": true,
+      "featured": true,
+      "category": "municipal",
+      "status": "documented",
+      "date": "2026-01-01",
+      "name_en": "Document title", "name_fr": "Titre du document",
+      "type_en": "Municipal minutes (PDF)", "type_fr": "Procès-verbal municipal (PDF)",
+      "source_en": "Who issued it", "source_fr": "Qui l'a émis",
+      "why_en": "Two or three sentences on what this document proves and which claim on the page rests on it.",
+      "why_fr": "Deux ou trois phrases sur ce que ce document prouve et sur quelle affirmation de la page il appuie.",
+      "thumb": "/images/townhall.jpg",
+      "view": "https://example.org/document.pdf",
+      "download": "https://example.org/document.pdf",
+      "note_en": "Anything a reporter should know before opening it.",
+      "note_fr": "Ce qu'un journaliste devrait savoir avant de l'ouvrir."
+    },
+    {
+      "id": "doc-2",
+      "featured": false,
+      "category": "other",
+      "status": "analysis",
+      "date": "2026-01-01",
+      "name_en": "A document that belongs in the library but not on a card",
+      "name_fr": "Un document qui va dans la bibliothèque mais pas sur une fiche",
+      "type_en": "Observer report", "type_fr": "Compte-rendu de l'Observer",
+      "source_en": "The Ormstown Observer", "source_fr": "L'Ormstown Observer",
+      "view_en": "/en/some-article/",
+      "view_fr": "/fr/un-article/"
+    }
+  ],
+
+  "media": [
+    {
+      "kind": "photo",
+      "src": "/images/townhall.jpg",
+      "title_en": "Asset name", "title_fr": "Nom du fichier",
+      "alt_en": "Description for a screen reader.", "alt_fr": "Description pour un lecteur d'écran.",
+      "caption_en": "What it shows.", "caption_fr": "Ce qu'elle montre.",
+      "credit_en": "Photo: The Ormstown Observer.", "credit_fr": "Photo : L'Ormstown Observer."
+    }
+  ],
+
+  "contact": {
+    "name": "The Ormstown Observer",
+    "org_en": "Independent bilingual civic journalism · Ormstown, Québec",
+    "org_fr": "Journalisme civique bilingue indépendant · Ormstown, Québec",
+    "email": "ormstownobserver@gmail.com",
+    "website": "https://ormstownobserver.ca",
+    "website_label_en": "ormstownobserver.ca", "website_label_fr": "ormstownobserver.ca",
+    "availability_en": "Available for interview in English or French, in person in the Haut-Saint-Laurent or remotely.",
+    "availability_fr": "Disponible pour entrevue en français ou en anglais, en personne dans le Haut-Saint-Laurent ou à distance.",
+    "note_en": "State any affiliation, or the absence of one, with the parties named in the briefing.",
+    "note_fr": "Indiquez toute affiliation, ou son absence, avec les parties nommées dans le dossier."
+  },
+
+  "terms_en": ["**Using this briefing.** Facts and documents on this page may be reported freely. Please attribute to The Ormstown Observer. Photographs are free to reproduce with the credit shown."],
+  "terms_fr": ["**Utiliser ce dossier.** Les faits et documents de cette page peuvent être repris librement. Merci d'attribuer à L'Ormstown Observer. Les photographies sont libres de reproduction avec le crédit indiqué."]
+}

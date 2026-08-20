@@ -1,0 +1,776 @@
+{
+  "version": 1,
+  "slug": "bell-tower",
+  "kicker_en": "Media briefing",
+  "kicker_fr": "Dossier de presse",
+  "case_en": "Bell tower · Project E3640 · Ormstown, Québec",
+  "case_fr": "Tour Bell · Projet E3640 · Ormstown, Québec",
+
+  "hed_en": "One antenna, three closing dates and three lot numbers",
+  "hed_fr": "Une antenne, trois dates de clôture et trois numéros de lot",
+
+  "deck_en": "Between March and July 2026, Ormstown went through its first federal telecommunications consultation — a 36-metre Bell Mobilité tower on municipal land near Route 138. Council authorized the lease 7–0. This briefing sets out what the rules required, what the documents show, what remains unanswered, and where every claim can be verified.",
+  "deck_fr": "De mars à juillet 2026, Ormstown a vécu sa première consultation fédérale en télécommunications — une tour Bell Mobilité de 36 mètres sur un terrain municipal près de la route 138. Le conseil a autorisé le bail 7–0. Ce dossier expose ce que les règles exigeaient, ce que les documents montrent, ce qui demeure sans réponse, et où chaque affirmation peut être vérifiée.",
+
+  "standing_en": "Lease authorized · ISED process ongoing",
+  "standing_fr": "Bail autorisé · Processus d'ISDE en cours",
+
+  "date_published": "2026-07-20",
+  "date_updated": "2026-08-19",
+
+  "hero": {
+    "src": "/images/tower.jpg",
+    "alt_en": "A monopole telecommunications tower against an open sky.",
+    "alt_fr": "Une tour de télécommunications à monopôle se découpant sur le ciel.",
+    "caption_en": "Bell Mobilité's engineering plan E3640 specifies a 36-metre monopole carrying 12 antennas, on municipal land near Route 138.",
+    "caption_fr": "Le plan d'ingénierie E3640 de Bell Mobilité prévoit un monopôle de 36 mètres portant 12 antennes, sur un terrain municipal près de la route 138.",
+    "credit_en": "Photo: The Ormstown Observer.",
+    "credit_fr": "Photo : L'Ormstown Observer."
+  },
+
+  "glance": {
+    "title_en": "The story at a glance",
+    "title_fr": "L'essentiel en un coup d'œil",
+    "items": [
+      {
+        "status": "documented",
+        "text_en": "On **March 2, 2026** council adopted Resolution 26-03-074 authorizing a lease with Bell Mobilité: an initial annual rent of **$10,000**, increased annually, over five years plus six five-year renewal options, on lot 6 065 483.",
+        "text_fr": "Le **2 mars 2026**, le conseil a adopté la résolution 26-03-074 autorisant un bail avec Bell Mobilité : un loyer annuel initial de **10 000 $**, majoré annuellement, sur cinq ans plus six options de renouvellement de cinq ans, sur le lot 6 065 483."
+      },
+      {
+        "status": "documented",
+        "text_en": "The tower was described to council as *\"une trentaine de mètres.\"* Bell's engineering plan E3640 specifies **36 metres**, carrying **12 antennas**.",
+        "text_fr": "La tour a été décrite au conseil comme *« une trentaine de mètres »*. Le plan d'ingénierie E3640 de Bell précise **36 mètres**, portant **12 antennes**."
+      },
+      {
+        "status": "confirmed",
+        "text_en": "**Three different cadastral lot numbers** appear in the public documents for one site — 6 065 438, 6 065 482 and 6 065 483. The Observer verified through the Québec cadastral registry that these are distinct parcels.",
+        "text_fr": "**Trois numéros cadastraux différents** figurent aux documents publics pour un même site — 6 065 438, 6 065 482 et 6 065 483. L'Observer a vérifié au registre cadastral du Québec qu'il s'agit de parcelles distinctes."
+      },
+      {
+        "status": "documented",
+        "text_en": "Bell's June 19 letter stated the reply period would close **July 10**. On **June 26** — one day after receiving the Observer's reply — Bell notified ISED that the consultation was closed.",
+        "text_fr": "La lettre de Bell du 19 juin indiquait que la période de réplique se terminerait le **10 juillet**. Le **26 juin** — au lendemain de la réception de la réplique de l'Observer — Bell a avisé ISDE que la consultation était close."
+      },
+      {
+        "status": "documented",
+        "text_en": "The alternatives analysis required by CPC-2-0-03 was referenced at the June 10 session but never made public; Bell declined to provide the list of alternative sites, describing it as commercially confidential.",
+        "text_fr": "L'analyse des solutions de rechange qu'exige CPC-2-0-03 a été évoquée à la séance du 10 juin mais n'a jamais été rendue publique; Bell a refusé de fournir la liste des sites de rechange, la qualifiant d'information commerciale confidentielle."
+      },
+      {
+        "status": "confirmed",
+        "text_en": "The municipality asked Bell to hold an information session the federal process did not require, all of council attended, and on **July 6** the lease was authorized by a recorded vote, **7–0**, taken at the mayor's initiative when it could have passed on consent.",
+        "text_fr": "La municipalité a demandé à Bell de tenir une séance d'information que le processus fédéral n'exigeait pas, tout le conseil y a assisté, et le **6 juillet** le bail a été autorisé par vote nominal, **7–0**, tenu à l'initiative du maire alors qu'il aurait pu être adopté sans vote enregistré."
+      }
+    ]
+  },
+
+  "numbers_title_en": "Key numbers",
+  "numbers_title_fr": "Chiffres clés",
+  "numbers": [
+    {
+      "value_en": "$10,000", "value_fr": "10 000 $",
+      "label_en": "Initial annual rent", "label_fr": "Loyer annuel initial",
+      "note_en": "Increased annually. Public since March 2, 2026.",
+      "note_fr": "Majoré annuellement. Public depuis le 2 mars 2026.",
+      "source_ref": "pv-2026-03-02"
+    },
+    {
+      "value_en": "36 m", "value_fr": "36 m",
+      "label_en": "Tower height in plan E3640", "label_fr": "Hauteur de la tour au plan E3640",
+      "note_en": "Described to council as \"about thirty metres.\"",
+      "note_fr": "Décrite au conseil comme « une trentaine de mètres »."
+    },
+    {
+      "value_en": "12", "value_fr": "12",
+      "label_en": "Antennas on the monopole", "label_fr": "Antennes sur le monopôle",
+      "note_en": "Corrected from the 18 first reported by the Observer.",
+      "note_fr": "Corrigé des 18 d'abord rapportées par l'Observer."
+    },
+    {
+      "value_en": "3", "value_fr": "3",
+      "label_en": "Lot numbers in the record", "label_fr": "Numéros de lot au dossier",
+      "note_en": "6 065 438 · 6 065 482 · 6 065 483 — verified as distinct parcels.",
+      "note_fr": "6 065 438 · 6 065 482 · 6 065 483 — vérifiés comme parcelles distinctes."
+    },
+    {
+      "value_en": "3", "value_fr": "3",
+      "label_en": "Consultation closing dates", "label_fr": "Dates de clôture de la consultation",
+      "note_en": "The newspaper notice, Bell's letter, and the date Bell told ISED it was finished.",
+      "note_fr": "L'avis au journal, la lettre de Bell, et la date à laquelle Bell a dit à ISDE avoir terminé."
+    },
+    {
+      "value_en": "14 days", "value_fr": "14 jours",
+      "label_en": "Consultation closed early", "label_fr": "Consultation close en avance",
+      "note_en": "Between June 26 and the July 10 date in Bell's own letter.",
+      "note_fr": "Entre le 26 juin et la date du 10 juillet inscrite dans la lettre de Bell."
+    },
+    {
+      "value_en": "7–0", "value_fr": "7–0",
+      "label_en": "Recorded vote, July 6, 2026", "label_fr": "Vote nominal, 6 juillet 2026",
+      "note_en": "Unanimous, at the mayor's initiative.",
+      "note_fr": "Unanime, à l'initiative du maire.",
+      "source_ref": "pv-2026-07-06"
+    },
+    {
+      "value_en": "35 years", "value_fr": "35 ans",
+      "label_en": "Maximum lease term", "label_fr": "Terme maximal du bail",
+      "note_en": "Five years plus six five-year renewal options.",
+      "note_fr": "Cinq ans plus six options de renouvellement de cinq ans."
+    }
+  ],
+
+  "why": {
+    "title_en": "Why it matters",
+    "title_fr": "Pourquoi c'est important",
+    "body_en": [
+      "This was never only about one tower. Cellular coverage in the Haut-Saint-Laurent is a real need, and many residents want it improved. The public-interest question is narrower: when a telecommunications company and a municipality carry out a public consultation, do residents get the information and the time the rules promise them?",
+      "That question matters whatever one thinks of the tower, because the same process will govern the next tower, and the next. Ormstown has no municipal protocol for telecom consultations — a fact noted in Bell's own consultation brochure — and it is not unusual for a municipality of 4,300 not to have one.",
+      "The file is also a worked example for a federal policy review already under way: on July 16, 2026 the Observer filed written comments in ISED's open consultation DGSO-001-26, which proposes strengthening the disclosure requirements in the antenna-siting process."
+    ],
+    "body_fr": [
+      "Il n'a jamais été question que d'une seule tour. La couverture cellulaire dans le Haut-Saint-Laurent est un besoin réel, et beaucoup de citoyens souhaitent l'améliorer. La question d'intérêt public est plus étroite : quand une entreprise de télécommunications et une municipalité mènent une consultation publique, les citoyens obtiennent-ils l'information et le temps que les règles leur promettent?",
+      "Cette question compte quoi qu'on pense de la tour, parce que le même processus régira la prochaine tour, et la suivante. Ormstown n'a pas de protocole municipal pour les consultations en télécommunications — un fait noté dans la brochure de consultation de Bell elle-même — et il n'est pas inhabituel pour une municipalité de 4 300 habitants de ne pas en avoir.",
+      "Le dossier sert aussi d'exemple concret à une révision fédérale déjà en cours : le 16 juillet 2026, l'Observer a déposé des commentaires écrits dans la consultation ouverte DGSO-001-26 d'ISDE, qui propose de renforcer les exigences de divulgation du processus d'implantation d'antennes."
+    ]
+  },
+
+  "timeline_title_en": "Timeline",
+  "timeline_title_fr": "Chronologie",
+  "timeline_sub_en": "Every entry below is drawn from a published municipal document, written correspondence, or a recording of a public session.",
+  "timeline_sub_fr": "Chaque entrée ci-dessous provient d'un document municipal publié, d'une correspondance écrite, ou d'un enregistrement d'une séance publique.",
+  "timeline": [
+    {
+      "date": "2026-03-02", "status": "documented", "doc": "pv-2026-03-02",
+      "hed_en": "Council authorizes a lease with Bell Mobilité",
+      "hed_fr": "Le conseil autorise un bail avec Bell Mobilité",
+      "summary_en": "Resolution 26-03-074 (item 7.5) states an initial annual rent of $10,000, increased annually, over five years followed by six five-year renewal options. It authorizes the director general to negotiate any modification and to sign, and identifies lot 6 065 483. At the session the tower is described as \"une trentaine de mètres\"; plan E3640 specifies 36 metres carrying 12 antennas.",
+      "summary_fr": "La résolution 26-03-074 (point 7.5) énonce un loyer annuel initial de 10 000 $, majoré annuellement, sur cinq ans suivis de six options de renouvellement de cinq ans. Elle autorise le directeur général à négocier toute modification et à signer, et identifie le lot 6 065 483. À la séance, la tour est décrite comme « une trentaine de mètres »; le plan E3640 précise 36 mètres portant 12 antennes."
+    },
+    {
+      "date": "2026-05-20", "status": "documented",
+      "hed_en": "The written consultation opens",
+      "hed_fr": "La consultation écrite s'ouvre",
+      "summary_en": "A public notice in The Gleaner opens the written consultation, with a stated response deadline of June 19.",
+      "summary_fr": "Un avis public dans The Gleaner ouvre la consultation écrite, avec une échéance de réponse au 19 juin."
+    },
+    {
+      "date": "2026-06-02", "status": "documented", "doc": "avis-2026-06-02",
+      "hed_en": "Municipal notice for a June 10 information session",
+      "hed_fr": "Avis municipal pour une séance d'information le 10 juin",
+      "summary_en": "The municipality issues a public notice for the session. The notice cites lot 6 065 438 — the first of three lot numbers to appear in the file.",
+      "summary_fr": "La municipalité émet un avis public pour la séance. L'avis cite le lot 6 065 438 — le premier de trois numéros de lot à apparaître au dossier."
+    },
+    {
+      "date": "2026-06-10", "status": "confirmed", "doc": "obs-june10",
+      "hed_en": "Bell holds a public information session",
+      "hed_fr": "Bell tient une séance d'information publique",
+      "summary_en": "At the municipality's request, Bell holds a session at 5 rue Gale. All of council attends. The Observer recorded the session and published a summary. Holding it went beyond what the federal process requires.",
+      "summary_fr": "À la demande de la municipalité, Bell tient une séance au 5, rue Gale. Tout le conseil y assiste. L'Observer a enregistré la séance et publié un compte-rendu. La tenir allait au-delà de ce que le processus fédéral exige."
+    },
+    {
+      "date": "2026-06-19", "status": "documented", "doc": "obs-correspondence",
+      "hed_en": "Bell's consultant replies in writing",
+      "hed_fr": "Le consultant de Bell répond par écrit",
+      "summary_en": "The letter responds to the Observer's submission and states that the reply period will close on July 10. It declines to provide the list of alternative sites or the criteria on which they were set aside, describing this as commercially confidential.",
+      "summary_fr": "La lettre répond à la soumission de l'Observer et indique que la période de réplique se terminera le 10 juillet. Elle décline de fournir la liste des sites de rechange ou les critères de leur mise à l'écart, qualifiant le tout d'information commerciale confidentielle."
+    },
+    {
+      "date": "2026-06-26", "status": "documented",
+      "hed_en": "Bell notifies ISED that the consultation is closed",
+      "hed_fr": "Bell avise ISDE que la consultation est close",
+      "summary_en": "Fourteen days before the July 10 date stated in its own June 19 letter, and one day after receiving the Observer's written reply.",
+      "summary_fr": "Quatorze jours avant la date du 10 juillet énoncée dans sa propre lettre du 19 juin, et au lendemain de la réception de la réplique écrite de l'Observer."
+    },
+    {
+      "date": "2026-07-06", "status": "confirmed", "doc": "pv-2026-07-06",
+      "hed_en": "Council authorizes the lease, 7–0",
+      "hed_fr": "Le conseil autorise le bail, 7–0",
+      "summary_en": "A unanimous recorded vote held at the mayor's initiative. The mayor confirms that written exchanges submitted during the consultation, including the Observer's correspondence, form part of the consultation dossier.",
+      "summary_fr": "Un vote nominal unanime tenu à l'initiative du maire. Le maire confirme que les échanges écrits soumis durant la consultation, incluant la correspondance de l'Observer, font partie du dossier de consultation."
+    },
+    {
+      "date": "2026-07-16", "status": "documented", "doc": "obs-ised",
+      "hed_en": "The Observer files comments in ISED consultation DGSO-001-26",
+      "hed_fr": "L'Observer dépose des commentaires dans la consultation DGSO-001-26 d'ISDE",
+      "summary_en": "The federal consultation proposes strengthening disclosure requirements in the antenna-siting process. The Observer cites this file as a worked example. The same day, the factual points in its consolidated article are transmitted to the municipality through its legal counsel, with an invitation to respond.",
+      "summary_fr": "La consultation fédérale propose de renforcer les exigences de divulgation du processus d'implantation d'antennes. L'Observer cite ce dossier comme exemple concret. Le même jour, les points factuels de son article consolidé sont transmis à la municipalité par l'entremise de ses procureurs, avec une invitation à répondre."
+    }
+  ],
+
+  "narrative_title_en": "The findings",
+  "narrative_title_fr": "Les constats",
+  "narrative": [
+    {
+      "type": "section",
+      "hed_en": "The framework, in plain language",
+      "hed_fr": "Le cadre, en langage clair",
+      "blocks": [
+        {
+          "type": "p", "lede": true,
+          "text_en": "Telecommunications are federal jurisdiction. Before Bell can build an antenna system it must follow Innovation, Science and Economic Development Canada's procedure **CPC-2-0-03**: notify residents within a prescribed radius, run a written public consultation of at least 30 days, respond to questions, and show that alternatives to a new structure were considered.",
+          "text_fr": "Les télécommunications relèvent du fédéral. Avant que Bell puisse construire un système d'antennes, elle doit suivre la procédure **CPC-2-0-03** d'Innovation, Sciences et Développement économique Canada : aviser les résidents dans un rayon prescrit, mener une consultation écrite d'au moins 30 jours, répondre aux questions, et démontrer que des solutions de rechange à une nouvelle structure ont été considérées."
+        },
+        {
+          "type": "p",
+          "text_en": "The municipality plays two distinct roles in such a file: as the **property owner** — here, the land is municipal — and as the **land-use authority** whose review of the consultation ISED relies on before approving construction. Keeping those two roles visibly separate is the practical difficulty this file exposes.",
+          "text_fr": "La municipalité joue deux rôles distincts dans un tel dossier : celui de **propriétaire foncier** — ici, le terrain est municipal — et celui d'**autorité responsable de l'utilisation du sol**, dont l'évaluation de la consultation sert d'appui à ISDE avant d'approuver la construction. Garder ces deux rôles visiblement distincts est la difficulté pratique que ce dossier met au jour."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "hed_en": "What the record shows was done well",
+      "hed_fr": "Ce que le dossier montre de bien fait",
+      "blocks": [
+        {
+          "type": "p",
+          "text_en": "Fairness requires saying this clearly, and specifically. The municipality asked Bell to hold a public information session it was not obliged to hold, and the full council attended it. The written consultation ran longer than the federal minimum. On July 6, at the mayor's initiative, the lease was put to a full recorded vote, each member's position stated publicly — when it could have passed on consent. Residents' written questions were read into the record and answered.",
+          "text_fr": "L'équité exige de le dire clairement, et précisément. La municipalité a demandé à Bell de tenir une séance d'information publique qu'elle n'était pas tenue de tenir, et le conseil au complet y a assisté. La consultation écrite a duré plus longtemps que le minimum fédéral. Le 6 juillet, à l'initiative du maire, le bail a été soumis à un vote nominal complet, la position de chaque membre énoncée publiquement — alors qu'il aurait pu être adopté sans vote enregistré. Les questions écrites des citoyens ont été lues au procès-verbal et ont reçu réponse."
+        },
+        {
+          "type": "callout",
+          "head_en": "Council held signing authority for four months and did not use it",
+          "head_fr": "Le conseil a détenu l'autorité de signer pendant quatre mois sans l'exercer",
+          "body_en": "The authority existed from March 2: Resolution 26-03-074 mandated the director general to negotiate and sign. By the mayor's account on July 6, the municipality considered signing with an exit clause, its notary advised against it, and it waited until the consultation had concluded. That was a choice, and it was the prudent one.",
+          "body_fr": "L'autorité existait depuis le 2 mars : la résolution 26-03-074 mandatait le directeur général pour négocier et signer. Selon le récit du maire le 6 juillet, la municipalité a envisagé de signer avec une clause de sortie, son notaire le lui a déconseillé, et elle a attendu la conclusion de la consultation. C'était un choix, et c'était le choix prudent."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "hed_en": "Where the record shows gaps",
+      "hed_fr": "Où le dossier montre des lacunes",
+      "blocks": [
+        {
+          "type": "p",
+          "text_en": "Five matters, each documented in the sources listed on this page, remain part of the factual record. The Observer presents them as questions the file leaves open, because that is what they are.",
+          "text_fr": "Cinq éléments, chacun documenté dans les sources listées sur cette page, demeurent au dossier factuel. L'Observer les présente comme des questions que le dossier laisse ouvertes, parce que c'est ce qu'elles sont."
+        },
+        {
+          "type": "fact", "status": "documented", "source_ref": "pv-2026-03-02",
+          "head_en": "1. The height as first described",
+          "head_fr": "1. La hauteur telle que décrite au départ",
+          "body_en": "The tower was described to council on March 2 as \"une trentaine de mètres.\" Bell's engineering plan specifies 36 metres — a monopole carrying 12 antennas. The figure reached residents through Bell's own notification materials rather than through a municipal correction.",
+          "body_fr": "La tour a été décrite au conseil le 2 mars comme « une trentaine de mètres ». Le plan d'ingénierie de Bell précise 36 mètres — un monopôle portant 12 antennes. Le chiffre est parvenu aux résidents par les documents de notification de Bell plutôt que par une correction municipale."
+        },
+        {
+          "type": "fact", "status": "confirmed",
+          "head_en": "2. The lot number",
+          "head_fr": "2. Le numéro de lot",
+          "body_en": "Public documents in this file have carried three different cadastral numbers for the site. The June 2 notice cited lot 6 065 438. The published July 6 agenda cited lot 6 065 482. Bell's engineering plan, its notices to residents, and Resolution 26-03-074 cite lot 6 065 483. The Observer has verified through the Québec cadastral registry that these are distinct parcels. In all likelihood these are clerical errors; but the lease will be filed at the land registry, where precision is the entire point.",
+          "body_fr": "Les documents publics de ce dossier ont porté trois numéros cadastraux différents pour le site. L'avis du 2 juin citait le lot 6 065 438. L'ordre du jour publié du 6 juillet citait le lot 6 065 482. Le plan d'ingénierie de Bell, ses avis aux résidents et la résolution 26-03-074 citent le lot 6 065 483. L'Observer a vérifié au registre cadastral du Québec qu'il s'agit de parcelles distinctes. Selon toute vraisemblance, ce sont des erreurs d'écriture; mais le bail sera inscrit au registre foncier, où la précision est tout l'enjeu."
+        },
+        {
+          "type": "fact", "status": "unanswered", "source_ref": "regl-148-2023",
+          "head_en": "3. The zoning designation",
+          "head_fr": "3. La désignation de zonage",
+          "body_en": "The Observer's reading of Règlement 148-2023 places the site in Zone P-15, where the listed uses do not include telecommunications infrastructure. Because telecommunications are federal, a federal undertaking can proceed regardless of local zoning — the mayor made this point on July 6. The open question is narrower: in its consultation role, how did the municipality evaluate the project against its own planning framework, and where is that evaluation recorded? The Observer put the question in writing and has not received a substantive answer.",
+          "body_fr": "La lecture que fait l'Observer du Règlement 148-2023 situe le site en zone P-15, dont les usages énumérés n'incluent pas les infrastructures de télécommunications. Les télécommunications étant fédérales, une entreprise fédérale peut procéder indépendamment du zonage local — le maire l'a souligné le 6 juillet. La question ouverte est plus étroite : dans son rôle de consultation, comment la municipalité a-t-elle évalué le projet au regard de son propre cadre d'urbanisme, et où cette évaluation est-elle consignée? L'Observer a posé la question par écrit et n'a pas reçu de réponse substantielle."
+        },
+        {
+          "type": "fact", "status": "documented", "source_ref": "obs-correspondence",
+          "head_en": "4. The consultation's closing date, and the disclosure record",
+          "head_fr": "4. La date de clôture de la consultation, et le dossier de divulgation",
+          "body_en": "Bell's June 19 letter stated that the reply period would close on July 10. On June 26 — fourteen days before that date, and one day after receiving the Observer's reply — Bell notified ISED that the consultation was closed. The municipality relied on the dates in the May 20 Gleaner notice. By the end of the file, three closing dates had been in play, and no two parties were working from the same one. Separately, the alternatives analysis CPC-2-0-03 requires was referenced at the June 10 session but has not been made public.",
+          "body_fr": "La lettre de Bell du 19 juin indiquait que la période de réplique se terminerait le 10 juillet. Le 26 juin — quatorze jours avant cette date, et au lendemain de la réception de la réplique de l'Observer — Bell a avisé ISDE que la consultation était close. La municipalité s'appuyait sur les dates de l'avis du 20 mai dans The Gleaner. À la fin du dossier, trois dates de clôture avaient été en jeu, et aucune paire de parties ne travaillait à partir de la même. Par ailleurs, l'analyse des solutions de rechange qu'exige CPC-2-0-03 a été évoquée à la séance du 10 juin mais n'a pas été rendue publique."
+        },
+        {
+          "type": "fact", "status": "documented", "source_ref": "pv-2026-03-02",
+          "head_en": "5. The rent, and what was already public",
+          "head_fr": "5. Le loyer, et ce qui était déjà public",
+          "body_en": "At the June 10 session the annual rent was described as confidential information that should not have been released. The figure had been public since March 2: Resolution 26-03-074 states an initial annual rent of $10,000, increased annually, over five years plus six five-year renewal options. The resolution was adopted unanimously, published on ormstown.ca, and the session was broadcast on the municipality's YouTube channel. The remaining terms of the lease are not public.",
+          "body_fr": "À la séance du 10 juin, le loyer annuel a été décrit comme une information confidentielle qui n'aurait pas dû être divulguée. Le chiffre était public depuis le 2 mars : la résolution 26-03-074 énonce un loyer annuel initial de 10 000 $, majoré annuellement, sur cinq ans plus six options de renouvellement de cinq ans. La résolution a été adoptée à l'unanimité, publiée sur ormstown.ca, et la séance diffusée sur la chaîne YouTube de la municipalité. Les autres conditions du bail ne sont pas publiques."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "hed_en": "What residents can take from this",
+      "hed_fr": "Ce que les citoyens peuvent en retenir",
+      "blocks": [
+        {
+          "type": "p",
+          "text_en": "Two practical outcomes are worth pursuing, and neither requires an adversarial posture.",
+          "text_fr": "Deux résultats pratiques valent la peine d'être poursuivis, et ni l'un ni l'autre n'exige une posture d'affrontement."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text_en": "**A municipal telecom consultation protocol.** Many Québec municipalities have adopted their own antenna-siting protocols under ISED's framework, setting local expectations for notification, documentation and timelines before the next proposal arrives. Adopting one is squarely within council's power.",
+              "text_fr": "**Un protocole municipal de consultation en télécommunications.** Plusieurs municipalités québécoises ont adopté leurs propres protocoles d'implantation d'antennes sous le cadre d'ISDE, fixant des attentes locales de notification, de documentation et d'échéancier avant l'arrivée de la prochaine proposition. En adopter un relève pleinement du pouvoir du conseil."
+            },
+            {
+              "text_en": "**Clear separation of roles.** When a municipality is simultaneously the landowner, the lease beneficiary, and the authority whose review ISED relies on, residents benefit from seeing those roles handled distinctly and documented — who evaluated what, wearing which hat, on what record.",
+              "text_fr": "**Une séparation claire des rôles.** Quand une municipalité est à la fois propriétaire du terrain, bénéficiaire du bail, et autorité dont l'évaluation sert d'appui à ISDE, les citoyens gagnent à voir ces rôles exercés distinctement et documentés — qui a évalué quoi, à quel titre, sur quel dossier."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text_en": "The lease is authorized. The tower, pending ISED's process, is likely coming — and with it, coverage many residents genuinely need. What remains open is whether the next consultation reaches more than a handful of people, and whether the paper record it produces is one everyone can rely on: one lot number, one closing date, one version of the facts, available to all.",
+          "text_fr": "Le bail est autorisé. La tour, sous réserve du processus d'ISDE, viendra vraisemblablement — et avec elle, une couverture dont beaucoup de citoyens ont réellement besoin. Ce qui demeure ouvert, c'est de savoir si la prochaine consultation rejoindra plus qu'une poignée de personnes, et si le dossier documentaire qu'elle produira sera un dossier sur lequel tous peuvent s'appuyer : un seul numéro de lot, une seule date de clôture, une seule version des faits, accessible à tous."
+        }
+      ]
+    }
+  ],
+
+  "questions_title_en": "Questions raised",
+  "questions_title_fr": "Questions soulevées",
+  "questions_sub_en": "Questions the Observer has put on the record and that the file has not yet answered. Journalists are welcome to put them to the parties directly.",
+  "questions_sub_fr": "Questions que l'Observer a consignées au dossier et auxquelles celui-ci n'a pas encore répondu. Les journalistes sont invités à les poser directement aux parties.",
+  "questions": [
+    {
+      "status": "unanswered",
+      "asked_of_en": "Municipality of Ormstown", "asked_of_fr": "Municipalité d'Ormstown",
+      "q_en": "How did the description presented to council on March 2 — \"une trentaine de mètres\" — come to differ from the 36 metres specified in plan E3640?",
+      "q_fr": "Comment la description présentée au conseil le 2 mars — « une trentaine de mètres » — en est-elle venue à différer des 36 mètres précisés au plan E3640?",
+      "why_en": "The height reached residents through Bell's notification materials rather than through a municipal correction.",
+      "why_fr": "La hauteur est parvenue aux résidents par les documents de notification de Bell plutôt que par une correction municipale."
+    },
+    {
+      "status": "unanswered",
+      "asked_of_en": "Municipality of Ormstown", "asked_of_fr": "Municipalité d'Ormstown",
+      "q_en": "Which cadastral lot number is recorded in the official minutes and in the registered lease?",
+      "q_fr": "Quel numéro de lot cadastral est consigné au procès-verbal officiel et au bail inscrit?",
+      "why_en": "Three distinct parcels appear across the public documents. The lease will be filed at the land registry, where precision is the entire point.",
+      "why_fr": "Trois parcelles distinctes apparaissent aux documents publics. Le bail sera inscrit au registre foncier, où la précision est tout l'enjeu."
+    },
+    {
+      "status": "unanswered",
+      "asked_of_en": "Municipality of Ormstown", "asked_of_fr": "Municipalité d'Ormstown",
+      "asked_on": "2026-07-16",
+      "q_en": "In its consultation role, how did the municipality evaluate the project against Règlement 148-2023, and where is that evaluation recorded?",
+      "q_fr": "Dans son rôle de consultation, comment la municipalité a-t-elle évalué le projet au regard du Règlement 148-2023, et où cette évaluation est-elle consignée?",
+      "why_en": "A federal undertaking can proceed regardless of local zoning; the question is about the municipality's own documented review, not about jurisdiction.",
+      "why_fr": "Une entreprise fédérale peut procéder indépendamment du zonage local; la question porte sur l'évaluation documentée de la municipalité, non sur la compétence."
+    },
+    {
+      "status": "unanswered",
+      "asked_of_en": "Bell Mobilité / ISED", "asked_of_fr": "Bell Mobilité / ISDE",
+      "q_en": "Which closing date governed the consultation, and what became of comments the proponent had invited up to July 10?",
+      "q_fr": "Quelle date de clôture faisait foi, et qu'est-il advenu des commentaires que le promoteur avait invités jusqu'au 10 juillet?",
+      "why_en": "Three closing dates were in play: the newspaper notice, Bell's own letter, and the date Bell told ISED it was finished.",
+      "why_fr": "Trois dates de clôture étaient en jeu : l'avis au journal, la lettre de Bell elle-même, et la date à laquelle Bell a dit à ISDE avoir terminé."
+    },
+    {
+      "status": "unanswered",
+      "asked_of_en": "Bell Mobilité", "asked_of_fr": "Bell Mobilité",
+      "source_ref": "obs-correspondence",
+      "q_en": "Will the alternatives analysis required by CPC-2-0-03 — rooftops, the municipal water tower, other structures — be made public, and on what criteria were those sites set aside?",
+      "q_fr": "L'analyse des solutions de rechange qu'exige CPC-2-0-03 — toits, château d'eau municipal, autres structures — sera-t-elle rendue publique, et sur quels critères ces sites ont-ils été écartés?",
+      "why_en": "Bell's June 19 letter declined to provide the list, describing it as commercially confidential. Whether the process met the federal requirements now rests with ISED.",
+      "why_fr": "La lettre de Bell du 19 juin a décliné de fournir la liste, la qualifiant d'information commerciale confidentielle. La question de savoir si le processus a satisfait aux exigences fédérales relève désormais d'ISDE."
+    }
+  ],
+
+  "responses_title_en": "Other parties' position",
+  "responses_title_fr": "La position des autres parties",
+  "responses_sub_en": "Responses and positions from the parties named in this briefing, presented in full. Any further response received will be added here and dated.",
+  "responses_sub_fr": "Les réponses et positions des parties nommées dans ce dossier, présentées intégralement. Toute réponse ultérieure reçue sera ajoutée ici et datée.",
+  "responses": [
+    {
+      "status": "received",
+      "date": "2026-07-06",
+      "party_en": "Municipality of Ormstown", "party_fr": "Municipalité d'Ormstown",
+      "role_en": "Position stated publicly by the mayor at the July 6, 2026 council session",
+      "role_fr": "Position énoncée publiquement par le maire à la séance du conseil du 6 juillet 2026",
+      "source_ref": "pv-2026-07-06",
+      "body_en": [
+        "The mayor has addressed this file publicly at greater length than any other this year, and his position deserves to be presented fully. In his account: the municipality's hands are largely tied — telecommunications are federal, and had the tower been proposed on private land, the town could only have submitted written comments like any citizen.",
+        "As owner, it negotiated a lease; as a council, it weighed residents' reservations against a coverage need it considers pressing. The consultation exceeded the federal minimum, and the information session was held at the municipality's own request. On the dates, the mayor answered that those he relies on are the ones in the published notice.",
+        "On the ecological question raised by a resident, council concluded in caucus that legal compliance rests with the promoter and that the site — a clearing already hosting a pumping station, ringed by mature trees — showed no indication of particular ecological risk."
+      ],
+      "body_fr": [
+        "Le maire a abordé ce dossier publiquement plus longuement que tout autre cette année, et sa position mérite d'être présentée intégralement. Selon son récit : les mains de la municipalité sont largement liées — les télécommunications sont fédérales, et si la tour avait été proposée sur un terrain privé, la ville n'aurait pu que soumettre des commentaires écrits comme tout citoyen.",
+        "Comme propriétaire, elle a négocié un bail; comme conseil, elle a pesé les réserves des citoyens contre un besoin de couverture qu'elle juge pressant. La consultation a dépassé le minimum fédéral, et la séance d'information a été tenue à la demande de la municipalité elle-même. Sur les dates, le maire a répondu que celles sur lesquelles il s'appuie sont celles de l'avis publié.",
+        "Sur la question écologique soulevée par une résidente, le conseil a conclu en caucus que la conformité légale incombe au promoteur et que le site — une clairière abritant déjà une station de pompage, ceinturée d'arbres matures — ne montrait aucune indication de risque écologique particulier."
+      ],
+      "note_en": "Summarised by the Observer from the recording of the public session — not a verbatim transcript.",
+      "note_fr": "Résumé par l'Observer à partir de l'enregistrement de la séance publique — ce n'est pas une transcription verbatim."
+    },
+    {
+      "status": "received",
+      "date": "2026-06-19",
+      "party_en": "Bell Mobilité, through its consultant", "party_fr": "Bell Mobilité, par son consultant",
+      "role_en": "Written reply to the Observer's consultation submission",
+      "role_fr": "Réponse écrite à la soumission de consultation de l'Observer",
+      "source_ref": "obs-correspondence",
+      "body_en": [
+        "Bell's consultant replied in writing on June 19, 2026. The letter answered the Observer's questions on the project, stated that the reply period would close on July 10, and declined to provide the list of alternative sites considered or the criteria on which they were set aside, describing that information as commercially confidential.",
+        "The full correspondence, in both directions, is published on the Observer's site and linked in the source library below."
+      ],
+      "body_fr": [
+        "Le consultant de Bell a répondu par écrit le 19 juin 2026. La lettre répondait aux questions de l'Observer sur le projet, indiquait que la période de réplique se terminerait le 10 juillet, et déclinait de fournir la liste des sites de rechange considérés ou les critères de leur mise à l'écart, qualifiant cette information de commercialement confidentielle.",
+        "La correspondance complète, dans les deux sens, est publiée sur le site de l'Observer et liée dans la bibliothèque des sources ci-dessous."
+      ]
+    },
+    {
+      "status": "invited",
+      "date": "2026-07-16",
+      "party_en": "Municipality of Ormstown, through its legal counsel",
+      "party_fr": "Municipalité d'Ormstown, par ses procureurs",
+      "role_en": "Right of reply on the factual points in the Observer's consolidated article",
+      "role_fr": "Droit de réplique sur les points factuels de l'article consolidé de l'Observer",
+      "body_en": [
+        "On July 16, 2026 the Observer transmitted the factual points in its consolidated article to the municipality, through its legal counsel, with an invitation to respond. As of the update date at the top of this briefing, no response has been received.",
+        "Any response will be published here in full, dated, and reflected in the body of the coverage."
+      ],
+      "body_fr": [
+        "Le 16 juillet 2026, l'Observer a transmis les points factuels de son article consolidé à la municipalité, par l'entremise de ses procureurs, avec une invitation à répondre. À la date de mise à jour indiquée en haut de ce dossier, aucune réponse n'a été reçue.",
+        "Toute réponse sera publiée ici intégralement, datée, et reflétée dans le corps de la couverture."
+      ]
+    }
+  ],
+
+  "context_title_en": "Legal & procedural context",
+  "context_title_fr": "Contexte juridique et procédural",
+  "context_sub_en": "The rules behind the file, in plain language — useful if you are writing about this for the first time.",
+  "context_sub_fr": "Les règles derrière le dossier, en langage clair — utile si vous écrivez sur ce sujet pour la première fois.",
+  "context": [
+    {
+      "label_en": "In plain language", "label_fr": "En langage clair",
+      "title_en": "What CPC-2-0-03 requires",
+      "title_fr": "Ce qu'exige CPC-2-0-03",
+      "body_en": [
+        "It is ISED's antenna-siting procedure, not a law. Before building, a proponent must notify residents within a prescribed radius, run a written public consultation of at least 30 days, respond to questions received, and show that alternatives to a new structure were considered.",
+        "The land-use authority — usually the municipality — reviews the consultation, and ISED relies on that review before approving construction."
+      ],
+      "body_fr": [
+        "C'est la procédure d'implantation d'antennes d'ISDE, pas une loi. Avant de construire, un promoteur doit aviser les résidents dans un rayon prescrit, mener une consultation écrite d'au moins 30 jours, répondre aux questions reçues, et démontrer que des solutions de rechange à une nouvelle structure ont été considérées.",
+        "L'autorité responsable de l'utilisation du sol — habituellement la municipalité — évalue la consultation, et ISDE s'appuie sur cette évaluation avant d'approuver la construction."
+      ],
+      "source_ref": "obs-explainer"
+    },
+    {
+      "label_en": "In plain language", "label_fr": "En langage clair",
+      "title_en": "Why local zoning does not decide it",
+      "title_fr": "Pourquoi le zonage local ne tranche pas",
+      "body_en": [
+        "Telecommunications are federal jurisdiction. A federal undertaking can proceed regardless of a municipal zoning bylaw, which is why the site's designation under Règlement 148-2023 does not by itself block the tower.",
+        "That does not make zoning irrelevant to the story: the municipality still had to form a view of the project in its consultation role, and the question is where that assessment is written down."
+      ],
+      "body_fr": [
+        "Les télécommunications relèvent du fédéral. Une entreprise fédérale peut procéder indépendamment d'un règlement de zonage municipal, c'est pourquoi la désignation du site au Règlement 148-2023 ne bloque pas la tour à elle seule.",
+        "Cela ne rend pas le zonage sans intérêt pour le sujet : la municipalité devait tout de même se former une opinion du projet dans son rôle de consultation, et la question est de savoir où cette évaluation est consignée."
+      ],
+      "source_ref": "regl-148-2023"
+    },
+    {
+      "label_en": "In plain language", "label_fr": "En langage clair",
+      "title_en": "A recorded vote, and why it matters",
+      "title_fr": "Un vote nominal, et pourquoi cela compte",
+      "body_en": [
+        "Under Québec municipal procedure most resolutions pass without members' individual positions being recorded. A recorded vote — *vote nominal* — puts each member's yes or no in the minutes.",
+        "On July 6 the mayor called one on a resolution that could have passed on consent. The result was 7–0."
+      ],
+      "body_fr": [
+        "Selon la procédure municipale québécoise, la plupart des résolutions passent sans que la position individuelle des membres soit consignée. Un vote nominal inscrit le oui ou le non de chaque membre au procès-verbal.",
+        "Le 6 juillet, le maire en a demandé un sur une résolution qui aurait pu être adoptée sans vote enregistré. Le résultat fut 7–0."
+      ],
+      "source_ref": "pv-2026-07-06"
+    }
+  ],
+
+  "documents_title_en": "Document evidence",
+  "documents_title_fr": "Pièces au dossier",
+  "documents_sub_en": "The primary-source documents behind the findings above. Documents marked as a primary source are the originals — municipal records, correspondence and regulations — not the Observer's account of them.",
+  "documents_sub_fr": "Les documents de source primaire derrière les constats ci-dessus. Les documents marqués comme source primaire sont les originaux — actes municipaux, correspondance et règlements — et non le compte-rendu qu'en fait l'Observer.",
+  "documents": [
+    {
+      "id": "pv-2026-03-02", "ref": "Res. 26-03-074",
+      "primary": true, "category": "municipal", "status": "documented",
+      "date": "2026-03-02",
+      "name_en": "Minutes of the March 2, 2026 council session",
+      "name_fr": "Procès-verbal de la séance du conseil du 2 mars 2026",
+      "type_en": "Municipal minutes (PDF)", "type_fr": "Procès-verbal municipal (PDF)",
+      "source_en": "Municipalité d'Ormstown", "source_fr": "Municipalité d'Ormstown",
+      "why_en": "Contains Resolution 26-03-074 (item 7.5): the $10,000 initial annual rent, the five-year term plus six five-year renewals, the authority given to the director general to negotiate and sign, and lot 6 065 483. It is the source for the rent figure and for the earliest lot number in the file.",
+      "why_fr": "Contient la résolution 26-03-074 (point 7.5) : le loyer annuel initial de 10 000 $, le terme de cinq ans plus six renouvellements de cinq ans, le mandat donné au directeur général de négocier et signer, et le lot 6 065 483. C'est la source du montant du loyer et du premier numéro de lot au dossier.",
+      "view": "https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf",
+      "download": "https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf"
+    },
+    {
+      "id": "avis-2026-06-02", "ref": "Public notice",
+      "primary": true, "category": "municipal", "status": "documented",
+      "date": "2026-06-02",
+      "name_en": "Public notice — Bell tower information session, June 10, 2026",
+      "name_fr": "Avis public — séance d'information Tour Bell, 10 juin 2026",
+      "type_en": "Municipal public notice (PDF)", "type_fr": "Avis public municipal (PDF)",
+      "source_en": "Municipalité d'Ormstown", "source_fr": "Municipalité d'Ormstown",
+      "why_en": "The municipality's own notice convening the June 10 session. It cites lot 6 065 438 — the first of the three cadastral numbers that appear across the file.",
+      "why_fr": "L'avis de la municipalité convoquant la séance du 10 juin. Il cite le lot 6 065 438 — le premier des trois numéros cadastraux qui figurent au dossier.",
+      "view": "https://www.ormstown.ca/wp-content/uploads/Avis-public_Seance-dinformation_Tour-Bell_2026-06-10_WEB-2.pdf",
+      "download": "https://www.ormstown.ca/wp-content/uploads/Avis-public_Seance-dinformation_Tour-Bell_2026-06-10_WEB-2.pdf"
+    },
+    {
+      "id": "odj-2026-07-06", "ref": "Agenda",
+      "primary": true, "category": "municipal", "status": "documented",
+      "date": "2026-07-06",
+      "name_en": "Published agenda, July 6, 2026 council session",
+      "name_fr": "Ordre du jour publié, séance du conseil du 6 juillet 2026",
+      "type_en": "Municipal agenda (PDF)", "type_fr": "Ordre du jour municipal (PDF)",
+      "source_en": "Municipalité d'Ormstown", "source_fr": "Municipalité d'Ormstown",
+      "why_en": "Cites lot 6 065 482 — the second of the three cadastral numbers, and the reason the discrepancy is documented rather than inferred.",
+      "why_fr": "Cite le lot 6 065 482 — le deuxième des trois numéros cadastraux, et la raison pour laquelle l'écart est documenté plutôt que déduit.",
+      "view": "https://www.ormstown.ca/wp-content/uploads/000-Ordre-du-jour-2026-07-06_V2.pdf",
+      "download": "https://www.ormstown.ca/wp-content/uploads/000-Ordre-du-jour-2026-07-06_V2.pdf"
+    },
+    {
+      "id": "pv-2026-07-06", "ref": "Minutes",
+      "primary": true, "category": "municipal", "status": "documented",
+      "date": "2026-07-06",
+      "name_en": "Minutes of the July 6, 2026 council session",
+      "name_fr": "Procès-verbal de la séance du conseil du 6 juillet 2026",
+      "type_en": "Municipal minutes (PDF)", "type_fr": "Procès-verbal municipal (PDF)",
+      "source_en": "Municipalité d'Ormstown", "source_fr": "Municipalité d'Ormstown",
+      "why_en": "Records the recorded vote authorizing conclusion of the lease, 7–0, and the mayor's confirmation that written exchanges submitted during the consultation form part of the consultation dossier.",
+      "why_fr": "Consigne le vote nominal autorisant la conclusion du bail, 7–0, et la confirmation par le maire que les échanges écrits soumis durant la consultation font partie du dossier de consultation.",
+      "view": "https://www.ormstown.ca/wp-content/uploads/PV-2026-07-06-WEB.pdf",
+      "download": "https://www.ormstown.ca/wp-content/uploads/PV-2026-07-06-WEB.pdf"
+    },
+    {
+      "id": "regl-148-2023", "ref": "Règl. 148-2023",
+      "primary": true, "category": "regulation", "status": "documented",
+      "date": "2024-03-01",
+      "date_label_en": "Consolidated March 2024", "date_label_fr": "Refondu mars 2024",
+      "name_en": "Zoning bylaw 148-2023 (consolidated)",
+      "name_fr": "Règlement de zonage 148-2023 (refondu)",
+      "type_en": "Municipal bylaw (PDF)", "type_fr": "Règlement municipal (PDF)",
+      "source_en": "Municipalité d'Ormstown", "source_fr": "Municipalité d'Ormstown",
+      "why_en": "The zoning framework the Observer read to place the site in Zone P-15. Federal jurisdiction means it does not block the tower — but it is the framework the municipality's own consultation-role assessment would be measured against.",
+      "why_fr": "Le cadre de zonage que l'Observer a lu pour situer le site en zone P-15. La compétence fédérale fait qu'il ne bloque pas la tour — mais c'est le cadre au regard duquel l'évaluation de la municipalité dans son rôle de consultation serait mesurée.",
+      "view": "https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_Mars2024.pdf",
+      "download": "https://www.ormstown.ca/wp-content/uploads/ORM_R148-2023_Zonage_Mars2024.pdf",
+      "note_en": "The zoning grids are published as a separate annex — see the source library below.",
+      "note_fr": "Les grilles de zonage sont publiées en annexe distincte — voir la bibliothèque des sources ci-dessous."
+    },
+    {
+      "id": "grilles-148-2023",
+      "primary": true, "category": "regulation", "status": "documented",
+      "featured": false,
+      "date": "2024-03-01",
+      "date_label_en": "Consolidated March 2024", "date_label_fr": "Refondu mars 2024",
+      "name_en": "Zoning bylaw 148-2023 — Annex B, zoning grids",
+      "name_fr": "Règlement de zonage 148-2023 — Annexe B, grilles de zonage",
+      "type_en": "Bylaw annex (PDF)", "type_fr": "Annexe réglementaire (PDF)",
+      "source_en": "Municipalité d'Ormstown", "source_fr": "Municipalité d'Ormstown",
+      "view": "https://www.ormstown.ca/wp-content/uploads/1-ORM_R148-2023_Zonage_AnnexeB_Grilles.pdf"
+    },
+    {
+      "id": "cpc-2-0-03", "ref": "CPC-2-0-03",
+      "primary": true, "category": "regulation", "status": "documented",
+      "date_label_en": "Issue 6, July 2022", "date_label_fr": "6e édition, juillet 2022",
+      "name_en": "CPC-2-0-03 — Radiocommunication and Broadcasting Antenna Systems",
+      "name_fr": "CPC-2-0-03 — Systèmes d'antennes de radiocommunication et de radiodiffusion",
+      "type_en": "Federal procedure", "type_fr": "Procédure fédérale",
+      "source_en": "Innovation, Science and Economic Development Canada (ISED)",
+      "source_fr": "Innovation, Sciences et Développement économique Canada (ISDE)",
+      "why_en": "The procedure that governs the whole file: notification radius, a written consultation of at least 30 days, a duty to respond to questions, and a requirement to show that alternatives to a new structure were considered.",
+      "why_fr": "La procédure qui régit tout le dossier : rayon de notification, consultation écrite d'au moins 30 jours, obligation de répondre aux questions, et exigence de démontrer que des solutions de rechange à une nouvelle structure ont été considérées.",
+      "note_en": "Published by ISED on canada.ca; the Observer does not host a copy. Search the title on the ISED site for the current issue.",
+      "note_fr": "Publiée par ISDE sur canada.ca; l'Observer n'en héberge pas de copie. Cherchez le titre sur le site d'ISDE pour l'édition en vigueur."
+    },
+    {
+      "id": "obs-correspondence",
+      "category": "correspondence", "status": "documented",
+      "date": "2026-06-19",
+      "name_en": "The correspondence record — the Observer and Bell",
+      "name_fr": "Le dossier de correspondance — l'Observer et Bell",
+      "type_en": "Published correspondence", "type_fr": "Correspondance publiée",
+      "source_en": "The Ormstown Observer", "source_fr": "L'Ormstown Observer",
+      "why_en": "The complete written exchange in both directions, including Bell's June 19 reply stating the July 10 closing date and declining to release the alternative-sites analysis.",
+      "why_fr": "L'échange écrit complet dans les deux sens, incluant la réponse de Bell du 19 juin énonçant la date de clôture du 10 juillet et refusant de divulguer l'analyse des sites de rechange.",
+      "view_en": "/en/bell-tower-correspondence/",
+      "view_fr": "/fr/bell-tower-correspondence/"
+    },
+    {
+      "id": "obs-june10",
+      "category": "correspondence", "status": "confirmed",
+      "date": "2026-06-10",
+      "name_en": "The June 10 information session — verified recording and summary",
+      "name_fr": "La séance d'information du 10 juin — enregistrement vérifié et compte-rendu",
+      "type_en": "Observer report", "type_fr": "Compte-rendu de l'Observer",
+      "source_en": "The Ormstown Observer", "source_fr": "L'Ormstown Observer",
+      "why_en": "The Observer recorded the session. This is where the rent was described as confidential information, and where the alternatives analysis was referenced without being produced.",
+      "why_fr": "L'Observer a enregistré la séance. C'est là que le loyer a été décrit comme information confidentielle, et que l'analyse des solutions de rechange a été évoquée sans être produite.",
+      "view_en": "/en/bell-tower-june10/",
+      "view_fr": "/fr/bell-tower-june10/"
+    },
+    {
+      "id": "obs-complete",
+      "category": "other", "status": "analysis",
+      "date": "2026-07-20",
+      "name_en": "The Bell tower file, from start to finish",
+      "name_fr": "Le dossier de la tour Bell, du début à la fin",
+      "type_en": "Consolidated article", "type_fr": "Article consolidé",
+      "source_en": "The Ormstown Observer", "source_fr": "L'Ormstown Observer",
+      "why_en": "The full consolidated record this briefing is drawn from, including the corrections made along the way — the antenna count (12, not the 18 first reported) and the attribution of one statement in the June 10 transcript.",
+      "why_fr": "Le dossier consolidé complet dont ce briefing est tiré, incluant les corrections faites en cours de route — le nombre d'antennes (12, et non les 18 d'abord rapportées) et l'attribution d'une déclaration dans la transcription du 10 juin.",
+      "view_en": "/en/bell-tower-complete/",
+      "view_fr": "/fr/bell-tower-complete/"
+    },
+    {
+      "id": "obs-explainer",
+      "category": "other", "status": "analysis",
+      "featured": false,
+      "date": "2026-06-08",
+      "name_en": "Explainer — how CPC-2-0-03 works",
+      "name_fr": "Explicatif — comment fonctionne CPC-2-0-03",
+      "type_en": "Observer explainer", "type_fr": "Explicatif de l'Observer",
+      "source_en": "The Ormstown Observer", "source_fr": "L'Ormstown Observer",
+      "view_en": "/en/bell-tower-explainer/",
+      "view_fr": "/fr/bell-tower-explainer/"
+    },
+    {
+      "id": "obs-investigation",
+      "category": "other", "status": "analysis",
+      "featured": false,
+      "date": "2026-06-08",
+      "name_en": "The original investigation (June 8, 2026)",
+      "name_fr": "L'enquête d'origine (8 juin 2026)",
+      "type_en": "Observer investigation", "type_fr": "Enquête de l'Observer",
+      "source_en": "The Ormstown Observer", "source_fr": "L'Ormstown Observer",
+      "view_en": "/en/bell-tower/",
+      "view_fr": "/fr/bell-tower/"
+    },
+    {
+      "id": "obs-prevote",
+      "category": "other", "status": "analysis",
+      "featured": false,
+      "date": "2026-07-05",
+      "name_en": "Pre-vote report (July 5, 2026)",
+      "name_fr": "Rapport pré-vote (5 juillet 2026)",
+      "type_en": "Observer report", "type_fr": "Compte-rendu de l'Observer",
+      "source_en": "The Ormstown Observer", "source_fr": "L'Ormstown Observer",
+      "view_en": "/en/bell-tower-pre-vote/",
+      "view_fr": "/fr/bell-tower-pre-vote/"
+    },
+    {
+      "id": "obs-councilwatch",
+      "category": "other", "status": "confirmed",
+      "featured": false,
+      "date": "2026-07-06",
+      "name_en": "Council Watch — the July 6, 2026 vote",
+      "name_fr": "Conseil municipal — le vote du 6 juillet 2026",
+      "type_en": "Observer session report", "type_fr": "Compte-rendu de séance de l'Observer",
+      "source_en": "The Ormstown Observer", "source_fr": "L'Ormstown Observer",
+      "view_en": "/en/council-watch/july-6-2026/",
+      "view_fr": "/fr/conseil-municipal/6-juillet-2026/"
+    },
+    {
+      "id": "obs-ised",
+      "category": "ati", "status": "documented",
+      "date": "2026-07-16",
+      "name_en": "The Observer's comments to ISED consultation DGSO-001-26",
+      "name_fr": "Les commentaires de l'Observer à la consultation DGSO-001-26 d'ISDE",
+      "type_en": "Filed submission", "type_fr": "Mémoire déposé",
+      "source_en": "The Ormstown Observer", "source_fr": "L'Ormstown Observer",
+      "why_en": "Filed in the open federal consultation proposing stronger disclosure requirements in the antenna-siting process, citing this file as a worked example.",
+      "why_fr": "Déposé dans la consultation fédérale ouverte proposant des exigences de divulgation renforcées dans le processus d'implantation d'antennes, citant ce dossier comme exemple concret.",
+      "view_en": "/en/bell-tower-complete/",
+      "view_fr": "/fr/bell-tower-complete/",
+      "note_en": "Reproduced within the consolidated article. ISED publishes filed comments on its own consultation page.",
+      "note_fr": "Reproduit dans l'article consolidé. ISDE publie les commentaires déposés sur sa propre page de consultation."
+    }
+  ],
+
+  "media_title_en": "Media assets",
+  "media_title_fr": "Matériel média",
+  "media_sub_en": "Free to reproduce with the credit shown, in coverage that reports on this file. Please do not crop out or alter the subject of a photograph.",
+  "media_sub_fr": "Libres de reproduction avec le crédit indiqué, dans une couverture portant sur ce dossier. Merci de ne pas recadrer ni altérer le sujet d'une photographie.",
+  "media": [
+    {
+      "kind": "photo",
+      "src": "/images/tower.jpg",
+      "title_en": "Telecommunications monopole", "title_fr": "Monopôle de télécommunications",
+      "alt_en": "A monopole telecommunications tower against an open sky.",
+      "alt_fr": "Une tour de télécommunications à monopôle se découpant sur le ciel.",
+      "caption_en": "The type of structure specified in Bell's engineering plan E3640: a 36-metre monopole carrying 12 antennas.",
+      "caption_fr": "Le type de structure prévu au plan d'ingénierie E3640 de Bell : un monopôle de 36 mètres portant 12 antennes.",
+      "credit_en": "Photo: The Ormstown Observer.", "credit_fr": "Photo : L'Ormstown Observer."
+    },
+    {
+      "kind": "photo",
+      "src": "/images/townhall.jpg",
+      "title_en": "Ormstown town hall", "title_fr": "Hôtel de ville d'Ormstown",
+      "alt_en": "The municipal building housing Ormstown's council chamber.",
+      "alt_fr": "L'édifice municipal abritant la salle du conseil d'Ormstown.",
+      "caption_en": "Where the March 2 and July 6, 2026 council sessions were held.",
+      "caption_fr": "Où se sont tenues les séances du conseil des 2 mars et 6 juillet 2026.",
+      "credit_en": "Photo: The Ormstown Observer.", "credit_fr": "Photo : L'Ormstown Observer."
+    },
+    {
+      "kind": "screenshot",
+      "src": "/images/bell-tower-correspondence.jpg",
+      "title_en": "The correspondence record", "title_fr": "Le dossier de correspondance",
+      "alt_en": "The Observer's published page reproducing the written exchange with Bell's consultant.",
+      "alt_fr": "La page publiée de l'Observer reproduisant l'échange écrit avec le consultant de Bell.",
+      "caption_en": "The Observer publishes the full written exchange in both directions, dated.",
+      "caption_fr": "L'Observer publie l'échange écrit complet dans les deux sens, daté.",
+      "credit_en": "The Ormstown Observer.", "credit_fr": "L'Ormstown Observer.",
+      "view_en": "/en/bell-tower-correspondence/", "view_fr": "/fr/bell-tower-correspondence/"
+    },
+    {
+      "kind": "graphic",
+      "src": "/images/bell-tower-complete.jpg",
+      "title_en": "File illustration — the consolidated record",
+      "title_fr": "Illustration du dossier — le compte-rendu consolidé",
+      "alt_en": "Lead image used on the Observer's consolidated Bell tower article.",
+      "alt_fr": "Image principale de l'article consolidé de l'Observer sur la tour Bell.",
+      "caption_en": "Lead image from the consolidated article, suitable as a file illustration.",
+      "caption_fr": "Image principale de l'article consolidé, utilisable comme illustration du dossier.",
+      "credit_en": "The Ormstown Observer.", "credit_fr": "L'Ormstown Observer."
+    }
+  ],
+
+  "people_title_en": "Key parties",
+  "people_title_fr": "Parties en présence",
+  "people": [
+    {
+      "name": "Municipalité d'Ormstown",
+      "role_en": "Property owner of the site and the land-use authority whose review of the consultation ISED relies on. Population ~4,300.",
+      "role_fr": "Propriétaire du site et autorité responsable de l'utilisation du sol, dont l'évaluation de la consultation sert d'appui à ISDE. Population ~4 300."
+    },
+    {
+      "name": "Bell Mobilité",
+      "role_en": "Proponent. Lessee under the authorized lease; author of engineering plan E3640 and of the consultation materials.",
+      "role_fr": "Promoteur. Locataire au bail autorisé; auteur du plan d'ingénierie E3640 et des documents de consultation."
+    },
+    {
+      "name": "ISED / ISDE",
+      "role_en": "Innovation, Science and Economic Development Canada — owns procedure CPC-2-0-03 and decides whether the consultation met federal requirements.",
+      "role_fr": "Innovation, Sciences et Développement économique Canada — responsable de la procédure CPC-2-0-03 et de la décision quant à la conformité de la consultation aux exigences fédérales."
+    },
+    {
+      "name": "The Ormstown Observer",
+      "role_en": "Independent bilingual civic newspaper. Participant in the written consultation and author of this briefing.",
+      "role_fr": "Journal civique bilingue indépendant. Participant à la consultation écrite et auteur de ce dossier."
+    }
+  ],
+
+  "contact_title_en": "Media contact",
+  "contact_title_fr": "Contact média",
+  "contact": {
+    "name": "The Ormstown Observer",
+    "org_en": "Independent bilingual civic journalism · Ormstown, Québec",
+    "org_fr": "Journalisme civique bilingue indépendant · Ormstown, Québec",
+    "email": "ormstownobserver@gmail.com",
+    "website": "https://ormstownobserver.ca",
+    "website_label_en": "ormstownobserver.ca", "website_label_fr": "ormstownobserver.ca",
+    "availability_en": "Available for interview in English or French, in person in the Haut-Saint-Laurent or remotely. Recordings, transcripts and the full correspondence file can be shared with newsrooms on request.",
+    "availability_fr": "Disponible pour entrevue en français ou en anglais, en personne dans le Haut-Saint-Laurent ou à distance. Les enregistrements, transcriptions et le dossier de correspondance complet peuvent être partagés avec les salles de rédaction sur demande.",
+    "note_en": "The Observer accepts no advertising and has no affiliation with the Municipality of Ormstown, Bell Mobilité, or any party named in this briefing.",
+    "note_fr": "L'Observer n'accepte aucune publicité et n'a aucune affiliation avec la Municipalité d'Ormstown, Bell Mobilité, ou toute partie nommée dans ce dossier."
+  },
+
+  "terms_en": [
+    "**Using this briefing.** Facts, documents and figures on this page may be reported freely. Please attribute reporting to The Ormstown Observer and link to this page or to the underlying article where practical. Photographs are free to reproduce with the credit shown.",
+    "**Corrections.** Every factual claim here is drawn from a published document, written correspondence, or a recording of a public session. If you believe something is wrong, write to us — corrections are published, dated, and reflected in the coverage."
+  ],
+  "terms_fr": [
+    "**Utiliser ce dossier.** Les faits, documents et chiffres de cette page peuvent être repris librement. Merci d'attribuer le reportage à L'Ormstown Observer et de lier vers cette page ou vers l'article sous-jacent lorsque possible. Les photographies sont libres de reproduction avec le crédit indiqué.",
+    "**Corrections.** Chaque affirmation factuelle ici provient d'un document publié, d'une correspondance écrite, ou d'un enregistrement d'une séance publique. Si vous croyez qu'un élément est erroné, écrivez-nous — les corrections sont publiées, datées, et reflétées dans la couverture."
+  ]
+}

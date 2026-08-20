@@ -1,0 +1,94 @@
+<!--
+  STARTER SHELL — copy /press/_template/ to /press/<your-slug>/ and then:
+    1. replace every REPLACE-SLUG with your folder name
+    2. replace every REPLACE-… placeholder with real text
+    3. write the content in kit.json — never in this file
+  Delete this comment when you are done.  See /PRESS-KIT.md.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- The starter must never be indexed; delete this line in your copy. -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- ── Press-kit shell ────────────────────────────────────────────
+     This file carries only the static metadata a crawler or a
+     social scraper needs. Everything a reader sees is rendered by
+     /press/press-kit.js from ./kit.json — edit the JSON, not this.
+     To start a new kit, copy /press/_template/. See /PRESS-KIT.md.
+     ────────────────────────────────────────────────────────────── -->
+
+<title>REPLACE — English headline — The Ormstown Observer</title>
+<meta name="description" content="REPLACE — one-sentence English description, under 160 characters.">
+
+<link rel="canonical" href="https://ormstownobserver.ca/press/REPLACE-SLUG/">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/press/REPLACE-SLUG/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/press/REPLACE-SLUG/fr/">
+<link rel="alternate" hreflang="x-default" href="https://ormstownobserver.ca/press/REPLACE-SLUG/">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="The Ormstown Observer">
+<meta property="og:locale" content="en_CA">
+<meta property="og:locale:alternate" content="fr_CA">
+<meta property="og:title" content="REPLACE — English headline">
+<meta property="og:description" content="REPLACE — English share text.">
+<meta property="og:url" content="https://ormstownobserver.ca/press/REPLACE-SLUG/">
+<meta property="og:image" content="https://ormstownobserver.ca/images/townhall.jpg">
+<meta property="og:image:alt" content="REPLACE — alt text for the share image.">
+<meta property="article:published_time" content="REPLACE-PUBLISHED">
+<meta property="article:modified_time" content="REPLACE-UPDATED">
+<meta property="article:section" content="Media briefing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="REPLACE — English headline">
+<meta name="twitter:description" content="REPLACE — English share text.">
+<meta name="twitter:image" content="https://ormstownobserver.ca/images/townhall.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "REPLACE — English headline",
+  "description": "REPLACE — one-sentence English description.",
+  "inLanguage": "en-CA",
+  "datePublished": "REPLACE-PUBLISHED",
+  "dateModified": "REPLACE-UPDATED",
+  "url": "https://ormstownobserver.ca/press/REPLACE-SLUG/",
+  "mainEntityOfPage": "https://ormstownobserver.ca/press/REPLACE-SLUG/",
+  "image": "https://ormstownobserver.ca/images/townhall.jpg",
+  "author":    { "@type": "NewsMediaOrganization", "name": "The Ormstown Observer", "url": "https://ormstownobserver.ca/" },
+  "publisher": { "@type": "NewsMediaOrganization", "name": "The Ormstown Observer", "url": "https://ormstownobserver.ca/" }
+}
+</script>
+
+<!-- Pre-paint theme so a saved dark preference does not flash light. -->
+<script>(function(){try{var t=localStorage.getItem('observerTheme');
+if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+
+<!-- Design tokens, spacing scale and base type live in observer.css.
+     Do NOT re-declare :root tokens here — see the notes in that file. -->
+<link rel="stylesheet" href="/observer.css">
+<link rel="stylesheet" href="/press/press-kit.css">
+
+<!-- press-kit.js runs FIRST so it can write the page's language to
+     localStorage before observer-header.js reads it to set the
+     masthead's EN/FR button state. Both are deferred, so they run
+     in document order after parsing. -->
+<script src="/press/press-kit.js" defer></script>
+<script src="/observer-header.js" defer></script>
+</head>
+<body>
+
+<a class="kit-skip" href="#overview">Skip to the briefing</a>
+
+<!-- MASTHEAD injected by /observer-header.js -->
+
+<div id="press-kit" data-kit="./kit.json" data-lang="en"></div>
+
+</body>
+</html>
