@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- Responsive overflow check for the ledger WORKSPACE. Serve the repo root
+     and open /finances/tests/viewport-harness-v2.html.
+
+     Two passes, because the mobile filter sheet is the likeliest source of
+     horizontal overflow and the original harness could never see it:
+       pass 1 — the page as it loads
+       pass 2 — the same widths with the filter sheet forced open
+     Also loads the reference page, which shares ledger.css. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ledger v2 — viewport harness</title>
+<style>
+body{font:13px -apple-system,sans-serif;margin:12px;background:#eee;color:#111}
+h2{font-size:15px;margin:18px 0 6px}
+.row{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.slot p{margin:4px 0;font-weight:700}
+iframe{border:2px solid #333;background:#fff}
+.ok{color:#1a7f4b}.bad{color:#b3261e}
+#summary{font-weight:700;font-size:15px;padding:8px 12px;border:2px solid #333;background:#fff;position:sticky;top:0;z-index:5}
+</style>
+</head>
+<body>
+<div id="summary">running…</div>
+<h2>Pass 1 — /finances/v2/ as loaded</h2>
+<div class="row" id="row1"></div>
+<h2>Pass 2 — /finances/v2/ with the filter sheet open</h2>
+<div class="row" id="row2"></div>
+<h2>Pass 3 — /finances/budget/ (shares ledger.css)</h2>
+<div class="row" id="row3"></div>
+<script>
+var WIDTHS = [320, 375, 390, 768, 1024, 1440];
+var results = [];
+
+function probe(rowId, w, url, openSheet, label) {
+  var row = document.getElementById(rowId);
+  var slot = document.createElement('div'); slot.className = 'slot';
+  var p = document.createElement('p'); p.textContent = label + ' — loading…';
+  var frame = document.createElement('iframe');
+  frame.width = w; frame.height = w < 700 ? 900 : 700;
+  frame.src = url;
+  var entry = { label: label, state: 'pending' };
+  results.push(entry);
+  frame.onload = function () {
+    setTimeout(function () {
+      try {
+        var d = frame.contentDocument;
+        if (openSheet) {
+          var b = d.getElementById('sheet-open');
+          if (b) b.click();
+        }
+        setTimeout(function () {
+          var sw = Math.max(d.documentElement.scrollWidth, d.body.scrollWidth);
+          var pass = sw <= w + 1;
+          entry.state = pass ? 'PASS' : 'FAIL';
+          p.textContent = label + ' — scrollWidth ' + sw + ' — ' + (pass ? 'PASS' : 'FAIL (overflow ' + (sw - w) + 'px)');
+          p.className = pass ? 'ok' : 'bad';
+          summarise();
+        }, 400);
+      } catch (e) {
+        entry.state = 'ERROR';
+        p.textContent = label + ' — check failed: ' + e.message;
+        p.className = 'bad';
+        summarise();
+      }
+    }, 2600);
+  };
+  slot.appendChild(p); slot.appendChild(frame); row.appendChild(slot);
+}
+
+function summarise() {
+  var bad = results.filter(function (r) { return r.state === 'FAIL' || r.state === 'ERROR'; });
+  var left = results.filter(function (r) { return r.state === 'pending'; }).length;
+  var el = document.getElementById('summary');
+  if (left) { el.textContent = 'running… ' + (results.length - left) + '/' + results.length + ' done'; return; }
+  el.textContent = bad.length ? bad.length + ' FAILURE(S): ' + bad.map(function (r) { return r.label; }).join(', ')
+                              : 'ALL ' + results.length + ' VIEWPORT CHECKS PASS';
+  el.className = bad.length ? 'bad' : 'ok';
+  document.title = 'ledger v2 viewport — ' + (bad.length ? bad.length + ' FAIL' : 'PASS');
+}
+
+WIDTHS.forEach(function (w) { probe('row1', w, '/finances/v2/?lang=' + (w === 375 ? 'en' : 'fr'), false, w + 'px'); });
+[320, 375, 768].forEach(function (w) { probe('row2', w, '/finances/v2/?lang=fr', true, w + 'px + sheet'); });
+[320, 768, 1440].forEach(function (w) { probe('row3', w, '/finances/budget/?lang=fr', false, w + 'px budget'); });
+</script>
+</body>
+</html>

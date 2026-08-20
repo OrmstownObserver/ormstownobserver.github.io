@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grand livre municipal — Ormstown Observer</title>
+<meta name="description" content="Chaque ligne de dépense approuvée par le conseil d'Ormstown, cherchable et vérifiable dans les procès-verbaux officiels. / Every council-approved expense line in Ormstown, searchable and verifiable in the official minutes.">
+
+<!-- v2 is under review and must not be indexed until the swap. -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://ormstownobserver.ca/finances/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/finances/?lang=fr">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/finances/?lang=en">
+
+<!-- Pre-paint theme: a saved dark preference must not flash light.
+     MUST come before the observer.css link. -->
+<script>(function(){try{var t=localStorage.getItem('observerTheme');
+if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<!-- Pre-paint language, so the first paint is already in the right one.
+     ?lang= wins over the saved preference; ledger-app.js reconciles the rest. -->
+<script>(function(){try{
+  var q=new URLSearchParams(location.search).get('lang');
+  var l=(q==='fr'||q==='en')?q:localStorage.getItem('observerLang');
+  if(l!=='fr'&&l!=='en')l=(navigator.language||'fr').toLowerCase().indexOf('en')===0?'en':'fr';
+  document.documentElement.lang=l;
+  if(l==='fr')document.documentElement.classList.add('lang-fr');
+}catch(e){}})();</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap">
+<link rel="stylesheet" href="/observer.css">
+<link rel="stylesheet" href="/finances/ledger.css?v=20260819-1">
+
+<!-- Data. Absolute paths: /finances/v2/ becomes /finances/ at the swap and
+     nothing here may need editing when it does. -->
+<script src="/finances/i18n.js?v=20260819-1"></script>
+<script src="/finances/spending-data.js?v=20260819-1"></script>
+</head>
+<body>
+<!-- observer-header.js injects the masthead here, as body.firstChild -->
+
+<div class="lw">
+  <a class="lw-skip" href="#results">Aller aux résultats</a>
+  <a class="lw-skip" href="#rail">Aller aux filtres</a>
+
+  <!-- ── page head ─────────────────────────────────────────── -->
+  <header class="lw-head">
+    <p class="lw-eyebrow" id="eyebrow">Finances municipales</p>
+    <h1 id="title">Grand livre municipal</h1>
+    <p class="lw-deck" id="deck"></p>
+    <p class="lw-status-line"><span id="status"></span> <span class="upd" id="updated"></span></p>
+
+    <nav class="lw-ref" id="ref-strip" aria-label="Contexte et méthode">
+      <span class="lbl" id="ref-lbl">Contexte</span>
+      <a href="/finances/budget/" id="ref-budget">Budget 2026, méthode et sources</a>
+      <span class="lbl" id="preset-lbl">Pour commencer</span>
+      <span id="presets"></span>
+    </nav>
+  </header>
+
+  <div class="notice warn" id="data-error" hidden></div>
+  <div class="print-meta" id="print-meta"></div>
+
+  <!-- ── mobile control bar (hidden ≥901px) ─────────────────── -->
+  <div class="lw-mobilebar">
+    <button type="button" class="btn ghost" id="sheet-open" aria-expanded="false" aria-controls="rail">
+      <span id="sheet-open-label">Filtres</span> <span class="badge" id="filter-count" hidden>0</span>
+    </button>
+    <label class="visually-hidden" for="sort-mobile" id="l-sort-mobile">Trier</label>
+    <select id="sort-mobile"></select>
+  </div>
+
+  <div class="lw-body">
+
+    <!-- ── filter rail ──────────────────────────────────────── -->
+    <form class="lw-rail" id="rail" aria-labelledby="rail-h">
+      <div class="rail-sheet-head">
+        <strong id="rail-h">Filtres</strong>
+        <button type="button" class="btn ghost small" id="sheet-close" aria-label="Fermer">✕</button>
+      </div>
+      <h2 class="visually-hidden" id="rail-h-desktop">Filtres</h2>
+
+      <fieldset class="rail-group">
+        <legend id="l-search">Rechercher</legend>
+        <div class="rail-search">
+          <input type="search" id="q" autocomplete="off" spellcheck="false" enterkeyhint="search">
+          <button type="button" class="clr" id="q-clear" hidden aria-label="Effacer">✕</button>
+        </div>
+        <p class="rail-help" id="q-help"></p>
+      </fieldset>
+
+      <fieldset class="rail-group">
+        <legend id="l-scope">Période</legend>
+        <div class="seg" id="scope-group" role="group" aria-labelledby="l-scope"></div>
+      </fieldset>
+
+      <fieldset class="rail-group">
+        <legend id="l-sittings">Séances</legend>
+        <div class="rail-allnone">
+          <button type="button" class="btn ghost small" id="sit-all"></button>
+          <button type="button" class="btn ghost small" id="sit-none"></button>
+        </div>
+        <ul class="checklist" id="sitting-list"></ul>
+      </fieldset>
+
+      <fieldset class="rail-group">
+        <legend id="l-cats">Catégories</legend>
+        <div class="rail-allnone">
+          <button type="button" class="btn ghost small" id="cat-all"></button>
+          <button type="button" class="btn ghost small" id="cat-none"></button>
+        </div>
+        <ul class="checklist" id="category-list"></ul>
+      </fieldset>
+
+      <fieldset class="rail-group">
+        <legend id="l-amount">Montant</legend>
+        <div class="amt-row">
+          <label class="visually-hidden" for="amt-min" id="l-min">Minimum</label>
+          <input type="number" id="amt-min" inputmode="numeric" step="any">
+          <span class="sep" aria-hidden="true">–</span>
+          <label class="visually-hidden" for="amt-max" id="l-max">Maximum</label>
+          <input type="number" id="amt-max" inputmode="numeric" step="any">
+        </div>
+        <div class="chipset" id="amount-chips"></div>
+      </fieldset>
+
+      <fieldset class="rail-group">
+        <legend class="visually-hidden" id="l-reset-group">Réinitialiser</legend>
+        <button type="button" class="btn ghost" id="reset"></button>
+      </fieldset>
+
+      <div class="rail-sheet-foot">
+        <button type="button" class="btn ghost" id="sheet-reset"></button>
+        <button type="button" class="btn" id="sheet-apply"></button>
+      </div>
+    </form>
+
+    <!-- ── main ─────────────────────────────────────────────── -->
+    <main class="lw-main">
+      <div class="lw-tabs" role="tablist" aria-label="Vues">
+        <button type="button" role="tab" id="tab-payments"   aria-controls="panel-payments"   aria-selected="true"  data-tab="payments"></button>
+        <button type="button" role="tab" id="tab-payees"     aria-controls="panel-payees"     aria-selected="false" data-tab="payees"   tabindex="-1"></button>
+        <button type="button" role="tab" id="tab-categories" aria-controls="panel-categories" aria-selected="false" data-tab="categories" tabindex="-1"></button>
+        <button type="button" role="tab" id="tab-sittings"   aria-controls="panel-sittings"   aria-selected="false" data-tab="sittings" tabindex="-1"></button>
+      </div>
+
+      <p class="lw-orient" id="orient"></p>
+      <div class="lw-chips" id="chips"></div>
+      <p class="lw-status" id="results-status" aria-live="polite"></p>
+
+      <div id="results">
+        <div role="tabpanel" id="panel-payments"   aria-labelledby="tab-payments"   tabindex="-1"></div>
+        <div role="tabpanel" id="panel-payees"     aria-labelledby="tab-payees"     tabindex="-1" hidden></div>
+        <div role="tabpanel" id="panel-categories" aria-labelledby="tab-categories" tabindex="-1" hidden></div>
+        <div role="tabpanel" id="panel-sittings"   aria-labelledby="tab-sittings"   tabindex="-1" hidden></div>
+        <div class="profile" id="profile" role="region" aria-labelledby="profile-h" tabindex="-1" hidden></div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="lw-scrim" id="lw-scrim"></div>
+<!-- observer-header.js appends the site footer here -->
+
+<script src="/observer-header.js?v=20260819-1" defer></script>
+<script src="/finances/v2/ledger-data.js?v=20260819-1" defer></script>
+<script src="/finances/v2/ledger-charts.js?v=20260819-1" defer></script>
+<script src="/finances/v2/ledger-views.js?v=20260819-1" defer></script>
+<script src="/finances/v2/ledger-app.js?v=20260819-1" defer></script>
+</body>
+</html>

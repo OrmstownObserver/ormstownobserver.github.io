@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget, méthode et sources — Grand livre municipal — Ormstown Observer</title>
+<meta name="description" content="Le budget 2026 d'Ormstown, le programme triennal d'immobilisations, la couverture du grand livre, la méthode de l'Observer et les documents officiels. / Ormstown's 2026 budget, the three-year capital plan, ledger coverage, the Observer's method and the official documents.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://ormstownobserver.ca/finances/budget/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/finances/budget/?lang=fr">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/finances/budget/?lang=en">
+
+<script>(function(){try{var t=localStorage.getItem('observerTheme');
+if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>(function(){try{
+  var q=new URLSearchParams(location.search).get('lang');
+  var l=(q==='fr'||q==='en')?q:localStorage.getItem('observerLang');
+  if(l!=='fr'&&l!=='en')l=(navigator.language||'fr').toLowerCase().indexOf('en')===0?'en':'fr';
+  document.documentElement.lang=l;
+  if(l==='fr')document.documentElement.classList.add('lang-fr');
+}catch(e){}})();</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap">
+<link rel="stylesheet" href="/observer.css">
+<link rel="stylesheet" href="/finances/ledger.css?v=20260819-1">
+
+<script src="/finances/i18n.js?v=20260819-1"></script>
+<script src="/finances/spending-data.js?v=20260819-1"></script>
+</head>
+<body>
+<div class="ref-wrap">
+  <a class="lw-skip" href="#budget">Aller au budget</a>
+
+  <header class="lw-head">
+    <p class="lw-eyebrow" id="eyebrow"></p>
+    <h1 id="title">Budget, méthode et sources</h1>
+    <p class="lw-deck" id="deck"></p>
+    <nav class="lw-ref" aria-label="Navigation">
+      <span class="lbl" id="back-lbl"></span>
+      <a href="/finances/" id="back-link"></a>
+    </nav>
+    <nav class="ref-toc" id="toc" aria-label="Sections"></nav>
+  </header>
+
+  <div class="notice warn" id="data-error" hidden></div>
+
+  <section id="budget" aria-labelledby="annual-h">
+    <h2 id="annual-h"></h2>
+    <p class="acct-note" id="acct-note"></p>
+    <p class="ref-sub" id="scale-line" style="font-size:1rem;max-width:76ch"></p>
+    <span class="scale-tag" id="scale-tag"></span>
+    <h3 id="budget-h" style="font-size:1.05rem"></h3>
+    <p class="ref-sub" id="budget-sub"></p>
+    <div style="margin:10px 0">
+      <label for="b-sort" id="l-bsort" style="display:block;font:600 .78rem var(--sans);margin-bottom:4px"></label>
+      <select id="b-sort" style="min-height:44px;border:1px solid var(--hair);background:var(--surface-card);color:var(--ink);padding:0 10px;font:.9rem var(--sans)"></select>
+    </div>
+    <figure>
+      <div class="chartbox" style="height:430px"><canvas id="chart-budget"></canvas></div>
+      <figcaption id="budget-figcap"></figcaption>
+    </figure>
+    <table class="lt" id="budget-table">
+      <caption id="budget-caption"></caption>
+      <thead><tr id="budget-head"></tr></thead>
+      <tbody id="budget-body"></tbody>
+    </table>
+    <p class="ref-sub" id="budget-src" style="margin-top:10px"></p>
+  </section>
+
+  <section id="capital" aria-labelledby="capital-h">
+    <h2 id="capital-h"></h2>
+    <p class="ref-sub" id="capital-sub"></p>
+    <div class="cards" id="pti-cards"></div>
+    <details class="ref" id="acronyms">
+      <summary id="acronyms-h"></summary>
+      <dl class="inner" id="acronyms-list"></dl>
+    </details>
+  </section>
+
+  <section id="coverage" aria-labelledby="coverage-h">
+    <h2 id="coverage-h"></h2>
+    <p class="ref-sub" id="coverage-sub"></p>
+    <table class="lt" id="coverage-table">
+      <caption class="visually-hidden" id="coverage-caption"></caption>
+      <thead><tr id="coverage-head"></tr></thead>
+      <tbody id="coverage-body"></tbody>
+    </table>
+  </section>
+
+  <section id="method" aria-labelledby="methodology-h">
+    <h2 id="methodology-h"></h2>
+    <ul class="ref-sub" id="meth-list" style="max-width:82ch"></ul>
+  </section>
+
+  <section id="documents" aria-labelledby="docs-h">
+    <h2 id="docs-h"></h2>
+    <ul class="doclist" id="doc-list"></ul>
+  </section>
+
+  <section id="dictionary" aria-labelledby="dict-h">
+    <h2 id="dict-h"></h2>
+    <dl class="ref-sub" id="dict-list" style="max-width:82ch"></dl>
+  </section>
+
+  <p class="lw-ref" style="margin-top:36px">
+    <a href="/finances/" id="back-link-2"></a>
+  </p>
+</div>
+
+<script src="/observer-header.js?v=20260819-1" defer></script>
+<script src="/finances/v2/ledger-data.js?v=20260819-1" defer></script>
+<script src="/finances/v2/ledger-charts.js?v=20260819-1" defer></script>
+<script src="/finances/v2/ledger-views.js?v=20260819-1" defer></script>
+<script src="/finances/budget/budget.js?v=20260819-1" defer></script>
+</body>
+</html>

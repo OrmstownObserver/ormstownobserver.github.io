@@ -89,13 +89,17 @@ else ok(`budget ${B.year} functions sum to adopted total`);
 if (sum25 !== B.expenses_total_prev) fail(`budget prev functions sum ${sum25} != expenses_total_prev ${B.expenses_total_prev}`);
 else ok(`budget ${B.year - 1} functions sum to adopted total`);
 
-// ---- 7. Category slugs in app.js cover every category used by entries.
-const app = fs.readFileSync(path.join(dir, 'app.js'), 'utf8');
+// ---- 7. Category slugs cover every category used by entries.
+// Reads EVERY shipped script under finances/ rather than app.js alone: the
+// SLUGS map lives in app.js for classic and in v2/ledger-data.js for the
+// workspace, and app.js goes away at the swap.
+const shipped = listScripts(dir);
+const allScriptSrc = shipped.map(p => fs.readFileSync(p, 'utf8')).join('\n');
 const usedCats = new Set(D.entries.map(e => e[2]));
 for (const c of usedCats) {
-  if (!app.includes(`'${c}'`)) fail(`app.js SLUGS map is missing category "${c}"`);
+  if (!allScriptSrc.includes(`'${c}'`)) fail(`no shipped script maps category "${c}" to a URL slug`);
 }
-ok('every used category has a URL slug in app.js');
+ok(`every used category has a URL slug (${shipped.length} scripts scanned)`);
 
 // ---- 8. payments.json (per-line detail): every month's lines sum to that
 // month's itemized entries sum exactly (both derive from the ledger).
@@ -128,6 +132,93 @@ if (fs.existsSync(payPath)) {
   ok('payments.json not present (per-line detail disabled)');
 }
 
+// ---- 9. i18n usage: every key a script reads exists in BOTH languages, and
+// every key defined is read by something. Catches the typo class that only
+// ever surfaced as "undefined" in the live UI, and the dead keys left behind
+// when the workspace/reference split moved content around.
+{
+  const used = new Set();
+  for (const src of shipped.map(p => fs.readFileSync(p, 'utf8'))) {
+    for (const m of src.matchAll(/\bT\(\)\.([A-Za-z0-9_]+)/g)) used.add(m[1]);
+    for (const m of src.matchAll(/\bt\.([A-Za-z0-9_]+)/g)) used.add(m[1]);
+    for (const m of src.matchAll(/\.T\.([A-Za-z0-9_]+)/g)) used.add(m[1]);   // ctx.T.someKey
+    for (const m of src.matchAll(/count\('([A-Za-z0-9_]+)'/g)) { used.add(m[1]); used.add(m[1] + 'One'); }
+    for (const m of src.matchAll(/\bI18N\.(?:fr|en)\.([A-Za-z0-9_]+)/g)) used.add(m[1]);
+  }
+  // Keys reached through a computed name rather than a literal.
+  const DYNAMIC = new Set([
+    'orientPayments', 'orientPayees', 'orientCategories', 'orientSittings',
+    'tocBudget', 'tocCapital', 'tocCoverage', 'tocMethod', 'tocDocuments', 'tocDictionary',
+    'presetLegal', 'presetBig', 'presetPayroll', 'presetCredits'
+  ]);
+  let missing = 0, dead = 0;
+  for (const k of used) {
+    if (!(k in I.fr)) { missing++; fail(`a script reads t.${k} but the fr strings have no such key`); }
+    if (!(k in I.en)) { missing++; fail(`a script reads t.${k} but the en strings have no such key`); }
+  }
+  for (const k of Object.keys(I.fr)) {
+    if (!used.has(k) && !DYNAMIC.has(k)) { dead++; fail(`i18n key "${k}" is defined but no shipped script reads it`); }
+  }
+  if (!missing && !dead) ok(`all ${used.size} i18n keys read by scripts exist in both languages, and none are dead`);
+}
+
+// ---- 10. Cache-busting is manual and load-bearing (tools/README.md:35-39):
+// a page served fresh alongside a stale script renders without charts. The
+// invariant is per PAGE, not global — classic and the workspace are allowed
+// to sit on different stamps while they run side by side, but a page and
+// every script it loads must agree, INCLUDING a stamp a script carries
+// internally (app.js's PAYMENTS_URL was stale for a week that way).
+{
+  const stampOf = new Map();      // finances-relative .js path -> its internal stamp
+  for (const p of listFiles(dir, /\.js$/)) {
+    const rel = path.relative(dir, p).split(path.sep).join('/');
+    if (rel.startsWith('tools/') || rel.startsWith('tests/')) continue;
+    const m = [...fs.readFileSync(p, 'utf8').matchAll(/\?v=([0-9a-zA-Z-]+)/g)].map(x => x[1]);
+    const uniq = [...new Set(m)];
+    if (uniq.length > 1) fail(`${rel} carries more than one ?v= stamp: ${uniq.join(', ')}`);
+    if (uniq.length === 1) stampOf.set(rel, uniq[0]);
+  }
+  for (const p of listFiles(dir, /\.html$/)) {
+    const rel = path.relative(dir, p).split(path.sep).join('/');
+    if (rel.startsWith('tools/') || rel.startsWith('tests/')) continue;
+    const src = fs.readFileSync(p, 'utf8');
+    const own = [...new Set([...src.matchAll(/\?v=([0-9a-zA-Z-]+)/g)].map(x => x[1]))];
+    if (own.length > 1) { fail(`${rel} mixes ?v= stamps: ${own.join(', ')}`); continue; }
+    if (!own.length) continue;
+    const stamp = own[0];
+    // every script this page loads from finances/ must carry the same stamp
+    const pageDir = path.posix.dirname(rel);
+    for (const m of src.matchAll(/src="([^"]+?\.js)(?:\?[^"]*)?"/g)) {
+      let ref = m[1];
+      if (ref.startsWith('/finances/')) ref = ref.slice('/finances/'.length);
+      else if (ref.startsWith('/') || /^https?:/.test(ref)) continue;
+      else ref = path.posix.normalize(path.posix.join(pageDir === '.' ? '' : pageDir, ref));
+      if (stampOf.has(ref) && stampOf.get(ref) !== stamp) {
+        fail(`${rel} is stamped ${stamp} but loads ${ref}, which carries ${stampOf.get(ref)} internally`);
+      }
+    }
+    ok(`${rel} and its scripts agree on ?v=${stamp}`);
+  }
+}
+
 // ---- Result
 if (failures) { console.error(`\n${failures} check(s) failed.`); process.exit(1); }
 console.log('\nAll checks passed.');
+
+function listFiles(root, re) {
+  const out = [];
+  (function walk(d) {
+    for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (re.test(e.name)) out.push(p);
+    }
+  })(root);
+  return out.sort();
+}
+function listScripts(root) {
+  return listFiles(root, /\.js$/).filter(p => {
+    const rel = path.relative(root, p);
+    return !rel.startsWith('tools' + path.sep) && !rel.startsWith('tests' + path.sep) && rel !== 'i18n.js' && rel !== 'spending-data.js';
+  });
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- Interaction regression guard for the ledger WORKSPACE. Serve the repo
+     root and open /finances/tests/interact-harness-v2.html.
+
+     The original harness exists because of a real crash: destroying a
+     Chart.js chart from inside its own onClick corrupts it. Every state
+     change that touches a chart must go through deferred(). This fork keeps
+     that guard and adds the things the workspace can get wrong:
+       - tabs switch, unhide and render
+       - typing in the search box narrows and then restores
+       - checkboxes and chips filter
+       - a payee profile opens from a row and closes again
+       - Back restores the pre-profile state
+       - "Showing N of M" matches the rows actually in the DOM
+       - no page errors anywhere along the way -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ledger v2 — interaction harness</title>
+<style>
+body{font:13px/1.5 -apple-system,sans-serif;margin:12px;background:#eee;color:#111}
+#verdict{font-weight:700;font-size:15px;padding:8px 12px;border:2px solid #333;background:#fff;margin-bottom:10px}
+pre{background:#fff;border:1px solid #ccc;padding:10px;max-height:420px;overflow:auto;white-space:pre-wrap}
+iframe{border:2px solid #333;background:#fff;width:1100px;height:760px}
+.ok{color:#1a7f4b}.bad{color:#b3261e}
+</style>
+</head>
+<body>
+<div id="verdict">running…</div>
+<pre id="log"></pre>
+<iframe id="f" src="/finances/v2/?lang=fr"></iframe>
+<script>
+var logEl = document.getElementById('log');
+var frame = document.getElementById('f');
+var failures = [], pageErrors = [];
+
+function say(okFlag, msg) {
+  logEl.textContent += (okFlag ? 'ok   ' : 'FAIL ') + msg + '\n';
+  if (!okFlag) failures.push(msg);
+}
+function report() {
+  var el = document.getElementById('verdict');
+  if (pageErrors.length) failures.push('page errors: ' + pageErrors.join(' | '));
+  el.textContent = failures.length ? failures.length + ' FAILURE(S) — see the log' : 'ALL INTERACTION CHECKS PASS';
+  el.className = failures.length ? 'bad' : 'ok';
+  document.title = 'ledger v2 interact — ' + (failures.length ? failures.length + ' FAIL' : 'PASS');
+}
+
+frame.onload = function () {
+  var w = frame.contentWindow, d = frame.contentDocument;
+  w.addEventListener('error', function (e) { pageErrors.push(e.message); });
+
+  setTimeout(function () {
+    var steps = [];
+    var rows = function () { return d.querySelectorAll('#payments-table tbody tr').length; };
+    var chartAlive = function (id) {
+      var c = d.getElementById(id);
+      var ch = c && w.Chart && w.Chart.getChart(c);
+      return !!(ch && ch.data && ch.data.datasets[0].data.length);
+    };
+
+    steps.push(['initial render', function () {
+      say(rows() === 150, 'Payments renders its first page (' + rows() + ' rows)');
+    }]);
+
+    ['payees', 'categories', 'sittings', 'payments'].forEach(function (tab) {
+      steps.push(['tab ' + tab, function () { d.getElementById('tab-' + tab).click(); }]);
+      steps.push(['tab ' + tab + ' rendered', function () {
+        var p = d.getElementById('panel-' + tab);
+        say(!p.hidden && p.children.length > 0, 'tab ' + tab + ' unhid and rendered');
+      }]);
+    });
+
+    steps.push(['charts alive after tabbing', function () {
+      d.getElementById('tab-categories').click();
+    }]);
+    steps.push(['category chart', function () { say(chartAlive('chart-cats'), 'category chart is alive'); }]);
+    steps.push(['click the category chart', function () {
+      var c = d.getElementById('chart-cats');
+      var r = c.getBoundingClientRect();
+      ['mousedown', 'mouseup', 'click'].forEach(function (t) {
+        c.dispatchEvent(new w.MouseEvent(t, { bubbles: true, clientX: r.left + r.width * 0.3, clientY: r.top + 24 }));
+      });
+    }]);
+    steps.push(['chart survived its own click', function () {
+      say(chartAlive('chart-cats') || chartAlive('chart-trend'), 'a chart is still alive after clicking one (deferred() guard)');
+    }]);
+
+    steps.push(['back to payments', function () { d.getElementById('tab-payments').click(); }]);
+    steps.push(['search petro', function () {
+      var q = d.getElementById('q');
+      q.value = 'petro';
+      q.dispatchEvent(new w.Event('input', { bubbles: true }));
+    }]);
+    steps.push(['search settled', function () {
+      var s = d.getElementById('results-status').textContent;
+      say(/314/.test(s), 'search "petro" reaches 314 lines (' + s.slice(0, 60) + ')');
+    }]);
+    steps.push(['clear search', function () { d.getElementById('q-clear').click(); }]);
+    steps.push(['search cleared', function () { say(rows() === 150, 'clearing restores the full set'); }]);
+
+    steps.push(['toggle a category checkbox', function () {
+      var cb = d.querySelector('#category-list input[type=checkbox]');
+      cb.checked = true;
+      cb.dispatchEvent(new w.Event('change', { bubbles: true }));
+    }]);
+    steps.push(['category filtered', function () {
+      say(d.querySelectorAll('#chips .chip').length > 0, 'an active-filter chip appeared');
+    }]);
+    steps.push(['reset', function () { d.getElementById('reset').click(); }]);
+    steps.push(['reset done', function () {
+      say(d.querySelectorAll('#chips .chip').length === 0, 'reset cleared every chip');
+    }]);
+
+    steps.push(['open a payee profile', function () {
+      d.querySelector('#payments-table tbody tr th button').click();
+    }]);
+    steps.push(['profile opened', function () {
+      var p = d.getElementById('profile');
+      say(!p.hidden && /Total/i.test(p.textContent), 'the payee profile opened with its facts');
+    }]);
+    steps.push(['back out of the profile', function () { w.history.back(); }]);
+    steps.push(['profile closed by Back', function () {
+      say(d.getElementById('profile').hidden && rows() > 0,
+        'Back closed the profile and restored the results');
+    }]);
+
+    steps.push(['show more', function () {
+      var b = d.querySelector('.reveal .btn');
+      if (b) b.click();
+    }]);
+    steps.push(['count matches the DOM', function () {
+      var s = d.getElementById('results-status').textContent.replace(/[  ]/g, ' ');
+      var m = /([\d ,]+)\s*(?:des|of)\s*([\d ,]+)/.exec(s);
+      var shown = m ? Number(m[1].replace(/[^\d]/g, '')) : rows();
+      say(shown === rows(), '"Showing N of M" (' + shown + ') matches the rendered rows (' + rows() + ')');
+    }]);
+
+    var i = 0;
+    var timer = setInterval(function () {
+      if (i >= steps.length) {
+        clearInterval(timer);
+        report();
+        return;
+      }
+      try { steps[i][1](); } catch (e) { say(false, steps[i][0] + ' threw ' + e.message); }
+      i++;
+    }, 420);
+  }, 2600);
+};
+</script>
+</body>
+</html>
