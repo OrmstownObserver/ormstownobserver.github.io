@@ -129,10 +129,14 @@ before anything a reporter might otherwise quote. Each has a `tone`:
 ```
 
 A `hold` notice is a statement to readers, not a technical guard. If a briefing
-must not be published yet, also add `<meta name="robots" content="noindex,
-nofollow">` to both shells and leave it off `/press/index.html` until the hold
-clears. `/press/ormstown-v-roskies/` is set up exactly that way and its index
-card is staged as an HTML comment with the steps to publish.
+genuinely must not go out yet, back it with all three: the notice, `<meta
+name="robots" content="noindex, nofollow">` in both shells, and leaving the kit
+off `/press/index.html`. Lift all three together when the hold clears.
+
+An `update` notice is the softer form — the briefing is published, but something
+material is still outstanding. `/press/ormstown-v-roskies/` uses one: the
+briefing is live, and the notice says the written court order is still to come
+and governs where it differs.
 
 ### Status labels
 

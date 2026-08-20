@@ -15,18 +15,18 @@
   "date_updated": "2026-08-19",
   "notices": [
     {
-      "tone": "hold",
-      "label_en": "Hold for verification — do not distribute",
-      "label_fr": "Retenue pour vérification — ne pas diffuser",
-      "head_en": "The written order of August 19, 2026 has been requested from the greffe and has not yet been received.",
-      "head_fr": "L'ordonnance écrite du 19 août 2026 a été demandée au greffe et n'a pas encore été reçue.",
+      "tone": "update",
+      "label_en": "Pending the written order",
+      "label_fr": "En attente de l'ordonnance écrite",
+      "head_en": "The written order and *procès-verbal* of August 19, 2026 have been requested from the greffe and govern.",
+      "head_fr": "L'ordonnance écrite et le *procès-verbal* du 19 août 2026 ont été demandés au greffe et font foi.",
       "body_en": [
-        "The account of the August 19 case-management hearing on this page is drawn from the hearing record. The written order and *procès-verbal* govern. Every date and term below must be checked against the written order before this briefing is circulated or relied on.",
-        "This notice will be removed, and the page dated, once the order is in hand."
+        "The account of the August 19 case-management hearing on this page is drawn from the hearing record. Where it and the written order differ, **the written order governs.**",
+        "It will be published here as soon as it is received, and anything on this page that it corrects will be corrected and dated. Reporters who want it before then can request it from the greffe directly, or from the contact below."
       ],
       "body_fr": [
-        "Le compte rendu de l'audience de gestion du 19 août figurant sur cette page provient du dossier d'audience. L'ordonnance écrite et le *procès-verbal* font foi. Chaque date et chaque modalité ci-dessous doivent être vérifiées auprès de l'ordonnance écrite avant que ce dossier ne soit diffusé ou invoqué.",
-        "Cet avis sera retiré, et la page datée, dès réception de l'ordonnance."
+        "Le compte rendu de l'audience de gestion du 19 août figurant sur cette page provient du dossier d'audience. En cas de divergence avec l'ordonnance écrite, **l'ordonnance écrite fait foi.**",
+        "Elle sera publiée ici dès sa réception, et tout élément de cette page qu'elle corrigerait sera corrigé et daté. Les journalistes qui la souhaitent d'ici là peuvent la demander directement au greffe, ou à la personne-ressource ci-dessous."
       ]
     },
     {
