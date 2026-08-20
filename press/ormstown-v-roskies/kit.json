@@ -1,0 +1,910 @@
+{
+  "version": 1,
+  "slug": "ormstown-v-roskies",
+  "kicker_en": "Media briefing",
+  "kicker_fr": "Dossier de presse",
+  "case_en": "Municipalité d'Ormstown c. Roskies · Court file 760-17-007472-254",
+  "case_fr": "Municipalité d'Ormstown c. Roskies · Dossier 760-17-007472-254",
+  "hed_en": "A municipality asks the court to restrain the newspaper that covers it",
+  "hed_fr": "Une municipalité demande au tribunal de restreindre le journal qui la couvre",
+  "deck_en": "A Quebec municipality of about 3,700 people has been in Superior Court twice in ten months against the publisher of its only independent news outlet, seeking removal of his plain-language by-law section, prospective publication restrictions, a no-contact order covering municipal staff and elected officials, and roughly $30,000 in legal fees. He is self-represented and has cross-demanded for abuse of procedure. Five hours are fixed for November 6, 2026. Nothing has been decided on the merits.",
+  "deck_fr": "Une municipalité québécoise d'environ 3 700 habitants s'est retrouvée deux fois en dix mois en Cour supérieure contre l'éditeur de son seul média indépendant, demandant le retrait de sa section d'explication des règlements en langage clair, des restrictions de publication pour l'avenir, une ordonnance de non-contact visant le personnel municipal et les élus, et environ 30 000 $ en frais juridiques. Il se représente seul et a déposé une demande reconventionnelle pour abus de procédure. Cinq heures sont fixées au 6 novembre 2026. Rien n'a été décidé au fond.",
+  "standing_en": "Case management complete · Merits fixed for November 6, 2026",
+  "standing_fr": "Gestion d'instance complétée · Fond fixé au 6 novembre 2026",
+  "date_published": "2026-08-19",
+  "date_updated": "2026-08-19",
+  "notices": [
+    {
+      "tone": "hold",
+      "label_en": "Hold for verification — do not distribute",
+      "label_fr": "Retenue pour vérification — ne pas diffuser",
+      "head_en": "The written order of August 19, 2026 has been requested from the greffe and has not yet been received.",
+      "head_fr": "L'ordonnance écrite du 19 août 2026 a été demandée au greffe et n'a pas encore été reçue.",
+      "body_en": [
+        "The account of the August 19 case-management hearing on this page is drawn from the hearing record. The written order and *procès-verbal* govern. Every date and term below must be checked against the written order before this briefing is circulated or relied on.",
+        "This notice will be removed, and the page dated, once the order is in hand."
+      ],
+      "body_fr": [
+        "Le compte rendu de l'audience de gestion du 19 août figurant sur cette page provient du dossier d'audience. L'ordonnance écrite et le *procès-verbal* font foi. Chaque date et chaque modalité ci-dessous doivent être vérifiées auprès de l'ordonnance écrite avant que ce dossier ne soit diffusé ou invoqué.",
+        "Cet avis sera retiré, et la page datée, dès réception de l'ordonnance."
+      ]
+    },
+    {
+      "tone": "disclosure",
+      "label_en": "Disclosure — read this first",
+      "label_fr": "Divulgation — à lire d'abord",
+      "head_en": "This briefing is prepared by a party to the proceeding it describes.",
+      "head_fr": "Ce dossier est préparé par une partie à l'instance qu'il décrit.",
+      "body_en": [
+        "Jesse Roskies is the publisher of The Ormstown Observer and the defendant in this case. The Observer is **not** covering this proceeding as a story in its own pages, precisely because it cannot do so independently.",
+        "This package exists so that independent journalists can read the pleadings themselves, put the questions to both sides, and reach their own conclusions. Nothing here is a finding of any court. The Municipality's allegations are allegations; the defence's positions are positions. Please seek comment from the Municipality of Ormstown and its counsel — contacts are in the source library and the contact block below."
+      ],
+      "body_fr": [
+        "Jesse Roskies est l'éditeur de L'Ormstown Observer et le défendeur dans cette affaire. L'Observer ne couvre **pas** cette instance comme sujet dans ses propres pages, précisément parce qu'il ne peut pas le faire de façon indépendante.",
+        "Ce dossier existe pour que des journalistes indépendants puissent lire eux-mêmes les actes de procédure, poser les questions aux deux parties, et tirer leurs propres conclusions. Rien ici n'est une conclusion d'un tribunal. Les allégations de la Municipalité sont des allégations; les positions de la défense sont des positions. Veuillez solliciter les commentaires de la Municipalité d'Ormstown et de ses procureurs — les coordonnées figurent dans la bibliothèque des sources et le bloc de contact ci-dessous."
+      ]
+    }
+  ],
+  "glance": {
+    "title_en": "The story at a glance",
+    "title_fr": "L'essentiel en un coup d'œil",
+    "items": [
+      {
+        "status": "documented",
+        "text_en": "On **July 3, 2026** the Municipality of Ormstown filed an application under **art. 657 C.p.c.** seeking removal of identified publications — including the Observer's entire *Explicateur de règlement*, a plain-language section explaining municipal by-laws — prospective restrictions on publishing material it considers defamatory or false, a declaration of civil harassment, restrictions on contact with municipal employees and elected officials, and roughly **$30,000** in extrajudicial legal fees.",
+        "text_fr": "Le **3 juillet 2026**, la Municipalité d'Ormstown a déposé une demande fondée sur l'**art. 657 C.p.c.** réclamant le retrait de publications identifiées — dont l'entier *Explicateur de règlement* de l'Observer, une section expliquant les règlements municipaux en langage clair —, des restrictions pour l'avenir sur la publication de matériel qu'elle juge diffamatoire ou faux, une déclaration de harcèlement civil, des restrictions de contact avec les employés municipaux et les élus, et environ **30 000 $** en frais juridiques extrajudiciaires."
+      },
+      {
+        "status": "confirmed",
+        "text_en": "**No court has found any Observer publication defamatory.** The first proceeding, filed October 2, 2025, ended in a negotiated settlement in January 2026 — not in a finding.",
+        "text_fr": "**Aucun tribunal n'a conclu qu'une publication de l'Observer était diffamatoire.** La première instance, déposée le 2 octobre 2025, s'est terminée par un règlement négocié en janvier 2026 — non par une conclusion."
+      },
+      {
+        "status": "documented",
+        "text_en": "On **May 28, 2026** — five weeks before the new application — a municipal email now filed in the public court record described the publications then at issue as **\"not defamatory in the legal sense.\"**",
+        "text_fr": "Le **28 mai 2026** — cinq semaines avant la nouvelle demande — un courriel municipal aujourd'hui versé au dossier public de la cour décrivait les publications alors en cause comme **« non diffamatoires au sens juridique »**."
+      },
+      {
+        "status": "unanswered",
+        "text_en": "**No council resolution specifically authorizing the July 2026 application has been identified** in the public council record reviewed to date. In Quebec a municipality acts through its council, by resolution adopted in public session. This is an open question, not an established finding.",
+        "text_fr": "**Aucune résolution du conseil autorisant spécifiquement la demande de juillet 2026 n'a été repérée** dans le registre public du conseil examiné à ce jour. Au Québec, une municipalité agit par son conseil, par résolution adoptée en séance publique. C'est une question ouverte, non un constat établi."
+      },
+      {
+        "status": "alleged",
+        "text_en": "The Municipality seeks a declaration of **civil harassment**; Roskies denies it and says the communications relied on are ordinary journalistic requests for comment and access to records. He has cross-demanded for a declaration that the proceeding is an **abuse of procedure** under arts. 51–56 C.p.c. Both are contested allegations, neither adjudicated.",
+        "text_fr": "La Municipalité demande une déclaration de **harcèlement civil**; Roskies le nie et affirme que les communications invoquées sont des demandes journalistiques ordinaires de commentaires et d'accès aux documents. Il a déposé une demande reconventionnelle en déclaration d'**abus de procédure** (art. 51 à 56 C.p.c.). Ce sont deux allégations contestées, aucune n'ayant été tranchée."
+      },
+      {
+        "status": "documented",
+        "text_en": "At case management on **August 19, 2026** the Court fixed **five hours on November 6, 2026** for the merits, left the cross-demand in the file absent a written motion, gave the Municipality until **September 4 at 16h30** to file a written motion to strike it, and provided for **one hour of testimony** from the director general who swore the supporting declaration. Made **sans frais**.",
+        "text_fr": "À la gestion d'instance du **19 août 2026**, la Cour a fixé **cinq heures le 6 novembre 2026** pour le fond, a laissé la demande reconventionnelle au dossier faute de demande écrite, a accordé à la Municipalité jusqu'au **4 septembre à 16 h 30** pour déposer une demande écrite en rejet de celle-ci, et a prévu **une heure de témoignage** du directeur général qui a signé la déclaration sous serment au soutien de la demande. Rendue **sans frais**."
+      }
+    ]
+  },
+  "numbers_title_en": "Key numbers",
+  "numbers_title_fr": "Chiffres clés",
+  "numbers": [
+    {
+      "value_en": "~$30,000",
+      "value_fr": "~30 000 $",
+      "label_en": "Extrajudicial fees claimed",
+      "label_fr": "Frais extrajudiciaires réclamés",
+      "note_en": "The fee claim in the Municipality's own application, *à parfaire*. **Not** the total public cost of the litigation, which has not been established. Do not conflate the two.",
+      "note_fr": "La réclamation de frais figurant dans la demande de la Municipalité elle-même, *à parfaire*. **Pas** le coût public total du litige, qui n'a pas été établi. Ne pas confondre les deux.",
+      "source_ref": "app-2026-07-03"
+    },
+    {
+      "value_en": "2",
+      "value_fr": "2",
+      "label_en": "Proceedings in ten months",
+      "label_fr": "Instances en dix mois",
+      "note_en": "October 2, 2025 and July 3, 2026 — both in the same court file.",
+      "note_fr": "2 octobre 2025 et 3 juillet 2026 — les deux dans le même dossier de cour."
+    },
+    {
+      "value_en": "0",
+      "value_fr": "0",
+      "label_en": "Judicial findings of defamation",
+      "label_fr": "Conclusions judiciaires de diffamation",
+      "note_en": "None in the public record. Round 1 ended in a settlement, not a finding.",
+      "note_fr": "Aucune au dossier public. La ronde 1 s'est terminée par un règlement, non par une conclusion."
+    },
+    {
+      "value_en": "Nov. 6, 2026",
+      "value_fr": "6 nov. 2026",
+      "label_en": "Hearing on the merits",
+      "label_fr": "Audience sur le fond",
+      "note_en": "One full day, five hours, with the motion to strike if one is filed.",
+      "note_fr": "Une journée complète, cinq heures, avec la demande en rejet si elle est déposée."
+    },
+    {
+      "value_en": "Sept. 4, 16h30",
+      "value_fr": "4 sept., 16 h 30",
+      "label_en": "Deadline for the motion to strike",
+      "label_fr": "Échéance de la demande en rejet",
+      "note_en": "For the Municipality's written motion against the cross-demand, notifiable by email.",
+      "note_fr": "Pour la demande écrite de la Municipalité contre la demande reconventionnelle, notifiable par courriel."
+    },
+    {
+      "value_en": "1 hour",
+      "value_fr": "1 heure",
+      "label_en": "Testimony from the director general",
+      "label_fr": "Témoignage du directeur général",
+      "note_en": "In addition to his written sworn declaration, following an art. 292 al. 2 notice.",
+      "note_fr": "En sus de sa déclaration écrite sous serment, à la suite d'un avis fondé sur l'art. 292 al. 2."
+    },
+    {
+      "value_en": "~3,700",
+      "value_fr": "~3 700",
+      "label_en": "Residents of Ormstown",
+      "label_fr": "Résidents d'Ormstown",
+      "note_en": "Montérégie, Quebec (2021 census), governed under the *Code municipal du Québec*.",
+      "note_fr": "Montérégie, Québec (recensement de 2021), régie par le *Code municipal du Québec*."
+    },
+    {
+      "value_en": "5 weeks",
+      "value_fr": "5 semaines",
+      "label_en": "Between the email and the application",
+      "label_fr": "Entre le courriel et la demande",
+      "note_en": "Between the May 28 municipal email and the July 3 filing.",
+      "note_fr": "Entre le courriel municipal du 28 mai et le dépôt du 3 juillet."
+    }
+  ],
+  "why": {
+    "title_en": "Why it matters",
+    "title_fr": "Pourquoi c'est important",
+    "body_en": [
+      "**Press freedom.** The orders sought reach future publication, commentary on the legality of municipal acts, and a journalist's ability to contact the officials he covers. Whatever the origin of the dispute, orders of that kind have effects beyond the parties.",
+      "**Local news capacity.** A self-represented publisher against a public body represented by a national firm. The imbalance is itself part of the story, and it is a common shape in cases of this type.",
+      "**Public accountability.** The cost of this litigation to residents has not been established, and no council resolution specifically authorizing the July 2026 application has been identified in the public record reviewed to date. Those are questions for the Municipality and for the appropriate oversight processes — they are not findings of wrongdoing."
+    ],
+    "body_fr": [
+      "**Liberté de presse.** Les ordonnances demandées visent la publication future, le commentaire sur la légalité des actes municipaux, et la capacité d'un journaliste de contacter les élus et fonctionnaires qu'il couvre. Quelle que soit l'origine du différend, de telles ordonnances ont des effets qui débordent les parties.",
+      "**Capacité de la presse locale.** Un éditeur non représenté face à un organisme public représenté par un cabinet national. Ce déséquilibre fait lui-même partie du sujet, et c'est une configuration fréquente dans ce type d'affaires.",
+      "**Reddition de comptes publique.** Le coût de ce litige pour les résidents n'a pas été établi, et aucune résolution du conseil autorisant spécifiquement la demande de juillet 2026 n'a été repérée dans le registre public examiné à ce jour. Ce sont des questions pour la Municipalité et pour les instances de surveillance compétentes — ce ne sont pas des constats de faute."
+    ]
+  },
+  "people_title_en": "The parties",
+  "people_title_fr": "Les parties",
+  "people": [
+    {
+      "name": "Municipalité d'Ormstown",
+      "role_en": "*Demanderesse*. A municipality of roughly 3,700 in the Montérégie, governed under the *Code municipal du Québec*. Represented by Dunton Rainville S.E.N.C.R.L. (Me Joanie Lévesque, Me Alice Touzin).",
+      "role_fr": "*Demanderesse*. Municipalité d'environ 3 700 habitants en Montérégie, régie par le *Code municipal du Québec*. Représentée par Dunton Rainville S.E.N.C.R.L. (Me Joanie Lévesque, Me Alice Touzin)."
+    },
+    {
+      "name": "Jesse Roskies",
+      "role_en": "*Défendeur* and cross-plaintiff. Publisher and editor of *The Ormstown Observer*, published by Stray Dog Media. **Self-represented.** Available for interview in English or French.",
+      "role_fr": "*Défendeur* et demandeur reconventionnel. Éditeur et rédacteur en chef de *L'Ormstown Observer*, publié par Stray Dog Media. **Se représente seul.** Disponible pour entrevue en français ou en anglais."
+    },
+    {
+      "name": "Daniel Leduc",
+      "role_en": "Director general of the Municipality; signed the sworn declaration supporting the July 2026 application. One hour of testimony from him is provided for on November 6.",
+      "role_fr": "Directeur général de la Municipalité; a signé la déclaration sous serment au soutien de la demande de juillet 2026. Une heure de témoignage de sa part est prévue le 6 novembre."
+    },
+    {
+      "name": "Cour supérieure du Québec",
+      "role_en": "Civil division, District of Beauharnois. Palais de justice de Salaberry-de-Valleyfield, 74 rue Académie. File **760-17-007472-254**. Hearings are public; the *plumitif* is publicly searchable.",
+      "role_fr": "Chambre civile, district de Beauharnois. Palais de justice de Salaberry-de-Valleyfield, 74, rue Académie. Dossier **760-17-007472-254**. Les audiences sont publiques; le *plumitif* est consultable publiquement."
+    }
+  ],
+  "timeline_title_en": "Timeline",
+  "timeline_title_fr": "Chronologie",
+  "timeline_sub_en": "Public-record events only. Where an entry rests on the hearing record rather than a written order, it says so.",
+  "timeline_sub_fr": "Uniquement des événements au dossier public. Lorsqu'une entrée repose sur le dossier d'audience plutôt que sur une ordonnance écrite, cela est indiqué.",
+  "timeline": [
+    {
+      "date": "2025-10-02",
+      "status": "documented",
+      "doc": "pv-2025-10-02",
+      "hed_en": "Round 1 filed; council adopts a general retainer the same evening",
+      "hed_fr": "Ronde 1 déposée; le conseil adopte un mandat général le soir même",
+      "summary_en": "The Municipality files an application for a provisional, interlocutory and permanent injunction alleging defamation and misuse of the municipal logo. That evening an extraordinary council session adopts resolution **25-10-289**, a general retainer of Dunton Rainville naming no defendant, no proceeding and no subject. One councillor votes against.",
+      "summary_fr": "La Municipalité dépose une demande d'injonction provisoire, interlocutoire et permanente alléguant diffamation et usage abusif du logo municipal. Le soir même, une séance extraordinaire du conseil adopte la résolution **25-10-289**, un mandat général à Dunton Rainville ne nommant ni défendeur, ni instance, ni objet. Un conseiller vote contre."
+    },
+    {
+      "date": "2025-10-17",
+      "status": "documented",
+      "date_label_en": "Oct. 17 & 23, 2025",
+      "date_label_fr": "17 et 23 oct. 2025",
+      "hed_en": "Undertakings recorded; no finding of defamation",
+      "hed_fr": "Engagements consignés; aucune conclusion de diffamation",
+      "summary_en": "Hearing before Duprat J.S.C. Rather than contest the interim injunction, Roskies — self-represented — gives undertakings to redact, reword or remove specific passages and to stop using the municipal logo. The *procès-verbal* of the order is signed October 23, without costs. **No court finds any publication defamatory.**",
+      "summary_fr": "Audience devant le juge Duprat, J.C.S. Plutôt que de contester l'injonction intérimaire, Roskies — se représentant seul — prend des engagements de caviarder, reformuler ou retirer certains passages et de cesser d'utiliser le logo municipal. Le *procès-verbal* de l'ordonnance est signé le 23 octobre, sans frais. **Aucun tribunal ne conclut qu'une publication est diffamatoire.**"
+    },
+    {
+      "date": "2026-01-22",
+      "status": "documented",
+      "hed_en": "The parties settle at a judicial settlement conference",
+      "hed_fr": "Les parties règlent lors d'une conférence de règlement à l'amiable",
+      "summary_en": "Before Picard J.S.C., the parties sign a *transaction et quittance mutuelle*.",
+      "summary_fr": "Devant la juge Picard, J.C.S., les parties signent une *transaction et quittance mutuelle*."
+    },
+    {
+      "date": "2026-02-04",
+      "status": "documented",
+      "doc": "pv-2026-02-02",
+      "date_label_en": "Feb. 2 & 4, 2026",
+      "date_label_fr": "2 et 4 fév. 2026",
+      "hed_en": "Council approves the settlement; the Court seals it",
+      "hed_fr": "Le conseil approuve le règlement; la Cour le met sous scellé",
+      "summary_en": "Council approves the settlement unanimously by resolution **26-02-027** on February 2. On February 4 Duprat J.S.C. homologates the transaction and places it **under seal**. Neither party may disclose its terms. Reporters should treat any account of its contents — from any source — with caution.",
+      "summary_fr": "Le conseil approuve le règlement à l'unanimité par la résolution **26-02-027** le 2 février. Le 4 février, le juge Duprat, J.C.S., homologue la transaction et la place **sous scellé**. Aucune partie ne peut en divulguer les termes. Les journalistes devraient traiter avec prudence tout compte rendu de son contenu, quelle qu'en soit la source."
+    },
+    {
+      "date": "2026-05-28",
+      "status": "documented",
+      "hed_en": "A municipal email calls the posts \"not defamatory in the legal sense\"",
+      "hed_fr": "Un courriel municipal qualifie les publications de « non diffamatoires au sens juridique »",
+      "summary_en": "The Municipality's communications officer initiates the email chain later filed in the public court record. In that correspondence the Municipality's own email describes the publications then at issue as \"not defamatory in the legal sense.\"",
+      "summary_fr": "La conseillère en communication de la Municipalité amorce l'échange de courriels versé plus tard au dossier public de la cour. Dans cette correspondance, le courriel de la Municipalité elle-même décrit les publications alors en cause comme « non diffamatoires au sens juridique »."
+    },
+    {
+      "date": "2026-07-03",
+      "status": "documented",
+      "doc": "app-2026-07-03",
+      "hed_en": "Round 2: the Municipality files under art. 657 C.p.c.",
+      "hed_fr": "Ronde 2 : la Municipalité dépose en vertu de l'art. 657 C.p.c.",
+      "summary_en": "A *demande pour ordonnances visant à faciliter l'exécution d'un jugement*, supported by the sworn declaration of the director general. It seeks removal of identified content including the entire *Explicateur de règlement*, prospective publication restrictions, a civil-harassment declaration, a no-contact order, and roughly $30,000 in extrajudicial fees *à parfaire*.",
+      "summary_fr": "Une *demande pour ordonnances visant à faciliter l'exécution d'un jugement*, appuyée par la déclaration sous serment du directeur général. Elle réclame le retrait de contenus identifiés dont l'entier *Explicateur de règlement*, des restrictions de publication pour l'avenir, une déclaration de harcèlement civil, une ordonnance de non-contact, et environ 30 000 $ en frais extrajudiciaires *à parfaire*."
+    },
+    {
+      "date": "2026-07-24",
+      "status": "documented",
+      "doc": "contest-2026-07",
+      "hed_en": "Roskies files a contestation and a cross-demand for abuse of procedure",
+      "hed_fr": "Roskies dépose une contestation et une demande reconventionnelle pour abus de procédure",
+      "summary_en": "Under arts. 101, 172 and 51–56 C.p.c. he asks the Court to dismiss the application, declare it abusive, and award $15,000 in moral damages and $30,000 in punitive damages, with costs and a reservation of recourses under art. 56.",
+      "summary_fr": "En vertu des art. 101, 172 et 51 à 56 C.p.c., il demande à la Cour de rejeter la demande, de la déclarer abusive, et d'accorder 15 000 $ en dommages moraux et 30 000 $ en dommages punitifs, avec dépens et réserve des recours prévus à l'art. 56."
+    },
+    {
+      "date": "2026-07-28",
+      "status": "documented",
+      "date_label_en": "July 27–29, 2026",
+      "date_label_fr": "27–29 juillet 2026",
+      "hed_en": "The presentation is adjourned by consent",
+      "hed_fr": "La présentation est reportée de consentement",
+      "summary_en": "Opposing counsel consents on July 27; the roll call of July 28 confirms the adjournment of the July 29 presentation. No new hearing date is fixed at that point.",
+      "summary_fr": "La procureure adverse y consent le 27 juillet; l'appel du rôle du 28 juillet confirme le report de la présentation du 29 juillet. Aucune nouvelle date d'audience n'est alors fixée."
+    },
+    {
+      "date": "2026-08-13",
+      "status": "documented",
+      "doc": "plumitif",
+      "hed_en": "The *plumitif* records both applications remised to August 19",
+      "hed_fr": "Le *plumitif* consigne les deux demandes remises au 19 août",
+      "summary_en": "Independent confirmation of the docket entries, searchable by anyone.",
+      "summary_fr": "Confirmation indépendante des inscriptions au rôle, consultable par quiconque."
+    },
+    {
+      "date": "2026-08-18",
+      "status": "documented",
+      "doc": "avis-292",
+      "hed_en": "Notice served requiring the declarant's presence",
+      "hed_fr": "Avis signifié exigeant la présence du déclarant",
+      "summary_en": "Roskies serves a written notice under **article 292 al. 2 C.p.c.**, requiring the presence of the director general so that he can be examined on his sworn declaration. It was not contested at the hearing the next day.",
+      "summary_fr": "Roskies signifie un avis écrit fondé sur l'**article 292 al. 2 C.p.c.**, exigeant la présence du directeur général afin qu'il puisse être interrogé sur sa déclaration sous serment. Il n'a pas été contesté à l'audience du lendemain."
+    },
+    {
+      "date": "2026-08-19",
+      "status": "documented",
+      "doc": "ordre-2026-08-19",
+      "hed_en": "Case management: November 6 fixed, cross-demand stays in the file",
+      "hed_fr": "Gestion d'instance : 6 novembre fixé, la demande reconventionnelle reste au dossier",
+      "summary_en": "Four things settled, none of them on the merits: the cross-demand **remains in the file**, the Court declining to dispose of it on an oral request absent a written application; **one hour of testimony** from the director general is provided for; the written contestation was **not struck**; and **one full day — five hours — is fixed for November 6, 2026**. The Municipality has until **September 4 at 16h30** to file a written motion to strike the cross-demand. Made **sans frais**. *Account drawn from the hearing record; the written order is pending and governs.*",
+      "summary_fr": "Quatre choses réglées, aucune au fond : la demande reconventionnelle **reste au dossier**, la Cour refusant d'en disposer sur demande verbale en l'absence d'une demande écrite; **une heure de témoignage** du directeur général est prévue; la contestation écrite n'a **pas** été rejetée; et **une journée complète — cinq heures — est fixée au 6 novembre 2026**. La Municipalité a jusqu'au **4 septembre à 16 h 30** pour déposer une demande écrite en rejet de la demande reconventionnelle. Rendue **sans frais**. *Compte rendu tiré du dossier d'audience; l'ordonnance écrite est attendue et fait foi.*"
+    },
+    {
+      "date": "2026-09-04",
+      "status": "documented",
+      "date_label_en": "Sept. 4, 2026 — 16h30",
+      "date_label_fr": "4 sept. 2026 — 16 h 30",
+      "hed_en": "Deadline for the Municipality's written motion to strike",
+      "hed_fr": "Échéance de la demande écrite en rejet de la Municipalité",
+      "summary_en": "If filed, it will be argued November 6 together with the merits. Notifiable by email under the terms of the order.",
+      "summary_fr": "Si elle est déposée, elle sera plaidée le 6 novembre avec le fond. Notifiable par courriel selon les termes de l'ordonnance."
+    },
+    {
+      "date": "2026-11-06",
+      "status": "documented",
+      "hed_en": "Five-hour hearing on the merits",
+      "hed_fr": "Audience de cinq heures sur le fond",
+      "summary_en": "With the motion to strike, if one is filed, and one hour of testimony from the director general.",
+      "summary_fr": "Avec la demande en rejet, si elle est déposée, et une heure de témoignage du directeur général."
+    }
+  ],
+  "narrative_title_en": "The file, in longer form",
+  "narrative_title_fr": "Le dossier, en version longue",
+  "narrative_sub_en": "Every assertion below is traceable to a public document. The source library says which one.",
+  "narrative_sub_fr": "Chaque affirmation ci-dessous est rattachable à un document public. La bibliothèque des sources indique lequel.",
+  "narrative": [
+    {
+      "type": "section",
+      "hed_en": "The outlet",
+      "hed_fr": "Le média",
+      "blocks": [
+        {
+          "type": "p",
+          "lede": true,
+          "text_en": "*The Ormstown Observer* is an independent bilingual civic watchdog publication covering municipal affairs in Ormstown and the Haut-Saint-Laurent. It publishes council coverage, by-law and zoning explainers, public-spending records and accountability reporting. It accepts no advertising from municipal governments or from entities it covers. It is published by Stray Dog Media and edited by Jesse Roskies.",
+          "text_fr": "*L'Ormstown Observer* est une publication de vigie civique bilingue et indépendante couvrant les affaires municipales à Ormstown et dans le Haut-Saint-Laurent. Il publie de la couverture des séances du conseil, des explicatifs de règlements et de zonage, des registres de dépenses publiques et du journalisme de reddition de comptes. Il n'accepte aucune publicité des gouvernements municipaux ni des entités qu'il couvre. Il est publié par Stray Dog Media et dirigé par Jesse Roskies."
+        },
+        {
+          "type": "callout",
+          "head_en": "The Explicateur de règlement",
+          "head_fr": "L'Explicateur de règlement",
+          "body_en": "A plain-language standing section that explains municipal by-laws — what they require, how they are applied, and what recourse residents have. The July 3, 2026 application seeks its removal **in its entirety**. This is the most concrete single item in the file, and it is worth putting to the Municipality directly.",
+          "body_fr": "Une section permanente en langage clair qui explique les règlements municipaux — ce qu'ils exigent, comment ils s'appliquent, et quels recours ont les résidents. La demande du 3 juillet 2026 en réclame le retrait **intégral**. C'est l'élément le plus concret du dossier, et il mérite d'être soumis directement à la Municipalité."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "hed_en": "Round 1 — October 2025 to February 2026",
+      "hed_fr": "Ronde 1 — d'octobre 2025 à février 2026",
+      "blocks": [
+        {
+          "type": "p",
+          "text_en": "On October 2, 2025 the Municipality filed an application for an injunction alleging defamation and misuse of the municipal logo. On the evening of the same day, at an extraordinary session, council adopted resolution 25-10-289 — a general retainer of Dunton Rainville naming no defendant, no proceeding and no subject. One councillor voted against.",
+          "text_fr": "Le 2 octobre 2025, la Municipalité a déposé une demande d'injonction alléguant diffamation et usage abusif du logo municipal. Le soir même, en séance extraordinaire, le conseil a adopté la résolution 25-10-289 — un mandat général à Dunton Rainville ne nommant ni défendeur, ni instance, ni objet. Un conseiller a voté contre."
+        },
+        {
+          "type": "p",
+          "text_en": "Hearings followed in the second half of October, and undertakings were recorded on October 17 and 23, 2025. **No court found any publication defamatory.** On January 22, 2026 the parties resolved the dispute at a judicial settlement conference; the resulting transaction was homologated and sealed on February 4, 2026.",
+          "text_fr": "Des audiences ont suivi dans la seconde moitié d'octobre, et des engagements ont été consignés les 17 et 23 octobre 2025. **Aucun tribunal n'a conclu qu'une publication était diffamatoire.** Le 22 janvier 2026, les parties ont réglé le différend lors d'une conférence de règlement à l'amiable; la transaction qui en a résulté a été homologuée et mise sous scellé le 4 février 2026."
+        },
+        {
+          "type": "fact",
+          "status": "documented",
+          "head_en": "On the sealed settlement",
+          "head_fr": "Sur le règlement sous scellé",
+          "body_en": "Because the transaction is sealed by order of the Court, neither party may disclose its terms — including to characterize why it was signed. A sealed settlement is not an admission and is not a finding; no inference should be drawn either way. The pleadings refer to obligations said to arise from it without reproducing it. Treat any source claiming to know more as either breaching a court order or guessing.",
+          "body_fr": "La transaction étant sous scellé par ordonnance de la Cour, aucune partie ne peut en divulguer les termes — y compris pour qualifier les motifs de sa signature. Un règlement sous scellé n'est ni un aveu ni une conclusion; aucune inférence ne devrait en être tirée dans un sens ou dans l'autre. Les actes de procédure font état d'obligations qui en découleraient sans le reproduire. Traitez toute source prétendant en savoir davantage comme contrevenant à une ordonnance de la Cour ou comme spéculant."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "hed_en": "Round 2 — July 2026 to the present",
+      "hed_fr": "Ronde 2 — de juillet 2026 à aujourd'hui",
+      "blocks": [
+        {
+          "type": "p",
+          "text_en": "Between February and June 2026 the Observer continued to publish on municipal governance. Publications and correspondence from May and June 2026 are the subject of the current application. They concern communication by the Municipality with residents who do not read French; a proposed Bell telecommunications tower; the content and application of municipal by-laws; and correspondence between the parties.",
+          "text_fr": "Entre février et juin 2026, l'Observer a continué de publier sur la gouvernance municipale. Des publications et de la correspondance de mai et juin 2026 font l'objet de la demande actuelle. Elles portent sur la communication de la Municipalité avec les résidents qui ne lisent pas le français; un projet de tour de télécommunications de Bell; le contenu et l'application des règlements municipaux; et la correspondance entre les parties."
+        },
+        {
+          "type": "p",
+          "text_en": "On July 3, 2026 — five weeks after the municipal email describing the publications then at issue as \"not defamatory in the legal sense\" — the Municipality filed a new application in the same court file, framed as an enforcement proceeding under art. 657 C.p.c. The relief sought includes:",
+          "text_fr": "Le 3 juillet 2026 — cinq semaines après le courriel municipal décrivant les publications alors en cause comme « non diffamatoires au sens juridique » — la Municipalité a déposé une nouvelle demande dans le même dossier, présentée comme une procédure d'exécution fondée sur l'art. 657 C.p.c. Les conclusions recherchées comprennent :"
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text_en": "removal of identified publications, including the Observer's **entire *Explicateur de règlement*** section;",
+              "text_fr": "le retrait de publications identifiées, dont **l'entière section *Explicateur de règlement*** de l'Observer;"
+            },
+            {
+              "text_en": "**prospective restrictions** on publishing material the Municipality considers defamatory or false, including commentary on « la légalité des actes » of the Municipality;",
+              "text_fr": "des **restrictions pour l'avenir** sur la publication de matériel que la Municipalité juge diffamatoire ou faux, incluant le commentaire sur « la légalité des actes » de la Municipalité;"
+            },
+            {
+              "text_en": "a **declaration of civil harassment**;",
+              "text_fr": "une **déclaration de harcèlement civil**;"
+            },
+            {
+              "text_en": "**restrictions on contact** with municipal employees and elected officials;",
+              "text_fr": "des **restrictions de contact** avec les employés municipaux et les élus;"
+            },
+            {
+              "text_en": "approximately **$30,000 in extrajudicial legal fees**, *à parfaire*.",
+              "text_fr": "environ **30 000 $ en frais juridiques extrajudiciaires**, *à parfaire*."
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "text_en": "Roskies filed a contestation and a cross-demand asking the Court to declare the proceeding abusive under arts. 51–56 C.p.c., seeking dismissal, damages and costs. His contestation raises, among other points, the concentration of roles in a single municipal officer: the director general is simultaneously the affiant supporting the application and the officer responsible for municipal functions the Observer reports on, including — during a clerk vacancy — the functions of *greffier-trésorier*, which cover archives and the certification of municipal records.",
+          "text_fr": "Roskies a déposé une contestation et une demande reconventionnelle demandant à la Cour de déclarer la procédure abusive en vertu des art. 51 à 56 C.p.c., réclamant le rejet, des dommages et les dépens. Sa contestation soulève notamment la concentration des rôles chez un seul officier municipal : le directeur général est à la fois le déclarant au soutien de la demande et l'officier responsable de fonctions municipales sur lesquelles l'Observer fait rapport, y compris — pendant une vacance au poste de greffier — les fonctions de *greffier-trésorier*, qui touchent les archives et la certification des documents municipaux."
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "hed_en": "What is actually at issue on November 6",
+      "hed_fr": "Ce qui est réellement en jeu le 6 novembre",
+      "blocks": [
+        {
+          "type": "p",
+          "text_en": "Three distinct questions, which reporters should keep separate:",
+          "text_fr": "Trois questions distinctes, que les journalistes devraient garder séparées :"
+        },
+        {
+          "type": "quote",
+          "speaker": "Jesse Roskies",
+          "role_en": "Publisher, The Ormstown Observer; defendant and cross-plaintiff, self-represented",
+          "role_fr": "Éditeur, L'Ormstown Observer; défendeur et demandeur reconventionnel, se représentant seul",
+          "date": "2026-08-19",
+          "text_en": "The Court has now set a date, and that is welcome. What is at stake on November 6 is not whether one resident and one municipality get along. It is whether a municipal government can use the courts to obtain broad restrictions on a local publisher who reports on its decisions, asks questions of its officials, and examines whether its actions comply with the law.",
+          "text_fr": "La Cour a maintenant fixé une date, et c'est une bonne chose. Ce qui est en jeu le 6 novembre, ce n'est pas de savoir si un résident et une municipalité s'entendent. C'est de savoir si un gouvernement municipal peut recourir aux tribunaux pour obtenir de larges restrictions contre un éditeur local qui rend compte de ses décisions, pose des questions à ses représentants, et examine si ses actes sont conformes à la loi."
+        },
+        {
+          "type": "list",
+          "items": [
+            {
+              "text_en": "**Procedural** — what relief can properly be obtained through an enforcement proceeding rather than a fresh action, and whether disputes arising after a settlement can be litigated by that route.",
+              "text_fr": "**Procédurale** — quelles conclusions peuvent valablement être obtenues par une procédure d'exécution plutôt que par une nouvelle action, et si des différends nés après un règlement peuvent être débattus par cette voie."
+            },
+            {
+              "text_en": "**Press freedom** — whether a court can or should order prospective restraints on what a publisher may write about a public body, and restrictions on a journalist's contact with public officials.",
+              "text_fr": "**Liberté de presse** — si un tribunal peut ou devrait ordonner des restrictions préalables sur ce qu'un éditeur peut écrire au sujet d'un organisme public, et des restrictions sur les contacts d'un journaliste avec des titulaires de charges publiques."
+            },
+            {
+              "text_en": "**Public accountability** — who authorized this litigation, under what mandate, and at what cost to residents.",
+              "text_fr": "**Reddition de comptes publique** — qui a autorisé ce litige, en vertu de quel mandat, et à quel coût pour les résidents."
+            }
+          ]
+        },
+        {
+          "type": "fact",
+          "status": "analysis",
+          "head_en": "The comparison the defence draws",
+          "head_fr": "La comparaison qu'invoque la défense",
+          "body_en": "The contestation cites *Prud'homme c. Rawdon (Municipalité de)*, 2010 QCCA 584, in which the Court of Appeal set aside an injunction obtained by a municipality that had shut down a citizens' discussion forum, holding that a general order prohibiting defamation « a nécessairement un effet de bâillon ». Whether that authority governs here is contested and is for the Court. Every authority cited in the pleadings is on CanLII and can be read independently.",
+          "body_fr": "La contestation cite *Prud'homme c. Rawdon (Municipalité de)*, 2010 QCCA 584, où la Cour d'appel a infirmé une injonction obtenue par une municipalité ayant fait fermer un forum de discussion citoyen, jugeant qu'une ordonnance générale interdisant la diffamation « a nécessairement un effet de bâillon ». La question de savoir si cette autorité s'applique ici est contestée et relève de la Cour. Toutes les autorités citées aux actes de procédure sont sur CanLII et peuvent être consultées de façon indépendante."
+        },
+        {
+          "type": "quote",
+          "speaker": "Jesse Roskies",
+          "role_en": "Publisher, The Ormstown Observer; defendant and cross-plaintiff, self-represented",
+          "role_fr": "Éditeur, L'Ormstown Observer; défendeur et demandeur reconventionnel, se représentant seul",
+          "date": "2026-08-19",
+          "text_en": "Residents are entitled to ask two straightforward questions: who authorized this proceeding, and what is it costing them. Those questions matter more, not less, when the orders being sought would restrict a news outlet that covers the Municipality.",
+          "text_fr": "Les résidents ont le droit de poser deux questions simples : qui a autorisé cette procédure, et combien leur coûte-t-elle. Ces questions comptent davantage, et non moins, quand les ordonnances demandées restreindraient un média qui couvre la Municipalité."
+        }
+      ]
+    }
+  ],
+  "questions_title_en": "Five questions worth asking",
+  "questions_title_fr": "Cinq questions à poser",
+  "questions_sub_en": "Put these to the Municipality and to its counsel. Their answers, if given, will be published in the responses section below.",
+  "questions_sub_fr": "Posez-les à la Municipalité et à ses procureurs. Leurs réponses, le cas échéant, seront publiées dans la section des réponses ci-dessous.",
+  "questions": [
+    {
+      "status": "unanswered",
+      "asked_of_en": "Municipality of Ormstown",
+      "asked_of_fr": "Municipalité d'Ormstown",
+      "q_en": "What specific statement does the Municipality say is false, and what evidence establishes its falsity?",
+      "q_fr": "Quelle déclaration précise la Municipalité tient-elle pour fausse, et quelle preuve en établit la fausseté?",
+      "why_en": "The undertakings at issue apply to statements that are defamatory or false. Identifying one is the starting point of the case.",
+      "why_fr": "Les engagements en cause visent les déclarations diffamatoires ou fausses. En identifier une est le point de départ de l'affaire."
+    },
+    {
+      "status": "unanswered",
+      "asked_of_en": "Municipality of Ormstown",
+      "asked_of_fr": "Municipalité d'Ormstown",
+      "asked_on": "2026-07-09",
+      "q_en": "Which council resolution authorized the July 2026 application, and what is the scope of the mandate given to counsel?",
+      "q_fr": "Quelle résolution du conseil a autorisé la demande de juillet 2026, et quelle est la portée du mandat confié aux procureurs?",
+      "why_en": "Sought by access-to-information request filed July 9, 2026. No such resolution has been identified in the public council record reviewed to date. Resolution 25-10-289 of October 2, 2025 is a general retainer naming no proceeding.",
+      "why_fr": "Demandé par une demande d'accès à l'information déposée le 9 juillet 2026. Aucune telle résolution n'a été repérée dans le registre public du conseil examiné à ce jour. La résolution 25-10-289 du 2 octobre 2025 est un mandat général ne nommant aucune instance.",
+      "source_ref": "atip-2026-07-09"
+    },
+    {
+      "status": "unanswered",
+      "asked_of_en": "Municipality of Ormstown",
+      "asked_of_fr": "Municipalité d'Ormstown",
+      "q_en": "How much public money has been spent on this court file, and how was that spending approved?",
+      "q_fr": "Combien de fonds publics ont été consacrés à ce dossier judiciaire, et comment cette dépense a-t-elle été approuvée?",
+      "why_en": "Published municipal accounts show payments to outside counsel, but the amount attributable specifically to this file has not been established. The $30,000 figure is the fee claim in the application, which is not the same thing.",
+      "why_fr": "Les comptes municipaux publiés montrent des paiements à des procureurs externes, mais le montant attribuable spécifiquement à ce dossier n'a pas été établi. Le chiffre de 30 000 $ est la réclamation de frais figurant à la demande, ce qui n'est pas la même chose."
+    },
+    {
+      "status": "unanswered",
+      "asked_of_en": "Municipality of Ormstown",
+      "asked_of_fr": "Municipalité d'Ormstown",
+      "q_en": "How would a no-contact order covering municipal employees and elected officials affect ordinary reporting and requests for comment?",
+      "q_fr": "Comment une ordonnance de non-contact visant les employés municipaux et les élus affecterait-elle le travail journalistique courant et les demandes de commentaires?",
+      "why_en": "The Observer's principal subject is the Municipality itself. A restriction on contact reaches the mechanics of seeking comment and access to records.",
+      "why_fr": "Le sujet principal de l'Observer est la Municipalité elle-même. Une restriction de contact touche le mécanisme même de la demande de commentaires et d'accès aux documents."
+    },
+    {
+      "status": "unanswered",
+      "asked_of_en": "Both parties",
+      "asked_of_fr": "Les deux parties",
+      "q_en": "What relief can properly be granted through an enforcement proceeding under art. 657 C.p.c., rather than through a fresh action?",
+      "q_fr": "Quelles conclusions peuvent valablement être accordées par une procédure d'exécution fondée sur l'art. 657 C.p.c., plutôt que par une nouvelle action?",
+      "why_en": "This is the central procedural question on November 6, and it is contested. It is a question for the Court, not for either party.",
+      "why_fr": "C'est la question procédurale centrale du 6 novembre, et elle est contestée. C'est une question qui relève de la Cour, non des parties."
+    }
+  ],
+  "documents_title_en": "Document evidence",
+  "documents_title_fr": "Pièces au dossier",
+  "documents_sub_en": "Court filings are public and consultable at the courthouse in file 760-17-007472-254, but are not published online — the entries below say where to obtain each one. Municipal minutes and resolutions link directly to the Municipality's own published PDFs.",
+  "documents_sub_fr": "Les actes de procédure sont publics et consultables au palais de justice au dossier 760-17-007472-254, mais ne sont pas publiés en ligne — les entrées ci-dessous indiquent où obtenir chacun. Les procès-verbaux et résolutions municipaux renvoient directement aux PDF publiés par la Municipalité.",
+  "documents": [
+    {
+      "id": "app-2026-07-03",
+      "ref": "Item 1",
+      "primary": true,
+      "category": "court",
+      "status": "documented",
+      "date": "2026-07-03",
+      "name_en": "The Municipality's application (Round 2)",
+      "name_fr": "La demande de la Municipalité (ronde 2)",
+      "type_en": "Demande, art. 657 C.p.c.",
+      "type_fr": "Demande, art. 657 C.p.c.",
+      "source_en": "Municipalité d'Ormstown, via Dunton Rainville · exhibits R-1 to R-7",
+      "source_fr": "Municipalité d'Ormstown, par Dunton Rainville · pièces R-1 à R-7",
+      "why_en": "The relief actually sought, in the Municipality's own words: removal of the *Explicateur de règlement*, prospective publication restrictions, the civil-harassment declaration, contact restrictions, and the $30,000 fee claim. **Read this before writing anything.** Supported by the sworn declaration of the director general.",
+      "why_fr": "Les conclusions réellement recherchées, dans les mots mêmes de la Municipalité : retrait de l'*Explicateur de règlement*, restrictions de publication pour l'avenir, déclaration de harcèlement civil, restrictions de contact, et réclamation de frais de 30 000 $. **À lire avant d'écrire quoi que ce soit.** Appuyée par la déclaration sous serment du directeur général.",
+      "note_en": "Public. Consultable at the Palais de justice de Salaberry-de-Valleyfield, 74 rue Académie, in file 760-17-007472-254. A copy can be supplied on request.",
+      "note_fr": "Public. Consultable au Palais de justice de Salaberry-de-Valleyfield, 74, rue Académie, au dossier 760-17-007472-254. Une copie peut être fournie sur demande."
+    },
+    {
+      "id": "contest-2026-07",
+      "ref": "Item 2",
+      "primary": true,
+      "category": "court",
+      "status": "documented",
+      "date": "2026-07-24",
+      "name_en": "Roskies's contestation and cross-demand",
+      "name_fr": "La contestation et la demande reconventionnelle de Roskies",
+      "type_en": "Contestation and cross-demand · exhibits D-1 to D-12",
+      "type_fr": "Contestation et demande reconventionnelle · pièces D-1 à D-12",
+      "source_en": "Jesse Roskies, self-represented",
+      "source_fr": "Jesse Roskies, se représentant seul",
+      "why_en": "The defence, and the abuse-of-procedure claim now before the Court. Paragraph 6 sets out the concentration-of-roles point regarding the director general. Seeks dismissal, a declaration of abuse, $15,000 moral and $30,000 punitive damages, costs, and a reservation of recourses under art. 56 C.p.c.",
+      "why_fr": "La défense, et la demande en abus de procédure maintenant devant la Cour. Le paragraphe 6 expose le point sur la concentration des rôles du directeur général. Réclame le rejet, une déclaration d'abus, 15 000 $ en dommages moraux et 30 000 $ en dommages punitifs, les dépens, et la réserve des recours prévus à l'art. 56 C.p.c.",
+      "note_en": "Public, in the same court file. A copy can be supplied on request.",
+      "note_fr": "Public, au même dossier de cour. Une copie peut être fournie sur demande."
+    },
+    {
+      "id": "pv-2025-10-02",
+      "ref": "Item 3 · Res. 25-10-289",
+      "primary": true,
+      "category": "municipal",
+      "status": "documented",
+      "date": "2025-10-02",
+      "name_en": "Minutes of the extraordinary session of October 2, 2025",
+      "name_fr": "Procès-verbal de la séance extraordinaire du 2 octobre 2025",
+      "type_en": "Municipal minutes (PDF)",
+      "type_fr": "Procès-verbal municipal (PDF)",
+      "source_en": "Municipalité d'Ormstown",
+      "source_fr": "Municipalité d'Ormstown",
+      "why_en": "Resolution **25-10-289**, the general retainer of Dunton Rainville adopted the evening of the Round 1 filing — naming no defendant, no proceeding and no subject, with one councillor voting against. Annexe A lists the legal invoices already paid. Read it also for what it does *not* contain: any resolution authorizing the July 2026 application.",
+      "why_fr": "La résolution **25-10-289**, le mandat général à Dunton Rainville adopté le soir du dépôt de la ronde 1 — ne nommant ni défendeur, ni instance, ni objet, un conseiller votant contre. L'annexe A énumère les factures juridiques déjà payées. À lire aussi pour ce qu'il ne contient *pas* : toute résolution autorisant la demande de juillet 2026.",
+      "view": "https://www.ormstown.ca/wp-content/uploads/2025-10-02-Extra.pdf",
+      "download": "https://www.ormstown.ca/wp-content/uploads/2025-10-02-Extra.pdf"
+    },
+    {
+      "id": "pv-2026-02-02",
+      "ref": "Res. 26-02-027",
+      "primary": true,
+      "category": "municipal",
+      "status": "documented",
+      "date": "2026-02-02",
+      "name_en": "Minutes of the February 2, 2026 council session",
+      "name_fr": "Procès-verbal de la séance du conseil du 2 février 2026",
+      "type_en": "Municipal minutes (PDF)",
+      "type_fr": "Procès-verbal municipal (PDF)",
+      "source_en": "Municipalité d'Ormstown",
+      "source_fr": "Municipalité d'Ormstown",
+      "why_en": "Resolution **26-02-027**, by which council approved the settlement unanimously, two days before the Court homologated and sealed it.",
+      "why_fr": "La résolution **26-02-027**, par laquelle le conseil a approuvé le règlement à l'unanimité, deux jours avant que la Cour ne l'homologue et ne le mette sous scellé.",
+      "view": "https://www.ormstown.ca/wp-content/uploads/2026-02-02.pdf",
+      "download": "https://www.ormstown.ca/wp-content/uploads/2026-02-02.pdf"
+    },
+    {
+      "id": "emails-2026",
+      "primary": true,
+      "category": "correspondence",
+      "status": "documented",
+      "date": "2026-05-28",
+      "date_label_en": "May 28 – June 29, 2026",
+      "date_label_fr": "28 mai – 29 juin 2026",
+      "name_en": "Email chain filed in the public court record",
+      "name_fr": "Échange de courriels versé au dossier public de la cour",
+      "type_en": "Correspondence · exhibit R-7",
+      "type_fr": "Correspondance · pièce R-7",
+      "source_en": "Both parties · filed by the Municipality",
+      "source_fr": "Les deux parties · déposé par la Municipalité",
+      "why_en": "Contains the municipal statement that the challenged posts are **\"not defamatory in the legal sense,\"** five weeks before the new application was filed. This is also the correspondence on which the civil-harassment allegation rests — read it and reach your own conclusion rather than relying on either party's characterization.",
+      "why_fr": "Contient la déclaration municipale voulant que les publications contestées soient **« non diffamatoires au sens juridique »**, cinq semaines avant le dépôt de la nouvelle demande. C'est aussi la correspondance sur laquelle repose l'allégation de harcèlement civil — lisez-la et tirez votre propre conclusion plutôt que de vous fier à la caractérisation de l'une ou l'autre partie.",
+      "note_en": "Public, in the court file as an exhibit to the application.",
+      "note_fr": "Public, au dossier de cour à titre de pièce au soutien de la demande."
+    },
+    {
+      "id": "decl-leduc",
+      "primary": true,
+      "category": "court",
+      "status": "documented",
+      "date": "2026-07-03",
+      "name_en": "Sworn declaration of the director general",
+      "name_fr": "Déclaration sous serment du directeur général",
+      "type_en": "Sworn declaration",
+      "type_fr": "Déclaration sous serment",
+      "source_en": "Daniel Leduc, for the Municipality",
+      "source_fr": "Daniel Leduc, pour la Municipalité",
+      "why_en": "The evidentiary basis of the application, and the subject of the one hour of testimony provided for on November 6 following the art. 292 al. 2 notice.",
+      "why_fr": "Le fondement probatoire de la demande, et l'objet de l'heure de témoignage prévue le 6 novembre à la suite de l'avis fondé sur l'art. 292 al. 2.",
+      "note_en": "Public, in the court file.",
+      "note_fr": "Public, au dossier de cour."
+    },
+    {
+      "id": "avis-292",
+      "primary": true,
+      "category": "court",
+      "status": "documented",
+      "date": "2026-08-18",
+      "name_en": "Notice under art. 292 al. 2 C.p.c.",
+      "name_fr": "Avis fondé sur l'art. 292 al. 2 C.p.c.",
+      "type_en": "Procedural notice",
+      "type_fr": "Avis de procédure",
+      "source_en": "Jesse Roskies",
+      "source_fr": "Jesse Roskies",
+      "why_en": "The written notice requiring the declarant's presence so he could be examined on his sworn declaration. Served the day before the case-management hearing; not contested at it.",
+      "why_fr": "L'avis écrit exigeant la présence du déclarant afin qu'il puisse être interrogé sur sa déclaration sous serment. Signifié la veille de l'audience de gestion; non contesté à celle-ci.",
+      "note_en": "Public, in the court file.",
+      "note_fr": "Public, au dossier de cour."
+    },
+    {
+      "id": "ordre-2026-08-19",
+      "ref": "Item 8 — pending",
+      "primary": true,
+      "category": "court",
+      "status": "unanswered",
+      "date": "2026-08-19",
+      "name_en": "Order and procès-verbal of August 19, 2026",
+      "name_fr": "Ordonnance et procès-verbal du 19 août 2026",
+      "type_en": "Court order — requested from the greffe",
+      "type_fr": "Ordonnance de la Cour — demandée au greffe",
+      "source_en": "Cour supérieure du Québec, district de Beauharnois",
+      "source_fr": "Cour supérieure du Québec, district de Beauharnois",
+      "why_en": "**The controlling record of every date and term in this briefing.** It has been requested from the greffe and is not yet in hand — which is why this page carries a hold notice. When it arrives it will be published here and every date on this page will be checked against it.",
+      "why_fr": "**Le document qui fait foi de chaque date et de chaque modalité de ce dossier.** Il a été demandé au greffe et n'est pas encore reçu — d'où l'avis de retenue en tête de cette page. Dès réception, il sera publié ici et chaque date de cette page sera vérifiée à son encontre.",
+      "note_en": "Not yet available. Reporters may request it from the greffe directly, or from the contact below once received.",
+      "note_fr": "Pas encore disponible. Les journalistes peuvent le demander directement au greffe, ou à la personne-ressource ci-dessous dès réception."
+    },
+    {
+      "id": "atip-2026-07-09",
+      "category": "ati",
+      "status": "unanswered",
+      "date": "2026-07-09",
+      "date_label_en": "July 9, 2026 onward",
+      "date_label_fr": "À partir du 9 juillet 2026",
+      "name_en": "Access-to-information request and response",
+      "name_fr": "Demande d'accès à l'information et réponse",
+      "type_en": "Access request",
+      "type_fr": "Demande d'accès",
+      "source_en": "Filed with the Municipalité d'Ormstown",
+      "source_fr": "Déposée auprès de la Municipalité d'Ormstown",
+      "why_en": "Seeks the mandate to counsel, invoices associated with the 2026 proceeding, and any council resolution authorizing it. What is released — and what is withheld — is itself reportable.",
+      "why_fr": "Vise le mandat aux procureurs, les factures associées à l'instance de 2026, et toute résolution du conseil l'autorisant. Ce qui est communiqué — et ce qui est refusé — est en soi matière à reportage.",
+      "note_en": "Reporters are encouraged to file their own; the regime is the Quebec *Loi sur l'accès*.",
+      "note_fr": "Les journalistes sont encouragés à déposer la leur; le régime est la *Loi sur l'accès* du Québec."
+    },
+    {
+      "id": "plumitif",
+      "category": "court",
+      "status": "documented",
+      "date": "2026-08-13",
+      "name_en": "Plumitif extract — file 760-17-007472-254",
+      "name_fr": "Extrait du plumitif — dossier 760-17-007472-254",
+      "type_en": "Court docket",
+      "type_fr": "Registre du rôle",
+      "source_en": "Cour supérieure du Québec",
+      "source_fr": "Cour supérieure du Québec",
+      "why_en": "**Independent confirmation, available to you without going through either party.** The *plumitif* is publicly searchable and confirms the filings, the remises, and the dates in this briefing. Start here if you want to verify the chronology yourself.",
+      "why_fr": "**Confirmation indépendante, accessible sans passer par l'une ou l'autre partie.** Le *plumitif* est consultable publiquement et confirme les dépôts, les remises et les dates de ce dossier. Commencez ici si vous voulez vérifier la chronologie vous-même."
+    },
+    {
+      "id": "pv-2026-03-02",
+      "ref": "Res. 26-03-074",
+      "primary": true,
+      "category": "municipal",
+      "status": "documented",
+      "featured": false,
+      "date": "2026-03-02",
+      "name_en": "Minutes of the March 2, 2026 council session",
+      "name_fr": "Procès-verbal de la séance du conseil du 2 mars 2026",
+      "type_en": "Municipal minutes (PDF)",
+      "type_fr": "Procès-verbal municipal (PDF)",
+      "source_en": "Municipalité d'Ormstown",
+      "source_fr": "Municipalité d'Ormstown",
+      "why_en": "Resolution 26-03-074, the Bell Mobilité lease. Context for the tower coverage that is among the publications at issue.",
+      "why_fr": "La résolution 26-03-074, le bail avec Bell Mobilité. Contexte de la couverture de la tour, qui figure parmi les publications en cause.",
+      "view": "https://www.ormstown.ca/wp-content/uploads/PV-2026-03-02-pour-site-web.pdf"
+    },
+    {
+      "id": "obs-bell-kit",
+      "category": "other",
+      "status": "analysis",
+      "featured": false,
+      "date": "2026-07-20",
+      "name_en": "The Observer's Bell tower briefing",
+      "name_fr": "Le dossier de l'Observer sur la tour Bell",
+      "type_en": "Observer press kit",
+      "type_fr": "Dossier de presse de l'Observer",
+      "source_en": "The Ormstown Observer",
+      "source_fr": "L'Ormstown Observer",
+      "why_en": "The tower coverage referred to in the application, with its own document set. Useful if you want to read the journalism the Municipality objects to rather than the characterization of it.",
+      "why_fr": "La couverture de la tour évoquée dans la demande, avec son propre ensemble de documents. Utile si vous voulez lire le journalisme auquel la Municipalité s'oppose plutôt que la caractérisation qui en est faite.",
+      "view_en": "/press/bell-tower/",
+      "view_fr": "/press/bell-tower/fr/"
+    },
+    {
+      "id": "canlii-rawdon",
+      "category": "regulation",
+      "status": "documented",
+      "featured": false,
+      "date": "2010-04-01",
+      "date_label_en": "2010 QCCA 584",
+      "date_label_fr": "2010 QCCA 584",
+      "name_en": "Prud'homme c. Rawdon (Municipalité de)",
+      "name_fr": "Prud'homme c. Rawdon (Municipalité de)",
+      "type_en": "Court of Appeal of Quebec",
+      "type_fr": "Cour d'appel du Québec",
+      "source_en": "CanLII",
+      "source_fr": "CanLII",
+      "why_en": "The principal authority the defence relies on. Every authority cited in the pleadings — *Rawdon*, *Prud'homme* 2002 SCC 85, *Néron*, *Bou Malhab*, *WIC Radio*, *Octane*, *Acadia Subaru*, *Thériault-Martel*, *Groupe Guy Samson* — is free to read on CanLII.",
+      "why_fr": "La principale autorité invoquée par la défense. Toutes les autorités citées aux actes de procédure — *Rawdon*, *Prud'homme* 2002 CSC 85, *Néron*, *Bou Malhab*, *WIC Radio*, *Octane*, *Acadia Subaru*, *Thériault-Martel*, *Groupe Guy Samson* — sont consultables gratuitement sur CanLII.",
+      "view": "https://www.canlii.org/"
+    }
+  ],
+  "responses_title_en": "Other parties' position",
+  "responses_title_fr": "La position des autres parties",
+  "responses_sub_en": "The Municipality's position as set out in its own pleadings, presented at the same weight as the defence. Reporters should seek comment directly — contacts below — and any response received will be published here in full and dated.",
+  "responses_sub_fr": "La position de la Municipalité telle qu'exposée dans ses propres actes de procédure, présentée avec le même poids que celle de la défense. Les journalistes devraient solliciter directement des commentaires — coordonnées ci-dessous — et toute réponse reçue sera publiée ici intégralement et datée.",
+  "responses": [
+    {
+      "status": "pleaded",
+      "date": "2026-07-03",
+      "party_en": "Municipalité d'Ormstown",
+      "party_fr": "Municipalité d'Ormstown",
+      "role_en": "Position as pleaded in its application of July 3, 2026",
+      "role_fr": "Position telle que plaidée dans sa demande du 3 juillet 2026",
+      "source_ref": "app-2026-07-03",
+      "body_en": [
+        "The Municipality's position, as set out in its application, is that publications and communications by the Observer in May and June 2026 breached obligations arising from the settlement homologated on February 4, 2026. It asks the Court to facilitate execution of that judgment under art. 657 C.p.c.",
+        "On that basis it seeks removal of the identified content, restrictions on publishing material it considers defamatory or false, a declaration that the conduct constitutes civil harassment, restrictions on contact with municipal employees and elected officials, and approximately $30,000 in extrajudicial legal fees.",
+        "Its application is supported by the sworn declaration of its director general. It is represented by Dunton Rainville S.E.N.C.R.L."
+      ],
+      "body_fr": [
+        "La position de la Municipalité, telle qu'exposée dans sa demande, est que des publications et des communications de l'Observer en mai et juin 2026 ont contrevenu à des obligations découlant du règlement homologué le 4 février 2026. Elle demande à la Cour de faciliter l'exécution de ce jugement en vertu de l'art. 657 C.p.c.",
+        "Sur cette base, elle réclame le retrait des contenus identifiés, des restrictions sur la publication de matériel qu'elle juge diffamatoire ou faux, une déclaration voulant que la conduite constitue du harcèlement civil, des restrictions de contact avec les employés municipaux et les élus, et environ 30 000 $ en frais juridiques extrajudiciaires.",
+        "Sa demande est appuyée par la déclaration sous serment de son directeur général. Elle est représentée par Dunton Rainville S.E.N.C.R.L."
+      ],
+      "note_en": "Summarised by the defence from the Municipality's public pleading — **not a statement given to this briefing, and not a verbatim quotation.** The pleading itself is public; read it rather than this summary.",
+      "note_fr": "Résumé par la défense à partir de l'acte de procédure public de la Municipalité — **il ne s'agit pas d'une déclaration fournie pour ce dossier, ni d'une citation textuelle.** L'acte de procédure lui-même est public; lisez-le plutôt que ce résumé."
+    },
+    {
+      "status": "invited",
+      "party_en": "Municipalité d'Ormstown and its counsel, Dunton Rainville",
+      "party_fr": "Municipalité d'Ormstown et ses procureurs, Dunton Rainville",
+      "role_en": "Standing invitation to respond",
+      "role_fr": "Invitation permanente à répondre",
+      "body_en": [
+        "The Municipality and its counsel are invited to respond to anything in this briefing. Any statement received will be published here in full, dated, and reflected wherever the point arises on this page.",
+        "Municipalité d'Ormstown — 5 rue Gale, Ormstown, QC J0S 1K0. Counsel — Me Joanie Lévesque and Me Alice Touzin, Dunton Rainville S.E.N.C.R.L., 800 rue du Square-Victoria, 43e étage, Montréal; jlevesque@duntonrainville.com; 514-866-6743.",
+        "Reporters are asked to seek comment independently rather than relying on this page's account of the Municipality's position."
+      ],
+      "body_fr": [
+        "La Municipalité et ses procureurs sont invités à répondre à tout élément de ce dossier. Toute déclaration reçue sera publiée ici intégralement, datée, et reflétée partout où la question se pose dans cette page.",
+        "Municipalité d'Ormstown — 5, rue Gale, Ormstown (Québec) J0S 1K0. Procureurs — Me Joanie Lévesque et Me Alice Touzin, Dunton Rainville S.E.N.C.R.L., 800, rue du Square-Victoria, 43e étage, Montréal; jlevesque@duntonrainville.com; 514-866-6743.",
+        "Les journalistes sont priés de solliciter des commentaires de façon indépendante plutôt que de se fier au compte rendu que fait cette page de la position de la Municipalité."
+      ]
+    }
+  ],
+  "context_title_en": "Legal & procedural context",
+  "context_title_fr": "Contexte juridique et procédural",
+  "context_sub_en": "Quebec civil procedure in plain language — useful if this is your first time in this file.",
+  "context_sub_fr": "La procédure civile québécoise en langage clair — utile si vous abordez ce dossier pour la première fois.",
+  "context": [
+    {
+      "label_en": "In plain language",
+      "label_fr": "En langage clair",
+      "title_en": "What art. 657 C.p.c. is for",
+      "title_fr": "À quoi sert l'art. 657 C.p.c.",
+      "body_en": [
+        "Article 657 of the *Code of Civil Procedure* lets a party return to court for orders that help **carry out a judgment that already exists** — not to decide a new dispute.",
+        "The Municipality uses it to enforce obligations it says arise from the settlement homologated in February 2026. The defence says everything complained of happened after that judgment and belongs, if anywhere, in a fresh action. **This is the central procedural question on November 6.**"
+      ],
+      "body_fr": [
+        "L'article 657 du *Code de procédure civile* permet à une partie de revenir devant le tribunal pour obtenir des ordonnances facilitant **l'exécution d'un jugement déjà rendu** — et non pour trancher un nouveau différend.",
+        "La Municipalité l'invoque pour faire exécuter des obligations qui découleraient selon elle du règlement homologué en février 2026. La défense soutient que tout ce qui est reproché est survenu après ce jugement et relèverait, le cas échéant, d'une nouvelle action. **C'est la question procédurale centrale du 6 novembre.**"
+      ]
+    },
+    {
+      "label_en": "In plain language",
+      "label_fr": "En langage clair",
+      "title_en": "What an abuse-of-procedure cross-demand asks for",
+      "title_fr": "Ce que demande une demande reconventionnelle en abus de procédure",
+      "body_en": [
+        "Articles 51 to 56 C.p.c. allow a court to declare a proceeding abusive where it restricts another person's freedom of expression in the context of public debate — **regardless of the filing party's intention**. Quebec's provision is often described as its anti-SLAPP regime.",
+        "A declaration of abuse is a civil determination. The Court has made none here: the cross-demand remains in the file and will be argued November 6, together with any motion to strike it."
+      ],
+      "body_fr": [
+        "Les articles 51 à 56 C.p.c. permettent au tribunal de déclarer abusive une procédure qui restreint la liberté d'expression d'autrui dans le contexte de débats publics — **indépendamment de l'intention de la partie qui l'introduit**. La disposition québécoise est souvent décrite comme son régime anti-SLAPP.",
+        "Une déclaration d'abus est une détermination civile. La Cour n'en a rendu aucune ici : la demande reconventionnelle reste au dossier et sera plaidée le 6 novembre, avec toute demande en rejet la visant."
+      ]
+    },
+    {
+      "label_en": "In plain language",
+      "label_fr": "En langage clair",
+      "title_en": "What a case-management hearing decides",
+      "title_fr": "Ce que décide une audience de gestion",
+      "body_en": [
+        "Nothing on the merits. August 19 settled how and when the case will be heard — dates, deadlines, and whether a witness will testify. **Anyone reporting it as a victory or a defeat is over-reading it.**",
+        "The one substantive point is that the Court declined to dispose of the cross-demand on an oral request, holding that a written application would be required; it noted on the record that it was proceeding with care in part because the defendant is self-represented."
+      ],
+      "body_fr": [
+        "Rien sur le fond. Le 19 août a réglé comment et quand l'affaire sera entendue — dates, échéances, et la tenue d'un témoignage. **Quiconque en fait une victoire ou une défaite en tire trop.**",
+        "Le seul point de substance est que la Cour a refusé de disposer de la demande reconventionnelle sur demande verbale, jugeant qu'une demande écrite serait nécessaire; elle a noté au dossier qu'elle procédait avec prudence en partie parce que le défendeur se représente seul."
+      ]
+    },
+    {
+      "label_en": "In plain language",
+      "label_fr": "En langage clair",
+      "title_en": "Why the settlement cannot be discussed",
+      "title_fr": "Pourquoi le règlement ne peut être discuté",
+      "body_en": [
+        "The transaction of January 22, 2026 was homologated and **placed under seal** by the Court on February 4, 2026. Neither party may disclose its terms — including to explain why it was signed.",
+        "A sealed settlement is **not an admission and not a finding**; no inference should be drawn either way. Cite only the clauses the parties have themselves pleaded in the public record. Any request for the document itself should go to the Court, not to either party."
+      ],
+      "body_fr": [
+        "La transaction du 22 janvier 2026 a été homologuée et **mise sous scellé** par la Cour le 4 février 2026. Aucune partie ne peut en divulguer les termes — y compris pour expliquer pourquoi elle a été signée.",
+        "Un règlement sous scellé n'est **ni un aveu ni une conclusion**; aucune inférence ne devrait en être tirée dans un sens ou dans l'autre. Ne citez que les clauses que les parties ont elles-mêmes plaidées au dossier public. Toute demande visant le document lui-même doit être adressée à la Cour, non aux parties."
+      ]
+    }
+  ],
+  "media_title_en": "Media assets",
+  "media_title_fr": "Matériel média",
+  "media_sub_en": "A high-resolution headshot of the publisher and an Observer logo (PNG, transparent) are available to picture desks on request — email the contact below and they will be sent the same day.",
+  "media_sub_fr": "Un portrait haute résolution de l'éditeur et un logo de l'Observer (PNG, fond transparent) sont disponibles pour les services photo sur demande — écrivez à la personne-ressource ci-dessous et ils seront envoyés le jour même.",
+  "media": [
+    {
+      "kind": "photo",
+      "src": "/images/townhall.jpg",
+      "title_en": "Ormstown municipal building",
+      "title_fr": "Édifice municipal d'Ormstown",
+      "alt_en": "The municipal building housing Ormstown's council chamber and administration.",
+      "alt_fr": "L'édifice municipal abritant la salle du conseil et l'administration d'Ormstown.",
+      "caption_en": "5 rue Gale, Ormstown — the Municipality's offices and council chamber.",
+      "caption_fr": "5, rue Gale, Ormstown — les bureaux et la salle du conseil de la Municipalité.",
+      "credit_en": "Photo: The Ormstown Observer.",
+      "credit_fr": "Photo : L'Ormstown Observer."
+    }
+  ],
+  "sources_title_en": "Source library",
+  "sources_title_fr": "Bibliothèque des sources",
+  "sources_sub_en": "Verify independently before relying on anything here. The court file is public; the plumitif is searchable; municipal minutes and session recordings are published by the Municipality itself; every authority cited in the pleadings is free to read on CanLII.",
+  "sources_sub_fr": "Vérifiez de façon indépendante avant de vous fier à quoi que ce soit ici. Le dossier de cour est public; le plumitif est consultable; les procès-verbaux et enregistrements de séances sont publiés par la Municipalité elle-même; toutes les autorités citées aux actes de procédure sont consultables gratuitement sur CanLII.",
+  "contact_title_en": "Media contact",
+  "contact_title_fr": "Contact média",
+  "contact": {
+    "name": "Jesse Roskies",
+    "org_en": "Publisher, The Ormstown Observer · Stray Dog Media, Ormstown, Québec",
+    "org_fr": "Éditeur, L'Ormstown Observer · Stray Dog Media, Ormstown (Québec)",
+    "email": "jesse.roskies@icloud.com",
+    "phone": "514-618-6185",
+    "website": "https://ormstownobserver.ca",
+    "website_label_en": "ormstownobserver.ca",
+    "website_label_fr": "ormstownobserver.ca",
+    "availability_en": "Interviews in English or French, on the record. Copies of any public pleading in the file can be sent on request. The sealed transaction's unpleaded terms are the only subject off the table — by court order, not by choice. He will not characterize opposing counsel or municipal employees personally.",
+    "availability_fr": "Entrevues en français ou en anglais, sur dossier. Des copies de tout acte de procédure public au dossier peuvent être envoyées sur demande. Les termes non plaidés de la transaction sous scellé sont le seul sujet exclu — par ordonnance de la Cour, non par choix. Il ne se prononcera pas personnellement sur les procureurs adverses ni sur les employés municipaux.",
+    "note_en": "**For fairness, contact the Municipality of Ormstown and its counsel as well** — 5 rue Gale, Ormstown, QC J0S 1K0; Me Joanie Lévesque / Me Alice Touzin, Dunton Rainville S.E.N.C.R.L., jlevesque@duntonrainville.com, 514-866-6743.",
+    "note_fr": "**Par souci d'équité, contactez également la Municipalité d'Ormstown et ses procureurs** — 5, rue Gale, Ormstown (Québec) J0S 1K0; Me Joanie Lévesque / Me Alice Touzin, Dunton Rainville S.E.N.C.R.L., jlevesque@duntonrainville.com, 514-866-6743."
+  },
+  "terms_en": [
+    "**Using this briefing.** Material authored by the Observer here may be quoted with attribution to *The Ormstown Observer*. Court filings, resolutions and minutes are public documents — quote them directly rather than this page's summary of them. The photograph is free to reproduce with the credit shown.",
+    "**Status.** The matter is contested and before the Court. Nothing on this page is a finding of any tribunal. The Municipality's allegations are allegations; the defence's positions are positions. This briefing is prepared by the defendant and is not legal advice.",
+    "**Corrections.** To report an error: jesse.roskies@icloud.com. Corrections are published, dated, and reflected in the body of the briefing."
+  ],
+  "terms_fr": [
+    "**Utiliser ce dossier.** Le matériel rédigé par l'Observer ici peut être cité avec attribution à *L'Ormstown Observer*. Les actes de procédure, résolutions et procès-verbaux sont des documents publics — citez-les directement plutôt que le résumé qu'en fait cette page. La photographie est libre de reproduction avec le crédit indiqué.",
+    "**État du dossier.** L'affaire est contestée et devant la Cour. Rien dans cette page n'est une conclusion d'un tribunal. Les allégations de la Municipalité sont des allégations; les positions de la défense sont des positions. Ce dossier est préparé par le défendeur et ne constitue pas un avis juridique.",
+    "**Corrections.** Pour signaler une erreur : jesse.roskies@icloud.com. Les corrections sont publiées, datées, et reflétées dans le corps du dossier."
+  ]
+}
