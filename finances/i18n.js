@@ -347,8 +347,8 @@ window.OO_I18N = {
   // The Observer is an independent paper publishing a municipality's
   // figures: a reader must never be able to mistake this for an
   // official municipal record.
-  devBannerH: "Publication indépendante — page non officielle, en développement",
-  devBanner: "L'Ormstown Observer est une publication indépendante. Elle n'est ni affiliée à la Municipalité d'Ormstown, ni approuvée par celle-ci, et ne parle pas en son nom. Cette page est un prototype en construction, offert à titre de service public : ce n'est pas un document officiel et elle peut contenir des erreurs, des omissions ou des chiffres périmés. Ne vous en servez pas comme source de référence, ne la citez pas et ne fondez aucune décision sur elle — seuls les procès-verbaux officiels publiés par la Municipalité font foi, et chaque ligne renvoie au sien. L'Observer corrigera publiquement toute erreur : ormstownobserver@gmail.com"
+  devBannerH: "Publication indépendante — page non officielle",
+  devBanner: "L'Ormstown Observer est une publication indépendante. Elle n'est ni affiliée à la Municipalité d'Ormstown, ni approuvée par celle-ci, et ne parle pas en son nom. Cette page n'est pas un document officiel : elle est encore enrichie séance après séance et peut contenir des erreurs, des omissions ou des chiffres périmés. Ne vous en servez pas comme source de référence, ne la citez pas et ne fondez aucune décision sur elle — seuls les procès-verbaux officiels publiés par la Municipalité font foi, et chaque ligne renvoie au sien. L'Observer corrigera publiquement toute erreur : ormstownobserver@gmail.com"
  },
  en: {
   htmlTitle: "Municipal Ledger — Ormstown Observer",
@@ -685,7 +685,7 @@ window.OO_I18N = {
   // The Observer is an independent paper publishing a municipality's
   // figures: a reader must never be able to mistake this for an
   // official municipal record.
-  devBannerH: "An independent publication — unofficial, and under development",
-  devBanner: "The Ormstown Observer is an independent publication. It is not affiliated with, endorsed by, or speaking for the Municipality of Ormstown. This page is a prototype under construction, published as a public service: it is not an official document and may contain errors, omissions or out-of-date figures. Do not use it as a reference source, do not cite it, and do not base any decision on it — only the official minutes published by the Municipality are authoritative, and every line links to its own. The Observer will correct any error on the record: ormstownobserver@gmail.com"
+  devBannerH: "An independent publication — this page is not official",
+  devBanner: "The Ormstown Observer is an independent publication. It is not affiliated with, endorsed by, or speaking for the Municipality of Ormstown. This page is not an official document: it is still being extended sitting by sitting and may contain errors, omissions or out-of-date figures. Do not use it as a reference source, do not cite it, and do not base any decision on it — only the official minutes published by the Municipality are authoritative, and every line links to its own. The Observer will correct any error on the record: ormstownobserver@gmail.com"
  }
 };

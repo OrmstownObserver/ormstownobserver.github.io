@@ -12,7 +12,7 @@ const path = require('path');
 const dir = path.join(__dirname, '..');
 const window = {};
 eval(fs.readFileSync(path.join(dir, 'spending-data.js'), 'utf8'));
-eval(fs.readFileSync(path.join(dir, 'v2', 'ledger-data.js'), 'utf8'));
+eval(fs.readFileSync(path.join(dir, 'ledger-data.js'), 'utf8'));
 const D = window.OO_SPENDING;
 const L = window.OO_LEDGER;
 const payments = JSON.parse(fs.readFileSync(path.join(dir, 'payments.json'), 'utf8'));

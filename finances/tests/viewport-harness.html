@@ -15,7 +15,7 @@ iframe{border:2px solid #333;background:#fff}
 </style>
 </head>
 <body>
-<h1>Responsive overflow check — /finances/</h1>
+<h1>Responsive overflow check — /finances/classic/</h1>
 <div class="row" id="row"></div>
 <script>
 var widths = [320, 375, 390, 768, 1024, 1440];
@@ -25,7 +25,7 @@ widths.forEach(function (w) {
   var p = document.createElement('p'); p.textContent = w + 'px — loading…'; p.id = 'r' + w;
   var f = document.createElement('iframe');
   f.width = w; f.height = w < 700 ? 900 : 700;
-  f.src = '/finances/?lang=' + (w === 375 ? 'en' : 'fr');
+  f.src = '/finances/classic/?lang=' + (w === 375 ? 'en' : 'fr');
   f.onload = function () {
     setTimeout(function () {
       try {

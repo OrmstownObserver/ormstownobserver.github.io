@@ -23,9 +23,9 @@ iframe{border:2px solid #333;background:#fff}
 </head>
 <body>
 <div id="summary">running…</div>
-<h2>Pass 1 — /finances/v2/ as loaded</h2>
+<h2>Pass 1 — /finances/ as loaded</h2>
 <div class="row" id="row1"></div>
-<h2>Pass 2 — /finances/v2/ with the filter sheet open</h2>
+<h2>Pass 2 — /finances/ with the filter sheet open</h2>
 <div class="row" id="row2"></div>
 <h2>Pass 3 — /finances/budget/ (shares ledger.css)</h2>
 <div class="row" id="row3"></div>
@@ -80,8 +80,8 @@ function summarise() {
   document.title = 'ledger v2 viewport — ' + (bad.length ? bad.length + ' FAIL' : 'PASS');
 }
 
-WIDTHS.forEach(function (w) { probe('row1', w, '/finances/v2/?lang=' + (w === 375 ? 'en' : 'fr'), false, w + 'px'); });
-[320, 375, 768].forEach(function (w) { probe('row2', w, '/finances/v2/?lang=fr', true, w + 'px + sheet'); });
+WIDTHS.forEach(function (w) { probe('row1', w, '/finances/?lang=' + (w === 375 ? 'en' : 'fr'), false, w + 'px'); });
+[320, 375, 768].forEach(function (w) { probe('row2', w, '/finances/?lang=fr', true, w + 'px + sheet'); });
 [320, 768, 1440].forEach(function (w) { probe('row3', w, '/finances/budget/?lang=fr', false, w + 'px budget'); });
 </script>
 </body>

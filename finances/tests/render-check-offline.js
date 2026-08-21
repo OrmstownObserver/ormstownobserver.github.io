@@ -18,13 +18,13 @@ function boot(fetchImpl) {
   delete require.cache[require.resolve('./dom-shim.js')];
   const shim = require('./dom-shim.js');
   const { document } = shim;
-  shim.mountFromHTML(path.join(dir, 'v2', 'index.html'));
+  shim.mountFromHTML(path.join(dir, 'index.html'));
   const ls = {};
   const win = {
     document,
     navigator: { language: 'fr-CA' },
     localStorage: { getItem: (k) => (k in ls ? ls[k] : null), setItem: (k, v) => { ls[k] = String(v); } },
-    location: { pathname: '/finances/v2/', search: '', hash: '', origin: 'http://x' },
+    location: { pathname: '/finances/', search: '', hash: '', origin: 'http://x' },
     history: { pushState() {}, replaceState() {} },
     matchMedia: () => ({ matches: false, addEventListener() {}, addListener() {} }),
     MutationObserver: class { observe() {} },
@@ -41,10 +41,10 @@ function boot(fetchImpl) {
   const run = (p) => vm.runInContext(fs.readFileSync(p, 'utf8'), ctx, { filename: p });
   run(path.join(dir, 'spending-data.js'));
   run(path.join(dir, 'i18n.js'));
-  run(path.join(dir, 'v2', 'ledger-data.js'));
-  run(path.join(dir, 'v2', 'ledger-charts.js'));
-  run(path.join(dir, 'v2', 'ledger-views.js'));
-  run(path.join(dir, 'v2', 'ledger-app.js'));
+  run(path.join(dir, 'ledger-data.js'));
+  run(path.join(dir, 'ledger-charts.js'));
+  run(path.join(dir, 'ledger-views.js'));
+  run(path.join(dir, 'ledger-app.js'));
   return { win, document };
 }
 
@@ -94,11 +94,11 @@ function boot(fetchImpl) {
   {
     delete require.cache[require.resolve('./dom-shim.js')];
     const shim = require('./dom-shim.js');
-    shim.mountFromHTML(path.join(dir, 'v2', 'index.html'));
+    shim.mountFromHTML(path.join(dir, 'index.html'));
     const win = {
       document: shim.document, navigator: { language: 'fr' },
       localStorage: { getItem: () => null, setItem() {} },
-      location: { pathname: '/finances/v2/', search: '', hash: '', origin: 'http://x' },
+      location: { pathname: '/finances/', search: '', hash: '', origin: 'http://x' },
       history: { replaceState() {}, pushState() {} },
       matchMedia: () => ({ matches: false, addEventListener() {}, addListener() {} }),
       MutationObserver: class { observe() {} },
@@ -113,7 +113,7 @@ function boot(fetchImpl) {
     // i18n loads, spending-data.js does NOT
     vm.runInContext(fs.readFileSync(path.join(dir, 'i18n.js'), 'utf8'), ctx);
     ['ledger-data.js', 'ledger-charts.js', 'ledger-views.js', 'ledger-app.js']
-      .forEach((f) => vm.runInContext(fs.readFileSync(path.join(dir, 'v2', f), 'utf8'), ctx, { filename: f }));
+      .forEach((f) => vm.runInContext(fs.readFileSync(path.join(dir, f), 'utf8'), ctx, { filename: f }));
     const err = shim.document.getElementById('data-error');
     if (err.hidden) fail('no visible error when spending-data.js is missing');
     else if (!/\/ /.test(err.textContent)) fail('the hard-fail message is not bilingual: ' + err.textContent);

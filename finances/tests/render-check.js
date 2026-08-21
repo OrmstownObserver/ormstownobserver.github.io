@@ -15,7 +15,7 @@ const vm = require('vm');
 const { document, mountFromHTML } = require('./dom-shim.js');
 
 const dir = path.join(__dirname, '..');
-const V2 = path.join(dir, 'v2');
+const V2 = dir;
 let failures = 0;
 const fail = (m) => { failures++; console.error('FAIL  ' + m); };
 const ok = (m) => console.log('ok    ' + m);
@@ -40,7 +40,7 @@ const win = {
   document,
   navigator: { language: 'fr-CA', clipboard: null },
   localStorage: { getItem: (k) => (k in store ? store[k] : null), setItem: (k, v) => { store[k] = String(v); }, removeItem: (k) => { delete store[k]; } },
-  location: { pathname: '/finances/v2/', search: '', hash: '', origin: 'http://localhost:8000', href: 'http://localhost:8000/finances/v2/', replace(u) { this.href = u; } },
+  location: { pathname: '/finances/', search: '', hash: '', origin: 'http://localhost:8000', href: 'http://localhost:8000/finances/', replace(u) { this.href = u; } },
   history: {
     _stack: [],
     pushState(_s, _t, url) { this._stack.push(url); win.location.search = url.slice(url.indexOf('?')); },
@@ -350,9 +350,9 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     // what stops a reader taking this for a municipal publication.
     const must = lang === 'fr'
       ? [/ni affiliée à la Municipalité/i, /ni approuvée/i, /ne parle pas en son nom/i,
-         /prototype|en construction/i, /pas un document officiel/i, /référence/i, /procès-verbaux officiels/i]
+         /encore enrichie/i, /pas un document officiel/i, /référence/i, /procès-verbaux officiels/i]
       : [/not affiliated with/i, /endorsed by/i, /speaking for/i,
-         /prototype|under construction/i, /not an official document/i, /reference/i, /official minutes/i];
+         /still being extended/i, /not an official document/i, /reference/i, /official minutes/i];
     const missing = must.filter((re) => !re.test(body));
     if (missing.length) fail(`the ${lang} disclaimer is missing ${missing.length} required point(s): ${body.slice(0, 80)}`);
     else ok(`the ${lang} disclaimer states: under development, unofficial, not a reference, minutes are authoritative`);
@@ -365,7 +365,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // shipped HTML rather than the shim's flattened tree.
   {
     const fsMod = require('fs');
-    for (const page of ['v2/index.html', 'budget/index.html']) {
+    for (const page of ['index.html', 'budget/index.html']) {
       const html = fsMod.readFileSync(path.join(dir, page), 'utf8');
       const m = /<div class="lw-disclaimer"[^>]*>([\s\S]*?)<\/div>/.exec(html);
       if (!m) { fail(`${page} has no .lw-disclaimer block`); continue; }
@@ -379,7 +379,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       else if (!/ni affiliée/i.test(staticText) || !/not affiliated with/i.test(staticText)) fail(`${page}: the no-JS fallback omits the non-affiliation sentence`);
       else ok(`${page} states the disclaimer in both languages with no JS at all`);
       // above the fold: before the first tab/section of real content
-      const marker = page.startsWith('v2') ? '<div class="lw-tabs"' : '<section id="budget"';
+      const marker = page === 'index.html' ? '<div class="lw-tabs"' : '<section id="budget"';
       if (html.indexOf('lw-disclaimer') > html.indexOf(marker)) fail(`${page}: the disclaimer sits below the main content`);
       else ok(`${page} puts the disclaimer above the content`);
     }

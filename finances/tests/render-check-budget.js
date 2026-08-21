@@ -39,9 +39,9 @@ const ctx = vm.createContext(win);
 const run = (p) => vm.runInContext(fs.readFileSync(p, 'utf8'), ctx, { filename: p });
 run(path.join(dir, 'spending-data.js'));
 run(path.join(dir, 'i18n.js'));
-run(path.join(dir, 'v2', 'ledger-data.js'));
-run(path.join(dir, 'v2', 'ledger-charts.js'));
-run(path.join(dir, 'v2', 'ledger-views.js'));
+run(path.join(dir, 'ledger-data.js'));
+run(path.join(dir, 'ledger-charts.js'));
+run(path.join(dir, 'ledger-views.js'));
 run(path.join(PAGE, 'budget.js'));
 
 const $ = (id) => document.getElementById(id);

@@ -206,7 +206,7 @@ if (fs.existsSync(payPath)) {
 // This asserts the shipped set stays separable and legible, so that failure
 // cannot come back quietly.
 {
-  const src = fs.readFileSync(path.join(dir, 'v2', 'ledger-charts.js'), 'utf8');
+  const src = fs.readFileSync(path.join(dir, 'ledger-charts.js'), 'utf8');
   const block = /var DARK_CATS = \{([\s\S]*?)\n  \};/.exec(src);
   if (!block) fail('ledger-charts.js has no DARK_CATS palette');
   else {

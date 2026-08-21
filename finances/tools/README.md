@@ -4,14 +4,21 @@
 
 The ledger ships as three surfaces that share one dataset.
 
-**`/finances/` — the classic explorer (still the published page).**
+**`/finances/classic/` — the previous explorer (archived 2026-08-20).**
+Kept so links published before the swap keep resolving. `noindex`, canonical
+points at `/finances/`, and it carries a static bilingual "archived view"
+banner. Its script paths are absolute so the directory move did not break it —
+including `PAYMENTS_URL` in `app.js`, which fails silently if it is wrong
+(only the expand-a-payee detail dies).
 - `index.html` — markup + inline styles, seven scrolling layers.
 - `app.js` — all behaviour. State `{lang, year, months[], categories[]}` mirrored to
   `?lang=&year=&period=&category=`. (An older note here described `q` and `sort`
   parameters and a search box; those never shipped — the workspace below is where
   search and sorting live.)
 
-**`/finances/v2/` — the research workspace (under review; becomes `/finances/`).**
+**`/finances/` — the research workspace (published 2026-08-20).**
+`finances/v2/` is now a redirect stub that forwards to `/finances/` preserving
+the query string, so links shared during the review window still resolve.
 - `index.html` — shell only. No inline `:root`, no masthead, no footer: it links
   `/observer.css` and `/observer-header.js` like the rest of the paper, and gets
   dark mode and the site nav from them.
@@ -28,7 +35,7 @@ The ledger ships as three surfaces that share one dataset.
 
 **`/finances/budget/` — the reference page.** Budget, PTI, coverage, method,
 documents and the dictionary, moved wholesale out of `app.js`. Shares
-`/finances/ledger.css` and the v2 data/views modules.
+`/finances/ledger.css` and the workspace's data/views modules.
 
 **Shared data (unchanged by the workspace):**
 - `i18n.js` — every interface string, FR + EN, for all three surfaces.
@@ -76,15 +83,16 @@ that includes a stamp a script holds internally:
 
 | File | Where the stamp lives |
 |---|---|
-| `index.html` (classic) | 3 script tags |
-| `app.js` (classic) | `PAYMENTS_URL`, ~line 187 |
-| `v2/index.html` | the stylesheet link + 6 script tags |
-| `v2/ledger-app.js` | `PAYMENTS_URL`, near the top |
+| `classic/index.html` | 3 script tags |
+| `classic/app.js` | `PAYMENTS_URL`, ~line 187 |
+| `index.html` (workspace) | the stylesheet link + 6 script tags |
+| `ledger-app.js` | `PAYMENTS_URL`, near the top |
 | `budget/index.html` | the stylesheet link + 5 script tags |
 
-Classic and the workspace are allowed to sit on *different* stamps while they run
-side by side. `validate.js` check 10 enforces the per-page rule and would have caught
-the week `app.js`'s `PAYMENTS_URL` was stale while the page was fresh.
+Every page under `finances/` currently shares one stamp. They are *allowed* to
+diverge — `validate.js` check 10 enforces the rule per page, not globally — but
+bumping them together is simpler. Check 10 would have caught the week
+`app.js`'s `PAYMENTS_URL` was stale while its page was fresh.
 
 ## Tests / checks
 ```bash
@@ -104,7 +112,7 @@ node finances/tests/render-check-offline.js # the degraded paths: slow network,
                                             # failed payments.json, missing
                                             # spending-data.js. The page must
                                             # never go blank.
-node --check finances/app.js finances/v2/*.js finances/budget/budget.js
+node --check finances/*.js finances/budget/budget.js finances/classic/app.js
 ```
 
 `validate-lines.js` also maintains `finances/tests/payee-slugs.json`, which freezes
@@ -126,8 +134,8 @@ python3 -m http.server 8000     # from the repo root
   a payee profile opened and closed with Back, and "Showing N of M" against the rows
   actually in the DOM. Charts must never be rebuilt synchronously from inside their
   own `onClick` — state changes there go through `deferred()`.
-- `/finances/tests/viewport-harness.html` and `interact-harness.html` still point at
-  classic and keep guarding it.
+- `/finances/tests/viewport-harness.html` and `interact-harness.html` now point at
+  `/finances/classic/` and keep guarding the archived view.
 - By hand: system dark / explicit dark / explicit light, keyboard-only from the skip
   links through to "Show more", Back and Forward five deep, and printing with a filter
   applied (all filtered rows must print, not just the 150 on screen).
