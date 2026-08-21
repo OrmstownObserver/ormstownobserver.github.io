@@ -249,6 +249,47 @@ if (fs.existsSync(payPath)) {
   }
 }
 
+// ---- 12. The front page teases the ledger with hardcoded figures (the
+// homepage must not pull spending-data.js just for a side-column module).
+// Hardcoded numbers rot, so the build checks them: after any ingest, the
+// homepage has to be updated in the same commit or this fails.
+{
+  const home = path.join(dir, '..', 'index.html');
+  if (!fs.existsSync(home)) ok('no homepage to check');
+  else {
+    const html = fs.readFileSync(home, 'utf8');
+    const mod = /<div class="ledger-mod">([\s\S]*?)<\/div>\s*<div class="col-head">/.exec(html);
+    if (!mod) ok('the homepage has no ledger module (nothing to keep in sync)');
+    else {
+      const text = mod[1].replace(/&nbsp;/g, ' ').replace(/<[^>]*>/g, ' ');
+      const adopted = D.months.reduce((a, m) => a + Math.round(m.total * 100), 0) / 100;
+      const payPath = path.join(dir, 'payments.json');
+      const nLines = fs.existsSync(payPath)
+        ? Object.values(JSON.parse(fs.readFileSync(payPath, 'utf8'))).reduce((a, v) => a + v.length, 0)
+        : null;
+
+      const want = [
+        [String(Math.floor(adopted)).replace(/\B(?=(\d{3})+(?!\d))/g, ','), 'adopted total (EN format)'],
+        [String(Math.floor(adopted)).replace(/\B(?=(\d{3})+(?!\d))/g, ' '), 'adopted total (FR format)'],
+        [String(D.months.length), 'sitting count']
+      ];
+      if (nLines) {
+        want.push([String(nLines).replace(/\B(?=(\d{3})+(?!\d))/g, ','), 'line count (EN format)']);
+        want.push([String(nLines).replace(/\B(?=(\d{3})+(?!\d))/g, ' '), 'line count (FR format)']);
+      }
+      let bad = 0;
+      for (const [needle, what] of want) {
+        if (!text.includes(needle)) { bad++; fail(`homepage ledger module is stale: ${what} should read ${needle}`); }
+      }
+      // and it must point at the ledger, in both languages
+      if (!/data-href-en="\/finances\/\?lang=en"/.test(mod[1]) || !/data-href-fr="\/finances\/\?lang=fr"/.test(mod[1])) {
+        bad++; fail('homepage ledger module does not link to /finances/ in both languages');
+      }
+      if (!bad) ok(`homepage ledger module matches the data (${nLines} lines, ${D.months.length} sittings, ${adopted})`);
+    }
+  }
+}
+
 // ---- Result
 if (failures) { console.error(`\n${failures} check(s) failed.`); process.exit(1); }
 console.log('\nAll checks passed.');

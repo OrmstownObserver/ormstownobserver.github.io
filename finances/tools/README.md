@@ -64,6 +64,14 @@ documents and the dictionary, moved wholesale out of `app.js`. Shares
    validate.js enforces this.
 5. Run the tests (below) — they fail loudly if any itemized month stops reconciling.
 
+## After an ingest, update the front page too
+The homepage carries a Municipal Ledger module in the side column with the
+running totals hardcoded (the front page must not fetch `spending-data.js`
+just for a teaser). **Update `index.html`'s `.ledger-mod` in the same commit
+as a new sitting** — the figure, the line count, the sitting count and the
+date range, in both languages. `validate.js` check 12 fails the build if they
+drift, so this cannot be forgotten silently, only noisily.
+
 ## Ledger sync (standing rule — do not skip)
 The Notion ledger's Category field is kept in lockstep with `category-rules.js`
 (observer-rules-v4). **Whenever a category rule changes, or a new sitting is

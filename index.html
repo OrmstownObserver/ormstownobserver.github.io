@@ -225,6 +225,27 @@
   }
   .lat-group .lat-item { gap: 10px; }
 
+  /* ── MUNICIPAL LEDGER MODULE ──
+     A standing entry point in the side column, not a banner. The Ledger is a
+     permanent tool rather than a story, so it needs somewhere that does not
+     scroll away — but it earns attention with a figure, not with chrome.
+     The numbers are hardcoded for speed (the homepage must not pull
+     spending-data.js just for a teaser); validate.js check 12 fails the build
+     if they drift from the real data. ── */
+  .ledger-mod { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .ledger-figure {
+    font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+    font-size: clamp(24px, 4vw, 30px); line-height: 1.1; color: var(--ink);
+    font-variant-numeric: tabular-nums; margin-bottom: 4px;
+  }
+  .ledger-sub { font-size: 12px; line-height: 1.5; color: var(--ink-soft); margin-bottom: 12px; }
+  .ledger-link {
+    display: inline-block; font-family: sans-serif; font-size: 11px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .08em; color: var(--accent);
+    border-bottom: 2px solid var(--accent); padding-bottom: 2px;
+  }
+  .ledger-link:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
   /* About */
   .about-col { padding: 24px 22px; background: var(--paper-dark); }
   .about-col p { font-size: 12.5px; color: var(--ink-soft); line-height: 1.68; margin-bottom: 14px; }
@@ -529,6 +550,27 @@
   </div>
 
   <div class="about-col">
+
+    <div class="ledger-mod">
+      <div class="col-head">
+        <span data-en>Municipal Ledger</span><span data-fr>Grand livre municipal</span>
+      </div>
+      <div class="ledger-figure">
+        <span data-en>$7,257,152</span><span data-fr>7&nbsp;257&nbsp;152&nbsp;$</span>
+      </div>
+      <div class="ledger-sub">
+        <span data-en>approved across 10 council sittings &mdash; 2,138 payment lines, October 2025 to July 2026</span>
+        <span data-fr>approuv&eacute;s en 10 s&eacute;ances du conseil &mdash; 2&nbsp;138 lignes de paiement, d&rsquo;octobre 2025 &agrave; juillet 2026</span>
+      </div>
+      <p>
+        <span data-en>Search any supplier or amount. Every line links to the official minutes it came from.</span>
+        <span data-fr>Cherchez un fournisseur ou un montant. Chaque ligne renvoie au proc&egrave;s-verbal officiel dont elle provient.</span>
+      </p>
+      <a class="ledger-link" data-href-en="/finances/?lang=en" data-href-fr="/finances/?lang=fr" href="/finances/?lang=en">
+        <span data-en>Search the ledger &rarr;</span><span data-fr>Explorer le grand livre &rarr;</span>
+      </a>
+    </div>
+
     <div class="col-head">
       <span data-en>About the Observer</span><span data-fr>&Agrave; propos de l&rsquo;Observer</span>
     </div>
