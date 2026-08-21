@@ -315,9 +315,11 @@
      A standing entry point in the side column, not a banner. The Ledger is a
      permanent tool rather than a story, so it needs somewhere that does not
      scroll away — but it earns attention with a figure, not with chrome.
-     The numbers are hardcoded for speed (the homepage must not pull
-     spending-data.js just for a teaser); validate.js check 12 fails the build
-     if they drift from the real data. ── */
+     The figure is the CURRENT YEAR's approved total, matching what the ledger
+     itself opens on, so the front page and the page agree. Hardcoded for
+     speed (the homepage must not pull spending-data.js just for a teaser);
+     validate.js check 12 fails the build if it drifts, or if the year rolls
+     over and nobody updated it. ── */
   .ledger-mod { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
   .ledger-figure {
     font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
@@ -678,11 +680,11 @@
         <span data-en>Municipal Ledger</span><span data-fr>Grand livre municipal</span>
       </div>
       <div class="ledger-figure">
-        <span data-en>$7,257,152</span><span data-fr>7&nbsp;257&nbsp;152&nbsp;$</span>
+        <span data-en>$4,904,811</span><span data-fr>4&nbsp;904&nbsp;811&nbsp;$</span>
       </div>
       <div class="ledger-sub">
-        <span data-en>approved across 10 council sittings &mdash; 2,138 payment lines, October 2025 to July 2026</span>
-        <span data-fr>approuv&eacute;s en 10 s&eacute;ances du conseil &mdash; 2&nbsp;138 lignes de paiement, d&rsquo;octobre 2025 &agrave; juillet 2026</span>
+        <span data-en>approved by council so far in 2026</span>
+        <span data-fr>approuv&eacute;s par le conseil jusqu&rsquo;ici en 2026</span>
       </div>
       <p>
         <span data-en>Search any supplier or amount. Every line links to the official minutes it came from.</span>

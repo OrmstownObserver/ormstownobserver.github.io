@@ -249,10 +249,11 @@ if (fs.existsSync(payPath)) {
   }
 }
 
-// ---- 12. The front page teases the ledger with hardcoded figures (the
-// homepage must not pull spending-data.js just for a side-column module).
-// Hardcoded numbers rot, so the build checks them: after any ingest, the
-// homepage has to be updated in the same commit or this fails.
+// ---- 12. The front page teases the ledger with the CURRENT YEAR's approved
+// total, hardcoded (the homepage must not pull spending-data.js just for a
+// side-column module). Hardcoded numbers rot two ways — a new sitting changes
+// the total, and a new January changes which year it should be — so both are
+// checked here rather than left to memory.
 {
   const home = path.join(dir, '..', 'index.html');
   if (!fs.existsSync(home)) ok('no homepage to check');
@@ -262,30 +263,29 @@ if (fs.existsSync(payPath)) {
     if (!mod) ok('the homepage has no ledger module (nothing to keep in sync)');
     else {
       const text = mod[1].replace(/&nbsp;/g, ' ').replace(/<[^>]*>/g, ' ');
-      const adopted = D.months.reduce((a, m) => a + Math.round(m.total * 100), 0) / 100;
-      const payPath = path.join(dir, 'payments.json');
-      const nLines = fs.existsSync(payPath)
-        ? Object.values(JSON.parse(fs.readFileSync(payPath, 'utf8'))).reduce((a, v) => a + v.length, 0)
-        : null;
+      const years = [...new Set(D.months.map(m => m.m.slice(0, 4)))].sort();
+      const year = years[years.length - 1];
+      const adopted = D.months
+        .filter(m => m.m.slice(0, 4) === year)
+        .reduce((a, m) => a + Math.round(m.total * 100), 0) / 100;
+      const n = String(Math.floor(adopted));
 
-      const want = [
-        [String(Math.floor(adopted)).replace(/\B(?=(\d{3})+(?!\d))/g, ','), 'adopted total (EN format)'],
-        [String(Math.floor(adopted)).replace(/\B(?=(\d{3})+(?!\d))/g, ' '), 'adopted total (FR format)'],
-        [String(D.months.length), 'sitting count']
-      ];
-      if (nLines) {
-        want.push([String(nLines).replace(/\B(?=(\d{3})+(?!\d))/g, ','), 'line count (EN format)']);
-        want.push([String(nLines).replace(/\B(?=(\d{3})+(?!\d))/g, ' '), 'line count (FR format)']);
-      }
       let bad = 0;
-      for (const [needle, what] of want) {
-        if (!text.includes(needle)) { bad++; fail(`homepage ledger module is stale: ${what} should read ${needle}`); }
+      if (!text.includes(year)) { bad++; fail(`homepage ledger module names no year — it should say ${year}`); }
+      for (const [sep, fmt] of [[',', 'EN'], [' ', 'FR']]) {
+        const needle = n.replace(/\B(?=(\d{3})+(?!\d))/g, sep);
+        if (!text.includes(needle)) { bad++; fail(`homepage ledger module is stale: ${fmt} figure should read ${needle} (${year} approved total)`); }
       }
-      // and it must point at the ledger, in both languages
+      // an older year's total must not be left behind in the copy
+      for (const y of years.slice(0, -1)) {
+        const stale = String(Math.floor(D.months.filter(m => m.m.slice(0, 4) === y)
+          .reduce((a, m) => a + Math.round(m.total * 100), 0) / 100)).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        if (text.includes(stale)) { bad++; fail(`homepage ledger module still shows the ${y} total (${stale})`); }
+      }
       if (!/data-href-en="\/finances\/\?lang=en"/.test(mod[1]) || !/data-href-fr="\/finances\/\?lang=fr"/.test(mod[1])) {
         bad++; fail('homepage ledger module does not link to /finances/ in both languages');
       }
-      if (!bad) ok(`homepage ledger module matches the data (${nLines} lines, ${D.months.length} sittings, ${adopted})`);
+      if (!bad) ok(`homepage ledger module matches the ${year} approved total (${adopted})`);
     }
   }
 }

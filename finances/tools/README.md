@@ -65,12 +65,17 @@ documents and the dictionary, moved wholesale out of `app.js`. Shares
 5. Run the tests (below) — they fail loudly if any itemized month stops reconciling.
 
 ## After an ingest, update the front page too
-The homepage carries a Municipal Ledger module in the side column with the
-running totals hardcoded (the front page must not fetch `spending-data.js`
-just for a teaser). **Update `index.html`'s `.ledger-mod` in the same commit
-as a new sitting** — the figure, the line count, the sitting count and the
-date range, in both languages. `validate.js` check 12 fails the build if they
-drift, so this cannot be forgotten silently, only noisily.
+The homepage carries a Municipal Ledger module in the side column showing the
+**current year's approved total**, hardcoded (the front page must not fetch
+`spending-data.js` just for a teaser). It shows the year rather than the
+all-time figure so that the front page and the ledger — which opens on the
+current year — say the same thing.
+
+**Update `index.html`'s `.ledger-mod` in the same commit as a new sitting**:
+the figure in both languages' number formatting, and the year itself each
+January. `validate.js` check 12 fails the build on all three failure modes —
+a drifted total, a year that rolled over without the copy following, and an
+older year's total left behind in the markup.
 
 ## Ledger sync (standing rule — do not skip)
 The Notion ledger's Category field is kept in lockstep with `category-rules.js`
