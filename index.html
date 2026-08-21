@@ -88,6 +88,92 @@
   .site-nav a:hover, .site-nav a.is-active { background: var(--accent); color: #fff; }
   .site-nav a.nav-cc { color: var(--accent); font-weight: 700; }
   .site-nav a.nav-cc:hover, .site-nav a.nav-cc.is-active { color: #fff; }
+  /* Dark mode lifts --accent to a pale #e8686c, on which the #fff above sits
+     at about 2.4:1. html.obs-ds is set by observer-header.js only on pages
+     that link observer.css, which this one does. */
+  html.obs-ds[data-theme=dark] .site-nav a:hover,
+  html.obs-ds[data-theme=dark] .site-nav a.is-active,
+  html.obs-ds[data-theme=dark] .site-nav a.nav-cc:hover,
+  html.obs-ds[data-theme=dark] .site-nav a.nav-cc.is-active { color: #16150f; }
+  @media (prefers-color-scheme: dark) {
+    html.obs-ds:not([data-theme=light]) .site-nav a:hover,
+    html.obs-ds:not([data-theme=light]) .site-nav a.is-active,
+    html.obs-ds:not([data-theme=light]) .site-nav a.nav-cc:hover,
+    html.obs-ds:not([data-theme=light]) .site-nav a.nav-cc.is-active { color: #16150f; }
+  }
+
+  /* ── MEDIA BRIEFING BAND ──
+     Hand-authored and deliberately OUTSIDE the JSON-driven story zones:
+     front-page.js only rewrites .hero-* and .latest-*, so a Front Page
+     Builder rebuild cannot clobber this.
+
+     Styled as a newsroom resource, not a story card — no thumbnail, no
+     byline, a flag instead of a section label. That distinction is
+     load-bearing: the Observer is a party to this proceeding and does not
+     cover it as a story in its own pages, and the band says so. Uses
+     --ink-soft/--hair rather than --muted/--border so it stays legible in
+     dark mode (observer-header.js pins those two to light values). */
+  .briefing-band {
+    border-bottom: 2px solid var(--ink);
+    background: var(--paper-dark);
+  }
+  .briefing-link {
+    display: grid; grid-template-columns: auto 1fr; gap: 0 22px;
+    align-items: start; padding: 18px 22px;
+    border-left: 6px solid var(--accent);
+    color: var(--ink); text-decoration: none;
+    transition: background .12s;
+  }
+  .briefing-link:hover { background: var(--paper); }
+  /* Everything inside is a span (it lives inside an <a>), so each part has to
+     be told to behave as a block or the band runs together as one paragraph. */
+  .briefing-body, .briefing-main, .briefing-aside,
+  .briefing-hed, .briefing-deck, .briefing-note { display: block; }
+  .briefing-link, .briefing-link:hover { text-decoration: none; }
+  /* Wide screens get a standfirst layout — headline left, summary right —
+     so the band fills its width instead of trailing off into white space. */
+  .briefing-body {
+    display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: 0 32px; align-items: start;
+  }
+  .briefing-flag {
+    font-family: sans-serif; font-size: 10px; font-weight: 700;
+    letter-spacing: .2em; text-transform: uppercase;
+    background: var(--accent); color: #fff; padding: 5px 11px;
+    white-space: nowrap; margin-top: 3px;
+  }
+  html.obs-ds[data-theme=dark] .briefing-flag { color: #16150f; }
+  @media (prefers-color-scheme: dark) {
+    html.obs-ds:not([data-theme=light]) .briefing-flag { color: #16150f; }
+  }
+  .briefing-hed {
+    font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+    font-size: clamp(19px, 2.4vw, 26px); line-height: 1.22;
+    max-width: 34ch;
+  }
+  .briefing-link:hover .briefing-hed { color: var(--accent); }
+  .briefing-deck {
+    font-size: 15px; line-height: 1.6; color: var(--ink-soft);
+    margin: 0;
+  }
+  .briefing-note {
+    font-size: 12.5px; line-height: 1.55; color: var(--ink-soft);
+    font-style: italic; margin-top: 10px; padding-top: 9px;
+    border-top: 1px solid var(--hair);
+  }
+  .briefing-cta {
+    display: inline-block; margin-top: 11px;
+    font-family: sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--accent);
+  }
+  @media (max-width: 900px) {
+    .briefing-body { grid-template-columns: 1fr; gap: 10px; }
+    .briefing-hed { max-width: none; }
+  }
+  @media (max-width: 720px) {
+    .briefing-link { grid-template-columns: 1fr; gap: 10px; padding: 15px 16px; }
+    .briefing-flag { justify-self: start; margin-top: 0; }
+  }
 
   /* ── HERO — Option A: full-width lead, then two secondary cards BELOW.
      The old 3fr/2fr grid put a side column next to the lead; that column is
@@ -333,6 +419,9 @@
   <a data-href-en="/en/events/" data-href-fr="/fr/events/" href="/en/events/">
     <span data-en>Events</span><span data-fr>&Eacute;v&eacute;nements</span>
   </a>
+  <a data-href-en="/press/" data-href-fr="/press/" href="/press/">
+    <span data-en>Press Kits</span><span data-fr>Dossiers de presse</span>
+  </a>
   <a class="nav-cc" data-href-en="/en/ask/" data-href-fr="/fr/posez-une-question/" href="/en/ask/">
     <span data-en>Community Compass</span><span data-fr>Community Compass</span>
   </a>
@@ -340,6 +429,39 @@
     <span data-en>Tips &amp; Contact</span><span data-fr>Conseils &amp; contact</span>
   </a>
 </nav>
+
+<!-- MEDIA BRIEFING — static; front-page.js does not touch this zone. -->
+<aside class="briefing-band" aria-label="Media briefing">
+  <a class="briefing-link"
+     data-href-en="/press/ormstown-v-roskies/"
+     data-href-fr="/press/ormstown-v-roskies/fr/"
+     href="/press/ormstown-v-roskies/">
+    <span class="briefing-flag">
+      <span data-en>Media briefing</span><span data-fr>Dossier de presse</span>
+    </span>
+    <span class="briefing-body">
+     <span class="briefing-main">
+      <span class="briefing-hed">
+        <span data-en>A municipality asks the court to restrain the newspaper that covers it</span>
+        <span data-fr>Une municipalit&eacute; demande au tribunal de restreindre le journal qui la couvre</span>
+      </span>
+      <span class="briefing-cta">
+        <span data-en>Read the briefing &rarr;</span><span data-fr>Lire le dossier &rarr;</span>
+      </span>
+     </span>
+     <span class="briefing-aside">
+      <span class="briefing-deck">
+        <span data-en>The Municipality of Ormstown is in Superior Court against this paper&rsquo;s publisher for the second time in ten months, seeking removal of the Observer&rsquo;s by-law explainer, restrictions on what it may publish about the Municipality, and roughly $30,000 in legal fees. A full briefing &mdash; chronology, public pleadings, documents and every party&rsquo;s position &mdash; is open to journalists and to residents.</span>
+        <span data-fr>La Municipalit&eacute; d&rsquo;Ormstown est en Cour sup&eacute;rieure contre l&rsquo;&eacute;diteur de ce journal pour la deuxi&egrave;me fois en dix mois, r&eacute;clamant le retrait de l&rsquo;Explicateur de r&egrave;glement de l&rsquo;Observer, des restrictions sur ce qu&rsquo;il peut publier au sujet de la Municipalit&eacute;, et environ 30&nbsp;000&nbsp;$ en frais juridiques. Un dossier complet &mdash; chronologie, actes de proc&eacute;dure publics, documents et la position de chaque partie &mdash; est offert aux journalistes et aux r&eacute;sidents.</span>
+      </span>
+      <span class="briefing-note">
+        <span data-en>The Observer is a party to this proceeding and does not report on it as a story. Nothing has been decided on the merits.</span>
+        <span data-fr>L&rsquo;Observer est partie &agrave; cette instance et n&rsquo;en fait pas un sujet de reportage. Rien n&rsquo;a &eacute;t&eacute; d&eacute;cid&eacute; au fond.</span>
+      </span>
+     </span>
+    </span>
+  </a>
+</aside>
 
 <!-- HERO -->
 <section class="hero" aria-label="Featured stories">

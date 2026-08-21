@@ -276,6 +276,10 @@
         class="${isActive('/en/ask') || isActive('/fr/posez-une-question') ? 'is-active' : ''}">
         <span data-en>Community Compass</span><span data-fr>Community Compass</span>
       </a>
+      <a href="/press/" data-href-en="/press/" data-href-fr="/press/"
+        class="${isActive('/press') ? 'is-active' : ''}">
+        <span data-en>Press Kits</span><span data-fr>Dossiers de presse</span>
+      </a>
       <a href="mailto:ormstownobserver@gmail.com">
         <span data-en>Contact</span><span data-fr>Contact</span>
       </a>
