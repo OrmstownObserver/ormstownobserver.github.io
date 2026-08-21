@@ -89,34 +89,6 @@
   .site-nav a.nav-cc { color: var(--accent); font-weight: 700; }
   .site-nav a.nav-cc:hover, .site-nav a.nav-cc.is-active { color: #fff; }
 
-  /* ── COMMUNITY COMPASS BANNER ── */
-  .cc-banner {
-    display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
-    background: var(--chrome-bg); color: var(--chrome-text);
-    padding: 16px 24px; border-bottom: 3px solid var(--accent);
-  }
-  /* "Community Compass" is ~50% wider than the "OrmstownGPT" this was sized
-     for, so nowrap is kept only where there is room. Below 620px the wordmark
-     is allowed to break between the two words rather than overflow. */
-  .cc-banner .cc-mark {
-    font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
-    font-size: clamp(19px, 3vw, 26px); line-height: 1.12; white-space: nowrap;
-  }
-  .cc-banner .cc-mark em { color: var(--accent); font-style: normal; }
-  .cc-banner .cc-beta { display: inline-block; margin-left: 8px; background: #c9a227; color: #17150f; font-size: 9.5px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; padding: 3px 7px; border-radius: 2px; vertical-align: middle; }
-  .cc-banner .cc-copy { flex: 1; min-width: 220px; font-size: 14px; line-height: 1.5; color: var(--chrome-soft); }
-  .cc-banner .cc-cta {
-    font-family: sans-serif; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
-    background: var(--accent); color: #fff; padding: 11px 22px; white-space: nowrap;
-    transition: background .12s;
-  }
-  .cc-banner .cc-cta:hover { background: #8f1115; }
-  @media (max-width: 620px) {
-    .cc-banner { gap: 12px; padding: 14px 16px; }
-    .cc-banner .cc-cta { width: 100%; text-align: center; }
-    .cc-banner .cc-mark { white-space: normal; }
-  }
-
   /* ── HERO — Option A: full-width lead, then two secondary cards BELOW.
      The old 3fr/2fr grid put a side column next to the lead; that column is
      what read as leftovers on desktop and collapsed badly on mobile. ── */
@@ -347,16 +319,6 @@
     <span data-en>Tips &amp; Contact</span><span data-fr>Conseils &amp; contact</span>
   </a>
 </nav>
-
-<!-- COMMUNITY COMPASS BANNER -->
-<a class="cc-banner" data-href-en="/en/ask/" data-href-fr="/fr/posez-une-question/" href="/en/ask/" aria-label="Open Community Compass">
-  <span class="cc-mark">Community <em>Compass</em><span class="cc-beta"><span data-en>Beta</span><span data-fr>B&ecirc;ta</span></span></span>
-  <span class="cc-copy">
-    <span data-en>Ask questions about Ormstown&rsquo;s bylaws, taxes, zoning and council decisions &mdash; answered from the town&rsquo;s official documents, with sources. In beta testing; not legal advice.</span>
-    <span data-fr>Posez vos questions sur les r&egrave;glements, taxes, zonage et d&eacute;cisions du conseil d&rsquo;Ormstown &mdash; r&eacute;ponses tir&eacute;es des documents officiels, avec sources. En test b&ecirc;ta; ne constitue pas un avis juridique.</span>
-  </span>
-  <span class="cc-cta"><span data-en>Ask now &rarr;</span><span data-fr>Demander &rarr;</span></span>
-</a>
 
 <!-- HERO -->
 <section class="hero" aria-label="Featured stories">
