@@ -12,7 +12,7 @@
 // Generated: 2026-08-06
 // ============================================================
 window.OO_SPENDING = {
- "generated": "2026-08-14",
+ "generated": "2026-09-02",
  "provenance": {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
@@ -28,8 +28,8 @@ window.OO_SPENDING = {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
  },
- "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>6 juillet 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance du 3 août paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé jusqu'à la séance du 2 octobre 2025; les séances antérieures de 2025 s'ajouteront progressivement.",
- "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>July 6, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the August 3 sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized down to the October 2, 2025 sitting; earlier 2025 sittings will be added progressively.",
+ "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>6 juillet 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance du 3 août paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé jusqu'à la séance du 8 septembre 2025; les séances antérieures de 2025 s'ajouteront progressivement.",
+ "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>July 6, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the August 3 sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized down to the September 8, 2025 sitting; earlier 2025 sittings will be added progressively.",
  "budget": {
   "year": 2026,
   "adopted": "2025-12-17",
@@ -492,6 +492,63 @@ window.OO_SPENDING = {
   }
  },
  "months": [
+  {
+   "m": "2025-09",
+   "label_fr": "Septembre 2025",
+   "label_en": "September 2025",
+   "total": 728651.61,
+   "coverage": "full",
+   "session": "Séance ordinaire 2025-09-08 (rés. 25-09-252)",
+   "url": "https://www.ormstown.ca/wp-content/uploads/2025-09-08.pdf",
+   "note_fr": "La résolution 25-09-252 cite 441 915,58 $, soit uniquement le bloc « paiements à effectuer » de l'Annexe A; le grand total des trois blocs (paiements à effectuer 441 915,58 $ + salaires à autoriser au 20 août 2025 90 171,00 $ + paiements émis durant le mois 196 565,03 $) est de 728 651,61 $. Cette page utilise le grand total de l'annexe.",
+   "note_en": "Resolution 25-09-252 quotes 441,915.58 $, which is only the « payments to be made » block of Annexe A; the grand total of the three blocks (payments to be made 441,915.58 $ + salaries to be authorized as at August 20, 2025 90,171.00 $ + payments issued during the month 196,565.03 $) is 728,651.61 $. This page uses the annexe grand total.",
+   "cats": {
+    "Professional services": [
+     193105.1,
+     22
+    ],
+    "Salaries & HR": [
+     192056.62,
+     19
+    ],
+    "Regional shares & memberships": [
+     148663.5,
+     1
+    ],
+    "Supplies & operations": [
+     63727.02,
+     100
+    ],
+    "Waste & recycling": [
+     53228.33,
+     2
+    ],
+    "Contracts — works": [
+     41994.02,
+     13
+    ],
+    "Utilities": [
+     19000.35,
+     5
+    ],
+    "Legal — external counsel": [
+     7189.38,
+     7
+    ],
+    "Software & IT": [
+     4819.07,
+     7
+    ],
+    "Vehicle fuel & maintenance": [
+     4795.1,
+     41
+    ],
+    "Other": [
+     73.12,
+     1
+    ]
+   }
+  },
   {
    "m": "2025-10",
    "label_fr": "Octobre 2025",
@@ -1060,6 +1117,426 @@ window.OO_SPENDING = {
   }
  ],
  "entries": [
+  [
+   "2025-09",
+   "M.R.C. Haut Saint Laurent",
+   "Regional shares & memberships",
+   148663.5,
+   1
+  ],
+  [
+   "2025-09",
+   "Artelia Canada Inc.",
+   "Professional services",
+   137064.56,
+   2
+  ],
+  [
+   "2025-09",
+   "— (paie municipale)",
+   "Salaries & HR",
+   90171,
+   1
+  ],
+  [
+   "2025-09",
+   "Ministre du Revenu",
+   "Salaries & HR",
+   59429.95,
+   4
+  ],
+  [
+   "2025-09",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   53228.33,
+   2
+  ],
+  [
+   "2025-09",
+   "Les Industries Simexco Inc.",
+   "Contracts — works",
+   20000,
+   1
+  ],
+  [
+   "2025-09",
+   "Hydro-Québec",
+   "Utilities",
+   18922.25,
+   3
+  ],
+  [
+   "2025-09",
+   "Receveur Général",
+   "Salaries & HR",
+   16596.86,
+   2
+  ],
+  [
+   "2025-09",
+   "Caisse Desjardins",
+   "Salaries & HR",
+   15900.3,
+   6
+  ],
+  [
+   "2025-09",
+   "Groupe Domisa Inc.",
+   "Professional services",
+   15057.71,
+   1
+  ],
+  [
+   "2025-09",
+   "Isabelle Bouchard, M.Sc.A.",
+   "Professional services",
+   12901.86,
+   1
+  ],
+  [
+   "2025-09",
+   "Pelouse Alex Gaulin",
+   "Contracts — works",
+   10999.98,
+   2
+  ],
+  [
+   "2025-09",
+   "Complexe Médical Ormstown inc",
+   "Supplies & operations",
+   10207.28,
+   1
+  ],
+  [
+   "2025-09",
+   "CCESI - Centre conseil en sécurité incendie",
+   "Professional services",
+   7642.5,
+   1
+  ],
+  [
+   "2025-09",
+   "Chemtrade Chemicals Canada Ltd.",
+   "Supplies & operations",
+   6854.38,
+   1
+  ],
+  [
+   "2025-09",
+   "Dunton Rainville S.E.N.C.R.L.",
+   "Legal — external counsel",
+   6752.72,
+   5
+  ],
+  [
+   "2025-09",
+   "Ouellet Samantha",
+   "Professional services",
+   6392.61,
+   3
+  ],
+  [
+   "2025-09",
+   "Atout RH Inc.",
+   "Salaries & HR",
+   6112.39,
+   1
+  ],
+  [
+   "2025-09",
+   "9386-0120 Québec Inc",
+   "Supplies & operations",
+   4139.1,
+   1
+  ],
+  [
+   "2025-09",
+   "Distribution Lazure Inc.",
+   "Supplies & operations",
+   4037.57,
+   5
+  ],
+  [
+   "2025-09",
+   "Compteurs d'Eau du Québec",
+   "Professional services",
+   3564.23,
+   1
+  ],
+  [
+   "2025-09",
+   "Construction DJL Inc.",
+   "Supplies & operations",
+   3551.77,
+   4
+  ],
+  [
+   "2025-09",
+   "Gauthier, René (Essence)",
+   "Vehicle fuel & maintenance",
+   3418.89,
+   23
+  ],
+  [
+   "2025-09",
+   "Jalec Inc.",
+   "Software & IT",
+   3298.64,
+   2
+  ],
+  [
+   "2025-09",
+   "Solmatech Inc.",
+   "Professional services",
+   2984.75,
+   1
+  ],
+  [
+   "2025-09",
+   "Technivolt Électrique Inc.",
+   "Supplies & operations",
+   2845.63,
+   2
+  ],
+  [
+   "2025-09",
+   "Ali Excavation Inc.",
+   "Supplies & operations",
+   2710.5,
+   2
+  ],
+  [
+   "2025-09",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2563.94,
+   1
+  ],
+  [
+   "2025-09",
+   "Grue Mobile Veilleux Inc.",
+   "Contracts — works",
+   2480.01,
+   1
+  ],
+  [
+   "2025-09",
+   "Orflow Géosciences Inc.",
+   "Professional services",
+   2477.71,
+   1
+  ],
+  [
+   "2025-09",
+   "Quadient Canada Ltée",
+   "Supplies & operations",
+   2299.5,
+   1
+  ],
+  [
+   "2025-09",
+   "Servalve",
+   "Supplies & operations",
+   2273.63,
+   1
+  ],
+  [
+   "2025-09",
+   "9483-3100 Québec Inc.",
+   "Contracts — works",
+   2167.28,
+   2
+  ],
+  [
+   "2025-09",
+   "Quincaillerie R. Gauthier Inc.",
+   "Supplies & operations",
+   2141.66,
+   15
+  ],
+  [
+   "2025-09",
+   "Eurofins Environex",
+   "Professional services",
+   2031.9,
+   5
+  ],
+  [
+   "2025-09",
+   "Ormstown Fire Department",
+   "Supplies & operations",
+   1886.2,
+   2
+  ],
+  [
+   "2025-09",
+   "COMAQ",
+   "Salaries & HR",
+   1736.12,
+   2
+  ],
+  [
+   "2025-09",
+   "Dynapompe Inc.",
+   "Supplies & operations",
+   1636.09,
+   1
+  ],
+  [
+   "2025-09",
+   "TD Canada Trust",
+   "Salaries & HR",
+   1615.4,
+   1
+  ],
+  [
+   "2025-09",
+   "Hibon Inc.",
+   "Contracts — works",
+   1570.74,
+   1
+  ],
+  [
+   "2025-09",
+   "Bottier du Cinq (Le)",
+   "Supplies & operations",
+   1454.59,
+   3
+  ],
+  [
+   "2025-09",
+   "Quincaillerie Machabée",
+   "Supplies & operations",
+   1382.09,
+   3
+  ],
+  [
+   "2025-09",
+   "Équipements Pro-Fit Inc.",
+   "Supplies & operations",
+   1379.7,
+   1
+  ],
+  [
+   "2025-09",
+   "Lamb J. & Son",
+   "Contracts — works",
+   1379.7,
+   1
+  ],
+  [
+   "2025-09",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   1347.68,
+   1
+  ],
+  [
+   "2025-09",
+   "Échafauds Plus (Laval) Inc.",
+   "Supplies & operations",
+   1261.91,
+   2
+  ],
+  [
+   "2025-09",
+   "Groupe Lou-Tec Inc.",
+   "Supplies & operations",
+   1251.03,
+   2
+  ],
+  [
+   "2025-09",
+   "Service Informatique D.L. Inc",
+   "Software & IT",
+   1175.05,
+   2
+  ],
+  [
+   "2025-09",
+   "DR Conseils s.e.c.",
+   "Professional services",
+   1151.21,
+   2
+  ],
+  [
+   "2025-09",
+   "Discair Productions",
+   "Professional services",
+   1092.26,
+   1
+  ],
+  [
+   "2025-09",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   1088.71,
+   1
+  ],
+  [
+   "2025-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   1376.21,
+   18
+  ],
+  [
+   "2025-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   743.8,
+   3
+  ],
+  [
+   "2025-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   8761.74,
+   51
+  ],
+  [
+   "2025-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   436.66,
+   2
+  ],
+  [
+   "2025-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   2048.63,
+   4
+  ],
+  [
+   "2025-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   345.38,
+   3
+  ],
+  [
+   "2025-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   494.6,
+   2
+  ],
+  [
+   "2025-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   78.1,
+   2
+  ],
+  [
+   "2025-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Other",
+   73.12,
+   1
+  ],
   [
    "2025-10",
    "Les Industries Simexco Inc.",

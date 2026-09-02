@@ -115,18 +115,18 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     else ok(`the default year ${latest} is visible as a removable chip, so the reader can see and widen it`);
 
     const scopedStatus = textOf($('results-status'));
-    if (/7[\s  ]?257[\s  ]?152/.test(scopedStatus)) fail('the default view shows the all-years total, not the current year');
+    if (/7[\s  ]?985[\s  ]?803/.test(scopedStatus)) fail('the default view shows the all-years total, not the current year');
     else ok('the default view is scoped to the current year, not all years: ' + scopedStatus.slice(0, 50));
 
     // the header status line still describes the WHOLE dataset
     const head = textOf($('status'));
-    if (!/2[\s  ]?138/.test(head)) fail('the page head no longer states the full dataset: ' + head);
-    else ok('the page head still states the whole dataset (2,138 lines, 10 sittings)');
+    if (!/2[\s  ]?356/.test(head)) fail('the page head no longer states the full dataset: ' + head);
+    else ok('the page head still states the whole dataset (2,356 lines, 11 sittings)');
   }
 
   // ---- 3. the rail is populated (it lists every sitting and category,
   // whatever the current scope is)
-  eq(rowsChildren('sitting-list'), 12, 'sitting checklist lists 10 sittings under 2 year headings');
+  eq(rowsChildren('sitting-list'), 13, 'sitting checklist lists 11 sittings under 2 year headings');
   eq(rowsChildren('category-list'), 14, 'category checklist lists all 14 used categories');
   if (!textOf($('q-help'))) fail('search help text is empty');
   else ok('search help text explains what is and is not searched');
@@ -135,12 +135,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // the full record, so ask for both explicitly.
   navigateTo('?lang=fr&tab=payments&scope=all');
   await tick();
-  eq(rowsIn('payments-table').length, 150, 'Payments renders the 150-row first page, not all 2,138');
+  eq(rowsIn('payments-table').length, 150, 'Payments renders the 150-row first page, not all 2,356');
   {
     const status = textOf($('results-status'));
-    if (!/2\s?138/.test(status.replace(/ | /g, ' '))) fail('status line does not report 2,138 lines: ' + status);
-    else ok('status line reports the full 2,138-line result set');
-    if (!/7[\s  ]?257[\s  ]?152/.test(status)) fail('status line total is not the itemized grand total: ' + status);
+    if (!/2\s?356/.test(status.replace(/ | /g, ' '))) fail('status line does not report 2,356 lines: ' + status);
+    else ok('status line reports the full 2,356-line result set');
+    if (!/7[\s  ]?985[\s  ]?803/.test(status)) fail('status line total is not the itemized grand total: ' + status);
     else ok('status line total is the itemized grand total');
   }
 
@@ -151,8 +151,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   await new Promise((r) => setTimeout(r, 220));
   const petroRows = rowsIn('payments-table');
   const petroStatus = textOf($('results-status'));
-  if (!/314/.test(petroStatus)) fail('search "petro" did not reach all 314 lines: ' + petroStatus);
-  else ok('search "petro" reaches all 314 lines of a payee whose name never says "Petro"');
+  if (!/319/.test(petroStatus)) fail('search "petro" did not reach all 319 lines: ' + petroStatus);
+  else ok('search "petro" reaches all 319 lines of a payee whose name never says "Petro"');
   eq(petroRows.length, 150, 'the search result set is still paged at 150 rows');
   const firstPayee = textOf(petroRows[0].children[0]);
   if (!/9534-8702/.test(firstPayee)) fail('first petro row is not the Petro-Canada payee: ' + firstPayee);
@@ -192,7 +192,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   chips[3].click();                          // "Credits only"
   await tick();
   const creditRows = rowsIn('payments-table');
-  eq(creditRows.length, 23, 'the Credits-only chip finds all 23 negative lines');
+  eq(creditRows.length, 26, 'the Credits-only chip finds all 26 negative lines');
   if (!/credit|crédit/i.test(textOf(creditRows[0]))) fail('a negative line is not tagged as a credit');
   else ok('negative lines are tagged as credits');
   chips[3].click();
@@ -216,10 +216,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const sitText = textOf($('panel-sittings'));
   if (!/0[.,]12/.test(sitText)) fail('the Sittings view does not show the documented 0.12 gap');
   else ok('the Sittings view shows the documented 2026-01 gap of 0.12');
-  if (!/7[\s  ]?257[\s  ]?152[.,]33/.test(sitText)) fail('no itemized grand total in the totals row');
-  else ok('the totals row shows itemized 7,257,152.33');
-  if (!/7[\s  ]?257[\s  ]?152[.,]45/.test(sitText)) fail('no adopted grand total in the totals row');
-  else ok('the totals row shows adopted 7,257,152.45');
+  if (!/7[\s  ]?985[\s  ]?803[.,]94/.test(sitText)) fail('no itemized grand total in the totals row');
+  else ok('the totals row shows itemized 7,985,803.94');
+  if (!/7[\s  ]?985[\s  ]?804[.,]06/.test(sitText)) fail('no adopted grand total in the totals row');
+  else ok('the totals row shows adopted 7,985,804.06');
   if (!/329[\s  ]?508/.test(sitText)) fail('the October 2025 note is not reachable in the Sittings view');
   else ok('the October 2025 resolution-vs-annexe note is on the page');
   if (sitRows.length < 10) fail('fewer than 10 sitting rows');
