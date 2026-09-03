@@ -89,8 +89,8 @@ if (gaps.length === 1 && gaps[0] === '2026-01=0.12') {
 
 // ---- e. Grand totals.
 const T = store.totals;
-if (c(T.itemized) !== 798580394) fail(`grand itemized ${money(T.itemized)} != 7,985,803.94`);
-if (c(T.adopted) !== 798580406) fail(`grand adopted ${money(T.adopted)} != 7,985,804.06`);
+if (c(T.itemized) !== 824372143) fail(`grand itemized ${money(T.itemized)} != 8,243,721.43`);
+if (c(T.adopted) !== 824372155) fail(`grand adopted ${money(T.adopted)} != 8,243,721.55`);
 if (c(T.gap) !== 12) fail(`grand gap ${money(T.gap)} != 0.12`);
 if (!failures) ok(`grand totals: itemized ${money(T.itemized)} / adopted ${money(T.adopted)} / gap ${money(T.gap)}`);
 

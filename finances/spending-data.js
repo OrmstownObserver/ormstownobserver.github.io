@@ -28,8 +28,8 @@ window.OO_SPENDING = {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
  },
- "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>6 juillet 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance du 3 août paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé jusqu'à la séance du 8 septembre 2025; les séances antérieures de 2025 s'ajouteront progressivement.",
- "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>July 6, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the August 3 sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized down to the September 8, 2025 sitting; earlier 2025 sittings will be added progressively.",
+ "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>6 juillet 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance du 3 août paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé jusqu'à la séance du 4 août 2025; les séances antérieures de 2025 s'ajouteront progressivement.",
+ "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>July 6, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the August 3 sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized down to the August 4, 2025 sitting; earlier 2025 sittings will be added progressively.",
  "budget": {
   "year": 2026,
   "adopted": "2025-12-17",
@@ -492,6 +492,51 @@ window.OO_SPENDING = {
   }
  },
  "months": [
+  {
+   "m": "2025-08",
+   "label_fr": "Août 2025",
+   "label_en": "August 2025",
+   "total": 257917.49,
+   "coverage": "full",
+   "session": "Séance ordinaire 2025-08-04 (rés. 25-08-232)",
+   "url": "https://www.ormstown.ca/wp-content/uploads/2025-08-04_PV.pdf",
+   "note_fr": "L'Annexe A du 4 août 2025 n'imprime aucun grand total : elle affiche deux sous-totaux, « Paiements à effectuer » 162 662,52 $ et « Salaire à autoriser » 95 254,97 $. La résolution 25-08-232 n'approuve formellement que les 162 662,52 $. Cette page retient la somme des deux sous-totaux imprimés, soit 257 917,49 $, pour rester comparable aux autres séances. Le paiement de 730 176,42 $ à Ali Excavation, autorisé le même soir par la résolution 25-08-234, figure déjà à la liste du 14 juillet 2025 et n'est donc pas compté ici.",
+   "note_en": "The August 4, 2025 Annexe A prints no grand total: it shows two subtotals, « Paiements à effectuer » (payments to be made) 162,662.52 $ and « Salaire à autoriser » (salary to be authorized) 95,254.97 $. Resolution 25-08-232 formally approves only the 162,662.52 $. This page uses the sum of the two printed subtotals, 257,917.49 $, so the sitting stays comparable with the others. The 730,176.42 $ payment to Ali Excavation, authorized the same evening by resolution 25-08-234, already appears on the July 14, 2025 list and is therefore not counted here.",
+   "cats": {
+    "Salaries & HR": [
+     95254.97,
+     1
+    ],
+    "Waste & recycling": [
+     55004.23,
+     2
+    ],
+    "Professional services": [
+     44244.3,
+     15
+    ],
+    "Contracts — works": [
+     42388.66,
+     7
+    ],
+    "Supplies & operations": [
+     13893.79,
+     71
+    ],
+    "Software & IT": [
+     3571.13,
+     3
+    ],
+    "Vehicle fuel & maintenance": [
+     3022.78,
+     27
+    ],
+    "Legal — external counsel": [
+     537.63,
+     2
+    ]
+   }
+  },
   {
    "m": "2025-09",
    "label_fr": "Septembre 2025",
@@ -1117,6 +1162,181 @@ window.OO_SPENDING = {
   }
  ],
  "entries": [
+  [
+   "2025-08",
+   "— (paie municipale)",
+   "Salaries & HR",
+   95254.97,
+   1
+  ],
+  [
+   "2025-08",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   55004.23,
+   2
+  ],
+  [
+   "2025-08",
+   "Les Industries Simexco Inc.",
+   "Contracts — works",
+   29047.48,
+   1
+  ],
+  [
+   "2025-08",
+   "Artelia Canada Inc.",
+   "Professional services",
+   23911.93,
+   1
+  ],
+  [
+   "2025-08",
+   "J.R. Mécanique Ltée",
+   "Contracts — works",
+   8305.64,
+   1
+  ],
+  [
+   "2025-08",
+   "Orflow Géosciences Inc.",
+   "Professional services",
+   4351.8,
+   1
+  ],
+  [
+   "2025-08",
+   "Eurofins Environex",
+   "Professional services",
+   3420.52,
+   4
+  ],
+  [
+   "2025-08",
+   "Service Informatique D.L. Inc",
+   "Software & IT",
+   3227.35,
+   2
+  ],
+  [
+   "2025-08",
+   "Technivolt Électrique Inc.",
+   "Contracts — works",
+   3210.71,
+   4
+  ],
+  [
+   "2025-08",
+   "Groupe Domisa Inc.",
+   "Professional services",
+   2807.69,
+   1
+  ],
+  [
+   "2025-08",
+   "Loisir et Sport Montérégie",
+   "Professional services",
+   2586.94,
+   1
+  ],
+  [
+   "2025-08",
+   "Gleaner, The",
+   "Professional services",
+   2414.48,
+   1
+  ],
+  [
+   "2025-08",
+   "Écho-Tech H2O Inc.",
+   "Professional services",
+   2144.28,
+   1
+  ],
+  [
+   "2025-08",
+   "Bionest Inc.",
+   "Contracts — works",
+   1824.83,
+   1
+  ],
+  [
+   "2025-08",
+   "Quincaillerie R. Gauthier Inc.",
+   "Supplies & operations",
+   1782.17,
+   18
+  ],
+  [
+   "2025-08",
+   "Équip. Laplante & Lévesque Ltée",
+   "Supplies & operations",
+   1437.19,
+   1
+  ],
+  [
+   "2025-08",
+   "Gauthier, René (Essence)",
+   "Vehicle fuel & maintenance",
+   1361.02,
+   12
+  ],
+  [
+   "2025-08",
+   "D'Amour & Fils Inc. (R.S)",
+   "Supplies & operations",
+   1348.15,
+   13
+  ],
+  [
+   "2025-08",
+   "AESL Instrumentation Inc.",
+   "Supplies & operations",
+   1102.61,
+   1
+  ],
+  [
+   "2025-08",
+   "Discair Productions",
+   "Professional services",
+   1092.26,
+   1
+  ],
+  [
+   "2025-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   1661.76,
+   15
+  ],
+  [
+   "2025-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   1514.4,
+   4
+  ],
+  [
+   "2025-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   8223.67,
+   38
+  ],
+  [
+   "2025-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   537.63,
+   2
+  ],
+  [
+   "2025-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   343.78,
+   1
+  ],
   [
    "2025-09",
    "M.R.C. Haut Saint Laurent",
