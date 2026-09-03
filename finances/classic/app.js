@@ -184,7 +184,7 @@
   // ---------- per-payee payment detail (lazy-loaded) ----------
   // payments.json holds every included ledger line:
   // {month: [[payee, entry, amount, category], ...]} with v2 categories.
-  var PAYMENTS_URL = '/finances/payments.json?v=20260902-2';
+  var PAYMENTS_URL = '/finances/payments.json?v=20260903-1';
   var PAY = { data: null, index: null, catIndex: null, loading: false, error: false };
   var openRows = {};
   var openCats = {};

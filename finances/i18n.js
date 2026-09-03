@@ -10,9 +10,9 @@ window.OO_I18N = {
   eyebrow: "Ormstown Observer · Finances municipales",
   back: "← Accueil",
   skip: "Aller à l'exploration des dépenses",
-  title: "Grand livre municipal",
+  title: "Le grand livre",
   deck: "Explorez les listes de dépenses approuvées par le conseil, comparez les mois et les fournisseurs, et vérifiez chaque total dans les procès-verbaux officiels.",
-  status: "Dernière séance entièrement détaillée : {date}. Le procès-verbal de la séance d'août n'est pas encore publié; sa liste s'ajoutera dès sa publication. Vers le passé, 2025 est détaillé jusqu'à la séance du 4 août 2025.",
+  status: "Dernière séance entièrement détaillée : {date}. Le procès-verbal de la séance d'août n'est pas encore publié; sa liste s'ajoutera dès sa publication. Vers le passé, 2025 est détaillé jusqu'à la séance du 14 juillet 2025.",
   updated: "Mise à jour : {date}",
   courtesy: "<strong>L'Ormstown Observer est une publication indépendante. Elle n'est ni affiliée à la Municipalité d'Ormstown, ni approuvée par celle-ci, et ne parle pas en son nom.</strong> Cette page n'est pas un document officiel et n'émane d'aucune instance municipale; l'Observer l'offre à titre de service public pour favoriser la participation citoyenne. Ne vous en servez pas comme source de référence et ne fondez aucune décision sur elle : seuls les procès-verbaux officiels publiés par la Municipalité font foi, et chaque montant y renvoie. L'Observer corrigera publiquement toute erreur : ormstownobserver@gmail.com",
   errorData: "Les données n'ont pas pu être chargées. Rechargez la page, ou consultez les procès-verbaux officiels sur ormstown.ca.",
@@ -182,7 +182,7 @@ window.OO_I18N = {
   // surface, not by version — they outlive v2. Add to BOTH languages
   // in the same edit or validate.js check #5 fails immediately.
 
-  wsDeck: "Chaque ligne de dépense approuvée par le conseil depuis octobre 2025 — cherchable, triable, et vérifiable une à une dans les procès-verbaux officiels.",
+  wsDeck: "Les dépenses municipales, rendues consultables et vérifiables pour une plus grande transparence.",
   wsStatus: "{lines} lignes de paiement · {payees} fournisseurs · {sittings} séances · {first} à {last}",
   skipResults: "Aller aux résultats",
   skipFilters: "Aller aux filtres",
@@ -355,9 +355,9 @@ window.OO_I18N = {
   eyebrow: "Ormstown Observer · Municipal finances",
   back: "← Home",
   skip: "Skip to spending explorer",
-  title: "Municipal Ledger",
+  title: "The Ledger",
   deck: "Explore the expense lists approved by council, compare months and suppliers, and verify every total in the official minutes.",
-  status: "Latest fully itemized sitting: {date}. Minutes of the August sitting are not yet published; its list will be added as soon as it appears. Going back, 2025 is itemized down to the August 4, 2025 sitting.",
+  status: "Latest fully itemized sitting: {date}. Minutes of the August sitting are not yet published; its list will be added as soon as it appears. Going back, 2025 is itemized down to the July 14, 2025 sitting.",
   updated: "Updated: {date}",
   courtesy: "<strong>The Ormstown Observer is an independent publication. It is not affiliated with, endorsed by, or speaking for the Municipality of Ormstown.</strong> This page is not an official document and does not come from any municipal body; the Observer offers it as a public service to support civic participation. Do not use it as a reference source and do not base any decision on it: only the official minutes published by the Municipality are authoritative, and every figure links back to them. The Observer will correct any error on the record: ormstownobserver@gmail.com",
   errorData: "The data could not be loaded. Reload the page, or consult the official minutes on ormstown.ca.",
@@ -520,7 +520,7 @@ window.OO_I18N = {
   // surface, not by version — they outlive v2. Add to BOTH languages
   // in the same edit or validate.js check #5 fails immediately.
 
-  wsDeck: "Every expense line the council has approved since October 2025 — searchable, sortable, and verifiable one by one in the official minutes.",
+  wsDeck: "Municipal spending, made searchable and verifiable for greater transparency.",
   wsStatus: "{lines} payment lines · {payees} suppliers · {sittings} sittings · {first} to {last}",
   skipResults: "Skip to the results",
   skipFilters: "Skip to the filters",
