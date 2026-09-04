@@ -158,3 +158,20 @@ Approved council expense lists are **not** annual budget spending nor actual inc
 expenses. The annual-context section must keep its explanatory note, the
 "scale reference — not budget used" label, and must never use a progress bar for
 the approved-vs-budget comparison.
+
+## extract-annexe.js — transcribing a 2025 annexe
+
+`node finances/tools/extract-annexe.js <pv.pdf> <firstPage> <lastPage> [out.json]`
+
+Column-aware extraction of an Annexe A payment table, written for the 2025
+backfill. Use it instead of `pdftotext -layout`, which on these PVs scrambles
+the wrapped description column and silently drops parenthesised credits.
+
+It reads word positions (`pdftotext -bbox-layout`), splits payee / description /
+amount by x, and attaches wrapped description lines to the right row. The 2025
+PVs use two cell alignments in the same document — the amount on the last line
+of its cell in the « paiements à effectuer » pages, vertically centred in the
+« paiements émis » pages — so the alignment is detected per page. A wrong guess
+shifts descriptions by one line WITHOUT changing any amount, so always split the
+output by block and reconcile each block against its printed subtotal before
+writing anything to Notion or the site. Credits come back negative.

@@ -79,19 +79,29 @@ for (const s of store.sittings) {
   }
   if (c(s.gap) !== 0) gaps.push(`${s.m}=${money(s.gap)}`);
 }
-if (gaps.length === 1 && gaps[0] === '2026-01=0.12') {
-  ok('the only non-zero gap in the dataset is the documented 2026-01 = 0.12');
-} else if (gaps.length === 0) {
-  fail('expected the documented 2026-01 = 0.12 gap; found none - did the tolerance or the data change?');
-} else {
-  fail(`unexpected gaps: ${gaps.join(', ')} (only 2026-01=0.12 is documented in provenance.tolerances)`);
+// Every non-zero gap must be declared in provenance.tolerances, to the penny,
+// and every declared tolerance must correspond to a real gap. Adding a sitting
+// that carries a gap therefore forces the tolerance to be documented first.
+const declared = (D.provenance && D.provenance.tolerances) || {};
+const gapByMonth = {};
+for (const s of store.sittings) if (c(s.gap) !== 0) gapByMonth[s.m] = s.gap;
+const undeclared = Object.keys(gapByMonth).filter((m) => declared[m] == null);
+const mismatched = Object.keys(gapByMonth).filter(
+  (m) => declared[m] != null && Math.abs(c(Math.abs(gapByMonth[m])) - c(Math.abs(declared[m]))) !== 0
+);
+const unused = Object.keys(declared).filter((m) => gapByMonth[m] == null);
+if (undeclared.length) fail(`undocumented gap(s): ${undeclared.map((m) => `${m}=${money(gapByMonth[m])}`).join(', ')} - declare them in provenance.tolerances`);
+if (mismatched.length) fail(`gap(s) disagree with provenance.tolerances: ${mismatched.map((m) => `${m}: store ${money(gapByMonth[m])} vs declared ${money(declared[m])}`).join('; ')}`);
+if (unused.length) fail(`provenance.tolerances declares ${unused.join(', ')} but the store shows no gap there`);
+if (!undeclared.length && !mismatched.length && !unused.length) {
+  ok(`all ${Object.keys(gapByMonth).length} non-zero gap(s) are documented to the penny: ${Object.keys(gapByMonth).sort().map((m) => `${m}=${money(gapByMonth[m])}`).join(', ')}`);
 }
 
 // ---- e. Grand totals.
 const T = store.totals;
-if (c(T.itemized) !== 824372143) fail(`grand itemized ${money(T.itemized)} != 8,243,721.43`);
-if (c(T.adopted) !== 824372155) fail(`grand adopted ${money(T.adopted)} != 8,243,721.55`);
-if (c(T.gap) !== 12) fail(`grand gap ${money(T.gap)} != 0.12`);
+if (c(T.itemized) !== 1007268474) fail(`grand itemized ${money(T.itemized)} != 10,072,684.74`);
+if (c(T.adopted) !== 1006263650) fail(`grand adopted ${money(T.adopted)} != 10,062,636.50`);
+if (c(T.gap) !== -1004824) fail(`grand gap ${money(T.gap)} != -10,048.24`);
 if (!failures) ok(`grand totals: itemized ${money(T.itemized)} / adopted ${money(T.adopted)} / gap ${money(T.gap)}`);
 
 // ---- f. payments.json is a STRICT SUPERSET of the rollup: replaying

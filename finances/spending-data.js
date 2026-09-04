@@ -20,16 +20,17 @@ window.OO_SPENDING = {
   "categories_method": "observer-rules-v4",
   "gloss_method": "observer-editorial-v1",
   "tolerances": {
-   "2026-01": 0.12
+   "2026-01": 0.12,
+   "2025-07": 10048.36
   },
-  "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS).",
+  "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS), and 2025-07 carries a 10 048,36 $ gap between the annexe's three printed subtotals and its printed grand total / the adopted resolution — see that sitting's note.",
   "categories_note": "v4 (2026-08-14): content-aware mapping (finances/tools/category-rules.js) applied per ledger line by rebuild-entries.js. v3 added Regional shares & memberships and Insurance; v4 adds Policing — Sûreté du Québec (the provincial policing bill, previously inside Regional shares) and Software & IT (software, subscriptions and IT services previously split between Professional services and Supplies & operations). Each line is assigned by its payee AND entry text, leaving Other for genuinely unclassifiable items such as resident damage reimbursements.",
   "months_direct": {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
  },
- "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>6 juillet 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance du 3 août paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé jusqu'à la séance du 4 août 2025; les séances antérieures de 2025 s'ajouteront progressivement.",
- "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>July 6, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the August 3 sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized down to the August 4, 2025 sitting; earlier 2025 sittings will be added progressively.",
+ "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>6 juillet 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance du 3 août paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé jusqu'à la séance du 14 juillet 2025; les séances antérieures de 2025 s'ajouteront progressivement.",
+ "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>July 6, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the August 3 sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized down to the July 14, 2025 sitting; earlier 2025 sittings will be added progressively.",
  "budget": {
   "year": 2026,
   "adopted": "2025-12-17",
@@ -492,6 +493,67 @@ window.OO_SPENDING = {
   }
  },
  "months": [
+  {
+   "m": "2025-07",
+   "label_fr": "Juillet 2025",
+   "label_en": "July 2025",
+   "total": 1818914.95,
+   "coverage": "full",
+   "session": "Séance ordinaire 2025-07-14 (rés. 25-07-220)",
+   "url": "https://www.ormstown.ca/wp-content/uploads/2025-07-14_PV.pdf",
+   "note_fr": "Écart documenté de 10 048,36 $. Les trois sous-totaux imprimés à l'Annexe A — paiements à effectuer 221 662,69 $, salaires à autoriser au 27 juin 2025 147 496,84 $ et paiements émis durant le mois 1 459 803,78 $ — totalisent 1 828 963,31 $, alors que le grand total de l'annexe et la résolution 25-07-220 indiquent 1 818 914,95 $. La différence correspond exactement à deux lignes inscrites à l'annexe, au Receveur général, libellées « DAS FÉD JUIN 2024 » (9 914,24 $ et 134,12 $), qui sont comprises dans le sous-total du bloc « paiements à effectuer ». Cette page retient le montant adopté comme total de la séance et présente séparément le montant détaillé. À noter aussi : le grand total imprimé à l'annexe se lit « 1 818 9614,95 $ » (chiffre en trop).",
+   "note_en": "Documented 10,048.36 $ discrepancy. The three subtotals printed in Annexe A — payments to be made 221,662.69 $, salaries to be authorized as at June 27, 2025 147,496.84 $, and payments issued during the month 1,459,803.78 $ — add up to 1,828,963.31 $, while the annexe's grand total and resolution 25-07-220 both give 1,818,914.95 $. The difference is exactly two lines listed in the annexe, payable to the Receveur général and labelled « DAS FÉD JUIN 2024 » (9,914.24 $ and 134.12 $), which are included in the « payments to be made » subtotal. This page uses the adopted amount as the sitting total and shows the itemized amount separately. Note also that the annexe's printed grand total reads « 1 818 9614,95 $ » (a stray digit).",
+   "cats": {
+    "Contracts — works": [
+     1031323.65,
+     25
+    ],
+    "Policing — SQ": [
+     335458,
+     1
+    ],
+    "Salaries & HR": [
+     264739.68,
+     16
+    ],
+    "Waste & recycling": [
+     63502.81,
+     2
+    ],
+    "Supplies & operations": [
+     46298.66,
+     96
+    ],
+    "Professional services": [
+     42341.59,
+     22
+    ],
+    "Utilities": [
+     21629.78,
+     6
+    ],
+    "Vehicle fuel & maintenance": [
+     10161.91,
+     42
+    ],
+    "Legal — external counsel": [
+     9225.55,
+     9
+    ],
+    "Software & IT": [
+     4064.58,
+     7
+    ],
+    "Regional shares & memberships": [
+     117.1,
+     1
+    ],
+    "Subsidies & community": [
+     100,
+     1
+    ]
+   }
+  },
   {
    "m": "2025-08",
    "label_fr": "Août 2025",
@@ -1162,6 +1224,426 @@ window.OO_SPENDING = {
   }
  ],
  "entries": [
+  [
+   "2025-07",
+   "Ali Excavation Inc.",
+   "Contracts — works",
+   730176.42,
+   1
+  ],
+  [
+   "2025-07",
+   "Ministre des Finances",
+   "Policing — SQ",
+   335458,
+   1
+  ],
+  [
+   "2025-07",
+   "Construction Émery Paquette Inc.",
+   "Contracts — works",
+   170359.11,
+   2
+  ],
+  [
+   "2025-07",
+   "— (paie municipale)",
+   "Salaries & HR",
+   147496.84,
+   1
+  ],
+  [
+   "2025-07",
+   "Ministre du Revenu",
+   "Salaries & HR",
+   71427.6,
+   3
+  ],
+  [
+   "2025-07",
+   "Installation Jeux-Tec Inc.",
+   "Contracts — works",
+   68042.77,
+   2
+  ],
+  [
+   "2025-07",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   63502.81,
+   2
+  ],
+  [
+   "2025-07",
+   "Receveur Général",
+   "Salaries & HR",
+   29059.67,
+   4
+  ],
+  [
+   "2025-07",
+   "Plantes et décor Latour",
+   "Contracts — works",
+   21925.73,
+   1
+  ],
+  [
+   "2025-07",
+   "Hydro-Québec",
+   "Utilities",
+   21352.17,
+   3
+  ],
+  [
+   "2025-07",
+   "Caisse Desjardins",
+   "Salaries & HR",
+   12767.12,
+   2
+  ],
+  [
+   "2025-07",
+   "Complexe Médical Ormstown",
+   "Supplies & operations",
+   9772.61,
+   1
+  ],
+  [
+   "2025-07",
+   "Technivolt Électrique Inc.",
+   "Contracts — works",
+   9011.74,
+   5
+  ],
+  [
+   "2025-07",
+   "Orflow Géosciences Inc.",
+   "Professional services",
+   8450.67,
+   3
+  ],
+  [
+   "2025-07",
+   "Groupe SGM Inc.",
+   "Contracts — works",
+   8190.82,
+   3
+  ],
+  [
+   "2025-07",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   7388.3,
+   2
+  ],
+  [
+   "2025-07",
+   "Tenco Inc.",
+   "Vehicle fuel & maintenance",
+   5974.45,
+   2
+  ],
+  [
+   "2025-07",
+   "Gleaner, The",
+   "Professional services",
+   5843.04,
+   2
+  ],
+  [
+   "2025-07",
+   "Pelouse Alex Gaulin",
+   "Contracts — works",
+   5499.99,
+   1
+  ],
+  [
+   "2025-07",
+   "DHC Avocats",
+   "Legal — external counsel",
+   5237.06,
+   5
+  ],
+  [
+   "2025-07",
+   "Bionest Inc.",
+   "Contracts — works",
+   4926.14,
+   2
+  ],
+  [
+   "2025-07",
+   "Productions Andréanne Martin",
+   "Professional services",
+   4886.44,
+   1
+  ],
+  [
+   "2025-07",
+   "Réal Huot Inc.",
+   "Supplies & operations",
+   4802.08,
+   1
+  ],
+  [
+   "2025-07",
+   "Netccl.com inc.",
+   "Professional services",
+   4768.02,
+   1
+  ],
+  [
+   "2025-07",
+   "Géant du Conteneur (Le)",
+   "Supplies & operations",
+   4139.1,
+   1
+  ],
+  [
+   "2025-07",
+   "Dunton Rainville S.E.N.C.R.L.",
+   "Legal — external counsel",
+   3988.49,
+   4
+  ],
+  [
+   "2025-07",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   3423.26,
+   1
+  ],
+  [
+   "2025-07",
+   "Ouellet Samantha",
+   "Professional services",
+   3403.26,
+   2
+  ],
+  [
+   "2025-07",
+   "Environor Canada Inc.",
+   "Supplies & operations",
+   3350.6,
+   1
+  ],
+  [
+   "2025-07",
+   "Robmusic",
+   "Professional services",
+   3177.62,
+   1
+  ],
+  [
+   "2025-07",
+   "Boyle Réfrigération Climatisation Inc",
+   "Contracts — works",
+   2938.76,
+   2
+  ],
+  [
+   "2025-07",
+   "Dagenais, J. Architecte & Ass. Inc.",
+   "Professional services",
+   2874.38,
+   1
+  ],
+  [
+   "2025-07",
+   "Tech-Mix, Division BauVal Inc.",
+   "Supplies & operations",
+   2670.68,
+   1
+  ],
+  [
+   "2025-07",
+   "Jardins Gemelas Inc. (Les)",
+   "Supplies & operations",
+   2534.33,
+   1
+  ],
+  [
+   "2025-07",
+   "CCESI - Centre conseil en sécurité incendie",
+   "Professional services",
+   2500,
+   1
+  ],
+  [
+   "2025-07",
+   "Quincaillerie R. Gauthier Inc.",
+   "Supplies & operations",
+   2038.28,
+   17
+  ],
+  [
+   "2025-07",
+   "TD Canada Trust",
+   "Salaries & HR",
+   2019.25,
+   2
+  ],
+  [
+   "2025-07",
+   "Gauthier, René (Essence)",
+   "Vehicle fuel & maintenance",
+   1897.85,
+   19
+  ],
+  [
+   "2025-07",
+   "9339-0953 Qc Inc",
+   "Supplies & operations",
+   1626.9,
+   1
+  ],
+  [
+   "2025-07",
+   "Visa Desjardins",
+   "Supplies & operations",
+   1464.96,
+   2
+  ],
+  [
+   "2025-07",
+   "Lamb J. & Son",
+   "Contracts — works",
+   1379.7,
+   1
+  ],
+  [
+   "2025-07",
+   "Thibault, Jacques (Pierreville)",
+   "Professional services",
+   1379.7,
+   1
+  ],
+  [
+   "2025-07",
+   "Eurofins Environex",
+   "Professional services",
+   1319.35,
+   3
+  ],
+  [
+   "2025-07",
+   "Productions Marie Chevrier Inc",
+   "Professional services",
+   1235.98,
+   1
+  ],
+  [
+   "2025-07",
+   "Discair Productions",
+   "Professional services",
+   1092.26,
+   1
+  ],
+  [
+   "2025-07",
+   "Divers - Employé",
+   "Salaries & HR",
+   1071.45,
+   2
+  ],
+  [
+   "2025-07",
+   "Jalec Inc.",
+   "Software & IT",
+   1056.45,
+   2
+  ],
+  [
+   "2025-07",
+   "D'Amour & Fils Inc. (R.S)",
+   "Supplies & operations",
+   1048.52,
+   21
+  ],
+  [
+   "2025-07",
+   "TBL Telecom",
+   "Software & IT",
+   1014.08,
+   1
+  ],
+  [
+   "2025-07",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   1010.09,
+   1
+  ],
+  [
+   "2025-07",
+   "Groupe Kopers Inc.",
+   "Software & IT",
+   1006.03,
+   1
+  ],
+  [
+   "2025-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   2289.61,
+   21
+  ],
+  [
+   "2025-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   1410.87,
+   4
+  ],
+  [
+   "2025-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   8417.25,
+   47
+  ],
+  [
+   "2025-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   988.02,
+   3
+  ],
+  [
+   "2025-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   1484.17,
+   3
+  ],
+  [
+   "2025-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Subsidies & community",
+   100,
+   1
+  ],
+  [
+   "2025-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   897.75,
+   2
+  ],
+  [
+   "2025-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Regional shares & memberships",
+   117.1,
+   1
+  ],
+  [
+   "2025-07",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   277.61,
+   3
+  ],
   [
    "2025-08",
    "— (paie municipale)",
