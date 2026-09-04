@@ -45,7 +45,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20260903-2';
+  var PAYMENTS_URL = '/finances/payments.json?v=20260903-3';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   var EXPECTED_LINES = 2138;   // only ever used to word the loading message
 

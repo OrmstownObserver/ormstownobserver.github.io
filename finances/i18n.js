@@ -6,7 +6,7 @@
 // ============================================================
 window.OO_I18N = {
  fr: {
-  htmlTitle: "Grand livre municipal — Ormstown Observer",
+  htmlTitle: "Le grand livre — Ormstown Observer",
   eyebrow: "Ormstown Observer · Finances municipales",
   back: "← Accueil",
   skip: "Aller à l'exploration des dépenses",
@@ -330,11 +330,11 @@ window.OO_I18N = {
   csvHeadLines: ["Séance", "Date de la séance", "Résolution", "Fournisseur", "Description", "Catégorie", "Montant (CAD)", "Source (PV)", "Méthode de catégorisation"],
 
   // ── /finances/budget/ — the reference page ──
-  refHtmlTitle: "Budget, méthode et sources — Grand livre municipal — Ormstown Observer",
+  refHtmlTitle: "Budget, méthode et sources — Le grand livre — Ormstown Observer",
   refTitle: "Budget, méthode et sources",
   refDeck: "Le contexte du grand livre : le budget adopté pour l'année, le programme triennal d'immobilisations, jusqu'où remonte la saisie, comment l'Observer catégorise chaque ligne, et où trouver les documents officiels.",
-  refBackLabel: "Grand livre",
-  refBack: "← Retour au grand livre municipal",
+  refBackLabel: "Le grand livre",
+  refBack: "← Retour au grand livre",
   tocBudget: "Budget",
   tocCapital: "Immobilisations",
   tocCoverage: "Couverture",
@@ -351,7 +351,7 @@ window.OO_I18N = {
   devBanner: "L'Ormstown Observer est une publication indépendante. Elle n'est ni affiliée à la Municipalité d'Ormstown, ni approuvée par celle-ci, et ne parle pas en son nom. Cette page n'est pas un document officiel : elle est encore enrichie séance après séance et peut contenir des erreurs, des omissions ou des chiffres périmés. Ne vous en servez pas comme source de référence, ne la citez pas et ne fondez aucune décision sur elle — seuls les procès-verbaux officiels publiés par la Municipalité font foi, et chaque ligne renvoie au sien. L'Observer corrigera publiquement toute erreur : ormstownobserver@gmail.com"
  },
  en: {
-  htmlTitle: "Municipal Ledger — Ormstown Observer",
+  htmlTitle: "The Ledger — Ormstown Observer",
   eyebrow: "Ormstown Observer · Municipal finances",
   back: "← Home",
   skip: "Skip to spending explorer",
@@ -668,11 +668,11 @@ window.OO_I18N = {
   csvHeadLines: ["Sitting", "Sitting date", "Resolution", "Supplier", "Description", "Category", "Amount (CAD)", "Source (minutes)", "Categorisation method"],
 
   // ── /finances/budget/ — the reference page ──
-  refHtmlTitle: "Budget, method and sources — Municipal Ledger — Ormstown Observer",
+  refHtmlTitle: "Budget, method and sources — The Ledger — Ormstown Observer",
   refTitle: "Budget, method and sources",
   refDeck: "The context around the ledger: the year's adopted budget, the three-year capital plan, how far back the itemization goes, how the Observer categorises each line, and where to find the official documents.",
-  refBackLabel: "The ledger",
-  refBack: "← Back to the municipal ledger",
+  refBackLabel: "The Ledger",
+  refBack: "← Back to The Ledger",
   tocBudget: "Budget",
   tocCapital: "Capital plan",
   tocCoverage: "Coverage",
