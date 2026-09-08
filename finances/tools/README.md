@@ -41,7 +41,7 @@ documents and the dictionary, moved wholesale out of `app.js`. Shares
 - `i18n.js` — every interface string, FR + EN, for all three surfaces.
 - `spending-data.js` — **generated**; do not hand-edit amounts. `months[].total` is
   the ADOPTED figure and is never recomputed.
-- `payments.json` — **generated**; the 2,138 line-level payments. This is the
+- `payments.json` — **generated**; every published line-level payment. This is the
   workspace's primary dataset.
 - `ledger.css` — component CSS for the workspace and the reference page, written
   entirely against `observer.css` tokens. **Never use `var(--muted)`,
@@ -50,6 +50,13 @@ documents and the dictionary, moved wholesale out of `app.js`. Shares
   `observer.css`'s dark blocks do not redefine them.
 
 ## Regenerating the data (after a new PV is itemized in the ledger)
+0. Export the complete default Ledger view as JSON, then run
+   `node finances/tools/sync-ledger-snapshot.js <export.json>`. The audit lists
+   every verified monthly total, its included-line sum, and any sitting that is
+   complete in Notion but absent from the site. To publish one or more
+   penny-reconciled sittings, add `--apply YYYY-MM[,YYYY-MM]`. The command
+   refuses missing provenance, staged lines, duplicate row URLs, non-official
+   source URLs, fiscal-year mismatches, and unexplained reconciliation gaps.
 1. Itemize the sitting in the Notion ledger (Line items + Monthly list total; use the
    `Excluded from total` checkbox + `Exclusion reason` for credit-line décomptes and
    documented duplicates — never delete rows).

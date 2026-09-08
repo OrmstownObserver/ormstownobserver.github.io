@@ -2,7 +2,7 @@
    Ormstown Observer — municipal ledger: DATA LAYER
    ------------------------------------------------------------
    Builds the line store every view renders from, out of
-   payments.json (2,138 payment lines) anchored to spending-data.js
+   payments.json (all published payment lines) anchored to spending-data.js
    (the official adopted totals).
 
    THIS FILE TOUCHES NO DOM AND NO i18n. That is deliberate and
@@ -93,7 +93,7 @@
 
   /* ------------------------------------------------------------
      Money. Every sum is accumulated in integer cents and converted
-     back once, so 2,138 float additions cannot drift a penny away
+     back once, so thousands of float additions cannot drift a penny away
      from the adopted total.
      ------------------------------------------------------------ */
   function cents(v) { return Math.round(v * 100); }
@@ -274,7 +274,7 @@
         var raw = row[0], entry = String(row[1]), amt = row[2], cat = row[3];
         var key = normKey(raw), name = nameByKey[key], slug = slugByKey[key];
 
-        // Split "Payee - description". 2,128 of 2,138 lines have the
+        // Split "Payee - description". Nearly every published line has the
         // separator; the 10 that don't are the payroll aggregates, which
         // views render whole.
         var d = '', pre = '';
@@ -395,7 +395,7 @@
 
   /* ------------------------------------------------------------
      FILTER / SORT / AGGREGATE - pure, operating on line indices.
-     Never on line objects: sorting 2,138 integers is what keeps a
+     Never on line objects: sorting integer indexes is what keeps a
      keystroke under a frame on a phone.
      ------------------------------------------------------------ */
 

@@ -91,7 +91,7 @@
 
   /* ---------- formatters ----------
      Memoised per locale. classic built a fresh Intl.NumberFormat for
-     every cell (app.js:20); across 2,138 rows that was the single
+     every cell (app.js:20); across thousands of rows that was the single
      biggest avoidable render cost. */
   var FMT = {};
   function fmt(lang) {
@@ -207,7 +207,7 @@
 
   /* ============================================================
      PAYMENTS — the default view and the search job.
-     One row per payment line, all 2,138 of them reachable.
+     One row per payment line, all of them reachable.
      ============================================================ */
   function payments(ctx) {
     var t = ctx.T, f = ctx.f, out = document.createDocumentFragment();

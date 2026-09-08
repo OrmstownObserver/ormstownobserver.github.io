@@ -45,9 +45,11 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20260906-1';
+  var PAYMENTS_URL = '/finances/payments.json?v=20260908-1';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
-  var EXPECTED_LINES = 2138;   // only ever used to word the loading message
+  // Rollups carry the exact line counts, so the loading message stays current
+  // before payments.json has arrived and needs no hand-maintained constant.
+  var EXPECTED_LINES = D ? D.entries.reduce(function (sum, entry) { return sum + entry[4]; }, 0) : 0;
 
   var store = null, loading = true, linesFailed = false;
   var state = {
@@ -967,7 +969,7 @@
     });
 
     // Print the whole filtered set, never the reveal window - then put the
-    // window back, so the screen isn't left with 2,138 rows after printing.
+    // window back, so the screen isn't left with every row after printing.
     global.addEventListener('beforeprint', function () {
       if (!store) return;
       printRestore = revealed;

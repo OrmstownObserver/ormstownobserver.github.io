@@ -9,10 +9,10 @@
 // «Autres fournisseurs», so every month sums exactly to its
 // category totals and (for full-coverage months) to the adopted total.
 // Categories are Observer-assigned (see provenance + tools/apply-category-rules.js).
-// Generated: 2026-08-06
+// Generated: 2026-09-08
 // ============================================================
 window.OO_SPENDING = {
- "generated": "2026-09-06",
+ "generated": "2026-09-08",
  "provenance": {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
@@ -712,6 +712,108 @@ window.OO_SPENDING = {
     "Subsidies & community": [
      6250,
      4
+    ]
+   }
+  },
+  {
+   "m": "2025-05",
+   "label_fr": "Mai 2025",
+   "label_en": "May 2025",
+   "total": 470964.72,
+   "coverage": "full",
+   "session": "Séance ordinaire 2025-05-05, rés. 25-05-155",
+   "url": "https://www.ormstown.ca/wp-content/uploads/2025-05-05_PV.pdf",
+   "cats": {
+    "Salaries & HR": [
+     177980.13,
+     10
+    ],
+    "Supplies & operations": [
+     130290.19,
+     103
+    ],
+    "Waste & recycling": [
+     91441.26,
+     7
+    ],
+    "Utilities": [
+     24256.03,
+     9
+    ],
+    "Vehicle fuel & maintenance": [
+     20895.14,
+     53
+    ],
+    "Legal — external counsel": [
+     16552.19,
+     6
+    ],
+    "Software & IT": [
+     8054.29,
+     5
+    ],
+    "Subsidies & community": [
+     1200,
+     4
+    ],
+    "Contracts — works": [
+     295.49,
+     1
+    ]
+   }
+  },
+  {
+   "m": "2025-06",
+   "label_fr": "Juin 2025",
+   "label_en": "June 2025",
+   "total": 600344.61,
+   "coverage": "full",
+   "session": "Séance ordinaire 2025-06-02, rés. 25-06-189",
+   "url": "https://www.ormstown.ca/wp-content/uploads/2025-06-02_PV.pdf",
+   "cats": {
+    "Supplies & operations": [
+     183431.78,
+     133
+    ],
+    "Salaries & HR": [
+     173723.18,
+     4
+    ],
+    "Regional shares & memberships": [
+     149065.91,
+     2
+    ],
+    "Contracts — works": [
+     52463.95,
+     12
+    ],
+    "Legal — external counsel": [
+     16380.52,
+     6
+    ],
+    "Utilities": [
+     16065.94,
+     7
+    ],
+    "Software & IT": [
+     3596.24,
+     8
+    ],
+    "Vehicle fuel & maintenance": [
+     3330.87,
+     28
+    ],
+    "Subsidies & community": [
+     1559.21,
+     2
+    ],
+    "Waste & recycling": [
+     573.32,
+     2
+    ],
+    "Insurance": [
+     153.69,
+     1
     ]
    }
   },
@@ -3041,6 +3143,706 @@ window.OO_SPENDING = {
    "Salaries & HR",
    1339.79,
    2
+  ],
+  [
+   "2025-05",
+   "Municipalité d'Ormstown (paie)",
+   "Salaries & HR",
+   97407.95,
+   1
+  ],
+  [
+   "2025-05",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   90136.28,
+   4
+  ],
+  [
+   "2025-05",
+   "Ministre du Revenu",
+   "Salaries & HR",
+   46713.32,
+   2
+  ],
+  [
+   "2025-05",
+   "Receveur Général",
+   "Salaries & HR",
+   24913.2,
+   2
+  ],
+  [
+   "2025-05",
+   "Hydro-Québec",
+   "Utilities",
+   23504.67,
+   4
+  ],
+  [
+   "2025-05",
+   "GRAVIÈRE, SABLIÈRE LEBLANC",
+   "Supplies & operations",
+   14819.34,
+   1
+  ],
+  [
+   "2025-05",
+   "9212-9816 Québec Inc.",
+   "Supplies & operations",
+   14371.88,
+   1
+  ],
+  [
+   "2025-05",
+   "MUNICIPALITÉ DE FRANKLIN",
+   "Supplies & operations",
+   12435.27,
+   1
+  ],
+  [
+   "2025-05",
+   "Artelia Canada Inc.",
+   "Supplies & operations",
+   12270.71,
+   1
+  ],
+  [
+   "2025-05",
+   "DUNTON RAINVILLE SENC AVOCATS",
+   "Legal — external counsel",
+   11652.66,
+   3
+  ],
+  [
+   "2025-05",
+   "Complexe Médical Ormstown",
+   "Supplies & operations",
+   9627.92,
+   1
+  ],
+  [
+   "2025-05",
+   "Équipements Colpron Inc. (Les)",
+   "Vehicle fuel & maintenance",
+   7618.66,
+   1
+  ],
+  [
+   "2025-05",
+   "HPDG Associés inc",
+   "Supplies & operations",
+   7441.75,
+   1
+  ],
+  [
+   "2025-05",
+   "Mcclintock, les Entreprises",
+   "Supplies & operations",
+   6704.2,
+   3
+  ],
+  [
+   "2025-05",
+   "Garage C.P. & Fils Inc.",
+   "Vehicle fuel & maintenance",
+   6588.83,
+   6
+  ],
+  [
+   "2025-05",
+   "Groupe Quantik Activis inc.",
+   "Software & IT",
+   6256.94,
+   1
+  ],
+  [
+   "2025-05",
+   "Caisse Desjardins",
+   "Salaries & HR",
+   5376.87,
+   1
+  ],
+  [
+   "2025-05",
+   "Gleaner, The",
+   "Supplies & operations",
+   4828.96,
+   1
+  ],
+  [
+   "2025-05",
+   "Bétonel / Dulux",
+   "Supplies & operations",
+   4663.39,
+   1
+  ],
+  [
+   "2025-05",
+   "Godbout, Sylvie-Anne, Me",
+   "Legal — external counsel",
+   4373.85,
+   1
+  ],
+  [
+   "2025-05",
+   "G.E.S.T.I.M. inc.",
+   "Supplies & operations",
+   3653.91,
+   2
+  ],
+  [
+   "2025-05",
+   "CAUCA",
+   "Supplies & operations",
+   3315.88,
+   1
+  ],
+  [
+   "2025-05",
+   "Gauthier, René (Essence)",
+   "Vehicle fuel & maintenance",
+   3120.03,
+   27
+  ],
+  [
+   "2025-05",
+   "Ouellet Samantha",
+   "Supplies & operations",
+   3031.15,
+   2
+  ],
+  [
+   "2025-05",
+   "9188-0781 Québec Inc",
+   "Supplies & operations",
+   2874.38,
+   1
+  ],
+  [
+   "2025-05",
+   "BCGO S.E.N.C.R.L.",
+   "Supplies & operations",
+   2874.38,
+   1
+  ],
+  [
+   "2025-05",
+   "Eurofins Environex",
+   "Supplies & operations",
+   2870.93,
+   3
+  ],
+  [
+   "2025-05",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2563.94,
+   1
+  ],
+  [
+   "2025-05",
+   "REVETEMENTS TENNIS SUD-OUEST",
+   "Supplies & operations",
+   2299.5,
+   1
+  ],
+  [
+   "2025-05",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   1966.6,
+   2
+  ],
+  [
+   "2025-05",
+   "Tech-Mix, Division BauVal Inc.",
+   "Supplies & operations",
+   1754.15,
+   1
+  ],
+  [
+   "2025-05",
+   "Librairies Boyer",
+   "Supplies & operations",
+   1717.42,
+   5
+  ],
+  [
+   "2025-05",
+   "Laplante Radiateurs Inc.",
+   "Vehicle fuel & maintenance",
+   1678.64,
+   1
+  ],
+  [
+   "2025-05",
+   "BEAUDIN MOISE",
+   "Salaries & HR",
+   1505.19,
+   1
+  ],
+  [
+   "2025-05",
+   "C. S. Brunette Inc.",
+   "Vehicle fuel & maintenance",
+   1489.23,
+   14
+  ],
+  [
+   "2025-05",
+   "DR CONSEILS",
+   "Supplies & operations",
+   1298.76,
+   2
+  ],
+  [
+   "2025-05",
+   "TD Canada Trust",
+   "Salaries & HR",
+   1279.3,
+   1
+  ],
+  [
+   "2025-05",
+   "Groupe SGM Inc.",
+   "Supplies & operations",
+   1133.57,
+   1
+  ],
+  [
+   "2025-05",
+   "Discair Productions",
+   "Supplies & operations",
+   1092.26,
+   1
+  ],
+  [
+   "2025-05",
+   "Géant du Conteneur (Le)",
+   "Waste & recycling",
+   1034.78,
+   1
+  ],
+  [
+   "2025-05",
+   "Bohemen Jamie (Enr.)",
+   "Supplies & operations",
+   1018.72,
+   1
+  ],
+  [
+   "2025-05",
+   "TBL Telecom",
+   "Software & IT",
+   1014.08,
+   1
+  ],
+  [
+   "2025-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   9661.22,
+   67
+  ],
+  [
+   "2025-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Subsidies & community",
+   1200,
+   4
+  ],
+  [
+   "2025-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   784.3,
+   2
+  ],
+  [
+   "2025-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   399.75,
+   4
+  ],
+  [
+   "2025-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   751.36,
+   5
+  ],
+  [
+   "2025-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   783.27,
+   3
+  ],
+  [
+   "2025-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   295.49,
+   1
+  ],
+  [
+   "2025-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Waste & recycling",
+   270.2,
+   2
+  ],
+  [
+   "2025-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   525.68,
+   2
+  ],
+  [
+   "2025-06",
+   "M.R.C. Haut Saint Laurent",
+   "Regional shares & memberships",
+   148663.5,
+   1
+  ],
+  [
+   "2025-06",
+   "Municipalité d'Ormstown (paie)",
+   "Salaries & HR",
+   97203.94,
+   1
+  ],
+  [
+   "2025-06",
+   "Construction Émery Paquette",
+   "Contracts — works",
+   48285.72,
+   1
+  ],
+  [
+   "2025-06",
+   "Ministre du Revenu",
+   "Salaries & HR",
+   48061.98,
+   1
+  ],
+  [
+   "2025-06",
+   "Marquage Et Traçage du Québec Inc.",
+   "Supplies & operations",
+   32536.09,
+   1
+  ],
+  [
+   "2025-06",
+   "Artelia Canada Inc.",
+   "Supplies & operations",
+   29417.79,
+   1
+  ],
+  [
+   "2025-06",
+   "Dagenais, J. Architecte & Ass. Inc.",
+   "Supplies & operations",
+   28513.8,
+   1
+  ],
+  [
+   "2025-06",
+   "Receveur Général",
+   "Salaries & HR",
+   28457.26,
+   2
+  ],
+  [
+   "2025-06",
+   "DUNTON RAINVILLE SENC AVOCATS",
+   "Legal — external counsel",
+   16380.52,
+   6
+  ],
+  [
+   "2025-06",
+   "Hydro-Québec",
+   "Utilities",
+   15632.65,
+   3
+  ],
+  [
+   "2025-06",
+   "Savaria",
+   "Supplies & operations",
+   12496,
+   1
+  ],
+  [
+   "2025-06",
+   "COMPLEXE MEDICAL",
+   "Supplies & operations",
+   11500.3,
+   1
+  ],
+  [
+   "2025-06",
+   "Groupe Villeneuve",
+   "Supplies & operations",
+   7219.28,
+   1
+  ],
+  [
+   "2025-06",
+   "INC.",
+   "Supplies & operations",
+   6630.86,
+   10
+  ],
+  [
+   "2025-06",
+   "Ouellet Samantha",
+   "Supplies & operations",
+   4392.05,
+   3
+  ],
+  [
+   "2025-06",
+   "CAUCA",
+   "Supplies & operations",
+   3494.36,
+   1
+  ],
+  [
+   "2025-06",
+   "Drumco Énergie",
+   "Supplies & operations",
+   3331.48,
+   4
+  ],
+  [
+   "2025-06",
+   "Consultants Blitz",
+   "Contracts — works",
+   3276.82,
+   1
+  ],
+  [
+   "2025-06",
+   "Thibault & Associés",
+   "Supplies & operations",
+   3276.22,
+   1
+  ],
+  [
+   "2025-06",
+   "Ness, D.R.",
+   "Supplies & operations",
+   3052.58,
+   3
+  ],
+  [
+   "2025-06",
+   "Visa Desjardins",
+   "Supplies & operations",
+   2795.14,
+   2
+  ],
+  [
+   "2025-06",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2563.94,
+   1
+  ],
+  [
+   "2025-06",
+   "CCESI - Centre conseil en",
+   "Supplies & operations",
+   2500,
+   1
+  ],
+  [
+   "2025-06",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   2466.33,
+   2
+  ],
+  [
+   "2025-06",
+   "Mécamobile Inc.",
+   "Supplies & operations",
+   2364.38,
+   6
+  ],
+  [
+   "2025-06",
+   "Xylem Canada",
+   "Supplies & operations",
+   2097.14,
+   1
+  ],
+  [
+   "2025-06",
+   "D'Amour & Fils Inc. (R.S)",
+   "Supplies & operations",
+   2056.36,
+   19
+  ],
+  [
+   "2025-06",
+   "Eurofins Environex",
+   "Supplies & operations",
+   2056.33,
+   4
+  ],
+  [
+   "2025-06",
+   "(essence)",
+   "Vehicle fuel & maintenance",
+   2044.2,
+   16
+  ],
+  [
+   "2025-06",
+   "Quincaillerie R. Gauthier Inc.",
+   "Supplies & operations",
+   1929.26,
+   14
+  ],
+  [
+   "2025-06",
+   "Solution Informatique de la Montérégie",
+   "Software & IT",
+   1902.42,
+   3
+  ],
+  [
+   "2025-06",
+   "Orflow Géosciences Inc.",
+   "Supplies & operations",
+   1667.14,
+   1
+  ],
+  [
+   "2025-06",
+   "Mission Communications",
+   "Supplies & operations",
+   1586.08,
+   1
+  ],
+  [
+   "2025-06",
+   "Paquet, Lyne",
+   "Supplies & operations",
+   1530,
+   1
+  ],
+  [
+   "2025-06",
+   "9483-3100 Québec Inc.",
+   "Supplies & operations",
+   1437.19,
+   2
+  ],
+  [
+   "2025-06",
+   "TBL Telecom",
+   "Software & IT",
+   1290.03,
+   3
+  ],
+  [
+   "2025-06",
+   "Pièces d'Auto Valleyfield Inc.",
+   "Supplies & operations",
+   1137.52,
+   10
+  ],
+  [
+   "2025-06",
+   "Discair Productions",
+   "Supplies & operations",
+   1092.26,
+   1
+  ],
+  [
+   "2025-06",
+   "Robmusic",
+   "Subsidies & community",
+   1059.21,
+   1
+  ],
+  [
+   "2025-06",
+   "(LE)",
+   "Supplies & operations",
+   1034.78,
+   1
+  ],
+  [
+   "2025-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   433.29,
+   4
+  ],
+  [
+   "2025-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   7257.12,
+   38
+  ],
+  [
+   "2025-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Subsidies & community",
+   500,
+   1
+  ],
+  [
+   "2025-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Regional shares & memberships",
+   402.41,
+   1
+  ],
+  [
+   "2025-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Waste & recycling",
+   573.32,
+   2
+  ],
+  [
+   "2025-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   901.41,
+   10
+  ],
+  [
+   "2025-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   403.79,
+   2
+  ],
+  [
+   "2025-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   1286.67,
+   12
+  ],
+  [
+   "2025-06",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Insurance",
+   153.69,
+   1
   ],
   [
    "2025-07",

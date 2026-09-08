@@ -99,8 +99,8 @@ if (!undeclared.length && !mismatched.length && !unused.length) {
 
 // ---- e. Grand totals.
 const T = store.totals;
-if (c(T.itemized) !== 1395464229) fail(`grand itemized ${money(T.itemized)} != 13,954,642.29`);
-if (c(T.adopted) !== 1394459405) fail(`grand adopted ${money(T.adopted)} != 13,944,594.05`);
+if (c(T.itemized) !== 1502595162) fail(`grand itemized ${money(T.itemized)} != 15,025,951.62`);
+if (c(T.adopted) !== 1501590338) fail(`grand adopted ${money(T.adopted)} != 15,015,903.38`);
 if (c(T.gap) !== -1004824) fail(`grand gap ${money(T.gap)} != -10,048.24`);
 if (!failures) ok(`grand totals: itemized ${money(T.itemized)} / adopted ${money(T.adopted)} / gap ${money(T.gap)}`);
 
