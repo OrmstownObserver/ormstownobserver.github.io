@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-09-08T09:31:11.039Z",
- "document_count": 164,
+ "generated_at": "2026-09-15T09:31:11.900Z",
+ "document_count": 165,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -595,6 +595,11 @@
        "title": "AVIS Modification calendrier seances ordinaires 2026 WEB",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Modification-calendrier-seances-ordinaires_2026_WEB.pdf"
+      },
+      {
+       "title": "AVIS Report seance ordinaire octobre 2026 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Report-seance-ordinaire-octobre-2026_WEB.pdf"
       },
       {
        "title": "PV 2026 03 02 pour site web",
