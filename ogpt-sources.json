@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-09-15T09:31:11.900Z",
- "document_count": 165,
+ "generated_at": "2026-09-17T09:31:25.712Z",
+ "document_count": 167,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -366,6 +366,11 @@
        "url": "https://www.ormstown.ca/wp-content/uploads/2026-03-11-Avis-public-Derogation-mineure-Lot-6-228-622-signe.pdf"
       },
       {
+       "title": "AVIS Demande de derogation mineure octobre 2026 SIGNE",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Demande-de-derogation-mineure-octobre-2026_SIGNE.pdf"
+      },
+      {
        "title": "Projet de reglement de lotissement 149.1 2026",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Projet-de-reglement-de-lotissement-149.1-2026.pdf"
@@ -585,6 +590,11 @@
        "title": "2026 02 02",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/2026-02-02.pdf"
+      },
+      {
+       "title": "2026 09 17 Avis public Seance extraordinaire SIGNE",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2026-09-17_Avis-public-Seance-extraordinaire_SIGNE.pdf"
       },
       {
        "title": "AVIS Calendrier seances ordinaires 2026",
