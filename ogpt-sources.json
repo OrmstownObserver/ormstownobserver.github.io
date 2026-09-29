@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-09-23T09:30:57.037Z",
- "document_count": 167,
+ "generated_at": "2026-09-29T09:31:41.013Z",
+ "document_count": 169,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -94,6 +94,11 @@
        "title": "Reglement 131 2026 VF refondu pour side web",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-131-2026-VF-refondu-pour-side-web.pdf"
+      },
+      {
+       "title": "Reglement 131 2026 VF refondu pour side web 1",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-131-2026-VF-refondu-pour-side-web-1.pdf"
       },
       {
        "title": "Reglement 167.1 2026 modifiant 167 2025 WEB",
@@ -645,6 +650,11 @@
        "title": "PV 2026 07 06 WEB",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/PV-2026-07-06-WEB.pdf"
+      },
+      {
+       "title": "PV 2026 08 03 WEB",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/PV_2026-08-03_WEB.pdf"
       },
       {
        "title": "2025 01 20 PV",
