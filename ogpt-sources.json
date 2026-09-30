@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-09-29T09:31:41.013Z",
- "document_count": 169,
+ "generated_at": "2026-09-30T09:31:43.171Z",
+ "document_count": 171,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -104,6 +104,11 @@
        "title": "Reglement 167.1 2026 modifiant 167 2025 WEB",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Reglement-167.1-2026-modifiant-167-2025_WEB.pdf"
+      },
+      {
+       "title": "Reglement 39 2026 Tarification des services municipaux WEB 3 1",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Reglement_39-2026-Tarification-des-services-municipaux_WEB-3-1.pdf"
       },
       {
        "title": "2025 12 17 Extra regl. signe",
@@ -264,6 +269,11 @@
        "title": "Avis public Seance dinformation Tour Bell 2026 06 10 WEB 2",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public_Seance-dinformation_Tour-Bell_2026-06-10_WEB-2.pdf"
+      },
+      {
+       "title": "Certificat publication 358 2026 Ormstown SIGNE",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Certificat-publication-358-2026_Ormstown_SIGNE.pdf"
       },
       {
        "title": "2025 10 29 Avis Public 1266 rue de la Vallee",
@@ -940,6 +950,11 @@
        "title": "Avis public Seance dinformation Tour Bell 2026 06 10 WEB 2",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-public_Seance-dinformation_Tour-Bell_2026-06-10_WEB-2.pdf"
+      },
+      {
+       "title": "Certificat publication 358 2026 Ormstown SIGNE",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Certificat-publication-358-2026_Ormstown_SIGNE.pdf"
       },
       {
        "title": "2025 10 29 Avis Public 1266 rue de la Vallee",
