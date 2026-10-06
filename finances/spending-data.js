@@ -947,12 +947,12 @@ window.OO_SPENDING = {
      1
     ],
     "Supplies & operations": [
-     63727.02,
-     100
+     59587.92,
+     99
     ],
     "Waste & recycling": [
-     53228.33,
-     2
+     57367.43,
+     3
     ],
     "Contracts — works": [
      41994.02,
@@ -1002,12 +1002,12 @@ window.OO_SPENDING = {
      7
     ],
     "Waste & recycling": [
-     61756.13,
-     2
+     63860.17,
+     3
     ],
     "Supplies & operations": [
-     43675.2,
-     61
+     41571.16,
+     60
     ],
     "Software & IT": [
      19775.47,
@@ -1065,20 +1065,20 @@ window.OO_SPENDING = {
      2
     ],
     "Contracts — works": [
-     139876.53,
-     21
+     145293.82,
+     23
     ],
     "Professional services": [
      88726.15,
      28
     ],
     "Supplies & operations": [
-     86217.76,
-     126
+     77696.14,
+     123
     ],
     "Waste & recycling": [
-     37904.1,
-     1
+     41008.43,
+     2
     ],
     "Legal — external counsel": [
      37888.32,
@@ -1120,20 +1120,20 @@ window.OO_SPENDING = {
      14
     ],
     "Waste & recycling": [
-     59590.37,
-     2
+     62694.7,
+     3
     ],
     "Legal — external counsel": [
      46450.63,
      7
     ],
-    "Supplies & operations": [
-     44791.62,
-     66
-    ],
     "Regional shares & memberships": [
      43617.02,
      1
+    ],
+    "Supplies & operations": [
+     41687.29,
+     65
     ],
     "Contracts — works": [
      30946.35,
@@ -1177,16 +1177,16 @@ window.OO_SPENDING = {
      24
     ],
     "Waste & recycling": [
-     109283.02,
-     5
+     112387.35,
+     6
     ],
     "Professional services": [
      77965.72,
      33
     ],
     "Supplies & operations": [
-     72191.5,
-     104
+     69087.17,
+     103
     ],
     "Software & IT": [
      39930.09,
@@ -1224,20 +1224,20 @@ window.OO_SPENDING = {
      43
     ],
     "Waste & recycling": [
-     48220.1,
-     2
+     49338.24,
+     3
     ],
     "Utilities": [
      18696.65,
      5
     ],
-    "Supplies & operations": [
-     13750.14,
-     15
-    ],
     "Legal — external counsel": [
      13380.26,
      3
+    ],
+    "Supplies & operations": [
+     12632,
+     14
     ],
     "Professional services": [
      10898.2,
@@ -1340,16 +1340,16 @@ window.OO_SPENDING = {
      73
     ],
     "Supplies & operations": [
-     37719.14,
-     66
+     36339.44,
+     65
+    ],
+    "Waste & recycling": [
+     33213.14,
+     2
     ],
     "Legal — external counsel": [
      32422.11,
      10
-    ],
-    "Waste & recycling": [
-     31833.44,
-     1
     ],
     "Software & IT": [
      31283.73,
@@ -1395,12 +1395,12 @@ window.OO_SPENDING = {
      17
     ],
     "Waste & recycling": [
-     30954.47,
-     1
+     32174.64,
+     2
     ],
     "Supplies & operations": [
-     30953.87,
-     51
+     29733.7,
+     50
     ],
     "Software & IT": [
      28877.09,
@@ -1560,20 +1560,20 @@ window.OO_SPENDING = {
      19
     ],
     "Contracts — works": [
-     111935.08,
-     19
+     136233.58,
+     21
     ],
     "Professional services": [
      88323.12,
      20
     ],
-    "Supplies & operations": [
-     69661.47,
-     88
-    ],
     "Waste & recycling": [
-     45456.78,
-     4
+     48561.11,
+     5
+    ],
+    "Supplies & operations": [
+     42258.64,
+     85
     ],
     "Legal — external counsel": [
      19286.25,
@@ -4619,7 +4619,7 @@ window.OO_SPENDING = {
   [
    "2025-09",
    "9386-0120 Québec Inc",
-   "Supplies & operations",
+   "Waste & recycling",
    4139.1,
    1
   ],
@@ -5088,7 +5088,7 @@ window.OO_SPENDING = {
   [
    "2025-10",
    "9386-0120 Québec Inc",
-   "Supplies & operations",
+   "Waste & recycling",
    2104.04,
    1
   ],
@@ -5445,7 +5445,7 @@ window.OO_SPENDING = {
   [
    "2025-11",
    "Noël & Fils",
-   "Supplies & operations",
+   "Contracts — works",
    4220.07,
    1
   ],
@@ -5459,7 +5459,7 @@ window.OO_SPENDING = {
   [
    "2025-11",
    "9386-0120 Québec Inc",
-   "Supplies & operations",
+   "Waste & recycling",
    3104.33,
    1
   ],
@@ -5627,7 +5627,7 @@ window.OO_SPENDING = {
   [
    "2025-11",
    "Complexe Enviro Connexions Ltée",
-   "Supplies & operations",
+   "Contracts — works",
    1197.22,
    1
   ],
@@ -5865,7 +5865,7 @@ window.OO_SPENDING = {
   [
    "2025-12",
    "9386-0120 Québec Inc",
-   "Supplies & operations",
+   "Waste & recycling",
    3104.33,
    1
   ],
@@ -6285,7 +6285,7 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "9386-0120 Québec Inc",
-   "Supplies & operations",
+   "Waste & recycling",
    3104.33,
    1
   ],
@@ -6698,7 +6698,7 @@ window.OO_SPENDING = {
   [
    "2026-02",
    "9386-0120 Québec Inc",
-   "Supplies & operations",
+   "Waste & recycling",
    1118.14,
    1
   ],
@@ -7342,7 +7342,7 @@ window.OO_SPENDING = {
   [
    "2026-04",
    "9386-0120 Québec Inc",
-   "Supplies & operations",
+   "Waste & recycling",
    1379.7,
    1
   ],
@@ -7650,7 +7650,7 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "9386-0120 Québec Inc",
-   "Supplies & operations",
+   "Waste & recycling",
    1220.17,
    1
   ],
@@ -8553,7 +8553,7 @@ window.OO_SPENDING = {
   [
    "2026-08",
    "Complexe Enviro Connexions Ltée",
-   "Supplies & operations",
+   "Contracts — works",
    17579.07,
    1
   ],
@@ -8581,7 +8581,7 @@ window.OO_SPENDING = {
   [
    "2026-08",
    "Noël & Fils",
-   "Supplies & operations",
+   "Contracts — works",
    6719.43,
    1
   ],
@@ -8700,7 +8700,7 @@ window.OO_SPENDING = {
   [
    "2026-08",
    "9386-0120 Québec Inc",
-   "Supplies & operations",
+   "Waste & recycling",
    3104.33,
    1
   ],

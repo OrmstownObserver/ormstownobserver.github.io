@@ -29,7 +29,10 @@ const LINE_RULES = [
   [/^Réseau [Dd].[Ii]nformation Municipale/i, /affichage|poste/i, 'Salaries & HR'], // job postings
   [/^9437-7843/, /dépôt de garantie/i, 'Contracts — works'], // guarantee-deposit refund tied to the rue Isabelle works project
   [/^Ministre des Finances/, /\bSQ\b|Sûreté/i, 'Policing — SQ'], // provincial policing bill (versements)
-  [/^Visa Desjardins/, /Adobe|logiciel/i, 'Software & IT'] // software purchased on the municipal credit card
+  [/^Visa Desjardins/, /Adobe|logiciel/i, 'Software & IT'], // software purchased on the municipal credit card
+  [/^9386-0120/, /container|conteneur/i, 'Waste & recycling'], // écocentre roll-off containers (Jesse, 2026-10-05)
+  [/^Complexe Enviro Connexions/i, /\bsols?\b/i, 'Contracts — works'], // disposal of excavated soil from works sites
+  [/^No[eë]l (&|et) Fils/i, /\bsols?\b/i, 'Contracts — works'] // hauling excavated soil; their material sales stay Supplies
 ];
 
 // [payeeRegex, category] — whole payee.
