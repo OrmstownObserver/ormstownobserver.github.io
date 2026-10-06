@@ -9,10 +9,10 @@
 // «Autres fournisseurs», so every month sums exactly to its
 // category totals and (for full-coverage months) to the adopted total.
 // Categories are Observer-assigned (see provenance + tools/apply-category-rules.js).
-// Generated: 2026-09-08
+// Generated: 2026-10-05
 // ============================================================
 window.OO_SPENDING = {
- "generated": "2026-09-08",
+ "generated": "2026-10-05",
  "provenance": {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
@@ -29,8 +29,8 @@ window.OO_SPENDING = {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
  },
- "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>6 juillet 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance du 3 août paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé au complet, jusqu'à la séance du 20 janvier 2025.",
- "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>July 6, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the August 3 sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized in full, down to the January 20, 2025 sitting.",
+ "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>3 août 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance de septembre paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé au complet, jusqu'à la séance du 20 janvier 2025.",
+ "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>August 3, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the September sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized in full, down to the January 20, 2025 sitting.",
  "budget": {
   "year": 2026,
   "adopted": "2025-12-17",
@@ -511,8 +511,8 @@ window.OO_SPENDING = {
      13
     ],
     "Supplies & operations": [
-     172466.66,
-     126
+     172461.83,
+     125
     ],
     "Waste & recycling": [
      72658.12,
@@ -523,8 +523,8 @@ window.OO_SPENDING = {
      9
     ],
     "Vehicle fuel & maintenance": [
-     27271.27,
-     82
+     27276.1,
+     83
     ],
     "Utilities": [
      17622.18,
@@ -613,12 +613,12 @@ window.OO_SPENDING = {
      9
     ],
     "Vehicle fuel & maintenance": [
-     156842.31,
-     109
+     157147.89,
+     111
     ],
     "Supplies & operations": [
-     119218.24,
-     100
+     118912.66,
+     98
     ],
     "Contracts — works": [
      64880.03,
@@ -729,8 +729,8 @@ window.OO_SPENDING = {
      10
     ],
     "Supplies & operations": [
-     130290.19,
-     103
+     130238.88,
+     102
     ],
     "Waste & recycling": [
      91441.26,
@@ -741,8 +741,8 @@ window.OO_SPENDING = {
      9
     ],
     "Vehicle fuel & maintenance": [
-     20895.14,
-     53
+     20946.45,
+     54
     ],
     "Legal — external counsel": [
      16552.19,
@@ -772,8 +772,8 @@ window.OO_SPENDING = {
    "url": "https://www.ormstown.ca/wp-content/uploads/2025-06-02_PV.pdf",
    "cats": {
     "Supplies & operations": [
-     183431.78,
-     133
+     182294.26,
+     123
     ],
     "Salaries & HR": [
      173723.18,
@@ -795,13 +795,13 @@ window.OO_SPENDING = {
      16065.94,
      7
     ],
+    "Vehicle fuel & maintenance": [
+     4468.39,
+     38
+    ],
     "Software & IT": [
      3596.24,
      8
-    ],
-    "Vehicle fuel & maintenance": [
-     3330.87,
-     28
     ],
     "Subsidies & community": [
      1559.21,
@@ -1185,8 +1185,8 @@ window.OO_SPENDING = {
      33
     ],
     "Supplies & operations": [
-     72504.96,
-     113
+     72191.5,
+     104
     ],
     "Software & IT": [
      39930.09,
@@ -1201,8 +1201,8 @@ window.OO_SPENDING = {
      10
     ],
     "Vehicle fuel & maintenance": [
-     17439.7,
-     77
+     17753.16,
+     86
     ],
     "Subsidies & community": [
      1550,
@@ -1336,12 +1336,12 @@ window.OO_SPENDING = {
      12
     ],
     "Vehicle fuel & maintenance": [
-     42496.4,
-     65
+     43095.92,
+     73
     ],
     "Supplies & operations": [
-     38318.66,
-     74
+     37719.14,
+     66
     ],
     "Legal — external counsel": [
      32422.11,
@@ -1394,13 +1394,13 @@ window.OO_SPENDING = {
      36471,
      17
     ],
-    "Supplies & operations": [
-     31642.65,
-     57
-    ],
     "Waste & recycling": [
      30954.47,
      1
+    ],
+    "Supplies & operations": [
+     30953.87,
+     51
     ],
     "Software & IT": [
      28877.09,
@@ -1419,8 +1419,8 @@ window.OO_SPENDING = {
      2
     ],
     "Vehicle fuel & maintenance": [
-     3644.63,
-     9
+     4333.41,
+     15
     ]
    }
   },
@@ -1543,6 +1543,57 @@ window.OO_SPENDING = {
     "Software & IT": [
      8197.62,
      17
+    ]
+   }
+  },
+  {
+   "m": "2026-08",
+   "label_fr": "Août 2026",
+   "label_en": "August 2026",
+   "total": 533671.38,
+   "coverage": "full",
+   "session": "Séance ordinaire 2026-08-03 (rés. 26-08-216)",
+   "url": "https://www.ormstown.ca/wp-content/uploads/PV_2026-08-03_WEB.pdf",
+   "cats": {
+    "Salaries & HR": [
+     157498.87,
+     19
+    ],
+    "Contracts — works": [
+     111935.08,
+     19
+    ],
+    "Professional services": [
+     88323.12,
+     20
+    ],
+    "Supplies & operations": [
+     69661.47,
+     88
+    ],
+    "Waste & recycling": [
+     45456.78,
+     4
+    ],
+    "Legal — external counsel": [
+     19286.25,
+     10
+    ],
+    "Utilities": [
+     18714.09,
+     25
+    ],
+    "Software & IT": [
+     14893.34,
+     13
+    ],
+    "Vehicle fuel & maintenance": [
+     7602.38,
+     37
+    ],
+    "Subsidies & community": [
+     300,
+     1
     ]
    }
   }
@@ -1986,15 +2037,15 @@ window.OO_SPENDING = {
    "2025-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   8533.61,
-   55
+   8528.78,
+   54
   ],
   [
    "2025-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Vehicle fuel & maintenance",
-   1713.7,
-   21
+   1718.53,
+   22
   ],
   [
    "2025-01",
@@ -2616,15 +2667,15 @@ window.OO_SPENDING = {
    "2025-03",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   10903.93,
-   57
+   10598.35,
+   55
   ],
   [
    "2025-03",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Vehicle fuel & maintenance",
-   2387.89,
-   17
+   2693.47,
+   19
   ],
   [
    "2025-03",
@@ -2796,7 +2847,7 @@ window.OO_SPENDING = {
   ],
   [
    "2025-04",
-   "FORGUES DIANE",
+   "Forgues Diane",
    "Professional services",
    10474.45,
    2
@@ -3442,8 +3493,8 @@ window.OO_SPENDING = {
    "2025-05",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   9661.22,
-   67
+   9609.91,
+   66
   ],
   [
    "2025-05",
@@ -3463,8 +3514,8 @@ window.OO_SPENDING = {
    "2025-05",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Vehicle fuel & maintenance",
-   399.75,
-   4
+   451.06,
+   5
   ],
   [
    "2025-05",
@@ -3756,7 +3807,7 @@ window.OO_SPENDING = {
   [
    "2025-06",
    "Pièces d'Auto Valleyfield Inc.",
-   "Supplies & operations",
+   "Vehicle fuel & maintenance",
    1137.52,
    10
   ],
@@ -6479,16 +6530,16 @@ window.OO_SPENDING = {
   [
    "2026-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Supplies & operations",
-   11796.01,
-   71
+   "Vehicle fuel & maintenance",
+   1162.35,
+   11
   ],
   [
    "2026-01",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Vehicle fuel & maintenance",
-   848.89,
-   2
+   "Supplies & operations",
+   11482.55,
+   62
   ],
   [
    "2026-01",
@@ -7341,15 +7392,15 @@ window.OO_SPENDING = {
    "2026-04",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   8758.29,
-   46
+   8158.77,
+   38
   ],
   [
    "2026-04",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Vehicle fuel & maintenance",
-   317.28,
-   2
+   916.8,
+   10
   ],
   [
    "2026-04",
@@ -7641,9 +7692,16 @@ window.OO_SPENDING = {
   [
    "2026-05",
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   2416.16,
+   14
+  ],
+  [
+   "2026-05",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Supplies & operations",
-   6523.29,
-   43
+   5834.51,
+   37
   ],
   [
    "2026-05",
@@ -7651,13 +7709,6 @@ window.OO_SPENDING = {
    "Legal — external counsel",
    917.22,
    3
-  ],
-  [
-   "2026-05",
-   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
-   "Vehicle fuel & maintenance",
-   1727.38,
-   8
   ],
   [
    "2026-05",
@@ -8456,6 +8507,454 @@ window.OO_SPENDING = {
    "Regional shares & memberships",
    684.1,
    2
+  ],
+  [
+   "2026-08",
+   "— (paie municipale)",
+   "Salaries & HR",
+   146086.91,
+   1
+  ],
+  [
+   "2026-08",
+   "Solmatech Inc.",
+   "Professional services",
+   57469.11,
+   3
+  ],
+  [
+   "2026-08",
+   "Construction Émery Paquette Inc.",
+   "Contracts — works",
+   56320.62,
+   2
+  ],
+  [
+   "2026-08",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   43440.53,
+   1
+  ],
+  [
+   "2026-08",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   18342.03,
+   3
+  ],
+  [
+   "2026-08",
+   "Hydro-Québec",
+   "Utilities",
+   18267.69,
+   20
+  ],
+  [
+   "2026-08",
+   "Complexe Enviro Connexions Ltée",
+   "Supplies & operations",
+   17579.07,
+   1
+  ],
+  [
+   "2026-08",
+   "DUNTON RAINVILLE SENC AVOCATS",
+   "Legal — external counsel",
+   13471.22,
+   5
+  ],
+  [
+   "2026-08",
+   "Chemtrade Chemicals Canada Ltd.",
+   "Supplies & operations",
+   7658.81,
+   1
+  ],
+  [
+   "2026-08",
+   "Complexe Médical Ormstown inc",
+   "Supplies & operations",
+   7012.12,
+   1
+  ],
+  [
+   "2026-08",
+   "Noël & Fils",
+   "Supplies & operations",
+   6719.43,
+   1
+  ],
+  [
+   "2026-08",
+   "Pelouse Alex Gaulin",
+   "Contracts — works",
+   6663.33,
+   1
+  ],
+  [
+   "2026-08",
+   "Plantes et Décor Latour 9125-8145 Québec Inc",
+   "Contracts — works",
+   6504.14,
+   1
+  ],
+  [
+   "2026-08",
+   "Agence Denis Lepine Inc.",
+   "Contracts — works",
+   6036.19,
+   1
+  ],
+  [
+   "2026-08",
+   "Groupe Charlebois Inc.",
+   "Professional services",
+   5978.7,
+   1
+  ],
+  [
+   "2026-08",
+   "Solution Informatique de la Montérégie",
+   "Software & IT",
+   5684.23,
+   2
+  ],
+  [
+   "2026-08",
+   "AEDIFICA",
+   "Professional services",
+   4333.99,
+   1
+  ],
+  [
+   "2026-08",
+   "Compteurs d'Eau du Québec",
+   "Professional services",
+   4098.86,
+   1
+  ],
+  [
+   "2026-08",
+   "Cmlex Conseil Inc.",
+   "Legal — external counsel",
+   4024.14,
+   1
+  ],
+  [
+   "2026-08",
+   "Bionest Inc.",
+   "Supplies & operations",
+   4020.7,
+   11
+  ],
+  [
+   "2026-08",
+   "IMPACT Partenaires d'affaires",
+   "Salaries & HR",
+   3935.02,
+   1
+  ],
+  [
+   "2026-08",
+   "Bauval Carrières Régionales",
+   "Supplies & operations",
+   3791.1,
+   2
+  ],
+  [
+   "2026-08",
+   "Eurofins Environex",
+   "Professional services",
+   3710.17,
+   5
+  ],
+  [
+   "2026-08",
+   "Pg Solutions",
+   "Software & IT",
+   3592.47,
+   3
+  ],
+  [
+   "2026-08",
+   "Service Informatique D.L. Inc",
+   "Software & IT",
+   3536.64,
+   3
+  ],
+  [
+   "2026-08",
+   "Ouellet Samantha",
+   "Contracts — works",
+   3512.15,
+   2
+  ],
+  [
+   "2026-08",
+   "9534-8702 Québec Inc. (Petro Canada)",
+   "Vehicle fuel & maintenance",
+   3383.97,
+   25
+  ],
+  [
+   "2026-08",
+   "9386-0120 Québec Inc",
+   "Supplies & operations",
+   3104.33,
+   1
+  ],
+  [
+   "2026-08",
+   "Lamb J. & Son",
+   "Contracts — works",
+   3104.33,
+   2
+  ],
+  [
+   "2026-08",
+   "9420-1407 QUEBEC INC., Service Inspec-Thor",
+   "Professional services",
+   2874.38,
+   1
+  ],
+  [
+   "2026-08",
+   "CCESI - Centre conseil en sécurité incendie",
+   "Professional services",
+   2785.27,
+   1
+  ],
+  [
+   "2026-08",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2667.42,
+   1
+  ],
+  [
+   "2026-08",
+   "9303 0286 QUÉBEC INC. (Groupe Pelletier)",
+   "Professional services",
+   2529.45,
+   1
+  ],
+  [
+   "2026-08",
+   "FQM",
+   "Salaries & HR",
+   2345.48,
+   2
+  ],
+  [
+   "2026-08",
+   "Entreprises S. Besner Inc.",
+   "Contracts — works",
+   2310.99,
+   2
+  ],
+  [
+   "2026-08",
+   "9483-3100 Québec Inc.",
+   "Contracts — works",
+   2294.03,
+   1
+  ],
+  [
+   "2026-08",
+   "Enseignes Dumas",
+   "Supplies & operations",
+   2235.11,
+   2
+  ],
+  [
+   "2026-08",
+   "Services Excell-Net inc.",
+   "Contracts — works",
+   2069.55,
+   1
+  ],
+  [
+   "2026-08",
+   "Fqm Services, Coopérative de Solidarité",
+   "Professional services",
+   2060.35,
+   1
+  ],
+  [
+   "2026-08",
+   "Grue Mobile Veilleux Inc.",
+   "Contracts — works",
+   1989.08,
+   1
+  ],
+  [
+   "2026-08",
+   "S.N.G. Services Mécaniques Inc.",
+   "Vehicle fuel & maintenance",
+   1974.69,
+   1
+  ],
+  [
+   "2026-08",
+   "Bottier du Cinq (Le)",
+   "Salaries & HR",
+   1622.42,
+   5
+  ],
+  [
+   "2026-08",
+   "Thibault, Jacques (Pierreville)",
+   "Vehicle fuel & maintenance",
+   1609.65,
+   1
+  ],
+  [
+   "2026-08",
+   "DR Conseils s.e.c.",
+   "Professional services",
+   1606.31,
+   2
+  ],
+  [
+   "2026-08",
+   "Mcclintock, les Entreprises",
+   "Contracts — works",
+   1517.67,
+   1
+  ],
+  [
+   "2026-08",
+   "Laurentide Environnement Inc.",
+   "Waste & recycling",
+   1486.1,
+   1
+  ],
+  [
+   "2026-08",
+   "Ali Excavation Inc.",
+   "Supplies & operations",
+   1475.5,
+   2
+  ],
+  [
+   "2026-08",
+   "Apsam",
+   "Salaries & HR",
+   1446,
+   1
+  ],
+  [
+   "2026-08",
+   "Jalec Inc.",
+   "Software & IT",
+   1309.57,
+   2
+  ],
+  [
+   "2026-08",
+   "Technivolt Électrique Inc.",
+   "Supplies & operations",
+   1301.28,
+   3
+  ],
+  [
+   "2026-08",
+   "Groupe SGM Inc.",
+   "Contracts — works",
+   1270.97,
+   1
+  ],
+  [
+   "2026-08",
+   "Bétonel / Dulux",
+   "Supplies & operations",
+   1226.55,
+   1
+  ],
+  [
+   "2026-08",
+   "Discair Productions",
+   "Supplies & operations",
+   1092.26,
+   1
+  ],
+  [
+   "2026-08",
+   "Therrien, Me René (Notaire Inc.)",
+   "Legal — external counsel",
+   1092.26,
+   1
+  ],
+  [
+   "2026-08",
+   "Filets Sports/Sports Nets",
+   "Supplies & operations",
+   1048.04,
+   1
+  ],
+  [
+   "2026-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   8729.75,
+   59
+  ],
+  [
+   "2026-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   698.63,
+   3
+  ],
+  [
+   "2026-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   634.07,
+   10
+  ],
+  [
+   "2026-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   876.53,
+   3
+  ],
+  [
+   "2026-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   2063.04,
+   9
+  ],
+  [
+   "2026-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Waste & recycling",
+   530.15,
+   2
+  ],
+  [
+   "2026-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   446.4,
+   5
+  ],
+  [
+   "2026-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   770.43,
+   3
+  ],
+  [
+   "2026-08",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Subsidies & community",
+   300,
+   1
   ]
  ]
 };

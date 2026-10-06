@@ -49,7 +49,7 @@ const PAYEE_RULES = [
   [/^Garage C\.P\./i, 'Vehicle fuel & maintenance'],
   [/^Garage S\.D\./i, 'Vehicle fuel & maintenance'],
   [/^Remorquage Brunette/i, 'Vehicle fuel & maintenance'],
-  [/^Pièces d'Auto Valleyfield/i, 'Vehicle fuel & maintenance'],
+  [/^Pi[eè]ces d'Auto Valleyfield/i, 'Vehicle fuel & maintenance'],
   [/^S\.N\.G\. Services Mécaniques/i, 'Vehicle fuel & maintenance'],
   [/^SuperPass/i, 'Vehicle fuel & maintenance'],
   [/^SAAQ/i, 'Vehicle fuel & maintenance'],
