@@ -473,14 +473,24 @@
       "status": "In force",
       "adopted_date": "2023-06-05",
       "amended_date": null,
-      "enforced_by": null,
-      "fines": null,
+      "enforced_by": "Municipality",
+      "fines": "$10,000–$250,000 for demolishing without approval; up to $1,140,000 for a company demolishing a cited heritage building (art. 2.6); obstruction $300–$1,000 (art. 2.7)",
       "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-145-2023-relatif-a-la-demolition-dimmeubles-1.pdf",
-      "key_facts_en": [],
+      "key_facts_en": [
+        "Any demolition, in whole or in part, needs a demolition committee's approval first; moving a building counts too (art. 1.10, 4.1)",
+        "Committee = 3 council members, public sittings; since June 1, 2026: Besombes, Gauthier, Greig (substitute Émond)",
+        "Anyone can file a written objection within 10 days of the public notice (art. 4.11); anyone can request council review within 30 days (art. 4.18)",
+        "Fees (Règl. 39-2026): $250 review ($300 heritage) + $100 certificate",
+        "Annex A heritage inventory published as 'awaiting the MRC'"
+      ],
       "category": "Construction & Permits",
       "topics": [
         "Build & renovate"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/demolition-145-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-demolition-145-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 147-2023",
