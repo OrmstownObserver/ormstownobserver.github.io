@@ -1,28 +1,28 @@
 {
   "version": 2,
-  "generated_at": "2026-10-08T01:30:15.680Z",
+  "generated_at": "2026-10-08T02:27:16.625Z",
   "hero": {
-    "slug": "council-watch-august-3-2026",
-    "path_en": "/en/council-watch/august-3-2026/",
-    "path_fr": "/fr/conseil-municipal/3-aout-2026/",
+    "slug": "council-watch-october-6-2026",
+    "path_en": "/en/council-watch/october-6-2026/",
+    "path_fr": "/fr/conseil-municipal/6-octobre-2026/",
     "label_en": "Council Watch",
     "label_fr": "Conseil municipal",
-    "hed_en": "Council approves 24-unit Church Street project",
-    "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church",
-    "deck_en": "PPCMOI 2026-041 carried on August 3. Before the first question period, the mayor told residents council had obtained a legal opinion and that no valid referendum demand had come from zone R-7 — the only zone, he said, that the law counts. The councillor for seat 4 voted against, the sitting's only dissent.",
-    "deck_fr": "Le PPCMOI 2026-041 a été adopté le 3 août. Avant la première période de questions, le maire a expliqué aux citoyens que le conseil avait obtenu un avis juridique et qu'aucune demande valide n'était provenue de la zone R-7 — la seule zone, a-t-il dit, que la loi prend en compte. Le conseiller du siège 4 a voté contre, seule dissidence de la séance.",
-    "meta_en": "August 4, 2026",
-    "meta_fr": "4 août 2026",
+    "hed_en": "Council orders a traffic study of four problem intersections and pushes 3e Rang paving to 2027",
+    "hed_fr": "Le conseil commande une étude de circulation sur quatre intersections problématiques et reporte le pavage du 3e Rang à 2027",
+    "deck_en": "The October sitting approved $2,025,000 in bond financing, a traffic study for the Route 138 and 201 corridor, and four items that were not on the published agenda. One item listed as a PPCMOI was adopted as a sign approval.",
+    "deck_fr": "La séance d’octobre a approuvé un financement par obligations de 2 025 000 $, une étude de circulation pour le corridor des routes 138 et 201, et quatre points absents de l’ordre du jour publié. Un point inscrit comme PPCMOI a été adopté comme approbation d’enseigne.",
+    "meta_en": "October 7, 2026",
+    "meta_fr": "7 octobre 2026",
     "cta_en": "Read the recap →",
     "cta_fr": "Lire le compte rendu →",
     "icon": "council",
-    "date_published": "2026-08-04",
+    "date_published": "2026-10-07",
     "image": {
-      "src": "/images/council-watch-august-3-2026.jpg",
+      "src": "/images/council-watch-october-6-2026.jpg",
       "position": "center",
-      "credit": "Photo: The Ormstown Observer",
-      "alt_en": "Municipal public notice sign on the vacant lot at 52 rue Church announcing PPCMOI 2026-041",
-      "alt_fr": "Affiche d'avis public sur le terrain vacant au 52, rue Church annonçant le PPCMOI 2026-041"
+      "credit": "Source: Municipalité d’Ormstown, public livestream",
+      "alt_en": "The Ormstown council table during the regular sitting of October 6, 2026, seen from the back of the council chamber.",
+      "alt_fr": "La table du conseil d’Ormstown pendant la séance ordinaire du 6 octobre 2026, vue du fond de la salle du conseil."
     }
   },
   "rail": [],
@@ -102,6 +102,16 @@
   ],
   "latest": [
     {
+      "slug": "council-watch-october-6-2026",
+      "path_en": "/en/council-watch/october-6-2026/",
+      "path_fr": "/fr/conseil-municipal/6-octobre-2026/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council orders a traffic study of four problem intersections and pushes 3e Rang paving to 2027",
+      "hed_fr": "Le conseil commande une étude de circulation sur quatre intersections problématiques et reporte le pavage du 3e Rang à 2027",
+      "date_published": "2026-10-07"
+    },
+    {
       "slug": "bylaws-regulations-demolition-145-2023",
       "path_en": "/en/bylaws-regulations/demolition-145-2023/",
       "path_fr": "/fr/bylaws-regulations/reglement-demolition-145-2023/",
@@ -110,16 +120,6 @@
       "hed_en": "Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object",
       "hed_fr": "Démolir un bâtiment à Ormstown ? Un comité de trois élus tranche, et tout le monde peut s’y opposer",
       "date_published": "2026-10-07"
-    },
-    {
-      "slug": "council-watch-august-3-2026",
-      "path_en": "/en/council-watch/august-3-2026/",
-      "path_fr": "/fr/conseil-municipal/3-aout-2026/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Council approves 24-unit Church Street project",
-      "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church",
-      "date_published": "2026-08-04"
     },
     {
       "slug": "bylaws-regulations-environment-trees-148-2023",
@@ -139,6 +139,16 @@
       "label_fr": "Règlements",
       "hed_en": "The last digit of your address decides which day you can water your lawn",
       "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
+      "date_published": "2026-08-04"
+    },
+    {
+      "slug": "council-watch-august-3-2026",
+      "path_en": "/en/council-watch/august-3-2026/",
+      "path_fr": "/fr/conseil-municipal/3-aout-2026/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council approves 24-unit Church Street project",
+      "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church",
       "date_published": "2026-08-04"
     },
     {
@@ -190,25 +200,26 @@
       "hed_en": "A second home in the back yard: the PIIA rules for detached accessory dwelling units",
       "hed_fr": "Une seconde maison dans la cour arrière : les règles PIIA des unités d'habitation accessoires détachées",
       "date_published": "2026-07-24"
-    },
-    {
-      "slug": "bell-tower-complete",
-      "path_en": "/en/bell-tower-complete/",
-      "path_fr": "/fr/bell-tower-complete/",
-      "label_en": "Investigation",
-      "label_fr": "Enquête",
-      "hed_en": "The Bell tower file, from start to finish — Bell Tower · Projet E3640",
-      "hed_fr": "Le dossier de la tour Bell, du début à la fin — Bell Tower · Projet E3640",
-      "date_published": "2026-07-16"
     }
   ],
   "latest_groups": [
     {
       "file": "Council Watch",
       "file_fr": "Conseil municipal",
-      "status_en": "Open",
-      "status_fr": "En cours",
+      "status_en": "",
+      "status_fr": "",
       "items": [
+        {
+          "slug": "council-watch-october-6-2026",
+          "path_en": "/en/council-watch/october-6-2026/",
+          "path_fr": "/fr/conseil-municipal/6-octobre-2026/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Council orders a traffic study of four problem intersections and pushes 3e Rang paving to 2027",
+          "hed_fr": "Le conseil commande une étude de circulation sur quatre intersections problématiques et reporte le pavage du 3e Rang à 2027",
+          "date_published": "2026-10-07",
+          "part": null
+        },
         {
           "slug": "council-watch-august-3-2026",
           "path_en": "/en/council-watch/august-3-2026/",
@@ -263,21 +274,10 @@
           "hed_fr": "Ormstown emprunte 4,8 M$ pour les rues Prince-Albert, Cullen et Oliver",
           "date_published": "2026-06-01",
           "part": null
-        },
-        {
-          "slug": "council-watch-april-13-2026",
-          "path_en": "/en/council-watch/april-13-2026/",
-          "path_fr": "/fr/conseil-municipal/13-avril-2026/",
-          "label_en": "Council Watch",
-          "label_fr": "Conseil municipal",
-          "hed_en": "Council Watch: April 13, 2026 — a full regulatory cycle, $20,000 for the fire department, and questions on staff turnover",
-          "hed_fr": "Conseil municipal du 13 avril 2026 — un cycle réglementaire complet, 20 000 $ pour les pompiers et des questions sur le roulement de personnel",
-          "date_published": "2026-04-13",
-          "part": null
         }
       ],
-      "newest": "2026-08-04",
-      "total": 6
+      "newest": "2026-10-07",
+      "total": 7
     },
     {
       "file": "PIIA Explained",
