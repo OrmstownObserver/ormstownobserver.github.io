@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-08-05T18:15:18.730Z",
+  "generated_at": "2026-10-08T01:30:15.680Z",
   "hero": {
     "slug": "council-watch-august-3-2026",
     "path_en": "/en/council-watch/august-3-2026/",
@@ -102,6 +102,16 @@
   ],
   "latest": [
     {
+      "slug": "bylaws-regulations-demolition-145-2023",
+      "path_en": "/en/bylaws-regulations/demolition-145-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-demolition-145-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object",
+      "hed_fr": "Démolir un bâtiment à Ormstown ? Un comité de trois élus tranche, et tout le monde peut s’y opposer",
+      "date_published": "2026-10-07"
+    },
+    {
       "slug": "council-watch-august-3-2026",
       "path_en": "/en/council-watch/august-3-2026/",
       "path_fr": "/fr/conseil-municipal/3-aout-2026/",
@@ -190,16 +200,6 @@
       "hed_en": "The Bell tower file, from start to finish — Bell Tower · Projet E3640",
       "hed_fr": "Le dossier de la tour Bell, du début à la fin — Bell Tower · Projet E3640",
       "date_published": "2026-07-16"
-    },
-    {
-      "slug": "toit-vert-development",
-      "path_en": "/en/toit-vert-development/",
-      "path_fr": "/fr/toit-vert-development/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Council approved the 24-unit Church Street project — and the referendum window has now closed — PPCMOI 2026-041",
-      "hed_fr": "Le conseil a approuvé le projet de 24 logements rue Church — et la fenêtre référendaire est maintenant close — PPCMOI 2026-041",
-      "date_published": "2026-07-11"
     }
   ],
   "latest_groups": [
@@ -457,8 +457,19 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 6,
+      "total": 7,
       "items": [
+        {
+          "slug": "bylaws-regulations-demolition-145-2023",
+          "path_en": "/en/bylaws-regulations/demolition-145-2023/",
+          "path_fr": "/fr/bylaws-regulations/reglement-demolition-145-2023/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object",
+          "hed_fr": "Démolir un bâtiment à Ormstown ? Un comité de trois élus tranche, et tout le monde peut s’y opposer",
+          "date_published": "2026-10-07",
+          "part": null
+        },
         {
           "slug": "bylaws-regulations-environment-trees-148-2023",
           "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
@@ -501,17 +512,6 @@
           "hed_en": "How Ormstown council meetings actually work now: Bylaw 2-2026 explained",
           "hed_fr": "Comment fonctionnent vraiment les séances du conseil d’Ormstown : le Règlement 2-2026 expliqué",
           "date_published": "2026-06-21",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-piia-152-2023",
-          "path_en": "/en/bylaws-regulations/piia-152-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-piia-152-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "PIIA explained: when a renovation needs council approval first",
-          "hed_fr": "Le PIIA expliqué : quand une rénovation exige l’accord du conseil",
-          "date_published": "2026-06-20",
           "part": null
         }
       ],
