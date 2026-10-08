@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-10-07T09:31:09.437Z",
- "document_count": 172,
+ "generated_at": "2026-10-08T09:31:43.034Z",
+ "document_count": 174,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -309,6 +309,16 @@
        "title": "AvisPublic DemandeReferendum 148.3 2025 SW",
        "year": "2025",
        "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_148.3-2025_SW.pdf"
+      },
+      {
+       "title": "AVIS Entree en vigueur Resolution 26 08 227 1",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Entree-en-vigueur-Resolution-26-08-227-1.pdf"
+      },
+      {
+       "title": "AVIS Entree en vigueur Resolution 26 08 228 1",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Entree-en-vigueur-Resolution-26-08-228-1.pdf"
       },
       {
        "title": "Avis public Demolition du 1396 1400 rue de Jamestown",
@@ -995,6 +1005,16 @@
        "title": "AvisPublic DemandeReferendum 148.3 2025 SW",
        "year": "2025",
        "url": "https://www.ormstown.ca/wp-content/uploads/AvisPublic_DemandeReferendum_148.3-2025_SW.pdf"
+      },
+      {
+       "title": "AVIS Entree en vigueur Resolution 26 08 227 1",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Entree-en-vigueur-Resolution-26-08-227-1.pdf"
+      },
+      {
+       "title": "AVIS Entree en vigueur Resolution 26 08 228 1",
+       "year": "",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Entree-en-vigueur-Resolution-26-08-228-1.pdf"
       },
       {
        "title": "Avis public Demolition du 1396 1400 rue de Jamestown",
