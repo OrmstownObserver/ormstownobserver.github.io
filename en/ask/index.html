@@ -30,12 +30,18 @@
   .back-link{display:inline-block;font-family:sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-decoration:none;margin-bottom:24px;}
   .back-link:hover{color:var(--accent);}
 
-  .section-label{display:inline-block;background:var(--accent);color:#fff;font-family:sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;margin-bottom:18px;}
+  .section-label{display:inline-block;max-width:100%;background:var(--accent);color:#fff;font-family:sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;padding:4px 10px;margin-bottom:18px;line-height:1.4;white-space:normal;overflow-wrap:anywhere;}
   .section-head h1{font-size:clamp(26px,4.5vw,38px);font-weight:700;margin-bottom:10px;}
   .section-head p{font-size:16px;color:var(--ink-light);max-width:640px;line-height:1.65;margin:0 0 8px;}
 
   .disclaimer{background:var(--paper-dark);border-left:3px solid var(--accent);padding:14px 18px;margin:26px 0;font-size:13.5px;color:var(--ink-light);line-height:1.6;}
   .disclaimer strong{color:var(--ink);}
+  .compass-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0 28px;}
+  .compass-nav a{display:block;border:1px solid var(--border);background:var(--paper-dark);padding:12px 14px;text-decoration:none;color:var(--ink);}
+  .compass-nav a:hover,.compass-nav a:focus-visible{border-color:var(--accent);color:var(--accent);}
+  .compass-nav a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+  .compass-nav strong{display:block;font-family:sans-serif;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;color:var(--accent);}
+  .compass-nav span{display:block;font-size:13.5px;line-height:1.45;color:var(--ink-light);}
   .beta-banner{display:flex;gap:14px;align-items:flex-start;background:var(--accent-bg);border:2px solid #c9a227;border-radius:3px;padding:14px 18px;margin:0 0 22px;font-size:14px;line-height:1.6;color:var(--ink);}
   .beta-tag{flex:none;background:#c9a227;color:#fff;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 9px;border-radius:2px;margin-top:1px;}
   .beta-banner strong{color:var(--ink);}
@@ -104,7 +110,16 @@
   .fine-print{margin-top:40px;font-family:sans-serif;font-size:10.5px;color:var(--muted);line-height:1.6;border-top:1px solid var(--border);padding-top:14px;}
 
   @media(max-width:600px){
-    .page-wrap{padding:20px 14px 60px;}
+    .page-wrap{width:100%;max-width:100vw;padding:20px 14px 60px;overflow:hidden;}
+    .section-head,.beta-banner,.disclaimer,.compass-nav,.chat-panel,.sources,.fine-print{max-width:100%;overflow-wrap:anywhere;}
+    .section-label{display:block;width:100%;}
+    .beta-banner{flex-direction:column;gap:8px;}
+    .compass-nav{grid-template-columns:1fr;}
+    .ask-tabs{flex-direction:column;border-bottom:0;}
+    .ask-tab{min-width:0;font-size:13px;overflow-wrap:anywhere;}
+    .ask-tab small{font-size:8.5px;overflow-wrap:anywhere;}
+    .starter-chips{flex-direction:column;}
+    .starter-chip{display:block;width:100%;max-width:100%;white-space:normal;overflow-wrap:anywhere;}
     #ask-form{flex-direction:column;align-items:stretch;}
   }
 </style>
@@ -135,6 +150,17 @@
   <div class="disclaimer" style="border-left-color:var(--rule);">
     <strong>Official version is French.</strong> Under Quebec's <em>Charter of the French Language</em> (CQLR, c. C-11, s. 1 and s. 7), French is the official language of Québec and the French text of a by-law or public act is the official version. Citations below link to the official French document on <a href="https://www.ormstown.ca/" target="_blank" rel="noopener">ormstown.ca</a>. As part of the Observer's mandate to make civic information available to everyone, each answer can also provide an <strong>unofficial English version</strong> — use the “English version” button beside any source, or just ask in English.
   </div>
+
+  <nav class="compass-nav" aria-label="Community Compass navigation">
+    <a href="/en/bylaws-regulations/">
+      <strong>Browse the rules</strong>
+      <span>Search the Observer’s bilingual bylaws and regulations explainers without using the AI assistant.</span>
+    </a>
+    <a href="#ask-sources">
+      <strong>See official sources</strong>
+      <span>Review the municipal document categories indexed for Community Compass before asking a question.</span>
+    </a>
+  </nav>
 
   <div class="chat-panel" id="ask-panel" data-assistant="legal">
     <div class="ask-tabs" role="tablist">

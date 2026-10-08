@@ -8,7 +8,7 @@
       --paper:#faf8f4; --paper-dark:#f0ece4; --rule:#c8b97a; --border:#d4c9b8; --muted:#555;
     }
     *{box-sizing:border-box;}
-    html,body{margin:0;padding:0;}
+    html,body{margin:0;padding:0;max-width:100%;}
     body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
     a{color:inherit;text-decoration:none;}
     h1,h2,h3{font-family:'Libre Baskerville',Georgia,serif;margin:0;}
@@ -43,6 +43,7 @@
       font-family:'Libre Baskerville',serif; font-weight:700;
       font-size:clamp(32px,6vw,60px); letter-spacing:.03em; line-height:1.05;
       color:var(--ink); display:inline-block; text-decoration:none;
+      max-width:100%;
       transition:color .15s;
     }
     .obs-name:hover{color:var(--accent);}
@@ -133,6 +134,15 @@
       html:not([data-theme=light]) .obs-theme .obs-sun{display:none;}
     }
     @media (max-width:520px){ .obs-theme{width:28px;height:26px;} .obs-controls{gap:6px;} }
+    @media (max-width:520px){
+      .obs-masthead{padding-left:14px;padding-right:14px;overflow:hidden;}
+      .obs-masthead-inner{max-width:100%;}
+      .obs-name{display:block;font-size:22px;max-width:calc(100vw - 128px);white-space:normal;margin:0 auto;}
+      .obs-flag,.obs-tagline{max-width:calc(100vw - 56px);margin-left:auto;margin-right:auto;overflow-wrap:anywhere;}
+      .obs-flag{font-size:10px;letter-spacing:.18em;}
+      .obs-tagline{display:none;}
+      .obs-hamburger{right:0;}
+    }
 
     /* ── DRAWER NAV ── */
     .obs-drawer{
