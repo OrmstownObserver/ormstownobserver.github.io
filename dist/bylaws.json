@@ -1,0 +1,1373 @@
+{
+  "version": 1,
+  "generated_at": "2026-10-08T00:01:38.787415Z",
+  "source_note": "Local publication snapshot generated from public municipal bylaw records reviewed in the Observer Notion bylaw registry.",
+  "legal_note_en": "Unofficial public-interest index. French official documents published by the municipality remain the authoritative source.",
+  "legal_note_fr": "Index non officiel d’intérêt public. Les documents officiels français publiés par la municipalité demeurent la source faisant autorité.",
+  "records": [
+    {
+      "bylaw_number": "Projet de règlement 149.1-2026",
+      "title_en": "First draft — Subdivision Bylaw amendment (parks contribution exemptions)",
+      "title_fr": "Premier projet de règlement 149.1-2026 modifiant le Règlement de lotissement 149-2023",
+      "status": "Draft",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": "Municipality",
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Projet-de-reglement-de-lotissement-149.1-2026.pdf",
+      "key_facts_en": [
+        "Adds exemptions k)–q) to art. 4.2 of Règl. 149-2023 (parks/playgrounds contribution)",
+        "Exempts qualifying non-profits, schools, daycares/CPEs, municipal and public-purpose operations",
+        "Contains provisions subject to referendum approval, territory-wide",
+        "Notice of motion 6 July 2026 (J. Fairhurst); consultation held 26 Aug 2026"
+      ],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Trees & land"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 1-2026",
+      "title_en": "Taxation Bylaw 2026",
+      "title_fr": "",
+      "status": "In force",
+      "adopted_date": "2026-01-19",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 100.1-2016",
+      "title_en": "Borrowing Bylaw — Construction of Town Hall",
+      "title_fr": "Règlement d'emprunt – Construction d'un hôtel de ville (100.1-2016)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/100-1_2016_hotel_de_ville.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 101.1-2017",
+      "title_en": "Borrowing Bylaw — Centenaire Bridge Lighting",
+      "title_fr": "Règlement d'emprunt – Éclairage Pont du Centenaire (101.1-2017)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/101-1_2017_regl_emprunt_eclairage_pont.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 102-2015",
+      "title_en": "Borrowing Bylaw — Tullochgorum Culvert",
+      "title_fr": "Règlement d'emprunt – Ponceau Tullochgorum (102-2015)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/102_2015_emprunt_pont_tullochgorum.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes",
+        "Parking & roads"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 103-2015",
+      "title_en": "Fire Protection Service Creation Bylaw",
+      "title_fr": "Création du service de sécurité incendie 103-2015",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": "Fire service",
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/103_2015_creation_du_service_de_securite_indendie.pdf",
+      "key_facts_en": [],
+      "category": "Fire Safety",
+      "topics": [
+        "Burning & fire"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 110.1-2017",
+      "title_en": "Borrowing Bylaw — Vallée des Outardes Phase 1",
+      "title_fr": "Règlement d'emprunt – travaux Vallée des Outardes, phase 1 (110.1-2017)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/110-1_2017__emprunt_eclairage_bordures_vallee_outardes.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 114-2021",
+      "title_en": "Special Construction/Modification/Occupancy Projects (PPCMOI) Bylaw",
+      "title_fr": "Règlement sur les PPCMOI 114-2021",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/R-114-2021-PPCMOI-signe.docx.pdf",
+      "key_facts_en": [],
+      "category": "Construction & Permits",
+      "topics": [
+        "Build & renovate",
+        "Run a business"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 12-2022",
+      "title_en": "Municipal Road Traffic Circulation and Speed Limits Bylaw (2022)",
+      "title_fr": "Règlement 12-2022 – Circulation et limites de vitesse",
+      "status": "Repealed",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/4.-Reglement-no.-12-2022-Circulation-et-limites-de-vitesse.pdf",
+      "key_facts_en": [],
+      "category": "Infrastructure",
+      "topics": [
+        "Parking & roads"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 12-2025",
+      "title_en": "Municipal Road Traffic Circulation and Speed Limits Bylaw (2025)",
+      "title_fr": "Règlement 12-2025 – Circulation et limites de vitesse",
+      "status": "In force",
+      "adopted_date": "2025-06-10",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-12-2025.pdf",
+      "key_facts_en": [],
+      "category": "Infrastructure",
+      "topics": [
+        "Parking & roads"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 120-2020",
+      "title_en": "Water Service Connections Bylaw (2020)",
+      "title_fr": "",
+      "status": "Amended",
+      "adopted_date": "2020-12-07",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Infrastructure",
+      "topics": [
+        "Water",
+        "Build & renovate"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 120-2022",
+      "title_en": "Amendment to Water Service Connections Bylaw 120-2020",
+      "title_fr": "Règlement 120-2022 – En regard des branchements au réseau d'eau potable et des eaux usées, et de protection contre les dégâts d'eau",
+      "status": "In force",
+      "adopted_date": "2022-11-07",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1rlsciDc0oorQIQNYpQtPkxJQPxfZvMyx/view",
+      "key_facts_en": [],
+      "category": "Infrastructure",
+      "topics": [
+        "Water",
+        "Build & renovate"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 129-2020",
+      "title_en": "Contractual Management Bylaw (2020 — Administrative Codification)",
+      "title_fr": "Règlement no. 129-2020 – Gestion contractuelle (codification administrative)",
+      "status": "Amended",
+      "adopted_date": "2020-03-02",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Codification-administrative-129-2020.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 129-2021",
+      "title_en": "Amendment to Contractual Management Bylaw 129-2020",
+      "title_fr": "Gestion contractuelle 129-2021",
+      "status": "In force",
+      "adopted_date": "2021-06-07",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no..129-2021.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 130-2022",
+      "title_en": "Budget Delegation of Powers and Budget Control (2022)",
+      "title_fr": "RÈGLEMENT #.130-2022 – Délégations de pouvoirs et le contrôle budgétaire",
+      "status": "Repealed",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Regl.-no.132-2022-Prevention-incendie-luc.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Council & ethics",
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 130-2023",
+      "title_en": "Spending Authority Delegation Bylaw",
+      "title_fr": "Règlement 130-2023 Délégation du pouvoir de dépenser",
+      "status": "In force",
+      "adopted_date": "2023-04-03",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/3.-Regl.-130-2023-Delegation-du-pouvoir-de-depenser.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Council & ethics",
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 131-2020",
+      "title_en": "Domestic Animals and Dangerous Dogs Bylaw",
+      "title_fr": "Règlement sur les animaux domestiques et chiens dangereux 131-2020",
+      "status": "Repealed",
+      "adopted_date": "2020-07-06",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Regl.-131-2020-Animaux-domestiques-et-chiens-dangereux.pdf",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Animals"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 131-2026",
+      "title_en": "Domestic Animals and Dangerous Dogs Bylaw (2026)",
+      "title_fr": "Règlement sur les animaux domestiques et les chiens dangereux",
+      "status": "In force",
+      "adopted_date": "2026-04-13",
+      "amended_date": null,
+      "enforced_by": "Municipality",
+      "fines": "$300–$2,000 individual · $500–$4,000 company (art. 66); each day is a separate offence (art. 67)",
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-131-2026-VF-refondu-pour-side-web-1.pdf",
+      "key_facts_en": [
+        "Licence required for dogs AND cats 6 months+, $25 once for the animal's life (art. 14, 25; Règl. 39-2026 line 47)",
+        "Max 4 cats, 2 dogs in the urban perimeter, 6 animals total (art. 29)",
+        "Up to 5 hens, no roosters, one coop in side/rear yard (art. 12)",
+        "Leash max 1.85 m; dogs 20 kg+ also need a harness or halter (art. 33)",
+        "Tethering limited to 3 consecutive hours (art. 36)"
+      ],
+      "category": "Other",
+      "topics": [
+        "Animals"
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/animal-control-131-2026/",
+        "fr": "/fr/bylaws-regulations/reglement-animaux-131-2026/"
+      }
+    },
+    {
+      "bylaw_number": "Règlement 132-2020",
+      "title_en": "Fire Prevention Bylaw (2020)",
+      "title_fr": "Règlement sur la prévention et sécurité incendie 132-2020",
+      "status": "Repealed",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": "Fire service",
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/reg132-2020_prevention-securite-incendie.pdf",
+      "key_facts_en": [],
+      "category": "Fire Safety",
+      "topics": [
+        "Burning & fire"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 132-2022",
+      "title_en": "Amendment to Fire Prevention Bylaw 132-2020",
+      "title_fr": "RÈGLEMENT #.132-2022 Prévention incendie",
+      "status": "Repealed",
+      "adopted_date": "2022-07-04",
+      "amended_date": null,
+      "enforced_by": "Fire service",
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Regl.-no.132-2022-Prevention-incendie-luc.pdf",
+      "key_facts_en": [],
+      "category": "Fire Safety",
+      "topics": [
+        "Burning & fire"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 134-2021",
+      "title_en": "Non-Residential Water Meters Bylaw",
+      "title_fr": "Compteurs d'eau pour les immeubles non-résidentiels 134-2021",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/4.-Reglement-n%C2%B0-134-2021-Compteurs-deau.pdf",
+      "key_facts_en": [],
+      "category": "Infrastructure",
+      "topics": [
+        "Water",
+        "Run a business"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 136-2023",
+      "title_en": "Watercourse Bylaw — J.W. Martin Branch 3",
+      "title_fr": "Règlement no. 136-2023 Cours d'eau J.W. Martin br. 3",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.-136-2023-Cours-deau-J.W.-Martin-br.-3.pdf",
+      "key_facts_en": [],
+      "category": "Environment",
+      "topics": [
+        "Water",
+        "Trees & land"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 140-2022",
+      "title_en": "Fire Service Tarification (2022)",
+      "title_fr": "Règlement 140-2022 Tarification-Incendie",
+      "status": "Amended",
+      "adopted_date": "2022-05-02",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-140-2022-Tarification-Incendie.pdf",
+      "key_facts_en": [],
+      "category": "Fire Safety",
+      "topics": [
+        "Burning & fire",
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 140.1-2023",
+      "title_en": "Amendment to Fire Service Tariff Bylaw 140-2022 (non-residents)",
+      "title_fr": "Règlement 140.1-2023 Tarification-Incendie non-résident",
+      "status": "In force",
+      "adopted_date": "2023-09-05",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-140.1-2023-Tarification-Incendie-non-resident-.pdf",
+      "key_facts_en": [],
+      "category": "Fire Safety",
+      "topics": [
+        "Burning & fire",
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 142-2022",
+      "title_en": "Interim Control Bylaw (2022)",
+      "title_fr": "Règlement de contrôle intérimaire 142-2022",
+      "status": "Repealed",
+      "adopted_date": "2022-07-07",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/5.-142-2022-Reglement-de-controle-interimaire-signe.pdf",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Trees & land"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 142.1-2022",
+      "title_en": "Amendment to Interim Control Bylaw 142-2022 (No. 142.1-2022)",
+      "title_fr": "Règlement numéro 142.1-2022 Modifiant le règlement de contrôle intérimaire numéro 142-2022",
+      "status": "Repealed",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/3.-Reg.-142.-2022-RCI-signe.pdf",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Trees & land"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 142.2-2023",
+      "title_en": "Amendment to Interim Control Bylaw 142-2022 (No. 142.2-2023)",
+      "title_fr": "Règlement numéro 142.2-2023 modifiant le règlement de contrôle intérimaire numéro 142-2022",
+      "status": "Repealed",
+      "adopted_date": "2023-02-20",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/3.-Reglement-142.2-2023-signe.pdf",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Trees & land"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 145-2023",
+      "title_en": "Demolition of Buildings Bylaw",
+      "title_fr": "Règlement 145-2023 relatif à la démolition d'immeubles",
+      "status": "In force",
+      "adopted_date": "2023-06-05",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-145-2023-relatif-a-la-demolition-dimmeubles-1.pdf",
+      "key_facts_en": [],
+      "category": "Construction & Permits",
+      "topics": [
+        "Build & renovate"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 147-2023",
+      "title_en": "Urban Planning Bylaw",
+      "title_fr": "Règlement concernant le Plan d'Urbanisme 147-2023",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1x6nPalbgXV-gKAlvXm7O5z_uK953dNi_/view?usp=drive_link",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Trees & land"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 148-2023",
+      "title_en": "Zoning Bylaw",
+      "title_fr": "Règlement de zonage",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1_uQKkC1mx2k3lbfbyyfdfkh8S6pvsX-n/view?usp=drive_link",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Run a business",
+        "Trees & land"
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/environment-trees-148-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/"
+      }
+    },
+    {
+      "bylaw_number": "Règlement 149-2023",
+      "title_en": "Subdivision Bylaw",
+      "title_fr": "Règlement de Lotissement numéro 149-2023",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1LdljPTSD3cJoaab42aojjJem2nQBMj-L/view?usp=drive_link",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Trees & land"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 150-2023",
+      "title_en": "Construction Bylaw",
+      "title_fr": "Règlement de Construction numéro 150-2023",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1_AVXFjqducMv8r9lReEnB1QTOwshd224/view?usp=drive_link",
+      "key_facts_en": [],
+      "category": "Construction & Permits",
+      "topics": [
+        "Build & renovate"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 151-2023",
+      "title_en": "Building Permits Bylaw",
+      "title_fr": "Règlement sur les permis de construction",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1K4F2X-NXSbcyRs-dkes1jVT24-Lfvkj0/view?usp=drive_link",
+      "key_facts_en": [],
+      "category": "Construction & Permits",
+      "topics": [
+        "Build & renovate",
+        "Trees & land"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 152-2023",
+      "title_en": "Plan of Implantation and Architectural Integration (PIIA)",
+      "title_fr": "Plan d'implantation et d'intégration architecturale (PIIA)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/10Zt-c_bA5YkAwmx_-ME3y3G2NcLilGZ4/view?usp=drive_link",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Run a business"
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/piia-152-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-piia-152-2023/"
+      }
+    },
+    {
+      "bylaw_number": "Règlement 153-2023",
+      "title_en": "Ensemble Development Plans (PAE) Bylaw",
+      "title_fr": "Règlement sur Les Plans d'Aménagement d'Ensemble numéro 153-2023",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1nWuKCmyffYn0_PoYHMG6viPLJOpFVwdk/view?usp=drive_link",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Trees & land"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 154-2023",
+      "title_en": "Municipal Road Allowances Bylaw",
+      "title_fr": "Règlement no. 154-2023 sur les emprises municipales",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.-154-2023-sur-les-emprises-municipales.pdf",
+      "key_facts_en": [],
+      "category": "Infrastructure",
+      "topics": [
+        "Parking & roads"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 155-2023",
+      "title_en": "Fire Prevention Bylaw",
+      "title_fr": "Règlement no. 155-2023 sur la prévention des incendie",
+      "status": "In force",
+      "adopted_date": "2023-06-05",
+      "amended_date": null,
+      "enforced_by": "Fire service",
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.-155-2023-sur-la-prevention-des-incendie.pdf",
+      "key_facts_en": [],
+      "category": "Fire Safety",
+      "topics": [
+        "Burning & fire"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 156-2023",
+      "title_en": "Conditional Uses Bylaw",
+      "title_fr": "Règlement sur les Usages Conditionnels numéro 156-2023",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1ysoJbV1SiXKOY49SJekUQtY30UlcZY8v/view?usp=drive_link",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Run a business"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 158-2023",
+      "title_en": "Hired Personnel Bylaw",
+      "title_fr": "Règlement no. 158-2023 sur l'embauche du personnel salarié",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.-158-2023-sur-lembauche-du-personnel-salarie.pdf",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 16-2001",
+      "title_en": "Regional Ice Rink Intermunicipal Board Bylaw",
+      "title_fr": "Régie intermunicipale patinoire régionale 16-2001",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/16_2001_regie_intermunicipale-patinoire-regionale.pdf",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 167-2025",
+      "title_en": "Public Notice Publication Modalities Bylaw 2025",
+      "title_fr": "Règlement 167-2025 déterminant les modalités de publication des avis publics municipaux",
+      "status": "Amended",
+      "adopted_date": "2025-05-27",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-167-2025.pdf",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 167.1-2026",
+      "title_en": "Amendment to Public Notice Bylaw 167-2025 (posting location)",
+      "title_fr": "Règlement 167.1-2026",
+      "status": "In force",
+      "adopted_date": "2026-06-01",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Council & ethics"
+      ],
+      "explainer": {
+        "en": "/en/council-watch/june-1-2026/",
+        "fr": "/fr/conseil-municipal/1-juin-2026/"
+      }
+    },
+    {
+      "bylaw_number": "Règlement 2-2021",
+      "title_en": "Council Procedure Bylaw (2021)",
+      "title_fr": "Régie interne et procédures lors de séances du conseil 2-2021",
+      "status": "Repealed",
+      "adopted_date": "2021-02-01",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/4.-Regl.-n-2-2021-Regie-interne-VF.pdf",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 2-2023",
+      "title_en": "Internal Rules of Procedure Bylaw (2023)",
+      "title_fr": "Règlement Régie interne",
+      "status": "Repealed",
+      "adopted_date": "2023-06-05",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-Regie-interne-.pdf",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 2-2026",
+      "title_en": "Rules of Procedure for Council Meetings",
+      "title_fr": "Règlement de procédure du conseil municipal",
+      "status": "In force",
+      "adopted_date": "2026-04-13",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/council-procedure-2-2026/",
+        "fr": "/fr/bylaws-regulations/reglement-regie-interne-2-2026/"
+      }
+    },
+    {
+      "bylaw_number": "Règlement 2.1-2014",
+      "title_en": "Council Session Procedures Bylaw (2014)",
+      "title_fr": "Séances du conseil 2.1-2014",
+      "status": "Repealed",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/2-1_2014_seances-du-conseil.pdf",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 25.45-2022",
+      "title_en": "Amendment to Zoning Bylaw No. 25-2006 (No. 25.45-2022)",
+      "title_fr": "Règlement numéro 25.45-2022 modifiant le règlement de zonage numéro 25-2006",
+      "status": "Repealed",
+      "adopted_date": "2022-11-07",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/reg.-25.45-2022-wordpress.pdf",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 3-2000",
+      "title_en": "Agricultural Advisory Committee Bylaw",
+      "title_fr": "Comité Consultatif Agricole 3-2000",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/3_2000_comite-consultatif-agricole.pdf",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Trees & land",
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 39-2023",
+      "title_en": "Municipal Services Pricing Bylaw (2023)",
+      "title_fr": "Règlement 39-2023 Tarification des services municipaux",
+      "status": "Repealed",
+      "adopted_date": "2023-07-03",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reg.-39-2023-Tarification-des-services-municipaux-1.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 39-2024",
+      "title_en": "Municipal Services Pricing Bylaw 2024",
+      "title_fr": "Règlement 39-2024 Tarification des services municipaux",
+      "status": "Repealed",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reg.-39-2024-Tarification-des-services-municipaux.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 39-2026",
+      "title_en": "Municipal Services Pricing Bylaw 2026",
+      "title_fr": "Tarification des services municipaux",
+      "status": "In force",
+      "adopted_date": "2026-06-01",
+      "amended_date": null,
+      "enforced_by": "Municipality",
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement_39-2026-Tarification-des-services-municipaux_WEB-3-1.pdf",
+      "key_facts_en": [
+        "Replaces every other municipal tariff (art. 5); all fees payable up front (art. 3)",
+        "Minor derogation $650, non-refundable",
+        "Zoning amendment request $2,000; $1,000 back if council refuses, nothing if voters block it",
+        "Fence/hedge permit $40; pool permit $100; tree felling from $25",
+        "Burning permit free; 3rd+ unfounded fire call $500"
+      ],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes",
+        "Build & renovate",
+        "Animals",
+        "Burning & fire"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 41-2018",
+      "title_en": "Borrowing Bylaw — Aqueduct and Sewer Route 201",
+      "title_fr": "Règlement d'emprunt – Aqueduc et égout route 201 (41-2018)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/41_2018__route_201_sud.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes",
+        "Water"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 44-2024",
+      "title_en": "Budget Control and Monitoring Bylaw 2024",
+      "title_fr": "Règlement 44-2024 en regard au contrôle et suivi budgétaires",
+      "status": "In force",
+      "adopted_date": "2024-12-16",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-44-2024.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Council & ethics",
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 44.1-2018",
+      "title_en": "Budget Control Bylaw (2018)",
+      "title_fr": "Règlement contrôle et suivi budgétaires 44.1-2018",
+      "status": "Repealed",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/44-1_2018__controle_budgetaire.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Council & ethics",
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 50.1-2011",
+      "title_en": "Exterior Water Use Bylaw (SQ-enforced)",
+      "title_fr": "Utilisation extérieure de l'eau par la S.Q. 50.1-2011",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": "Sûreté du Québec",
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/50-1_2011_utilisation_exterieure_de_leau_par_sq.pdf",
+      "key_facts_en": [],
+      "category": "Environment",
+      "topics": [
+        "Water"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 51-2012",
+      "title_en": "Alarm Systems Bylaw (SQ-enforced)",
+      "title_fr": "Systèmes d'alarmes par la S.Q. 51-2012",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": "Sûreté du Québec",
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/51_2012_systemes_alarmes_par_sq.pdf",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Noise & nuisances"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 57.1-2014",
+      "title_en": "Quarries and Sand Pits Tax Bylaw",
+      "title_fr": "Taxe carrières et sablières 57.1-2014",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/57-1_2014-taxes_carrieres_et_sablieres.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes",
+        "Run a business"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 6-2023",
+      "title_en": "Working Capital Reserve Fund Bylaw (2023)",
+      "title_fr": "Règlement 6-2023 Fonds de roulement",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-6-2023-Fonds-de-roulement.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 60.2-2017",
+      "title_en": "Bylaw Repealing Swimming Pool Bylaws 60-2009 and 60.1-2016",
+      "title_fr": "Règlement abrogeant les règl. 60-2009 et 60.1-2016 piscine (60.2-2017)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/60-2_2017_abroge_60_2009_et_60-1_2016_piscine.pdf",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Build & renovate"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 62.2-2023",
+      "title_en": "9-1-1 Emergency Centres Bylaw",
+      "title_fr": "Règlement 62.2-2023 Centres 9-1-1",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-62.2-2023-Centres-9-1-1.pdf",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 65.6-2022",
+      "title_en": "Amendment to PIIA Bylaw No. 65-2011 (No. 65.6-2022)",
+      "title_fr": "Règlement 65.6-2022 modifiant le règlement sur les plans d'implantation et d'intégration architecturale N° 65-2011",
+      "status": "Repealed",
+      "adopted_date": "2022-11-07",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/R-65.6-2022-PIIA-Word-Press.pdf",
+      "key_facts_en": [],
+      "category": "Zoning & Land Use",
+      "topics": [
+        "Build & renovate",
+        "Run a business"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 7-2021",
+      "title_en": "Heavy Vehicles and Trucks Bylaw",
+      "title_fr": "Règlement sur le transport par camions et véhicules lourds 7-2021",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-7-2021.pdf",
+      "key_facts_en": [],
+      "category": "Infrastructure",
+      "topics": [
+        "Parking & roads",
+        "Run a business"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 73-2011",
+      "title_en": "Vallée des Outardes Intermunicipal Agreement Protocol",
+      "title_fr": "Protocole d'entente Vallée des Outardes (73-2011)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/73_2011_protocole_entente_vallee-de-outardes.pdf",
+      "key_facts_en": [],
+      "category": "Infrastructure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 74-2021",
+      "title_en": "Ethics and Deontology of Elected Officials Bylaw",
+      "title_fr": "Règlement no. 74-2021 Éthique et déontologie des élus.e.s",
+      "status": "In force",
+      "adopted_date": "2022-02-07",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/4.-Reglement-no.-74-2021-Ethique-et-deontologie-des-elus.e.s.pdf",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 74.4-2018",
+      "title_en": "Ethics and Deontology Bylaw (2018 — Elected Officials)",
+      "title_fr": "Code de déontologie des élus 74.4-2018",
+      "status": "Repealed",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/74-4_2018_code_ethique_elus.pdf",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 8-2022",
+      "title_en": "Elected Officials Remuneration Bylaw (2022)",
+      "title_fr": "RÈGLEMENT # 8-2022 – Traitement des élus municipaux",
+      "status": "Repealed",
+      "adopted_date": "2022-06-06",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/PR-8-2022-Traitement-des-elus-municipaux.pdf",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 8-2023",
+      "title_en": "Elected Officials Remuneration Bylaw (2023)",
+      "title_fr": "Règlement no. 8-2023 – Traitement des élus municipaux",
+      "status": "Repealed",
+      "adopted_date": "2023-09-05",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.-8-2023-Traitement-des-elus-municipaux.pdf",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 8-2024",
+      "title_en": "Elected Officials Remuneration Bylaw (2024)",
+      "title_fr": "",
+      "status": "Amended",
+      "adopted_date": "2024-01-15",
+      "amended_date": "2024-04-08",
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1d3yJb0Ymj1ogWSucxkXO6MgNAik3Eg9u/view",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 8-2024.1",
+      "title_en": "Amendment to Elected Officials Remuneration Bylaw 8-2024",
+      "title_fr": "Règlement no. 8-2024.1 – Traitement des élus",
+      "status": "In force",
+      "adopted_date": "2024-04-08",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1B9KMU525pGlw7TV5rkpcqCQb01bJtiU-/view",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 8.6-2019",
+      "title_en": "Elected Officials Remuneration Bylaw (2019)",
+      "title_fr": "Règlement rémunération des élus 8.6-2019",
+      "status": "Repealed",
+      "adopted_date": "2019-04-01",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/8-6_2019_remuneration_des_elus.pdf",
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 80-2012 / 80.1-2016",
+      "title_en": "Employee Code of Ethics (with 2016 amendment)",
+      "title_fr": "Code d'éthique pour les employés 80-2012 incluant mise à jour 80.1-2016",
+      "status": "Repealed",
+      "adopted_date": "2012-12-03",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/80-1-1_2016_code_ethique_employes.pdf",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 80-2022",
+      "title_en": "Employee Code of Ethics (2022)",
+      "title_fr": "",
+      "status": "In force",
+      "adopted_date": "2022-05-02",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://drive.google.com/file/d/1YyBD3fh5X_eXTpLq3P01zX_z6abCkC6j/view",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 86-2024",
+      "title_en": "Drinking Water Use Bylaw",
+      "title_fr": "Règlement 86-2024 – Utilisation de l'eau potable",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-86-2024-Utilisation-de-leau-potable.pdf",
+      "key_facts_en": [],
+      "category": "Environment",
+      "topics": [
+        "Water"
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/drinking-water-86-2024/",
+        "fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/"
+      }
+    },
+    {
+      "bylaw_number": "Règlement 87-2015",
+      "title_en": "Borrowing Bylaw — TECQ Subsidized Works (2015)",
+      "title_fr": "Règlement d'emprunt – travaux subventionnés par la T.E.C.Q. (87-2015)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/87_2015_regl_emprunt_tecq.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes",
+        "Water"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 91.1-2018",
+      "title_en": "Nuisances Bylaw",
+      "title_fr": "Règlement sur les nuisances",
+      "status": "In force",
+      "adopted_date": "2018-11-05",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/91-1_2018_nuisances.pdf",
+      "key_facts_en": [],
+      "category": "Nuisances & Noise",
+      "topics": [
+        "Noise & nuisances"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 93-2015",
+      "title_en": "Public Domain Occupation Bylaw",
+      "title_fr": "Règlement sur l'occupation du domaine public 93-2015",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/93_2015_reglement_sur_occupation_du_domaine_public.pdf",
+      "key_facts_en": [],
+      "category": "Infrastructure",
+      "topics": [
+        "Parking & roads",
+        "Run a business"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 97.1-2017",
+      "title_en": "Borrowing Bylaw — TECQ 2014–2018 Subsidized Works",
+      "title_fr": "Règlement d'emprunt – travaux subventionnés par la T.E.C.Q. 2014-2018 (97.1-2017)",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/97-1_2017__tecq_2014_2018.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes",
+        "Water"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 99-2023",
+      "title_en": "Human Resources Policy Bylaw",
+      "title_fr": "Règlement no. 99-2023 Politique RH",
+      "status": "In force",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.-99-2023-Politique-RH-.pdf",
+      "key_facts_en": [],
+      "category": "Other",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement MRC 352-2025",
+      "title_en": "MRC Harmonized Public Safety, Nuisances and Animals Bylaw (No. 352-2025)",
+      "title_fr": "Règlement harmonisé 352-2025 – Sécurité publique, nuisances, animaux, stationnement, parc linéaire (MRC du Haut-Saint-Laurent)",
+      "status": "In force",
+      "adopted_date": "2025-07-14",
+      "amended_date": null,
+      "enforced_by": "Sûreté du Québec",
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Avis-publication-dadoption-reglement-352-2025-MRC.pdf",
+      "key_facts_en": [],
+      "category": "Nuisances & Noise",
+      "topics": [
+        "Noise & nuisances",
+        "Animals",
+        "Parking & roads",
+        "Run a business"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement d'emprunt 173-2026",
+      "title_en": "Borrowing Bylaw — Prince-Albert, Cullen and Oliver streets",
+      "title_fr": "",
+      "status": "Amended",
+      "adopted_date": null,
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes",
+        "Parking & roads"
+      ],
+      "explainer": {
+        "en": "/en/council-watch/june-1-2026/",
+        "fr": "/fr/conseil-municipal/1-juin-2026/"
+      }
+    }
+  ]
+}
