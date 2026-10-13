@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-12T03:01:00.646Z",
+  "generated_at": "2026-10-13T01:01:02.375Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -112,6 +112,16 @@
       "date_published": "2026-10-12"
     },
     {
+      "slug": "bylaws-regulations-urban-plan-147-2023",
+      "path_en": "/en/bylaws-regulations/urban-plan-147-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-plan-urbanisme-147-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Ormstown's urban plan: 11 land-use designations that the zoning bylaw must respect",
+      "hed_fr": "Le plan d'urbanisme d'Ormstown : 11 grandes affectations que le règlement de zonage doit respecter",
+      "date_published": "2026-10-12"
+    },
+    {
       "slug": "council-watch-october-6-2026",
       "path_en": "/en/council-watch/october-6-2026/",
       "path_fr": "/fr/conseil-municipal/6-octobre-2026/",
@@ -189,16 +199,6 @@
       "label_fr": "Règlements",
       "hed_en": "One storey, close to the road: what the PIIA asks of builders on the Route 201 South corridor",
       "hed_fr": "Un étage, près de la route : ce que le PIIA exige des bâtisseurs du corridor de la route 201 Sud",
-      "date_published": "2026-07-24"
-    },
-    {
-      "slug": "piia-who-decides",
-      "path_en": "/en/piia/who-decides/",
-      "path_fr": "/fr/piia/qui-decide/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Who actually decides: the CCU, council, and what happens when a PIIA is refused",
-      "hed_fr": "Qui décide vraiment : le CCU, le conseil et ce qui arrive quand un PIIA est refusé",
       "date_published": "2026-07-24"
     }
   ],
@@ -457,7 +457,7 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 8,
+      "total": 9,
       "items": [
         {
           "slug": "bylaws-regulations-employee-ethics-80-2022",
@@ -467,6 +467,17 @@
           "label_fr": "Règlements",
           "hed_en": "Gifts, conflicts of interest, confidentiality: the rules Ormstown's municipal staff must follow",
           "hed_fr": "Cadeaux, conflits d’intérêts, confidentialité : les règles que doit suivre le personnel municipal d’Ormstown",
+          "date_published": "2026-10-12",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-urban-plan-147-2023",
+          "path_en": "/en/bylaws-regulations/urban-plan-147-2023/",
+          "path_fr": "/fr/bylaws-regulations/reglement-plan-urbanisme-147-2023/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Ormstown's urban plan: 11 land-use designations that the zoning bylaw must respect",
+          "hed_fr": "Le plan d'urbanisme d'Ormstown : 11 grandes affectations que le règlement de zonage doit respecter",
           "date_published": "2026-10-12",
           "part": null
         },
@@ -501,17 +512,6 @@
           "hed_en": "The last digit of your address decides which day you can water your lawn",
           "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
           "date_published": "2026-08-04",
-          "part": null
-        },
-        {
-          "slug": "editorials-language-policy-2026",
-          "path_en": "/en/editorials/language-policy-2026/",
-          "path_fr": "/fr/editoriaux/politique-linguistique-2026/",
-          "label_en": "Editorial",
-          "label_fr": "Éditorial",
-          "hed_en": "When policy allows more than practice — Ormstown’s language directive and the gap residents live with",
-          "hed_fr": "Quand la politique permet plus que la pratique — la directive linguistique d’Ormstown et l’écart que vivent les résidents",
-          "date_published": "2026-06-25",
           "part": null
         }
       ],
