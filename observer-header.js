@@ -251,7 +251,7 @@
     <div class="obs-drawer-title"><span data-en>Navigate</span><span data-fr>Navigation</span></div>
     <nav>
       <a href="/en/investigations/" data-href-en="/en/investigations/" data-href-fr="/fr/investigations/"
-        class="${isActive('/en/investigations') || isActive('/fr/investigations') || isActive('/en/bell-tower') || isActive('/fr/bell-tower') || isActive('/en/toit-vert') || isActive('/fr/toit-vert') ? 'is-active' : ''}">
+        class="${isActive('/en/investigations') || isActive('/fr/investigations') || isActive('/en/bell-tower') || isActive('/fr/bell-tower') || isActive('/en/toit-vert') || isActive('/fr/toit-vert') || isActive('/en/church-street') || isActive('/fr/rue-church') ? 'is-active' : ''}">
         <span data-en>Investigations</span><span data-fr>Enquêtes</span>
       </a>
       <a href="/en/bylaws-regulations/" data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/"

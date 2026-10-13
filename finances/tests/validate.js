@@ -259,7 +259,7 @@ if (fs.existsSync(payPath)) {
   if (!fs.existsSync(home)) ok('no homepage to check');
   else {
     const html = fs.readFileSync(home, 'utf8');
-    const mod = /<div class="ledger-mod">([\s\S]*?)<\/div>\s*<div class="col-head">/.exec(html);
+    const mod = /<a class="topic-card topic-card-ledger"([\s\S]*?)<\/a>/.exec(html);
     if (!mod) ok('the homepage has no ledger module (nothing to keep in sync)');
     else {
       const text = mod[1].replace(/&nbsp;/g, ' ').replace(/<[^>]*>/g, ' ');
