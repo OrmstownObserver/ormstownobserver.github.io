@@ -496,7 +496,7 @@
       "bylaw_number": "Règlement 147-2023",
       "title_en": "Urban Planning Bylaw",
       "title_fr": "Règlement concernant le Plan d'Urbanisme 147-2023",
-      "status": "In force",
+      "status": "Amended",
       "adopted_date": null,
       "amended_date": null,
       "enforced_by": null,
@@ -507,7 +507,11 @@
       "topics": [
         "Build & renovate",
         "Trees & land"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/urban-plan-147-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-plan-urbanisme-147-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 148-2023",

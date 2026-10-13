@@ -241,11 +241,22 @@
         maintainAspectRatio: false,
         scales: {
           x: { beginAtZero: true, ticks: { callback: opts.fmtAxis }, grid: { color: token('--hair', '#ddd7ca') } },
-          y: { grid: { display: false } }
+          // Chart.js caps the label column at a share of the canvas, so on a
+          // phone a long category name ran off the left edge ("egional
+          // shares…"). Shorten to fit; the tooltip title keeps the full name.
+          y: { grid: { display: false }, ticks: { callback: function (v) {
+            var full = String(this.getLabelForValue(v));
+            var w = (canvas && canvas.clientWidth) || 600;
+            var max = w < 420 ? 20 : w < 640 ? 28 : 48;
+            return full.length > max ? full.slice(0, max - 1).replace(/\s+$/, '') + '…' : full;
+          } } }
         },
         plugins: {
           legend: { display: false },
-          tooltip: { callbacks: { label: function (c) { return opts.fmt ? opts.fmt(c.parsed.x) : c.parsed.x; } } }
+          tooltip: { callbacks: {
+            title: function (c) { return c.length ? items[c[0].dataIndex].label : ''; },
+            label: function (c) { return opts.fmt ? opts.fmt(c.parsed.x) : c.parsed.x; }
+          } }
         },
         onClick: function (e, els) {
           if (!els.length || !opts.onPick) return;

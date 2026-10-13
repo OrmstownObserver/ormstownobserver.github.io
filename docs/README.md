@@ -6,6 +6,8 @@ This folder contains lightweight documentation for maintaining the site.
 - How to add or update pages
 - How to keep English and French content in sync
 - Where shared assets and scripts live
+- Community Compass and Bylaw Registries implementation rules:
+  `docs/community-compass.md`
 
 ## Recommended workflow
 1. Create or update the relevant page in the appropriate language folder.

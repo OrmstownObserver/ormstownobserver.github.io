@@ -1,0 +1,78 @@
+{
+  "_comment": "SYNTHETIC rows in the shape the Notion connector returns for the Bylaw Registry. Not real bylaws. Used by test_export_bylaws.py. INTERNAL-NOTE-SENTINEL must never reach any output.",
+  "results": [
+    {
+      "url": "https://app.notion.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1",
+      "Bylaw Number": "Règlement 900-2026",
+      "Bylaw Title (EN)": "Test Animals Bylaw",
+      "Titre du règlement (FR)": "Règlement test sur les animaux",
+      "Bylaw Status": "In force",
+      "Web Ready": "__YES__",
+      "Category": "Other",
+      "Topics": "[\"Animals\"]",
+      "date:Date Adopted:start": "2026-04-13",
+      "date:Date In Force:start": "2026-04-17",
+      "date:Last Amended:start": null,
+      "Enforced By": "Municipality",
+      "Fine Range": "$300–$2,000",
+      "Official URL": "https://www.ormstown.ca/wp-content/uploads/test-900.pdf",
+      "Key Facts (EN)": "Licence required (art. 14)\nMax 4 cats (art. 29)",
+      "Faits clés (FR)": "Licence obligatoire (art. 14)",
+      "Summary (EN)": "A test summary.",
+      "Résumé (FR)": "Un résumé de test.",
+      "Next Step": null,
+      "Amends / Replaces": "[\"https://app.notion.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa3\"]",
+      "Amended / Replaced By": "[]",
+      "Article URL": null,
+      "Notes": "INTERNAL-NOTE-SENTINEL investigation lead, do not publish",
+      "URL Status": "Drive Only",
+      "Article Status": "Held Back"
+    },
+    {
+      "url": "https://app.notion.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2",
+      "Bylaw Number": "Projet de règlement 901.1-2026",
+      "Bylaw Title (EN)": "First draft — test amendment",
+      "Titre du règlement (FR)": "Premier projet de règlement test",
+      "Bylaw Status": "Draft",
+      "Web Ready": "__YES__",
+      "Category": "Zoning & Land Use",
+      "Topics": "[\"Build & renovate\", \"Trees & land\"]",
+      "Next Step": "Adoption of second draft",
+      "date:Next Step Date:start": "2026-11-02",
+      "Official URL": "https://www.ormstown.ca/test-901.pdf",
+      "Notes": "INTERNAL-NOTE-SENTINEL"
+    },
+    {
+      "url": "https://app.notion.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa3",
+      "Bylaw Number": "Règlement 900-2020",
+      "Bylaw Title (EN)": "Test Animals Bylaw (2020)",
+      "Bylaw Status": "Repealed",
+      "Web Ready": "__NO__",
+      "date:Date In Force:start": "2011-01-01",
+      "Amended / Replaced By": "[\"https://app.notion.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1\"]"
+    },
+    {
+      "url": "https://app.notion.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4",
+      "Bylaw Number": "Règlement 902-2018",
+      "Bylaw Title (EN)": "Status-to-verify bylaw",
+      "Bylaw Status": null,
+      "Web Ready": "__YES__",
+      "date:Date In Force:start": "2018-01-01"
+    },
+    {
+      "url": "https://app.notion.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa5",
+      "Bylaw Number": "Règlement 903-2015",
+      "Bylaw Title (EN)": "Odd status bylaw",
+      "Bylaw Status": "Superseded?",
+      "Web Ready": "__YES__"
+    },
+    {
+      "url": "https://app.notion.com/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa6",
+      "Bylaw Number": "Règlement 904-2024",
+      "Bylaw Title (EN)": "Not ready bylaw",
+      "Bylaw Status": "In force",
+      "Web Ready": "__NO__",
+      "Next Step": "Should never publish on a non-draft"
+    }
+  ]
+}

@@ -7,297 +7,181 @@
 <meta name="description" content="Plain-language explainers of Ormstown municipal bylaws and regulations — searchable by topic, status, and category.">
 <link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/bylaws-regulations/">
 <link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/bylaws-regulations/">
+<!-- Pre-paint theme: a saved dark preference must not flash light.
+     MUST come before the observer.css link. -->
+<script>(function(){try{var t=localStorage.getItem('observerTheme');
+if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink:#1a1a1a;--ink-light:#444;--accent:#b5161b;--accent-light:#f5e8e8;
-    --paper:#faf8f4;--paper-dark:#f0ece4;--rule:#c8b97a;--border:#d4c9b8;--muted:#555;
-    --confirm:#155724;--warn:#721c24;--pending:#856404;
-  }
-  *{box-sizing:border-box;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;}
-  a{color:inherit;text-decoration:none;}
-  h1,h2,h3{font-family:'Libre Baskerville',Georgia,serif;margin:0;}
-
-  /* ── FILTER BAR ── */
-  .filter-bar{
-    position:sticky;top:0;z-index:10;
-    background:var(--paper);border-bottom:2px solid var(--ink);
-    padding:10px 24px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;
-  }
-  .search-wrap{position:relative;flex:1;min-width:180px;max-width:320px;}
-  .search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;}
-  #search{
-    width:100%;padding:7px 10px 7px 32px;
-    font-family:'Source Serif 4',serif;font-size:13px;
-    border:1px solid var(--border);background:var(--paper-dark);color:var(--ink);
-    outline:none;
-  }
-  #search:focus{border-color:var(--accent);}
-  .filter-chips{display:flex;flex-wrap:wrap;gap:6px;}
-  .chip{
-    font-family:sans-serif;font-size:10px;font-weight:700;
-    text-transform:uppercase;letter-spacing:.08em;
-    padding:5px 12px;border:1px solid var(--border);
-    background:var(--paper-dark);color:var(--muted);cursor:pointer;
-    transition:background .12s,color .12s,border-color .12s;
-  }
-  .chip:hover{border-color:var(--ink);color:var(--ink);}
-  .chip.active{background:var(--accent);color:#fff;border-color:var(--accent);}
-  .result-count{
-    font-family:sans-serif;font-size:10px;color:var(--muted);
-    margin-left:auto;white-space:nowrap;
-  }
-
-  /* ── PAGE WRAP ── */
-  .page-wrap{max-width:1000px;margin:0 auto;padding:32px 24px 80px;}
-  .section-head{margin-bottom:32px;}
-  .section-head h1{font-size:clamp(24px,4vw,36px);font-weight:700;margin-bottom:8px;}
-  .section-head p{font-size:15px;color:var(--muted);max-width:620px;line-height:1.65;}
-  .compass-callout{border-left:3px solid var(--accent);background:var(--paper-dark);padding:14px 18px;margin:-12px 0 28px;max-width:760px;}
-  .compass-callout p{margin:0;font-size:14px;color:var(--ink-light);line-height:1.6;}
-  .compass-callout a{color:var(--accent);font-weight:700;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px;}
-
-  /* ── DATABASE TABLE ── */
-  .bylaw-table{width:100%;border-collapse:collapse;border-top:2px solid var(--ink);}
-  .bylaw-table th{
-    font-family:sans-serif;font-size:9px;font-weight:800;
-    text-transform:uppercase;letter-spacing:.14em;color:var(--muted);
-    text-align:left;padding:10px 14px;
-    border-bottom:1px solid var(--ink);background:var(--paper-dark);
-    white-space:nowrap;
-  }
-  .bylaw-row{border-bottom:1px solid var(--border);transition:background .1s;}
-  .bylaw-row:hover{background:var(--accent-light);}
-  .bylaw-row td{padding:14px 14px;vertical-align:top;}
-  .bylaw-row td:first-child{padding-left:16px;}
-
-  /* Number col */
-  .td-num{
-    font-family:sans-serif;font-size:11px;font-weight:700;
-    color:var(--muted);white-space:nowrap;min-width:110px;
-  }
-  /* Title col */
-  .td-title a{
-    font-family:'Libre Baskerville',serif;font-weight:700;font-size:15px;
-    color:var(--accent);line-height:1.3;display:block;margin-bottom:4px;
-  }
-  .td-title a:hover{text-decoration:underline;}
-  .td-desc{font-size:12.5px;color:var(--ink-light);line-height:1.55;}
-  /* Category col */
-  .td-cat{white-space:nowrap;min-width:100px;}
-  .cat-badge{
-    display:inline-block;font-family:sans-serif;font-size:9px;font-weight:700;
-    text-transform:uppercase;letter-spacing:.08em;
-    padding:3px 8px;border:1px solid var(--border);color:var(--muted);
-    background:var(--paper-dark);
-  }
-  /* Status col */
-  .td-status{white-space:nowrap;min-width:90px;}
-  .status{
-    display:inline-block;font-family:sans-serif;font-size:9px;font-weight:800;
-    text-transform:uppercase;letter-spacing:.06em;padding:3px 8px;
-  }
-  .status-active{background:#e6f4ea;color:var(--confirm);border:1px solid #a8d5b5;}
-  .status-amended{background:#fff3cd;color:var(--pending);border:1px solid #ffd680;}
-  .status-proposed{background:var(--accent-light);color:var(--warn);border:1px solid #e8b0b0;}
-  .status-repealed{background:#eee;color:#555;border:1px solid #ccc;}
-  .td-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-family:sans-serif;font-size:11px;}
-  .td-links a{color:var(--accent);font-weight:700;text-decoration:underline;text-underline-offset:2px;}
-  .td-facts{margin:8px 0 0;padding-left:18px;font-size:12.5px;color:var(--ink-light);line-height:1.5;}
-  .topic-list{margin-top:5px;font-family:sans-serif;font-size:10.5px;color:var(--muted);line-height:1.4;white-space:normal;}
-  .source-note{font-family:sans-serif;font-size:11px;color:var(--muted);line-height:1.55;margin:0 0 18px;max-width:760px;}
-  /* Date col */
-  .td-date{font-family:sans-serif;font-size:11px;color:var(--muted);white-space:nowrap;min-width:100px;}
-
-  /* ── NO RESULTS ── */
-  .no-results{display:none;padding:40px 0;text-align:center;color:var(--muted);font-style:italic;font-size:14px;}
-
-  /* ── BACK LINK ── */
-  .back-link{display:inline-block;font-family:sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:24px;}
-  .back-link:hover{color:var(--accent);}
-
-  @media(max-width:680px){
-    .bylaw-table th:nth-child(n+3),
-    .td-cat,.td-status,.td-date{display:none;}
-    .filter-bar{padding:8px 12px;overflow:hidden;align-items:stretch;}
-    .search-wrap{max-width:none;width:100%;flex-basis:100%;}
-    .filter-chips{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap;}
-    .chip{flex:none;}
-    .page-wrap{width:100%;max-width:100vw;padding:20px 12px 60px;overflow:hidden;}
-    .section-head,.compass-callout{max-width:100%;overflow-wrap:anywhere;}
-    .bylaw-table{display:block;width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;}
-    .bylaw-table thead,.bylaw-table tbody{display:table;width:100%;min-width:0;table-layout:fixed;}
-    .bylaw-table th,.bylaw-row td{padding-left:12px;padding-right:12px;}
-    .bylaw-table th:first-child,.td-num{width:96px;}
-    .td-num{min-width:96px;white-space:normal;}
-  }
-</style>
+<link rel="stylesheet" href="/observer.css">
+<link rel="stylesheet" href="/bylaws-register.css?v=20261010-1">
 <script src="/observer-header.js" defer></script>
 </head>
 <body>
 
-<div class="filter-bar">
-  <div class="search-wrap">
-    <svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="21" y2="21"/></svg>
-    <input type="search" id="search" placeholder="Search bylaws…" autocomplete="off">
-  </div>
-  <div class="filter-chips" id="chips">
-    <button class="chip active" data-cat="all">All</button>
-    <button class="chip" data-cat="Animal Control">Animal Control</button>
-    <button class="chip" data-cat="Urban Planning">Urban Planning</button>
-    <button class="chip" data-cat="Environment">Environment</button>
-    <button class="chip" data-cat="Council Procedure">Council Procedure</button>
-    <button class="chip" data-cat="Infrastructure">Infrastructure</button>
-    <button class="chip" data-cat="Finance">Finance</button>
-  </div>
-  <span class="result-count" id="result-count"></span>
-</div>
-
-<div class="page-wrap">
-
+<div class="reg" id="register-shell" data-state="loading">
+  <a class="reg-skip" href="#register">Skip to the register</a>
   <a class="back-link" href="/">← Home</a>
 
-  <div class="section-head">
+  <header class="reg-head">
+    <p class="reg-kicker">The Ormstown Observer · Municipal rules</p>
     <h1>Bylaws &amp; Regulations</h1>
-    <p>Plain-language explainers of Ormstown municipal bylaws — what the rule says, what changed, and what it means for you. Use the search and filters above to find what you're looking for.</p>
-  </div>
+    <p class="reg-deck">Every Ormstown bylaw the Observer has catalogued: what it covers, whether it is in force, and a link to the official document. Plain-language explainers are linked where the Observer has written one.</p>
+    <p class="reg-note" id="bylaw-source-note">Unofficial public-interest index. French official documents published by the municipality remain the authoritative source. Not legal advice.</p>
+  </header>
 
-  <div class="compass-callout">
-    <p><strong>Not sure which rule applies?</strong> You can also ask <a href="/en/ask/">Community Compass</a>, the Observer's beta assistant for Ormstown's official public documents. Always verify important answers against the linked official municipal source.</p>
-  </div>
+  <aside class="reg-ask" aria-label="Ask a question">
+    <p><strong>Not sure which rule applies?</strong> Ask Community Compass, the Observer’s beta assistant for Ormstown’s official public documents. <span class="fine">Always verify important answers against the linked official municipal source.</span></p>
+    <a class="btn" href="/en/ask/">Ask Community Compass</a>
+  </aside>
 
-  <p class="source-note" id="bylaw-source-note">Unofficial public-interest index. French official documents published by the municipality remain the authoritative source.</p>
+  <section class="reg-find reg-live" aria-labelledby="find-h">
+    <h2 id="find-h">Find a bylaw</h2>
+    <label class="reg-label" for="search">Search by number, title or subject</label>
+    <div class="reg-search">
+      <input type="search" id="search" autocomplete="off" spellcheck="false" enterkeyhint="search" aria-describedby="search-hint">
+      <button type="button" class="clr" id="search-clear" hidden>✕</button>
+    </div>
+    <p class="reg-hint" id="search-hint">Searches English and French titles, topics and key rules. Accents are optional.</p>
 
-  <table class="bylaw-table" id="bylaw-table" aria-label="Bylaws database">
-    <thead>
-      <tr>
-        <th>Bylaw #</th>
-        <th>Title &amp; Summary</th>
-        <th>Category</th>
-        <th>Status</th>
-        <th>In Force</th>
-      </tr>
-    </thead>
-    <tbody id="bylaw-body">
+    <div class="reg-topics">
+      <h3 class="reg-label" id="topics-h">I want to…</h3>
+      <div class="topic-grid" id="topics" role="group" aria-labelledby="topics-h"></div>
+    </div>
 
-      <tr class="bylaw-row" data-cat="Urban Planning" data-keywords="urban plan plan d'urbanisme land use designation affectation density dwellings per hectare urban perimeter zoning agricultural zone 147-2023 147.1-2025 urban planning">
-        <td class="td-num">Règlement<br>147-2023</td>
-        <td class="td-title">
-          <a href="/en/bylaws-regulations/urban-plan-147-2023/">Ormstown's urban plan: 11 land-use designations that the zoning bylaw must respect</a>
-          <div class="td-desc">Bylaw 147-2023, the plan d'urbanisme, divides the territory into 11 land-use designations, sets minimum housing densities and says development is to be concentrated in the urban perimeter. It sets no fines; the zoning bylaw must respect it. The copy the town has posted shows no adoption or in-force date and does not include Bylaw 147.1-2025, adopted April 13, 2026.</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Urban Planning</span></td>
-        <td class="td-status"><span class="status status-amended">Amended</span></td>
-        <td class="td-date">Mar 2024</td>
-      </tr>
+    <div class="reg-filterrow">
+      <div class="fld">
+        <span class="reg-label" id="status-h">Legal status</span>
+        <div class="seg" id="status-filter" role="group" aria-labelledby="status-h"></div>
+      </div>
+      <div class="fld">
+        <label class="reg-label" for="category">Category</label>
+        <select id="category"></select>
+      </div>
+    </div>
+  </section>
 
-      <tr class="bylaw-row" data-cat="Animal Control" data-keywords="animal control pet license dog cat chicken backyard 131-2026">
-        <td class="td-num">Règlement<br>131-2026</td>
-        <td class="td-title">
-          <a href="/en/bylaws-regulations/animal-control-131-2026/">New Ormstown bylaw makes dog and cat licences valid for life, sets conditions for backyard hens, and spells out what happens to dangerous dogs</a>
-          <div class="td-desc">Bylaw 131-2026, in force since April 17, 2026, sets the rules for keeping dogs, cats and other pets in Ormstown: a licence valid for the animal's life, conditions for keeping up to 5 hens in the urban perimeter, and separate rules for dogs that are "at risk", "potentially dangerous" or "dangerous".</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Animal Control</span></td>
-        <td class="td-status"><span class="status status-active">In force</span></td>
-        <td class="td-date">Apr 17, 2026</td>
-      </tr>
+  <section class="reg-drafts reg-live" id="drafts" aria-labelledby="drafts-h" hidden>
+    <h2 id="drafts-h">Being decided now</h2>
+    <p class="sub">Draft bylaws council has tabled but not adopted. Steps are listed only where the register records them.</p>
+    <div id="drafts-list"></div>
+  </section>
 
-      <tr class="bylaw-row" data-cat="Council Procedure" data-keywords="council procedure meeting governance rules agenda quorum mayor veto 2-2026">
-        <td class="td-num">Règlement<br>2-2026</td>
-        <td class="td-title">
-          <a href="/en/bylaws-regulations/council-procedure-2-2026/">How Ormstown council meetings work under Bylaw 2-2026</a>
-          <div class="td-desc">Règlement 2-2026, in force since April 17, 2026, sets the rules for Ormstown council meetings: two public question periods at every ordinary meeting, a 3-hour limit on a meeting, and a suspensive veto for the mayor that council can lift.</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Council Procedure</span></td>
-        <td class="td-status"><span class="status status-active">In force</span></td>
-        <td class="td-date">Apr 17, 2026</td>
-      </tr>
+  <section class="reg-list" id="register" aria-labelledby="register-h">
+    <div class="reg-scope">
+      <div>
+        <h2 id="register-h">Bylaws with Observer explainers</h2>
+        <p class="reg-count" id="result-count" aria-live="polite"></p>
+      </div>
+      <button type="button" class="linkbtn reg-live" id="reset" hidden>Reset filters</button>
+    </div>
+    <p class="repealed-note" id="repealed-note" hidden>Repealed bylaws are kept for history. They are not current law.</p>
+    <p class="fallback-note" id="fallback-note" hidden></p>
 
-      <tr class="bylaw-row" data-cat="Council Procedure" data-keywords="employee code of ethics conduct staff gifts conflict of interest confidentiality 80-2022">
-        <td class="td-num">Règlement<br>80-2022</td>
-        <td class="td-title">
-          <a href="/en/bylaws-regulations/employee-ethics-80-2022/">Gifts, conflicts of interest, confidentiality: the rules Ormstown's municipal staff must follow</a>
-          <div class="td-desc">Bylaw 80-2022, in force since May 4, 2022, is the code of ethics and conduct for the town's employees. A breach can lead to a sanction, from a verbal notice up to dismissal.</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Council Procedure</span></td>
-        <td class="td-status"><span class="status status-active">In force</span></td>
-        <td class="td-date">May 4, 2022</td>
-      </tr>
+    <!-- No-JS / failed-load fallback: the Observer's own explainers.
+         bylaws-register.js replaces this list with the full register.
+         Keep in step with explainer links in dist/bylaws.json. -->
+    <div id="bylaw-list">
 
-      <tr class="bylaw-row" data-cat="Urban Planning" data-keywords="PIIA architectural integration heritage renovation permit approval 152-2023 urban planning">
-        <td class="td-num">Règlement<br>152-2023</td>
-        <td class="td-title">
-          <a href="/en/bylaws-regulations/piia-152-2023/">Repainting your house or adding a window? In parts of Ormstown, that needs council approval first</a>
-          <div class="td-desc">Règlement 152-2023 requires council's approval of a site-planning and architectural-integration plan (PIIA) for certain work in the architectural core, in the Route 201 Sud and C-7 sector and in zone R-37 (rue Isabelle), and for any detached accessory dwelling unit anywhere in the municipality. Fines run from $500 to $4,000 for each day an offence lasts.</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Urban Planning</span></td>
-        <td class="td-status"><span class="status status-active">In force</span></td>
-        <td class="td-date">Mar 2024</td>
-      </tr>
+      <article class="bylaw st-in">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement 131-2026</p><span class="status st-in">In force</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">New Ormstown bylaw makes dog and cat licences valid for life, sets conditions for backyard hens, and spells out what happens to dangerous dogs</h3>
+          <p class="bylaw-summary">Bylaw 131-2026, in force since April 17, 2026, sets the rules for keeping dogs, cats and other pets in Ormstown: a licence valid for the animal's life, conditions for keeping up to 5 hens in the urban perimeter, and separate rules for dogs that are "at risk", "potentially dangerous" or "dangerous".</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/bylaws-regulations/animal-control-131-2026/">Read the Observer explainer</a></p>
+        </div>
+      </article>
 
-      <tr class="bylaw-row" data-cat="Urban Planning" data-keywords="demolition demolish tear down heritage committee objection permit certificate 145-2023 urban planning">
-        <td class="td-num">Règlement<br>145-2023</td>
-        <td class="td-title">
-          <a href="/en/bylaws-regulations/demolition-145-2023/">Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object</a>
-          <div class="td-desc">Bylaw 145-2023, in force since August 31, 2023, prohibits demolishing a building, in whole or in part, without the authorization of a demolition committee made up of three council members. Anyone may file a written objection within 10 days of the public notice, and the fine for demolishing a principal building without authorization starts at $10,000. Annex A, the heritage inventory the bylaw refers to, reads “(en attente de la MRC du Haut-Saint-Laurent).”</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Urban Planning</span></td>
-        <td class="td-status"><span class="status status-active">In force</span></td>
-        <td class="td-date">Aug 31, 2023</td>
-      </tr>
+      <article class="bylaw st-in">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement 2-2026</p><span class="status st-in">In force</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">How Ormstown council meetings work under Bylaw 2-2026</h3>
+          <p class="bylaw-summary">Règlement 2-2026, in force since April 17, 2026, sets the rules for Ormstown council meetings: two public question periods at every ordinary meeting, a 3-hour limit on a meeting, and a suspensive veto for the mayor that council can lift.</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/bylaws-regulations/council-procedure-2-2026/">Read the Observer explainer</a></p>
+        </div>
+      </article>
 
-      <tr class="bylaw-row" data-cat="Environment" data-keywords="environment tree trees cutting felling abattage arbres woodlot forest shoreline riverbank rive littoral flood plain wetland water 148-2023 148.4-2025 151-2023 chapter 12">
-        <td class="td-num">Règlement<br>148-2023<br><span style="font-weight:400;">ch. 12</span></td>
-        <td class="td-title">
-          <a href="/en/bylaws-regulations/environment-trees-148-2023/">Cutting down a tree in Ormstown? You need a permit for that</a>
-          <div class="td-desc">Ormstown's rules on cutting and protecting trees are in chapter 12 of zoning bylaw 148-2023 and in permits bylaw 151-2023. Chapter 12 also covers shorelines, flood plains, drinking-water intakes, snow dumping and contaminated land. Felling a tree of 30 cm in diameter in contravention of the bylaw carries a fine of at least $500, plus an amount per tree or per hectare.</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Environment</span></td>
-        <td class="td-status"><span class="status status-amended">Amended</span></td>
-        <td class="td-date">Mar 2024</td>
-      </tr>
+      <article class="bylaw st-in">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement 80-2022</p><span class="status st-in">In force</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">Gifts, conflicts of interest, confidentiality: the rules Ormstown's municipal staff must follow</h3>
+          <p class="bylaw-summary">Bylaw 80-2022, in force since May 4, 2022, is the code of ethics and conduct for the town's employees. A breach can lead to a sanction, from a verbal notice up to dismissal.</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/bylaws-regulations/employee-ethics-80-2022/">Read the Observer explainer</a></p>
+        </div>
+      </article>
 
-      <tr class="bylaw-row" data-cat="Environment" data-keywords="drinking water potable eau lawn watering sprinkler arrosage pool piscine spa car wash driveway drought hydrant 86-2024">
-        <td class="td-num">Règlement<br>86-2024</td>
-        <td class="td-title">
-          <a href="/en/bylaws-regulations/drinking-water-86-2024/">The last digit of your address decides which day you can water your lawn</a>
-          <div class="td-desc">Règlement 86-2024 sets the rules for using drinking water from Ormstown's distribution network: lawn-watering days by the last digit of the address, pool-filling dates by even or odd civic number, spring driveway washing between May 1 and June 15 only, and a February 1, 2027 deadline to replace air conditioning, refrigeration systems and compressors that use drinking water. Fines start at $250, and each day of a continuing offence counts as a separate offence.</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Environment</span></td>
-        <td class="td-status"><span class="status status-active">In force</span></td>
-        <td class="td-date">Mar 2024</td>
-      </tr>
+      <article class="bylaw st-in">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement 152-2023</p><span class="status st-in">In force</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">Repainting your house or adding a window? In parts of Ormstown, that needs council approval first</h3>
+          <p class="bylaw-summary">Règlement 152-2023 requires council's approval of a site-planning and architectural-integration plan (PIIA) for certain work in the architectural core, in the Route 201 Sud and C-7 sector and in zone R-37 (rue Isabelle), and for any detached accessory dwelling unit anywhere in the municipality. Fines run from $500 to $4,000 for each day an offence lasts.</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/bylaws-regulations/piia-152-2023/">Read the Observer explainer</a></p>
+        </div>
+      </article>
 
-      <tr class="bylaw-row" data-cat="Finance" data-keywords="public notice posting bulletin board website 167-2025 167.1-2026 communication">
-        <td class="td-num">Règlement<br>167.1-2026</td>
-        <td class="td-title">
-          <a href="/en/council-watch/june-1-2026/">Public notice bylaw amended: new posting locations <span style="font-family:sans-serif;font-size:10px;font-weight:700;color:var(--muted);">[See June 1 recap]</span></a>
-          <div class="td-desc">Municipality can no longer use its previously designated posting location. Public notices now appear on the municipal website and the exterior bulletin board at Town Hall (5, rue Gale). No standalone explainer yet.</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Finance</span></td>
-        <td class="td-status"><span class="status status-active">In force</span></td>
-        <td class="td-date">Jun 1, 2026</td>
-      </tr>
+      <article class="bylaw st-in">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement 145-2023</p><span class="status st-in">In force</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object</h3>
+          <p class="bylaw-summary">Bylaw 145-2023, in force since August 31, 2023, prohibits demolishing a building, in whole or in part, without the authorization of a demolition committee made up of three council members. Anyone may file a written objection within 10 days of the public notice, and the fine for demolishing a principal building without authorization starts at $10,000. Annex A, the heritage inventory the bylaw refers to, reads “(en attente de la MRC du Haut-Saint-Laurent).”</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/bylaws-regulations/demolition-145-2023/">Read the Observer explainer</a></p>
+        </div>
+      </article>
 
-      <tr class="bylaw-row" data-cat="Infrastructure" data-keywords="infrastructure borrowing loan Prince-Albert Cullen Oliver 173.1-2026 roads streets">
-        <td class="td-num">Règlement<br>173.1-2026</td>
-        <td class="td-title">
-          <a href="/en/council-watch/june-1-2026/">$4.8M infrastructure borrowing: rues Prince-Albert, Cullen &amp; Oliver <span style="font-family:sans-serif;font-size:10px;font-weight:700;color:var(--muted);">[Notice of motion — pending vote]</span></a>
-          <div class="td-desc">Amendment to the existing infrastructure borrowing bylaw to cover road reconstruction works on three streets. Notice of motion tabled June 1, 2026. Adoption vote at a future session. No standalone explainer yet.</div>
-        </td>
-        <td class="td-cat"><span class="cat-badge">Infrastructure</span></td>
-        <td class="td-status"><span class="status status-proposed">Pending vote</span></td>
-        <td class="td-date">TBD</td>
-      </tr>
+      <article class="bylaw st-am">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement 147-2023</p><span class="status st-am">In force, amended</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">Ormstown's urban plan: 11 land-use designations that the zoning bylaw must respect</h3>
+          <p class="bylaw-summary">Bylaw 147-2023, the plan d'urbanisme, divides the territory into 11 land-use designations, sets minimum housing densities and says development is to be concentrated in the urban perimeter. It sets no fines; the zoning bylaw must respect it. The copy the town has posted shows no adoption or in-force date and does not include Bylaw 147.1-2025, adopted April 13, 2026.</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/bylaws-regulations/urban-plan-147-2023/">Read the Observer explainer</a></p>
+        </div>
+      </article>
 
-    </tbody>
-  </table>
+      <article class="bylaw st-am">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement 148-2023, ch. 12</p><span class="status st-am">In force, amended</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">Cutting down a tree in Ormstown? You need a permit for that</h3>
+          <p class="bylaw-summary">Ormstown's rules on cutting and protecting trees are in chapter 12 of zoning bylaw 148-2023 and in permits bylaw 151-2023. Chapter 12 also covers shorelines, flood plains, drinking-water intakes, snow dumping and contaminated land. Felling a tree of 30 cm in diameter in contravention of the bylaw carries a fine of at least $500, plus an amount per tree or per hectare.</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/bylaws-regulations/environment-trees-148-2023/">Read the Observer explainer</a></p>
+        </div>
+      </article>
 
-  <div class="no-results" id="no-results">No bylaws match your search. Try different terms or clear the filter.</div>
+      <article class="bylaw st-in">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement 86-2024</p><span class="status st-in">In force</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">The last digit of your address decides which day you can water your lawn</h3>
+          <p class="bylaw-summary">Règlement 86-2024 sets the rules for using drinking water from Ormstown's distribution network: lawn-watering days by the last digit of the address, pool-filling dates by even or odd civic number, spring driveway washing between May 1 and June 15 only, and a February 1, 2027 deadline to replace air conditioning, refrigeration systems and compressors that use drinking water. Fines start at $250, and each day of a continuing offence counts as a separate offence.</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/bylaws-regulations/drinking-water-86-2024/">Read the Observer explainer</a></p>
+        </div>
+      </article>
+
+      <article class="bylaw st-in">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement 167.1-2026</p><span class="status st-in">In force</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">Public notice bylaw amended: new posting locations</h3>
+          <p class="bylaw-summary">Municipality can no longer use its previously designated posting location. Public notices now appear on the municipal website and the exterior bulletin board at Town Hall (5, rue Gale). No standalone explainer yet.</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/council-watch/june-1-2026/">Observer coverage</a></p>
+        </div>
+      </article>
+
+      <article class="bylaw st-unk">
+        <div class="bylaw-side"><div class="bylaw-head"><p class="bylaw-num">Règlement d'emprunt 173.1-2026</p><span class="status st-unk">Status not verified</span></div></div>
+        <div class="bylaw-main">
+          <h3 class="bylaw-title">$4.8M infrastructure borrowing: rues Prince-Albert, Cullen &amp; Oliver</h3>
+          <p class="bylaw-summary">Amendment to the existing infrastructure borrowing bylaw to cover road reconstruction works on three streets. Notice of motion tabled June 1, 2026. No standalone explainer yet.</p>
+          <p class="bylaw-links"><a class="lk-explainer" href="/en/council-watch/june-1-2026/">Observer coverage</a></p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="no-results" id="no-results" hidden></div>
+    <p class="data-note" id="data-note">“Not recorded” means the register has no verified value yet. It does not mean the information does not exist.</p>
+  </section>
 
 </div>
 
-<script src="/bylaws-register.js" defer></script>
+<script src="/bylaws-register.js?v=20261010-1" defer></script>
 </body>
 </html>

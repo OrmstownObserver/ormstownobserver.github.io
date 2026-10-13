@@ -3,6 +3,10 @@
 ## Project overview
 This repository contains the static bilingual website for The Ormstown Observer. The site is built as a collection of standalone HTML pages with shared styling and a small JavaScript helper for the language toggle.
 
+For Community Compass and Bylaw Registries work, read `docs/community-compass.md`
+before touching Q&A pages, municipal-source ingestion, bylaw registry exports,
+summaries, translations, explainers, indexing, or publication workflow.
+
 ## Working conventions
 - Preserve the existing bilingual structure under the `en/` and `fr/` directories.
 - Keep pages as simple, semantic HTML. Prefer small, targeted edits over large rewrites.

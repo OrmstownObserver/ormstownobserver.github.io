@@ -45,7 +45,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261005-2';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261010-1';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -558,6 +558,9 @@
     if (sk[0]) sk[0].textContent = t.skipResults;
     if (sk[1]) sk[1].textContent = t.skipFilters;
     var rb = $('ref-budget'); if (rb) rb.setAttribute('href', '/finances/budget/?lang=' + state.lang);
+    setText('basis-note', t.basisNote);
+    setText('basis-link', t.basisLink);
+    var bl = $('basis-link'); if (bl) bl.setAttribute('href', '/finances/budget/?lang=' + state.lang + '#budget');
 
     if (store) {
       setText('status', L.tpl(t.wsStatus, {
@@ -794,10 +797,24 @@
     setText('orient', t['orient' + state.tab.charAt(0).toUpperCase() + state.tab.slice(1)]);
   }
 
+  // The scope row says, in one line, everything that is narrowing the
+  // result: a lead label, one removable chip per filter, and a single
+  // "clear all" once anything beyond the default year is applied. The
+  // default year shows as a chip too, so the reader always sees the scope.
   function renderChips() {
     var box = $('chips'); if (!box) return;
+    var t = T();
     box.textContent = '';
-    box.appendChild(V.chips(ctx()));
+    var chips = V.chips(ctx());
+    if (!chips.children.length) return;
+    box.appendChild(V.el('span', { cls: 'lead', id: 'chips-lead', text: t.chipsLead }));
+    box.appendChild(chips);
+    if (hasFilters()) {
+      box.appendChild(V.el('button', {
+        type: 'button', cls: 'linkbtn chips-reset', text: t.chipsReset,
+        on: { click: resetFilters }
+      }));
+    }
   }
 
   // Counts are assembled from singular/plural atoms rather than one

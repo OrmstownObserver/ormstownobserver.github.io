@@ -49,6 +49,11 @@
     return append(n, kids);
   }
   function txt(s) { return document.createTextNode(String(s == null ? '' : s)); }
+  // Wide real-row tables (Categories, Sittings, the profile summaries) keep
+  // their columns on a phone and scroll sideways inside this box, instead of
+  // widening the whole page. ledger.css only turns the scrolling on below
+  // 900px, so the sticky header still works on a desktop.
+  function scrollWrap(table) { return el('div', { cls: 'lt-wrap' }, table); }
   function frag(kids) { return append(document.createDocumentFragment(), kids); }
 
   // A safe external link. The href is only set when it points at the
@@ -423,7 +428,7 @@
       el('td', { cls: 'num', text: f.money(ctx.agg.total) })
     ]));
     table.appendChild(body);
-    out.appendChild(table);
+    out.appendChild(scrollWrap(table));
     out.appendChild(csvButton(ctx, t.csvView, function () { ctx.on.csv(); }));
     return out;
   }
@@ -517,7 +522,7 @@
       el('td')
     ]));
     table.appendChild(body);
-    out.appendChild(table);
+    out.appendChild(scrollWrap(table));
     out.appendChild(csvButton(ctx, t.csvView, function () { ctx.on.csv(); }));
     return out;
   }
@@ -593,7 +598,7 @@
       ]));
     });
     st.appendChild(sb);
-    out.appendChild(st);
+    out.appendChild(scrollWrap(st));
 
     // By category
     out.appendChild(el('h3', { text: t.pfByCat }));
@@ -611,7 +616,7 @@
       ]));
     });
     ct.appendChild(cb);
-    out.appendChild(ct);
+    out.appendChild(scrollWrap(ct));
 
     // Every line
     out.appendChild(el('h3', { text: t.pfAllLines }));
