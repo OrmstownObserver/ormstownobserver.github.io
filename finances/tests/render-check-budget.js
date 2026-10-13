@@ -49,15 +49,18 @@ const txt = (id) => ($(id) ? $(id).textContent : '');
 const D = win.OO_SPENDING;
 
 setTimeout(() => {
-  // ---- the reference page carries the same standing disclaimer
+  // ---- the reference page carries the same standing disclaimer:
+  // a one-line notice up top, the full notice at the foot.
   {
     const d = $('disclaimer');
-    const body = ($('disclaimer-h') ? $('disclaimer-h').textContent : '') + ' ' +
-                 ($('disclaimer-b') ? $('disclaimer-b').textContent : '');
-    if (!d || d.hidden || !body.trim()) fail('the reference page has no visible disclaimer');
-    else if (!/ni affiliée à la Municipalité/i.test(body)) fail('the disclaimer omits the non-affiliation sentence');
-    else if (!/pas un document officiel/i.test(body)) fail('the disclaimer does not say the page is unofficial');
-    else if (!/référence/i.test(body)) fail('the disclaimer does not say not to use it as a reference');
+    const top = txt('disclaimer-h') + ' ' + txt('disclaimer-b');
+    const body = txt('notice-h') + ' ' + txt('notice-b');
+    if (!d || d.hidden || !top.trim()) fail('the reference page has no visible one-line notice');
+    else if (!/officiel/i.test(top) || !/procès-verbaux officiels/i.test(top)) fail('the one-line notice does not say the page is unofficial');
+    else if (!$('notice') || $('notice').hidden || !body.trim()) fail('the reference page has no full notice');
+    else if (!/ni affiliée à la Municipalité/i.test(body)) fail('the full notice omits the non-affiliation sentence');
+    else if (!/pas un document officiel/i.test(body)) fail('the full notice does not say the page is unofficial');
+    else if (!/référence/i.test(body)) fail('the full notice does not say not to use it as a reference');
     else ok('the reference page carries the same standing disclaimer');
   }
 

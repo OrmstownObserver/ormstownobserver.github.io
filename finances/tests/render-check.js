@@ -332,21 +332,27 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   }
 
   // ---- 13c. the standing disclaimer. This is the one element on the page
-  // whose absence would be a real-world problem, so it is checked hard: it
-  // exists, it is visible, it is not collapsed behind anything, it says all
-  // three things, and it survives a language switch.
+  // whose absence would be a real-world problem, so it is checked hard: a
+  // one-line notice tops the page and links to the full notice at the foot;
+  // neither is hidden or collapsed; the full one says every required point;
+  // both survive a language switch.
   for (const lang of ['fr', 'en']) {
     navigateTo('?lang=' + lang);
     await tick();
-    // NB the shim mounts id-bearing elements as flat siblings, so the
-    // heading and body are read directly rather than through the container.
-    // That the two ARE nested inside it is markup, checked below.
-    const d = $('disclaimer');
-    if (!d) { fail(`no disclaimer element (${lang})`); continue; }
-    if (d.hidden) fail(`the disclaimer is hidden (${lang})`);
-    if (d.tagName === 'DETAILS') fail('the disclaimer is collapsible - it must always be open');
-    const body = $('disclaimer-h').textContent + ' ' + $('disclaimer-b').textContent;
-    // The non-affiliation sentence is the point of the whole block: it is
+    // NB the shim mounts id-bearing elements as flat siblings, so text is
+    // read directly by id. That they ARE nested is markup, checked below.
+    const d = $('disclaimer'), n = $('notice');
+    if (!d) { fail(`no one-line notice (${lang})`); continue; }
+    if (!n) { fail(`no full notice (${lang})`); continue; }
+    if (d.hidden || n.hidden) fail(`a disclaimer element is hidden (${lang})`);
+    if (d.tagName === 'DETAILS' || n.tagName === 'DETAILS') fail('the disclaimer is collapsible - it must always be open');
+    const top = $('disclaimer-h').textContent + ' ' + $('disclaimer-b').textContent;
+    const topMust = lang === 'fr' ? [/non officiel/i, /procès-verbaux officiels/i] : [/not official/i, /official minutes/i];
+    if (topMust.some((re) => !re.test(top))) fail(`the ${lang} one-line notice must say unofficial + minutes authoritative: ${top}`);
+    else ok(`the ${lang} one-line notice says unofficial, minutes authoritative`);
+    if (!$('disclaimer-more') || !$('disclaimer-more').textContent.trim()) fail(`the ${lang} one-line notice has no link to the full notice`);
+    const body = $('notice-h').textContent + ' ' + $('notice-b').textContent;
+    // The non-affiliation sentence is the point of the whole notice: it is
     // what stops a reader taking this for a municipal publication.
     const must = lang === 'fr'
       ? [/ni affiliée à la Municipalité/i, /ni approuvée/i, /ne parle pas en son nom/i,
@@ -354,34 +360,37 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       : [/not affiliated with/i, /endorsed by/i, /speaking for/i,
          /still being extended/i, /not an official document/i, /reference/i, /official minutes/i];
     const missing = must.filter((re) => !re.test(body));
-    if (missing.length) fail(`the ${lang} disclaimer is missing ${missing.length} required point(s): ${body.slice(0, 80)}`);
-    else ok(`the ${lang} disclaimer states: under development, unofficial, not a reference, minutes are authoritative`);
+    if (missing.length) fail(`the ${lang} full notice is missing ${missing.length} required point(s): ${body.slice(0, 80)}`);
+    else ok(`the ${lang} full notice states: under development, unofficial, not a reference, minutes are authoritative`);
   }
   navigateTo('?lang=fr');
   await tick();
 
-  // The container must actually wrap the text, be a plain always-visible
-  // block, and sit above the fold on every surface. Checked against the
-  // shipped HTML rather than the shim's flattened tree.
+  // Checked against the shipped HTML rather than the shim's flattened tree:
+  // the one-liner sits above the content and links to #notice; the full
+  // notice wraps its text; both say their piece in both languages with no JS.
   {
     const fsMod = require('fs');
     for (const page of ['index.html', 'budget/index.html']) {
       const html = fsMod.readFileSync(path.join(dir, page), 'utf8');
-      const m = /<div class="lw-disclaimer"[^>]*>([\s\S]*?)<\/div>/.exec(html);
-      if (!m) { fail(`${page} has no .lw-disclaimer block`); continue; }
-      if (!/id="disclaimer-h"/.test(m[1]) || !/id="disclaimer-b"/.test(m[1])) fail(`${page}: the disclaimer text is not inside the disclaimer box`);
-      else if (/hidden/.test(m[0])) fail(`${page}: the disclaimer ships hidden`);
-      else ok(`${page} ships the disclaimer as an always-visible block`);
-      // it must say something even if no script ever runs
-      const staticText = m[1].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-      if (staticText.length < 80) fail(`${page}: the disclaimer is empty without JS ("${staticText}")`);
-      else if (!/officiel/i.test(staticText) || !/official/i.test(staticText)) fail(`${page}: the no-JS fallback is not bilingual`);
-      else if (!/ni affiliée/i.test(staticText) || !/not affiliated with/i.test(staticText)) fail(`${page}: the no-JS fallback omits the non-affiliation sentence`);
-      else ok(`${page} states the disclaimer in both languages with no JS at all`);
-      // above the fold: before the first tab/section of real content
+      const t = /<p class="lw-disclaimer"[^>]*>([\s\S]*?)<\/p>/.exec(html);
+      const n = /<section class="lw-notice"[^>]*>([\s\S]*?)<\/section>/.exec(html);
+      if (!t) { fail(`${page} has no .lw-disclaimer line`); continue; }
+      if (!n) { fail(`${page} has no .lw-notice section`); continue; }
+      if (/hidden/.test(t[0]) || /hidden/.test(n[0].split('>')[0])) fail(`${page}: a disclaimer ships hidden`);
+      else ok(`${page} ships both disclaimer parts always visible`);
+      if (!/href="#notice"/.test(t[1])) fail(`${page}: the one-line notice does not link to the full notice`);
+      if (!/id="notice-h"/.test(n[1]) || !/id="notice-b"/.test(n[1])) fail(`${page}: the notice text is not inside the notice section`);
+      const topText = t[1].replace(/<[^>]*>/g, ' ');
+      if (!/non officiel/i.test(topText) || !/not official/i.test(topText)) fail(`${page}: the no-JS one-liner is not bilingual`);
+      const staticText = n[1].replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+      if (staticText.length < 80) fail(`${page}: the full notice is empty without JS ("${staticText}")`);
+      else if (!/ni affiliée/i.test(staticText) || !/not affiliated with/i.test(staticText)) fail(`${page}: the no-JS full notice omits the non-affiliation sentence`);
+      else ok(`${page} states the full notice in both languages with no JS at all`);
+      // the one-liner is above the fold: before the first tab/section of real content
       const marker = page === 'index.html' ? '<div class="lw-tabs"' : '<section id="budget"';
-      if (html.indexOf('lw-disclaimer') > html.indexOf(marker)) fail(`${page}: the disclaimer sits below the main content`);
-      else ok(`${page} puts the disclaimer above the content`);
+      if (html.indexOf('class="lw-disclaimer"') > html.indexOf(marker)) fail(`${page}: the one-line notice sits below the main content`);
+      else ok(`${page} puts the one-line notice above the content`);
     }
   }
 

@@ -549,8 +549,11 @@
     setText('eyebrow', t.eyebrow);
     setText('title', t.title);
     setText('deck', t.wsDeck);
-    setText('disclaimer-h', t.devBannerH);
-    setText('disclaimer-b', t.devBanner);
+    setText('disclaimer-h', t.devShortH);
+    setText('disclaimer-b', t.devShort);
+    setText('disclaimer-more', t.devMore);
+    setText('notice-h', t.devBannerH);
+    setText('notice-b', t.devBanner);
     setText('ref-lbl', t.refLabel);
     setText('ref-budget', t.refBudget);
     setText('preset-lbl', t.presetLabel);

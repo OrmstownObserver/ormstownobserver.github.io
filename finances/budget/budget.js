@@ -76,8 +76,11 @@
     setText('eyebrow', t.eyebrow);
     setText('title', t.refTitle);
     setText('deck', t.refDeck);
-    setText('disclaimer-h', t.devBannerH);
-    setText('disclaimer-b', t.devBanner);
+    setText('disclaimer-h', t.devShortH);
+    setText('disclaimer-b', t.devShort);
+    setText('disclaimer-more', t.devMore);
+    setText('notice-h', t.devBannerH);
+    setText('notice-b', t.devBanner);
     setText('back-lbl', t.refBackLabel);
     ['back-link', 'back-link-2'].forEach(function (id) {
       var n = $(id);

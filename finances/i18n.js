@@ -347,10 +347,14 @@ window.OO_I18N = {
   tocDictionary: "Lexique",
 
   // ── standing disclaimer ──
-  // Shown, unmissable and undismissable, on every workspace surface.
+  // A one-line notice tops every workspace surface (devShort*) and the
+  // full text (devBanner*) stands at the foot of the page.
   // The Observer is an independent paper publishing a municipality's
   // figures: a reader must never be able to mistake this for an
   // official municipal record.
+  devShortH: "Non officiel",
+  devShort: "Publication indépendante, pas un document de la Municipalité : seuls les procès-verbaux officiels font foi.",
+  devMore: "Lire l'avis complet",
   devBannerH: "Publication indépendante — page non officielle",
   devBanner: "L'Ormstown Observer est une publication indépendante. Elle n'est ni affiliée à la Municipalité d'Ormstown, ni approuvée par celle-ci, et ne parle pas en son nom. Cette page n'est pas un document officiel : elle est encore enrichie séance après séance et peut contenir des erreurs, des omissions ou des chiffres périmés. Ne vous en servez pas comme source de référence, ne la citez pas et ne fondez aucune décision sur elle — seuls les procès-verbaux officiels publiés par la Municipalité font foi, et chaque ligne renvoie au sien. L'Observer corrigera publiquement toute erreur : ormstownobserver@gmail.com"
  },
@@ -689,10 +693,14 @@ window.OO_I18N = {
   tocDictionary: "Dictionary",
 
   // ── standing disclaimer ──
-  // Shown, unmissable and undismissable, on every workspace surface.
+  // A one-line notice tops every workspace surface (devShort*) and the
+  // full text (devBanner*) stands at the foot of the page.
   // The Observer is an independent paper publishing a municipality's
   // figures: a reader must never be able to mistake this for an
   // official municipal record.
+  devShortH: "Not official",
+  devShort: "An independent publication, not a municipal document: only the official minutes are authoritative.",
+  devMore: "Read the full notice",
   devBannerH: "An independent publication — this page is not official",
   devBanner: "The Ormstown Observer is an independent publication. It is not affiliated with, endorsed by, or speaking for the Municipality of Ormstown. This page is not an official document: it is still being extended sitting by sitting and may contain errors, omissions or out-of-date figures. Do not use it as a reference source, do not cite it, and do not base any decision on it — only the official minutes published by the Municipality are authoritative, and every line links to its own. The Observer will correct any error on the record: ormstownobserver@gmail.com"
  }

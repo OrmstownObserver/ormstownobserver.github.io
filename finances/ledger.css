@@ -82,33 +82,40 @@
 .lw-status-line .upd { color: var(--ink-soft); font-weight: 400; }
 
 /* ---------- standing disclaimer ----------
-   Deliberately loud, always expanded, never dismissible, and it PRINTS.
+   One line at the top (.lw-disclaimer) and the full notice at the foot
+   (.lw-notice). Never dismissible, never collapsed, and both PRINT.
    The Observer is an independent paper publishing a municipality's numbers;
-   a reader must not be able to mistake this page for an official record.
-   Built on --accent-bg / --accent because those are the only warning-ish
-   tokens observer.css actually redefines for dark mode — --pending-bg and
-   --confirm-bg keep their light values at night and would go unreadable. */
+   a reader must not be able to mistake this page for an official record. */
 .lw-disclaimer {
   margin: var(--s3) 0 0;
-  padding: var(--s2) var(--s3);
-  background: var(--accent-bg);
-  border: var(--rule-hair) solid var(--accent);
-  border-left-width: var(--border-fact);
+  padding: 2px 0 2px var(--s2);
+  border-left: 3px solid var(--accent);
   max-width: 82ch;
+  font: var(--size-caption)/1.55 var(--sans);
+  color: var(--ink-soft);
 }
 .lw-disclaimer .h {
-  display: block;
+  font-weight: 700;
+  letter-spacing: var(--track-label-wide);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-right: 6px;
+}
+.lw-disclaimer .more { color: var(--accent); white-space: nowrap; margin-left: 4px; }
+.lw-notice {
+  max-width: 82ch;
+  margin: var(--s5) 0 0;
+  padding-top: var(--s3);
+  border-top: var(--rule-hair) solid var(--hair);
+}
+.lw-notice h2 {
   font: 700 var(--size-label-lg)/1.4 var(--sans);
   letter-spacing: var(--track-label-wide);
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 4px;
+  margin: 0 0 6px;
 }
-.lw-disclaimer .b {
-  display: block;
-  font: var(--size-caption)/1.6 var(--sans);
-  color: var(--ink);
-}
+.lw-notice p { font: var(--size-caption)/1.6 var(--sans); color: var(--ink); margin: 0; }
 
 /* ---------- reference strip ---------- */
 .lw-ref {
@@ -828,7 +835,7 @@ details.ref .inner dd { margin: 0 0 var(--s1); color: var(--ink-soft); }
   .dist { display: none !important; }
   /* The disclaimer prints. A sheet of these figures must not leave the
      browser looking like an official document. */
-  .lw-disclaimer { display: block !important; border: 2px solid #000; }
+  .lw-disclaimer, .lw-notice { display: block !important; }
   .lw-body { display: block; }
   .print-meta {
     display: block;
