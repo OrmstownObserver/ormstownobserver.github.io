@@ -23,7 +23,6 @@ Then open http://localhost:8000/ in your browser.
 ├── CNAME
 ├── index.html
 ├── observer-header.js
-├── events.json
 ├── en/
 ├── fr/
 ├── images/

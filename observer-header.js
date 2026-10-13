@@ -278,10 +278,6 @@
         class="${isActive('/en/editorials') || isActive('/fr/editoriaux') ? 'is-active' : ''}">
         <span data-en>Editorials</span><span data-fr>Éditoriaux</span>
       </a>
-      <a href="/en/events/" data-href-en="/en/events/" data-href-fr="/fr/events/"
-        class="${isActive('/en/events') || isActive('/fr/events') ? 'is-active' : ''}">
-        <span data-en>Events</span><span data-fr>Événements</span>
-      </a>
       <a href="/en/ask/" data-href-en="/en/ask/" data-href-fr="/fr/posez-une-question/"
         class="${isActive('/en/ask') || isActive('/fr/posez-une-question') ? 'is-active' : ''}">
         <span data-en>Community Compass</span><span data-fr>Community Compass</span>

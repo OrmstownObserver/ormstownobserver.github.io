@@ -134,9 +134,8 @@ name="robots" content="noindex, nofollow">` in both shells, and leaving the kit
 off `/press/index.html`. Lift all three together when the hold clears.
 
 An `update` notice is the softer form — the briefing is published, but something
-material is still outstanding. `/press/ormstown-v-roskies/` uses one: the
-briefing is live, and the notice says the written court order is still to come
-and governs where it differs.
+material is still outstanding (for example, a written ruling still to come that
+governs where it differs).
 
 ### Status labels
 
