@@ -65,6 +65,23 @@
     });
   }
 
+  // "Back to The Ledger" returns to the view the reader left (its tab,
+  // year, filters and sort), which the Ledger saves for this browser tab
+  // only. Anything that is not a plain /finances/ query is ignored, and
+  // the language always follows this page's current one.
+  function ledgerReturn() {
+    var saved = null;
+    try { saved = global.sessionStorage.getItem('ledgerReturn'); } catch (e) {}
+    if (!saved || !/^\/finances\/\?[^#<>"'\s]*$/.test(saved)) return '/finances/?lang=' + lang;
+    var p = new URLSearchParams(saved.slice(saved.indexOf('?') + 1));
+    p.set('lang', lang);
+    return '/finances/?' + p.toString();
+  }
+  // One sitting's lines in the Ledger: what that sitting approved.
+  function sittingHref(m) {
+    return '/finances/?lang=' + lang + '&tab=payments&scope=' + m.slice(0, 4) + '&sitting=' + m;
+  }
+
   var TOC = [
     ['budget', 'tocBudget'], ['capital', 'tocCapital'], ['coverage', 'tocCoverage'],
     ['method', 'tocMethod'], ['documents', 'tocDocuments'], ['dictionary', 'tocDictionary']
@@ -84,7 +101,7 @@
     setText('back-lbl', t.refBackLabel);
     ['back-link', 'back-link-2'].forEach(function (id) {
       var n = $(id);
-      if (n) { n.textContent = t.refBack; n.setAttribute('href', '/finances/?lang=' + lang); }
+      if (n) { n.textContent = t.refBack; n.setAttribute('href', ledgerReturn()); }
     });
     var sk = document.getElementsByClassName('lw-skip')[0];
     if (sk) sk.textContent = t.tocBudget;
@@ -174,8 +191,10 @@
     cbody.textContent = '';
     D.months.slice().reverse().forEach(function (m) {
       cbody.appendChild(V.el('tr', null, [
+        // The sitting's name opens its lines in the Ledger (a plain link:
+        // this is another page), the PDF stays in the Source column.
         V.el('th', { scope: 'row', 'data-l': t.thSitting }, [
-          document.createTextNode(lang === 'fr' ? m.label_fr : m.label_en),
+          V.el('a', { cls: 'linkbtn', href: sittingHref(m.m), title: t.sitSeeLines, text: lang === 'fr' ? m.label_fr : m.label_en }),
           V.el('span', { cls: 'gloss', text: m.session })
         ]),
         V.el('td', { 'data-l': t.thStatus, text: m.coverage === 'full' ? t.statusFull : t.statusPartial }),

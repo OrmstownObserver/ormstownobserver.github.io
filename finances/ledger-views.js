@@ -63,6 +63,22 @@
     return el('a', { cls: 'pv', href: url, target: '_blank', rel: 'noopener', title: title || null }, label);
   }
 
+  // An in-page move that is also a real link. A plain click is handled in
+  // place (no reload); the href is the full deep link, so a modified click,
+  // a middle click or "copy link address" all get the destination view.
+  function navLink(href, label, onGo, extra) {
+    var props = {
+      href: href, cls: 'linkbtn',
+      on: { click: function (e) {
+        if (e && (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0)) return;
+        if (e && e.preventDefault) e.preventDefault();
+        onGo();
+      } }
+    };
+    if (extra) Object.keys(extra).forEach(function (k) { props[k] = extra[k]; });
+    return el('a', props, label);
+  }
+
   /* ---------- rich(): the one markup path ----------
      Accepts <strong>, <em>, <br> and <a href="https://…"> from
      REPO-AUTHORED i18n strings only. Never pass it data. Anything
@@ -402,9 +418,13 @@
     var body = el('tbody');
     rows.forEach(function (r) {
       body.appendChild(el('tr', null, [
+        // The name opens the category's lines, as a sitting's name does in
+        // the Sittings tab. On a phone "See the lines" sits in the last
+        // column, off-screen in the sideways scroll, so the name must do it.
         el('th', { scope: 'row' }, [
-          catDot(ctx, r.key),
-          el('button', { type: 'button', cls: 'linkbtn', text: ' ' + ctx.catName(r.key), on: { click: function () { ctx.on.category(r.key); } } })
+          catDot(ctx, r.key), txt(' '),
+          navLink(ctx.hrefCategory(r.key), ctx.catName(r.key), function () { ctx.on.categoryOnly(r.key); },
+            { title: t.catSeeLines })
         ]),
         el('td', { cls: 'num', text: f.pct(r.amt / total) }),
         el('td', { cls: 'num', text: f.num(r.payees) }),
@@ -465,7 +485,7 @@
         hatched: s.coverage !== 'full',
         selected: ctx.state.sittings.indexOf(s.m) >= 0
       };
-    }), { onPick: function (id) { ctx.on.sitting(id); }, vertical: true });
+    }), { onPick: function (id) { ctx.on.sittingOnly(id); }, vertical: true });
 
     var table = el('table', { cls: 'lt', id: 'sittings-table' });
     table.appendChild(el('caption', { cls: 'visually-hidden', text: t.capSittings }));
@@ -488,7 +508,11 @@
       }
       body.appendChild(el('tr', null, [
         el('th', { scope: 'row' }, [
-          el('button', { type: 'button', cls: 'linkbtn', text: ctx.sittingLabel(s), on: { click: function () { ctx.on.sitting(s.m); } } }),
+          // "What did this sitting approve?" answered in one click: its
+          // lines, in Payments. (It used to toggle a filter this table
+          // ignores, so nothing visible happened.)
+          navLink(ctx.hrefSitting(s.m), ctx.sittingLabel(s), function () { ctx.on.sittingOnly(s.m); },
+            { title: t.sitSeeLines }),
           el('span', {
             cls: 'gloss',
             text: (s.extraordinary ? t.sitExtra : t.sitOrdinary) + ' · ' + f.dateLong(s.sittingDate) +
@@ -583,7 +607,7 @@
     var perSit = ctx.payeeBySitting(pd);
     ctx.chart('profile', 'chart-profile', 'cap-profile', perSit.map(function (r) {
       return { label: ctx.sittingShort(r.s), value: r.amt, id: r.s.m };
-    }), { onPick: function (id) { ctx.on.sitting(id); }, vertical: true });
+    }), { onPick: function (id) { ctx.on.sittingOnly(id); }, vertical: true });
 
     var st = el('table', { cls: 'lt' });
     st.appendChild(el('thead', null, el('tr', null, [plainTh(t.colSitting), plainTh(t.colLines, true), plainTh(t.colAmount, true), plainTh(t.colSource)])));
@@ -591,7 +615,8 @@
     perSit.forEach(function (r) {
       if (!r.lines) return;
       sb.appendChild(el('tr', null, [
-        el('th', { scope: 'row', text: ctx.sittingLabel(r.s) }),
+        el('th', { scope: 'row' }, navLink(ctx.hrefSitting(r.s.m), ctx.sittingLabel(r.s),
+          function () { ctx.on.sittingOnly(r.s.m); }, { title: t.sitSeeLines })),
         el('td', { cls: 'num', text: f.num(r.lines) }),
         el('td', { cls: 'num' + (r.amt < 0 ? ' credit' : ''), text: f.money(r.amt) }),
         el('td', null, pvLink(r.s.url, t.pvShort, t.newTab))
@@ -688,7 +713,7 @@
   }
 
   global.OO_LEDGER_VIEWS = {
-    el: el, txt: txt, frag: frag, append: append, rich: rich, pvLink: pvLink,
+    el: el, txt: txt, frag: frag, append: append, rich: rich, pvLink: pvLink, navLink: navLink,
     fmt: fmt, downloadCSV: downloadCSV, distStrip: distStrip, chips: chips,
     payments: payments, payees: payees, categories: categories, sittings: sittings,
     profile: profile, emptyBlock: emptyBlock
