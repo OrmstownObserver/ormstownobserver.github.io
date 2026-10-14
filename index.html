@@ -86,20 +86,14 @@
   }
   .site-nav a:first-child { border-left: 1px solid var(--border); }
   .site-nav a:hover, .site-nav a.is-active { background: var(--accent); color: #fff; }
-  .site-nav a.nav-cc { color: var(--accent); font-weight: 700; }
-  .site-nav a.nav-cc:hover, .site-nav a.nav-cc.is-active { color: #fff; }
   /* Dark mode lifts --accent to a pale #e8686c, on which the #fff above sits
      at about 2.4:1. html.obs-ds is set by observer-header.js only on pages
      that link observer.css, which this one does. */
   html.obs-ds[data-theme=dark] .site-nav a:hover,
-  html.obs-ds[data-theme=dark] .site-nav a.is-active,
-  html.obs-ds[data-theme=dark] .site-nav a.nav-cc:hover,
-  html.obs-ds[data-theme=dark] .site-nav a.nav-cc.is-active { color: #16150f; }
+  html.obs-ds[data-theme=dark] .site-nav a.is-active { color: #16150f; }
   @media (prefers-color-scheme: dark) {
     html.obs-ds:not([data-theme=light]) .site-nav a:hover,
-    html.obs-ds:not([data-theme=light]) .site-nav a.is-active,
-    html.obs-ds:not([data-theme=light]) .site-nav a.nav-cc:hover,
-    html.obs-ds:not([data-theme=light]) .site-nav a.nav-cc.is-active { color: #16150f; }
+    html.obs-ds:not([data-theme=light]) .site-nav a.is-active { color: #16150f; }
   }
 
   /* ── HERO — Option A: full-width lead, then two secondary cards BELOW.
@@ -231,8 +225,7 @@
     font-family: sans-serif; font-size: 10.5px; font-weight: 800;
     text-transform: uppercase; letter-spacing: .08em; color: var(--accent);
   }
-  .topic-card-ask { background: var(--paper-dark); }
-  .topic-card-ask:hover { background: var(--accent-bg); }
+  .topic-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
   /* The Ledger card carries the CURRENT YEAR's approved total, matching what
      the ledger itself opens on. Hardcoded for speed (the homepage must not
@@ -341,9 +334,6 @@
   </a>
   <a data-href-en="/press/" data-href-fr="/press/" href="/press/">
     <span data-en>Press Kits</span><span data-fr>Dossiers de presse</span>
-  </a>
-  <a class="nav-cc" data-href-en="/en/ask/" data-href-fr="/fr/posez-une-question/" href="/en/ask/">
-    <span data-en>Community Compass</span><span data-fr>Community Compass</span>
   </a>
   <a href="mailto:ormstownobserver@gmail.com">
     <span data-en>Tips &amp; Contact</span><span data-fr>Conseils &amp; contact</span>
@@ -482,7 +472,7 @@
   </div>
 
   <div class="topic-group-label"><span data-en>In-depth files and opinion</span><span data-fr>Dossiers de fond et opinion</span></div>
-  <div class="topic-grid">
+  <div class="topic-grid topic-grid-3">
     <a class="topic-card" data-href-en="/en/bell-tower-complete/" data-href-fr="/fr/bell-tower-complete/" href="/en/bell-tower-complete/">
       <div class="topic-kicker"><span data-en>File</span><span data-fr>Dossier</span></div>
       <div class="topic-title"><span data-en>The Bell tower</span><span data-fr>La tour Bell</span></div>
@@ -503,13 +493,6 @@
       <div class="topic-text"><span data-en>The Observer&rsquo;s signed positions on governance, transparency and civic life in Ormstown, grounded in the public record and kept separate from news reporting.</span><span data-fr>Les positions sign&eacute;es de l&rsquo;Observer sur la gouvernance, la transparence et la vie civique &agrave; Ormstown, fond&eacute;es sur les documents publics et distinctes du reportage.</span></div>
       <div class="topic-meta"><span data-en>Latest: the language policy</span><span data-fr>Dernier&nbsp;: la politique linguistique</span></div>
       <div class="topic-cta"><span data-en>Read the editorials &rarr;</span><span data-fr>Lire les &eacute;ditoriaux &rarr;</span></div>
-    </a>
-    <a class="topic-card topic-card-ask" data-href-en="/en/ask/" data-href-fr="/fr/posez-une-question/" href="/en/ask/">
-      <div class="topic-kicker"><span data-en>Can&rsquo;t find it?</span><span data-fr>Introuvable&nbsp;?</span></div>
-      <div class="topic-title"><span data-en>Ask Community Compass</span><span data-fr>Demandez &agrave; Community Compass</span></div>
-      <div class="topic-text"><span data-en>Ask about Ormstown&rsquo;s bylaws, budgets, council minutes and public notices, in English or French. Answers come from the municipal documents themselves, with sources.</span><span data-fr>Posez vos questions sur les r&egrave;glements, budgets, proc&egrave;s-verbaux et avis publics d&rsquo;Ormstown, en fran&ccedil;ais ou en anglais. Les r&eacute;ponses viennent des documents municipaux eux-m&ecirc;mes, avec les sources.</span></div>
-      <div class="topic-meta"><span data-en>Beta</span><span data-fr>B&ecirc;ta</span></div>
-      <div class="topic-cta"><span data-en>Ask a question &rarr;</span><span data-fr>Poser une question &rarr;</span></div>
     </a>
   </div>
 </section>

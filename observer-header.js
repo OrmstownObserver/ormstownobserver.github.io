@@ -278,10 +278,6 @@
         class="${isActive('/en/editorials') || isActive('/fr/editoriaux') ? 'is-active' : ''}">
         <span data-en>Editorials</span><span data-fr>Éditoriaux</span>
       </a>
-      <a href="/en/ask/" data-href-en="/en/ask/" data-href-fr="/fr/posez-une-question/"
-        class="${isActive('/en/ask') || isActive('/fr/posez-une-question') ? 'is-active' : ''}">
-        <span data-en>Community Compass</span><span data-fr>Community Compass</span>
-      </a>
       <a href="/press/" data-href-en="/press/" data-href-fr="/press/"
         class="${isActive('/press') ? 'is-active' : ''}">
         <span data-en>Press Kits</span><span data-fr>Dossiers de presse</span>
