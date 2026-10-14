@@ -394,6 +394,175 @@
 }
 
 /* ============================================================
+   Bylaw map (bylaw-map.js). Desktop: a "Start here" circle, one
+   column per step left to right, then the answer; the script draws
+   curved wires (an SVG layer) from each chosen box into the next
+   column, and the map scrolls sideways to keep the newest column in
+   view. Under 760px the wires go and the same steps stack into an
+   indented tree drawn with borders.
+   ============================================================ */
+.bmap { margin-top: var(--s4); }
+.bmap[hidden], .bmap-outline[hidden], .bmap-trail[hidden] { display: none; }
+.bmap-head {
+  display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+  gap: var(--s1) var(--s3);
+  padding-bottom: var(--s2);
+  border-bottom: var(--rule-strong) solid var(--ink);
+}
+.bmap-head h2 {
+  font-family: var(--serif-display); font-size: var(--size-section-head);
+  font-weight: var(--weight-bold); margin: 0;
+}
+.bmap-head .sub { flex-basis: 100%; order: 3; font: var(--size-caption)/1.55 var(--sans); color: var(--ink-soft); margin: 0; max-width: var(--measure); }
+.bmap-tools { display: flex; gap: var(--s2); }
+.bmap-tools .linkbtn[hidden] { display: none; }
+.bmap-trail {
+  flex-basis: 100%; order: 4;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px;
+  font: var(--size-caption)/1.4 var(--sans);
+}
+.bmap-trail .linkbtn { min-height: 32px; padding: 0; font-weight: 400; }
+.bmap-sep { color: var(--ink-soft); }
+.bmap-here { font-weight: 700; }
+
+/* The map may use more of a wide screen than the 1100px text column, so a
+   three-step path and its answer fit without scrolling on most laptops. */
+.bmap-map {
+  position: relative; left: 50%;
+  width: min(calc(100vw - 48px), 1400px);
+  margin-left: calc(min(calc(100vw - 48px), 1400px) / -2);
+  overflow-x: auto; scroll-behavior: smooth;
+}
+.bmap-track {
+  position: relative;
+  display: flex; align-items: flex-start; gap: 36px;
+  min-width: min-content;
+  padding: var(--s3) 2px var(--s3);
+}
+/* the wires sit behind the columns; boxes are opaque */
+.bmap-wires { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.bmap-wires path { fill: none; stroke: var(--ink-soft); stroke-opacity: .45; stroke-width: 1.25; }
+.bmap-wires path.is-hot { stroke: var(--accent); stroke-opacity: 1; stroke-width: 2.25; }
+
+.bmap-root {
+  position: relative; z-index: 1;
+  flex: 0 0 auto; align-self: center;
+  width: 88px; height: 88px; border-radius: var(--radius-pill);
+  display: grid; place-items: center; text-align: center; padding: var(--s1);
+  background: var(--ink); color: var(--paper);
+  font: 700 var(--size-label-lg)/1.3 var(--sans);
+  letter-spacing: var(--track-label-wide); text-transform: uppercase;
+}
+.bmap-level { position: relative; z-index: 1; flex: 0 0 210px; display: grid; gap: var(--s1); align-content: start; }
+.bmap-label { min-height: 18px; }
+.bmap-n { display: none; }
+.bmap-q {
+  font: 700 var(--size-label-lg)/1.3 var(--sans);
+  letter-spacing: var(--track-label-wide); text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.bmap-level.is-open .bmap-q, .bmap-result .bmap-q { color: var(--accent); }
+
+.bmap-row { display: grid; gap: var(--s1); }
+.bmap-node {
+  position: relative; min-width: 0; min-height: 44px;
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px var(--s2); align-items: center;
+  padding: 10px 12px;
+  text-align: left; cursor: pointer;
+  background: var(--surface-card); color: var(--ink);
+  border: var(--rule-hair) solid var(--hair);
+  border-radius: var(--radius-0);
+  transition: border-color var(--dur-fast), background var(--dur-fast);
+}
+.bmap-node:hover { border-color: var(--ink); }
+.bmap-lbl { grid-column: 1; font-family: var(--serif-display); font-weight: var(--weight-bold); font-size: 14.5px; line-height: 1.3; }
+.bmap-hint { grid-column: 1; font-size: var(--size-caption); line-height: 1.35; color: var(--ink-soft); }
+.bmap-end { grid-column: 2; grid-row: 1 / span 2; display: grid; justify-items: end; gap: 4px; }
+.bmap-count { font: 700 var(--size-label-lg)/1.2 var(--sans); letter-spacing: .03em; color: var(--accent); white-space: nowrap; }
+.bmap-arrow { font: 16px/1 var(--sans); color: var(--ink-soft); }
+/* decided steps: the reader's choice filled solid, the other choices greyed
+   but still there. Greyed by colour, not opacity: boxes stay opaque so a
+   wire behind one never shows through. */
+.bmap-level.is-decided .bmap-node:not(.is-on) { border-style: dashed; }
+.bmap-level.is-decided .bmap-node:not(.is-on) .bmap-lbl { font-weight: 400; color: var(--ink-soft); }
+.bmap-level.is-decided .bmap-node:not(.is-on) .bmap-count { color: var(--ink-soft); }
+.bmap-level.is-decided .bmap-node:not(.is-on):hover { border-style: solid; }
+.bmap-level.is-decided .bmap-node:not(.is-on):hover .bmap-lbl { color: var(--accent); }
+.bmap-node.is-on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.bmap-node.is-on .bmap-hint, .bmap-node.is-on .bmap-arrow, .bmap-node.is-on .bmap-count { color: var(--paper); }
+.bmap-nudge { margin: var(--s1) 0 0; font: var(--size-fine)/1.5 var(--sans); color: var(--ink-soft); }
+
+.bmap-result { flex-basis: 360px; }
+.bmap-answer {
+  display: grid; gap: var(--s2);
+  padding: var(--s3) var(--s3) var(--s3);
+  background: var(--surface-card);
+  border: var(--rule-strong) solid var(--ink);
+}
+.bmap-answer h3 { font-family: var(--serif-display); font-weight: var(--weight-bold); font-size: 20px; line-height: 1.25; margin: 0; }
+.bmap-answer h3:focus { outline: none; }
+.bmap-intro { margin: 0; font-size: var(--size-body-sm); line-height: 1.55; color: var(--ink-soft); }
+.bmap-laws { display: grid; gap: var(--s3); }
+.bmap-law { min-width: 0; display: grid; gap: 6px; align-content: start; padding-top: var(--s2); border-top: var(--rule-hair) solid var(--hair); }
+.bmap-law-top { display: flex; flex-wrap: wrap; align-items: center; gap: 6px var(--s2); }
+.bmap-num { font: 700 var(--size-caption)/1.2 var(--sans); font-variant-numeric: tabular-nums; }
+.bmap-title { margin: 0; font-family: var(--serif-display); font-weight: var(--weight-bold); font-size: 15.5px; line-height: 1.3; }
+.bmap-alt { margin: 0; font-style: italic; font-size: var(--size-caption); line-height: 1.4; color: var(--ink-soft); }
+.bmap-points { margin: 2px 0 0; padding-left: 18px; display: grid; gap: 5px; font-size: 15px; line-height: 1.45; }
+.bmap-acts { display: flex; flex-wrap: wrap; gap: var(--s1); margin: var(--s1) 0 0; }
+.bmap-note { margin: 0; font: var(--size-fine)/1.5 var(--sans); color: var(--ink-soft); }
+.bmap-after { margin: 0; padding-top: var(--s2); border-top: var(--rule-hair) solid var(--hair); font: var(--size-caption)/1.5 var(--sans); color: var(--ink-soft); }
+.bmap-after .linkbtn { min-height: 0; padding: 0; font-weight: 400; font-size: inherit; }
+.bmap-disclaim { margin: 0; font: var(--size-fine)/1.5 var(--sans); color: var(--ink-soft); }
+
+.bmap-outline { margin-top: var(--s3); padding: var(--s3); background: var(--surface-sunk); }
+.bmap-tree, .bmap-tree ul { list-style: none; margin: 0; padding: 0; }
+.bmap-tree ul { margin-left: 8px; padding-left: var(--s3); border-left: var(--rule-hair) solid var(--ink-soft); }
+.bmap-tree li { position: relative; padding: 3px 0; }
+.bmap-tree ul > li::before { content: ""; position: absolute; left: calc(-1 * var(--s3)); top: 16px; width: 11px; border-top: var(--rule-hair) solid var(--ink-soft); }
+.bmap-tree button {
+  min-height: 32px; border: 0; background: none; padding: 0; cursor: pointer; text-align: left;
+  color: var(--ink); font-size: var(--size-body-sm); line-height: 1.35;
+}
+.bmap-tree button:hover { color: var(--accent); text-decoration: underline; }
+.bmap-t-branch { font-family: var(--serif-display); font-weight: var(--weight-bold); }
+.bmap-t-nums { margin-left: var(--s1); font: var(--size-fine)/1.3 var(--sans); color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+
+/* ---------- phones: the same map as an indented tree, flowing down; the
+   script draws the curved wires down the left gutter ---------- */
+@media (max-width: 760px) {
+  .bmap-map { left: auto; width: auto; margin-left: 0; overflow: visible; }
+  .bmap-track { display: block; min-width: 0; padding: 0; }
+  .bmap-root, .bmap-trail { display: none; }
+  .bmap-level { padding-top: var(--s3); }
+  /* each step sits 24px further in; boxes leave a 16px margin on their left
+     for the wires to run down */
+  .bmap-d1 { margin-left: 24px; }
+  .bmap-d2 { margin-left: 48px; }
+  .bmap-d3 { margin-left: 72px; }
+  .bmap-result.bmap-d1, .bmap-result.bmap-d2, .bmap-result.bmap-d3 { margin-left: 0; }
+  .bmap-result.bmap-d1 .bmap-label { margin-left: 24px; }
+  .bmap-result.bmap-d2 .bmap-label { margin-left: 48px; }
+  .bmap-result.bmap-d3 .bmap-label { margin-left: 72px; }
+  .bmap-result .bmap-label { margin-bottom: var(--s1); }
+  .bmap-label { display: flex; align-items: baseline; gap: var(--s2); }
+  .bmap-n {
+    display: inline;
+    font: 700 var(--size-label-lg)/1.3 var(--sans);
+    letter-spacing: var(--track-label-wide); text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  .bmap-level.is-open .bmap-n, .bmap-result .bmap-n { color: var(--accent); }
+  .bmap-q { font: 700 16px/1.3 var(--serif-display); letter-spacing: 0; text-transform: none; color: var(--ink); }
+  .bmap-level.is-open .bmap-q, .bmap-result .bmap-q { color: var(--ink); }
+  .bmap-row { gap: 6px; padding-left: var(--s3); }
+  .bmap-level.is-decided .bmap-node:not(.is-on) { padding-block: 7px; }
+  .bmap-level.is-decided .bmap-node:not(.is-on) .bmap-hint { display: none; }
+  .bmap-acts .btn { flex: 1 1 auto; }
+}
+@media (prefers-reduced-motion: reduce) { .bmap-node { transition: none; } .bmap-map { scroll-behavior: auto; } }
+
+/* ============================================================
    Responsive
    ============================================================ */
 @media (max-width: 760px) {
@@ -430,7 +599,7 @@
 }
 
 @media print {
-  .reg-ask, .reg-find, .reg-skip, .back-link, .no-results .acts, .reg-scope .linkbtn,
+  .reg-ask, .reg-find, .bmap, .reg-skip, .back-link, .no-results .acts, .reg-scope .linkbtn,
   .obs-hamburger, .obs-drawer, .obs-scrim, .obs-controls, .obs-langbar { display: none !important; }
   .bylaw { break-inside: avoid-page; }
   .bylaw-links a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 10px; color: #555; }

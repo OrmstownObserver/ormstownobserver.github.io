@@ -145,7 +145,9 @@ const V2 = {
   const segs = btns('status-filter');
   check(segs.length >= 4, 'EN: status control renders its segments');
   check(segs[0].textContent.indexOf(String(CURRENT)) >= 0, 'EN: Current-law segment shows its count');
-  eq(btns('topics').length, 10, 'EN: "I want to…" grid has ten topics');
+  // The "I want to…" grid was replaced by the question map (bylaw-map.js,
+  // tested by check-bylaw-map.js). Its topic filter stays for shared links.
+  check(!$('topics'), 'EN: the old "I want to…" grid is gone (the question map replaces it)');
 
   // status filters
   segs[segs.length - 1].click(); await settle();
@@ -174,24 +176,8 @@ const V2 = {
   eq(win.location.search, '', 'EN: reset clears the URL');
   check($('reset').hidden, 'EN: reset hides again at the default view');
 
-  // repeated topic toggling is idempotent
-  const animals = () => btns('topics').find((b) => /animals/i.test(b.textContent));
-  animals().click(); await settle();
-  const nAnimals = cards().length;
-  check(nAnimals > 0 && nAnimals < CURRENT, 'EN: a topic narrows the list');
-  eq(animals().getAttribute('aria-pressed'), 'true', 'EN: the active topic is pressed');
-  animals().click(); await settle(); animals().click(); await settle();
-  eq(cards().length, nAnimals, 'EN: toggling a topic off and on again gives the same result');
-  animals().click(); await settle();
-  eq(cards().length, CURRENT, 'EN: toggling the topic off restores the list');
-
   // keyboard focus survives the re-render a click causes
   {
-    const b = animals();
-    b.focus(); b.click(); await settle();
-    const a = document.activeElement;
-    eq(a && a.getAttribute('data-k'), 'topic-animals', 'EN: focus stays on the topic button after it re-renders');
-    a.click(); await settle();
     const st = btns('status-filter')[2];
     st.focus(); st.click(); await settle();
     eq(document.activeElement && document.activeElement.getAttribute('data-k'), 'status-repealed', 'EN: focus stays on the status button after it re-renders');
@@ -206,6 +192,14 @@ const V2 = {
       await typeSearch(win, ex);
       check(cards().length > 0, `${lg}: placeholder example "${ex}" returns at least one current bylaw`);
     }
+  }
+  // a shared ?topic= link still narrows the list, though no grid sets it now
+  win = await boot('/en/bylaws-regulations/', SNAPSHOT, { search: '?topic=animals' });
+  {
+    const nAnimals = cards().length;
+    const want = SNAPSHOT.records.filter((r) => (r.topics || []).includes('Animals') && ['In force', 'Amended'].includes(r.status)).length;
+    eq(nAnimals, want, 'EN: ?topic=animals lists exactly the current bylaws tagged Animals');
+    check(nAnimals > 0 && nAnimals < CURRENT, 'EN: a topic link narrows the list');
   }
   win = await boot('/en/bylaws-regulations/', SNAPSHOT);
 
@@ -243,7 +237,7 @@ const V2 = {
     const ex = links(a).find((n) => cls(n, 'lk-explainer'));
     eq(ex && ex.getAttribute('href'), '/fr/bylaws-regulations/reglement-animaux-131-2026/', 'FR: explainer link points at the French article');
     check(cards().every((c) => !/In force|Repealed|Draft/.test(statusText(c))), 'FR: no English status labels on the French page');
-    check(btns('topics').every((b) => !/Build|Keep|Park|Follow/.test(b.textContent)), 'FR: topic grid is in French');
+    check(!$('topics'), 'FR: the old "Je veux…" grid is gone too');
   }
 
   /* ---------- v2 fields (what a future export carries) ---------- */

@@ -30,11 +30,17 @@ The current public Q&A interface under `en/ask/`, `fr/posez-une-question/`, and
 from indexed municipal sources and should keep its reader-facing disclaimers,
 source links, rate limiting, and citation discipline.
 
+As of 2026-10-13 that interface is hidden from the site: it has no links from
+navigation, the homepage or the bylaw pages, and it is marked `noindex`. The
+pages stay reachable by direct URL. Community Compass is being developed outside
+this site, and the links come back only when the editor decides.
+
 Bylaw Registries is a reusable Community Compass module for municipal bylaw
 records, bilingual summaries, English translations, explainers, source/version
 tracking, status tracking, and editorial review. The current Ormstown
 implementation lives in `scripts/export-bylaws.py`, `dist/bylaws.json`,
-`bylaws-register.js`, `bylaws-register.css`, and the bilingual
+`bylaws-register.js`, `bylaws-register.css`, the question map
+(`bylaw-map.json`, `bylaw-map.js`), and the bilingual
 `bylaws-regulations` pages.
 
 ## Pipeline Map

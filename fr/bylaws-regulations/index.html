@@ -15,7 +15,7 @@ if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/observer.css">
-<link rel="stylesheet" href="/bylaws-register.css?v=20261010-1">
+<link rel="stylesheet" href="/bylaws-register.css?v=20261013-2">
 <script src="/observer-header.js" defer></script>
 </head>
 <body>
@@ -31,24 +31,32 @@ if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)
     <p class="reg-note" id="bylaw-source-note">Index non officiel d’intérêt public. Les documents officiels français publiés par la municipalité demeurent la source faisant autorité. Pas un avis juridique.</p>
   </header>
 
-  <aside class="reg-ask" aria-label="Poser une question">
-    <p><strong>Vous ne savez pas quel règlement s'applique ?</strong> Posez la question à Community Compass, l'assistant bêta de l'Observer pour les documents publics officiels d'Ormstown. <span class="fine">Vérifiez toujours les réponses importantes dans la source municipale officielle liée.</span></p>
-    <a class="btn" href="/fr/posez-une-question/">Interroger Community Compass</a>
-  </aside>
+  <!-- Question map: bylaw-map.js fills it from /bylaw-map.json + /dist/bylaws.json
+       and unhides it. Without JS, or if either file fails, it stays hidden. -->
+  <section class="bmap" id="bylaw-map" aria-labelledby="bmap-h" hidden>
+    <div class="bmap-head">
+      <h2 id="bmap-h">Trouver la règle qui vous concerne</h2>
+      <div class="bmap-tools">
+        <button type="button" class="linkbtn" id="bmap-reset" hidden>Recommencer</button>
+        <button type="button" class="linkbtn" id="bmap-whole" aria-expanded="false" aria-controls="bmap-outline">Voir tous les parcours</button>
+      </div>
+      <p class="sub">Partez du sujet et suivez votre situation, une étape à la fois. Chaque parcours mène au règlement lui-même, avec le document officiel et l’explicateur en langage clair de l’Observer lorsqu’il existe.</p>
+      <nav class="bmap-trail" id="bmap-trail" aria-label="Votre parcours" hidden></nav>
+    </div>
+    <div class="bmap-outline" id="bmap-outline" hidden>
+      <ul class="bmap-tree" id="bmap-tree"></ul>
+    </div>
+    <div class="bmap-map" id="bmap-map"></div>
+  </section>
 
   <section class="reg-find reg-live" aria-labelledby="find-h">
-    <h2 id="find-h">Trouver un règlement</h2>
+    <h2 id="find-h">Chercher parmi tous les règlements</h2>
     <label class="reg-label" for="search">Chercher par numéro, titre ou sujet</label>
     <div class="reg-search">
       <input type="search" id="search" autocomplete="off" spellcheck="false" enterkeyhint="search" aria-describedby="search-hint">
       <button type="button" class="clr" id="search-clear" hidden>✕</button>
     </div>
     <p class="reg-hint" id="search-hint">Cherche dans les titres français et anglais, les sujets et les faits clés. Les accents sont facultatifs.</p>
-
-    <div class="reg-topics">
-      <h3 class="reg-label" id="topics-h">Je veux…</h3>
-      <div class="topic-grid" id="topics" role="group" aria-labelledby="topics-h"></div>
-    </div>
 
     <div class="reg-filterrow">
       <div class="fld">
@@ -183,5 +191,6 @@ if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)
 </div>
 
 <script src="/bylaws-register.js?v=20261010-1" defer></script>
+<script src="/bylaw-map.js?v=20261013-2" defer></script>
 </body>
 </html>
