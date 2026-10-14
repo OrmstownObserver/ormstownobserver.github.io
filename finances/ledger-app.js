@@ -45,7 +45,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261012-1';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261013-1';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -61,6 +61,16 @@
   var idxCache = null, aggCache = null, printRestore = null;
   var pendingCharts = [];
   var lastFocus = null;
+  // Where the reader was when they opened a payee profile: the reveal
+  // count, the scroll position and the row they clicked. Closing the
+  // profile puts all three back, so a payee is a detour, not a reset.
+  // profileEntry is the query string of the history entry the profile
+  // was pushed as; closing from that same entry steps Back instead of
+  // pushing, so the browser's Back button never reopens the profile.
+  var returnTo = null, profileEntry = null;
+  // A burst of typing in the search or amount boxes is ONE history entry:
+  // the first keystroke pushes, the rest replace, until the box loses focus.
+  var typingPushed = false;
 
   function T() { return I18N[state.lang]; }
   function f() { return V.fmt(state.lang); }
@@ -154,6 +164,18 @@
     var url = location.pathname + '?' + buildQuery().toString();
     try { history[push ? 'pushState' : 'replaceState'](null, '', url); } catch (e) {}
     syncAlternates();
+    // Remembered for this tab only, so the budget page's "Back to The
+    // Ledger" returns to this exact view instead of the default one.
+    try { global.sessionStorage.setItem('ledgerReturn', url); } catch (e) {}
+  }
+  // The URL a view WOULD have, without going there: lets the views render
+  // real links (open in a new tab, copy the address) for in-page moves.
+  function hrefFor(patch) {
+    var saved = {};
+    Object.keys(patch).forEach(function (k) { saved[k] = state[k]; state[k] = patch[k]; });
+    var qs = buildQuery().toString();
+    Object.keys(saved).forEach(function (k) { state[k] = saved[k]; });
+    return location.pathname + '?' + qs;
   }
   // Keep the hreflang alternates pointing at the CURRENT result set, so the
   // no-JS path and any crawler see the same view in the other language.
@@ -171,6 +193,7 @@
      ============================================================ */
   function setState(patch, opts) {
     opts = opts || {};
+    if (!opts.keepReturn) returnTo = null;
     if (!store) { Object.keys(patch).forEach(function (k) { state[k] = patch[k]; }); writeURL(false); renderStandalone(); return; }
     var langChanged = patch.lang && patch.lang !== state.lang;
     Object.keys(patch).forEach(function (k) { state[k] = patch[k]; });
@@ -384,6 +407,9 @@
         return C0 ? C0.color : '#888888';
       },
       hasFilters: hasFilters,
+      hrefSitting: function (id) { return hrefFor(sittingPatch(id)); },
+      hrefCategory: function (key) { return hrefFor(categoryPatch(key)); },
+      payeeMatches: payeeMatches,
       payeeRows: payeeRows, categoryRows: categoryRows, sittingRows: sittingRows,
       payeeBySitting: payeeBySitting, profileData: profileData,
       widenOffers: widenOffers,
@@ -391,13 +417,14 @@
         pendingCharts.push({ name: name, canvasId: canvasId, capId: capId, items: items, opts: opts || {} });
       },
       on: {
-        payee: function (slug) { lastFocus = document.activeElement; profileRevealed = PROFILE_PAGE; setState({ payee: slug }); },
-        closeProfile: function () { setState({ payee: '' }); restoreFocus(); },
+        payee: openProfile,
+        closeProfile: closeProfile,
+        sittingOnly: function (id) { setState(sittingPatch(id)); focusPanel(); },
         profileAll: function () { profileRevealed = 1e9; renderAll(); },
         profileCsv: function (slug) { exportPayeeCSV(slug); },
         copyLink: copyLink,
         category: function (key) { setState({ categories: toggleIn(state.categories, L.SLUGS[key]) }); },
-        categoryOnly: function (key) { setState({ categories: [L.SLUGS[key]], tab: 'payments', payee: '' }); },
+        categoryOnly: function (key) { setState(categoryPatch(key)); focusPanel(); },
         togglePayeeScope: function () { setState({ payeeScope: state.payeeScope === 'filters' ? '' : 'filters' }, { resetReveal: false }); },
         sitting: function (id) { setState({ sittings: toggleIn(state.sittings, id), tab: state.tab }); },
         setScope: function (v) { setState({ scope: v, sittings: [] }); },
@@ -411,6 +438,84 @@
         retry: function () { linesFailed = false; loading = true; renderAll(); loadPayments(); }
       }
     };
+  }
+
+  // "What did this sitting approve?" Every line of that one sitting, with
+  // nothing else narrowing it, so the Payments total equals the row the
+  // reader clicked (the Sittings table ignores the rail, so must this).
+  function sittingPatch(id) {
+    return { sittings: [id], scope: String(id).slice(0, 4), tab: 'payments', payee: '', payeeScope: '',
+             q: '', categories: [], min: '', max: '' };
+  }
+  // A category's lines within whatever else is filtered: the Categories
+  // table it is clicked from respects the rail, so the total carries over.
+  function categoryPatch(key) {
+    return { categories: [L.SLUGS[key]], tab: 'payments', payee: '', payeeScope: '' };
+  }
+
+  // Suppliers whose NAME (or any spelling of it in the minutes) matches the
+  // search, so a search for a supplier offers the supplier itself, from any
+  // tab. Ranked by what they were paid across the whole ledger.
+  function payeeMatches(limit) {
+    var toks = state.q ? L.searchNorm(state.q).split(' ').filter(Boolean) : [];
+    if (!toks.length || !store) return { list: [], n: 0 };
+    var out = [];
+    Object.keys(store.payees).forEach(function (slug) {
+      var P = store.payees[slug];
+      var hay = L.searchNorm([P.name, payeeName(P)].concat(P.aliases || []).join(' '));
+      for (var t = 0; t < toks.length; t++) if (hay.indexOf(toks[t]) < 0) return;
+      var c = 0;
+      (store.byPayee[slug] || []).forEach(function (i) { c += L.cents(store.lines[i].a); });
+      out.push({ slug: slug, name: payeeName(P), total: L.dollars(c) });
+    });
+    out.sort(function (a, b) { return b.total - a.total; });
+    return { list: out.slice(0, limit || 5), n: out.length };
+  }
+
+  function openProfile(slug) {
+    lastFocus = document.activeElement;
+    var place = { revealed: revealed, y: global.pageYOffset || 0, tab: state.tab, row: rowKey(lastFocus) };
+    profileRevealed = PROFILE_PAGE;
+    setState({ payee: slug }, { resetReveal: false });
+    returnTo = place;
+    profileEntry = location.search;
+  }
+  function closeProfile() {
+    if (!state.payee) return;
+    // Opened in this page and not navigated since: step Back, so history
+    // holds one entry for the detour. popstate restores the place.
+    if (returnTo && profileEntry === location.search && global.history && global.history.back) {
+      global.history.back();
+      return;
+    }
+    var place = returnTo;
+    setState({ payee: '' }, { resetReveal: false });
+    restorePlace(place);
+  }
+  // Remember a row by table and position, not by node: the re-render that
+  // closes the profile replaces every row.
+  function rowKey(node) {
+    var n = node;
+    while (n && n.tagName !== 'TR') n = n.parentNode;
+    if (!n || !n.parentNode || !n.parentNode.children) return null;
+    var idx = Array.prototype.indexOf.call(n.parentNode.children, n);
+    var tbl = n.parentNode.parentNode;
+    var id = tbl && tbl.getAttribute && tbl.getAttribute('id');
+    return id && idx >= 0 ? { table: id, i: idx } : null;
+  }
+  function restorePlace(place) {
+    returnTo = null; profileEntry = null;
+    if (!place || place.tab !== state.tab) { restoreFocus(); return; }
+    var target = null, tbl = place.row && $(place.row.table);
+    if (tbl) {
+      var body = tbl.getElementsByTagName('tbody')[0];
+      var tr = body && body.children[place.row.i];
+      target = tr && (tr.getElementsByTagName('button')[0] || tr.getElementsByTagName('a')[0]);
+    }
+    if (target && target.focus) { try { target.focus({ preventScroll: true }); } catch (e) {} }
+    else restoreFocus();
+    lastFocus = null;
+    if (global.scrollTo) { try { global.scrollTo(0, place.y); } catch (e) {} }
   }
 
   // "142 matching lines in other sittings — search all sittings". The empty
@@ -537,6 +642,7 @@
     renderTabs();
     renderChips();
     renderStatus();
+    renderJump();
     renderPanels();
     flushCharts();
     renderPrintMeta();
@@ -856,6 +962,28 @@
       box.appendChild(V.el('span', { cls: i === 0 ? 'big' : null, text: p }));
     });
   }
+  // A search names a supplier more often than not. Whatever tab the reader
+  // is on, offer the matching suppliers' profiles one click away, instead
+  // of leaving them to find the Suppliers tab and then the name.
+  function renderJump() {
+    var box = $('payee-jump'); if (!box) return;
+    box.textContent = '';
+    var m = (state.q && !state.payee && state.tab !== 'payees') ? payeeMatches(5) : { list: [], n: 0 };
+    box.hidden = !m.list.length;
+    if (!m.list.length) return;
+    var t = T();
+    box.appendChild(V.el('span', { cls: 'lead', text: t.jumpLead }));
+    m.list.forEach(function (r, i) {
+      if (i) box.appendChild(document.createTextNode(' · '));
+      box.appendChild(V.navLink(hrefFor({ payee: r.slug }), r.name, function () { openProfile(r.slug); }));
+    });
+    if (m.n > m.list.length) {
+      box.appendChild(document.createTextNode(' · '));
+      box.appendChild(V.navLink(hrefFor({ tab: 'payees' }), L.tpl(t.jumpMore, { n: f().num(m.n - m.list.length) }),
+        function () { setState({ tab: 'payees' }); focusPanel(); }));
+    }
+  }
+
   function sortLabel() {
     var o = sortOptions().filter(function (x) { return x.v === state.sort; })[0];
     return o ? o.label : state.sort;
@@ -880,7 +1008,13 @@
       // Move focus into the profile the first time it opens, so a keyboard
       // or screen-reader user lands on it rather than staying in the table
       // that is no longer displayed.
-      if (!wasOpen && pf.focus) { try { pf.focus(); } catch (e) {} }
+      // Land on the profile's top (its name and Back button), not wherever
+      // focus() happens to scroll to: from deep in a long table the reader
+      // used to arrive mid-profile, under the phone's sticky filter bar.
+      if (!wasOpen && pf.focus) {
+        try { pf.focus({ preventScroll: true }); } catch (e) {}
+        if (pf.scrollIntoView) { try { pf.scrollIntoView({ block: 'start' }); } catch (e) {} }
+      }
     }
   }
 
@@ -929,9 +1063,10 @@
       q.addEventListener('input', function () {
         clearTimeout(qTimer);
         var v = q.value.trim().slice(0, 120);
-        qTimer = setTimeout(function () { if (v !== state.q) setState({ q: v }); }, 150);
+        qTimer = setTimeout(function () { if (v !== state.q) typed({ q: v }); }, 150);
       });
       q.addEventListener('keydown', function (e) { if (e.key === 'Enter') e.preventDefault(); });
+      q.addEventListener('blur', function () { typingPushed = false; });
     }
     var qc = $('q-clear');
     if (qc) qc.addEventListener('click', function () { if (q) q.value = ''; setState({ q: '' }); if (q) q.focus(); });
@@ -941,9 +1076,10 @@
       n.addEventListener('input', function () {
         clearTimeout(amtTimer);
         amtTimer = setTimeout(function () {
-          setState({ min: numParam($('amt-min').value), max: numParam($('amt-max').value) });
+          typed({ min: numParam($('amt-min').value), max: numParam($('amt-max').value) });
         }, 300);
       });
+      n.addEventListener('blur', function () { typingPushed = false; });
     });
 
     on('sit-all', function () { setState({ sittings: [], scope: 'all' }); });
@@ -956,6 +1092,14 @@
     on('sheet-close', closeSheet);
     on('sheet-open', openSheet);
     var scrim = $('lw-scrim'); if (scrim) scrim.addEventListener('click', closeSheet);
+    // Below 900px the rail is a closed sheet (display:none), so "Skip to
+    // the filters" would land nowhere. There it opens the sheet instead.
+    var skips = document.getElementsByClassName('lw-skip');
+    if (skips[1]) skips[1].addEventListener('click', function (e) {
+      if (!isMobile()) return;
+      if (e && e.preventDefault) e.preventDefault();
+      openSheet();
+    });
 
     var sm = $('sort-mobile');
     if (sm) sm.addEventListener('change', function () { setState({ sort: validSort(sm.value) }, { resetReveal: false }); });
@@ -977,15 +1121,21 @@
     document.addEventListener('keydown', function (e) {
       if (e.key !== 'Escape') return;
       if (sheetOpen()) { closeSheet(); return; }
-      if (state.payee) { setState({ payee: '' }); restoreFocus(); }
+      if (state.payee) closeProfile();
     });
 
     global.addEventListener('popstate', function () {
       readURL();
-      revealed = PAGE_SIZE; profileRevealed = PROFILE_PAGE;
+      // Back out of a profile opened here: put the reader where they were.
+      var place = !state.payee && returnTo ? returnTo : null;
+      if (!state.payee) { returnTo = null; profileEntry = null; }
+      revealed = place ? place.revealed : PAGE_SIZE;
+      profileRevealed = PROFILE_PAGE;
       idxCache = aggCache = null;
+      typingPushed = false;
       applyLangChrome();
       renderAll();
+      if (place) restorePlace(place);
     });
 
     // Print the whole filtered set, never the reveal window - then put the
@@ -1016,6 +1166,10 @@
     };
   }
   function on(id, fn) { var n = $(id); if (n) n.addEventListener('click', fn); }
+  function typed(patch) {
+    setState(patch, { push: !typingPushed });
+    typingPushed = true;
+  }
 
   function focusPanel() {
     var p = $('panel-' + state.tab);
