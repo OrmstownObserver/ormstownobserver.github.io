@@ -104,13 +104,24 @@
                   },
                   "items": [
                     {
+                      "bylaw": "Règlement 169-2025",
+                      "points": {
+                        "en": [
+                          "Resolution 26-08-228, which authorizes the 24-unit Church Street project (PPCMOI 2026-041) under this bylaw, came into force on October 7, 2026."
+                        ],
+                        "fr": [
+                          "La résolution 26-08-228, qui autorise le projet de 24 logements de la rue Church (PPCMOI 2026-041) en vertu de ce règlement, est entrée en vigueur le 7 octobre 2026."
+                        ]
+                      }
+                    },
+                    {
                       "bylaw": "Règlement 114-2021",
                       "points": {
                         "en": [
-                          "The procedure used for the 24-unit Church Street project (PPCMOI 2026-041)."
+                          "The PPCMOI bylaw in force when the 24-unit Church Street project (PPCMOI 2026-041) was filed."
                         ],
                         "fr": [
-                          "La procédure suivie pour le projet de 24 logements de la rue Church (PPCMOI 2026-041)."
+                          "Le règlement sur les PPCMOI en vigueur au dépôt du projet de 24 logements de la rue Church (PPCMOI 2026-041)."
                         ]
                       },
                       "link": {
@@ -748,6 +759,9 @@
                   "bylaw": "Règlement 156-2023"
                 },
                 {
+                  "bylaw": "Règlement 169-2025"
+                },
+                {
                   "bylaw": "Règlement 114-2021"
                 }
               ]
@@ -1071,7 +1085,7 @@
             "answer": {
               "items": [
                 {
-                  "bylaw": "Règlement 74-2021"
+                  "bylaw": "Règlement 74-2026"
                 },
                 {
                   "bylaw": "Règlement 80-2022",
@@ -1112,6 +1126,9 @@
             },
             "answer": {
               "items": [
+                {
+                  "bylaw": "Règlement 44-2025"
+                },
                 {
                   "bylaw": "Règlement 44-2024"
                 },

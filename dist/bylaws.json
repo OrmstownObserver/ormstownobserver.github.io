@@ -498,7 +498,7 @@
       "title_fr": "Règlement concernant le Plan d'Urbanisme 147-2023",
       "status": "Amended",
       "adopted_date": null,
-      "amended_date": null,
+      "amended_date": "2026-04-13",
       "enforced_by": null,
       "fines": null,
       "official_url": "https://drive.google.com/file/d/1x6nPalbgXV-gKAlvXm7O5z_uK953dNi_/view?usp=drive_link",
@@ -517,9 +517,9 @@
       "bylaw_number": "Règlement 148-2023",
       "title_en": "Zoning Bylaw",
       "title_fr": "Règlement de zonage",
-      "status": "In force",
+      "status": "Amended",
       "adopted_date": null,
-      "amended_date": null,
+      "amended_date": "2026-04-13",
       "enforced_by": null,
       "fines": null,
       "official_url": "https://drive.google.com/file/d/1_uQKkC1mx2k3lbfbyyfdfkh8S6pvsX-n/view?usp=drive_link",
@@ -578,9 +578,9 @@
       "bylaw_number": "Règlement 151-2023",
       "title_en": "Building Permits Bylaw",
       "title_fr": "Règlement sur les permis de construction",
-      "status": "In force",
+      "status": "Amended",
       "adopted_date": null,
-      "amended_date": null,
+      "amended_date": "2026-04-13",
       "enforced_by": null,
       "fines": null,
       "official_url": "https://drive.google.com/file/d/1K4F2X-NXSbcyRs-dkes1jVT24-Lfvkj0/view?usp=drive_link",
@@ -1117,7 +1117,7 @@
       "bylaw_number": "Règlement 74-2021",
       "title_en": "Ethics and Deontology of Elected Officials Bylaw",
       "title_fr": "Règlement no. 74-2021 Éthique et déontologie des élus.e.s",
-      "status": "In force",
+      "status": "Repealed",
       "adopted_date": "2022-02-07",
       "amended_date": null,
       "enforced_by": null,
@@ -1400,7 +1400,28 @@
       "title_en": "Borrowing Bylaw — Prince-Albert, Cullen and Oliver streets",
       "title_fr": "",
       "status": "Amended",
-      "adopted_date": null,
+      "adopted_date": "2026-04-13",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-demprunt-173-2026-Prince-Albert-vf-pour-site-web.pdf",
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Fees & taxes",
+        "Parking & roads"
+      ],
+      "explainer": {
+        "en": "/en/council-watch/borrowing-172-173-2026/",
+        "fr": "/fr/conseil-municipal/emprunts-172-173-2026/"
+      }
+    },
+    {
+      "bylaw_number": "Règlement d'emprunt 172-2026",
+      "title_en": "Borrowing Bylaw — Route 138A, 3e Rang, chemin de la Rivière-Châteauguay and montée du Rocher",
+      "title_fr": "",
+      "status": null,
+      "adopted_date": "2026-06-15",
       "amended_date": null,
       "enforced_by": null,
       "fines": null,
@@ -1412,9 +1433,91 @@
         "Parking & roads"
       ],
       "explainer": {
-        "en": "/en/council-watch/june-1-2026/",
-        "fr": "/fr/conseil-municipal/1-juin-2026/"
+        "en": "/en/council-watch/borrowing-172-173-2026/",
+        "fr": "/fr/conseil-municipal/emprunts-172-173-2026/"
       }
+    },
+    {
+      "bylaw_number": "Règlement 44-2025",
+      "title_en": "Budget Control and Monitoring Bylaw 2025",
+      "title_fr": "Règlement 44-2025 décrétant les règles de contrôle et de suivi budgétaire",
+      "status": "In force",
+      "adopted_date": "2026-01-19",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Finance & Taxation",
+      "topics": [
+        "Council & ethics",
+        "Fees & taxes"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 74-2026",
+      "title_en": "Revised Code of Ethics and Conduct for Elected Officials",
+      "title_fr": "Règlement 74-2026 – Code d’éthique et de déontologie révisé des élus municipaux",
+      "status": "In force",
+      "adopted_date": "2026-05-04",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 169-2025",
+      "title_en": "Special Construction/Modification/Occupancy Projects (PPCMOI) Bylaw 2025",
+      "title_fr": "Règlement 169-2025 sur les projets particuliers de construction, de modification ou d’occupation d’un immeuble (PPCMOI)",
+      "status": "In force",
+      "adopted_date": "2026-03-02",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Construction & Permits",
+      "topics": [
+        "Build & renovate",
+        "Run a business"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 170-2025",
+      "title_en": "Minor Variances Bylaw",
+      "title_fr": "Règlement 170-2025 sur les dérogations mineures",
+      "status": "In force",
+      "adopted_date": "2026-03-02",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Construction & Permits",
+      "topics": [
+        "Build & renovate"
+      ]
+    },
+    {
+      "bylaw_number": "Règlement 171-2026",
+      "title_en": "Municipal Committees (Constitution and Internal Rules) Bylaw",
+      "title_fr": "Règlement 171-2026 établissant les règles de constitution et de régie interne des comités municipaux",
+      "status": "In force",
+      "adopted_date": "2026-03-02",
+      "amended_date": null,
+      "enforced_by": null,
+      "fines": null,
+      "official_url": null,
+      "key_facts_en": [],
+      "category": "Council Procedure",
+      "topics": [
+        "Council & ethics"
+      ]
     }
   ]
 }
