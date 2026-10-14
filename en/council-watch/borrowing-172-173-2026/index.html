@@ -66,6 +66,11 @@
   .src-chip.src-min    { background: #e8f3ea;          color: var(--confirm); border: 1px solid #b8dcc0; }
   .src-chip.src-doc    { background: #eef1f7;          color: #2c3e63;        border: 1px solid #c4cde0; }
   .src-chip.src-rec    { background: #fdf6e3;          color: var(--pending); border: 1px solid #e8d9a0; }
+  a.src-chip { text-decoration: none; }
+  a.src-chip.src-rec:hover { background: #f6e9bf; }
+  a.rec-link { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a.rec-link:hover { color: var(--accent); }
+  @media print { a[data-t]::after { content: " [" attr(data-t) "]"; font-weight: 400; } }
   .src-chip.src-agenda { background: var(--paper-dark); color: var(--muted);   border: 1px solid var(--border); }
   .src-chip.src-obs    { background: var(--accent-light); color: var(--accent); border: 1px solid #e3c4c5; }
 
@@ -182,7 +187,7 @@
     <strong>Minutes</strong> &mdash; the adopted official minutes.
     <strong>Official document</strong> &mdash; a by-law, public notice, budget document or certificate published by the municipality.
     <strong>Agenda</strong> &mdash; a published agenda or notice of meeting, which names subjects but records no outcomes.
-    <strong>Recording</strong> &mdash; the video of the public session, with a timecode.
+    <strong>Recording</strong> &mdash; the video of the public session. Linked item numbers and &ldquo;Recording &#9654;&#xFE0E;&rdquo; open the video at that moment.
     Where two tags appear, both sources support the item. Figures tagged <em>Minutes</em> or <em>Official document</em> come from a written source. The August 3 figures are tagged <em>Recording</em> and are marked unconfirmed until the minutes appear.</p>
   </div>
 
@@ -302,11 +307,11 @@
 
   <h2>What happened on August 3</h2>
 
-  <p><span class="src-chips"><span class="src-chip src-rec">Recording 00:46:39</span></span><strong>Item 4.2 &mdash; by-law 172-2026.</strong> Council opened a temporary credit line against by-law 172-2026. The total was stated twice within thirty seconds, in two figures a thousand dollars apart: $3,776,896.70 and $3,777,896.70.</p>
+  <p><span class="src-chips"><span class="src-chip src-rec">Recording</span></span><strong>Item <a class="rec-link" href="https://www.youtube.com/watch?v=VwrGOuesAVA&amp;t=2799s" data-t="00:46:39" target="_blank" rel="noopener" title="Watch item 4.2 in the recording, at 00:46:39" aria-label="Watch item 4.2 in the recording, at 00:46:39">4.2</a> &mdash; by-law 172-2026.</strong> Council opened a temporary credit line against by-law 172-2026. The total was stated twice within thirty seconds, in two figures a thousand dollars apart: $3,776,896.70 and $3,777,896.70.</p>
 
-  <p><span class="src-chips"><span class="src-chip src-rec">Recording 00:48:08</span></span><strong>Item 4.3 &mdash; by-law 173-2026.</strong> Council opened a temporary credit line described at the sitting as $4.8&nbsp;million.</p>
+  <p><span class="src-chips"><span class="src-chip src-rec">Recording</span></span><strong>Item <a class="rec-link" href="https://www.youtube.com/watch?v=VwrGOuesAVA&amp;t=2888s" data-t="00:48:08" target="_blank" rel="noopener" title="Watch item 4.3 in the recording, at 00:48:08" aria-label="Watch item 4.3 in the recording, at 00:48:08">4.3</a> &mdash; by-law 173-2026.</strong> Council opened a temporary credit line described at the sitting as $4.8&nbsp;million.</p>
 
-  <p><span class="src-chips"><span class="src-chip src-rec">Recording 01:03:22</span></span><strong>Item 7.1 &mdash; the contract.</strong> Following a public tender, council awarded the contract for the 3<sup>e</sup> Rang and chemin de la Rivi&egrave;re-Ch&acirc;teauguay works to the lowest conforming bidder at <strong>$1,568,399.77 plus applicable taxes</strong>, conditional on receipt of insurance and bonding certificates, and <strong>financed under by-law 172-2026</strong>. Four bids were opened, ranging from about $1.57&nbsp;million to about $1.75&nbsp;million. No interest rate was stated for either credit line.</p>
+  <p><span class="src-chips"><span class="src-chip src-rec">Recording</span></span><strong>Item <a class="rec-link" href="https://www.youtube.com/watch?v=VwrGOuesAVA&amp;t=3802s" data-t="01:03:22" target="_blank" rel="noopener" title="Watch item 7.1 in the recording, at 01:03:22" aria-label="Watch item 7.1 in the recording, at 01:03:22">7.1</a> &mdash; the contract.</strong> Following a public tender, council awarded the contract for the 3<sup>e</sup> Rang and chemin de la Rivi&egrave;re-Ch&acirc;teauguay works to the lowest conforming bidder at <strong>$1,568,399.77 plus applicable taxes</strong>, conditional on receipt of insurance and bonding certificates, and <strong>financed under by-law 172-2026</strong>. Four bids were opened, ranging from about $1.57&nbsp;million to about $1.75&nbsp;million. No interest rate was stated for either credit line.</p>
 
   <div class="note-box">
     <strong>Observer note:</strong> the credit-line figures and the August 3 tender amounts were read aloud at the sitting and appear in no published document yet. The $1,000 discrepancy on the 172-2026 line is reproduced as spoken rather than resolved. Tenderers&rsquo; company names are not printed from a recording. All of it will be checked against the August 3 minutes and corrected on the record.
