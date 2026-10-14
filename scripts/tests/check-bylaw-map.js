@@ -140,7 +140,8 @@ const hrefs = (n) => n.find((x) => x.tagName === 'A').map((a) => a.getAttribute(
     check(!!count && /^\d+ explainers?$/.test(count.textContent), 'EN: a subject shows how many explainers lie down its branch');
   }
   await click(0, 'Your house & lot');
-  eq(nodesAt(1).length, 4, 'EN: choosing a subject opens step 2 below it');
+  const kids = (id) => NODES.find((x) => x.node.id === id).node.children.length;
+  eq(nodesAt(1).length, kids('home'), 'EN: choosing a subject opens step 2 below it');
   check(!$('bmap-reset').hidden, 'EN: "Start over" appears once a choice is made');
   await click(1, 'Trees & land');
   await click(2, 'Cut down a tree');
@@ -161,11 +162,14 @@ const hrefs = (n) => n.find((x) => x.tagName === 'A').map((a) => a.getAttribute(
   eq(laws().length, 1, 'EN: clicking the current choice again keeps the answer');
   await click(0, 'Pets & animals');
   eq(laws().length, 0, 'EN: changing step 1 clears the old answer');
-  eq(nodesAt(1).length, 3, 'EN: and opens the new subject\'s step 2');
-  // a subject that goes straight to a list
-  await click(0, 'Roads & parking');
-  eq(laws().length, MAP.root.children.find((c) => c.id === 'roads').answer.items.length, 'EN: a direct-list subject lists its bylaws at once');
-  check(byClass('bmap-q').some((n) => n.textContent === 'Bylaws on this subject'), 'EN: and labels them as bylaws on this subject');
+  eq(nodesAt(1).length, kids('animals'), 'EN: and opens the new subject\'s step 2');
+  // a subject that goes straight to a list, if the map has one
+  const direct = MAP.root.children.find((c) => c.answer);
+  if (direct) {
+    await click(0, direct.label.en);
+    eq(laws().length, direct.answer.items.length, 'EN: a direct-list subject lists its bylaws at once');
+    check(byClass('bmap-q').some((n) => n.textContent === 'Bylaws on this subject'), 'EN: and labels them as bylaws on this subject');
+  }
   // every law card has an official link or says it has none, and never shows a repealed bylaw
   for (const { trail } of LEAVES) {
     $('bmap-reset').click(); await settle();

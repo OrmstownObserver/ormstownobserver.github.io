@@ -2,64 +2,178 @@
   "version": 1,
   "about": "Hand-authored. The question map on /en/ and /fr/bylaws-regulations/, rendered by bylaw-map.js. Each answer names bylaws by their exact bylaw_number in dist/bylaws.json; titles, status, official links and explainer links come from that snapshot, never from here. Points must quote a published Observer explainer or the register. Checked by scripts/tests/check-bylaw-map.js.",
   "root": {
-    "prompt": { "en": "What is it about?", "fr": "De quoi s’agit-il ?" },
+    "prompt": {
+      "en": "What is it about?",
+      "fr": "De quoi s’agit-il ?"
+    },
     "children": [
       {
         "id": "home",
-        "label": { "en": "Your house & lot", "fr": "Votre maison et votre terrain" },
-        "hint": { "en": "Building, demolition, trees, water", "fr": "Construction, démolition, arbres, eau" },
-        "prompt": { "en": "What are you planning?", "fr": "Que prévoyez-vous ?" },
+        "label": {
+          "en": "Your house & lot",
+          "fr": "Votre maison et votre terrain"
+        },
+        "hint": {
+          "en": "Building, demolition, trees, water, pools",
+          "fr": "Construction, démolition, arbres, eau, piscines"
+        },
+        "prompt": {
+          "en": "What are you planning?",
+          "fr": "Que prévoyez-vous ?"
+        },
         "children": [
           {
             "id": "build",
-            "label": { "en": "Build, add on or renovate", "fr": "Construire, agrandir ou rénover" },
-            "prompt": { "en": "What do you need to know?", "fr": "Que voulez-vous savoir ?" },
+            "label": {
+              "en": "Build, add on or renovate",
+              "fr": "Construire, agrandir ou rénover"
+            },
+            "prompt": {
+              "en": "What do you need to know?",
+              "fr": "Que voulez-vous savoir ?"
+            },
             "children": [
               {
                 "id": "permit",
-                "label": { "en": "Does my project need a permit?", "fr": "Mon projet exige-t-il un permis ?" },
+                "label": {
+                  "en": "Does my project need a permit?",
+                  "fr": "Mon projet exige-t-il un permis ?"
+                },
                 "answer": {
-                  "intro": { "en": "Permits, certificates and building standards are set by two bylaws. Fees are in the municipal pricing bylaw.", "fr": "Deux règlements encadrent les permis, les certificats et les normes de construction. Les frais figurent au règlement de tarification municipale." },
+                  "intro": {
+                    "en": "Permits, certificates and building standards are set by two bylaws. Fees are in the municipal pricing bylaw.",
+                    "fr": "Deux règlements encadrent les permis, les certificats et les normes de construction. Les frais figurent au règlement de tarification municipale."
+                  },
                   "items": [
-                    { "bylaw": "Règlement 151-2023" },
-                    { "bylaw": "Règlement 150-2023" },
-                    { "bylaw": "Règlement 39-2026", "points": {
-                      "en": ["Replaces every other municipal tariff; all fees are payable up front (art. 3, 5)."],
-                      "fr": ["Remplace tous les autres tarifs municipaux; tous les frais sont payables d’avance (art. 3 et 5)."] } }
+                    {
+                      "bylaw": "Règlement 151-2023"
+                    },
+                    {
+                      "bylaw": "Règlement 150-2023"
+                    },
+                    {
+                      "bylaw": "Règlement 39-2026",
+                      "points": {
+                        "en": [
+                          "Replaces every other municipal tariff; all fees are payable up front (art. 3, 5)."
+                        ],
+                        "fr": [
+                          "Remplace tous les autres tarifs municipaux; tous les frais sont payables d’avance (art. 3 et 5)."
+                        ]
+                      }
+                    }
                   ]
                 }
               },
               {
                 "id": "piia",
-                "label": { "en": "Will council have to approve how it looks?", "fr": "Le conseil doit-il approuver l’apparence de mon projet ?" },
+                "label": {
+                  "en": "Will council have to approve how it looks?",
+                  "fr": "Le conseil doit-il approuver l’apparence de mon projet ?"
+                },
                 "answer": {
                   "items": [
-                    { "bylaw": "Règlement 152-2023", "points": {
-                      "en": [
-                        "For the work the bylaw lists, a permit is issued only after council approves the PIIA by resolution, on the advisory planning committee’s recommendation (art. 3.7–3.9).",
-                        "It applies in the architectural core, the Route 201 Sud and C-7 sector, zone R-37 (rue Isabelle), and to any detached accessory dwelling unit anywhere in town (art. 1.7).",
-                        "Fines run from $500 to $4,000 for each day an offence lasts."
-                      ],
-                      "fr": [
-                        "Pour les travaux que vise le règlement, le permis n’est délivré qu’après l’approbation du PIIA par résolution du conseil, qui tient compte de la recommandation du comité consultatif d’urbanisme (art. 3.7–3.9).",
-                        "Il s’applique au noyau architectural, au secteur de la route 201 Sud et de la zone C-7, à la zone R-37 (rue Isabelle) et, partout sur le territoire, à toute unité d’habitation accessoire détachée (art. 1.7).",
-                        "Les amendes vont de 500 $ à 4 000 $ pour chaque jour que dure l’infraction."
-                      ] } }
+                    {
+                      "bylaw": "Règlement 152-2023",
+                      "points": {
+                        "en": [
+                          "For the work the bylaw lists, a permit is issued only after council approves the PIIA by resolution, on the advisory planning committee’s recommendation (art. 3.7–3.9).",
+                          "It applies in the architectural core, the Route 201 Sud and C-7 sector, zone R-37 (rue Isabelle), and to any detached accessory dwelling unit anywhere in town (art. 1.7).",
+                          "Fines run from $500 to $4,000 for each day an offence lasts."
+                        ],
+                        "fr": [
+                          "Pour les travaux que vise le règlement, le permis n’est délivré qu’après l’approbation du PIIA par résolution du conseil, qui tient compte de la recommandation du comité consultatif d’urbanisme (art. 3.7–3.9).",
+                          "Il s’applique au noyau architectural, au secteur de la route 201 Sud et de la zone C-7, à la zone R-37 (rue Isabelle) et, partout sur le territoire, à toute unité d’habitation accessoire détachée (art. 1.7).",
+                          "Les amendes vont de 500 $ à 4 000 $ pour chaque jour que dure l’infraction."
+                        ]
+                      }
+                    }
                   ]
                 }
               },
               {
                 "id": "ppcmoi",
-                "label": { "en": "A project the zoning doesn’t allow as is", "fr": "Un projet que le zonage ne permet pas tel quel" },
+                "label": {
+                  "en": "A project the zoning doesn’t allow as is",
+                  "fr": "Un projet que le zonage ne permet pas tel quel"
+                },
                 "answer": {
-                  "intro": { "en": "Two procedures let council consider a project the zoning bylaw would not otherwise allow.", "fr": "Deux procédures permettent au conseil d’étudier un projet que le règlement de zonage ne permettrait pas autrement." },
+                  "intro": {
+                    "en": "Two procedures let council consider a project the zoning bylaw would not otherwise allow.",
+                    "fr": "Deux procédures permettent au conseil d’étudier un projet que le règlement de zonage ne permettrait pas autrement."
+                  },
                   "items": [
-                    { "bylaw": "Règlement 114-2021",
+                    {
+                      "bylaw": "Règlement 114-2021",
                       "points": {
-                        "en": ["The procedure used for the 24-unit Church Street project (PPCMOI 2026-041)."],
-                        "fr": ["La procédure suivie pour le projet de 24 logements de la rue Church (PPCMOI 2026-041)."] },
-                      "link": { "href": { "en": "/en/church-street/", "fr": "/fr/rue-church/" }, "label": { "en": "The Church Street file", "fr": "Le dossier de la rue Church" } } },
-                    { "bylaw": "Règlement 156-2023" }
+                        "en": [
+                          "The procedure used for the 24-unit Church Street project (PPCMOI 2026-041)."
+                        ],
+                        "fr": [
+                          "La procédure suivie pour le projet de 24 logements de la rue Church (PPCMOI 2026-041)."
+                        ]
+                      },
+                      "link": {
+                        "href": {
+                          "en": "/en/church-street/",
+                          "fr": "/fr/rue-church/"
+                        },
+                        "label": {
+                          "en": "The Church Street file",
+                          "fr": "Le dossier de la rue Church"
+                        }
+                      }
+                    },
+                    {
+                      "bylaw": "Règlement 156-2023"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "pae",
+                "label": {
+                  "en": "A development covering a whole sector",
+                  "fr": "Un développement qui couvre tout un secteur"
+                },
+                "answer": {
+                  "items": [
+                    {
+                      "bylaw": "Règlement 153-2023"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "pool",
+                "label": {
+                  "en": "A swimming pool",
+                  "fr": "Une piscine"
+                },
+                "answer": {
+                  "items": [
+                    {
+                      "bylaw": "Règlement 86-2024",
+                      "points": {
+                        "en": [
+                          "Pool-filling dates go by even or odd civic number."
+                        ],
+                        "fr": [
+                          "Les dates de remplissage des piscines dépendent de la parité du numéro civique."
+                        ]
+                      }
+                    },
+                    {
+                      "bylaw": "Règlement 60.2-2017",
+                      "points": {
+                        "en": [
+                          "This bylaw repealed the town’s earlier swimming pool bylaws, 60-2009 and 60.1-2016."
+                        ],
+                        "fr": [
+                          "Ce règlement a abrogé les anciens règlements municipaux sur les piscines, 60-2009 et 60.1-2016."
+                        ]
+                      }
+                    }
                   ]
                 }
               }
@@ -67,57 +181,132 @@
           },
           {
             "id": "demolish",
-            "label": { "en": "Tear down or move a building", "fr": "Démolir ou déplacer un bâtiment" },
+            "label": {
+              "en": "Tear down or move a building",
+              "fr": "Démolir ou déplacer un bâtiment"
+            },
             "answer": {
               "items": [
-                { "bylaw": "Règlement 145-2023", "points": {
-                  "en": [
-                    "No demolition, in whole or in part, without the authorization of the demolition committee (or council) and a certificate (art. 4.1–4.2). Moving a building counts as demolition (art. 1.10).",
-                    "Anyone may file a written objection within 10 days of the public notice.",
-                    "The fine for demolishing a principal building without authorization starts at $10,000."
-                  ],
-                  "fr": [
-                    "Aucune démolition, en tout ou en partie, sans l’autorisation du comité de démolition (ou du conseil) et un certificat (art. 4.1–4.2). Déplacer un immeuble est aussi une démolition (art. 1.10).",
-                    "Toute personne peut transmettre une opposition écrite dans les 10 jours de l’avis public.",
-                    "L’amende pour la démolition d’un immeuble principal sans autorisation commence à 10 000 $."
-                  ] } }
+                {
+                  "bylaw": "Règlement 145-2023",
+                  "points": {
+                    "en": [
+                      "No demolition, in whole or in part, without the authorization of the demolition committee (or council) and a certificate (art. 4.1–4.2). Moving a building counts as demolition (art. 1.10).",
+                      "Anyone may file a written objection within 10 days of the public notice.",
+                      "The fine for demolishing a principal building without authorization starts at $10,000."
+                    ],
+                    "fr": [
+                      "Aucune démolition, en tout ou en partie, sans l’autorisation du comité de démolition (ou du conseil) et un certificat (art. 4.1–4.2). Déplacer un immeuble est aussi une démolition (art. 1.10).",
+                      "Toute personne peut transmettre une opposition écrite dans les 10 jours de l’avis public.",
+                      "L’amende pour la démolition d’un immeuble principal sans autorisation commence à 10 000 $."
+                    ]
+                  }
+                }
               ]
             }
           },
           {
             "id": "land",
-            "label": { "en": "Trees & land", "fr": "Arbres et terrains" },
-            "prompt": { "en": "What do you want to do?", "fr": "Que voulez-vous faire ?" },
+            "label": {
+              "en": "Trees & land",
+              "fr": "Arbres et terrains"
+            },
+            "prompt": {
+              "en": "What do you want to do?",
+              "fr": "Que voulez-vous faire ?"
+            },
             "children": [
               {
                 "id": "tree",
-                "label": { "en": "Cut down a tree", "fr": "Abattre un arbre" },
+                "label": {
+                  "en": "Cut down a tree",
+                  "fr": "Abattre un arbre"
+                },
                 "answer": {
-                  "intro": { "en": "The tree rules sit in chapter 12 of the zoning bylaw.", "fr": "Les règles sur les arbres se trouvent au chapitre 12 du règlement de zonage." },
+                  "intro": {
+                    "en": "The tree rules sit in chapter 12 of the zoning bylaw.",
+                    "fr": "Les règles sur les arbres se trouvent au chapitre 12 du règlement de zonage."
+                  },
                   "items": [
-                    { "bylaw": "Règlement 148-2023", "points": {
-                      "en": [
-                        "A certificate is required before felling a tree 3 cm or more in diameter, measured 30 cm from the ground (art. 12.8).",
-                        "The fee is $25 for a residential certificate, or $50 for more than 4 trees (Bylaw 39-2026).",
-                        "Inside the urban perimeter, every lot must keep at least one tree per 100 m² (art. 12.5)."
-                      ],
-                      "fr": [
-                        "Il faut un certificat avant d’abattre un arbre de 3 cm de diamètre ou plus, mesuré à 30 cm du sol (art. 12.8).",
-                        "Les frais sont de 25 $ pour un certificat résidentiel, ou de 50 $ s’il y a plus de 4 arbres (Règlement 39-2026).",
-                        "Dans le périmètre d’urbanisation, chaque terrain doit conserver au moins un arbre par 100 m² (art. 12.5)."
-                      ] } }
+                    {
+                      "bylaw": "Règlement 148-2023",
+                      "points": {
+                        "en": [
+                          "A certificate is required before felling a tree 3 cm or more in diameter, measured 30 cm from the ground (art. 12.8).",
+                          "The fee is $25 for a residential certificate, or $50 for more than 4 trees (Bylaw 39-2026).",
+                          "Inside the urban perimeter, every lot must keep at least one tree per 100 m² (art. 12.5)."
+                        ],
+                        "fr": [
+                          "Il faut un certificat avant d’abattre un arbre de 3 cm de diamètre ou plus, mesuré à 30 cm du sol (art. 12.8).",
+                          "Les frais sont de 25 $ pour un certificat résidentiel, ou de 50 $ s’il y a plus de 4 arbres (Règlement 39-2026).",
+                          "Dans le périmètre d’urbanisation, chaque terrain doit conserver au moins un arbre par 100 m² (art. 12.5)."
+                        ]
+                      }
+                    }
                   ]
                 }
               },
               {
                 "id": "subdivide",
-                "label": { "en": "Divide a lot", "fr": "Lotir un terrain" },
+                "label": {
+                  "en": "Divide a lot",
+                  "fr": "Lotir un terrain"
+                },
                 "answer": {
                   "items": [
-                    { "bylaw": "Règlement 149-2023" },
-                    { "bylaw": "Projet de règlement 149.1-2026", "points": {
-                      "en": ["A draft amendment adding exemptions to the parks and playgrounds contribution. Consultation held August 26, 2026."],
-                      "fr": ["Un projet de modification qui ajoute des exemptions à la contribution pour fins de parcs et de terrains de jeux. Consultation tenue le 26 août 2026."] } }
+                    {
+                      "bylaw": "Règlement 149-2023"
+                    },
+                    {
+                      "bylaw": "Projet de règlement 149.1-2026",
+                      "points": {
+                        "en": [
+                          "A draft amendment adding exemptions to the parks and playgrounds contribution. Consultation held August 26, 2026."
+                        ],
+                        "fr": [
+                          "Un projet de modification qui ajoute des exemptions à la contribution pour fins de parcs et de terrains de jeux. Consultation tenue le 26 août 2026."
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "watercourse",
+                "label": {
+                  "en": "A watercourse, shoreline or flood plain",
+                  "fr": "Un cours d’eau, une rive ou une plaine inondable"
+                },
+                "answer": {
+                  "items": [
+                    {
+                      "bylaw": "Règlement 148-2023",
+                      "points": {
+                        "en": [
+                          "Chapter 12 of the zoning bylaw also covers shorelines, flood plains, drinking-water intakes, snow dumping and contaminated land."
+                        ],
+                        "fr": [
+                          "Le chapitre 12 du règlement de zonage couvre aussi les rives, les plaines inondables, les prises d’eau potable, le déversement de neige et les terrains contaminés."
+                        ]
+                      }
+                    },
+                    {
+                      "bylaw": "Règlement 136-2023"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "farmland",
+                "label": {
+                  "en": "Farmland",
+                  "fr": "Les terres agricoles"
+                },
+                "answer": {
+                  "items": [
+                    {
+                      "bylaw": "Règlement 3-2000"
+                    }
                   ]
                 }
               }
@@ -125,78 +314,187 @@
           },
           {
             "id": "water",
-            "label": { "en": "Water at home", "fr": "L’eau à la maison" },
-            "prompt": { "en": "What do you want to do?", "fr": "Que voulez-vous faire ?" },
+            "label": {
+              "en": "Water at home",
+              "fr": "L’eau à la maison"
+            },
+            "prompt": {
+              "en": "What do you want to do?",
+              "fr": "Que voulez-vous faire ?"
+            },
             "children": [
               {
                 "id": "watering",
-                "label": { "en": "Watering, pools, washing the driveway", "fr": "Arrosage, piscines, lavage de l’entrée" },
+                "label": {
+                  "en": "Watering, pools, washing the driveway",
+                  "fr": "Arrosage, piscines, lavage de l’entrée"
+                },
                 "answer": {
                   "items": [
-                    { "bylaw": "Règlement 86-2024", "points": {
-                      "en": [
-                        "Lawn watering: one weekday set by the last digit of your address, 3–6 a.m. with an automatic system or 8–11 p.m. with a mechanical one (art. 7.3).",
-                        "Watering a garden, flower bed, tree or shrub by hand is allowed at any time (art. 7.2).",
-                        "Spring driveway washing is allowed only from May 1 to June 15. Fines start at $250."
-                      ],
-                      "fr": [
-                        "Arrosage des pelouses : un jour de semaine selon le dernier chiffre de l’adresse, de 3 h à 6 h par système automatique ou de 20 h à 23 h par système mécanique (art. 7.3).",
-                        "L’arrosage manuel d’un jardin, d’une plate-bande, d’un arbre ou d’un arbuste est permis en tout temps (art. 7.2).",
-                        "Le nettoyage printanier des entrées est permis du 1er mai au 15 juin seulement. Les amendes débutent à 250 $."
-                      ] } }
+                    {
+                      "bylaw": "Règlement 86-2024",
+                      "points": {
+                        "en": [
+                          "Lawn watering: one weekday set by the last digit of your address, 3–6 a.m. with an automatic system or 8–11 p.m. with a mechanical one (art. 7.3).",
+                          "Watering a garden, flower bed, tree or shrub by hand is allowed at any time (art. 7.2).",
+                          "Spring driveway washing is allowed only from May 1 to June 15. Fines start at $250."
+                        ],
+                        "fr": [
+                          "Arrosage des pelouses : un jour de semaine selon le dernier chiffre de l’adresse, de 3 h à 6 h par système automatique ou de 20 h à 23 h par système mécanique (art. 7.3).",
+                          "L’arrosage manuel d’un jardin, d’une plate-bande, d’un arbre ou d’un arbuste est permis en tout temps (art. 7.2).",
+                          "Le nettoyage printanier des entrées est permis du 1er mai au 15 juin seulement. Les amendes débutent à 250 $."
+                        ]
+                      }
+                    },
+                    {
+                      "bylaw": "Règlement 50.1-2011"
+                    }
                   ]
                 }
               },
               {
                 "id": "connect",
-                "label": { "en": "Connecting to water and sewer", "fr": "Se brancher à l’aqueduc et à l’égout" },
+                "label": {
+                  "en": "Connecting to water and sewer",
+                  "fr": "Se brancher à l’aqueduc et à l’égout"
+                },
                 "answer": {
                   "items": [
-                    { "bylaw": "Règlement 120-2020" },
-                    { "bylaw": "Règlement 120-2022" }
+                    {
+                      "bylaw": "Règlement 120-2020"
+                    },
+                    {
+                      "bylaw": "Règlement 120-2022"
+                    }
                   ]
                 }
               }
             ]
+          },
+          {
+            "id": "plan",
+            "label": {
+              "en": "What’s planned for my area",
+              "fr": "Ce qui est prévu pour mon secteur"
+            },
+            "answer": {
+              "intro": {
+                "en": "The town’s urban plan sets the big picture that the zoning bylaw has to follow.",
+                "fr": "Le plan d’urbanisme fixe les grandes orientations que le règlement de zonage doit suivre."
+              },
+              "items": [
+                {
+                  "bylaw": "Règlement 147-2023",
+                  "points": {
+                    "en": [
+                      "Divides the territory into 11 land-use designations, sets minimum housing densities and says development is to be concentrated in the urban perimeter.",
+                      "It sets no fines; the zoning bylaw must respect it."
+                    ],
+                    "fr": [
+                      "Découpe le territoire en 11 grandes affectations du sol, fixe des densités minimales de logements et prévoit que le développement soit concentré dans le périmètre urbain.",
+                      "Il ne prévoit aucune amende ; le règlement de zonage doit le respecter."
+                    ]
+                  }
+                }
+              ]
+            }
           }
         ]
       },
       {
         "id": "animals",
-        "label": { "en": "Pets & animals", "fr": "Animaux" },
-        "hint": { "en": "Licences, hens, dangerous dogs", "fr": "Licences, poules, chiens dangereux" },
-        "prompt": { "en": "What about them?", "fr": "À quel sujet ?" },
+        "label": {
+          "en": "Pets & animals",
+          "fr": "Animaux"
+        },
+        "hint": {
+          "en": "Licences, hens, dangerous dogs",
+          "fr": "Licences, poules, chiens dangereux"
+        },
+        "prompt": {
+          "en": "What about them?",
+          "fr": "À quel sujet ?"
+        },
         "children": [
           {
             "id": "licence",
-            "label": { "en": "A licence for my dog or cat", "fr": "Une licence pour mon chien ou mon chat" },
+            "label": {
+              "en": "A licence for my dog or cat",
+              "fr": "Une licence pour mon chien ou mon chat"
+            },
             "answer": {
               "items": [
-                { "bylaw": "Règlement 131-2026", "points": {
-                  "en": ["A dog or cat licence is valid for the life of the animal (art. 20, 25).", "The bylaw has been in force since April 17, 2026."],
-                  "fr": ["La licence d’un chien ou d’un chat est valide pour la vie de l’animal (art. 20 et 25).", "Le règlement est en vigueur depuis le 17 avril 2026."] } }
+                {
+                  "bylaw": "Règlement 131-2026",
+                  "points": {
+                    "en": [
+                      "A dog or cat licence is valid for the life of the animal (art. 20, 25).",
+                      "The bylaw has been in force since April 17, 2026."
+                    ],
+                    "fr": [
+                      "La licence d’un chien ou d’un chat est valide pour la vie de l’animal (art. 20 et 25).",
+                      "Le règlement est en vigueur depuis le 17 avril 2026."
+                    ]
+                  }
+                }
               ]
             }
           },
           {
             "id": "hens",
-            "label": { "en": "Keeping backyard hens", "fr": "Garder des poules" },
+            "label": {
+              "en": "Keeping backyard hens",
+              "fr": "Garder des poules"
+            },
             "answer": {
               "items": [
-                { "bylaw": "Règlement 131-2026", "points": {
-                  "en": ["Up to 5 hens may be kept in the urban perimeter, under conditions set in the bylaw."],
-                  "fr": ["Il est possible de garder jusqu’à 5 poules dans le périmètre urbain, aux conditions prévues par le règlement."] } }
+                {
+                  "bylaw": "Règlement 131-2026",
+                  "points": {
+                    "en": [
+                      "Up to 5 hens may be kept in the urban perimeter, under conditions set in the bylaw."
+                    ],
+                    "fr": [
+                      "Il est possible de garder jusqu’à 5 poules dans le périmètre urbain, aux conditions prévues par le règlement."
+                    ]
+                  }
+                }
               ]
             }
           },
           {
             "id": "bite",
-            "label": { "en": "A dog bite or a dangerous dog", "fr": "Une morsure ou un chien dangereux" },
+            "label": {
+              "en": "A dog bite or a dangerous dog",
+              "fr": "Une morsure ou un chien dangereux"
+            },
             "answer": {
               "items": [
-                { "bylaw": "Règlement 131-2026", "points": {
-                  "en": ["Dogs are classed as “at risk”, “potentially dangerous” or “dangerous” after a bite, an attack or other conduct, or a declaration by the competent authority (art. 4, 44–47)."],
-                  "fr": ["Les chiens sont classés « à risque », « potentiellement dangereux » ou « dangereux » à la suite d’une morsure, d’une attaque ou d’un autre comportement, ou d’une déclaration de l’autorité compétente (art. 4, 44 à 47)."] } }
+                {
+                  "bylaw": "Règlement 131-2026",
+                  "points": {
+                    "en": [
+                      "Dogs are classed as “at risk”, “potentially dangerous” or “dangerous” after a bite, an attack or other conduct, or a declaration by the competent authority (art. 4, 44–47)."
+                    ],
+                    "fr": [
+                      "Les chiens sont classés « à risque », « potentiellement dangereux » ou « dangereux » à la suite d’une morsure, d’une attaque ou d’un autre comportement, ou d’une déclaration de l’autorité compétente (art. 4, 44 à 47)."
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "animal-nuisance",
+            "label": {
+              "en": "An animal causing a nuisance",
+              "fr": "Un animal qui cause une nuisance"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement MRC 352-2025"
+                }
               ]
             }
           }
@@ -204,44 +502,666 @@
       },
       {
         "id": "fire",
-        "label": { "en": "Fire & burning", "fr": "Feu et brûlage" },
-        "hint": { "en": "Open fires, fireworks, call-out fees", "fr": "Feux à ciel ouvert, feux d’artifice, frais d’intervention" },
-        "prompt": { "en": "Which one?", "fr": "Lequel de ces cas ?" },
+        "label": {
+          "en": "Fire & burning",
+          "fr": "Feu et brûlage"
+        },
+        "hint": {
+          "en": "Open fires, fireworks, emergency services",
+          "fr": "Feux à ciel ouvert, feux d’artifice, services d’urgence"
+        },
+        "prompt": {
+          "en": "Which one?",
+          "fr": "Lequel de ces cas ?"
+        },
         "children": [
           {
             "id": "openfire",
-            "label": { "en": "An open fire or burning brush", "fr": "Un feu à ciel ouvert ou du brûlage de branches" },
-            "answer": { "items": [ { "bylaw": "Règlement 155-2023" } ] }
+            "label": {
+              "en": "An open fire or burning brush",
+              "fr": "Un feu à ciel ouvert ou du brûlage de branches"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 155-2023"
+                }
+              ]
+            }
           },
           {
             "id": "fireworks",
-            "label": { "en": "Setting off fireworks", "fr": "Des feux d’artifice" },
-            "answer": { "items": [ { "bylaw": "Règlement 155-2023" } ] }
+            "label": {
+              "en": "Setting off fireworks",
+              "fr": "Des feux d’artifice"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 155-2023"
+                }
+              ]
+            }
           },
           {
             "id": "firefees",
-            "label": { "en": "Fire department call-out fees", "fr": "Les frais d’intervention du service incendie" },
-            "answer": { "items": [ { "bylaw": "Règlement 140-2022" }, { "bylaw": "Règlement 140.1-2023" } ] }
+            "label": {
+              "en": "Fire department call-out fees",
+              "fr": "Les frais d’intervention du service incendie"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 140-2022"
+                },
+                {
+                  "bylaw": "Règlement 140.1-2023"
+                }
+              ]
+            }
+          },
+          {
+            "id": "emergency",
+            "label": {
+              "en": "Emergency services and 9-1-1",
+              "fr": "Les services d’urgence et le 9-1-1"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 103-2015"
+                },
+                {
+                  "bylaw": "Règlement 62.2-2023"
+                }
+              ]
+            }
           }
         ]
       },
       {
         "id": "neighbours",
-        "label": { "en": "Neighbours & noise", "fr": "Voisinage et bruit" },
-        "hint": { "en": "Nuisances, alarms", "fr": "Nuisances, systèmes d’alarme" },
-        "answer": { "items": [ { "bylaw": "Règlement 91.1-2018" }, { "bylaw": "Règlement MRC 352-2025" }, { "bylaw": "Règlement 51-2012" } ] }
+        "label": {
+          "en": "Neighbours & noise",
+          "fr": "Voisinage et bruit"
+        },
+        "hint": {
+          "en": "Nuisances, alarms",
+          "fr": "Nuisances, systèmes d’alarme"
+        },
+        "prompt": {
+          "en": "Which one?",
+          "fr": "Lequel de ces cas ?"
+        },
+        "children": [
+          {
+            "id": "noise",
+            "label": {
+              "en": "Noise or a nuisance",
+              "fr": "Du bruit ou une nuisance"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 91.1-2018"
+                },
+                {
+                  "bylaw": "Règlement MRC 352-2025"
+                }
+              ]
+            }
+          },
+          {
+            "id": "alarms",
+            "label": {
+              "en": "A home or business alarm system",
+              "fr": "Un système d’alarme"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 51-2012"
+                }
+              ]
+            }
+          }
+        ]
       },
       {
         "id": "roads",
-        "label": { "en": "Roads & parking", "fr": "Routes et stationnement" },
-        "hint": { "en": "Speed limits, trucks, the public domain", "fr": "Limites de vitesse, camions, domaine public" },
-        "answer": { "items": [ { "bylaw": "Règlement 12-2025" }, { "bylaw": "Règlement 7-2021" }, { "bylaw": "Règlement 93-2015" }, { "bylaw": "Règlement 154-2023" } ] }
+        "label": {
+          "en": "Roads & parking",
+          "fr": "Routes et stationnement"
+        },
+        "hint": {
+          "en": "Speed limits, parking, trucks, the street",
+          "fr": "Vitesse, stationnement, camions, la rue"
+        },
+        "prompt": {
+          "en": "Which one?",
+          "fr": "Lequel de ces cas ?"
+        },
+        "children": [
+          {
+            "id": "traffic",
+            "label": {
+              "en": "Speed limits and traffic",
+              "fr": "Limites de vitesse et circulation"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 12-2025"
+                }
+              ]
+            }
+          },
+          {
+            "id": "parking",
+            "label": {
+              "en": "Parking and public safety rules",
+              "fr": "Stationnement et sécurité publique"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement MRC 352-2025"
+                }
+              ]
+            }
+          },
+          {
+            "id": "trucks",
+            "label": {
+              "en": "Heavy trucks",
+              "fr": "Les camions lourds"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 7-2021"
+                }
+              ]
+            }
+          },
+          {
+            "id": "street-use",
+            "label": {
+              "en": "Using the street, sidewalk or road allowance",
+              "fr": "Utiliser la rue, le trottoir ou l’emprise"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 93-2015"
+                },
+                {
+                  "bylaw": "Règlement 154-2023"
+                }
+              ]
+            }
+          },
+          {
+            "id": "street-work",
+            "label": {
+              "en": "Rebuilding Prince-Albert, Cullen and Oliver streets",
+              "fr": "La réfection des rues Prince-Albert, Cullen et Oliver"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement d'emprunt 173-2026"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "business",
+        "label": {
+          "en": "Running a business",
+          "fr": "Exploiter une entreprise"
+        },
+        "hint": {
+          "en": "Approvals, water meters, the street, trucks",
+          "fr": "Autorisations, compteurs d’eau, la rue, camions"
+        },
+        "prompt": {
+          "en": "What do you want to know?",
+          "fr": "Que voulez-vous savoir ?"
+        },
+        "children": [
+          {
+            "id": "bus-use",
+            "label": {
+              "en": "A use that needs council’s approval",
+              "fr": "Un usage qui exige l’accord du conseil"
+            },
+            "answer": {
+              "intro": {
+                "en": "Two procedures let council consider a project the zoning bylaw would not otherwise allow.",
+                "fr": "Deux procédures permettent au conseil d’étudier un projet que le règlement de zonage ne permettrait pas autrement."
+              },
+              "items": [
+                {
+                  "bylaw": "Règlement 156-2023"
+                },
+                {
+                  "bylaw": "Règlement 114-2021"
+                }
+              ]
+            }
+          },
+          {
+            "id": "bus-look",
+            "label": {
+              "en": "Changing how a building looks",
+              "fr": "Modifier l’apparence d’un bâtiment"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 152-2023",
+                  "points": {
+                    "en": [
+                      "It applies in the architectural core, the Route 201 Sud and C-7 sector, zone R-37 (rue Isabelle), and to any detached accessory dwelling unit anywhere in town (art. 1.7)."
+                    ],
+                    "fr": [
+                      "Il s’applique au noyau architectural, au secteur de la route 201 Sud et de la zone C-7, à la zone R-37 (rue Isabelle) et, partout sur le territoire, à toute unité d’habitation accessoire détachée (art. 1.7)."
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "bus-meter",
+            "label": {
+              "en": "A water meter for a non-residential building",
+              "fr": "Un compteur d’eau pour un immeuble non résidentiel"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 134-2021"
+                }
+              ]
+            }
+          },
+          {
+            "id": "bus-street",
+            "label": {
+              "en": "Using the street or sidewalk",
+              "fr": "Utiliser la rue ou le trottoir"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 93-2015"
+                }
+              ]
+            }
+          },
+          {
+            "id": "bus-trucks",
+            "label": {
+              "en": "Trucks and heavy vehicles",
+              "fr": "Camions et véhicules lourds"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 7-2021"
+                }
+              ]
+            }
+          },
+          {
+            "id": "quarry",
+            "label": {
+              "en": "A quarry or sand pit",
+              "fr": "Une carrière ou une sablière"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 57.1-2014"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "money",
+        "label": {
+          "en": "Taxes & town finances",
+          "fr": "Taxes et finances municipales"
+        },
+        "hint": {
+          "en": "Taxes, fees, borrowing",
+          "fr": "Taxes, tarifs, emprunts"
+        },
+        "prompt": {
+          "en": "What do you want to know?",
+          "fr": "Que voulez-vous savoir ?"
+        },
+        "children": [
+          {
+            "id": "property-tax",
+            "label": {
+              "en": "This year’s property taxes",
+              "fr": "Les taxes foncières de l’année"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 1-2026"
+                }
+              ]
+            }
+          },
+          {
+            "id": "fees",
+            "label": {
+              "en": "What town services cost",
+              "fr": "Le coût des services municipaux"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 39-2026",
+                  "points": {
+                    "en": [
+                      "Replaces every other municipal tariff; all fees are payable up front (art. 3, 5).",
+                      "A minor derogation costs $650, non-refundable."
+                    ],
+                    "fr": [
+                      "Remplace tous les autres tarifs municipaux; tous les frais sont payables d’avance (art. 3 et 5).",
+                      "Une dérogation mineure coûte 650 $, non remboursable."
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "borrowing",
+            "label": {
+              "en": "Money the town borrows",
+              "fr": "Les emprunts de la Municipalité"
+            },
+            "prompt": {
+              "en": "For what?",
+              "fr": "Pour quoi ?"
+            },
+            "children": [
+              {
+                "id": "borrow-roads",
+                "label": {
+                  "en": "Roads and bridges",
+                  "fr": "Routes et ponts"
+                },
+                "answer": {
+                  "items": [
+                    {
+                      "bylaw": "Règlement d'emprunt 173-2026"
+                    },
+                    {
+                      "bylaw": "Règlement 102-2015"
+                    },
+                    {
+                      "bylaw": "Règlement 101.1-2017"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "borrow-water",
+                "label": {
+                  "en": "Water and sewer",
+                  "fr": "Aqueduc et égout"
+                },
+                "answer": {
+                  "items": [
+                    {
+                      "bylaw": "Règlement 41-2018"
+                    },
+                    {
+                      "bylaw": "Règlement 87-2015"
+                    },
+                    {
+                      "bylaw": "Règlement 97.1-2017"
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "borrow-other",
+                "label": {
+                  "en": "Buildings and other projects",
+                  "fr": "Bâtiments et autres projets"
+                },
+                "answer": {
+                  "items": [
+                    {
+                      "bylaw": "Règlement 100.1-2016"
+                    },
+                    {
+                      "bylaw": "Règlement 110.1-2017"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "id": "reserves",
+            "label": {
+              "en": "The town’s working capital fund",
+              "fr": "Le fonds de roulement"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 6-2023"
+                }
+              ]
+            }
+          },
+          {
+            "id": "tax-quarry",
+            "label": {
+              "en": "The quarries and sand pits tax",
+              "fr": "La taxe sur les carrières et sablières"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 57.1-2014"
+                }
+              ]
+            }
+          },
+          {
+            "id": "tax-911",
+            "label": {
+              "en": "9-1-1 emergency centres",
+              "fr": "Les centres d’urgence 9-1-1"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 62.2-2023"
+                }
+              ]
+            }
+          }
+        ]
       },
       {
         "id": "council",
-        "label": { "en": "Taxes, fees & council", "fr": "Taxes, tarifs et conseil" },
-        "hint": { "en": "What it costs, how council works", "fr": "Ce que ça coûte, comment fonctionne le conseil" },
-        "answer": { "items": [ { "bylaw": "Règlement 39-2026" }, { "bylaw": "Règlement 2-2026" }, { "bylaw": "Règlement 80-2022" } ] }
+        "label": {
+          "en": "How council & the town work",
+          "fr": "Le conseil et l’administration"
+        },
+        "hint": {
+          "en": "Meetings, ethics, public notices, pay",
+          "fr": "Séances, éthique, avis publics, rémunération"
+        },
+        "prompt": {
+          "en": "What do you want to know?",
+          "fr": "Que voulez-vous savoir ?"
+        },
+        "children": [
+          {
+            "id": "meetings",
+            "label": {
+              "en": "Council meetings",
+              "fr": "Les séances du conseil"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 2-2026",
+                  "points": {
+                    "en": [
+                      "Two public question periods at every ordinary meeting, a 3-hour limit on a meeting, and a suspensive veto for the mayor that council can lift."
+                    ],
+                    "fr": [
+                      "Deux périodes de questions publiques à chaque séance ordinaire, une durée de 3 heures pour une séance, et un veto suspensif du maire que le conseil peut lever."
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "notices",
+            "label": {
+              "en": "Where public notices are posted",
+              "fr": "Où sont publiés les avis publics"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 167-2025"
+                },
+                {
+                  "bylaw": "Règlement 167.1-2026",
+                  "points": {
+                    "en": [
+                      "Public notices now appear on the municipal website and the exterior bulletin board at Town Hall (5, rue Gale)."
+                    ],
+                    "fr": [
+                      "Les avis publics paraissent désormais sur le site municipal et sur le babillard extérieur de l’hôtel de ville (5, rue Gale)."
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "ethics",
+            "label": {
+              "en": "Ethics rules for councillors and staff",
+              "fr": "L’éthique des élus et des employés"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 74-2021"
+                },
+                {
+                  "bylaw": "Règlement 80-2022",
+                  "points": {
+                    "en": [
+                      "The code of ethics and conduct for the town’s employees: conflicts of interest, gifts from suppliers, confidentiality, use of town resources, limits after leaving, and sanctions."
+                    ],
+                    "fr": [
+                      "Le code d’éthique et de déontologie des employés municipaux : conflits d’intérêts, cadeaux de fournisseurs, confidentialité, usage des ressources, restrictions après le départ et sanctions."
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "pay",
+            "label": {
+              "en": "Pay for the mayor and councillors",
+              "fr": "La rémunération du maire et des conseillers"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 8-2024"
+                },
+                {
+                  "bylaw": "Règlement 8-2024.1"
+                }
+              ]
+            }
+          },
+          {
+            "id": "spending",
+            "label": {
+              "en": "How spending and contracts are controlled",
+              "fr": "Le contrôle des dépenses et des contrats"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 44-2024"
+                },
+                {
+                  "bylaw": "Règlement 130-2023"
+                },
+                {
+                  "bylaw": "Règlement 129-2020"
+                },
+                {
+                  "bylaw": "Règlement 129-2021"
+                }
+              ]
+            }
+          },
+          {
+            "id": "staff",
+            "label": {
+              "en": "Hiring and town staff",
+              "fr": "L’embauche et le personnel"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 158-2023"
+                },
+                {
+                  "bylaw": "Règlement 99-2023"
+                }
+              ]
+            }
+          },
+          {
+            "id": "agreements",
+            "label": {
+              "en": "Agreements with other municipalities",
+              "fr": "Les ententes avec d’autres municipalités"
+            },
+            "answer": {
+              "items": [
+                {
+                  "bylaw": "Règlement 16-2001"
+                },
+                {
+                  "bylaw": "Règlement 73-2011"
+                }
+              ]
+            }
+          }
+        ]
       }
     ]
   }
