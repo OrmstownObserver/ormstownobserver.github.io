@@ -46,6 +46,9 @@
 
   h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
   h3 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 36px 0 10px; }
+  /* observer-header.js injects h1,h2,h3{margin:0} after this block; body h2/h3 outranks it */
+  body h2 { margin: 48px 0 14px; }
+  body h3 { margin: 36px 0 10px; }
   p { margin: 0 0 16px; }
   ul, ol { margin: 0 0 16px; padding-left: 22px; }
   li { margin-bottom: 6px; }
