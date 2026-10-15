@@ -658,13 +658,17 @@
       "adopted_date": "2023-06-05",
       "amended_date": null,
       "enforced_by": "Fire service",
-      "fines": null,
+      "fines": "$300–$1,000 individual · $500–$2,000 company (first offence); $600–$2,000 · $1,000–$4,000 (repeat offence) (ch. 6); each day is a separate offence",
       "official_url": "https://www.ormstown.ca/wp-content/uploads/Reglement-no.-155-2023-sur-la-prevention-des-incendie.pdf",
       "key_facts_en": [],
       "category": "Fire Safety",
       "topics": [
         "Burning & fire"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/fire-prevention-155-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-prevention-incendies-155-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 156-2023",
