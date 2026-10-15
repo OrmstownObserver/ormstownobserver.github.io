@@ -36,7 +36,7 @@ const dE=(a,b)=>{const A=lab(a),B=lab(b);return Math.hypot(A[0]-B[0],A[1]-B[1],A
 
 let seed=20260820; const rnd=()=>(seed=(seed*1103515245+12345)&0x7fffffff)/0x7fffffff;
 
-const GROUND='#16150f', MINC=4.5;
+const GROUND='#0f141b', MINC=4.5;
 const ORIG = KEYS.map(k=>rgb2hsl(h2r(C[k].color)));
 const ANCHOR = Number(process.argv[3]||20), HUE_MAX = Number(process.argv[4]||0.075);
 // "Other" is a residual bucket, not a subject: it stays a neutral grey so it
@@ -99,7 +99,7 @@ for(let i=0;i<hex.length;i++)for(let j=i+1;j<hex.length;j++){
 }
 console.log('top-8 min ΔE  ' + topMin.toFixed(1) + '   (' + wp[0] + ' vs ' + wp[1] + ')');
 console.log('all-pairs min ΔE ' + allMin.toFixed(1) + '   (' + ap[0] + ' vs ' + ap[1] + ')');
-console.log('min contrast on #16150f ' + Math.min(...hex.map(h=>contrast(h,GROUND))).toFixed(2) + ':1\n');
+console.log('min contrast on #0f141b ' + Math.min(...hex.map(h=>contrast(h,GROUND))).toFixed(2) + ':1\n');
 RANKED.forEach(k=>{
   const i=KEYS.indexOf(k);
   console.log((TOP.has(k)?'* ':'  ') + C[k].en.slice(0,32).padEnd(34) + C[k].color + ' -> ' + hex[i] +

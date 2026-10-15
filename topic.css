@@ -18,6 +18,10 @@
   margin-bottom: var(--s4);
 }
 .topic .back-link:hover { color: var(--accent); }
+@media (max-width: 560px) {
+  /* phone tap target: 44px tall without moving the title down */
+  .topic .back-link { display: inline-flex; align-items: center; min-height: 44px; margin: -16px 0 calc(var(--s4) - 16px); }
+}
 
 .topic-eyebrow {
   font: 700 11px/1.4 var(--sans);
@@ -38,7 +42,7 @@
   color: var(--ink-soft);
   margin: 0 0 var(--s4);
   padding-bottom: var(--s3);
-  border-bottom: var(--rule-heavy) double var(--ink);
+  border-bottom: var(--rule-heavy) double var(--line);
 }
 .topic .chip {
   font: 700 10.5px/1 var(--sans);

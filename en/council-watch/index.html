@@ -151,6 +151,15 @@
     .session-status-col{border-left:none;border-top:1px solid var(--border);flex-direction:row;align-items:center;gap:12px;min-width:unset;}
     .published-on{margin-top:0;}
   }
+
+  /* Phones: comfortable tap targets + running text (2026-10-14) */
+  @media (max-width: 560px) {
+    .back-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: -13px; margin-bottom: 11px; }
+    .chip { min-height: 40px; padding: 0 14px; font-size: 12px; }
+    .doc-link { display: inline-flex; align-items: center; min-height: 40px; font-size: 12px; }
+    .doc-links a { display: inline-flex; align-items: center; min-height: 40px; }
+    .doc-summary, .doc-full { font-size: 15px; }
+  }
 </style>
 <script src="/observer-header.js" defer></script>
 </head>

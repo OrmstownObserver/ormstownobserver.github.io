@@ -45,6 +45,8 @@
   .schedule-table th { font-family: sans-serif; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); text-align: left; padding: 8px 10px; background: var(--paper-dark); border-bottom: 1px solid var(--ink); }
   .schedule-table td { padding: 9px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
   .schedule-table tr:last-child td { border-bottom: 1px solid var(--ink); }
+  /* Phones: the table scrolls sideways inside the column instead of pushing the page wider. */
+  @media (max-width: 560px) { .schedule-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; } .schedule-table th, .schedule-table td { padding: 8px 7px; } }
 
   .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
   .article-footer h3 { font-size: 1rem; font-style: normal; }

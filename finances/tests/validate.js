@@ -241,7 +241,7 @@ if (fs.existsSync(payPath)) {
 
     // 4.5:1 against BOTH dark grounds observer.css defines
     let low = null;
-    for (const g of ['#16150f', '#201e18']) {
+    for (const g of ['#0f141b', '#171e28']) {
       for (const k of keys) if (cr(dark[k], g) < 4.5) low = `${k} is ${cr(dark[k], g).toFixed(2)}:1 on ${g}`;
     }
     if (low) fail(`dark palette contrast below 4.5:1 — ${low}`);

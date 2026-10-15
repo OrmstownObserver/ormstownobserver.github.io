@@ -48,8 +48,11 @@
      if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 
    The palette is the paper's own house system — ink #1a1a1a,
-   paper #faf8f4, accent #b5161b, rule #c8b97a. Dark mode lifts
-   the accent to #e8686c so the red stays legible on dark ground.
+   paper #faf8f4, accent #b5161b, rule #c8b97a. Dark mode is the
+   "Night Edition" (2026-10-14): blue-black paper #0f141b, coral
+   accent #f2857d, and the paper's ink rules turn to slate. Rules
+   and outlines use --line (structural) or --control-line (input
+   and button borders, kept >= 3:1); both equal --ink in light mode.
    ============================================================ */
 
 :root {
@@ -70,6 +73,9 @@
   --rule:        #c8b97a;   /* gold editorial rule */
   --hair:        #ddd7ca;   /* light divider */
   --border-warm: #d4c9b8;   /* the older, heavier border */
+  --line:         var(--ink);   /* structural rules & panel outlines (slate in dark) */
+  --control-line: var(--ink);   /* input/button borders: kept >= 3:1 in dark */
+  --card-hover:   var(--paper-dark);
 
   /* ── Back-compat aliases ──
      Older page rules still reference these names. Keeping them as
@@ -231,44 +237,72 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --ink:         #ece7dc;
-    --ink-soft:    #a9a294;
-    --paper:       #16150f;
-    --paper-dark:  #201e18;
-    --accent:      #e8686c;
-    --accent-bg:   #2e1c1c;
-    --rule:        #8a7c48;
-    --hair:        #35322a;
-    --border-warm: #35322a;
-    --confirm:     #7dc98f;
-    --warn:        #f0908f;
-    --pending:     #e0bd6a;
-    --chrome-bg:   #0e0d0a;
-    --chrome-text: #ece7dc;
-    --chrome-soft: #8c8474;
-    --surface-card:#201e18;
+    /* "Night Edition" (2026-10-14): blue-black ground, cool white text,
+       coral accent, slate rules, filled cards. */
+    --ink:          #e6eaf0;
+    --ink-soft:     #9ba7b5;
+    --paper:        #0f141b;
+    --paper-dark:   #171e28;
+    --accent:       #f2857d;
+    --accent-bg:    #2b1c22;
+    --accent-press: #f4a6a8;  /* hover/active lifts lighter on dark */
+    --rule:         #b4975a;
+    --hair:         #253040;
+    --border-warm:  #2d3a4a;
+    --line:         #34425a;
+    --control-line: #66778f;
+    --card-hover:   #1e2733;
+    --confirm:      #7fcf9b;
+    --warn:         #f59a94;
+    --pending:      #e3c072;
+    --chrome-bg:    #090d12;
+    --chrome-text:  #e6eaf0;
+    --chrome-soft:  #7f8c9b;
+    --surface-card: #171e28;
+    --text-on-accent: #0f141b;  /* white on coral is only 2.5:1 */
+    /* observer-header.js re-declares these aliases with LIGHT values after
+       this file loads; restate them here or dark pages get beige card
+       borders and #555 labels on a near-black ground. */
+    --muted:        var(--ink-soft);
+    --ink-light:    var(--ink-soft);
+    --border:       var(--hair);
+    --accent-light: var(--accent-bg);
   }
 }
 
 /* Explicit choice from the header toggle always wins. */
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --ink:         #ece7dc;
-  --ink-soft:    #a9a294;
-  --paper:       #16150f;
-  --paper-dark:  #201e18;
-  --accent:      #e8686c;
-  --accent-bg:   #2e1c1c;
-  --rule:        #8a7c48;
-  --hair:        #35322a;
-  --border-warm: #35322a;
-  --confirm:     #7dc98f;
-  --warn:        #f0908f;
-  --pending:     #e0bd6a;
-  --chrome-bg:   #0e0d0a;
-  --chrome-text: #ece7dc;
-  --chrome-soft: #8c8474;
-  --surface-card:#201e18;
+  /* "Night Edition" (2026-10-14): blue-black ground, cool white text,
+     coral accent, slate rules, filled cards. */
+  --ink:          #e6eaf0;
+  --ink-soft:     #9ba7b5;
+  --paper:        #0f141b;
+  --paper-dark:   #171e28;
+  --accent:       #f2857d;
+  --accent-bg:    #2b1c22;
+  --accent-press: #f4a6a8;  /* hover/active lifts lighter on dark */
+  --rule:         #b4975a;
+  --hair:         #253040;
+  --border-warm:  #2d3a4a;
+  --line:         #34425a;
+  --control-line: #66778f;
+  --card-hover:   #1e2733;
+  --confirm:      #7fcf9b;
+  --warn:         #f59a94;
+  --pending:      #e3c072;
+  --chrome-bg:    #090d12;
+  --chrome-text:  #e6eaf0;
+  --chrome-soft:  #7f8c9b;
+  --surface-card: #171e28;
+  --text-on-accent: #0f141b;  /* white on coral is only 2.5:1 */
+  /* observer-header.js re-declares these aliases with LIGHT values after
+     this file loads; restate them here or dark pages get beige card
+     borders and #555 labels on a near-black ground. */
+  --muted:        var(--ink-soft);
+  --ink-light:    var(--ink-soft);
+  --border:       var(--hair);
+  --accent-light: var(--accent-bg);
 }
 
 :root[data-theme="light"] {

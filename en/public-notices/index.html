@@ -28,6 +28,7 @@
 
   .section-rule { display: flex; align-items: center; gap: 14px; margin: 34px 0 16px; }
   .section-rule-label { font-family: 'Libre Baskerville', Georgia, serif; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+  @media (max-width: 560px) { .section-rule-label { white-space: normal; flex-shrink: 1; } }
   .section-rule-line { flex: 1; height: 1px; background: var(--ink); }
 
   .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 4px; }
@@ -69,6 +70,12 @@
   @media (max-width: 680px) {
     .page-wrap { padding: 0 16px 60px; }
     .notice-card { grid-template-columns: 58px 1fr; gap: 14px; }
+  }
+
+  /* Phones: comfortable tap targets + running text (2026-10-14) */
+  @media (max-width: 560px) {
+    .notice-link { display: inline-flex; align-items: center; min-height: 40px; font-size: 12px; }
+    .notice-links a { display: inline-flex; align-items: center; min-height: 40px; }
   }
 </style>
 <script src="/observer-header.js" defer></script>

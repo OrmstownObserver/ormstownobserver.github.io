@@ -5,7 +5,7 @@
 
    1. THE PALETTE. The 15 category hues in spending-data.js are fixed
       Tableau colours picked for a light ground; several go muddy on
-      the dark paper (#16150f). Rather than fork the data, this reads
+      the dark paper (#0f141b). Rather than fork the data, this reads
       the live theme and raises each hue's lightness to a floor
       (OO_LEDGER.liftHex). Results are memoised per theme and thrown
       away when the theme changes.
@@ -55,7 +55,7 @@
      recognisably itself when the reader flips themes.
 
        worst pair   ΔE 15.6  (was 3.0)
-       contrast     5.2:1 on --paper #16150f, 4.8:1 on --surface-card #201e18
+       contrast     5.3:1 on --paper #0f141b, 4.8:1 on --surface-card #171e28 (Night Edition, 2026-10-14)
 
      Two are deliberate rather than solved: "Other" is pinned to a neutral
      grey because it is a residual bucket and must not compete with a real

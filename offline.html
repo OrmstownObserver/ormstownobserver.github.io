@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Offline — The Ormstown Observer</title>
+<script>
+  (function(){
+    try {
+      var saved = localStorage.getItem('observerLang');
+      var lang = saved || (navigator.language && navigator.language.toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en');
+      if (lang === 'fr') document.documentElement.classList.add('lang-fr');
+      document.documentElement.setAttribute('lang', lang);
+      var t = localStorage.getItem('observerTheme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch(e) {}
+  })();
+</script>
+<!-- Served by sw.js when the reader is offline and the page they asked for
+     was never cached. Keep it self-contained: no images, no data files. -->
+<link rel="stylesheet" href="/observer.css">
+<style>
+  .offline { max-width: 560px; margin: 0 auto; padding: 40px 20px 56px; text-align: center; }
+  .offline h1 { font-family: 'Libre Baskerville', Georgia, serif; font-size: 26px; line-height: 1.25; margin: 0 0 12px; }
+  .offline p { font-size: 17px; line-height: 1.6; color: var(--ink-soft, #444); margin: 0 0 22px; }
+  .offline button, .offline a.home {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+    font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; font-size: 14px;
+    padding: 10px 22px; margin: 4px; cursor: pointer;
+    border: 1.5px solid var(--control-line); background: var(--paper); color: var(--ink);
+  }
+  .offline button { background: var(--accent); border-color: var(--accent); color: #fff; }
+  html.obs-ds[data-theme=dark] .offline button { color: #0f141b; }
+  @media (prefers-color-scheme: dark) {
+    html.obs-ds:not([data-theme=light]) .offline button { color: #0f141b; }
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+</head>
+<body>
+<main class="offline">
+  <h1><span data-en>You're offline</span><span data-fr>Vous êtes hors ligne</span></h1>
+  <p>
+    <span data-en>This page hasn't been saved on this device yet. Pages you've already opened are still available. Reconnect to read the rest.</span>
+    <span data-fr>Cette page n'a pas encore été enregistrée sur cet appareil. Les pages déjà consultées restent accessibles. Reconnectez-vous pour lire le reste.</span>
+  </p>
+  <button type="button" onclick="location.reload()"><span data-en>Try again</span><span data-fr>Réessayer</span></button>
+  <a class="home" href="/"><span data-en>Front page</span><span data-fr>Une</span></a>
+</main>
+</body>
+</html>

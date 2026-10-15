@@ -52,10 +52,10 @@
   .msg-note{margin-top:12px;padding-top:9px;border-top:1px dashed #c9a227;font-size:11.5px;line-height:1.5;color:var(--ink-soft);letter-spacing:.01em;}
 
   /* ── CHAT ── */
-  .chat-panel{border-top:2px solid var(--ink);margin-top:8px;}
+  .chat-panel{border-top:2px solid var(--line);margin-top:8px;}
   #ask-thread{padding:6px 0 2px;}
   .msg{border-left:3px solid var(--border);padding:10px 16px;margin:18px 0;}
-  .msg-user{border-left-color:var(--ink);}
+  .msg-user{border-left-color:var(--line);}
   .msg-bot{border-left-color:var(--accent);}
   .msg-error{border-left-color:var(--rule);background:var(--paper-dark);}
   .msg-who{font-family:sans-serif;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:6px;}
@@ -75,7 +75,7 @@
   .follow-chip:hover{color:var(--ink);}
 
   /* ── ASSISTANT TABS ── */
-  .ask-tabs{display:flex;gap:0;border-bottom:2px solid var(--ink);margin-bottom:0;}
+  .ask-tabs{display:flex;gap:0;border-bottom:2px solid var(--line);margin-bottom:0;}
   .ask-tab{flex:1;font-family:'Libre Baskerville',Georgia,serif;font-weight:700;font-size:15px;text-align:center;padding:12px 10px 10px;border:none;background:none;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:color .12s,border-color .12s;}
   .ask-tab small{display:block;font-family:sans-serif;font-weight:600;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;margin-top:3px;opacity:.7;}
   .ask-tab:hover{color:var(--ink);}
@@ -99,7 +99,7 @@
   #ask-status{font-family:sans-serif;font-size:11px;color:var(--muted);min-height:18px;margin-top:8px;font-style:italic;}
 
   /* ── SOURCES ── */
-  .sources{margin-top:56px;border-top:2px solid var(--ink);padding-top:18px;}
+  .sources{margin-top:56px;border-top:2px solid var(--line);padding-top:18px;}
   .sources h2{font-size:20px;font-weight:700;margin-bottom:8px;}
   .sources > p{font-size:14px;color:var(--ink-light);line-height:1.6;}
   #ask-doc-count{font-family:sans-serif;font-size:11px;color:var(--muted);}
@@ -124,6 +124,11 @@
     .starter-chips{flex-direction:column;}
     .starter-chip{display:block;width:100%;max-width:100%;white-space:normal;overflow-wrap:anywhere;}
     #ask-form{flex-direction:column;align-items:stretch;}
+  }
+
+  /* Phones: comfortable tap targets + running text (2026-10-14) */
+  @media (max-width: 560px) {
+    .back-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: -13px; margin-bottom: 11px; }
   }
 </style>
 <script src="/observer-header.js" defer></script>

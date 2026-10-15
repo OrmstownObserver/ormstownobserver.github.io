@@ -9,10 +9,15 @@
     }
     *{box-sizing:border-box;}
     html,body{margin:0;padding:0;max-width:100%;}
-    body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
-    a{color:inherit;text-decoration:none;}
-    h1,h2,h3{font-family:'Libre Baskerville',Georgia,serif;margin:0;}
-    p{margin:0;}
+    /* Base resets use :where() (zero specificity): this sheet loads after each page's own <style>,
+       so a page's body / a / h1-h3 / p rules must still win. Pages without their own rule get these. */
+    :where(body){background:var(--paper);color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+    :where(a){color:inherit;text-decoration:none;}
+    /* ...but the header/drawer/footer keep the header's own typography and plain links whatever the page sets */
+    :where(.obs-masthead,.obs-drawer,.obs-footer){color:var(--ink);font-family:'Source Serif 4',Georgia,serif;line-height:1.6;}
+    :where(.obs-masthead,.obs-drawer,.obs-footer) a{color:inherit;text-decoration:none;}
+    :where(h1,h2,h3){font-family:'Libre Baskerville',Georgia,serif;margin:0;}
+    :where(p){margin:0;}
     a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
     @media(prefers-reduced-motion:reduce){*{transition:none!important;}}
     [data-fr]{display:none;}
@@ -21,7 +26,7 @@
 
     /* ── MASTHEAD ── */
     .obs-masthead{
-      border-top:5px solid var(--ink);
+      border-top:5px solid var(--line, var(--ink));
       padding:28px 24px 22px;
       text-align:center;
       background:var(--paper);
@@ -32,7 +37,7 @@
     }
     .obs-rule-double{
       width:100%; max-width:640px; height:3px;
-      border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);
+      border-top:1px solid var(--line, var(--ink)); border-bottom:1px solid var(--line, var(--ink));
       margin:0 auto 20px;
     }
     .obs-flag{
@@ -53,7 +58,7 @@
     }
     .obs-rule-bottom{
       width:100%; max-width:640px; height:1px;
-      background:var(--ink); margin:18px auto 0;
+      background:var(--line, var(--ink)); margin:18px auto 0;
     }
 
     /* ── HAMBURGER ── */
@@ -85,27 +90,27 @@
       display:flex; justify-content:center; margin-top:18px;
     }
     .obs-lang{
-      display:inline-flex; border:1.5px solid var(--ink); overflow:hidden;
+      display:inline-flex; border:1.5px solid var(--control-line, var(--ink)); overflow:hidden;
     }
     .obs-lang button{
       font-family:'Libre Baskerville',serif; font-weight:700; font-size:12px;
       letter-spacing:.06em;
       color:var(--ink); background:var(--paper); border:none;
-      border-right:1px solid var(--ink); padding:9px 20px; cursor:pointer;
+      border-right:1px solid var(--control-line, var(--ink)); padding:9px 20px; cursor:pointer;
       min-height:40px; line-height:1;
       transition:background .15s,color .15s;
     }
     .obs-lang button:last-child{border-right:none;}
     .obs-lang button.is-active{background:var(--accent);color:#fff;}
     .obs-lang button:not(.is-active):hover{background:var(--paper-dark);}
-    /* Dark mode lifts --accent to a pale #e8686c, on which #fff is ~2.4:1.
+    /* Dark mode lifts --accent to a pale coral #f2857d, on which #fff is ~2.5:1.
        Scoped to html.obs-ds — the class is only set on pages that link
        observer.css, so the ~80 legacy light-only pages (where --accent stays
        #b5161b and #fff is correct) are never touched, even when the reader's
        OS is dark. */
-    html.obs-ds[data-theme=dark] .obs-lang button.is-active{color:#16150f;}
+    html.obs-ds[data-theme=dark] .obs-lang button.is-active{color:#0f141b;}
     @media (prefers-color-scheme:dark){
-      html.obs-ds:not([data-theme=light]) .obs-lang button.is-active{color:#16150f;}
+      html.obs-ds:not([data-theme=light]) .obs-lang button.is-active{color:#0f141b;}
     }
     @media (max-width:420px){
       .obs-lang button{padding:9px 14px;font-size:11.5px;}
@@ -120,7 +125,7 @@
     .obs-theme{
       display:inline-flex; align-items:center; justify-content:center;
       width:32px; height:29px;
-      border:1.5px solid var(--ink); background:var(--paper);
+      border:1.5px solid var(--control-line, var(--ink)); background:var(--paper);
       color:var(--ink); cursor:pointer; padding:0;
       transition:background .15s,color .15s;
     }
@@ -133,16 +138,43 @@
       html:not([data-theme=light]) .obs-theme .obs-moon{display:block;}
       html:not([data-theme=light]) .obs-theme .obs-sun{display:none;}
     }
-    @media (max-width:520px){ .obs-theme{width:28px;height:26px;} .obs-controls{gap:6px;} }
+    @media (max-width:520px){ .obs-controls{gap:6px;} }
+    /* Phone masthead. It used to stand 244px tall at 375px wide, close to a
+       third of the first screen before any story. Compact form: the region
+       flag and tagline go, the name sits on one or two short lines between the
+       theme toggle and the hamburger, and the language bar tightens without
+       shrinking its tap targets below 36px. */
     @media (max-width:520px){
-      .obs-masthead{padding-left:14px;padding-right:14px;overflow:hidden;}
+      .obs-masthead{padding:12px 14px 12px;border-top-width:4px;overflow:hidden;}
       .obs-masthead-inner{max-width:100%;}
-      .obs-name{display:block;font-size:22px;max-width:calc(100vw - 128px);white-space:normal;margin:0 auto;}
-      .obs-flag,.obs-tagline{max-width:calc(100vw - 56px);margin-left:auto;margin-right:auto;overflow-wrap:anywhere;}
-      .obs-flag{font-size:10px;letter-spacing:.18em;}
-      .obs-tagline{display:none;}
-      .obs-hamburger{right:0;}
+      .obs-rule-double{margin-bottom:10px;}
+      .obs-flag,.obs-tagline{display:none;}
+      .obs-name{display:block;font-size:21px;line-height:1.15;max-width:calc(100vw - 128px);white-space:normal;margin:0 auto;}
+      .obs-rule-bottom{margin-top:10px;}
+      .obs-langbar{margin-top:10px;}
+      .obs-lang button{min-height:36px;padding:8px 18px;}
+      .obs-controls,.obs-hamburger{top:calc(50% - 23px);}
+      .obs-hamburger{right:-6px;padding:11px 8px;}
+      .obs-theme{width:36px;height:36px;}
     }
+
+    /* ── INSTALLED APP (display-mode: standalone) ──
+       Home-screen launches have no browser chrome: no address bar and, on
+       iOS, no back button. Pad under the status bar and show our own back
+       control (obs-back) in the left-hand control group. */
+    .obs-back{display:none;}
+    html.obs-app .obs-back{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:36px; height:36px; padding:0; cursor:pointer;
+      border:1.5px solid var(--control-line, var(--ink)); background:var(--paper); color:var(--ink);
+    }
+    html.obs-app .obs-back[hidden]{display:none;}
+    .obs-back svg{width:18px;height:18px;display:block;}
+    html.obs-app .obs-masthead{padding-top:calc(12px + env(safe-area-inset-top));}
+    html.obs-app .obs-footer{padding-bottom:calc(30px + env(safe-area-inset-bottom));}
+    /* Back + theme side by side would touch the name on the narrowest phones;
+       there the theme simply follows the system setting. */
+    @media (max-width:360px){ html.obs-app .obs-back:not([hidden]) ~ .obs-theme{display:none;} }
 
     /* ── DRAWER NAV ── */
     .obs-drawer{
@@ -187,7 +219,7 @@
 
     /* ── FOOTER ── */
     .obs-footer{
-      border-top:3px double var(--ink); text-align:center;
+      border-top:3px double var(--line, var(--ink)); text-align:center;
       padding:30px 24px; font-size:12.5px; letter-spacing:.04em;
       color:var(--ink-light); line-height:2; margin-top:10px;
       font-family:'Source Serif 4',Georgia,serif;
@@ -208,6 +240,13 @@
   <div class="obs-masthead">
     <div class="obs-masthead-inner">
       <div class="obs-controls">
+        <button class="obs-back" id="obs-back-btn" type="button" hidden
+          aria-label="Back / Retour" title="Back / Retour">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 5l-7 7 7 7"></path>
+          </svg>
+        </button>
         <button class="obs-theme" id="obs-theme-btn" type="button" hidden
           aria-label="Toggle light or dark theme" title="Light / dark">
           <svg class="obs-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -317,6 +356,34 @@
     document.head.appendChild(fontLink);
   }
 
+  // ── APP SHELL (installable PWA) ──
+  // Every page gets the manifest, icons and theme colour from here, so the
+  // ~90 hand-built pages never need their <head> edited. A page that already
+  // declares one of these keeps its own.
+  function addHead(sel, tag, attrs){
+    if(document.head.querySelector(sel)) return;
+    var el = document.createElement(tag);
+    for(var k in attrs) el.setAttribute(k, attrs[k]);
+    document.head.appendChild(el);
+  }
+  addHead('link[rel="manifest"]', 'link', {rel:'manifest', href:'/manifest.webmanifest'});
+  addHead('link[rel="apple-touch-icon"]', 'link', {rel:'apple-touch-icon', href:'/app/apple-touch-icon.png'});
+  addHead('link[rel="icon"]', 'link', {rel:'icon', type:'image/png', sizes:'32x32', href:'/app/favicon-32.png'});
+  addHead('meta[name="theme-color"]', 'meta', {name:'theme-color', content:'#faf8f4'});
+  addHead('meta[name="apple-mobile-web-app-title"]', 'meta', {name:'apple-mobile-web-app-title', content:'Observer'});
+
+  var isApp = false;
+  try{
+    isApp = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+  }catch(e){}
+  if(isApp) document.documentElement.classList.add('obs-app');
+
+  if('serviceWorker' in navigator && location.protocol !== 'file:'){
+    window.addEventListener('load', function(){
+      navigator.serviceWorker.register('/sw.js').catch(function(){});
+    });
+  }
+
   var headerDiv = document.createElement('div');
   headerDiv.innerHTML = header;
   document.body.insertBefore(headerDiv, document.body.firstChild);
@@ -353,6 +420,20 @@
   closeBtn.addEventListener('click', closeDrawer);
   scrim.addEventListener('click', closeDrawer);
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDrawer(); });
+
+  // ── BACK (installed app only) ──
+  // Offered everywhere except the front page. With no history inside the app
+  // (opened from a link or a cold start on a deep page) it goes home.
+  var backBtn = document.getElementById('obs-back-btn');
+  if(backBtn && isApp && path !== '/' && path !== '/index.html'){
+    backBtn.hidden = false;
+    backBtn.addEventListener('click', function(){
+      var fromSite = false;
+      try{ fromSite = document.referrer && new URL(document.referrer).origin === location.origin; }catch(e){}
+      if(fromSite && history.length > 1){ history.back(); }
+      else { window.location.href = '/'; }
+    });
+  }
 
   // ── THEME LOGIC ──
   // The toggle is only offered on pages that link observer.css. Legacy pages

@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Ormstown Observer — Civic accountability for Ormstown &amp; the Haut-Saint-Laurent</title>
 <meta name="description" content="Independent, bilingual civic journalism covering the decisions, developments, and debates shaping Ormstown and the Haut-Saint-Laurent. EN/FR.">
+<!-- Installable app. observer-header.js adds these to every other page. -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/app/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/app/favicon-32.png">
+<meta name="theme-color" content="#faf8f4">
+<meta name="apple-mobile-web-app-title" content="Observer">
 <script>
   (function(){
     try {
@@ -45,7 +51,7 @@
 
   /* ── MASTHEAD ── */
   .masthead {
-    background: var(--paper); border-bottom: 3px double var(--ink);
+    background: var(--paper); border-bottom: 3px double var(--line);
     padding: 14px 24px 12px; text-align: center;
   }
   .masthead-meta {
@@ -54,11 +60,11 @@
     margin-bottom: 10px;
   }
   .masthead-date { font-style: italic; }
-  .lang-toggle { display: inline-flex; border: 2px solid var(--ink); overflow: hidden; }
+  .lang-toggle { display: inline-flex; border: 2px solid var(--control-line); overflow: hidden; }
   .lang-toggle button {
     font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 14px;
     color: var(--ink); background: var(--paper); border: none;
-    border-right: 1px solid var(--ink); padding: 4px 14px; cursor: pointer;
+    border-right: 1px solid var(--control-line); padding: 4px 14px; cursor: pointer;
     transition: background .15s, color .15s;
   }
   .lang-toggle button:last-child { border-right: none; }
@@ -73,7 +79,7 @@
   /* ── NAV ── */
   .site-nav {
     display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
-    border-bottom: 2px solid var(--ink); background: var(--paper);
+    border-bottom: 2px solid var(--line); background: var(--paper);
     font-family: sans-serif; font-size: 11px; font-weight: 700;
     text-transform: uppercase; letter-spacing: .1em;
     scrollbar-width: none;
@@ -86,21 +92,21 @@
   }
   .site-nav a:first-child { border-left: 1px solid var(--border); }
   .site-nav a:hover, .site-nav a.is-active { background: var(--accent); color: #fff; }
-  /* Dark mode lifts --accent to a pale #e8686c, on which the #fff above sits
-     at about 2.4:1. html.obs-ds is set by observer-header.js only on pages
+  /* Dark mode lifts --accent to a pale coral #f2857d, on which the #fff above sits
+     at about 2.5:1. html.obs-ds is set by observer-header.js only on pages
      that link observer.css, which this one does. */
   html.obs-ds[data-theme=dark] .site-nav a:hover,
-  html.obs-ds[data-theme=dark] .site-nav a.is-active { color: #16150f; }
+  html.obs-ds[data-theme=dark] .site-nav a.is-active { color: #0f141b; }
   @media (prefers-color-scheme: dark) {
     html.obs-ds:not([data-theme=light]) .site-nav a:hover,
-    html.obs-ds:not([data-theme=light]) .site-nav a.is-active { color: #16150f; }
+    html.obs-ds:not([data-theme=light]) .site-nav a.is-active { color: #0f141b; }
   }
 
   /* ── HERO — Option A: full-width lead, then two secondary cards BELOW.
      The old 3fr/2fr grid put a side column next to the lead; that column is
      what read as leftovers on desktop and collapsed badly on mobile. ── */
   .hero {
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 2px solid var(--line);
   }
   .hero-main {
     position: relative; overflow: hidden; display: block;
@@ -142,7 +148,7 @@
   /* ── LATEST STORIES — photo grid below hero ── */
   .latest-stories {
     display: grid; grid-template-columns: repeat(3, 1fr);
-    border-bottom: 2px solid var(--ink);
+    border-bottom: 2px solid var(--line);
   }
   .story-card {
     display: flex; flex-direction: column;
@@ -192,7 +198,7 @@
   .topic-group-label {
     font-family: sans-serif; font-size: 10px; font-weight: 800;
     text-transform: uppercase; letter-spacing: .18em; color: var(--muted);
-    padding-bottom: 8px; border-bottom: 2px solid var(--ink); margin: 22px 0 0;
+    padding-bottom: 8px; border-bottom: 2px solid var(--line); margin: 22px 0 0;
   }
   .topic-grid {
     display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -206,6 +212,16 @@
   }
   .topic-card:hover { background: var(--paper-dark); }
   .topic-card:hover .topic-title { color: var(--accent); }
+  /* Night Edition: in dark mode the ruled grid becomes filled panels with a
+     gap between them (light mode keeps the newspaper grid). */
+  :root[data-theme="dark"] .topic-grid { gap: 10px; border-left: 0; }
+  :root[data-theme="dark"] .topic-card { background: var(--surface-card); border: 1px solid var(--hair); }
+  :root[data-theme="dark"] .topic-card:hover { background: var(--card-hover); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .topic-grid { gap: 10px; border-left: 0; }
+    :root:not([data-theme="light"]) .topic-card { background: var(--surface-card); border: 1px solid var(--hair); }
+    :root:not([data-theme="light"]) .topic-card:hover { background: var(--card-hover); }
+  }
   .topic-kicker {
     font-family: sans-serif; font-size: 9.5px; font-weight: 800;
     text-transform: uppercase; letter-spacing: .12em; color: var(--accent);
@@ -260,7 +276,7 @@
 
   /* ── FOOTER ── */
   .site-footer {
-    border-top: 3px double var(--ink); text-align: center;
+    border-top: 3px double var(--line); text-align: center;
     padding: 28px 24px; font-size: 12px; color: var(--muted);
     line-height: 2; background: var(--paper);
   }
@@ -270,6 +286,10 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 720px) {
     .hero-main { aspect-ratio: auto; min-height: 300px; }
+    /* On a phone the text block covers most of the photo, so the gold eyebrow
+       sits where the desktop gradient is already thin; darken higher up. */
+    .hero-gradient { background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.72) 55%, rgba(0,0,0,.4) 100%); }
+    .hero-content { text-shadow: 0 1px 2px rgba(0,0,0,.6); }
     /* On a phone the three cards stack under the lead — no sideways scroll. */
     .latest-stories { grid-template-columns: 1fr; }
     .story-card { border-right: none; border-bottom: 1px solid var(--border); }

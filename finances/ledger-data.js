@@ -143,7 +143,7 @@
   /* ------------------------------------------------------------
      Colour: dark-mode lightness lift.
      The 15 category hues in spending-data.js are fixed Tableau
-     colours chosen for a light ground; several go muddy on #16150f.
+     colours chosen for a light ground; several go muddy on the dark paper (#0f141b).
      Rather than fork the data, raise each hue's HSL lightness to a
      floor at render time. Pure maths, so it is testable and can
      never drift from the source palette.

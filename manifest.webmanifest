@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "The Ormstown Observer",
+  "short_name": "Observer",
+  "description": "Independent, bilingual civic journalism for Ormstown and the Haut-Saint-Laurent. Journalisme civique indépendant et bilingue.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/?source=app",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#faf8f4",
+  "theme_color": "#faf8f4",
+  "categories": ["news"],
+  "icons": [
+    { "src": "/app/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/app/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/app/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Bylaws & Regulations / Règlements", "short_name": "Bylaws", "url": "/en/bylaws-regulations/" },
+    { "name": "Council Watch / Conseil municipal", "short_name": "Council", "url": "/en/council-watch/" },
+    { "name": "The Ledger / Grand livre", "short_name": "Ledger", "url": "/finances/" }
+  ]
+}

@@ -28,8 +28,14 @@ if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)
   .idx-head h1 { font-size: var(--size-page-title); font-weight: var(--weight-black); margin: var(--s3) 0 var(--s3); line-height: var(--leading-tight); }
   .idx-head p { font-size: var(--size-lede); color: var(--ink-soft); line-height: 1.6; max-width: 62ch; margin: 0 0 var(--s2); }
   .idx-list { list-style: none; margin: var(--s5) 0 0; padding: 0; }
-  .idx-kit { border: var(--rule-strong) solid var(--ink); background: var(--surface-card); margin-bottom: var(--s4); }
+  .idx-kit { border: var(--rule-strong) solid var(--line); background: var(--surface-card); margin-bottom: var(--s4); }
   .idx-kit-head { background: var(--ink); color: var(--paper); padding: var(--s3) var(--s4); display: flex; flex-wrap: wrap; gap: var(--s2); align-items: baseline; justify-content: space-between; }
+  /* --ink turns near-white in dark mode, which put the gold case label on a
+     white bar; the bar is chrome, so it stays dark in both themes. */
+  :root[data-theme="dark"] .idx-kit-head { background: var(--chrome-bg); color: var(--chrome-text); }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .idx-kit-head { background: var(--chrome-bg); color: var(--chrome-text); }
+  }
   .idx-kit-case { font-family: var(--font-label); font-size: var(--size-label); font-weight: 700; letter-spacing: var(--track-kicker); text-transform: uppercase; color: var(--rule); }
   .idx-kit-date { font-family: var(--font-label); font-size: var(--size-fine); letter-spacing: .08em; text-transform: uppercase; color: var(--chrome-soft); }
   .idx-kit-body { padding: var(--s4); }
@@ -38,10 +44,15 @@ if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)
   .idx-kit-body h2 a:hover { color: var(--accent); }
   .idx-kit-body p { font-size: var(--size-body); line-height: var(--leading-body); color: var(--ink-soft); margin: 0 0 var(--s3); max-width: 68ch; }
   .idx-kit-links { display: flex; flex-wrap: wrap; gap: var(--s2); }
-  .idx-note { margin-top: var(--s5); padding-top: var(--s4); border-top: var(--rule-heavy) double var(--ink); font-size: var(--size-body-sm); color: var(--ink-soft); line-height: var(--leading-body); max-width: 72ch; }
+  .idx-note { margin-top: var(--s5); padding-top: var(--s4); border-top: var(--rule-heavy) double var(--line); font-size: var(--size-body-sm); color: var(--ink-soft); line-height: var(--leading-body); max-width: 72ch; }
   .idx-note a { color: var(--accent); }
   .back-link { display: inline-block; font-family: var(--font-label); font-size: var(--size-label-lg); font-weight: 700; text-transform: uppercase; letter-spacing: var(--track-label); color: var(--ink-soft); text-decoration: none; }
   .back-link:hover { color: var(--accent); }
+
+  /* Phones: comfortable tap targets + running text (2026-10-14) */
+  @media (max-width: 560px) {
+    .back-link { display: inline-flex; align-items: center; min-height: 44px; margin: -13px 0; }
+  }
 </style>
 <script src="/observer-header.js" defer></script>
 <link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/press/">
