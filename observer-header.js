@@ -225,6 +225,7 @@
       font-family:'Source Serif 4',Georgia,serif;
     }
     .obs-footer a{color:var(--accent);}
+    .obs-footer-mark{display:block;margin:0 auto 10px;width:28px;height:28px;}
     .obs-footer-name{
       font-family:'Libre Baskerville',serif; font-weight:700;
       font-size:17px; color:var(--ink); margin-bottom:4px;
@@ -336,6 +337,7 @@
 
   var footer = `
   <footer class="obs-footer">
+    <img class="obs-footer-mark" src="/app/favicon.svg" width="28" height="28" alt="">
     <div class="obs-footer-name">
       <span data-en>The Ormstown Observer</span><span data-fr>L'Ormstown Observer</span>
     </div>
@@ -369,6 +371,7 @@
   addHead('link[rel="manifest"]', 'link', {rel:'manifest', href:'/manifest.webmanifest'});
   addHead('link[rel="apple-touch-icon"]', 'link', {rel:'apple-touch-icon', href:'/app/apple-touch-icon.png'});
   addHead('link[rel="icon"]', 'link', {rel:'icon', type:'image/png', sizes:'32x32', href:'/app/favicon-32.png'});
+  addHead('link[rel="icon"][type="image/svg+xml"]', 'link', {rel:'icon', type:'image/svg+xml', href:'/app/favicon.svg'});
   addHead('meta[name="theme-color"]', 'meta', {name:'theme-color', content:'#faf8f4'});
   addHead('meta[name="apple-mobile-web-app-title"]', 'meta', {name:'apple-mobile-web-app-title', content:'Observer'});
 

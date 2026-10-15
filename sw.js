@@ -7,7 +7,7 @@
    re-exported under the same filename.
 
    Bump VERSION to drop every cached file on the next visit. */
-var VERSION = 'obs-2026-10-14';
+var VERSION = 'obs-2026-10-14-icon';
 var CORE = VERSION + '-core';
 var RUNTIME = VERSION + '-runtime';
 var OFFLINE_URL = '/offline.html';
@@ -18,7 +18,8 @@ var PRECACHE = [
   '/observer.css',
   '/observer-header.js',
   '/manifest.webmanifest',
-  '/app/icon-192.png'
+  '/app/icon-192.png',
+  '/app/favicon.svg'
 ];
 
 // Cached pages and assets are capped so a long-installed app cannot grow
