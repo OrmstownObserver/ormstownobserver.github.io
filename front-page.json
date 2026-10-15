@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-13T01:01:02.375Z",
+  "generated_at": "2026-10-15T03:01:01.783Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -102,6 +102,16 @@
   ],
   "latest": [
     {
+      "slug": "bylaws-regulations-fire-prevention-155-2023",
+      "path_en": "/en/bylaws-regulations/fire-prevention-155-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-prevention-incendies-155-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Ormstown's fire bylaw: a free permit for open fires, town approval for fireworks, and rules for smoke alarms",
+      "hed_fr": "Le règlement sur les incendies d’Ormstown : permis gratuit pour les feux à ciel ouvert, autorisation pour les feux d’artifice, règles pour les avertisseurs de fumée",
+      "date_published": "2026-10-14"
+    },
+    {
       "slug": "bylaws-regulations-employee-ethics-80-2022",
       "path_en": "/en/bylaws-regulations/employee-ethics-80-2022/",
       "path_fr": "/fr/bylaws-regulations/reglement-ethique-employes-80-2022/",
@@ -190,16 +200,6 @@
       "hed_en": "Council Meeting Preview: August 3, 2026 — Monday, August 3 · 6:30 p.m.",
       "hed_fr": "Aperçu de la séance du conseil : 3 août 2026 — Monday, August 3 · 6:30 p.m.",
       "date_published": "2026-08-01"
-    },
-    {
-      "slug": "piia-route-201-corridor",
-      "path_en": "/en/piia/route-201-corridor/",
-      "path_fr": "/fr/piia/corridor-route-201/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "One storey, close to the road: what the PIIA asks of builders on the Route 201 South corridor",
-      "hed_fr": "Un étage, près de la route : ce que le PIIA exige des bâtisseurs du corridor de la route 201 Sud",
-      "date_published": "2026-07-24"
     }
   ],
   "latest_groups": [
@@ -457,8 +457,19 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 9,
+      "total": 10,
       "items": [
+        {
+          "slug": "bylaws-regulations-fire-prevention-155-2023",
+          "path_en": "/en/bylaws-regulations/fire-prevention-155-2023/",
+          "path_fr": "/fr/bylaws-regulations/reglement-prevention-incendies-155-2023/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Ormstown's fire bylaw: a free permit for open fires, town approval for fireworks, and rules for smoke alarms",
+          "hed_fr": "Le règlement sur les incendies d’Ormstown : permis gratuit pour les feux à ciel ouvert, autorisation pour les feux d’artifice, règles pour les avertisseurs de fumée",
+          "date_published": "2026-10-14",
+          "part": null
+        },
         {
           "slug": "bylaws-regulations-employee-ethics-80-2022",
           "path_en": "/en/bylaws-regulations/employee-ethics-80-2022/",
@@ -500,17 +511,6 @@
           "label_fr": "Règlements",
           "hed_en": "Cutting down a tree in Ormstown? You need a permit for that",
           "hed_fr": "Abattre un arbre à Ormstown? Il vous faut un certificat",
-          "date_published": "2026-08-04",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-drinking-water-86-2024",
-          "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
-          "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "The last digit of your address decides which day you can water your lawn",
-          "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
           "date_published": "2026-08-04",
           "part": null
         }
