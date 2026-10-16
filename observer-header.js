@@ -225,7 +225,7 @@
       font-family:'Source Serif 4',Georgia,serif;
     }
     .obs-footer a{color:var(--accent);}
-    .obs-footer-mark{display:block;margin:0 auto 10px;width:28px;height:28px;}
+    .obs-footer-mark{display:block;margin:0 auto 14px;width:56px;height:56px;}
     .obs-footer-name{
       font-family:'Libre Baskerville',serif; font-weight:700;
       font-size:17px; color:var(--ink); margin-bottom:4px;
@@ -337,12 +337,12 @@
 
   var footer = `
   <footer class="obs-footer">
-    <img class="obs-footer-mark" src="/app/favicon.svg" width="28" height="28" alt="">
+    <img class="obs-footer-mark" src="/app/favicon.svg" width="56" height="56" alt="">
     <div class="obs-footer-name">
       <span data-en>The Ormstown Observer</span><span data-fr>L'Ormstown Observer</span>
     </div>
-    <span data-en>The Ormstown Observer is a bilingual civic watchdog covering the decisions, bylaws, and debates that shape Ormstown and the Haut-Saint-Laurent. A bilingual publication for a bilingual community. We accept no advertising.</span>
-    <span data-fr>L'Ormstown Observer est une vigie civique bilingue qui couvre les décisions, règlements et débats qui façonnent Ormstown et le Haut-Saint-Laurent. Une publication bilingue pour une communauté bilingue. Nous n'acceptons aucune publicité.</span><br>
+    <span data-en>The Ormstown Observer is a bilingual civic watchdog covering the decisions, bylaws, and debates that shape Ormstown and the Haut-Saint-Laurent. A bilingual publication for a bilingual community.</span>
+    <span data-fr>L'Ormstown Observer est une vigie civique bilingue qui couvre les décisions, règlements et débats qui façonnent Ormstown et le Haut-Saint-Laurent. Une publication bilingue pour une communauté bilingue.</span><br>
     <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
   </footer>`;
 

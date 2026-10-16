@@ -7,7 +7,7 @@
    re-exported under the same filename.
 
    Bump VERSION to drop every cached file on the next visit. */
-var VERSION = 'obs-2026-10-15-dark';
+var VERSION = 'obs-2026-10-15-footer';
 var CORE = VERSION + '-core';
 var RUNTIME = VERSION + '-runtime';
 var OFFLINE_URL = '/offline.html';
