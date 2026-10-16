@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-16T00:31:01.064Z",
+  "generated_at": "2026-10-16T01:51:11.532Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -74,33 +74,19 @@
         "alt_en": "The Municipality of Ormstown's 2026-2028 capital plan table, listing each project with the share funded by a borrowing by-law and the share expected from a grant programme, above a footnote reading that the subsidies are indicative only.",
         "alt_fr": "Le tableau du programme triennal d'immobilisations 2026-2028 de la Municipalité d'Ormstown, indiquant pour chaque projet la part financée par un règlement d'emprunt et la part attendue d'un programme de subvention, au-dessus d'une note précisant que les subventions sont à titre indicatif seulement."
       }
-    },
-    {
-      "slug": "bylaws-regulations-drinking-water-86-2024",
-      "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
-      "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "The last digit of your address decides which day you can water your lawn",
-      "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
-      "deck_en": "Règlement 86-2024 governs every drop of municipal water in Ormstown — watering days by civic number, pool filling on alternating dates, spring driveway washing for six weeks only, and a February 1, 2027 deadline to rip out water-cooled air conditioners. Fines start at $250 and each day counts separately.",
-      "deck_fr": "Le Règlement 86-2024 encadre chaque goutte d'eau municipale à Ormstown — jours d'arrosage selon le numéro civique, remplissage des piscines en dates alternées, nettoyage printanier des entrées pendant six semaines seulement, et une échéance au 1er février 2027 pour se débarrasser des climatiseurs à l'eau potable.",
-      "meta_en": "August 4, 2026",
-      "meta_fr": "4 août 2026",
-      "cta_en": "Read the explainer →",
-      "cta_fr": "Lire l’explicateur →",
-      "icon": "bylaws",
-      "date_published": "2026-08-04",
-      "image": {
-        "src": "/images/bylaws-regulations-drinking-water-86-2024.jpg",
-        "position": "center",
-        "credit": "",
-        "alt_en": "",
-        "alt_fr": ""
-      }
     }
   ],
   "latest": [
+    {
+      "slug": "council-watch-council-asks-quebec-to-ban-trucks",
+      "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
+      "path_fr": "/fr/conseil-municipal/demande-interdire-camions-trois-rues/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Ormstown council asks Quebec to ban trucks on three village streets",
+      "hed_fr": "Ormstown demande à Québec d'interdire les camions sur trois rues",
+      "date_published": "2026-10-15"
+    },
     {
       "slug": "council-watch-who-gets-the-rec-center",
       "path_en": "/en/council-watch/who-gets-the-rec-center/",
@@ -190,16 +176,6 @@
       "hed_en": "Council approves 24-unit Church Street project",
       "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church",
       "date_published": "2026-08-04"
-    },
-    {
-      "slug": "council-watch-borrowing-172-173-2026",
-      "path_en": "/en/council-watch/borrowing-172-173-2026/",
-      "path_fr": "/fr/conseil-municipal/emprunts-172-173-2026/",
-      "label_en": "Public money",
-      "label_fr": "Fonds publics",
-      "hed_en": "Two borrowing by-laws, $11.2 million. Prince-Albert, Cullen and Oliver — By-laws 172-2026 & 173-2026",
-      "hed_fr": "Deux règlements d'emprunt, 11,2 millions $. Prince-Albert, Cullen and Oliver — By-laws 172-2026 & 173-2026",
-      "date_published": "2026-08-02"
     }
   ],
   "latest_groups": [
@@ -457,8 +433,19 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 11,
+      "total": 12,
       "items": [
+        {
+          "slug": "council-watch-council-asks-quebec-to-ban-trucks",
+          "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
+          "path_fr": "/fr/conseil-municipal/demande-interdire-camions-trois-rues/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Ormstown council asks Quebec to ban trucks on three village streets",
+          "hed_fr": "Ormstown demande à Québec d'interdire les camions sur trois rues",
+          "date_published": "2026-10-15",
+          "part": null
+        },
         {
           "slug": "council-watch-who-gets-the-rec-center",
           "path_en": "/en/council-watch/who-gets-the-rec-center/",
@@ -501,17 +488,6 @@
           "hed_en": "Ormstown's urban plan: 11 land-use designations that the zoning bylaw must respect",
           "hed_fr": "Le plan d'urbanisme d'Ormstown : 11 grandes affectations que le règlement de zonage doit respecter",
           "date_published": "2026-10-12",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-demolition-145-2023",
-          "path_en": "/en/bylaws-regulations/demolition-145-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-demolition-145-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object",
-          "hed_fr": "Démolir un bâtiment à Ormstown ? Un comité de trois élus tranche, et tout le monde peut s’y opposer",
-          "date_published": "2026-10-07",
           "part": null
         }
       ],
