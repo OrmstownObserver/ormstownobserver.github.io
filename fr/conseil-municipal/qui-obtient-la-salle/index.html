@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qui obtient la salle? Les nouvelles r&egrave;gles d&rsquo;Ormstown &mdash; The Ormstown Observer</title>
+<meta name="description" content="Le conseil a adopt&eacute; une version corrig&eacute;e de sa politique de reconnaissance des organismes &mdash; quatre mois apr&egrave;s avoir adopt&eacute; la premi&egrave;re &mdash; et la correction plafonne le temps de salle qu&rsquo;un seul organisme peut r&eacute;clamer chaque semaine.">
+<link rel="canonical" href="https://ormstownobserver.ca/fr/conseil-municipal/qui-obtient-la-salle/">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/who-gets-the-rec-center/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/qui-obtient-la-salle/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .article-wrap { max-width: 800px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  .back-link { display: inline-block; margin-bottom: 22px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .back-link:hover { color: var(--accent); }
+
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
+  .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+
+  h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
+  h3 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 36px 0 10px; }
+  /* observer-header.js injects h1,h2,h3{margin:0} after this block; body h2/h3 outranks it */
+  body h2 { margin: 48px 0 14px; }
+  body h3 { margin: 36px 0 10px; }
+  p { margin: 0 0 16px; }
+  p.lede { font-size: 1.08rem; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  .fact-box { background: var(--sidebar); border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .fact-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+  .fact-box ul { margin-bottom: 0; }
+
+  .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 14px 18px; margin: 20px 0; border-radius: 2px; font-size: 0.95rem; }
+  .note-box strong { color: var(--pending); }
+
+  .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
+  .status-badge .status-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
+  .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
+  .status-badge.confirmed { background: #e8f3ea; color: var(--confirm); border: 1px solid #b8dcc0; }
+  .status-badge.preview { background: var(--accent-light); color: var(--accent); border: 1px solid #e3c4c5; }
+
+  blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
+  blockquote cite { display: block; margin-top: 8px; font-size: 0.75rem; font-style: normal; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+  figure.article-figure { margin: 28px 0; }
+  figure.article-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border); }
+  figure.article-figure figcaption { font-size: 0.85rem; color: var(--muted); padding-top: 8px; line-height: 1.5; }
+  figure.article-figure figcaption .credit { font-style: italic; }
+
+  .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  .article-footer h3 { font-size: 1rem; font-style: normal; margin-top: 0; }
+  .article-footer li { margin-bottom: 8px; }
+
+  .disclaimer { margin-top: 14px; font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .disclaimer strong { color: var(--ink); }
+
+  /* Phones: comfortable tap targets + running text (2026-10-14) */
+  @media (max-width: 560px) {
+    .back-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: -13px; margin-bottom: 9px; }
+    .disclaimer, .article-footer { font-size: 0.94rem; }
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+
+<main class="article-wrap">
+  <a class="back-link" href="/fr/conseil-municipal/">&larr; Conseil municipal</a>
+
+  <div class="section-label">Conseil municipal &middot; Organismes du milieu</div>
+
+  <h1 class="article-headline">Qui obtient la salle? Les nouvelles r&egrave;gles d&rsquo;Ormstown</h1>
+
+  <p class="article-deck">Le conseil a adopt&eacute; une version corrig&eacute;e de sa politique de reconnaissance des organismes &mdash; quatre mois apr&egrave;s avoir adopt&eacute; la premi&egrave;re &mdash; et la correction plafonne le temps de salle qu&rsquo;un seul organisme peut r&eacute;clamer chaque semaine.</p>
+
+  <div class="byline">
+    The Ormstown Observer &middot; Conseil municipal &middot; 15 octobre 2026 &middot; S&eacute;ance ordinaire du 8 septembre 2026, point 10.5 &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M">Visionner l&rsquo;enregistrement complet sur YouTube &rarr;</a>
+  </div>
+
+  <p class="lede">Le conseil d&rsquo;Ormstown a adopt&eacute; une version corrig&eacute;e de sa <em>Politique de reconnaissance et de soutien aux organismes</em> &agrave; la s&eacute;ance du 8 septembre, au point 10.5. En la pr&eacute;sentant, la pr&eacute;sidence a indiqu&eacute; que la politique avait d&rsquo;abord &eacute;t&eacute; adopt&eacute;e &agrave; la s&eacute;ance du 4 mai 2026, et que sa mise en application avait r&eacute;v&eacute;l&eacute; des incoh&eacute;rences qu&rsquo;il fallait corriger pour en assurer une application uniforme (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5089">01:24:49</a>, <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5136">01:25:36</a>). La politique publi&eacute;e porte le num&eacute;ro de r&eacute;solution 26-09-255 et pr&eacute;cise qu&rsquo;elle remplace la r&eacute;solution 26-05-145 &mdash; un num&eacute;ro de mai 2026, ce qui concorde. Sign&eacute;e par le maire et le directeur g&eacute;n&eacute;ral, elle est entr&eacute;e en vigueur le jour de son adoption et se trouve maintenant en ligne.</p>
+
+  <p>Personne n&rsquo;a vot&eacute; contre (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5229">01:27:09</a>). Le conseil a aussi mandat&eacute; le Service de la culture et des loisirs pour en assurer l&rsquo;application et la gestion.</p>
+
+  <p>Pour tous les clubs, ligues, comit&eacute;s et OBNL actifs &agrave; Ormstown, c&rsquo;est d&eacute;sormais ce document qui &eacute;tablit ce que la Municipalit&eacute; leur offre &mdash; et ce qu&rsquo;elle ne leur offre pas.</p>
+
+  <h2>Cinq cat&eacute;gories, dont une qui n&rsquo;a jamais &agrave; faire de demande</h2>
+
+  <p>La politique reconna&icirc;t cinq cat&eacute;gories d&rsquo;organismes&nbsp;: communautaires et sociaux; culturels et patrimoniaux; sportifs et de loisirs; environnementaux; et &eacute;tablissements scolaires ou de sant&eacute;. Cette derni&egrave;re cat&eacute;gorie &mdash; les organismes gouvernementaux et paragouvernementaux comme les &eacute;coles, les CLSC, &Eacute;lections Qu&eacute;bec ou H&eacute;ma-Qu&eacute;bec &mdash; n&rsquo;a pas &agrave; pr&eacute;senter de demande. La politique pr&eacute;cise qu&rsquo;ils sont syst&eacute;matiquement consid&eacute;r&eacute;s comme reconnus par la nature de leurs activit&eacute;s.</p>
+
+  <p>Tous les autres doivent faire une demande. Pour &ecirc;tre reconnu, un organisme doit &ecirc;tre inscrit au Registre des entreprises du Qu&eacute;bec comme OSBL (sauf exception justifi&eacute;e), tenir une assembl&eacute;e g&eacute;n&eacute;rale annuelle, d&eacute;tenir les assurances n&eacute;cessaires et d&eacute;montrer que ses activit&eacute;s b&eacute;n&eacute;ficient aux r&eacute;sidents d&rsquo;Ormstown et du Haut-Saint-Laurent. Il doit fournir ses lettres patentes ou statuts constitutifs, la liste &agrave; jour des membres du conseil d&rsquo;administration, ses &eacute;tats financiers ou un rapport financier annuel, et un rapport d&rsquo;activit&eacute;s annuel. Le formulaire et les pi&egrave;ces justificatives vont au Service de la culture et des loisirs; l&rsquo;administration analyse le dossier et le conseil tranche par r&eacute;solution.</p>
+
+  <h2>Ce que la reconnaissance donne r&eacute;ellement</h2>
+
+  <p>L&rsquo;article 7 m&eacute;rite une lecture attentive. La reconnaissance <em>peut</em> donner acc&egrave;s &mdash; selon les ressources disponibles et les d&eacute;cisions du conseil &mdash; &agrave; l&rsquo;utilisation de locaux ou d&rsquo;infrastructures municipales <strong>&agrave; un tarif pr&eacute;f&eacute;rentiel</strong>, &agrave; certains &eacute;quipements municipaux, &agrave; la diffusion d&rsquo;activit&eacute;s par les outils de communication municipaux, &agrave; un soutien logistique conform&eacute;ment au <em>Programme de soutien logistique aux activit&eacute;s et aux &eacute;v&eacute;nements</em>, et &agrave; une aide financi&egrave;re ponctuelle ou r&eacute;currente conform&eacute;ment &agrave; la <em>Politique en mati&egrave;re d&rsquo;aide financi&egrave;re, de partenariat et de bourse</em>. La politique ajoute ensuite une phrase nette&nbsp;: la reconnaissance ne garantit pas une aide financi&egrave;re ou un soutien logistique.</p>
+
+  <p>Cette formulation diff&egrave;re de la description faite &agrave; la table du conseil, o&ugrave; les organismes reconnus ont &eacute;t&eacute; pr&eacute;sent&eacute;s comme ayant droit &agrave; des locations gratuites (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5181">01:26:21</a>). Les organismes qui pr&eacute;parent leur budget annuel devraient s&rsquo;appuyer sur le texte publi&eacute;, qui parle de tarif pr&eacute;f&eacute;rentiel, et valider leur situation aupr&egrave;s du Service de la culture et des loisirs. La gratuit&eacute; d&rsquo;une salle municipale existe bel et bien &agrave; Ormstown &mdash; le m&ecirc;me soir, le conseil l&rsquo;a accord&eacute;e aux cours de danse country au point 10.3 (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=4949">01:22:29</a>) &mdash; mais par une d&eacute;cision distincte du conseil, et non comme cons&eacute;quence automatique de la reconnaissance.</p>
+
+  <h2>La r&egrave;gle de la demi-journ&eacute;e</h2>
+
+  <p>Le changement de fond, c&rsquo;est l&rsquo;article 7.1. Chaque organisme reconnu b&eacute;n&eacute;ficie d&rsquo;une priorit&eacute; de r&eacute;servation &agrave; tarif pr&eacute;f&eacute;rentiel pour un maximum d&rsquo;une demi-journ&eacute;e par semaine, par installation. Une demi-journ&eacute;e signifie au plus quatre heures cons&eacute;cutives, ou toute autre plage d&eacute;termin&eacute;e par la Municipalit&eacute; &mdash; un avant-midi, un apr&egrave;s-midi, une soir&eacute;e.</p>
+
+  <p>Tout ce qui d&eacute;passe cette limite devient une &laquo;&nbsp;plage horaire additionnelle&nbsp;&raquo;. Ces plages peuvent &ecirc;tre accord&eacute;es selon les disponibilit&eacute;s, mais la politique les qualifie de conditionnelles, non garanties et sujettes &agrave; r&eacute;vision. Si un organisme reconnu qui n&rsquo;a pas encore b&eacute;n&eacute;fici&eacute; de sa demi-journ&eacute;e hebdomadaire demande une plage d&eacute;j&agrave; accord&eacute;e &agrave; un autre &agrave; titre additionnel, la Municipalit&eacute; peut revoir l&rsquo;attribution. Elle peut alors r&eacute;attribuer la plage &agrave; l&rsquo;organisme qui n&rsquo;a pas eu sa demi-journ&eacute;e, instaurer une rotation entre les organismes, proposer une plage de rechange ou prendre toute autre mesure visant une r&eacute;partition &eacute;quitable des installations. Une plage additionnelle ne constitue jamais un droit acquis.</p>
+
+  <p>La politique r&eacute;serve aussi &agrave; la Municipalit&eacute; le droit de modifier, de suspendre ou d&rsquo;annuler toute plage horaire &mdash; additionnelle ou non &mdash; sans avoir &agrave; en justifier les motifs, avec un pr&eacute;avis &agrave; l&rsquo;organisme concern&eacute; lorsque possible.</p>
+
+  <h2>Deux aides financi&egrave;res &eacute;valu&eacute;es le m&ecirc;me soir</h2>
+
+  <p>Le conseil a trait&eacute; deux demandes d&rsquo;aide juste apr&egrave;s l&rsquo;adoption de la politique. Il a accord&eacute; 500&nbsp;$ au Club Lions Ormstown pour les c&eacute;l&eacute;brations de son 65<sup>e</sup> anniversaire, en pr&eacute;cisant que la demande avait &eacute;t&eacute; analys&eacute;e conform&eacute;ment au programme d&rsquo;aide financi&egrave;re (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5326">01:28:46</a>), et 2&nbsp;000&nbsp;$ &agrave; la SABEC &mdash; un service d&rsquo;accompagnement b&eacute;n&eacute;vole qui conduit des r&eacute;sidents d&rsquo;Ormstown et du Haut-Saint-Laurent &agrave; leurs rendez-vous m&eacute;dicaux &mdash; pour soutenir sa mission et ses services (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5418">01:30:18</a>). Aucune des deux n&rsquo;a suscit&eacute; d&rsquo;opposition enregistr&eacute;e. Le conseil a par ailleurs proclam&eacute; 2026 ann&eacute;e du 65<sup>e</sup> anniversaire du Club Lions.</p>
+
+  <h2>Ce que vous pouvez faire</h2>
+
+  <p>Tout OBNL actif &agrave; Ormstown peut demander le statut d&rsquo;organisme reconnu. Demandez le formulaire au Service de la culture et des loisirs, rassemblez les documents &eacute;num&eacute;r&eacute;s &agrave; l&rsquo;article 5, et attendez-vous &agrave; ce que la d&eacute;cision prenne la forme d&rsquo;une r&eacute;solution du conseil. Lisez l&rsquo;article 4 pour trouver votre cat&eacute;gorie, l&rsquo;article 7 pour le soutien qui s&rsquo;y rattache, et l&rsquo;article 7.1 avant de planifier un horaire hebdomadaire&nbsp;: si votre organisme occupe actuellement une plage r&eacute;currente au-del&agrave; d&rsquo;une demi-journ&eacute;e par semaine, ce temps est class&eacute; comme additionnel et peut &ecirc;tre r&eacute;vis&eacute;. La reconnaissance peut aussi &ecirc;tre suspendue ou retir&eacute;e par r&eacute;solution du conseil, mais la politique garantit &agrave; l&rsquo;organisme l&rsquo;occasion de pr&eacute;senter ses observations au pr&eacute;alable.</p>
+
+  <div class="article-footer">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/Politique-reconnaissance-organismes_2026-09-08_WEB.pdf"><em>Politique de reconnaissance et de soutien aux organismes</em>, r&eacute;solution 26-09-255, en vigueur le 8 septembre 2026</a> (ormstown.ca)</li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/000-Ordre-du-jour-2026-09-08_Avec-certificat-de-publication_signe.pdf">Ordre du jour, s&eacute;ance ordinaire du 8 septembre 2026, points 10.3 et 10.5 &agrave; 10.8</a> (ormstown.ca)</li>
+      <li>Enregistrement de la s&eacute;ance&nbsp;: <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=4949">01:22:29</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5089">01:24:49</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5136">01:25:36</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5181">01:26:21</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5229">01:27:09</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5326">01:28:46</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5418">01:30:18</a></li>
+    </ul>
+    <p class="disclaimer"><strong>&Agrave; propos de cet article.</strong> Cet article est publi&eacute; &agrave; titre de service public par The Ormstown Observer. <strong>The Ormstown Observer est une publication ind&eacute;pendante. Elle n&rsquo;est ni affili&eacute;e &agrave; la Municipalit&eacute; d&rsquo;Ormstown, ni endoss&eacute;e par elle, et ne parle pas en son nom.</strong> Il a &eacute;t&eacute; pr&eacute;par&eacute; &agrave; partir de la politique publi&eacute;e sur ormstown.ca, de l&rsquo;ordre du jour publi&eacute; et de l&rsquo;enregistrement de la s&eacute;ance publique. La politique publi&eacute;e constitue le texte faisant foi. L&rsquo;Observer corrigera toute erreur au dossier. Questions ou corrections&nbsp;: <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a></p>
+  </div>
+
+</main>
+
+</body>
+</html>
