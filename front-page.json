@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-16T03:00:59.745Z",
+  "generated_at": "2026-10-16T03:13:18.036Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -50,43 +50,9 @@
         "alt_en": "",
         "alt_fr": ""
       }
-    },
-    {
-      "slug": "bylaws-regulations-fees-39-2026",
-      "path_en": "/en/bylaws-regulations/fees-39-2026/",
-      "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
-      "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
-      "deck_en": "Bylaw 39-2026, in force since June 1, 2026, is the municipality’s price list: two annexes of numbered lines, running from 1 to 87, from a $0.50 photocopy to a $2,000 request to change a planning bylaw. Every fee is payable before the service is delivered.",
-      "deck_fr": "Le Règlement 39-2026, en vigueur depuis le 1er juin 2026, est la liste de prix de la Municipalité : deux annexes de lignes numérotées de 1 à 87, de la photocopie à 0,50 $ à la demande de modification d’un règlement d’urbanisme à 2 000 $. Tous les tarifs sont payables avant la prestation du service.",
-      "meta_en": "October 15, 2026",
-      "meta_fr": "15 octobre 2026",
-      "cta_en": "Read the explainer →",
-      "cta_fr": "Lire l’explicateur →",
-      "icon": "bylaws",
-      "date_published": "2026-10-15",
-      "image": {
-        "src": "/images/bylaws-regulations-fees-39-2026.jpg",
-        "position": "center",
-        "credit": "",
-        "alt_en": "",
-        "alt_fr": ""
-      }
     }
   ],
   "latest": [
-    {
-      "slug": "bylaws-regulations-fees-39-2026",
-      "path_en": "/en/bylaws-regulations/fees-39-2026/",
-      "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
-      "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
-      "date_published": "2026-10-15"
-    },
     {
       "slug": "council-watch-council-asks-quebec-to-ban-trucks",
       "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
@@ -105,6 +71,16 @@
       "label_fr": "Communauté",
       "hed_en": "Who gets the Rec-Center? Ormstown's new policy for local non-profit organizations",
       "hed_fr": "Qui obtient la salle? Les nouvelles règles d'Ormstown",
+      "date_published": "2026-10-15"
+    },
+    {
+      "slug": "bylaws-regulations-fees-39-2026",
+      "path_en": "/en/bylaws-regulations/fees-39-2026/",
+      "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
+      "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
       "date_published": "2026-10-15"
     },
     {
@@ -436,17 +412,6 @@
       "total": 13,
       "items": [
         {
-          "slug": "bylaws-regulations-fees-39-2026",
-          "path_en": "/en/bylaws-regulations/fees-39-2026/",
-          "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
-          "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
-          "date_published": "2026-10-15",
-          "part": null
-        },
-        {
           "slug": "council-watch-council-asks-quebec-to-ban-trucks",
           "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
           "path_fr": "/fr/conseil-municipal/demande-interdire-camions-trois-rues/",
@@ -465,6 +430,17 @@
           "label_fr": "Communauté",
           "hed_en": "Who gets the Rec-Center? Ormstown's new policy for local non-profit organizations",
           "hed_fr": "Qui obtient la salle? Les nouvelles règles d'Ormstown",
+          "date_published": "2026-10-15",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-fees-39-2026",
+          "path_en": "/en/bylaws-regulations/fees-39-2026/",
+          "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
+          "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
           "date_published": "2026-10-15",
           "part": null
         },
