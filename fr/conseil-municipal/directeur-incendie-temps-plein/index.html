@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('observerTheme');if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ormstown veut un directeur incendie à temps plein et un nouveau plan d&rsquo;urgence &mdash; The Ormstown Observer</title>
+<meta name="description" content="À la séance du 8 septembre, le conseil a lancé la dotation d’un poste de directeur à temps plein au Service de sécurité incendie et confié à une firme la refonte complète du plan municipal de sécurité civile, en quatre phases.">
+<link rel="canonical" href="https://ormstownobserver.ca/fr/conseil-municipal/directeur-incendie-temps-plein/">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/full-time-fire-chief-emergency-plan/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/directeur-incendie-temps-plein/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .article-wrap { max-width: 800px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  .back-link { display: inline-block; margin-bottom: 22px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .back-link:hover { color: var(--accent); }
+
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
+  .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+
+  h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
+  h3 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 36px 0 10px; }
+  /* observer-header.js injects h1,h2,h3{margin:0} after this block; body h2/h3 outranks it */
+  body h2 { margin: 48px 0 14px; }
+  body h3 { margin: 36px 0 10px; }
+  p { margin: 0 0 16px; }
+  p.lede { font-size: 1.08rem; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  .fact-box { background: var(--sidebar); border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .fact-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+  .fact-box ul { margin-bottom: 0; }
+
+  .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 14px 18px; margin: 20px 0; border-radius: 2px; font-size: 0.95rem; }
+  .note-box strong { color: var(--pending); }
+
+  .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
+  .status-badge .status-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
+  .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
+  .status-badge.confirmed { background: #e8f3ea; color: var(--confirm); border: 1px solid #b8dcc0; }
+  .status-badge.preview { background: var(--accent-light); color: var(--accent); border: 1px solid #e3c4c5; }
+
+  blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
+  blockquote cite { display: block; margin-top: 8px; font-size: 0.75rem; font-style: normal; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+  figure.article-figure { margin: 28px 0; }
+  figure.article-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border); }
+  figure.article-figure figcaption { font-size: 0.85rem; color: var(--muted); padding-top: 8px; line-height: 1.5; }
+  figure.article-figure figcaption .credit { font-style: italic; }
+
+  .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  .article-footer h3 { font-size: 1rem; font-style: normal; margin-top: 0; }
+  .article-footer li { margin-bottom: 8px; }
+
+  .disclaimer { margin-top: 14px; font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .disclaimer strong { color: var(--ink); }
+
+  /* Phones: comfortable tap targets + running text (2026-10-14) */
+  @media (max-width: 560px) {
+    .back-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: -13px; margin-bottom: 9px; }
+    .disclaimer, .article-footer { font-size: 0.94rem; }
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+<link rel="stylesheet" href="/article-night.css">
+</head>
+<body>
+
+<!-- MASTHEAD -->
+
+<main class="article-wrap">
+  <a class="back-link" href="/fr/conseil-municipal/">&larr; Conseil municipal</a>
+
+  <div class="section-label">Conseil municipal &middot; Séance ordinaire</div>
+
+  <h1 class="article-headline">Ormstown veut un directeur incendie à temps plein et un nouveau plan d&rsquo;urgence</h1>
+
+  <p class="article-deck">À la séance du 8 septembre, le conseil a lancé la dotation d&rsquo;un poste de directeur à temps plein au Service de sécurité incendie et confié à une firme la refonte complète du plan municipal de sécurité civile, en quatre phases.</p>
+
+  <div class="byline">
+    The Ormstown Observer &middot; Conseil municipal &middot; 16 octobre 2026 &middot; Séance ordinaire du 8 septembre 2026 &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M">Voir l&rsquo;enregistrement complet sur YouTube &rarr;</a>
+  </div>
+
+  <p class="lede">Deux décisions prises à quelques minutes d&rsquo;intervalle le 8 septembre changent la façon dont Ormstown répond à une urgence&nbsp;: qui dirige le service incendie au quotidien, et ce que fait la Municipalité quand le sinistre dépasse un incendie.</p>
+
+  <p><strong>Une direction à temps plein au Service de sécurité incendie (point 4.3).</strong> Le président d&rsquo;assemblée a présenté le poste d&rsquo;abord comme une obligation de conformité. Les lois, règlements et orientations ministérielles qui encadrent les services d&rsquo;incendie municipaux sont de plus en plus normés, a-t-il expliqué, et la MRC du Haut-Saint-Laurent s&rsquo;est dotée d&rsquo;un schéma de couverture de risques en sécurité incendie qu&rsquo;Ormstown doit appliquer &mdash; ce qui oblige la Municipalité à produire un plan de mise en œuvre et à le réaliser (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=2864">00:47:44</a>). L&rsquo;objectif énoncé&nbsp;: la sécurité des pompiers comme celle des citoyennes et citoyens, avec la réserve que la charge de travail est importante. Le maire et deux conseillers, à titre de représentants du conseil au comité de sécurité civile, ont rencontré deux fois en août les officiers et les équipes de pompiers pour faire le tour de ces dossiers (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=2864">00:47:44</a>).</p>
+
+  <p>Le conseil a aussi reçu un rapport sur les tâches et responsabilités en incendie qui, selon le président d&rsquo;assemblée, fait état de la nécessité d&rsquo;assurer une direction à temps plein du service; le conseil a jugé nécessaire de doter le poste à temps complet afin d&rsquo;assurer la continuité et la bonne gestion du service (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=2913">00:48:33</a>).</p>
+
+  <p>La résolution telle que lue autorise la Direction générale à mener le processus de dotation conformément aux politiques et procédures de la Municipalité &mdash; afficher le poste, analyser les candidatures, tenir les entrevues et formuler une recommandation au conseil &mdash; et à déterminer les conditions administratives applicables au poste, dont la rémunération et les avantages sociaux, conformément aux politiques et aux budgets de la Municipalité. Le directeur général a été autorisé à signer tout document requis (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=2960">00:49:20</a>). Aucun conseiller n&rsquo;a été entendu voter contre. Aucune échelle salariale n&rsquo;a été énoncée en séance publique; le texte final de la résolution sera confirmé au procès-verbal.</p>
+
+  <p><strong>Une refonte complète du plan de sécurité civile (point 8.2).</strong> La Municipalité souhaite une révision complète de ses plans de mesures d&rsquo;urgence, afin d&rsquo;avoir des plans modernes et adaptés à la situation actuelle &mdash; ces plans qui guident la Municipalité pour protéger la population et les biens en cas de catastrophe ou de crise majeure (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=3768">01:02:48</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=3816">01:03:36</a>). Plusieurs demandes ont été faites et une offre a été reçue, celle de Prud&rsquo;Homme Groupe coopératif, datée du 20 août 2026, pour accompagner la Municipalité dans la révision et la production de son plan municipal de sécurité civile. La démarche se fait en quatre phases&nbsp;: la création d&rsquo;un comité municipal de sécurité civile &mdash; le président d&rsquo;assemblée a précisé que les personnes qui y siégeront ont déjà été désignées &mdash; la visite du territoire, l&rsquo;analyse des risques et la production du plan (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=3816">01:03:36</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=3864">01:04:24</a>). Les honoraires annoncés s&rsquo;élèvent à 23&nbsp;393&nbsp;$ plus les taxes. Le conseil a accepté l&rsquo;offre et autorisé le directeur général et greffier-trésorier à signer le contrat de service; aucun conseiller n&rsquo;a été entendu voter contre (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=3910">01:05:10</a>).</p>
+
+  <p><strong>L&rsquo;engagement obtenu par une citoyenne.</strong> À la deuxième période de questions, réservée aux points à l&rsquo;ordre du jour, une citoyenne a soulevé le point 8.2 en rappelant que la sécurité civile fait partie des rares exceptions permettant à une municipalité québécoise de communiquer dans une autre langue que le français &mdash; avec la santé et la justice naturelle &mdash; et a demandé que tout ce qui sera communiqué à la population dans le cadre du nouveau plan soit disponible à la fois en français et en anglais. Le maire a dit prendre note de la demande et qu&rsquo;elle serait satisfaite si c&rsquo;est légalement possible, confirmant que la sécurité civile figure parmi les exclusions tout en indiquant que la Municipalité vérifiera avant d&rsquo;agir (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5556">01:32:36</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5601">01:33:21</a>).</p>
+
+  <p><strong>Le contexte&nbsp;: une équipe sous pression.</strong> À la période de questions générale du début de séance, le directeur général a décrit un portrait d&rsquo;effectifs qui pèse sur toute nouvelle embauche &mdash; le poste de greffière vacant depuis mai, le DG en assumant les fonctions, celui de directeur des travaux publics vide depuis juillet, et des postes de cols bleus non comblés depuis le printemps faute de candidatures qualifiées (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=929">00:15:29</a>).</p>
+
+  <p><strong>Également déposé&nbsp;:</strong> le point 8.1, le rapport mensuel du Service de sécurité incendie, a été déposé sans débat. Le président d&rsquo;assemblée a rapporté 12 interventions en juillet 2026 &mdash; un incendie de bâtiment rue Lambton (le restaurant Casa), trois alarmes incendie, deux appels d&rsquo;entraide à d&rsquo;autres municipalités et deux appels pour des installations électriques, les vérifications et appels administratifs plus petits n&rsquo;étant pas détaillés (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=3720">01:02:00</a>). L&rsquo;ordre du jour publié inscrit le point 8.1 comme le rapport de juin 2026; le président d&rsquo;assemblée a annoncé juillet. Le procès-verbal tranchera le mois réellement déposé.</p>
+
+  <h2>Ce que vous pouvez faire</h2>
+
+  <ul>
+    <li><strong>Surveiller l&rsquo;affichage du poste.</strong> Le poste de directeur du Service de sécurité incendie sera affiché publiquement, les conditions et la rémunération étant fixées administrativement avant qu&rsquo;une recommandation revienne au conseil. Consultez <a href="https://www.ormstown.ca">ormstown.ca</a> et demandez au conseil de publier l&rsquo;échelle salariale avec l&rsquo;affichage.</li>
+    <li><strong>Demander les documents de fond.</strong> Le schéma de couverture de risques de la MRC, le plan de mise en œuvre d&rsquo;Ormstown et &mdash; une fois produit &mdash; le plan municipal de sécurité civile peuvent être demandés au secrétariat à l&rsquo;hôtel de ville; le maire a confirmé à la même séance que les documents qui sous-tendent les décisions du conseil sont accessibles sur demande, selon un processus au secrétariat.</li>
+    <li><strong>Tenir l&rsquo;engagement de bilinguisme.</strong> Le maire s&rsquo;est engagé à diffuser les communications publiques du plan en anglais comme en français là où la loi le permet. Le premier test sera le premier avis émis par le nouveau comité.</li>
+    <li><strong>Suivre le comité.</strong> Le comité municipal de sécurité civile se met en place comme première phase du contrat. Demandez au conseil qui y siège et si ses travaux seront rendus publics.</li>
+  </ul>
+
+  <div class="article-footer">
+    <h3>Sources</h3>
+    <ul>
+      <li>Ordre du jour &mdash; séance du 8 septembre 2026 (points 4.3, 8.1, 8.2)&nbsp;: <a href="https://www.ormstown.ca/wp-content/uploads/000-Ordre-du-jour-2026-09-08_Avec-certificat-de-publication_signe.pdf">ormstown.ca</a></li>
+      <li>Procès-verbal &mdash; séance du 3 août 2026&nbsp;: <a href="https://www.ormstown.ca/wp-content/uploads/PV_2026-08-03_WEB.pdf">ormstown.ca</a></li>
+      <li>Enregistrement de la séance&nbsp;: <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=2864">00:47:44</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=2913">00:48:33</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=2960">00:49:20</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=3720">01:02:00</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=3816">01:03:36</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=3864">01:04:24</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5556">01:32:36</a> &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5601">01:33:21</a></li>
+      <li>Les textes des résolutions des points 4.3 et 8.2 seront confirmés au procès-verbal de la séance du 8 septembre 2026, dès sa publication sur <a href="https://www.ormstown.ca">ormstown.ca</a>.</li>
+    </ul>
+    <p class="disclaimer"><strong>À propos de cet article.</strong> Cet article est publié à titre de service public par The Ormstown Observer. <strong>The Ormstown Observer est une publication indépendante. Elle n&rsquo;est ni affiliée à la Municipalité d&rsquo;Ormstown, ni endossée par elle, et ne parle pas en son nom.</strong> Il a été préparé à partir de l&rsquo;enregistrement de la séance publique. Le procès-verbal officiel constitue le document faisant foi. L&rsquo;Observer corrigera toute erreur au dossier. Questions ou corrections&nbsp;: <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a></p>
+  </div>
+
+</main>
+
+</body>
+</html>
