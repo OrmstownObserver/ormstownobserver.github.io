@@ -10,7 +10,7 @@
 <link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/finances/budget/?lang=en">
 
 <script>(function(){try{var t=localStorage.getItem('observerTheme');
-if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
 <script>(function(){try{
   var q=new URLSearchParams(location.search).get('lang');
   var l=(q==='fr'||q==='en')?q:localStorage.getItem('observerLang');

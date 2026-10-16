@@ -439,10 +439,10 @@
   }
 
   // ── THEME LOGIC ──
-  // The toggle is only offered on pages that link observer.css. Legacy pages
-  // still carry hardcoded colours in their inline <style>, so flipping them to
-  // dark would leave white boxes and unreadable text — they stay light-only
-  // until converted. observer.css advertises itself with --obs-css.
+  // The toggle is only offered on pages whose colours invert: pages on
+  // observer.css, and article pages that load /article-night.css (the dark
+  // layer for their inline palettes, 2026-10-15). Both advertise themselves
+  // with --obs-css. A page with neither stays light-only.
   var themeBtn = document.getElementById('obs-theme-btn');
   var hasDesignSystem = false;
   try{
@@ -458,14 +458,9 @@
   if(themeBtn && hasDesignSystem){
     themeBtn.hidden = false;
 
-    var systemDark = function(){
-      try{ return window.matchMedia('(prefers-color-scheme: dark)').matches; }
-      catch(e){ return false; }
-    };
     var currentTheme = function(){
       var set = document.documentElement.getAttribute('data-theme');
-      if(set === 'dark' || set === 'light') return set;
-      return systemDark() ? 'dark' : 'light';
+      return set === 'light' ? 'light' : 'dark';
     };
 
     themeBtn.addEventListener('click', function(){
@@ -474,13 +469,11 @@
       try{ localStorage.setItem('observerTheme', next); } catch(e){}
     });
 
-    // Follow the system if the reader has never chosen explicitly.
-    try{
-      var savedTheme = localStorage.getItem('observerTheme');
-      if(savedTheme !== 'dark' && savedTheme !== 'light'){
-        document.documentElement.removeAttribute('data-theme');
-      }
-    }catch(e){}
+    // Night Edition is the default (2026-10-15): a reader who has never
+    // chosen gets dark; an explicit choice from the toggle always wins.
+    var savedTheme = null;
+    try{ savedTheme = localStorage.getItem('observerTheme'); }catch(e){}
+    document.documentElement.setAttribute('data-theme', savedTheme === 'light' ? 'light' : 'dark');
   }
 
   // ── LANG LOGIC ──

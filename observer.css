@@ -45,7 +45,8 @@
    a saved dark preference doesn't flash light on load:
 
      <script>(function(){try{var t=localStorage.getItem('observerTheme');
-     if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+     if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+   (Dark "Night Edition" is the default since 2026-10-15; the toggle saves 'light'.)
 
    The palette is the paper's own house system — ink #1a1a1a,
    paper #faf8f4, accent #b5161b, rule #c8b97a. Dark mode is the
