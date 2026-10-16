@@ -458,14 +458,9 @@
   if(themeBtn && hasDesignSystem){
     themeBtn.hidden = false;
 
-    var systemDark = function(){
-      try{ return window.matchMedia('(prefers-color-scheme: dark)').matches; }
-      catch(e){ return false; }
-    };
     var currentTheme = function(){
       var set = document.documentElement.getAttribute('data-theme');
-      if(set === 'dark' || set === 'light') return set;
-      return systemDark() ? 'dark' : 'light';
+      return set === 'light' ? 'light' : 'dark';
     };
 
     themeBtn.addEventListener('click', function(){
@@ -474,13 +469,11 @@
       try{ localStorage.setItem('observerTheme', next); } catch(e){}
     });
 
-    // Follow the system if the reader has never chosen explicitly.
-    try{
-      var savedTheme = localStorage.getItem('observerTheme');
-      if(savedTheme !== 'dark' && savedTheme !== 'light'){
-        document.documentElement.removeAttribute('data-theme');
-      }
-    }catch(e){}
+    // Night Edition is the default (2026-10-15): a reader who has never
+    // chosen gets dark; an explicit choice from the toggle always wins.
+    var savedTheme = null;
+    try{ savedTheme = localStorage.getItem('observerTheme'); }catch(e){}
+    document.documentElement.setAttribute('data-theme', savedTheme === 'light' ? 'light' : 'dark');
   }
 
   // ── LANG LOGIC ──
