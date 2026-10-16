@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-15T03:01:01.783Z",
+  "generated_at": "2026-10-16T02:05:03.646Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -76,23 +76,23 @@
       }
     },
     {
-      "slug": "bylaws-regulations-drinking-water-86-2024",
-      "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
-      "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
+      "slug": "bylaws-regulations-fees-39-2026",
+      "path_en": "/en/bylaws-regulations/fees-39-2026/",
+      "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
       "label_en": "Bylaws",
       "label_fr": "Règlements",
-      "hed_en": "The last digit of your address decides which day you can water your lawn",
-      "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
-      "deck_en": "Règlement 86-2024 governs every drop of municipal water in Ormstown — watering days by civic number, pool filling on alternating dates, spring driveway washing for six weeks only, and a February 1, 2027 deadline to rip out water-cooled air conditioners. Fines start at $250 and each day counts separately.",
-      "deck_fr": "Le Règlement 86-2024 encadre chaque goutte d'eau municipale à Ormstown — jours d'arrosage selon le numéro civique, remplissage des piscines en dates alternées, nettoyage printanier des entrées pendant six semaines seulement, et une échéance au 1er février 2027 pour se débarrasser des climatiseurs à l'eau potable.",
-      "meta_en": "August 4, 2026",
-      "meta_fr": "4 août 2026",
+      "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
+      "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
+      "deck_en": "Bylaw 39-2026, in force since June 1, 2026, is the municipality’s price list: two annexes of numbered lines, running from 1 to 87, from a $0.50 photocopy to a $2,000 request to change a planning bylaw. Every fee is payable before the service is delivered.",
+      "deck_fr": "Le Règlement 39-2026, en vigueur depuis le 1er juin 2026, est la liste de prix de la Municipalité : deux annexes de lignes numérotées de 1 à 87, de la photocopie à 0,50 $ à la demande de modification d’un règlement d’urbanisme à 2 000 $. Tous les tarifs sont payables avant la prestation du service.",
+      "meta_en": "October 15, 2026",
+      "meta_fr": "15 octobre 2026",
       "cta_en": "Read the explainer →",
       "cta_fr": "Lire l’explicateur →",
       "icon": "bylaws",
-      "date_published": "2026-08-04",
+      "date_published": "2026-10-15",
       "image": {
-        "src": "/images/bylaws-regulations-drinking-water-86-2024.jpg",
+        "src": "/images/bylaws-regulations-fees-39-2026.jpg",
         "position": "center",
         "credit": "",
         "alt_en": "",
@@ -101,6 +101,36 @@
     }
   ],
   "latest": [
+    {
+      "slug": "bylaws-regulations-fees-39-2026",
+      "path_en": "/en/bylaws-regulations/fees-39-2026/",
+      "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
+      "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
+      "date_published": "2026-10-15"
+    },
+    {
+      "slug": "council-watch-council-asks-quebec-to-ban-trucks",
+      "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
+      "path_fr": "/fr/conseil-municipal/demande-interdire-camions-trois-rues/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Ormstown council asks Quebec to ban trucks on three village streets",
+      "hed_fr": "Ormstown demande à Québec d'interdire les camions sur trois rues",
+      "date_published": "2026-10-15"
+    },
+    {
+      "slug": "council-watch-who-gets-the-rec-center",
+      "path_en": "/en/council-watch/who-gets-the-rec-center/",
+      "path_fr": "/fr/conseil-municipal/qui-obtient-la-salle/",
+      "label_en": "Community",
+      "label_fr": "Communauté",
+      "hed_en": "Who gets the Rec-Center? Ormstown's new policy for local non-profit organizations",
+      "hed_fr": "Qui obtient la salle? Les nouvelles règles d'Ormstown",
+      "date_published": "2026-10-15"
+    },
     {
       "slug": "bylaws-regulations-fire-prevention-155-2023",
       "path_en": "/en/bylaws-regulations/fire-prevention-155-2023/",
@@ -170,36 +200,6 @@
       "hed_en": "The last digit of your address decides which day you can water your lawn",
       "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
       "date_published": "2026-08-04"
-    },
-    {
-      "slug": "council-watch-august-3-2026",
-      "path_en": "/en/council-watch/august-3-2026/",
-      "path_fr": "/fr/conseil-municipal/3-aout-2026/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Council approves 24-unit Church Street project",
-      "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church",
-      "date_published": "2026-08-04"
-    },
-    {
-      "slug": "council-watch-borrowing-172-173-2026",
-      "path_en": "/en/council-watch/borrowing-172-173-2026/",
-      "path_fr": "/fr/conseil-municipal/emprunts-172-173-2026/",
-      "label_en": "Public money",
-      "label_fr": "Fonds publics",
-      "hed_en": "Two borrowing by-laws, $11.2 million. Prince-Albert, Cullen and Oliver — By-laws 172-2026 & 173-2026",
-      "hed_fr": "Deux règlements d'emprunt, 11,2 millions $. Prince-Albert, Cullen and Oliver — By-laws 172-2026 & 173-2026",
-      "date_published": "2026-08-02"
-    },
-    {
-      "slug": "council-watch-august-3-2026-preview",
-      "path_en": "/en/council-watch/august-3-2026-preview/",
-      "path_fr": "/fr/conseil-municipal/3-aout-2026-apercu/",
-      "label_en": "Council Watch · Preview",
-      "label_fr": "Conseil municipal · Aperçu",
-      "hed_en": "Council Meeting Preview: August 3, 2026 — Monday, August 3 · 6:30 p.m.",
-      "hed_fr": "Aperçu de la séance du conseil : 3 août 2026 — Monday, August 3 · 6:30 p.m.",
-      "date_published": "2026-08-01"
     }
   ],
   "latest_groups": [
@@ -457,8 +457,41 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 10,
+      "total": 13,
       "items": [
+        {
+          "slug": "bylaws-regulations-fees-39-2026",
+          "path_en": "/en/bylaws-regulations/fees-39-2026/",
+          "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
+          "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
+          "date_published": "2026-10-15",
+          "part": null
+        },
+        {
+          "slug": "council-watch-council-asks-quebec-to-ban-trucks",
+          "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
+          "path_fr": "/fr/conseil-municipal/demande-interdire-camions-trois-rues/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Ormstown council asks Quebec to ban trucks on three village streets",
+          "hed_fr": "Ormstown demande à Québec d'interdire les camions sur trois rues",
+          "date_published": "2026-10-15",
+          "part": null
+        },
+        {
+          "slug": "council-watch-who-gets-the-rec-center",
+          "path_en": "/en/council-watch/who-gets-the-rec-center/",
+          "path_fr": "/fr/conseil-municipal/qui-obtient-la-salle/",
+          "label_en": "Community",
+          "label_fr": "Communauté",
+          "hed_en": "Who gets the Rec-Center? Ormstown's new policy for local non-profit organizations",
+          "hed_fr": "Qui obtient la salle? Les nouvelles règles d'Ormstown",
+          "date_published": "2026-10-15",
+          "part": null
+        },
         {
           "slug": "bylaws-regulations-fire-prevention-155-2023",
           "path_en": "/en/bylaws-regulations/fire-prevention-155-2023/",
@@ -479,39 +512,6 @@
           "hed_en": "Gifts, conflicts of interest, confidentiality: the rules Ormstown's municipal staff must follow",
           "hed_fr": "Cadeaux, conflits d’intérêts, confidentialité : les règles que doit suivre le personnel municipal d’Ormstown",
           "date_published": "2026-10-12",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-urban-plan-147-2023",
-          "path_en": "/en/bylaws-regulations/urban-plan-147-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-plan-urbanisme-147-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Ormstown's urban plan: 11 land-use designations that the zoning bylaw must respect",
-          "hed_fr": "Le plan d'urbanisme d'Ormstown : 11 grandes affectations que le règlement de zonage doit respecter",
-          "date_published": "2026-10-12",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-demolition-145-2023",
-          "path_en": "/en/bylaws-regulations/demolition-145-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-demolition-145-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object",
-          "hed_fr": "Démolir un bâtiment à Ormstown ? Un comité de trois élus tranche, et tout le monde peut s’y opposer",
-          "date_published": "2026-10-07",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-environment-trees-148-2023",
-          "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Cutting down a tree in Ormstown? You need a permit for that",
-          "hed_fr": "Abattre un arbre à Ormstown? Il vous faut un certificat",
-          "date_published": "2026-08-04",
           "part": null
         }
       ],
