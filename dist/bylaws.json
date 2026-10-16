@@ -917,7 +917,11 @@
         "Build & renovate",
         "Animals",
         "Burning & fire"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/fees-39-2026/",
+        "fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/"
+      }
     },
     {
       "bylaw_number": "Règlement 41-2018",
