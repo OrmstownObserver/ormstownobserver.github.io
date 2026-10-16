@@ -1,0 +1,157 @@
+/* ============================================================
+   article-night.css — the Night Edition for article pages
+
+   Article pages (explainers, Council Watch, PIIA, editorials,
+   investigations) carry their own light palette in an inline
+   :root block and are not built on observer.css. This layer gives
+   them the same dark "Night Edition" as observer.css, WITHOUT
+   touching their light look: every rule below is scoped to
+   :root[data-theme="dark"], which outranks the inline :root.
+
+   Load it as the LAST stylesheet in <head>, after the page's
+   <style>, with the pre-paint script at the top of <head>:
+
+     <script>(function(){try{var t=localStorage.getItem('observerTheme');
+     if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+     <link rel="stylesheet" href="/article-night.css">
+
+   Values mirror observer.css's dark block (2026-10-14). Print
+   stays light: component overrides are screen-only, and the
+   tokens are reset for print at the end.
+   ============================================================ */
+
+/* observer-header.js shows the theme toggle only on pages whose
+   colours invert; this marker says this page's do. */
+:root { --obs-css: article-night; }
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  /* the shared article tokens */
+  --ink:          #e6eaf0;
+  --ink-light:    #9ba7b5;
+  --muted:        #9ba7b5;
+  --paper:        #0f141b;
+  --paper-dark:   #171e28;
+  --sidebar:      #171e28;
+  --accent:       #f2857d;
+  --accent-light: #2b1c22;
+  --accent-bg:    #2b1c22;
+  --rule:         #b4975a;
+  --border:       #253040;
+  --confirm:      #7fcf9b;
+  --warn:         #f59a94;
+  --pending:      #e3c072;
+  /* tokens a few pages define */
+  --callout:      #a9c1ec;
+  --callout-bg:   #172234;
+  --warning:      #e3c072;
+  --warning-bg:   #2a2414;
+  --obs:          #7fcf9b;
+  --bell:         #8fb3ef;
+  --cat-consultation: #f2857d;
+  --cat-bylaw:    #7fcf9b;
+  --cat-tender:   #e3c072;
+  --cat-other:    #9ba7b5;
+}
+
+@media screen {
+  :root[data-theme="dark"] body { background: var(--paper); color: var(--ink); }
+
+  /* Bars drawn in the ink colour (light text on near-black in light mode)
+     would turn pale in dark; keep them as dark bars. */
+  :root[data-theme="dark"] table.reso-table th,
+  :root[data-theme="dark"] table.qa-table th,
+  :root[data-theme="dark"] .qa-table th,
+  :root[data-theme="dark"] .preview-banner,
+  :root[data-theme="dark"] .ag-sec-head,
+  :root[data-theme="dark"] .filter-btn.active,
+  :root[data-theme="dark"] .inv-file-header,
+  :root[data-theme="dark"] .evidence-block .ev-header,
+  :root[data-theme="dark"] .zoning-map-caption,
+  :root[data-theme="dark"] .langbar a.on {
+    background: #090d12; color: #e6eaf0;
+  }
+  :root[data-theme="dark"] .preview-banner { border: 1px solid #253040; border-left: 8px solid var(--accent); }
+  :root[data-theme="dark"] .preview-banner .pb-title { color: #e6eaf0; }
+
+  /* .section-label is plain coral text on most pages, but a filled chip
+     (coral or ink background, white text) on a few: drop the fill in dark
+     so the chip version reads as white text on the dark ground. */
+  :root[data-theme="dark"] .section-label { background: transparent; }
+
+  /* White text on coral is only 2.5:1; use the dark ground colour. */
+  :root[data-theme="dark"] .steps li::before,
+  :root[data-theme="dark"] .body ol li::before,
+  :root[data-theme="dark"] .story-label,
+  :root[data-theme="dark"] .editorial-label,
+  :root[data-theme="dark"] .glance-tag,
+  :root[data-theme="dark"] .chip.active { color: #0f141b; }
+
+  /* Pale "paper" surfaces */
+  :root[data-theme="dark"] table.reso-table,
+  :root[data-theme="dark"] details.full-letter,
+  :root[data-theme="dark"] .notice-details,
+  :root[data-theme="dark"] .doc-details,
+  :root[data-theme="dark"] .explainer-card,
+  :root[data-theme="dark"] .note,
+  :root[data-theme="dark"] .zoning-map-wrap { background: #171e28; }
+
+  /* Yellow: unofficial / pending / notes / corrections */
+  :root[data-theme="dark"] .status-badge.unofficial,
+  :root[data-theme="dark"] .src-chip.src-rec,
+  :root[data-theme="dark"] .note-box,
+  :root[data-theme="dark"] .correction-box,
+  :root[data-theme="dark"] .pending-badge,
+  :root[data-theme="dark"] .minutes-pending { background: #2a2414; border-color: #6b5a2a; }
+  :root[data-theme="dark"] .note-box { border-left-color: #b4975a; }
+
+  /* Green: confirmed / minutes */
+  :root[data-theme="dark"] .status-badge.confirmed,
+  :root[data-theme="dark"] .src-chip.src-min,
+  :root[data-theme="dark"] .minutes-live,
+  :root[data-theme="dark"] .doc-meeting,
+  :root[data-theme="dark"] .badge-yes { background: #14261b; border-color: #2f5a3d; }
+
+  /* Blue: official documents */
+  :root[data-theme="dark"] .src-chip.src-doc,
+  :root[data-theme="dark"] .doc-link { background: #172234; border-color: #34425a; color: #a9c1ec; }
+  :root[data-theme="dark"] .doc-link:hover { background: #a9c1ec; color: #0f141b; }
+
+  /* Red: preview / Observer-in-the-room / no */
+  :root[data-theme="dark"] .status-badge.preview,
+  :root[data-theme="dark"] .src-chip.src-obs { border-color: #5a3038; }
+  :root[data-theme="dark"] .badge-no { background: #2b1c22; }
+
+  /* Hairline dividers drawn in fixed beige */
+  :root[data-theme="dark"] .ag-item,
+  :root[data-theme="dark"] .fact-box ul li,
+  :root[data-theme="dark"] .evidence-chain li,
+  :root[data-theme="dark"] .process-steps li,
+  :root[data-theme="dark"] .qa-table td,
+  :root[data-theme="dark"] .q-list li,
+  :root[data-theme="dark"] .letter-points li { border-bottom-color: #253040; }
+  :root[data-theme="dark"] .evidence-block { border-color: #2d3a4a; }
+  :root[data-theme="dark"] .qa-table tr:nth-child(even) td { background: rgba(255, 255, 255, .03); }
+
+  /* Investigations index: the 2px file box is drawn in ink (glaring white
+     in dark), and the big article numbers in the border colour (invisible). */
+  :root[data-theme="dark"] .inv-file { border-color: #34425a; }
+  :root[data-theme="dark"] .inv-art-num { color: #4f6077; }
+
+  /* Fixed green/red marks */
+  :root[data-theme="dark"] .question-list.allowed li::before { color: #7fcf9b; }
+  :root[data-theme="dark"] .question-list.blocked li::before { color: #f59a94; }
+
+  /* Photos and maps keep their own colours; just soften the frame. */
+  :root[data-theme="dark"] figure.article-figure img { border-color: #253040; }
+}
+
+/* Paper is light: print the light palette whatever the screen shows. */
+@media print {
+  :root[data-theme="dark"] {
+    color-scheme: light;
+    --ink: #1a1a1a; --ink-light: #444; --muted: #555; --paper: #fff; --paper-dark: #f0ece4;
+    --sidebar: #f5f2eb; --accent: #b5161b; --accent-light: #f5e8e8; --accent-bg: #f9efef;
+    --rule: #c8b97a; --border: #d4c9b8; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+}

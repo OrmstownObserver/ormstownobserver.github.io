@@ -439,10 +439,10 @@
   }
 
   // ── THEME LOGIC ──
-  // The toggle is only offered on pages that link observer.css. Legacy pages
-  // still carry hardcoded colours in their inline <style>, so flipping them to
-  // dark would leave white boxes and unreadable text — they stay light-only
-  // until converted. observer.css advertises itself with --obs-css.
+  // The toggle is only offered on pages whose colours invert: pages on
+  // observer.css, and article pages that load /article-night.css (the dark
+  // layer for their inline palettes, 2026-10-15). Both advertise themselves
+  // with --obs-css. A page with neither stays light-only.
   var themeBtn = document.getElementById('obs-theme-btn');
   var hasDesignSystem = false;
   try{
