@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-16T03:36:35.506Z",
+  "generated_at": "2026-10-16T12:31:10.763Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -26,8 +26,77 @@
     }
   },
   "rail": [],
-  "cards": [],
+  "cards": [
+    {
+      "slug": "council-watch-full-time-fire-chief-emergency-plan",
+      "path_en": "/en/council-watch/full-time-fire-chief-emergency-plan/",
+      "path_fr": "/fr/conseil-municipal/directeur-incendie-temps-plein/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Ormstown to hire a full-time fire chief, rewrite emergency plan",
+      "hed_fr": "Ormstown veut un directeur incendie à temps plein et un nouveau plan d'urgence",
+      "deck_en": "At the 8 September sitting, council opened a staffing process for a full-time director of the fire safety service and hired a consultant to rebuild the municipal civil-security plan in four phases.",
+      "deck_fr": "À la séance du 8 septembre, le conseil a lancé la dotation d'un poste de directeur à temps plein au Service de sécurité incendie et confié à une firme la refonte complète du plan municipal de sécurité civile, en quatre phases.",
+      "meta_en": "October 16, 2026",
+      "meta_fr": "16 octobre 2026",
+      "cta_en": "Read the recap →",
+      "cta_fr": "Lire le compte rendu →",
+      "icon": "council",
+      "date_published": "2026-10-16",
+      "image": {
+        "src": "/images/council-watch-full-time-fire-chief-emergency-plan.jpg",
+        "position": "top",
+        "credit": "",
+        "alt_en": "Fire badge Ormstown fire department",
+        "alt_fr": "Écusson du service des incendies d'Ormstown"
+      }
+    },
+    {
+      "slug": "council-watch-buys-three-lots-loop-water-main",
+      "path_en": "/en/council-watch/buys-three-lots-loop-water-main/",
+      "path_fr": "/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Ormstown buys into three private lots to loop the water main",
+      "hed_fr": "Ormstown acquiert des parcelles de trois terrains privés pour boucler l'aqueduc",
+      "deck_en": "Council approved three negotiated acquisitions on Cullen and Oliver — two servitudes and one strip of land — so the water network in that sector stops dead-ending.",
+      "deck_fr": "Le conseil a approuvé trois acquisitions de gré à gré sur les rues Cullen et Oliver — deux servitudes et une bande de terrain — pour que le réseau d'aqueduc cesse de se terminer en cul-de-sac dans ce secteur.",
+      "meta_en": "October 16, 2026",
+      "meta_fr": "16 octobre 2026",
+      "cta_en": "Read the recap →",
+      "cta_fr": "Lire le compte rendu →",
+      "icon": "council",
+      "date_published": "2026-10-16",
+      "image": {
+        "src": "/images/council-watch-buys-three-lots-loop-water-main.jpg",
+        "position": "center",
+        "credit": "",
+        "alt_en": "watermain",
+        "alt_fr": "conduite d'aqueduc"
+      }
+    }
+  ],
   "latest": [
+    {
+      "slug": "council-watch-full-time-fire-chief-emergency-plan",
+      "path_en": "/en/council-watch/full-time-fire-chief-emergency-plan/",
+      "path_fr": "/fr/conseil-municipal/directeur-incendie-temps-plein/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Ormstown to hire a full-time fire chief, rewrite emergency plan",
+      "hed_fr": "Ormstown veut un directeur incendie à temps plein et un nouveau plan d'urgence",
+      "date_published": "2026-10-16"
+    },
+    {
+      "slug": "council-watch-buys-three-lots-loop-water-main",
+      "path_en": "/en/council-watch/buys-three-lots-loop-water-main/",
+      "path_fr": "/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Ormstown buys into three private lots to loop the water main",
+      "hed_fr": "Ormstown acquiert des parcelles de trois terrains privés pour boucler l'aqueduc",
+      "date_published": "2026-10-16"
+    },
     {
       "slug": "council-watch-council-asks-quebec-to-ban-trucks",
       "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
@@ -107,26 +176,6 @@
       "hed_en": "Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object",
       "hed_fr": "Démolir un bâtiment à Ormstown ? Un comité de trois élus tranche, et tout le monde peut s’y opposer",
       "date_published": "2026-10-07"
-    },
-    {
-      "slug": "bylaws-regulations-drinking-water-86-2024",
-      "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
-      "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "The last digit of your address decides which day you can water your lawn",
-      "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
-      "date_published": "2026-08-04"
-    },
-    {
-      "slug": "bylaws-regulations-environment-trees-148-2023",
-      "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Cutting down a tree in Ormstown? You need a permit for that",
-      "hed_fr": "Abattre un arbre à Ormstown? Il vous faut un certificat",
-      "date_published": "2026-08-04"
     }
   ],
   "latest_groups": [
@@ -384,8 +433,30 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 13,
+      "total": 15,
       "items": [
+        {
+          "slug": "council-watch-full-time-fire-chief-emergency-plan",
+          "path_en": "/en/council-watch/full-time-fire-chief-emergency-plan/",
+          "path_fr": "/fr/conseil-municipal/directeur-incendie-temps-plein/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Ormstown to hire a full-time fire chief, rewrite emergency plan",
+          "hed_fr": "Ormstown veut un directeur incendie à temps plein et un nouveau plan d'urgence",
+          "date_published": "2026-10-16",
+          "part": null
+        },
+        {
+          "slug": "council-watch-buys-three-lots-loop-water-main",
+          "path_en": "/en/council-watch/buys-three-lots-loop-water-main/",
+          "path_fr": "/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Ormstown buys into three private lots to loop the water main",
+          "hed_fr": "Ormstown acquiert des parcelles de trois terrains privés pour boucler l'aqueduc",
+          "date_published": "2026-10-16",
+          "part": null
+        },
         {
           "slug": "council-watch-council-asks-quebec-to-ban-trucks",
           "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
@@ -417,28 +488,6 @@
           "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
           "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
           "date_published": "2026-10-15",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-fire-prevention-155-2023",
-          "path_en": "/en/bylaws-regulations/fire-prevention-155-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-prevention-incendies-155-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Ormstown's fire bylaw: a free permit for open fires, town approval for fireworks, and rules for smoke alarms",
-          "hed_fr": "Le règlement sur les incendies d’Ormstown : permis gratuit pour les feux à ciel ouvert, autorisation pour les feux d’artifice, règles pour les avertisseurs de fumée",
-          "date_published": "2026-10-14",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-employee-ethics-80-2022",
-          "path_en": "/en/bylaws-regulations/employee-ethics-80-2022/",
-          "path_fr": "/fr/bylaws-regulations/reglement-ethique-employes-80-2022/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Gifts, conflicts of interest, confidentiality: the rules Ormstown's municipal staff must follow",
-          "hed_fr": "Cadeaux, conflits d’intérêts, confidentialité : les règles que doit suivre le personnel municipal d’Ormstown",
-          "date_published": "2026-10-12",
           "part": null
         }
       ],
