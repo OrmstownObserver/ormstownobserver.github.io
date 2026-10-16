@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-16T03:13:18.036Z",
+  "generated_at": "2026-10-16T03:36:35.506Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -26,32 +26,7 @@
     }
   },
   "rail": [],
-  "cards": [
-    {
-      "slug": "bylaws-regulations-environment-trees-148-2023",
-      "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Cutting down a tree in Ormstown? You need a permit for that",
-      "hed_fr": "Abattre un arbre à Ormstown? Il vous faut un certificat",
-      "deck_en": "There is no standalone tree bylaw in Ormstown. The rules are buried in Chapter 12 of the zoning bylaw and in the permits bylaw, and they cover far more than trees: shorelines, flood plains, drinking-water intakes, snow dumping, and contaminated land.",
-      "deck_fr": "Il n'existe pas de règlement sur les arbres comme tel à Ormstown. Les règles sont enfouies dans le chapitre 12 du règlement de zonage et dans le règlement sur les permis, et elles couvrent bien plus que les arbres : les rives, les plaines inondables, les prises d'eau potable, le déversement de neige et les terrains contaminés.",
-      "meta_en": "August 4, 2026",
-      "meta_fr": "4 août 2026",
-      "cta_en": "Read the explainer →",
-      "cta_fr": "Lire l’explicateur →",
-      "icon": "bylaws",
-      "date_published": "2026-08-04",
-      "image": {
-        "src": "/images/bylaws-regulations-environment-trees-148-2023.jpg",
-        "position": "center",
-        "credit": "",
-        "alt_en": "",
-        "alt_fr": ""
-      }
-    }
-  ],
+  "cards": [],
   "latest": [
     {
       "slug": "council-watch-council-asks-quebec-to-ban-trucks",
@@ -134,16 +109,6 @@
       "date_published": "2026-10-07"
     },
     {
-      "slug": "bylaws-regulations-environment-trees-148-2023",
-      "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Cutting down a tree in Ormstown? You need a permit for that",
-      "hed_fr": "Abattre un arbre à Ormstown? Il vous faut un certificat",
-      "date_published": "2026-08-04"
-    },
-    {
       "slug": "bylaws-regulations-drinking-water-86-2024",
       "path_en": "/en/bylaws-regulations/drinking-water-86-2024/",
       "path_fr": "/fr/bylaws-regulations/reglement-eau-potable-86-2024/",
@@ -151,6 +116,16 @@
       "label_fr": "Règlements",
       "hed_en": "The last digit of your address decides which day you can water your lawn",
       "hed_fr": "Le dernier chiffre de votre adresse détermine le jour où vous pouvez arroser votre pelouse",
+      "date_published": "2026-08-04"
+    },
+    {
+      "slug": "bylaws-regulations-environment-trees-148-2023",
+      "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Cutting down a tree in Ormstown? You need a permit for that",
+      "hed_fr": "Abattre un arbre à Ormstown? Il vous faut un certificat",
       "date_published": "2026-08-04"
     }
   ],
