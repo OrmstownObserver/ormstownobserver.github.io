@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-15T03:01:01.783Z",
+  "generated_at": "2026-10-16T00:31:01.064Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -102,6 +102,16 @@
   ],
   "latest": [
     {
+      "slug": "council-watch-who-gets-the-rec-center",
+      "path_en": "/en/council-watch/who-gets-the-rec-center/",
+      "path_fr": "/fr/conseil-municipal/qui-obtient-la-salle/",
+      "label_en": "Community",
+      "label_fr": "Communauté",
+      "hed_en": "Who gets the Rec-Center? Ormstown's new policy for local non-profit organizations",
+      "hed_fr": "Qui obtient la salle? Les nouvelles règles d'Ormstown",
+      "date_published": "2026-10-15"
+    },
+    {
       "slug": "bylaws-regulations-fire-prevention-155-2023",
       "path_en": "/en/bylaws-regulations/fire-prevention-155-2023/",
       "path_fr": "/fr/bylaws-regulations/reglement-prevention-incendies-155-2023/",
@@ -190,16 +200,6 @@
       "hed_en": "Two borrowing by-laws, $11.2 million. Prince-Albert, Cullen and Oliver — By-laws 172-2026 & 173-2026",
       "hed_fr": "Deux règlements d'emprunt, 11,2 millions $. Prince-Albert, Cullen and Oliver — By-laws 172-2026 & 173-2026",
       "date_published": "2026-08-02"
-    },
-    {
-      "slug": "council-watch-august-3-2026-preview",
-      "path_en": "/en/council-watch/august-3-2026-preview/",
-      "path_fr": "/fr/conseil-municipal/3-aout-2026-apercu/",
-      "label_en": "Council Watch · Preview",
-      "label_fr": "Conseil municipal · Aperçu",
-      "hed_en": "Council Meeting Preview: August 3, 2026 — Monday, August 3 · 6:30 p.m.",
-      "hed_fr": "Aperçu de la séance du conseil : 3 août 2026 — Monday, August 3 · 6:30 p.m.",
-      "date_published": "2026-08-01"
     }
   ],
   "latest_groups": [
@@ -457,8 +457,19 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 10,
+      "total": 11,
       "items": [
+        {
+          "slug": "council-watch-who-gets-the-rec-center",
+          "path_en": "/en/council-watch/who-gets-the-rec-center/",
+          "path_fr": "/fr/conseil-municipal/qui-obtient-la-salle/",
+          "label_en": "Community",
+          "label_fr": "Communauté",
+          "hed_en": "Who gets the Rec-Center? Ormstown's new policy for local non-profit organizations",
+          "hed_fr": "Qui obtient la salle? Les nouvelles règles d'Ormstown",
+          "date_published": "2026-10-15",
+          "part": null
+        },
         {
           "slug": "bylaws-regulations-fire-prevention-155-2023",
           "path_en": "/en/bylaws-regulations/fire-prevention-155-2023/",
@@ -501,17 +512,6 @@
           "hed_en": "Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object",
           "hed_fr": "Démolir un bâtiment à Ormstown ? Un comité de trois élus tranche, et tout le monde peut s’y opposer",
           "date_published": "2026-10-07",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-environment-trees-148-2023",
-          "path_en": "/en/bylaws-regulations/environment-trees-148-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-environnement-arbres-148-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Cutting down a tree in Ormstown? You need a permit for that",
-          "hed_fr": "Abattre un arbre à Ormstown? Il vous faut un certificat",
-          "date_published": "2026-08-04",
           "part": null
         }
       ],
