@@ -188,7 +188,15 @@
      Replaced the grouped "Latest" lists (2026-10-13): a reader arriving on the
      front page picks a subject, not a date. Each card is one link to a page
      dedicated to that topic. */
-  .topics { border-top: 1px solid var(--border); padding: 28px 24px 8px; }
+  .topics { padding: 28px 24px 8px; }
+  /* Section break: the red O between two double rules, like a newspaper
+     dingbat. Replaces the plain border-top. */
+  .obs-break { display: flex; align-items: center; gap: 16px; margin: 0 0 24px; }
+  .obs-break::before, .obs-break::after {
+    content: ""; flex: 1; height: 4px;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  }
+  .obs-break img { width: 30px; height: 30px; display: block; flex: none; }
   .topics-head { max-width: 760px; margin-bottom: 18px; }
   .topics-head h2 {
     font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
@@ -452,24 +460,25 @@
      One card per subject, each leading to a page dedicated to it. Add a card
      only when that page exists, in both languages. -->
 <section class="topics" aria-labelledby="topics-h">
+  <div class="obs-break" aria-hidden="true"><img src="/app/favicon.svg" width="30" height="30" alt=""></div>
   <div class="topics-head">
-    <h2 id="topics-h"><span data-en>Explore by topic</span><span data-fr>Explorer par sujet</span></h2>
-    <p><span data-en>Each topic has its own page: the background, where things stand, and the Observer&rsquo;s coverage in one place.</span><span data-fr>Chaque sujet a sa propre page&nbsp;: le contexte, o&ugrave; en sont les choses, et la couverture de l&rsquo;Observer au m&ecirc;me endroit.</span></p>
+    <h2 id="topics-h"><span data-en>What the Observer is watching</span><span data-fr>Ce que l&rsquo;Observer surveille</span></h2>
+    <p><span data-en>We read the agendas, follow every sitting and keep the receipts. Here is where it all lives.</span><span data-fr>Nous lisons les ordres du jour, suivons chaque s&eacute;ance et gardons les pi&egrave;ces justificatives. Tout se trouve ici.</span></p>
   </div>
 
-  <div class="topic-group-label"><span data-en>The rules, the money, the council</span><span data-fr>Les r&egrave;gles, l&rsquo;argent, le conseil</span></div>
+  <div class="topic-group-label"><span data-en>What council decides</span><span data-fr>Ce que d&eacute;cide le conseil</span></div>
   <div class="topic-grid">
     <a class="topic-card" data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/" href="/en/bylaws-regulations/">
       <div class="topic-kicker"><span data-en>Reference</span><span data-fr>R&eacute;f&eacute;rence</span></div>
       <div class="topic-title"><span data-en>Bylaws &amp; Regulations</span><span data-fr>R&egrave;glements municipaux</span></div>
-      <div class="topic-text"><span data-en>Every Ormstown bylaw the Observer has catalogued: what it covers, whether it is in force, and a link to the official text. Plain-language explainers where we have written one.</span><span data-fr>Chaque r&egrave;glement d&rsquo;Ormstown r&eacute;pertori&eacute; par l&rsquo;Observer&nbsp;: ce qu&rsquo;il couvre, s&rsquo;il est en vigueur, et un lien vers le texte officiel. Des explicateurs en langage clair lorsque nous en avons r&eacute;dig&eacute; un.</span></div>
+      <div class="topic-text"><span data-en>Is that rule still in force? Look up a bylaw by number, title or subject, check its status and open the official text. Some come with a short explainer.</span><span data-fr>Cette r&egrave;gle est-elle toujours en vigueur? Cherchez un r&egrave;glement par num&eacute;ro, titre ou sujet, v&eacute;rifiez son statut et ouvrez le texte officiel. Certains sont accompagn&eacute;s d&rsquo;un court explicateur.</span></div>
       <div class="topic-meta"><span data-en>Searchable register</span><span data-fr>Registre consultable</span></div>
       <div class="topic-cta"><span data-en>Find a bylaw &rarr;</span><span data-fr>Trouver un r&egrave;glement &rarr;</span></div>
     </a>
     <a class="topic-card" data-href-en="/en/piia/" data-href-fr="/fr/piia/" href="/en/piia/">
       <div class="topic-kicker"><span data-en>Guide</span><span data-fr>Guide</span></div>
       <div class="topic-title"><span data-en>PIIA: when a project needs council&rsquo;s approval</span><span data-fr>Le PIIA&nbsp;: quand un projet exige l&rsquo;accord du conseil</span></div>
-      <div class="topic-text"><span data-en>A six-part plain-language guide to R&egrave;glement 152-2023: what it covers, where it applies in Ormstown, and how approval works, for homeowners and business owners alike.</span><span data-fr>Un guide en six parties, en langage clair, sur le R&egrave;glement 152-2023&nbsp;: ce qu&rsquo;il couvre, o&ugrave; il s&rsquo;applique &agrave; Ormstown et comment fonctionne l&rsquo;approbation, pour les propri&eacute;taires comme pour les commer&ccedil;ants.</span></div>
+      <div class="topic-text"><span data-en>Renovating in the heritage core, putting up a business sign, adding a second unit? See whether R&egrave;glement 152-2023 applies, what the CCU looks for, and who has the final say.</span><span data-fr>Vous r&eacute;novez dans le noyau patrimonial, installez une enseigne commerciale ou ajoutez un logement accessoire? Voyez si le R&egrave;glement 152-2023 s&rsquo;applique, ce que le CCU examine et qui a le dernier mot.</span></div>
       <div class="topic-meta"><span data-en>Complete &middot; 6 parts</span><span data-fr>Complet &middot; 6 parties</span></div>
       <div class="topic-cta"><span data-en>Read the guide &rarr;</span><span data-fr>Lire le guide &rarr;</span></div>
     </a>
@@ -482,38 +491,38 @@
         <div class="ledger-figure"><span data-en>$5,438,482</span><span data-fr>5&nbsp;438&nbsp;482&nbsp;$</span></div>
         <div class="ledger-sub"><span data-en>approved by council so far in 2026</span><span data-fr>approuv&eacute;s par le conseil jusqu&rsquo;ici en 2026</span></div>
       </div><!-- /ledger-mod -->
-      <div class="topic-text"><span data-en>Every payment council approves, searchable by supplier, category and sitting. Each line links to the official minutes it came from.</span><span data-fr>Chaque paiement approuv&eacute; par le conseil, cherchable par fournisseur, cat&eacute;gorie et s&eacute;ance. Chaque ligne renvoie au proc&egrave;s-verbal officiel dont elle provient.</span></div>
+      <div class="topic-text"><span data-en>Who got paid, for what, and when. Search by supplier, category or sitting; each line links back to the minutes.</span><span data-fr>Qui a &eacute;t&eacute; pay&eacute;, pour quoi et quand. Cherchez par fournisseur, cat&eacute;gorie ou s&eacute;ance; chaque ligne renvoie au proc&egrave;s-verbal.</span></div>
       <div class="topic-cta"><span data-en>Search the ledger &rarr;</span><span data-fr>Explorer le grand livre &rarr;</span></div>
     </a>
     <a class="topic-card" data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/" href="/en/council-watch/">
       <div class="topic-kicker"><span data-en>Every sitting</span><span data-fr>Chaque s&eacute;ance</span></div>
       <div class="topic-title"><span data-en>Council Watch</span><span data-fr>Conseil municipal</span></div>
-      <div class="topic-text"><span data-en>Plain-language recaps of every council sitting: what was decided, what was discussed, and what to watch next, from the public broadcast before the official minutes appear.</span><span data-fr>Comptes rendus en langage clair de chaque s&eacute;ance du conseil&nbsp;: ce qui a &eacute;t&eacute; d&eacute;cid&eacute;, ce qui a &eacute;t&eacute; discut&eacute; et ce qu&rsquo;il faut surveiller, tir&eacute;s de la diffusion publique avant le proc&egrave;s-verbal officiel.</span></div>
+      <div class="topic-text"><span data-en>What council decided, what it argued about and what comes next, written up from the broadcast weeks before the minutes are out.</span><span data-fr>Ce que le conseil a d&eacute;cid&eacute;, ce qu&rsquo;il a d&eacute;battu et ce qui s&rsquo;en vient, r&eacute;dig&eacute; &agrave; partir de la diffusion des semaines avant la parution du proc&egrave;s-verbal.</span></div>
       <div class="topic-meta"><span data-en>Recaps &amp; previews</span><span data-fr>Comptes rendus et aper&ccedil;us</span></div>
       <div class="topic-cta"><span data-en>All sittings &rarr;</span><span data-fr>Toutes les s&eacute;ances &rarr;</span></div>
     </a>
   </div>
 
-  <div class="topic-group-label"><span data-en>In-depth files and opinion</span><span data-fr>Dossiers de fond et opinion</span></div>
+  <div class="topic-group-label"><span data-en>Files we dug into, and where we stand</span><span data-fr>Nos dossiers de fond et nos positions</span></div>
   <div class="topic-grid topic-grid-3">
     <a class="topic-card" data-href-en="/en/bell-tower-complete/" data-href-fr="/fr/bell-tower-complete/" href="/en/bell-tower-complete/">
       <div class="topic-kicker"><span data-en>File</span><span data-fr>Dossier</span></div>
       <div class="topic-title"><span data-en>The Bell tower</span><span data-fr>La tour Bell</span></div>
-      <div class="topic-text"><span data-en>Ormstown&rsquo;s first federal telecommunications consultation, March to July 2026: a 36-metre Bell Mobilit&eacute; tower on municipal land near Route 138. What the rules required, what happened, and where the documents show gaps.</span><span data-fr>La premi&egrave;re consultation f&eacute;d&eacute;rale en t&eacute;l&eacute;communications d&rsquo;Ormstown, de mars &agrave; juillet 2026&nbsp;: une tour de 36&nbsp;m&egrave;tres de Bell Mobilit&eacute; sur un terrain municipal pr&egrave;s de la route 138. Ce que les r&egrave;gles exigeaient, ce qui s&rsquo;est pass&eacute; et o&ugrave; les documents montrent des lacunes.</span></div>
+      <div class="topic-text"><span data-en>A 36-metre Bell Mobilit&eacute; tower on municipal land near Route 138, and Ormstown&rsquo;s first federal telecom consultation. What the rules required, what actually happened, and where the paper trail has gaps.</span><span data-fr>Une tour de 36&nbsp;m&egrave;tres de Bell Mobilit&eacute; sur un terrain municipal pr&egrave;s de la route 138, et la premi&egrave;re consultation f&eacute;d&eacute;rale en t&eacute;l&eacute;communications d&rsquo;Ormstown. Ce que les r&egrave;gles exigeaient, ce qui s&rsquo;est r&eacute;ellement pass&eacute; et o&ugrave; les documents pr&eacute;sentent des lacunes.</span></div>
       <div class="topic-meta"><span data-en>Closed &middot; lease approved July 6</span><span data-fr>Clos &middot; bail approuv&eacute; le 6 juillet</span></div>
       <div class="topic-cta"><span data-en>See the whole file &rarr;</span><span data-fr>Voir tout le dossier &rarr;</span></div>
     </a>
     <a class="topic-card" data-href-en="/en/church-street/" data-href-fr="/fr/rue-church/" href="/en/church-street/">
       <div class="topic-kicker"><span data-en>File</span><span data-fr>Dossier</span></div>
       <div class="topic-title"><span data-en>Church Street: 24 units next to Le Toit Vert</span><span data-fr>Rue Church&nbsp;: 24 logements pr&egrave;s du Toit Vert</span></div>
-      <div class="topic-text"><span data-en>Four three-storey buildings on a vacant lot in zone R-7, approved as PPCMOI 2026-041. How a project open to a referendum cleared its public-input stage with almost no public awareness.</span><span data-fr>Quatre b&acirc;timents de trois &eacute;tages sur un lot vacant en zone R-7, approuv&eacute;s comme PPCMOI 2026-041. Comment un projet susceptible de r&eacute;f&eacute;rendum a franchi son &eacute;tape de participation publique sans que la population en soit pratiquement inform&eacute;e.</span></div>
+      <div class="topic-text"><span data-en>Four three-storey buildings on a vacant lot in zone R-7. How a project that could have gone to a referendum got through public consultation with almost no one knowing.</span><span data-fr>Quatre b&acirc;timents de trois &eacute;tages sur un lot vacant en zone R-7. Comment un projet qui aurait pu aller en r&eacute;f&eacute;rendum a franchi la consultation publique sans que presque personne ne le sache.</span></div>
       <div class="topic-meta"><span data-en>Approved August 3, 2026</span><span data-fr>Approuv&eacute; le 3 ao&ucirc;t 2026</span></div>
       <div class="topic-cta"><span data-en>See the whole file &rarr;</span><span data-fr>Voir tout le dossier &rarr;</span></div>
     </a>
     <a class="topic-card" data-href-en="/en/editorials/" data-href-fr="/fr/editoriaux/" href="/en/editorials/">
       <div class="topic-kicker"><span data-en>Opinion</span><span data-fr>Opinion</span></div>
       <div class="topic-title"><span data-en>Editorials</span><span data-fr>&Eacute;ditoriaux</span></div>
-      <div class="topic-text"><span data-en>The Observer&rsquo;s signed positions on governance, transparency and civic life in Ormstown, grounded in the public record and kept separate from news reporting.</span><span data-fr>Les positions sign&eacute;es de l&rsquo;Observer sur la gouvernance, la transparence et la vie civique &agrave; Ormstown, fond&eacute;es sur les documents publics et distinctes du reportage.</span></div>
+      <div class="topic-text"><span data-en>Signed opinion on governance, transparency and civic life in Ormstown, argued from the public record and kept apart from our news reporting.</span><span data-fr>Des textes d&rsquo;opinion sign&eacute;s sur la gouvernance, la transparence et la vie civique &agrave; Ormstown, appuy&eacute;s sur les documents publics et s&eacute;par&eacute;s de nos reportages.</span></div>
       <div class="topic-meta"><span data-en>Latest: the language policy</span><span data-fr>Dernier&nbsp;: la politique linguistique</span></div>
       <div class="topic-cta"><span data-en>Read the editorials &rarr;</span><span data-fr>Lire les &eacute;ditoriaux &rarr;</span></div>
     </a>
