@@ -230,12 +230,106 @@
       font-family:'Libre Baskerville',serif; font-weight:700;
       font-size:17px; color:var(--ink); margin-bottom:4px;
     }
+
+    /* ── INSTALL THE APP ──
+       Shown only where installing is possible and not already done: browsers
+       that fire beforeinstallprompt (Chrome, Edge, Samsung Internet) and
+       iPhone/iPad, where it opens the Add to Home Screen steps. Hidden
+       inside the installed app. Same [hidden] guard as .obs-theme. */
+    .obs-install[hidden]{display:none;}
+    .obs-install{
+      display:inline-flex; align-items:center; justify-content:center; gap:9px;
+      font-family:'Libre Baskerville',serif; font-weight:700; font-size:12.5px;
+      letter-spacing:.05em; line-height:1.2;
+      color:var(--ink); background:var(--paper);
+      border:1.5px solid var(--control-line, var(--ink));
+      padding:10px 18px; min-height:44px; cursor:pointer;
+      transition:background .15s,color .15s;
+    }
+    .obs-install:hover{background:var(--paper-dark);}
+    .obs-install svg{width:16px;height:16px;flex:none;}
+    .obs-footer .obs-install{margin:4px auto 16px;}
+    .obs-drawer .obs-install{width:100%; margin-top:28px;}
+
+    .obs-sheet[hidden]{display:none;}
+    .obs-sheet{
+      position:fixed; left:0; right:0; bottom:0; z-index:600;
+      max-width:520px; margin:0 auto;
+      background:var(--paper); color:var(--ink);
+      border-top:3px double var(--line, var(--ink));
+      box-shadow:0 -6px 28px rgba(0,0,0,.3);
+      padding:26px 24px calc(24px + env(safe-area-inset-bottom));
+      font-family:'Source Serif 4',Georgia,serif; line-height:1.5;
+    }
+    .obs-sheet-close{
+      position:absolute; top:10px; right:10px; background:none; border:none;
+      cursor:pointer; font-size:20px; color:var(--ink); padding:10px; line-height:1;
+    }
+    .obs-sheet-title{font-family:'Libre Baskerville',serif; font-weight:700; font-size:17px; margin:0 36px 6px 0;}
+    /* Not --ink-light: pages that don't redefine it (the homepage) keep this
+       file's #444, unreadable on the dark sheet. */
+    .obs-sheet-lede{font-size:14px; opacity:.82; margin:0 0 14px;}
+    .obs-sheet ol{margin:0; padding:0 0 0 22px; font-size:15px;}
+    .obs-sheet li{margin:0 0 10px; padding-left:4px;}
+    .obs-sheet li b{font-weight:700;}
+    .obs-sheet .obs-share-ico{width:17px;height:17px;vertical-align:-3px;margin:0 2px;}
+    .obs-sheet-webview[hidden]{display:none;}
+    .obs-sheet-webview{
+      font-size:14px; background:var(--paper-dark); border-left:3px solid var(--accent);
+      padding:10px 12px; margin:0 0 14px;
+    }
   `;
 
   // ── HTML ──
   var path = window.location.pathname;
   function isActive(href){ return path.indexOf(href) === 0 && href !== '/'; }
   var rootHref = '/';
+
+  var installBtn = `
+    <button class="obs-install" type="button" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path>
+      </svg>
+      <span data-en>Install the app</span><span data-fr>Installer l'application</span>
+    </button>`;
+
+  var shareIcon = `<svg class="obs-share-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 15V3M8 7l4-4 4 4M7 11H5v10h14V11h-2"></path></svg>`;
+
+  // iPhone/iPad have no install prompt a page can trigger, so the button
+  // opens these steps instead (checked against Safari on iOS 27, 2026-10-16).
+  var installSheet = `
+  <div class="obs-sheet" id="obs-sheet" role="dialog" aria-modal="true" aria-labelledby="obs-sheet-title" hidden>
+    <button class="obs-sheet-close" id="obs-sheet-close" type="button" aria-label="Close / Fermer">✕</button>
+    <div class="obs-sheet-title" id="obs-sheet-title">
+      <span data-en>Add the Observer to your home screen</span>
+      <span data-fr>Ajoutez l'Observer à votre écran d'accueil</span>
+    </div>
+    <p class="obs-sheet-lede">
+      <span data-en>It opens full screen like any app, and keeps the stories you've read for when you're offline.</span>
+      <span data-fr>Elle s'ouvre en plein écran comme toute application et garde les articles lus pour les moments sans connexion.</span>
+    </p>
+    <p class="obs-sheet-webview" id="obs-sheet-webview" hidden>
+      <span data-en>First open this page in Safari: tap <b>⋯</b> and choose <b>Open in browser</b>.</span>
+      <span data-fr>Ouvrez d'abord cette page dans Safari : touchez <b>⋯</b> puis <b>Ouvrir dans le navigateur</b>.</span>
+    </p>
+    <ol>
+      <li>
+        <span data-en>Tap <b>Share</b> ${shareIcon}. On newer iPhones it is in the menu button of the address bar.</span>
+        <span data-fr>Touchez <b>Partager</b> ${shareIcon}. Sur les iPhone récents, c'est dans le menu de la barre d'adresse.</span>
+      </li>
+      <li>
+        <span data-en>Choose <b>Add to Home Screen</b>. If it isn't listed, tap <b>View More</b> or scroll.</span>
+        <span data-fr>Choisissez <b>Sur l'écran d'accueil</b>. Si l'option n'apparaît pas, affichez plus d'options ou faites défiler.</span>
+      </li>
+      <li>
+        <span data-en>Tap <b>Add</b>.</span>
+        <span data-fr>Touchez <b>Ajouter</b>.</span>
+      </li>
+    </ol>
+  </div>`;
 
   var header = `
   <div class="obs-masthead">
@@ -326,12 +420,16 @@
         <span data-en>Contact</span><span data-fr>Contact</span>
       </a>
     </nav>
+    ${installBtn}
     <div class="obs-drawer-contact">
       <div style="font-family:'Libre Baskerville',serif;font-weight:700;font-size:15px;color:var(--ink);margin-bottom:4px;">
         <span data-en>The Ormstown Observer</span><span data-fr>L'Ormstown Observer</span>
       </div>
       <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a><br>
-      <span data-en>Independent civic journalism</span><span data-fr>Journalisme civique indépendant</span>
+      <span data-en>Independent civic journalism</span><span data-fr>Journalisme civique indépendant</span><br>
+      <a href="/en/privacy/" data-href-en="/en/privacy/" data-href-fr="/fr/confidentialite/">
+        <span data-en>Privacy</span><span data-fr>Confidentialité</span>
+      </a>
     </div>
   </div>`;
 
@@ -341,10 +439,12 @@
     <div class="obs-footer-name">
       <span data-en>The Ormstown Observer</span><span data-fr>L'Ormstown Observer</span>
     </div>
+    <div>${installBtn}</div>
     <span data-en>The Ormstown Observer is a bilingual civic watchdog covering the decisions, bylaws, and debates that shape Ormstown and the Haut-Saint-Laurent. A bilingual publication for a bilingual community.</span>
     <span data-fr>L'Ormstown Observer est une vigie civique bilingue qui couvre les décisions, règlements et débats qui façonnent Ormstown et le Haut-Saint-Laurent. Une publication bilingue pour une communauté bilingue.</span><br>
     <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a>
-  </footer>`;
+  </footer>
+  ${installSheet}`;
 
   // ── INJECT ──
   var styleEl = document.createElement('style');
@@ -421,8 +521,67 @@
     drawer.classList.contains('is-open') ? closeDrawer() : openDrawer();
   });
   closeBtn.addEventListener('click', closeDrawer);
-  scrim.addEventListener('click', closeDrawer);
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDrawer(); });
+  scrim.addEventListener('click', function(){ closeDrawer(); closeSheet(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeDrawer(); closeSheet(); } });
+
+  // ── INSTALL THE APP ──
+  var installBtns = document.querySelectorAll('.obs-install');
+  var sheet = document.getElementById('obs-sheet');
+  var sheetClose = document.getElementById('obs-sheet-close');
+  var sheetReturn = null;
+  var installPrompt = null;
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPad|iPhone|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  // Facebook and Instagram open links in their own browser, which cannot add
+  // to the home screen; the sheet tells those readers to switch to Safari.
+  var inWebview = /FBAN|FBAV|FB_IAB|Instagram/.test(ua);
+
+  function showInstall(on){
+    installBtns.forEach(function(b){ b.hidden = !on; });
+  }
+  function openSheet(){
+    sheetReturn = document.activeElement;
+    document.getElementById('obs-sheet-webview').hidden = !inWebview;
+    sheet.hidden = false;
+    scrim.classList.add('is-open');
+    sheetClose.focus();
+  }
+  function closeSheet(){
+    if(!sheet || sheet.hidden) return;
+    sheet.hidden = true;
+    scrim.classList.remove('is-open');
+    if(sheetReturn && sheetReturn.focus) sheetReturn.focus();
+  }
+  sheetClose.addEventListener('click', closeSheet);
+
+  if(!isApp){
+    if(isIOS) showInstall(true);
+    window.addEventListener('beforeinstallprompt', function(e){
+      e.preventDefault();
+      installPrompt = e;
+      showInstall(true);
+    });
+    window.addEventListener('appinstalled', function(){
+      installPrompt = null;
+      showInstall(false);
+    });
+  }
+
+  installBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      closeDrawer();
+      if(installPrompt){
+        var p = installPrompt;
+        installPrompt = null;   // a prompt can only be shown once
+        p.prompt();
+        // If the reader declines, the browser fires beforeinstallprompt
+        // again when it will allow another try, which brings the button back.
+        p.userChoice.then(function(){ showInstall(false); }).catch(function(){});
+        return;
+      }
+      openSheet();
+    });
+  });
 
   // ── BACK (installed app only) ──
   // Offered everywhere except the front page. With no history inside the app

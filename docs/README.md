@@ -8,6 +8,8 @@ This folder contains lightweight documentation for maintaining the site.
 - Where shared assets and scripts live
 - Community Compass and Bylaw Registries implementation rules:
   `docs/community-compass.md`
+- App install button and the plan for story alerts (web push):
+  `docs/app-notifications.md`
 
 ## Recommended workflow
 1. Create or update the relevant page in the appropriate language folder.
