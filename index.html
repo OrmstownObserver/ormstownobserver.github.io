@@ -285,10 +285,13 @@
 
   /* ── RESPONSIVE ── */
   @media (max-width: 720px) {
-    .hero-main { aspect-ratio: auto; min-height: 300px; }
-    /* On a phone the text block covers most of the photo, so the gold eyebrow
-       sits where the desktop gradient is already thin; darken higher up. */
-    .hero-gradient { background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.72) 55%, rgba(0,0,0,.4) 100%); }
+    /* Tall enough that the photo shows above the headline and deck, which
+       take ~230px; the whole lead still fits on the first screen under the
+       masthead (svh = the viewport with Safari's toolbar showing). */
+    .hero-main { aspect-ratio: auto; min-height: clamp(340px, 62svh, 480px); }
+    /* The text sits in the lower half; darken from there and let the photo
+       above it show. The gold eyebrow lands around the .7 stop. */
+    .hero-gradient { background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.75) 50%, rgba(0,0,0,.2) 100%); }
     .hero-content { text-shadow: 0 1px 2px rgba(0,0,0,.6); }
     /* On a phone the three cards stack under the lead — no sideways scroll. */
     .latest-stories { grid-template-columns: 1fr; }
