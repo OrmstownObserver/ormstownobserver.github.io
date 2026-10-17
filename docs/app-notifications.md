@@ -1,7 +1,8 @@
 # App notifications — plan
 
 Status: **plan, nothing built yet** (2026-10-16). The install button that
-comes before it is live in `observer-header.js` (menu + footer, EN/FR).
+comes before it is live in `observer-header.js` (drawer menu only, EN/FR; removed from the footer 2026-10-16 at the
+editor's request).
 
 ## Goal
 Readers who install the Observer get an alert when a story they care about is
