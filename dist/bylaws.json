@@ -572,7 +572,11 @@
       "topics": [
         "Build & renovate",
         "Trees & land"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/subdivision-149-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-lotissement-149-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 150-2023",
@@ -588,7 +592,11 @@
       "category": "Construction & Permits",
       "topics": [
         "Build & renovate"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/construction-150-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-construction-150-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 151-2023",
@@ -648,7 +656,11 @@
       "topics": [
         "Build & renovate",
         "Trees & land"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/pae-153-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-pae-153-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 154-2023",
@@ -705,7 +717,11 @@
       "topics": [
         "Build & renovate",
         "Run a business"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/conditional-uses-156-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-usages-conditionnels-156-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 158-2023",
@@ -1143,7 +1159,11 @@
       "topics": [
         "Parking & roads",
         "Run a business"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/heavy-vehicles-7-2021/",
+        "fr": "/fr/bylaws-regulations/reglement-camions-vehicules-outils-7-2021/"
+      }
     },
     {
       "bylaw_number": "Règlement 73-2011",
@@ -1239,7 +1259,11 @@
       "category": "Council Procedure",
       "topics": [
         "Council & ethics"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/elected-officials-pay-8-2024/",
+        "fr": "/fr/bylaws-regulations/reglement-traitement-elus-8-2024/"
+      }
     },
     {
       "bylaw_number": "Règlement 8-2024.1",
@@ -1449,7 +1473,11 @@
         "Animals",
         "Parking & roads",
         "Run a business"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/mrc-public-safety-352-2025/",
+        "fr": "/fr/bylaws-regulations/reglement-mrc-securite-publique-352-2025/"
+      }
     },
     {
       "bylaw_number": "Règlement d'emprunt 173-2026",
