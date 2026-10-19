@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-16T12:31:10.763Z",
+  "generated_at": "2026-10-19T01:30:59.479Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -78,104 +78,104 @@
   ],
   "latest": [
     {
-      "slug": "council-watch-full-time-fire-chief-emergency-plan",
-      "path_en": "/en/council-watch/full-time-fire-chief-emergency-plan/",
-      "path_fr": "/fr/conseil-municipal/directeur-incendie-temps-plein/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Ormstown to hire a full-time fire chief, rewrite emergency plan",
-      "hed_fr": "Ormstown veut un directeur incendie à temps plein et un nouveau plan d'urgence",
-      "date_published": "2026-10-16"
-    },
-    {
-      "slug": "council-watch-buys-three-lots-loop-water-main",
-      "path_en": "/en/council-watch/buys-three-lots-loop-water-main/",
-      "path_fr": "/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Ormstown buys into three private lots to loop the water main",
-      "hed_fr": "Ormstown acquiert des parcelles de trois terrains privés pour boucler l'aqueduc",
-      "date_published": "2026-10-16"
-    },
-    {
-      "slug": "council-watch-council-asks-quebec-to-ban-trucks",
-      "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
-      "path_fr": "/fr/conseil-municipal/demande-interdire-camions-trois-rues/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Ormstown council asks Quebec to ban trucks on three village streets",
-      "hed_fr": "Ormstown demande à Québec d'interdire les camions sur trois rues",
-      "date_published": "2026-10-15"
-    },
-    {
-      "slug": "council-watch-who-gets-the-rec-center",
-      "path_en": "/en/council-watch/who-gets-the-rec-center/",
-      "path_fr": "/fr/conseil-municipal/qui-obtient-la-salle/",
-      "label_en": "Community",
-      "label_fr": "Communauté",
-      "hed_en": "Who gets the Rec-Center? Ormstown's new policy for local non-profit organizations",
-      "hed_fr": "Qui obtient la salle? Les nouvelles règles d'Ormstown",
-      "date_published": "2026-10-15"
-    },
-    {
-      "slug": "bylaws-regulations-fees-39-2026",
-      "path_en": "/en/bylaws-regulations/fees-39-2026/",
-      "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
+      "slug": "bylaws-regulations-conditional-uses-156-2023",
+      "path_en": "/en/bylaws-regulations/conditional-uses-156-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-usages-conditionnels-156-2023/",
       "label_en": "Bylaws",
       "label_fr": "Règlements",
-      "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
-      "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
-      "date_published": "2026-10-15"
+      "hed_en": "In Ormstown's farm zones, council can authorize two kinds of activity case by case",
+      "hed_fr": "Dans les zones agricoles d’Ormstown, le conseil peut autoriser deux types d’activités au cas par cas",
+      "date_published": "2026-10-18"
     },
     {
-      "slug": "bylaws-regulations-fire-prevention-155-2023",
-      "path_en": "/en/bylaws-regulations/fire-prevention-155-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-prevention-incendies-155-2023/",
+      "slug": "bylaws-regulations-construction-150-2023",
+      "path_en": "/en/bylaws-regulations/construction-150-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-construction-150-2023/",
       "label_en": "Bylaws",
       "label_fr": "Règlements",
-      "hed_en": "Ormstown's fire bylaw: a free permit for open fires, town approval for fireworks, and rules for smoke alarms",
-      "hed_fr": "Le règlement sur les incendies d’Ormstown : permis gratuit pour les feux à ciel ouvert, autorisation pour les feux d’artifice, règles pour les avertisseurs de fumée",
-      "date_published": "2026-10-14"
+      "hed_en": "Damaged buildings, open foundations, fortified homes: what Ormstown's construction bylaw requires of owners",
+      "hed_fr": "Bâtiments endommagés, fondations à ciel ouvert, maisons fortifiées : ce que le règlement de construction d’Ormstown exige des propriétaires",
+      "date_published": "2026-10-18"
     },
     {
-      "slug": "bylaws-regulations-employee-ethics-80-2022",
-      "path_en": "/en/bylaws-regulations/employee-ethics-80-2022/",
-      "path_fr": "/fr/bylaws-regulations/reglement-ethique-employes-80-2022/",
+      "slug": "bylaws-regulations-emergency-911-62-2-2023",
+      "path_en": "/en/bylaws-regulations/emergency-911-62-2-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-taxe-centres-urgence-911-62-2-2023/",
       "label_en": "Bylaws",
       "label_fr": "Règlements",
-      "hed_en": "Gifts, conflicts of interest, confidentiality: the rules Ormstown's municipal staff must follow",
-      "hed_fr": "Cadeaux, conflits d’intérêts, confidentialité : les règles que doit suivre le personnel municipal d’Ormstown",
-      "date_published": "2026-10-12"
+      "hed_en": "Ormstown's 9-1-1 tax: $0.52 a month per telephone number from 2024, indexed every January",
+      "hed_fr": "Taxe 9-1-1 à Ormstown : 0,52 $ par mois par numéro de téléphone dès 2024, indexée chaque janvier",
+      "date_published": "2026-10-18"
     },
     {
-      "slug": "bylaws-regulations-urban-plan-147-2023",
-      "path_en": "/en/bylaws-regulations/urban-plan-147-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-plan-urbanisme-147-2023/",
+      "slug": "bylaws-regulations-elected-officials-pay-8-2024",
+      "path_en": "/en/bylaws-regulations/elected-officials-pay-8-2024/",
+      "path_fr": "/fr/bylaws-regulations/reglement-traitement-elus-8-2024/",
       "label_en": "Bylaws",
       "label_fr": "Règlements",
-      "hed_en": "Ormstown's urban plan: 11 land-use designations that the zoning bylaw must respect",
-      "hed_fr": "Le plan d'urbanisme d'Ormstown : 11 grandes affectations que le règlement de zonage doit respecter",
-      "date_published": "2026-10-12"
+      "hed_en": "How Ormstown sets its mayor's and councillors' pay: Bylaw 8-2024 and its April 2024 amendment",
+      "hed_fr": "Comment Ormstown fixe la rémunération du maire et des conseillers : le Règlement 8-2024 et sa modification d’avril 2024",
+      "date_published": "2026-10-18"
     },
     {
-      "slug": "council-watch-october-6-2026",
-      "path_en": "/en/council-watch/october-6-2026/",
-      "path_fr": "/fr/conseil-municipal/6-octobre-2026/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Council orders a traffic study of four problem intersections and pushes 3e Rang paving to 2027",
-      "hed_fr": "Le conseil commande une étude de circulation sur quatre intersections problématiques et reporte le pavage du 3e Rang à 2027",
-      "date_published": "2026-10-07"
-    },
-    {
-      "slug": "bylaws-regulations-demolition-145-2023",
-      "path_en": "/en/bylaws-regulations/demolition-145-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-demolition-145-2023/",
+      "slug": "bylaws-regulations-heavy-vehicles-7-2021",
+      "path_en": "/en/bylaws-regulations/heavy-vehicles-7-2021/",
+      "path_fr": "/fr/bylaws-regulations/reglement-camions-vehicules-outils-7-2021/",
       "label_en": "Bylaws",
       "label_fr": "Règlements",
-      "hed_en": "Want to tear down a building in Ormstown? A committee of three council members decides, and anyone can object",
-      "hed_fr": "Démolir un bâtiment à Ormstown ? Un comité de trois élus tranche, et tout le monde peut s’y opposer",
-      "date_published": "2026-10-07"
+      "hed_en": "Trucks are barred from 14 Ormstown roads, with exceptions that include local delivery",
+      "hed_fr": "Les camions sont interdits sur 14 chemins d’Ormstown, avec des exceptions, dont la livraison locale",
+      "date_published": "2026-10-18"
+    },
+    {
+      "slug": "bylaws-regulations-fire-service-103-2015",
+      "path_en": "/en/bylaws-regulations/fire-service-103-2015/",
+      "path_fr": "/fr/bylaws-regulations/reglement-service-securite-incendie-103-2015/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Ormstown's fire service: who it is, and what firefighters may do in an emergency",
+      "hed_fr": "Le service incendie d’Ormstown : qui il est, et ce que les pompiers peuvent faire en situation d’urgence",
+      "date_published": "2026-10-18"
+    },
+    {
+      "slug": "bylaws-regulations-hr-policy-99-2023",
+      "path_en": "/en/bylaws-regulations/hr-policy-99-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-ressources-humaines-99-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Ormstown's human resources bylaw: hours, pay, leave and discipline for municipal staff",
+      "hed_fr": "Le règlement sur les ressources humaines d’Ormstown : horaires, salaire, congés et discipline du personnel municipal",
+      "date_published": "2026-10-18"
+    },
+    {
+      "slug": "bylaws-regulations-hiring-staff-158-2023",
+      "path_en": "/en/bylaws-regulations/hiring-staff-158-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-embauche-personnel-158-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Ormstown's director general can hire municipal employees, with the list tabled at council's next sitting",
+      "hed_fr": "À Ormstown, le directeur général peut embaucher des employés municipaux, et la liste est déposée à la séance suivante du conseil",
+      "date_published": "2026-10-18"
+    },
+    {
+      "slug": "bylaws-regulations-pae-153-2023",
+      "path_en": "/en/bylaws-regulations/pae-153-2023/",
+      "path_fr": "/fr/bylaws-regulations/reglement-pae-153-2023/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "In five Ormstown zones, a request to change the planning bylaws requires an overall development plan",
+      "hed_fr": "Dans cinq zones d’Ormstown, une demande de modification des règlements d’urbanisme exige un plan d’aménagement d’ensemble",
+      "date_published": "2026-10-18"
+    },
+    {
+      "slug": "bylaws-regulations-public-notices-167-2025",
+      "path_en": "/en/bylaws-regulations/public-notices-167-2025/",
+      "path_fr": "/fr/bylaws-regulations/reglement-avis-publics-167-2025/",
+      "label_en": "Bylaws",
+      "label_fr": "Règlements",
+      "hed_en": "Where Ormstown must publish its public notices: the town website and the board outside Town Hall",
+      "hed_fr": "Où Ormstown doit publier ses avis publics : le site internet et le babillard de l’hôtel de ville",
+      "date_published": "2026-10-18"
     }
   ],
   "latest_groups": [
@@ -433,61 +433,61 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 15,
+      "total": 34,
       "items": [
         {
-          "slug": "council-watch-full-time-fire-chief-emergency-plan",
-          "path_en": "/en/council-watch/full-time-fire-chief-emergency-plan/",
-          "path_fr": "/fr/conseil-municipal/directeur-incendie-temps-plein/",
-          "label_en": "Council Watch",
-          "label_fr": "Conseil municipal",
-          "hed_en": "Ormstown to hire a full-time fire chief, rewrite emergency plan",
-          "hed_fr": "Ormstown veut un directeur incendie à temps plein et un nouveau plan d'urgence",
-          "date_published": "2026-10-16",
-          "part": null
-        },
-        {
-          "slug": "council-watch-buys-three-lots-loop-water-main",
-          "path_en": "/en/council-watch/buys-three-lots-loop-water-main/",
-          "path_fr": "/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/",
-          "label_en": "Council Watch",
-          "label_fr": "Conseil municipal",
-          "hed_en": "Ormstown buys into three private lots to loop the water main",
-          "hed_fr": "Ormstown acquiert des parcelles de trois terrains privés pour boucler l'aqueduc",
-          "date_published": "2026-10-16",
-          "part": null
-        },
-        {
-          "slug": "council-watch-council-asks-quebec-to-ban-trucks",
-          "path_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/",
-          "path_fr": "/fr/conseil-municipal/demande-interdire-camions-trois-rues/",
-          "label_en": "Council Watch",
-          "label_fr": "Conseil municipal",
-          "hed_en": "Ormstown council asks Quebec to ban trucks on three village streets",
-          "hed_fr": "Ormstown demande à Québec d'interdire les camions sur trois rues",
-          "date_published": "2026-10-15",
-          "part": null
-        },
-        {
-          "slug": "council-watch-who-gets-the-rec-center",
-          "path_en": "/en/council-watch/who-gets-the-rec-center/",
-          "path_fr": "/fr/conseil-municipal/qui-obtient-la-salle/",
-          "label_en": "Community",
-          "label_fr": "Communauté",
-          "hed_en": "Who gets the Rec-Center? Ormstown's new policy for local non-profit organizations",
-          "hed_fr": "Qui obtient la salle? Les nouvelles règles d'Ormstown",
-          "date_published": "2026-10-15",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-fees-39-2026",
-          "path_en": "/en/bylaws-regulations/fees-39-2026/",
-          "path_fr": "/fr/bylaws-regulations/reglement-tarification-39-2026/",
+          "slug": "bylaws-regulations-conditional-uses-156-2023",
+          "path_en": "/en/bylaws-regulations/conditional-uses-156-2023/",
+          "path_fr": "/fr/bylaws-regulations/reglement-usages-conditionnels-156-2023/",
           "label_en": "Bylaws",
           "label_fr": "Règlements",
-          "hed_en": "What Ormstown charges, line by line: permits, planning requests, pet licences, hall rentals and more",
-          "hed_fr": "Ce que la Municipalité facture, ligne par ligne : permis, demandes d’urbanisme, licences d’animaux, location de salles et plus",
-          "date_published": "2026-10-15",
+          "hed_en": "In Ormstown's farm zones, council can authorize two kinds of activity case by case",
+          "hed_fr": "Dans les zones agricoles d’Ormstown, le conseil peut autoriser deux types d’activités au cas par cas",
+          "date_published": "2026-10-18",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-construction-150-2023",
+          "path_en": "/en/bylaws-regulations/construction-150-2023/",
+          "path_fr": "/fr/bylaws-regulations/reglement-construction-150-2023/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Damaged buildings, open foundations, fortified homes: what Ormstown's construction bylaw requires of owners",
+          "hed_fr": "Bâtiments endommagés, fondations à ciel ouvert, maisons fortifiées : ce que le règlement de construction d’Ormstown exige des propriétaires",
+          "date_published": "2026-10-18",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-emergency-911-62-2-2023",
+          "path_en": "/en/bylaws-regulations/emergency-911-62-2-2023/",
+          "path_fr": "/fr/bylaws-regulations/reglement-taxe-centres-urgence-911-62-2-2023/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Ormstown's 9-1-1 tax: $0.52 a month per telephone number from 2024, indexed every January",
+          "hed_fr": "Taxe 9-1-1 à Ormstown : 0,52 $ par mois par numéro de téléphone dès 2024, indexée chaque janvier",
+          "date_published": "2026-10-18",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-elected-officials-pay-8-2024",
+          "path_en": "/en/bylaws-regulations/elected-officials-pay-8-2024/",
+          "path_fr": "/fr/bylaws-regulations/reglement-traitement-elus-8-2024/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "How Ormstown sets its mayor's and councillors' pay: Bylaw 8-2024 and its April 2024 amendment",
+          "hed_fr": "Comment Ormstown fixe la rémunération du maire et des conseillers : le Règlement 8-2024 et sa modification d’avril 2024",
+          "date_published": "2026-10-18",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-heavy-vehicles-7-2021",
+          "path_en": "/en/bylaws-regulations/heavy-vehicles-7-2021/",
+          "path_fr": "/fr/bylaws-regulations/reglement-camions-vehicules-outils-7-2021/",
+          "label_en": "Bylaws",
+          "label_fr": "Règlements",
+          "hed_en": "Trucks are barred from 14 Ormstown roads, with exceptions that include local delivery",
+          "hed_fr": "Les camions sont interdits sur 14 chemins d’Ormstown, avec des exceptions, dont la livraison locale",
+          "date_published": "2026-10-18",
           "part": null
         }
       ],
