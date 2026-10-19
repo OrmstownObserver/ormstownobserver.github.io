@@ -106,7 +106,11 @@
       "category": "Fire Safety",
       "topics": [
         "Burning & fire"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/fire-service-103-2015/",
+        "fr": "/fr/bylaws-regulations/reglement-service-securite-incendie-103-2015/"
+      }
     },
     {
       "bylaw_number": "Règlement 110.1-2017",
@@ -171,7 +175,11 @@
       "category": "Infrastructure",
       "topics": [
         "Parking & roads"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/traffic-speed-limits-12-2025/",
+        "fr": "/fr/bylaws-regulations/reglement-circulation-limites-vitesse-12-2025/"
+      }
     },
     {
       "bylaw_number": "Règlement 120-2020",
@@ -361,7 +369,11 @@
       "topics": [
         "Water",
         "Run a business"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/water-meters-134-2021/",
+        "fr": "/fr/bylaws-regulations/reglement-compteurs-eau-134-2021/"
+      }
     },
     {
       "bylaw_number": "Règlement 136-2023",
@@ -648,7 +660,11 @@
       "category": "Infrastructure",
       "topics": [
         "Parking & roads"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/road-allowances-154-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-emprises-municipales-154-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 155-2023",
@@ -733,7 +749,11 @@
       "category": "Council Procedure",
       "topics": [
         "Council & ethics"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/public-notices-167-2025/",
+        "fr": "/fr/bylaws-regulations/reglement-avis-publics-167-2025/"
+      }
     },
     {
       "bylaw_number": "Règlement 167.1-2026",
@@ -1069,7 +1089,11 @@
       "category": "Other",
       "topics": [
         "Fees & taxes"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/emergency-911-62-2-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-taxe-centres-urgence-911-62-2-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 65.6-2022",
@@ -1349,7 +1373,11 @@
       "topics": [
         "Parking & roads",
         "Run a business"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/public-domain-occupation-93-2015/",
+        "fr": "/fr/bylaws-regulations/reglement-occupation-domaine-public-93-2015/"
+      }
     },
     {
       "bylaw_number": "Règlement 97.1-2017",
