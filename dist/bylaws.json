@@ -279,7 +279,11 @@
       "topics": [
         "Council & ethics",
         "Fees & taxes"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/spending-delegation-130-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-delegation-depenses-130-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 131-2020",
@@ -717,7 +721,11 @@
       "category": "Other",
       "topics": [
         "Council & ethics"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/hiring-staff-158-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-embauche-personnel-158-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 16-2001",
@@ -733,7 +741,11 @@
       "category": "Other",
       "topics": [
         "Council & ethics"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/regional-ice-rink-board-16-2001/",
+        "fr": "/fr/bylaws-regulations/reglement-regie-patinoire-regionale-16-2001/"
+      }
     },
     {
       "bylaw_number": "Règlement 167-2025",
@@ -1057,7 +1069,11 @@
       "category": "Finance & Taxation",
       "topics": [
         "Fees & taxes"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/working-capital-fund-6-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-fonds-de-roulement-6-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement 60.2-2017",
@@ -1410,7 +1426,11 @@
       "category": "Other",
       "topics": [
         "Council & ethics"
-      ]
+      ],
+      "explainer": {
+        "en": "/en/bylaws-regulations/hr-policy-99-2023/",
+        "fr": "/fr/bylaws-regulations/reglement-ressources-humaines-99-2023/"
+      }
     },
     {
       "bylaw_number": "Règlement MRC 352-2025",
