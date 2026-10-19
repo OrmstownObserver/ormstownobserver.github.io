@@ -882,3 +882,100 @@ details.ref .inner dd { margin: 0 0 var(--s1); color: var(--ink-soft); }
   section, .profile { break-inside: avoid-page; }
   a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 10px; color: #555; }
 }
+
+/* ---------- the Observer's context (ledger-context.js) ----------
+   A newspaper sidebar, not a card: a heavy rule on top, the red O as
+   its mark, hairlines inside. .inline is the same block inside a
+   details row (Categories, Sittings), where the summary already
+   names it, so it drops the kicker and the outer rules. */
+.ctx {
+  border-top: var(--rule-heavy) solid var(--ink);
+  border-bottom: var(--rule-hair) solid var(--hair);
+  margin: var(--s3) 0;
+  padding: var(--s2) 0 var(--s3);
+  font: var(--size-body-sm)/1.6 var(--sans);
+  max-width: 82ch;
+}
+.ctx.inline { border: 0; margin: 0; padding: 0; max-width: none; }
+.ctx-kick {
+  display: flex; align-items: center; gap: var(--s1);
+  font: 700 var(--size-label)/1.3 var(--sans);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink);
+  margin: 0 0 var(--s2);
+}
+.ctx-kick .o {
+  display: inline-grid; place-items: center;
+  width: 1.5em; height: 1.5em; border-radius: 50%;
+  background: var(--accent); color: var(--text-on-accent);
+  font: 700 0.85em/1 var(--serif-display);
+  letter-spacing: 0;
+  flex: none;
+}
+.ctx-lead { font: var(--size-body)/1.6 var(--serif-body); color: var(--ink); margin: 0; }
+.ctx-points { list-style: none; margin: var(--s2) 0 0; padding: 0; }
+.ctx-points li {
+  position: relative;
+  padding: var(--s1) 0 var(--s1) var(--s3);
+  border-top: var(--rule-hair) solid var(--hair);
+}
+.ctx-points li::before {
+  content: ""; position: absolute; left: 4px; top: 1.05em;
+  width: 6px; height: 6px; background: var(--accent);
+}
+.ctx-src {
+  display: inline-block;
+  font: 700 var(--size-label-sm)/1.2 var(--sans);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--accent);
+  border: var(--rule-hair) solid currentColor;
+  padding: 2px 6px;
+  margin-left: 2px;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: 1px;
+}
+a.ctx-src:hover, a.ctx-src:focus-visible { background: var(--accent); color: var(--text-on-accent); }
+.ctx-quote {
+  margin: var(--s3) 0 0;
+  padding: 0 0 0 var(--s3);
+  border-left: var(--border-fact) solid var(--accent);
+}
+.ctx-quote p { font: italic var(--size-body)/1.55 var(--serif-body); margin: 0; }
+.ctx-quote footer { margin-top: var(--s1); font-size: var(--size-fine); color: var(--ink-soft); }
+.ctx-top { margin-top: var(--s3); }
+.ctx-top .lbl, .ctx-more .lbl {
+  font: 700 var(--size-label-sm)/1.3 var(--sans);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+.ctx-top ol { margin: var(--s1) 0 0; padding: 0; list-style: none; counter-reset: ctx; }
+.ctx-top li {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--s1);
+  padding: var(--s1) 0;
+  border-top: var(--rule-hair) solid var(--hair);
+}
+.ctx-top li .gloss { display: inline; flex: 1 1 12ch; }
+.ctx-top li .amt { margin-left: auto; font-weight: 700; font-variant-numeric: tabular-nums; }
+.ctx-more { margin: var(--s3) 0 0; }
+.ctx-more .lbl { margin-right: var(--s1); }
+.ctx-more a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+.ctx-more a .k { font-weight: 700; }
+.ctx-ask { margin: var(--s2) 0 0; font-size: var(--size-fine); color: var(--ink-soft); }
+.ctx-ask a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+.ctx-recap { color: var(--link); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+tr.ctx-row > td { padding-top: 0; }
+@media print { .ctx-ask { display: none; } }
+/* A note or context row spans the whole table, and on a phone the table
+   scrolls sideways inside .lt-wrap — so the row's text would run off past
+   the visible edge. Pin it to the left of the scroll box, at screen width. */
+@media (max-width: 900px) {
+  .lt-wrap tr > td[colspan] > details.ref {
+    position: sticky; left: 0;
+    max-width: calc(100vw - 2 * var(--s3) - 2px);
+    box-sizing: border-box;
+  }
+}

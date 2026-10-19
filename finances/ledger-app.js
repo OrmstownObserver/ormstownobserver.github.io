@@ -42,10 +42,17 @@
 
   var L = global.OO_LEDGER, V = global.OO_LEDGER_VIEWS, C = global.OO_LEDGER_CHARTS;
   var D = global.OO_SPENDING || null;
+  // The Observer's context (ledger-context.js). Optional: without it the
+  // ledger is exactly the ledger.
+  var CX = global.OO_LEDGER_CONTEXT || {};
+  function cxGet(group, id) {
+    var g = CX[group];
+    return (g && id && Object.prototype.hasOwnProperty.call(g, id)) ? g[id] : null;
+  }
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261015-2';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261019-1';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -407,6 +414,11 @@
         return C0 ? C0.color : '#888888';
       },
       hasFilters: hasFilters,
+      context: {
+        category: function (key) { return cxGet('categories', L.SLUGS[key]); },
+        sitting: function (id) { return cxGet('sittings', id); },
+        payee: function (slug) { return cxGet('payees', slug); }
+      },
       hrefSitting: function (id) { return hrefFor(sittingPatch(id)); },
       hrefCategory: function (key) { return hrefFor(categoryPatch(key)); },
       payeeMatches: payeeMatches,

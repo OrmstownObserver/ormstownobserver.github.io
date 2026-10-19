@@ -236,6 +236,16 @@
     if (ctx.loading) return frag(el('div', { cls: 'skeleton', 'aria-busy': 'true', text: L.tpl(t.loadingLines, { n: f.num(ctx.expectedLines || 0) }) }));
     if (ctx.linesFailed) return frag(linesFailed(ctx));
 
+    // One sitting or one category in view: say why, before the lines.
+    var st = ctx.state;
+    if (st.sittings.length === 1 && !st.payee) {
+      var se = ctx.context.sitting(st.sittings[0]);
+      if (se) out.appendChild(contextBlock(ctx, se, { title: ctx.sittingLabel(ctx.store.sittingById[st.sittings[0]]) }));
+    }
+    if (st.categories.length === 1) {
+      var ck = L.KEY_BY_SLUG[st.categories[0]], ce = ctx.context.category(ck);
+      if (ce) out.appendChild(contextBlock(ctx, ce, { title: ctx.catName(ck), ask: st.sittings.length !== 1 }));
+    }
     out.appendChild(distStrip(ctx, ctx.agg.mix, ctx.agg.total));
 
     if (!ctx.idx.length) {
@@ -438,6 +448,17 @@
           }))
         ])
       ]));
+      var ce = ctx.context.category(r.key);
+      if (ce) {
+        body.appendChild(el('tr', { cls: 'ctx-row' }, el('td', { colspan: '6' },
+          el('details', { cls: 'ref' }, [
+            el('summary', { text: L.tpl(t.ctxCatToggle, { v: ctx.catName(r.key) }) }),
+            el('div', { cls: 'inner' }, contextBlock(ctx, ce, {
+              inline: true, title: ctx.catName(r.key),
+              extra: topPayees(ctx, function (ln) { return ln.c === r.key; }, 3)
+            }))
+          ]))));
+      }
     });
     body.appendChild(el('tr', { cls: 'totals' }, [
       el('th', { scope: 'row', text: t.totalsLabel }),
@@ -471,6 +492,13 @@
      SITTINGS — where the reconciliation is stated in public.
      The Gap column is permanent, not a footnote.
      ============================================================ */
+  // The Observer's account of a sitting, beside the official minutes.
+  function recapLink(ctx, entry) {
+    var lk = ((entry && entry.links) || []).filter(function (l) { return l.kind === 'recap' && ctxHref(l, ctx.lang); })[0];
+    if (!lk) return null;
+    return el('span', { cls: 'gloss' }, el('a', { href: ctxHref(lk, ctx.lang), cls: 'ctx-recap' }, ctx.T.ctxKind_recap));
+  }
+
   function sittings(ctx) {
     var t = ctx.T, f = ctx.f, out = document.createDocumentFragment();
     var rows = ctx.sittingRows();                 // newest first, for the table
@@ -497,6 +525,7 @@
     var body = el('tbody');
     rows.forEach(function (s) {
       var note = ctx.lang === 'fr' ? s.note_fr : s.note_en;
+      var se = ctx.context.sitting(s.m);
       var gapCell;
       if (L.cents(s.gap) === 0) {
         gapCell = el('td', { cls: 'num ok', text: t.gapOk });
@@ -524,8 +553,15 @@
         el('td', { cls: 'num', text: f.money(s.lineTotal) }),
         el('td', { cls: 'num', text: f.money(s.total) }),
         gapCell,
-        el('td', null, pvLink(s.url, t.pvShort, t.newTab))
+        el('td', null, [pvLink(s.url, t.pvShort, t.newTab), recapLink(ctx, se)])
       ]));
+      if (se) {
+        body.appendChild(el('tr', { cls: 'ctx-row' }, el('td', { colspan: '7' },
+          el('details', { cls: 'ref' }, [
+            el('summary', { text: t.ctxSitToggle }),
+            el('div', { cls: 'inner' }, contextBlock(ctx, se, { inline: true, title: ctx.sittingLabel(s) }))
+          ]))));
+      }
       if (note) {
         body.appendChild(el('tr', null, el('td', { colspan: '7' },
           el('details', { cls: 'ref' }, [
@@ -575,6 +611,8 @@
     var gl = ctx.gloss(P);
     if (gl) out.appendChild(el('p', { cls: 'lw-deck', text: gl }));
     if (P.aliases.length) out.appendChild(el('p', { cls: 'aka', text: L.tpl(t.alsoWritten, { list: P.aliases.join(' · ') }) }));
+    var pe = ctx.context.payee(slug);
+    if (pe) out.appendChild(contextBlock(ctx, pe, { title: ctx.payeeName(P) }));
     if (P.isPayroll) out.appendChild(el('div', { cls: 'notice', text: t.payrollNote }));
     if (P.isRest) out.appendChild(el('div', { cls: 'notice', text: t.restNote }));
     // A profile shows every sitting by default so a shared link means the
@@ -712,10 +750,129 @@
     return out;
   }
 
+  /* ============================================================
+     CONTEXT — the Observer's "why" beside the numbers.
+     Hand-authored in ledger-context.js (validate.js check 13 holds it
+     to its rules). Every point carries its own source; nothing here
+     is ever parsed as HTML. A link is only made for a page of this
+     site or a document on ormstown.ca — anything else stays text.
+     ============================================================ */
+  var CTX_SITE = /^\/(en|fr|finances)\/[A-Za-z0-9\-\/]*(#[A-Za-z0-9\-_]+)?$/;
+  var CTX_EXT = /^https:\/\/www\.ormstown\.ca\/[^\s"<>]+$/;
+  function ctxHref(src, lang) {
+    var h = src && (lang === 'fr' ? src.href_fr : src.href_en);
+    if (!h || h.indexOf('..') >= 0) return null;
+    return (CTX_SITE.test(h) || CTX_EXT.test(h)) ? h : null;
+  }
+  // A source chip: "Council Watch", "Minutes", "Budget"… linking to it.
+  function ctxSource(ctx, src) {
+    var t = ctx.T, h = ctxHref(src, ctx.lang);
+    var label = (src && src[ctx.lang]) || t['ctxKind_' + (src && src.kind)] || t.ctxKind_document;
+    if (!h) return el('span', { cls: 'ctx-src', text: label });
+    var ext = CTX_EXT.test(h);
+    return el('a', {
+      cls: 'ctx-src', href: h,
+      target: ext ? '_blank' : null, rel: ext ? 'noopener' : null,
+      title: ext ? t.newTab : null
+    }, label);
+  }
+  function ctxText(o, lang) { return (o && o[lang]) || ''; }
+
+  // entry: one record of ledger-context.js. opts.title names what the
+  // block is about (a category, a sitting, a supplier); opts.extra is an
+  // optional node of data-derived context (largest payees) built by the
+  // caller from the ledger itself.
+  function contextBlock(ctx, entry, opts) {
+    var t = ctx.T, lang = ctx.lang;
+    opts = opts || {};
+    var box = el('section', { cls: 'ctx' + (opts.inline ? ' inline' : ''), 'aria-label': L.tpl(t.ctxAria, { v: opts.title || '' }) });
+    if (!opts.inline) {
+      box.appendChild(el('p', { cls: 'ctx-kick' }, [
+        el('span', { cls: 'o', 'aria-hidden': 'true', text: 'O' }),
+        txt(t.ctxKicker + (opts.title ? ' · ' + opts.title : ''))
+      ]));
+    }
+    var lead = entry && ctxText(entry, lang);
+    if (lead) box.appendChild(el('p', { cls: 'ctx-lead', text: lead }));
+
+    var pts = (entry && entry.points) || [];
+    if (pts.length) {
+      var ul = el('ul', { cls: 'ctx-points' });
+      pts.forEach(function (p) {
+        var s = ctxText(p, lang);
+        if (!s) return;
+        ul.appendChild(el('li', null, [txt(s + ' '), ctxSource(ctx, p.src)]));
+      });
+      box.appendChild(ul);
+    }
+
+    var q = entry && entry.quote;
+    if (q && ctxText(q, lang)) {
+      box.appendChild(el('blockquote', { cls: 'ctx-quote' }, [
+        el('p', { text: (lang === 'fr' ? '« ' : '“') + ctxText(q, lang) + (lang === 'fr' ? ' »' : '”') }),
+        el('footer', null, [txt('— ' + ctxText(q.who, lang) + ' '), ctxSource(ctx, q.src)])
+      ]));
+    }
+
+    if (opts.extra) box.appendChild(opts.extra);
+
+    var links = (entry && entry.links) || [];
+    var made = links.map(function (lk) { return ctxHref(lk, lang) ? lk : null; }).filter(Boolean);
+    if (made.length) {
+      var more = el('p', { cls: 'ctx-more' }, el('span', { cls: 'lbl', text: t.ctxReadMore }));
+      made.forEach(function (lk, i) {
+        if (i) more.appendChild(txt(' · '));
+        var h = ctxHref(lk, lang), ext = CTX_EXT.test(h);
+        more.appendChild(el('a', {
+          href: h, target: ext ? '_blank' : null, rel: ext ? 'noopener' : null
+        }, [el('span', { cls: 'k', text: t['ctxKind_' + lk.kind] || t.ctxKind_document }), txt(' ' + ctxText(lk, lang))]));
+      });
+      box.appendChild(more);
+    }
+
+    // The standing invitation: a number the Observer has not explained yet
+    // is a question a reader can put to it.
+    if (opts.ask !== false && !opts.inline) {
+      box.appendChild(el('p', { cls: 'ctx-ask' }, [
+        txt(t.ctxAsk + ' '),
+        el('a', { href: 'mailto:ormstownobserver@gmail.com?subject=' + encodeURIComponent(L.tpl(t.ctxAskSubject, { v: opts.title || '' })) }, t.ctxAskLink)
+      ]));
+    }
+    return box;
+  }
+
+  // The data's own context: the largest payees inside one category (or
+  // sitting), from the lines the reader is looking at. pick(line) says
+  // whether a line belongs.
+  function topPayees(ctx, pick, n) {
+    if (ctx.loading || ctx.linesFailed) return null;
+    var by = {}, f = ctx.f, t = ctx.T;
+    ctx.idx.forEach(function (i) {
+      var ln = ctx.store.lines[i];
+      if (pick(ln)) by[ln.p] = (by[ln.p] || 0) + ln.a;
+    });
+    var rows = Object.keys(by).map(function (k) { return { slug: k, amt: by[k] }; })
+      .filter(function (r) { var P = ctx.store.payees[r.slug]; return r.amt > 0 && P && !P.isRest; })
+      .sort(function (a, b) { return b.amt - a.amt; }).slice(0, n || 3);
+    if (!rows.length) return null;
+    var wrap = el('div', { cls: 'ctx-top' }, el('p', { cls: 'lbl', text: t.ctxTopPayees }));
+    var ol = el('ol');
+    rows.forEach(function (r) {
+      var P = ctx.store.payees[r.slug], g = ctx.gloss(P);
+      ol.appendChild(el('li', null, [
+        el('button', { type: 'button', cls: 'linkbtn', text: ctx.payeeName(P), on: { click: function () { ctx.on.payee(r.slug); } } }),
+        g ? el('span', { cls: 'gloss', text: ' — ' + g }) : null,
+        el('span', { cls: 'amt', text: f.money(r.amt) })
+      ]));
+    });
+    wrap.appendChild(ol);
+    return wrap;
+  }
+
   global.OO_LEDGER_VIEWS = {
     el: el, txt: txt, frag: frag, append: append, rich: rich, pvLink: pvLink, navLink: navLink,
     fmt: fmt, downloadCSV: downloadCSV, distStrip: distStrip, chips: chips,
     payments: payments, payees: payees, categories: categories, sittings: sittings,
-    profile: profile, emptyBlock: emptyBlock
+    profile: profile, emptyBlock: emptyBlock, contextBlock: contextBlock
   };
 })(window);

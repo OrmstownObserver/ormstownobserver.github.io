@@ -149,7 +149,9 @@ if (fs.existsSync(payPath)) {
   const DYNAMIC = new Set([
     'orientPayments', 'orientPayees', 'orientCategories', 'orientSittings',
     'tocBudget', 'tocCapital', 'tocCoverage', 'tocMethod', 'tocDocuments', 'tocDictionary',
-    'presetLegal', 'presetBig', 'presetPayroll', 'presetCredits'
+    'presetLegal', 'presetBig', 'presetPayroll', 'presetCredits',
+    'ctxKind_recap', 'ctxKind_story', 'ctxKind_minutes', 'ctxKind_document',
+    'ctxKind_budget', 'ctxKind_method', 'ctxKind_ledger'
   ]);
   let missing = 0, dead = 0;
   for (const k of used) {
@@ -290,6 +292,106 @@ if (fs.existsSync(payPath)) {
   }
 }
 
+// ---- 13. The Observer's context (ledger-context.js) — hand-authored, so it
+// is held to the rules a reader relies on: every entry is about something
+// the ledger really has, every sentence exists in both languages, every
+// point names its own source, and every link goes to a page of this site
+// that exists or to a document on ormstown.ca. The renderer drops a link
+// that breaks the rules; this check makes sure none is ever written.
+{
+  const cxPath = path.join(dir, 'ledger-context.js');
+  if (!fs.existsSync(cxPath)) fail('ledger-context.js is missing');
+  else {
+    eval(fs.readFileSync(cxPath, 'utf8'));
+    const CX = window.OO_LEDGER_CONTEXT || {};
+    const root = path.join(dir, '..');
+    const KINDS = new Set(['recap', 'story', 'minutes', 'document', 'budget', 'method', 'ledger']);
+    const SITE = /^\/(en|fr|finances)\/[A-Za-z0-9\-\/]*(#[A-Za-z0-9\-_]+)?$/;
+    const EXT = /^https:\/\/www\.ormstown\.ca\/[^\s"<>]+$/;
+    const slugs = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, 'payee-slugs.json'), 'utf8'))));
+    const slugMap = fs.readFileSync(path.join(dir, 'ledger-data.js'), 'utf8').match(/var SLUGS = \{([\s\S]*?)\};/);
+    const catSlugs = new Set(slugMap ? [...slugMap[1].matchAll(/: '([a-z-]+)'/g)].map(x => x[1]) : []);
+    let bad = 0, n = 0;
+    const err = (m) => { bad++; fail('context: ' + m); };
+    const both = (o, where) => {
+      if (!o || typeof o.en !== 'string' || typeof o.fr !== 'string' || !o.en.trim() || !o.fr.trim()) err(`${where} lacks EN or FR text`);
+      for (const l of ['en', 'fr']) if (o && /<[a-z\/]/i.test(o[l] || '')) err(`${where} ${l} contains markup (rendered as text only)`);
+    };
+    const link = (lk, where, needLabel) => {
+      if (!lk || !KINDS.has(lk.kind)) return err(`${where} has an unknown kind "${lk && lk.kind}"`);
+      if (needLabel) both(lk, where);
+      for (const l of ['en', 'fr']) {
+        const h = lk['href_' + l];
+        if (!h) { err(`${where} has no href_${l}`); continue; }
+        if (h.includes('..') || !(SITE.test(h) || EXT.test(h))) { err(`${where} href_${l} is not allowed: ${h}`); continue; }
+        if (SITE.test(h)) {
+          const p = h.split('#')[0];
+          const f = path.join(root, p.endsWith('/') ? p + 'index.html' : p);
+          if (!fs.existsSync(f)) err(`${where} href_${l} points at a page that does not exist: ${h}`);
+          const anchor = h.split('#')[1];
+          if (anchor && fs.existsSync(f) && !fs.readFileSync(f, 'utf8').includes(`id="${anchor}"`)) err(`${where} href_${l} anchor #${anchor} is not on ${p}`);
+        }
+        if (l === 'en' && SITE.test(h) && h.startsWith('/fr/')) err(`${where} href_en points at a French page`);
+        if (l === 'fr' && SITE.test(h) && h.startsWith('/en/')) err(`${where} href_fr points at an English page`);
+      }
+    };
+    const entry = (e, where) => {
+      n++;
+      both(e, where);
+      (e.points || []).forEach((p, i) => { both(p, `${where} point ${i + 1}`); link(p.src, `${where} point ${i + 1} source`, false); });
+      if (e.quote) {
+        both(e.quote, `${where} quote`); both(e.quote.who, `${where} quote attribution`);
+        link(e.quote.src, `${where} quote source`, false);
+        // A quote stands only on a page the Observer has published (where it
+        // already passed the newsroom's sourcing rules) or an official record.
+        if (!e.quote.src || !['recap', 'story', 'minutes', 'document'].includes(e.quote.src.kind)) err(`${where} quote is not sourced to a published page or record`);
+      }
+      (e.links || []).forEach((lk, i) => link(lk, `${where} link ${i + 1}`, true));
+    };
+    for (const [k, e] of Object.entries(CX.categories || {})) {
+      if (!catSlugs.has(k)) err(`category "${k}" is not a ledger category slug`);
+      entry(e, `category ${k}`);
+    }
+    for (const [k, e] of Object.entries(CX.sittings || {})) {
+      if (!monthIds.has(k)) err(`sitting "${k}" is not in the ledger`);
+      entry(e, `sitting ${k}`);
+    }
+    for (const [k, e] of Object.entries(CX.payees || {})) {
+      if (!slugs.has(k)) err(`payee "${k}" is not a shipped payee slug (tests/payee-slugs.json)`);
+      entry(e, `payee ${k}`);
+    }
+    if (!bad) ok(`context: ${n} entries, bilingual, sourced, links resolve`);
+
+    // Context is routine maintenance, not a one-off: the ingest and the
+    // Council Watch workflows each owe it an entry, and this is where a
+    // forgotten one fails the build.
+    //  (a) the newest itemized sitting has an entry — written at ingest;
+    //  (b) a sitting with a published recap links that recap — written when
+    //      the recap publishes, or at ingest if the recap came first.
+    const dateOf = (m) => (m.session.match(/\d{4}-\d{2}-\d{2}/) || [''])[0];
+    const newest = D.months[D.months.length - 1];
+    if (!(CX.sittings || {})[newest.m]) err(`the newest sitting (${newest.m}) has no entry in ledger-context.js sittings — add one with the ingest`);
+    const MONTHS = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
+    const cwDir = path.join(root, 'en', 'council-watch');
+    const byDate = new Map(D.months.map(m => [dateOf(m), m.m]));
+    let recaps = 0;
+    for (const e of fs.readdirSync(cwDir, { withFileTypes: true })) {
+      const mm = e.isDirectory() && e.name.match(/^([a-z]+)-(\d{1,2})-(\d{4})$/);
+      if (!mm || MONTHS.indexOf(mm[1]) < 0) continue;
+      const iso = `${mm[3]}-${String(MONTHS.indexOf(mm[1]) + 1).padStart(2, '0')}-${mm[2].padStart(2, '0')}`;
+      const id = byDate.get(iso);
+      if (!id) continue;                           // sitting not itemized yet
+      recaps++;
+      const href = `/en/council-watch/${e.name}/`;
+      const se = (CX.sittings || {})[id];
+      const refs = se ? [...(se.links || []), ...(se.points || []).map(p => p.src)].map(x => x && x.href_en) : [];
+      if (!refs.includes(href)) err(`sitting ${id} has a Council Watch recap (${href}) that its context entry does not link`);
+    }
+    const missing = D.months.filter(m => !(CX.sittings || {})[m.m]).map(m => m.m);
+    ok(`context: newest sitting covered; ${recaps} itemized sittings with a recap all link it; ${missing.length} older sittings without context (${missing.join(', ') || 'none'})`);
+  }
+}
+
 // ---- Result
 if (failures) { console.error(`\n${failures} check(s) failed.`); process.exit(1); }
 console.log('\nAll checks passed.');
@@ -308,6 +410,6 @@ function listFiles(root, re) {
 function listScripts(root) {
   return listFiles(root, /\.js$/).filter(p => {
     const rel = path.relative(root, p);
-    return !rel.startsWith('tools' + path.sep) && !rel.startsWith('tests' + path.sep) && rel !== 'i18n.js' && rel !== 'spending-data.js';
+    return !rel.startsWith('tools' + path.sep) && !rel.startsWith('tests' + path.sep) && rel !== 'i18n.js' && rel !== 'spending-data.js' && rel !== 'ledger-context.js';
   });
 }
