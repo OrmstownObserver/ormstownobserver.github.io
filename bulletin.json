@@ -1,0 +1,39 @@
+{
+  "updated": "2026-10-18",
+  "items": [
+    {
+      "id": "6-rue-edward-variance-2026",
+      "type": "notice",
+      "date": "2026-10-06",
+      "title_en": "Minor variance at 6 rue Edward approved",
+      "title_fr": "Dérogation mineure au 6, rue Edward accordée",
+      "text_en": "Council approved the request on October 6: part of the house sits 4.42 m from the front lot line instead of the 5 m the zoning requires.",
+      "text_fr": "Le conseil a accepté la demande le 6 octobre : une partie de la maison se trouve à 4,42 m de la ligne avant au lieu des 5 m exigés par le zonage.",
+      "link": {
+        "label_en": "Our recap",
+        "label_fr": "Notre compte rendu",
+        "url_en": "/en/council-watch/october-6-2026/",
+        "url_fr": "/fr/conseil-municipal/6-octobre-2026/"
+      },
+      "source": {
+        "label_en": "Public notice (PDF, French)",
+        "label_fr": "Avis public (PDF)",
+        "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Demande-de-derogation-mineure-octobre-2026_SIGNE.pdf"
+      }
+    },
+    {
+      "id": "mrc-358-2026-heritage-aid",
+      "type": "notice",
+      "date": "2026-09-28",
+      "title_en": "MRC adopts a regional financial aid program for heritage restoration",
+      "title_fr": "La MRC adopte un programme régional d'aide financière à la restauration patrimoniale",
+      "text_en": "The MRC du Haut-Saint-Laurent adopted bylaw 358-2026 on September 16. The notice does not give the program's terms; the MRC answers at 450-264-5411.",
+      "text_fr": "La MRC du Haut-Saint-Laurent a adopté le règlement 358-2026 le 16 septembre. L'avis ne précise pas les modalités du programme; la MRC répond au 450-264-5411.",
+      "source": {
+        "label_en": "Public notice (PDF, French)",
+        "label_fr": "Avis public (PDF)",
+        "url": "https://www.ormstown.ca/wp-content/uploads/Certificat-publication-358-2026_Ormstown_SIGNE.pdf"
+      }
+    }
+  ]
+}

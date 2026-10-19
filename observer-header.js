@@ -395,10 +395,6 @@
         class="${isActive('/en/piia') || isActive('/fr/piia') ? 'is-active' : ''}">
         <span data-en>PIIA Explained</span><span data-fr>Le PIIA expliqué</span>
       </a>
-      <a href="/en/public-notices/" data-href-en="/en/public-notices/" data-href-fr="/fr/public-notices/"
-        class="${isActive('/en/public-notices') || isActive('/fr/public-notices') ? 'is-active' : ''}">
-        <span data-en>Public Notices</span><span data-fr>Avis publics</span>
-      </a>
       <a href="/en/council-watch/" data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/"
         class="${isActive('/en/council') || isActive('/fr/conseil') ? 'is-active' : ''}">
         <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>

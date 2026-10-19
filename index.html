@@ -326,6 +326,39 @@
   }
   .ledger-sub { font-size: 12px; line-height: 1.5; color: var(--ink-soft); }
 
+  /* ── BULLETIN — running list of notices, alerts and events (bulletin.js).
+     Replaced the Public Notices page (2026-10-18). ── */
+  .bulletin { padding: 26px 24px 6px; }
+  .bulletin-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+    padding-bottom: 8px; border-bottom: 2px solid var(--line); }
+  .bulletin-head h2 {
+    font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; font-size: 20px;
+  }
+  .bulletin-head p { font-size: 14px; color: var(--ink-soft); }
+  .bulletin-list { list-style: none; margin: 0; padding: 0; }
+  .bulletin-item {
+    display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 4px 18px;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .bulletin-meta { display: flex; flex-direction: column; gap: 3px; padding-top: 2px; }
+  .bulletin-type {
+    font-family: sans-serif; font-size: 9.5px; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .12em; color: var(--muted);
+  }
+  .bulletin-date { font-family: sans-serif; font-size: 12px; color: var(--ink-soft); }
+  .bulletin-alert .bulletin-type { color: var(--accent); }
+  .bulletin-alert { box-shadow: inset 3px 0 0 var(--accent); padding-left: 12px; }
+  .bulletin-body { max-width: 760px; }
+  .bulletin-title { font-weight: 700; font-size: 16px; line-height: 1.35; color: var(--ink); }
+  .bulletin-text { font-size: 14px; line-height: 1.55; color: var(--ink-soft); margin-top: 4px; }
+  .bulletin-links { display: flex; flex-wrap: wrap; gap: 4px 18px; margin-top: 6px;
+    font-family: sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+  .bulletin-link { color: var(--accent); text-transform: uppercase; letter-spacing: .08em; }
+  .bulletin-source { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+  .bulletin-link:hover, .bulletin-source:hover { color: var(--ink); }
+  .bulletin-signup { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
+  .bulletin-signup a { color: var(--accent); font-weight: 700; }
+
   /* About — one slim strip under the topics. */
   .about-strip {
     display: flex; align-items: center; justify-content: space-between; gap: 18px;
@@ -343,6 +376,28 @@
 
   @media (max-width: 1080px) {
     .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  /* ── DESKTOP GUTTER — keeps the stories and topics off the window's edges.
+     At least 24px a side, growing so content never runs wider than 1100px,
+     the same box as the shared masthead (observer-header.js), so the theme
+     and menu buttons sit on the content's edges. The nav's links start on
+     the same line; its rule, the red O bar and the footer stay full width.
+     vw (not %) so .obs-break's negative margins cancel .topics' padding
+     exactly. Phones keep the edge-to-edge layout below 720px. ── */
+  @media (min-width: 721px) {
+    body { --page-gutter: max(24px, calc((100vw - 1100px) / 2)); }
+    .site-nav { padding-inline: var(--page-gutter); }
+    /* 14px (not 18) so all nine links fit inside the 1100px box. */
+    .site-nav a { padding-inline: 14px; }
+    .hero { margin: 24px var(--page-gutter) 0; }
+    .latest-stories { margin-inline: var(--page-gutter); }
+    .bulletin, .topics { padding-inline: var(--page-gutter); }
+    .obs-break {
+      margin-inline: calc(-1 * var(--page-gutter));
+      padding-inline: var(--page-gutter);
+    }
+    .about-strip { margin-inline: var(--page-gutter); }
   }
 
   /* ── FOOTER ── */
@@ -368,6 +423,9 @@
     .latest-stories { grid-template-columns: 1fr; }
     .story-card { border-right: none; border-bottom: 1px solid var(--border); }
     .story-card:last-child { border-bottom: none; }
+    .bulletin { padding: 22px 16px 4px; }
+    .bulletin-item { grid-template-columns: 1fr; }
+    .bulletin-meta { flex-direction: row; gap: 10px; align-items: baseline; }
     .topics { padding: 22px 16px 4px; }
     .obs-break { margin: -10px -16px 14px; padding: 10px 16px; }
     .topic-grid { grid-template-columns: 1fr; }
@@ -406,6 +464,7 @@
      can pair with a new front-page.json and abort the render, leaving the static
      fallback on screen. Bump the v= whenever front-page.js changes. -->
 <script src="/front-page.js?v=20260802-1" defer></script>
+<script src="/bulletin.js?v=20261018-1" defer></script>
 </head>
 <body>
 
@@ -431,29 +490,22 @@
 
 <!-- NAV -->
 <nav class="site-nav" aria-label="Main navigation">
-  <a class="is-active" data-href-en="/" data-href-fr="/" href="/">
-    <span data-en>Home</span><span data-fr>Accueil</span>
-  </a>
-  <a data-href-en="/en/investigations/" data-href-fr="/fr/bell-tower/" href="/en/investigations/">
-    <span data-en>Investigations</span><span data-fr>Enqu&ecirc;tes</span>
-  </a>
+  <!-- The five sections readers come for, plus tips. Everything else is in
+       the menu (observer-header.js) and the topic cards below. -->
   <a data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/" href="/en/council-watch/">
     <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>
   </a>
   <a data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/" href="/en/bylaws-regulations/">
     <span data-en>Bylaws &amp; Regs</span><span data-fr>R&egrave;glements</span>
   </a>
-  <a data-href-en="/en/piia/" data-href-fr="/fr/piia/" href="/en/piia/">
-    <span data-en>PIIA Explained</span><span data-fr>Le PIIA expliqu&eacute;</span>
+  <a data-href-en="/finances/?lang=en" data-href-fr="/finances/?lang=fr" href="/finances/?lang=en">
+    <span data-en>The Ledger</span><span data-fr>Le grand livre</span>
   </a>
-  <a data-href-en="/en/public-notices/" data-href-fr="/fr/public-notices/" href="/en/public-notices/">
-    <span data-en>Public Notices</span><span data-fr>Avis publics</span>
+  <a data-href-en="/en/investigations/" data-href-fr="/fr/investigations/" href="/en/investigations/">
+    <span data-en>Investigations</span><span data-fr>Enqu&ecirc;tes</span>
   </a>
   <a data-href-en="/en/editorials/" data-href-fr="/fr/editoriaux/" href="/en/editorials/">
     <span data-en>Editorials</span><span data-fr>&Eacute;ditoriaux</span>
-  </a>
-  <a data-href-en="/press/" data-href-fr="/press/" href="/press/">
-    <span data-en>Press Kits</span><span data-fr>Dossiers de presse</span>
   </a>
   <a href="mailto:ormstownobserver@gmail.com">
     <span data-en>Tips &amp; Contact</span><span data-fr>Conseils &amp; contact</span>
@@ -544,6 +596,18 @@
   </a>
 
 </div>
+
+<!-- BULLETIN — rendered by bulletin.js from /bulletin.json (notices, alerts,
+     events). Hidden until at least one item renders. -->
+<section class="bulletin" id="bulletin" aria-labelledby="bulletin-h" hidden>
+  <div class="bulletin-head">
+    <h2 id="bulletin-h"><span data-en>Bulletin</span><span data-fr>Babillard</span></h2>
+    <p><span data-en>Notices, alerts and events the Observer has picked up.</span><span data-fr>Avis, alertes et &eacute;v&eacute;nements rep&eacute;r&eacute;s par l&rsquo;Observer.</span></p>
+  </div>
+  <ul class="bulletin-list" id="bulletin-list"></ul>
+  <p class="bulletin-signup"><span data-en>Emergency alerts from the municipality, as they happen:</span><span data-fr>Les alertes d&rsquo;urgence de la municipalit&eacute;, en temps r&eacute;el&nbsp;:</span>
+    <a href="https://ormstown.alertesmunicipales.com/" rel="noopener"><span data-en>sign up &rarr;</span><span data-fr>s&rsquo;inscrire &rarr;</span></a></p>
+</section>
 
 <!-- EXPLORE BY TOPIC — hand-authored; front-page.js never touches this zone.
      One card per subject, each leading to a page dedicated to it. Add a card
