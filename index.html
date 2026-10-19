@@ -76,31 +76,24 @@
   }
   .masthead-tagline { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 5px; }
 
-  /* ── NAV ── */
+  /* ── NAV ──
+     A newspaper section line: the words centred under the language toggle,
+     spaced apart, no boxes. They wrap onto a second centred line on narrow
+     windows instead of scrolling sideways. Hover turns a link red with a
+     thin red underline. */
   .site-nav {
-    display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch;
+    display: flex; flex-wrap: wrap; justify-content: center; column-gap: 34px;
     border-bottom: 2px solid var(--line); background: var(--paper);
     font-family: sans-serif; font-size: 11px; font-weight: 700;
     text-transform: uppercase; letter-spacing: .1em;
-    scrollbar-width: none;
+    padding: 2px 16px;
   }
-  .site-nav::-webkit-scrollbar { display: none; }
   .site-nav a {
-    padding: 10px 18px; white-space: nowrap; flex-shrink: 0;
-    border-right: 1px solid var(--border); color: var(--ink);
-    transition: background .12s, color .12s;
+    padding: 13px 0 11px; white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    color: var(--ink); transition: color .12s, border-color .12s;
   }
-  .site-nav a:first-child { border-left: 1px solid var(--border); }
-  .site-nav a:hover, .site-nav a.is-active { background: var(--accent); color: #fff; }
-  /* Dark mode lifts --accent to a pale coral #f2857d, on which the #fff above sits
-     at about 2.5:1. html.obs-ds is set by observer-header.js only on pages
-     that link observer.css, which this one does. */
-  html.obs-ds[data-theme=dark] .site-nav a:hover,
-  html.obs-ds[data-theme=dark] .site-nav a.is-active { color: #0f141b; }
-  @media (prefers-color-scheme: dark) {
-    html.obs-ds:not([data-theme=light]) .site-nav a:hover,
-    html.obs-ds:not([data-theme=light]) .site-nav a.is-active { color: #0f141b; }
-  }
+  .site-nav a:hover, .site-nav a.is-active { color: var(--accent); border-bottom-color: var(--accent); }
 
   /* ── HERO — Option A: full-width lead, then two secondary cards BELOW.
      The old 3fr/2fr grid put a side column next to the lead; that column is
@@ -388,8 +381,6 @@
   @media (min-width: 721px) {
     body { --page-gutter: max(24px, calc((100vw - 1100px) / 2)); }
     .site-nav { padding-inline: var(--page-gutter); }
-    /* 14px (not 18) so all nine links fit inside the 1100px box. */
-    .site-nav a { padding-inline: 14px; }
     .hero { margin: 24px var(--page-gutter) 0; }
     .latest-stories { margin-inline: var(--page-gutter); }
     .bulletin, .topics { padding-inline: var(--page-gutter); }
@@ -455,7 +446,8 @@
       text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0;
     }
     .about-strip { flex-direction: column; align-items: flex-start; margin: 20px 16px 28px; }
-    .site-nav a { padding: 10px 14px; font-size: 10px; }
+    .site-nav { column-gap: 24px; }
+    .site-nav a { font-size: 10px; }
   }
 </style>
 <script src="/observer-header.js" defer></script>
@@ -490,8 +482,8 @@
 
 <!-- NAV -->
 <nav class="site-nav" aria-label="Main navigation">
-  <!-- The five sections readers come for, plus tips. Everything else is in
-       the menu (observer-header.js) and the topic cards below. -->
+  <!-- The five sections readers come for. Everything else, contact included,
+       is in the ☰ menu (observer-header.js) and the topic cards below. -->
   <a data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/" href="/en/council-watch/">
     <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>
   </a>
@@ -506,9 +498,6 @@
   </a>
   <a data-href-en="/en/editorials/" data-href-fr="/fr/editoriaux/" href="/en/editorials/">
     <span data-en>Editorials</span><span data-fr>&Eacute;ditoriaux</span>
-  </a>
-  <a href="mailto:ormstownobserver@gmail.com">
-    <span data-en>Tips &amp; Contact</span><span data-fr>Conseils &amp; contact</span>
   </a>
 </nav>
 

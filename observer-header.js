@@ -90,14 +90,14 @@
       display:flex; justify-content:center; margin-top:18px;
     }
     .obs-lang{
-      display:inline-flex; border:1.5px solid var(--control-line, var(--ink)); overflow:hidden;
+      display:inline-flex; border:1px solid var(--control-line, var(--ink)); overflow:hidden;
     }
     .obs-lang button{
-      font-family:'Libre Baskerville',serif; font-weight:700; font-size:12px;
+      font-family:'Libre Baskerville',serif; font-weight:700; font-size:11px;
       letter-spacing:.06em;
       color:var(--ink); background:var(--paper); border:none;
-      border-right:1px solid var(--control-line, var(--ink)); padding:9px 20px; cursor:pointer;
-      min-height:40px; line-height:1;
+      border-right:1px solid var(--control-line, var(--ink)); padding:6px 14px; cursor:pointer;
+      min-height:30px; line-height:1;
       transition:background .15s,color .15s;
     }
     .obs-lang button:last-child{border-right:none;}
@@ -113,7 +113,7 @@
       html.obs-ds:not([data-theme=light]) .obs-lang button.is-active{color:#0f141b;}
     }
     @media (max-width:420px){
-      .obs-lang button{padding:9px 14px;font-size:11.5px;}
+      .obs-lang button{padding:6px 12px;}
     }
 
     /* ── THEME TOGGLE (sits beside the lang toggle) ──
@@ -142,8 +142,8 @@
     /* Phone masthead. It used to stand 244px tall at 375px wide, close to a
        third of the first screen before any story. Compact form: the region
        flag and tagline go, the name sits on one or two short lines between the
-       theme toggle and the hamburger, and the language bar tightens without
-       shrinking its tap targets below 36px. */
+       theme toggle and the hamburger, and the language bar tightens (34px
+       tall on phones, 30px on desktop, since 2026-10-19). */
     @media (max-width:520px){
       .obs-masthead{padding:12px 14px 12px;border-top-width:4px;overflow:hidden;}
       .obs-masthead-inner{max-width:100%;}
@@ -152,7 +152,7 @@
       .obs-name{display:block;font-size:21px;line-height:1.15;max-width:calc(100vw - 128px);white-space:normal;margin:0 auto;}
       .obs-rule-bottom{margin-top:10px;}
       .obs-langbar{margin-top:10px;}
-      .obs-lang button{min-height:36px;padding:8px 18px;}
+      .obs-lang button{min-height:34px;padding:6px 14px;}
       .obs-controls,.obs-hamburger{top:calc(50% - 23px);}
       .obs-hamburger{right:-6px;padding:11px 8px;}
       .obs-theme{width:36px;height:36px;}
