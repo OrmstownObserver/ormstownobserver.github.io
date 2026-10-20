@@ -31,6 +31,23 @@
   .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
   .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
   .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  /* Sitting stamp: la séance couverte par la page, avant le titre,
+     pour que la date de la séance se lise avant la date de publication. */
+  .sitting-stamp { display: inline-flex; align-items: stretch; margin: 2px 0 16px; border: 1px solid var(--accent); }
+  .sitting-stamp .ss-kind { background: var(--accent); color: #fff; font-family: sans-serif; font-size: 0.68rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.2px; padding: 7px 10px; display: flex; align-items: center; }
+  .sitting-stamp .ss-date { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.05rem; padding: 6px 12px; color: var(--ink); }
+  :root[data-theme="dark"] .sitting-stamp .ss-kind { color: #0f141b; }
+  .sitting-stamp { flex-wrap: wrap; max-width: 100%; }
+  .sitting-stamp .ss-kind, .sitting-stamp .ss-date { white-space: nowrap; }
+  @media (max-width: 480px) {
+    .sitting-stamp .ss-kind { font-size: 0.6rem; padding: 6px 8px; }
+    .sitting-stamp .ss-date { font-size: 0.92rem; padding: 5px 10px; }
+  }
+  /* Cross-link between a sitting's full recap and its single-decision stories. */
+  .sitting-link { border-left: 3px solid var(--accent); padding: 8px 14px; margin: 0 0 22px; font-size: 0.9rem; }
+  .sitting-link .sl-label { display: block; font-family: sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 2px; }
+  .sitting-link a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
   .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
 
   h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
@@ -179,14 +196,15 @@
 <main class="article-wrap">
   <a class="back-link" href="/fr/conseil-municipal/">&larr; Conseil municipal</a>
 
-  <div class="section-label">Conseil municipal &middot; S&eacute;ance ordinaire</div>
+  <div class="section-label">Conseil municipal</div>
+  <div class="sitting-stamp"><span class="ss-kind">Séance ordinaire</span><span class="ss-date">Mardi 6 octobre 2026</span></div>
 
   <h1 class="article-headline">Le conseil commande une &eacute;tude de circulation sur quatre intersections probl&eacute;matiques et reporte le pavage du 3e Rang &agrave; 2027</h1>
 
   <p class="article-deck">La s&eacute;ance d&rsquo;octobre, report&eacute;e au mardi par avis public, a approuv&eacute; un financement par obligations de 2&nbsp;025&nbsp;000&nbsp;$, une &eacute;tude de circulation pour le corridor des routes 138 et 201, et quatre points qui ne figuraient pas &agrave; l&rsquo;ordre du jour publi&eacute;. Un point inscrit comme PPCMOI a &eacute;t&eacute; pr&eacute;sent&eacute; par la pr&eacute;sidence comme une demande d&rsquo;enseigne. &Agrave; la premi&egrave;re p&eacute;riode de questions, des citoyens ont interrog&eacute; le conseil sur des odeurs r&eacute;currentes, les demandes d&rsquo;acc&egrave;s &agrave; l&rsquo;information et des d&eacute;penses aupr&egrave;s de firmes externes.</p>
 
   <div class="byline">
-    The Ormstown Observer &middot; Conseil municipal &middot; 7 octobre 2026 &middot; Mardi 6 octobre 2026, 18&nbsp;h&nbsp;30, h&ocirc;tel de ville, 5, rue Gale &middot; <a href="https://www.youtube.com/watch?v=wMqrHf-X738">Visionner l&rsquo;enregistrement complet sur YouTube &rarr;</a>
+    L&rsquo;Ormstown Observer &middot; Publié le 7 octobre 2026 &middot; 18&nbsp;h&nbsp;30, h&ocirc;tel de ville, 5, rue Gale &middot; <a href="https://www.youtube.com/watch?v=wMqrHf-X738">Visionner l&rsquo;enregistrement complet sur YouTube &rarr;</a>
   </div>
 
   <figure class="article-figure">
@@ -195,6 +213,8 @@
   </figure>
 
   <div class="status-badge unofficial"><span class="status-dot"></span>Notes de l&rsquo;Observer &middot; R&eacute;sum&eacute; non officiel &mdash; proc&egrave;s-verbal &agrave; venir</div>
+
+  <div class="sitting-link"><span class="sl-label">Aussi de cette séance</span><a href="/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/">Ormstown acquiert des parcelles de trois terrains privés pour boucler l&rsquo;aqueduc</a></div>
 
   <div class="src-legend">
     <p><strong>Comment lire cet article.</strong> Chaque &eacute;l&eacute;ment ci-dessous est marqu&eacute; selon la source dont l&rsquo;Observer le tient.

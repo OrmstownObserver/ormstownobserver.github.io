@@ -27,6 +27,19 @@
   .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
   .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
   .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  /* Sitting stamp: which council sitting this page covers, ahead of the
+     headline, so the meeting date reads before the publish date. */
+  .sitting-stamp { display: inline-flex; align-items: stretch; margin: 2px 0 16px; border: 1px solid var(--accent); }
+  .sitting-stamp .ss-kind { background: var(--accent); color: #fff; font-family: sans-serif; font-size: 0.68rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.2px; padding: 7px 10px; display: flex; align-items: center; }
+  .sitting-stamp .ss-date { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.05rem; padding: 6px 12px; color: var(--ink); }
+  :root[data-theme="dark"] .sitting-stamp .ss-kind { color: #0f141b; }
+  .sitting-stamp { flex-wrap: wrap; max-width: 100%; }
+  .sitting-stamp .ss-kind, .sitting-stamp .ss-date { white-space: nowrap; }
+  @media (max-width: 480px) {
+    .sitting-stamp .ss-kind { font-size: 0.6rem; padding: 6px 8px; }
+    .sitting-stamp .ss-date { font-size: 0.92rem; padding: 5px 10px; }
+  }
   .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
 
   h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
@@ -77,10 +90,11 @@
 
 <div class="article-wrap">
 
-  <div class="section-label">Council Watch &middot; Regular Session</div>
+  <div class="section-label">Council Watch</div>
+  <div class="sitting-stamp"><span class="ss-kind">Regular sitting</span><span class="ss-date">Monday, July 6, 2026</span></div>
   <h1 class="article-headline">Council votes unanimously to sign Bell tower lease; a heavy year of infrastructure work confirmed</h1>
   <p class="article-deck">Monday, July 6, 2026 — The Bell Mobilité tower lease came to a formal recorded vote and passed unanimously. Council also authorized a major road-works tender, awarded winter and laboratory contracts, named a new deputy mayor, and moved two PPCMOI housing files forward.</p>
-  <div class="byline">The Ormstown Observer &middot; Council Watch &middot; 6:30 p.m., Town Hall, 5 Gale Street &middot; Recording to be posted on the municipality's YouTube channel (the livestream failed during the session)</div>
+  <div class="byline">The Ormstown Observer &middot; 6:30 p.m., Town Hall, 5 Gale Street &middot; Recording to be posted on the municipality's YouTube channel (the livestream failed during the session)</div>
 
   <div class="status-badge unofficial"><span class="status-dot"></span>Observer Notes &middot; Unofficial summary — official minutes pending</div>
 

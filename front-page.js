@@ -211,6 +211,30 @@
     return out;
   }
 
+  /* Council Watch band (2026-10-19): the four most recent full recaps, newest
+     first, from data.council (Notion rows with Council Type = Recap). The static
+     tiles in #council-band are the fallback. textContent only, paths validated. */
+  function renderCouncil(list) {
+    if (!Array.isArray(list)) return;
+    var items = list.filter(function (c) {
+      return c && typeof c.hed_en === 'string' && c.hed_en && validPath(c.path_en) &&
+        typeof c.sitting_en === 'string' && c.sitting_en && typeof c.short_en === 'string';
+    }).slice(0, 4);
+    if (!items.length) return;
+    var row = document.querySelector('#council-band .cb-row');
+    if (!row) return;
+    clearChildren(row);
+    items.forEach(function (c) {
+      var a = el('a', 'cb-tile', row);
+      setHrefs(a, c);
+      var when = el('div', 'cb-when', a);
+      biSpan(el('span', 'cb-date', when), c.short_en, c.short_fr || c.short_en);
+      biSpan(el('span', 'cb-day', when), c.sitting_en, c.sitting_fr || c.sitting_en);
+      biSpan(el('div', 'cb-hed', a), c.hed_en, c.hed_fr);
+      biSpan(el('span', 'cb-cta', a), 'Read the recap →', 'Lire le compte rendu →');
+    });
+  }
+
   function renderLatest(list, groups) {
     var col = document.querySelector('.latest-col');
     if (!col) return;
@@ -262,6 +286,7 @@
       try { renderHero(data.hero); } catch (e) {}
       try { renderCards(data.cards); } catch (e) {}
       try { renderLatest(data.latest, data.latest_groups); } catch (e) {}
+      try { renderCouncil(data.council); } catch (e) {}
       try { syncAria(); } catch (e) {}
       try { wrapLangToggles(); } catch (e) {}
     })

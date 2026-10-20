@@ -319,6 +319,26 @@
   }
   .ledger-sub { font-size: 12px; line-height: 1.5; color: var(--ink-soft); }
 
+  /* ── COUNCIL WATCH BAND (2026-10-19): the latest sittings, one tile each. ── */
+  .council-band { padding: 26px 24px 4px; }
+  .cb-head { display: flex; align-items: baseline; gap: 6px 16px; flex-wrap: wrap;
+    padding-bottom: 8px; border-bottom: 2px solid var(--line); }
+  .cb-head h2 { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; font-size: clamp(20px, 2.6vw, 24px); }
+  .cb-head p { font-size: 14px; color: var(--ink-soft); flex: 1; min-width: 220px; }
+  .cb-all { font-family: sans-serif; font-size: 11px; font-weight: 800; text-transform: uppercase;
+    letter-spacing: .08em; color: var(--accent); white-space: nowrap; }
+  .cb-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-left: 1px solid var(--border); }
+  .cb-tile { display: flex; flex-direction: column; gap: 8px; padding: 16px 18px 18px;
+    border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); color: var(--ink); transition: background .12s; }
+  .cb-tile:hover { background: var(--paper-dark); }
+  .cb-tile:hover .cb-hed { color: var(--accent); }
+  .cb-when { display: flex; flex-direction: column; gap: 2px; }
+  .cb-date { font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; font-size: 22px; line-height: 1.1; color: var(--accent); }
+  .cb-day { font-family: sans-serif; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  .cb-hed { font-size: 15px; font-weight: 700; line-height: 1.35; flex: 1; transition: color .12s; }
+  .cb-cta { font-family: sans-serif; font-size: 10.5px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+  @media (max-width: 1080px) { .cb-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
   /* ── BULLETIN — running list of notices, alerts and events (bulletin.js).
      Replaced the Public Notices page (2026-10-18). ── */
   .bulletin { padding: 28px 24px 6px; }
@@ -385,7 +405,7 @@
     .site-nav { padding-inline: var(--page-gutter); }
     .hero { margin: 24px var(--page-gutter) 0; }
     .latest-stories { margin-inline: var(--page-gutter); }
-    .bulletin, .topics { padding-inline: var(--page-gutter); }
+    .council-band, .bulletin, .topics { padding-inline: var(--page-gutter); }
     .obs-break {
       margin-inline: calc(-1 * var(--page-gutter));
       padding-inline: var(--page-gutter);
@@ -427,6 +447,12 @@
     .story-label { margin-bottom: 4px; }
     .story-hed { font-size: 14px; flex: none; margin-bottom: 4px; }
     .story-cta { display: none; }
+    .council-band { padding: 22px 16px 4px; }
+    .cb-row { grid-template-columns: 1fr; border-left: 0; }
+    .cb-tile { flex-direction: row; align-items: baseline; gap: 14px; padding: 12px 0; border-right: 0; }
+    .cb-when { flex: none; width: 64px; }
+    .cb-day, .cb-cta { display: none; }
+    .cb-date { font-size: 17px; }
     .bulletin { padding: 22px 16px 4px; }
     .bulletin-item { grid-template-columns: 1fr; }
     .bulletin-meta { flex-direction: row; gap: 10px; align-items: baseline; }
@@ -468,7 +494,7 @@
      both for 10 min (max-age=600); without the pin, a cached old front-page.js
      can pair with a new front-page.json and abort the render, leaving the static
      fallback on screen. Bump the v= whenever front-page.js changes. -->
-<script src="/front-page.js?v=20260802-1" defer></script>
+<script src="/front-page.js?v=20261019-1" defer></script>
 <script src="/bulletin.js?v=20261018-1" defer></script>
 </head>
 <body>
@@ -598,6 +624,39 @@
   </a>
 
 </div>
+
+<!-- COUNCIL WATCH BAND — the four most recent full recaps, newest first. Rendered by
+     front-page.js from front-page.json "council" (Notion: Council Type = Recap + Sitting
+     Date); the tiles below are the static fallback. -->
+<section class="council-band" id="council-band" aria-labelledby="council-h">
+  <div class="cb-head">
+    <h2 id="council-h"><span data-en>Council Watch</span><span data-fr>Conseil municipal</span></h2>
+    <p><span data-en>Every sitting, recapped item by item, with links into the recording.</span><span data-fr>Chaque s&eacute;ance, r&eacute;sum&eacute;e point par point, avec des liens vers l&rsquo;enregistrement.</span></p>
+    <a class="cb-all" data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/" href="/en/council-watch/"><span data-en>All sittings &rarr;</span><span data-fr>Toutes les s&eacute;ances &rarr;</span></a>
+  </div>
+  <div class="cb-row">
+    <a class="cb-tile" data-href-en="/en/council-watch/october-6-2026/" data-href-fr="/fr/conseil-municipal/6-octobre-2026/" href="/en/council-watch/october-6-2026/">
+      <div class="cb-when"><span class="cb-date"><span data-en>Oct 6</span><span data-fr>6 oct.</span></span><span class="cb-day"><span data-en>Tuesday, October 6, 2026</span><span data-fr>Mardi 6 octobre 2026</span></span></div>
+      <div class="cb-hed"><span data-en>Council orders a traffic study of four problem intersections and pushes 3e Rang paving to 2027</span><span data-fr>Le conseil commande une étude de circulation sur quatre intersections problématiques et reporte le pavage du 3e Rang à 2027</span></div>
+      <span class="cb-cta"><span data-en>Read the recap &rarr;</span><span data-fr>Lire le compte rendu &rarr;</span></span>
+    </a>
+    <a class="cb-tile" data-href-en="/en/council-watch/august-3-2026/" data-href-fr="/fr/conseil-municipal/3-aout-2026/" href="/en/council-watch/august-3-2026/">
+      <div class="cb-when"><span class="cb-date"><span data-en>Aug 3</span><span data-fr>3 août</span></span><span class="cb-day"><span data-en>Monday, August 3, 2026</span><span data-fr>Lundi 3 août 2026</span></span></div>
+      <div class="cb-hed"><span data-en>Council approves 24-unit Church Street project</span><span data-fr>Le conseil approuve le projet de 24 logements de la rue Church</span></div>
+      <span class="cb-cta"><span data-en>Read the recap &rarr;</span><span data-fr>Lire le compte rendu &rarr;</span></span>
+    </a>
+    <a class="cb-tile" data-href-en="/en/council-watch/july-6-2026/" data-href-fr="/fr/conseil-municipal/6-juillet-2026/" href="/en/council-watch/july-6-2026/">
+      <div class="cb-when"><span class="cb-date"><span data-en>Jul 6</span><span data-fr>6 juil.</span></span><span class="cb-day"><span data-en>Monday, July 6, 2026</span><span data-fr>Lundi 6 juillet 2026</span></span></div>
+      <div class="cb-hed"><span data-en>Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed</span><span data-fr>Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure</span></div>
+      <span class="cb-cta"><span data-en>Read the recap &rarr;</span><span data-fr>Lire le compte rendu &rarr;</span></span>
+    </a>
+    <a class="cb-tile" data-href-en="/en/council-watch/june-1-2026/" data-href-fr="/fr/conseil-municipal/1-juin-2026/" href="/en/council-watch/june-1-2026/">
+      <div class="cb-when"><span class="cb-date"><span data-en>Jun 1</span><span data-fr>1er juin</span></span><span class="cb-day"><span data-en>Monday, June 1, 2026</span><span data-fr>Lundi 1er juin 2026</span></span></div>
+      <div class="cb-hed"><span data-en>2025 financials tabled, 24-unit housing project proposed</span><span data-fr>États financiers 2025 déposés, projet de 24 logements proposé</span></div>
+      <span class="cb-cta"><span data-en>Read the recap &rarr;</span><span data-fr>Lire le compte rendu &rarr;</span></span>
+    </a>
+  </div>
+</section>
 
 <!-- BULLETIN — rendered by bulletin.js from /bulletin.json (notices, alerts,
      events). Hidden until at least one item renders. -->

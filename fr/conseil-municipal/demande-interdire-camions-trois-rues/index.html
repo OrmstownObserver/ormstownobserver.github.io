@@ -31,6 +31,19 @@
   .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
   .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
   .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  /* Sitting stamp: la séance couverte par la page, avant le titre,
+     pour que la date de la séance se lise avant la date de publication. */
+  .sitting-stamp { display: inline-flex; align-items: stretch; margin: 2px 0 16px; border: 1px solid var(--accent); }
+  .sitting-stamp .ss-kind { background: var(--accent); color: #fff; font-family: sans-serif; font-size: 0.68rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.2px; padding: 7px 10px; display: flex; align-items: center; }
+  .sitting-stamp .ss-date { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.05rem; padding: 6px 12px; color: var(--ink); }
+  :root[data-theme="dark"] .sitting-stamp .ss-kind { color: #0f141b; }
+  .sitting-stamp { flex-wrap: wrap; max-width: 100%; }
+  .sitting-stamp .ss-kind, .sitting-stamp .ss-date { white-space: nowrap; }
+  @media (max-width: 480px) {
+    .sitting-stamp .ss-kind { font-size: 0.6rem; padding: 6px 8px; }
+    .sitting-stamp .ss-date { font-size: 0.92rem; padding: 5px 10px; }
+  }
   .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
 
   h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
@@ -87,14 +100,15 @@
 <main class="article-wrap">
   <a class="back-link" href="/fr/conseil-municipal/">&larr; Conseil municipal</a>
 
-  <div class="section-label">Conseil municipal &middot; Séance ordinaire</div>
+  <div class="section-label">Conseil municipal</div>
+  <div class="sitting-stamp"><span class="ss-kind">Séance ordinaire</span><span class="ss-date">Lundi 4 mai 2026</span></div>
 
   <h1 class="article-headline">Ormstown demande à Québec d&rsquo;interdire les camions sur trois rues</h1>
 
   <p class="article-deck">Le conseil a aussi accepté de plus que tripler sa marge de crédit, seul vote non unanime de la soirée, et promis, séance tenante, de vérifier si des frais de mutation de 200&nbsp;$ facturés à une personne qui a récemment perdu son conjoint sont appliqués équitablement.</p>
 
   <div class="byline">
-    The Ormstown Observer &middot; Conseil municipal &middot; 15 octobre 2026 &middot; Séance ordinaire du 4 mai 2026 &middot; <a href="https://www.youtube.com/watch?v=istRtTjRmF0">Visionner l&rsquo;enregistrement complet sur YouTube &rarr;</a>
+    L&rsquo;Ormstown Observer &middot; Publié le 15 octobre 2026 &middot; <a href="https://www.youtube.com/watch?v=istRtTjRmF0">Visionner l&rsquo;enregistrement complet sur YouTube &rarr;</a>
   </div>
 
   <p class="lede">Le conseil municipal d&rsquo;Ormstown a voté lundi le 4 mai pour demander au ministère des Transports et de la Mobilité durable (MTMD) l&rsquo;autorisation d&rsquo;installer une signalisation interdisant la circulation des camions à l&rsquo;intersection de la route 138 avec les rues Roy, Church et Bridge. Le conseil a indiqué que plusieurs citoyens ont signalé d&rsquo;importants enjeux de circulation liés aux camions et aux véhicules lourds dans le noyau villageois, soulevant des préoccupations pour la sécurité routière, la quiétude résidentielle et l&rsquo;état des infrastructures (<a href="https://www.youtube.com/watch?v=istRtTjRmF0&amp;t=1497">tel que lu au conseil</a>). Si Québec donne son accord, les livraisons locales seraient exemptées, et le ministère collaborerait avec la municipalité sur l&rsquo;emplacement et le type de signalisation (<a href="https://www.youtube.com/watch?v=istRtTjRmF0&amp;t=1587">tel que lu</a>). Le directeur des travaux publics a été autorisé à entreprendre les démarches auprès du ministère (<a href="https://www.youtube.com/watch?v=istRtTjRmF0&amp;t=1633">tel que lu</a>).</p>

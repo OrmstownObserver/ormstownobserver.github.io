@@ -31,6 +31,19 @@
   .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
   .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
   .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  /* Sitting stamp: which council sitting this page covers, ahead of the
+     headline, so the meeting date reads before the publish date. */
+  .sitting-stamp { display: inline-flex; align-items: stretch; margin: 2px 0 16px; border: 1px solid var(--accent); }
+  .sitting-stamp .ss-kind { background: var(--accent); color: #fff; font-family: sans-serif; font-size: 0.68rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.2px; padding: 7px 10px; display: flex; align-items: center; }
+  .sitting-stamp .ss-date { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.05rem; padding: 6px 12px; color: var(--ink); }
+  :root[data-theme="dark"] .sitting-stamp .ss-kind { color: #0f141b; }
+  .sitting-stamp { flex-wrap: wrap; max-width: 100%; }
+  .sitting-stamp .ss-kind, .sitting-stamp .ss-date { white-space: nowrap; }
+  @media (max-width: 480px) {
+    .sitting-stamp .ss-kind { font-size: 0.6rem; padding: 6px 8px; }
+    .sitting-stamp .ss-date { font-size: 0.92rem; padding: 5px 10px; }
+  }
   .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
 
   h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
@@ -88,13 +101,14 @@
   <a class="back-link" href="/en/council-watch/">&larr; Council Watch</a>
 
   <div class="section-label">Council Watch &middot; Community organizations</div>
+  <div class="sitting-stamp"><span class="ss-kind">Regular sitting</span><span class="ss-date">Tuesday, September 8, 2026</span></div>
 
   <h1 class="article-headline">Who gets the Rec-Center? Ormstown&rsquo;s new policy for local non-profit organizations</h1>
 
   <p class="article-deck">Council has adopted a corrected version of its policy on recognizing community organizations &mdash; four months after adopting the first one &mdash; and the correction caps how much weekly room time any single group can claim.</p>
 
   <div class="byline">
-    The Ormstown Observer &middot; Council Watch &middot; October 15, 2026 &middot; Regular sitting of September 8, 2026, item 10.5 &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M">Watch the full recording on YouTube &rarr;</a>
+    The Ormstown Observer &middot; Published October 15, 2026 &middot; Item 10.5 &middot; <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M">Watch the full recording on YouTube &rarr;</a>
   </div>
 
   <p class="lede">Ormstown council adopted a corrected version of its <em>Politique de reconnaissance et de soutien aux organismes</em> at the 8 September sitting, as item 10.5. Introducing it, the chair said the policy had first been adopted at the 4 May 2026 sitting, and that putting it into practice had revealed inconsistencies that needed correcting so it would be applied uniformly (<a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5089">01:24:49</a>, <a href="https://www.youtube.com/watch?v=IitK4Z6Tf7M&amp;t=5136">01:25:36</a>). The published policy carries resolution number 26-09-255 and states that it replaces resolution 26-05-145 &mdash; a May 2026 number, consistent with that account. It was signed by the mayor and the director general, took effect the day it was adopted, and is now online.</p>

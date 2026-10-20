@@ -41,6 +41,31 @@
   .section-intro h1 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 2.1rem; margin: 0 0 10px; }
   .section-intro p { color: var(--muted); max-width: 680px; margin: 0 auto; font-size: 1.02rem; }
   .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 12px 18px; margin: 0 auto 36px; max-width: 680px; border-radius: 2px; font-size: 0.9rem; color: var(--ink-light); }
+  /* Articles tirés du conseil : les articles sur une seule décision, en cartes,
+     séparés des comptes rendus complets (2026-10-19). */
+  .rule-sub { font-family: sans-serif; font-size: 0.82rem; color: var(--muted); margin: -8px 0 16px; }
+  .story-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; margin-bottom: 36px; }
+  .story-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; color: inherit; text-decoration: none; }
+  .story-card:hover { background: var(--accent-light); }
+  :root[data-theme="dark"] .story-card { background: #171e28; }
+  :root[data-theme="dark"] .story-card:hover { background: var(--accent-light); }
+  .sc-thumb { height: 140px; background-size: cover; background-position: center; flex-shrink: 0; }
+  .sc-icon { display: flex; align-items: center; justify-content: center; background: var(--accent-light); }
+  .sc-icon span { display: block; width: 44px; height: 44px; background: var(--accent); -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; }
+  .sc-body { padding: 14px 16px 16px; display: flex; flex-direction: column; flex: 1; }
+  .sc-from { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 6px; }
+  .sc-hed { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1rem; line-height: 1.3; margin-bottom: 6px; }
+  .sc-desc { font-size: 0.85rem; color: var(--ink-light); line-height: 1.55; flex: 1; }
+  .sc-cta { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-top: 10px; }
+  @media (max-width: 600px) {
+    .story-grid { grid-template-columns: 1fr; gap: 0; border-top: 2px solid var(--ink); }
+    .story-card { flex-direction: row; gap: 14px; padding: 12px 0; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: none; }
+    :root[data-theme="dark"] .story-card { background: none; }
+    .sc-thumb { width: 96px; height: 72px; }
+    .sc-icon span { width: 30px; height: 30px; }
+    .sc-body { padding: 0; }
+    .sc-desc, .sc-cta { display: none; }
+  }
   .section-rule { display: flex; align-items: center; margin: 30px 0 18px; }
   .section-rule-label { font-family: 'Libre Baskerville', serif; font-weight: 700; font-style: italic; font-size: 0.95rem; color: var(--accent); white-space: nowrap; padding-right: 14px; }
   @media (max-width: 560px) { .section-rule-label { white-space: normal; flex-shrink: 1; } }
@@ -90,58 +115,72 @@
 
   <div class="note-box">Le procès-verbal officiel est volontairement en retard sur ces comptes rendus — la municipalité ne le publie qu'une fois adopté à la séance ordinaire suivante. Chaque compte rendu ci-dessous sera mis à jour avec le lien vers le procès-verbal dès sa publication.</div>
 
-  <div id="docs-block" hidden>
-    <div class="section-rule">
-      <span class="section-rule-label">Documents de séance — ordres du jour et procès-verbaux</span>
-      <span class="section-rule-line"></span>
-    </div>
-    <div class="explainer-grid" id="docs-list"></div>
+  <div class="section-rule">
+    <span class="section-rule-label">Articles tirés du conseil</span>
+    <span class="section-rule-line"></span>
+  </div>
+  <p class="rule-sub">Une décision, expliquée : ce que le conseil a fait, pourquoi c&rsquo;est important et ce qui suit.</p>
+  <div class="story-grid">
+    <a class="story-card" href="/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/">
+      <div class="sc-thumb" style="background-image:url('/images/council-watch-buys-three-lots-loop-water-main.jpg')"></div>
+      <div class="sc-body">
+        <div class="sc-from">Séance du 6 octobre 2026</div>
+        <div class="sc-hed">Ormstown acquiert des parcelles de trois terrains privés pour boucler l&rsquo;aqueduc</div>
+        <div class="sc-desc">Le conseil a approuvé trois acquisitions de gré à gré sur les rues Cullen et Oliver &mdash; deux servitudes et une bande de terrain &mdash; pour que le réseau d&rsquo;aqueduc cesse de se terminer en cul-de-sac dans ce secteur.</div>
+        <span class="sc-cta">Lire l&rsquo;article &rarr;</span>
+      </div>
+    </a>
+
+    <a class="story-card" href="/fr/conseil-municipal/directeur-incendie-temps-plein/">
+      <div class="sc-thumb" style="background-image:url('/images/council-watch-full-time-fire-chief-emergency-plan.jpg')"></div>
+      <div class="sc-body">
+        <div class="sc-from">Séance du 8 septembre 2026</div>
+        <div class="sc-hed">Ormstown veut un directeur incendie à temps plein et un nouveau plan d&rsquo;urgence</div>
+        <div class="sc-desc">À la séance du 8 septembre, le conseil a lancé la dotation d&rsquo;un poste de directeur à temps plein au Service de sécurité incendie et confié à une firme la refonte complète du plan municipal de sécurité civile, en quatre phases.</div>
+        <span class="sc-cta">Lire l&rsquo;article &rarr;</span>
+      </div>
+    </a>
+
+    <a class="story-card" href="/fr/conseil-municipal/qui-obtient-la-salle/">
+      <div class="sc-thumb sc-icon"><span style="-webkit-mask-image:url('/images/icons/council.svg');mask-image:url('/images/icons/council.svg')"></span></div>
+      <div class="sc-body">
+        <div class="sc-from">Séance du 8 septembre 2026</div>
+        <div class="sc-hed">Qui obtient la salle? Les nouvelles règles d&rsquo;Ormstown</div>
+        <div class="sc-desc">Le conseil a adopté une version corrigée de sa politique de reconnaissance des organismes &mdash; quatre mois après avoir adopté la première &mdash; et la correction plafonne le temps de salle qu&rsquo;un seul organisme peut réclamer chaque semaine.</div>
+        <span class="sc-cta">Lire l&rsquo;article &rarr;</span>
+      </div>
+    </a>
+
+    <a class="story-card" href="/fr/conseil-municipal/emprunts-172-173-2026/">
+      <div class="sc-thumb" style="background-image:url('/images/council-watch-borrowing-172-173-2026.jpg')"></div>
+      <div class="sc-body">
+        <div class="sc-from">Fonds publics &middot; Règlements 172-2026 et 173-2026</div>
+        <div class="sc-hed">Deux règlements d'emprunt, 4,8 millions $, et un montant jamais publié</div>
+        <div class="sc-desc">Ce que financent les règlements 172-2026 et 173-2026, sur quel terme et qui les rembourse. Le règlement 173-2026 emprunte 4 800 000 $ sur 40 ans pour les rues Prince-Albert, Cullen et Oliver. Pour le 172-2026, aucun document municipal publié n'indique le montant.</div>
+        <span class="sc-cta">Lire l&rsquo;article &rarr;</span>
+      </div>
+    </a>
+
+    <a class="story-card" href="/fr/conseil-municipal/demande-interdire-camions-trois-rues/">
+      <div class="sc-thumb sc-icon"><span style="-webkit-mask-image:url('/images/icons/planning.svg');mask-image:url('/images/icons/planning.svg')"></span></div>
+      <div class="sc-body">
+        <div class="sc-from">Séance du 4 mai 2026</div>
+        <div class="sc-hed">Ormstown demande à Québec d&rsquo;interdire les camions sur trois rues</div>
+        <div class="sc-desc">Le conseil a aussi accepté de plus que tripler sa marge de crédit, seul vote non unanime de la soirée, et promis, séance tenante, de vérifier si des frais de mutation de 200&nbsp;$ facturés à une personne qui a récemment perdu son conjoint sont appliqués équitablement.</div>
+        <span class="sc-cta">Lire l&rsquo;article &rarr;</span>
+      </div>
+    </a>
   </div>
 
   <div class="section-rule">
-    <span class="section-rule-label">Comptes rendus — 2026</span>
+    <span class="section-rule-label">Comptes rendus des séances</span>
     <span class="section-rule-line"></span>
   </div>
+  <p class="rule-sub">La séance complète, point par point : ce qui a été dit et voté, avec des liens vers chaque moment de l&rsquo;enregistrement.</p>
 
   <div class="explainer-grid">
 
-    <div class="explainer-card">
-      <div class="tag">Séance ordinaire &middot; Rapport &middot; 6 octobre 2026</div>
-      <h2><a href="/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/">Ormstown acquiert des parcelles de trois terrains privés pour boucler l&rsquo;aqueduc</a></h2>
-      <p class="desc">Le conseil a approuvé trois acquisitions de gré à gré sur les rues Cullen et Oliver &mdash; deux servitudes et une bande de terrain &mdash; pour que le réseau d&rsquo;aqueduc cesse de se terminer en cul-de-sac dans ce secteur.</p>
-      <a class="read-more" href="/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/">Lire le rapport &rarr;</a>
-      <div class="meta-date">Publié le 16 octobre 2026</div>
-      <div class="status-badge unofficial"><span class="status-dot"></span>D&rsquo;après l&rsquo;enregistrement</div>
-    </div>
-
-    <div class="explainer-card">
-      <div class="tag">Séance ordinaire &middot; Rapport &middot; 8 septembre 2026</div>
-      <h2><a href="/fr/conseil-municipal/directeur-incendie-temps-plein/">Ormstown veut un directeur incendie à temps plein et un nouveau plan d&rsquo;urgence</a></h2>
-      <p class="desc">À la séance du 8 septembre, le conseil a lancé la dotation d&rsquo;un poste de directeur à temps plein au Service de sécurité incendie et confié à une firme la refonte complète du plan municipal de sécurité civile, en quatre phases.</p>
-      <a class="read-more" href="/fr/conseil-municipal/directeur-incendie-temps-plein/">Lire le rapport &rarr;</a>
-      <div class="meta-date">Publié le 16 octobre 2026</div>
-      <div class="status-badge unofficial"><span class="status-dot"></span>D&rsquo;après l&rsquo;enregistrement</div>
-    </div>
-
-    <div class="explainer-card">
-      <div class="tag">Séance ordinaire &middot; Compte rendu &middot; 4 mai 2026</div>
-      <h2><a href="/fr/conseil-municipal/demande-interdire-camions-trois-rues/">Ormstown demande à Québec d&rsquo;interdire les camions sur trois rues</a></h2>
-      <p class="desc">Le conseil a aussi accepté de plus que tripler sa marge de crédit, seul vote non unanime de la soirée, et promis, séance tenante, de vérifier si des frais de mutation de 200&nbsp;$ facturés à une personne qui a récemment perdu son conjoint sont appliqués équitablement.</p>
-      <a class="read-more" href="/fr/conseil-municipal/demande-interdire-camions-trois-rues/">Lire le compte rendu &rarr;</a>
-      <div class="meta-date">Publié le 15 octobre 2026</div>
-      <div class="status-badge unofficial"><span class="status-dot"></span>D&rsquo;après l&rsquo;enregistrement</div>
-    </div>
-
-    <div class="explainer-card">
-      <div class="tag">Organismes du milieu &middot; Rapport &middot; 8 septembre 2026</div>
-      <h2><a href="/fr/conseil-municipal/qui-obtient-la-salle/">Qui obtient la salle? Les nouvelles règles d&rsquo;Ormstown</a></h2>
-      <p class="desc">Le conseil a adopté une version corrigée de sa politique de reconnaissance des organismes &mdash; quatre mois après avoir adopté la première &mdash; et la correction plafonne le temps de salle qu&rsquo;un seul organisme peut réclamer chaque semaine.</p>
-      <a class="read-more" href="/fr/conseil-municipal/qui-obtient-la-salle/">Lire le rapport &rarr;</a>
-      <div class="meta-date">Publié le 15 octobre 2026</div>
-      <div class="status-badge unofficial"><span class="status-dot"></span>Documents publics</div>
-    </div>
-
-    <div class="explainer-card">
+    <div class="explainer-card" data-sitting="2026-10-06">
       <div class="tag">Séance ordinaire &middot; 6 octobre 2026</div>
       <h2><a href="/fr/conseil-municipal/6-octobre-2026/">Le conseil commande une étude de circulation sur quatre intersections problématiques et reporte le pavage du 3e Rang à 2027</a></h2>
       <p class="desc">Une émission d&rsquo;obligations de 2&nbsp;025&nbsp;000&nbsp;$, une étude de quatre intersections des routes 138 et 201, et quatre points ajoutés à l&rsquo;ouverture qui ne figurent pas à l&rsquo;ordre du jour publié. Un point inscrit comme PPCMOI pour le 30, rue Lambton a été adopté comme PIIA pour une enseigne.</p>
@@ -150,16 +189,7 @@
       <div class="status-badge unofficial"><span class="status-dot"></span>Non officiel &middot; procès-verbal à venir</div>
     </div>
 
-    <div class="explainer-card">
-      <div class="tag">Fonds publics &middot; Rapport &middot; 2 août 2026</div>
-      <h2><a href="/fr/conseil-municipal/emprunts-172-173-2026/">Deux règlements d'emprunt, 4,8 millions $, et un montant jamais publié</a></h2>
-      <p class="desc">Ce que financent les règlements 172-2026 et 173-2026, sur quel terme et qui les rembourse. Le règlement 173-2026 emprunte 4 800 000 $ sur 40 ans pour les rues Prince-Albert, Cullen et Oliver. Pour le 172-2026, aucun document municipal publié n'indique le montant.</p>
-      <a class="read-more" href="/fr/conseil-municipal/emprunts-172-173-2026/">Lire le rapport &rarr;</a>
-      <div class="meta-date">Publié le 2 août 2026</div>
-      <div class="status-badge unofficial"><span class="status-dot"></span>Documents publics</div>
-    </div>
-
-    <div class="explainer-card">
+    <div class="explainer-card" data-sitting="2026-08-03">
       <div class="tag">Séance ordinaire &middot; Compte rendu &middot; 3 août 2026</div>
       <h2><a href="/fr/conseil-municipal/3-aout-2026/">Le conseil approuve le projet de 24 logements de la rue Church, malgré l'opposition d'un conseiller</a></h2>
       <p class="desc">Le PPCMOI 2026-041 a été adopté le 3 août, le conseiller du siège 4 votant contre — seule dissidence de la séance. Le maire a dit qu'un référendum exigeait une demande de la zone R-7. Ni l'avis du 8 juillet de la municipalité ni le guide du ministère sur la LAU n'énonce cette condition.</p>
@@ -168,16 +198,7 @@
       <div class="status-badge unofficial"><span class="status-dot"></span>Non officiel &middot; procès-verbal à venir</div>
     </div>
 
-    <div class="explainer-card">
-      <div class="tag">Séance ordinaire &middot; Aperçu &middot; 3 août 2026</div>
-      <h2><a href="/fr/conseil-municipal/3-aout-2026-apercu/">Aperçu de la séance du conseil : 3 août 2026</a></h2>
-      <p class="desc">L'ordre du jour complet reproduit tel que publié, avec les liens vers chaque document public. Le point 9.3 ramène au conseil le PPCMOI 2026-041, le projet de 24 logements de la rue Church, après le refus en juillet d'une demande de référendum signée par trente-cinq citoyens.</p>
-      <a class="read-more" href="/fr/conseil-municipal/3-aout-2026-apercu/">Lire l'aperçu &rarr;</a>
-      <div class="meta-date">Publié le 1<sup>er</sup> août 2026</div>
-      <div class="status-badge unofficial"><span class="status-dot"></span>Aperçu &middot; avant la séance</div>
-    </div>
-
-    <div class="explainer-card">
+    <div class="explainer-card" data-sitting="2026-07-06">
       <div class="tag">Séance ordinaire &middot; 6 juillet 2026</div>
       <h2><a href="/fr/conseil-municipal/6-juillet-2026/">Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure se confirme</a></h2>
       <p class="desc">Un vote nominal de 7 contre 0 autorise le bail de la tour Bell Mobilité. Le conseil autorise aussi un appel d'offres de voirie dans le cadre de la subvention de 3,7 M$ du MTQ, nomme un nouveau maire suppléant, octroie les contrats d'hiver et de laboratoire, et fait passer deux dossiers PPCMOI à l'étape du registre.</p>
@@ -186,7 +207,7 @@
       <div class="status-badge unofficial"><span class="status-dot"></span>Non officiel &middot; PV à venir</div>
     </div>
 
-    <div class="explainer-card">
+    <div class="explainer-card" data-sitting="2026-06-01">
       <div class="tag">Séance ordinaire &middot; 1er juin 2026</div>
       <h2><a href="/fr/conseil-municipal/1-juin-2026/">États financiers 2025 déposés, projet de 24 logements proposé et nouvelles règles d'affichage des avis publics</a></h2>
       <p class="desc">Un ordre du jour chargé : dépôt des états financiers 2025, examen d'un projet résidentiel de 24 unités nécessitant une consultation publique, adoption de deux règlements et un avis de motion pour un emprunt de 4,8 M$.</p>
@@ -195,7 +216,7 @@
       <div class="status-badge unofficial"><span class="status-dot"></span>Non officiel &middot; PV à venir</div>
     </div>
 
-    <div class="explainer-card">
+    <div class="explainer-card" data-sitting="2026-04-13">
       <div class="tag">Séance ordinaire &middot; 13 avril 2026</div>
       <h2><a href="/fr/conseil-municipal/13-avril-2026/">Le conseil complète un cycle réglementaire de cinq mois, emprunte 750 440 $ pour la rue Prince-Albert et répond à des questions sur le roulement de personnel</a></h2>
       <p class="desc">Un important ensemble de règlements adopté après cinq mois de travail, quatre nouveaux comités consultatifs mis en place, 24 nouvelles résidences approuvées sur la rue Isabelle, et les questions pointues d'un citoyen sur plus de 20 départs de personnel en deux ans et demi.</p>
@@ -209,6 +230,15 @@
     </div>
 
   </div>
+
+  <div id="docs-block" hidden>
+    <div class="section-rule">
+      <span class="section-rule-label">Documents de séance — ordres du jour et procès-verbaux</span>
+      <span class="section-rule-line"></span>
+    </div>
+    <div class="explainer-grid" id="docs-list"></div>
+  </div>
+
 </div>
 
 <script>
@@ -219,7 +249,10 @@
   function pd(s){var p=(s||'').split('-');return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2]));}
   function fmt(s){var d=pd(s);return d.getDate()+(d.getDate()===1?'er':'')+' '+MOIS[d.getMonth()]+' '+d.getFullYear();}
   fetch('/public-notices.json').then(function(r){return r.json();}).then(function(data){
-    var docs=(data||[]).filter(function(n){return n.category==='agenda'||n.category==='minutes';})
+    // An agenda summary is dropped once that sitting's recap is published (Jesse, 2026-10-19).
+    var recapped={};
+    Array.prototype.forEach.call(document.querySelectorAll('[data-sitting]'),function(e){recapped[e.getAttribute('data-sitting')]=1;});
+    var docs=(data||[]).filter(function(n){return n.category==='minutes'||(n.category==='agenda'&&!recapped[n.date_deadline]);})
       .sort(function(a,b){return (b.date_published||'').localeCompare(a.date_published||'');});
     if(!docs.length) return;
     document.getElementById('docs-block').hidden=false;

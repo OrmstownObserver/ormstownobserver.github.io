@@ -31,6 +31,23 @@
   .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
   .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
   .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  /* Sitting stamp: which council sitting this page covers, ahead of the
+     headline, so the meeting date reads before the publish date. */
+  .sitting-stamp { display: inline-flex; align-items: stretch; margin: 2px 0 16px; border: 1px solid var(--accent); }
+  .sitting-stamp .ss-kind { background: var(--accent); color: #fff; font-family: sans-serif; font-size: 0.68rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.2px; padding: 7px 10px; display: flex; align-items: center; }
+  .sitting-stamp .ss-date { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.05rem; padding: 6px 12px; color: var(--ink); }
+  :root[data-theme="dark"] .sitting-stamp .ss-kind { color: #0f141b; }
+  .sitting-stamp { flex-wrap: wrap; max-width: 100%; }
+  .sitting-stamp .ss-kind, .sitting-stamp .ss-date { white-space: nowrap; }
+  @media (max-width: 480px) {
+    .sitting-stamp .ss-kind { font-size: 0.6rem; padding: 6px 8px; }
+    .sitting-stamp .ss-date { font-size: 0.92rem; padding: 5px 10px; }
+  }
+  /* Cross-link between a sitting's full recap and its single-decision stories. */
+  .sitting-link { border-left: 3px solid var(--accent); padding: 8px 14px; margin: 0 0 22px; font-size: 0.9rem; }
+  .sitting-link .sl-label { display: block; font-family: sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 2px; }
+  .sitting-link a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
   .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
 
   h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
@@ -87,15 +104,18 @@
 <main class="article-wrap">
   <a class="back-link" href="/en/council-watch/">&larr; Council Watch</a>
 
-  <div class="section-label">Council Watch &middot; Regular sitting</div>
+  <div class="section-label">Council Watch</div>
+  <div class="sitting-stamp"><span class="ss-kind">Regular sitting</span><span class="ss-date">Tuesday, October 6, 2026</span></div>
 
   <h1 class="article-headline">Ormstown buys into three private lots to loop the water main</h1>
 
   <p class="article-deck">Council approved three negotiated acquisitions on Cullen and Oliver &mdash; two servitudes and one strip of land &mdash; so the water network in that sector stops dead-ending.</p>
 
   <div class="byline">
-    The Ormstown Observer &middot; Council Watch &middot; October 16, 2026 &middot; Regular sitting of October 6, 2026 &middot; <a href="https://www.youtube.com/watch?v=wMqrHf-X738">Watch the full recording on YouTube &rarr;</a>
+    The Ormstown Observer &middot; Published October 16, 2026 &middot; <a href="https://www.youtube.com/watch?v=wMqrHf-X738">Watch the full recording on YouTube &rarr;</a>
   </div>
+
+  <div class="sitting-link"><span class="sl-label">Full recap of this sitting</span><a href="/en/council-watch/october-6-2026/">Everything council decided on October 6, 2026, item by item</a></div>
 
   <p class="lede">Ormstown council approved three negotiated land acquisitions at its ordinary sitting of 6 October 2026, all of them tied to the reconstruction already under way on rues Prince-Albert, Cullen and Oliver. Two are servitudes across private lots; the third is the outright purchase of part of a lot. Together they are the clearest picture yet of what the borrowing by-law behind this project is buying on the ground &mdash; and of what the municipality is now paying private owners for.</p>
 

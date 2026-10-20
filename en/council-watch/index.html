@@ -138,6 +138,28 @@
   .doc-full{padding:0 14px 6px;font-size:13px;line-height:1.65;}
   .doc-full p{margin:0 0 10px;}
   .doc-attr{padding:8px 14px 12px;font-size:11px;font-style:italic;color:var(--muted);border-top:1px dashed var(--border);}
+  /* Stories from council: single-decision stories as cards, kept apart from the
+     full meeting recaps (2026-10-19). */
+  .recaps-sub{font-family:sans-serif;font-size:13px;color:var(--muted);margin:-8px 0 14px;}
+  .story-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:40px;}
+  .story-card{display:flex;flex-direction:column;border:1px solid var(--border);background:var(--paper);color:inherit;transition:background .12s;}
+  .story-card:hover{background:var(--accent-light);}
+  .sc-thumb{height:140px;background-size:cover;background-position:center;flex-shrink:0;}
+  .sc-icon{display:flex;align-items:center;justify-content:center;background:var(--accent-light);}
+  .sc-icon span{display:block;width:44px;height:44px;background:var(--accent);-webkit-mask-size:contain;mask-size:contain;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;}
+  .sc-body{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1;}
+  .sc-from{font-family:sans-serif;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:6px;}
+  .sc-hed{font-family:'Libre Baskerville',serif;font-weight:700;font-size:16px;line-height:1.3;margin-bottom:6px;}
+  .sc-desc{font-size:13px;color:var(--ink-light);line-height:1.55;flex:1;}
+  .sc-cta{font-family:sans-serif;font-size:10.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-top:10px;}
+  @media(max-width:600px){
+    .story-grid{grid-template-columns:1fr;gap:0;border-top:2px solid var(--ink);}
+    .story-card{flex-direction:row;gap:14px;padding:12px 0;border:0;border-bottom:1px solid var(--border);background:none;}
+    .sc-thumb{width:96px;height:72px;}
+    .sc-icon span{width:30px;height:30px;}
+    .sc-body{padding:0;}
+    .sc-desc,.sc-cta{display:none;}
+  }
   .recaps-title{font-family:'Libre Baskerville',serif;font-weight:700;font-size:20px;margin:0 0 14px;}
   @media(max-width:600px){
     .doc-item{grid-template-columns:1fr;}
@@ -167,16 +189,6 @@
 </head>
 <body>
 
-<div class="filter-bar">
-  <div class="filter-chips" id="chips">
-    <button class="chip active" data-type="all">All sessions</button>
-    <button class="chip" data-type="Regular">Regular</button>
-    <button class="chip" data-type="Extraordinary">Extraordinary</button>
-    <button class="chip" data-type="Special">Special</button>
-  </div>
-  <span class="result-count" id="result-count"></span>
-</div>
-
 <div class="page-wrap">
 
   <a class="back-link" href="/">← Home</a>
@@ -190,104 +202,66 @@
     📋 Official minutes are published by the municipality approximately 4–6 weeks after each session. The Observer's recaps are based on public YouTube broadcasts and published agendas. We note where minutes have been confirmed.
   </div>
 
-  <div class="docs-block" id="docs-block" hidden>
-    <h2 class="docs-title">Meeting documents</h2>
-    <p class="docs-sub">Agendas and minutes published by the municipality, summarized in plain language by the Observer. The original French document is always the official version.</p>
-    <div class="docs-list" id="docs-list"></div>
+  <h2 class="recaps-title">Stories from council</h2>
+  <p class="recaps-sub">One decision, explained: what council did, why it matters and what happens next.</p>
+  <div class="story-grid">
+    <a class="story-card" href="/en/council-watch/buys-three-lots-loop-water-main/">
+      <div class="sc-thumb" style="background-image:url('/images/council-watch-buys-three-lots-loop-water-main.jpg')"></div>
+      <div class="sc-body">
+        <div class="sc-from">From the October 6, 2026 sitting</div>
+        <div class="sc-hed">Ormstown buys into three private lots to loop the water main</div>
+        <div class="sc-desc">Council approved three negotiated acquisitions on Cullen and Oliver &mdash; two servitudes and one strip of land &mdash; so the water network in that sector stops dead-ending.</div>
+        <span class="sc-cta">Read the story &rarr;</span>
+      </div>
+    </a>
+
+    <a class="story-card" href="/en/council-watch/full-time-fire-chief-emergency-plan/">
+      <div class="sc-thumb" style="background-image:url('/images/council-watch-full-time-fire-chief-emergency-plan.jpg')"></div>
+      <div class="sc-body">
+        <div class="sc-from">From the September 8, 2026 sitting</div>
+        <div class="sc-hed">Ormstown to hire a full-time fire chief, rewrite emergency plan</div>
+        <div class="sc-desc">At the 8 September sitting, council opened a staffing process for a full-time director of the fire safety service and hired a consultant to rebuild the municipal civil-security plan in four phases.</div>
+        <span class="sc-cta">Read the story &rarr;</span>
+      </div>
+    </a>
+
+    <a class="story-card" href="/en/council-watch/who-gets-the-rec-center/">
+      <div class="sc-thumb sc-icon"><span style="-webkit-mask-image:url('/images/icons/council.svg');mask-image:url('/images/icons/council.svg')"></span></div>
+      <div class="sc-body">
+        <div class="sc-from">From the September 8, 2026 sitting</div>
+        <div class="sc-hed">Who gets the Rec-Center? Ormstown&rsquo;s new policy for local non-profit organizations</div>
+        <div class="sc-desc">Council has adopted a corrected version of its policy on recognizing community organizations &mdash; four months after adopting the first one &mdash; and the correction caps how much weekly room time any single group can claim.</div>
+        <span class="sc-cta">Read the story &rarr;</span>
+      </div>
+    </a>
+
+    <a class="story-card" href="/en/council-watch/borrowing-172-173-2026/">
+      <div class="sc-thumb" style="background-image:url('/images/council-watch-borrowing-172-173-2026.jpg')"></div>
+      <div class="sc-body">
+        <div class="sc-from">Public money &middot; By-laws 172-2026 and 173-2026</div>
+        <div class="sc-hed">Two borrowing by-laws, $4.8 million, and one amount that has never been published</div>
+        <div class="sc-desc">What by-laws 172-2026 and 173-2026 pay for, over what term and who repays them. By-law 173-2026 borrows $4,800,000 over 40 years for Prince-Albert, Cullen and Oliver. For 172-2026, no published municipal document states the amount.</div>
+        <span class="sc-cta">Read the story &rarr;</span>
+      </div>
+    </a>
+
+    <a class="story-card" href="/en/council-watch/council-asks-quebec-to-ban-trucks/">
+      <div class="sc-thumb sc-icon"><span style="-webkit-mask-image:url('/images/icons/planning.svg');mask-image:url('/images/icons/planning.svg')"></span></div>
+      <div class="sc-body">
+        <div class="sc-from">From the May 4, 2026 sitting</div>
+        <div class="sc-hed">Ormstown council asks Quebec to ban trucks on three village streets</div>
+        <div class="sc-desc">Council also agreed to more than triple its municipal line of credit on the only divided vote of the night, and promised, mid-meeting, to check whether a $200 estate-transfer charge billed to a recently widowed resident is applied fairly.</div>
+        <span class="sc-cta">Read the story &rarr;</span>
+      </div>
+    </a>
   </div>
 
-  <h2 class="recaps-title">Session recaps</h2>
+  <h2 class="recaps-title">Meeting recaps</h2>
+  <p class="recaps-sub">The full sitting, item by item: what was said and voted on, with links to each moment in the recording.</p>
 
   <div class="session-list" id="session-list">
 
-    <a class="session-item" href="/en/council-watch/buys-three-lots-loop-water-main/" data-type="Regular">
-      <div class="session-date-col">
-        <div class="session-date">Oct 6</div>
-        <div class="session-year">2026</div>
-      </div>
-      <div class="session-body">
-        <div class="session-type">Regular Session &middot; Report</div>
-        <div class="session-hed">Ormstown buys into three private lots to loop the water main</div>
-        <div class="session-desc">Council approved three negotiated acquisitions on Cullen and Oliver &mdash; two servitudes and one strip of land &mdash; so the water network in that sector stops dead-ending.</div>
-        <div class="session-tags">
-          <span class="session-tag">Infrastructure</span>
-          <span class="session-tag">Finance</span>
-        </div>
-      </div>
-      <div class="session-status-col">
-        <span class="minutes-badge minutes-pending">From the recording</span>
-        <div class="published-on">Published<br>October 16, 2026</div>
-        <span class="session-cta">Read the report &rarr;</span>
-      </div>
-    </a>
-
-    <a class="session-item" href="/en/council-watch/full-time-fire-chief-emergency-plan/" data-type="Regular">
-      <div class="session-date-col">
-        <div class="session-date">Sep 8</div>
-        <div class="session-year">2026</div>
-      </div>
-      <div class="session-body">
-        <div class="session-type">Regular Session &middot; Report</div>
-        <div class="session-hed">Ormstown to hire a full-time fire chief, rewrite emergency plan</div>
-        <div class="session-desc">At the 8 September sitting, council opened a staffing process for a full-time director of the fire safety service and hired a consultant to rebuild the municipal civil-security plan in four phases.</div>
-        <div class="session-tags">
-          <span class="session-tag">Public safety</span>
-          <span class="session-tag">Governance</span>
-        </div>
-      </div>
-      <div class="session-status-col">
-        <span class="minutes-badge minutes-pending">From the recording</span>
-        <div class="published-on">Published<br>October 16, 2026</div>
-        <span class="session-cta">Read the report &rarr;</span>
-      </div>
-    </a>
-
-    <a class="session-item" href="/en/council-watch/council-asks-quebec-to-ban-trucks/" data-type="Regular">
-      <div class="session-date-col">
-        <div class="session-date">May 4</div>
-        <div class="session-year">2026</div>
-      </div>
-      <div class="session-body">
-        <div class="session-type">Regular Session &middot; Recap</div>
-        <div class="session-hed">Ormstown council asks Quebec to ban trucks on three village streets</div>
-        <div class="session-desc">Council also agreed to more than triple its municipal line of credit on the only divided vote of the night, and promised, mid-meeting, to check whether a $200 estate-transfer charge billed to a recently widowed resident is applied fairly.</div>
-        <div class="session-tags">
-          <span class="session-tag">Infrastructure</span>
-          <span class="session-tag">Finance</span>
-          <span class="session-tag">Bylaws</span>
-          <span class="session-tag">Community</span>
-        </div>
-      </div>
-      <div class="session-status-col">
-        <span class="minutes-badge minutes-pending">From the recording</span>
-        <div class="published-on">Published<br>October 15, 2026</div>
-        <span class="session-cta">Read the recap &rarr;</span>
-      </div>
-    </a>
-
-    <a class="session-item" href="/en/council-watch/who-gets-the-rec-center/" data-type="Regular">
-      <div class="session-date-col">
-        <div class="session-date">Sep 8</div>
-        <div class="session-year">2026</div>
-      </div>
-      <div class="session-body">
-        <div class="session-type">Community organizations &middot; Report</div>
-        <div class="session-hed">Who gets the Rec-Center? Ormstown&rsquo;s new policy for local non-profit organizations</div>
-        <div class="session-desc">Council has adopted a corrected version of its policy on recognizing community organizations &mdash; four months after adopting the first one &mdash; and the correction caps how much weekly room time any single group can claim.</div>
-        <div class="session-tags">
-          <span class="session-tag">Community</span>
-          <span class="session-tag">Governance</span>
-          <span class="session-tag">Transparency</span>
-        </div>
-      </div>
-      <div class="session-status-col">
-        <span class="minutes-badge minutes-pending">Documents</span>
-        <div class="published-on">Published<br>October 15, 2026</div>
-        <span class="session-cta">Read the report &rarr;</span>
-      </div>
-    </a>
-
-    <a class="session-item" href="/en/council-watch/october-6-2026/" data-type="Regular">
+    <a class="session-item" href="/en/council-watch/october-6-2026/" data-type="Regular" data-sitting="2026-10-06">
       <div class="session-date-col">
         <div class="session-date">Oct 6</div>
         <div class="session-year">2026</div>
@@ -310,30 +284,7 @@
       </div>
     </a>
 
-    <a class="session-item" href="/en/council-watch/borrowing-172-173-2026/" data-type="Regular">
-      <div class="session-date-col">
-        <div class="session-date">Aug 2</div>
-        <div class="session-year">2026</div>
-      </div>
-      <div class="session-body">
-        <div class="session-type">Public money &middot; Report</div>
-        <div class="session-hed">Two borrowing by-laws, $4.8 million, and one amount that has never been published</div>
-        <div class="session-desc">What by-laws 172-2026 and 173-2026 pay for, over what term and who repays them. By-law 173-2026 borrows $4,800,000 over 40 years for Prince-Albert, Cullen and Oliver. For 172-2026, no published municipal document states the amount.</div>
-        <div class="session-tags">
-          <span class="session-tag">Finance</span>
-          <span class="session-tag">Infrastructure</span>
-          <span class="session-tag">Bylaws</span>
-          <span class="session-tag">Transparency</span>
-        </div>
-      </div>
-      <div class="session-status-col">
-        <span class="minutes-badge minutes-pending">Documents</span>
-        <div class="published-on">Published<br>August 2, 2026</div>
-        <span class="session-cta">Read the report &rarr;</span>
-      </div>
-    </a>
-
-    <a class="session-item" href="/en/council-watch/august-3-2026/" data-type="Regular">
+    <a class="session-item" href="/en/council-watch/august-3-2026/" data-type="Regular" data-sitting="2026-08-03">
       <div class="session-date-col">
         <div class="session-date">Aug 3</div>
         <div class="session-year">2026</div>
@@ -356,30 +307,7 @@
       </div>
     </a>
 
-    <a class="session-item" href="/en/council-watch/august-3-2026-preview/" data-type="Regular">
-      <div class="session-date-col">
-        <div class="session-date">Aug 3</div>
-        <div class="session-year">2026</div>
-      </div>
-      <div class="session-body">
-        <div class="session-type">Regular Session &middot; Preview</div>
-        <div class="session-hed">Council Meeting Preview: August 3, 2026</div>
-        <div class="session-desc">The full agenda reproduced as published, with links to every public document. Item 9.3 returns PPCMOI 2026-041, the 24-unit Church Street project, to council after a referendum demand signed by thirty-five residents was refused in July.</div>
-        <div class="session-tags">
-          <span class="session-tag">Agenda</span>
-          <span class="session-tag">Housing</span>
-          <span class="session-tag">Urban Planning</span>
-          <span class="session-tag">Governance</span>
-        </div>
-      </div>
-      <div class="session-status-col">
-        <span class="minutes-badge minutes-pending">Before the sitting</span>
-        <div class="published-on">Published<br>August 1, 2026</div>
-        <span class="session-cta">Read preview &rarr;</span>
-      </div>
-    </a>
-
-    <a class="session-item" href="/en/council-watch/july-6-2026/" data-type="Regular">
+    <a class="session-item" href="/en/council-watch/july-6-2026/" data-type="Regular" data-sitting="2026-07-06">
       <div class="session-date-col">
         <div class="session-date">July 6</div>
         <div class="session-year">2026</div>
@@ -403,7 +331,7 @@
       </div>
     </a>
 
-    <a class="session-item" href="/en/council-watch/june-1-2026/" data-type="Regular">
+    <a class="session-item" href="/en/council-watch/june-1-2026/" data-type="Regular" data-sitting="2026-06-01">
       <div class="session-date-col">
         <div class="session-date">June 1</div>
         <div class="session-year">2026</div>
@@ -427,7 +355,7 @@
       </div>
     </a>
 
-    <a class="session-item" href="/en/council-watch/april-13-2026/" data-type="Regular">
+    <a class="session-item" href="/en/council-watch/april-13-2026/" data-type="Regular" data-sitting="2026-04-13">
       <div class="session-date-col">
         <div class="session-date">Apr 13</div>
         <div class="session-year">2026</div>
@@ -452,39 +380,15 @@
 
   </div>
 
-  <div class="no-results" id="no-results">No sessions match this filter.</div>
+  <div class="docs-block" id="docs-block" hidden>
+    <h2 class="docs-title">Meeting documents</h2>
+    <p class="docs-sub">Agendas and minutes published by the municipality, summarized in plain language by the Observer. The original French document is always the official version.</p>
+    <div class="docs-list" id="docs-list"></div>
+  </div>
+
 
 </div>
 
-<script>
-  var items = Array.from(document.querySelectorAll('.session-item'));
-  var chips = Array.from(document.querySelectorAll('.chip'));
-  var noResults = document.getElementById('no-results');
-  var countEl = document.getElementById('result-count');
-  var activeType = 'all';
-
-  function filter() {
-    var visible = 0;
-    items.forEach(function(item) {
-      var show = activeType === 'all' || item.dataset.type === activeType;
-      item.style.display = show ? '' : 'none';
-      if (show) visible++;
-    });
-    noResults.style.display = visible === 0 ? 'block' : 'none';
-    countEl.textContent = visible + ' session' + (visible !== 1 ? 's' : '');
-  }
-
-  chips.forEach(function(chip) {
-    chip.addEventListener('click', function() {
-      chips.forEach(function(c) { c.classList.remove('active'); });
-      chip.classList.add('active');
-      activeType = chip.dataset.type;
-      filter();
-    });
-  });
-
-  filter();
-</script>
 <script>
 (function(){
   var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
@@ -494,7 +398,10 @@
   function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function pd(s){var p=(s||'').split('-');return new Date(parseInt(p[0]),parseInt(p[1])-1,parseInt(p[2]));}
   fetch('/public-notices.json').then(function(r){return r.json();}).then(function(data){
-    var docs=(data||[]).filter(function(n){return n.category==='agenda'||n.category==='minutes';})
+    // An agenda summary is dropped once that sitting's recap is published (Jesse, 2026-10-19).
+    var recapped={};
+    Array.prototype.forEach.call(document.querySelectorAll('[data-sitting]'),function(e){recapped[e.getAttribute('data-sitting')]=1;});
+    var docs=(data||[]).filter(function(n){return n.category==='minutes'||(n.category==='agenda'&&!recapped[n.date_deadline]);})
       .sort(function(a,b){return (b.date_published||'').localeCompare(a.date_published||'');});
     if(!docs.length) return;
     document.getElementById('docs-block').hidden=false;

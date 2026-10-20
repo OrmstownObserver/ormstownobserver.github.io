@@ -31,6 +31,19 @@
   .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
   .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
   .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  /* Sitting stamp: which council sitting this page covers, ahead of the
+     headline, so the meeting date reads before the publish date. */
+  .sitting-stamp { display: inline-flex; align-items: stretch; margin: 2px 0 16px; border: 1px solid var(--accent); }
+  .sitting-stamp .ss-kind { background: var(--accent); color: #fff; font-family: sans-serif; font-size: 0.68rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.2px; padding: 7px 10px; display: flex; align-items: center; }
+  .sitting-stamp .ss-date { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.05rem; padding: 6px 12px; color: var(--ink); }
+  :root[data-theme="dark"] .sitting-stamp .ss-kind { color: #0f141b; }
+  .sitting-stamp { flex-wrap: wrap; max-width: 100%; }
+  .sitting-stamp .ss-kind, .sitting-stamp .ss-date { white-space: nowrap; }
+  @media (max-width: 480px) {
+    .sitting-stamp .ss-kind { font-size: 0.6rem; padding: 6px 8px; }
+    .sitting-stamp .ss-date { font-size: 0.92rem; padding: 5px 10px; }
+  }
   .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
 
   h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
@@ -87,14 +100,15 @@
 <main class="article-wrap">
   <a class="back-link" href="/en/council-watch/">&larr; Council Watch</a>
 
-  <div class="section-label">Council Watch &middot; Regular sitting</div>
+  <div class="section-label">Council Watch</div>
+  <div class="sitting-stamp"><span class="ss-kind">Regular sitting</span><span class="ss-date">Monday, May 4, 2026</span></div>
 
   <h1 class="article-headline">Ormstown council asks Quebec to ban trucks on three village streets</h1>
 
   <p class="article-deck">Council also agreed to more than triple its municipal line of credit on the only divided vote of the night, and promised, mid-meeting, to check whether a $200 estate-transfer charge billed to a recently widowed resident is applied fairly.</p>
 
   <div class="byline">
-    The Ormstown Observer &middot; Council Watch &middot; October 15, 2026 &middot; Regular sitting of May 4, 2026 &middot; <a href="https://www.youtube.com/watch?v=istRtTjRmF0">Watch the full recording on YouTube &rarr;</a>
+    The Ormstown Observer &middot; Published October 15, 2026 &middot; <a href="https://www.youtube.com/watch?v=istRtTjRmF0">Watch the full recording on YouTube &rarr;</a>
   </div>
 
   <p class="lede">Ormstown council voted Monday, May 4, to ask Quebec&rsquo;s Ministry of Transport and Sustainable Mobility (MTMD) for authorization to install truck-restriction signage where Route 138 meets Roy, Church and Bridge streets. Council said several residents have reported serious truck and heavy-vehicle traffic problems in the village core, raising concerns for road safety, residential quiet and the condition of infrastructure (<a href="https://www.youtube.com/watch?v=istRtTjRmF0&amp;t=1497">as read into the record</a>). If Quebec approves, local deliveries would be exempted, and the ministry would work with the municipality on sign placement and specifications (<a href="https://www.youtube.com/watch?v=istRtTjRmF0&amp;t=1587">as read</a>). The public works director was authorized to pursue the request with the ministry (<a href="https://www.youtube.com/watch?v=istRtTjRmF0&amp;t=1633">as read</a>).</p>
