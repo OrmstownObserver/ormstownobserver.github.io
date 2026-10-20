@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-20T02:04:14.894Z",
+  "generated_at": "2026-10-20T02:41:36.733Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -516,6 +516,52 @@
         }
       ],
       "newest": ""
+    }
+  ],
+  "council": [
+    {
+      "path_en": "/en/council-watch/october-6-2026/",
+      "path_fr": "/fr/conseil-municipal/6-octobre-2026/",
+      "hed_en": "Council orders a traffic study of four problem intersections and pushes 3e Rang paving to 2027",
+      "hed_fr": "Le conseil commande une étude de circulation sur quatre intersections problématiques et reporte le pavage du 3e Rang à 2027",
+      "sitting": "2026-10-06",
+      "sitting_en": "Tuesday, October 6, 2026",
+      "sitting_fr": "Mardi 6 octobre 2026",
+      "short_en": "Oct 6",
+      "short_fr": "6 oct."
+    },
+    {
+      "path_en": "/en/council-watch/august-3-2026/",
+      "path_fr": "/fr/conseil-municipal/3-aout-2026/",
+      "hed_en": "Council approves 24-unit Church Street project",
+      "hed_fr": "Le conseil approuve le projet de 24 logements de la rue Church",
+      "sitting": "2026-08-03",
+      "sitting_en": "Monday, August 3, 2026",
+      "sitting_fr": "Lundi 3 août 2026",
+      "short_en": "Aug 3",
+      "short_fr": "3 août"
+    },
+    {
+      "path_en": "/en/council-watch/july-6-2026/",
+      "path_fr": "/fr/conseil-municipal/6-juillet-2026/",
+      "hed_en": "Council votes unanimously to sign Bell tower lease; heavy infrastructure year confirmed",
+      "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
+      "sitting": "2026-07-06",
+      "sitting_en": "Monday, July 6, 2026",
+      "sitting_fr": "Lundi 6 juillet 2026",
+      "short_en": "Jul 6",
+      "short_fr": "6 juil."
+    },
+    {
+      "path_en": "/en/council-watch/june-1-2026/",
+      "path_fr": "/fr/conseil-municipal/1-juin-2026/",
+      "hed_en": "2025 financials tabled, 24-unit housing project proposed",
+      "hed_fr": "États financiers 2025 déposés, projet de 24 logements proposé",
+      "sitting": "2026-06-01",
+      "sitting_en": "Monday, June 1, 2026",
+      "sitting_fr": "Lundi 1er juin 2026",
+      "short_en": "Jun 1",
+      "short_fr": "1er juin"
     }
   ]
 }
