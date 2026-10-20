@@ -321,14 +321,16 @@
 
   /* ── BULLETIN — running list of notices, alerts and events (bulletin.js).
      Replaced the Public Notices page (2026-10-18). ── */
-  .bulletin { padding: 26px 24px 6px; }
-  .bulletin-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
-    padding-bottom: 8px; border-bottom: 2px solid var(--line); }
+  .bulletin { padding: 28px 24px 6px; }
+  /* Opens like "What the Observer is watching": the red O break (.obs-break,
+     defined under EXPLORE BY TOPIC), then the same heading and intro type. */
+  .bulletin-head { max-width: 760px; margin-bottom: 18px; }
   .bulletin-head h2 {
-    font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700; font-size: 20px;
+    font-family: 'Libre Baskerville', Georgia, serif; font-weight: 700;
+    font-size: clamp(22px, 3vw, 28px); margin-bottom: 6px;
   }
-  .bulletin-head p { font-size: 14px; color: var(--ink-soft); }
-  .bulletin-list { list-style: none; margin: 0; padding: 0; }
+  .bulletin-head p { font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+  .bulletin-list { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--line); }
   .bulletin-item {
     display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 4px 18px;
     padding: 14px 0; border-bottom: 1px solid var(--border);
@@ -410,10 +412,21 @@
        above it show. The gold eyebrow lands around the .7 stop. */
     .hero-gradient { background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.75) 50%, rgba(0,0,0,.2) 100%); }
     .hero-content { text-shadow: 0 1px 2px rgba(0,0,0,.6); }
-    /* On a phone the three cards stack under the lead — no sideways scroll. */
-    .latest-stories { grid-template-columns: 1fr; }
-    .story-card { border-right: none; border-bottom: 1px solid var(--border); }
+    /* On a phone the secondary stories become compact rows under the lead
+       (small photo left, label, headline and date right) so they read as
+       secondary and the lead keeps the visual weight. The whole row is the
+       link, so the "Read →" line is dropped. */
+    .latest-stories { grid-template-columns: 1fr; padding: 4px 16px; }
+    .story-card {
+      flex-direction: row; align-items: flex-start; gap: 14px;
+      padding: 12px 0; border-right: none; border-bottom: 1px solid var(--border);
+    }
     .story-card:last-child { border-bottom: none; }
+    .story-thumb { width: 104px; height: 78px; }
+    .story-body { padding: 0; }
+    .story-label { margin-bottom: 4px; }
+    .story-hed { font-size: 14px; flex: none; margin-bottom: 4px; }
+    .story-cta { display: none; }
     .bulletin { padding: 22px 16px 4px; }
     .bulletin-item { grid-template-columns: 1fr; }
     .bulletin-meta { flex-direction: row; gap: 10px; align-items: baseline; }
@@ -589,6 +602,7 @@
 <!-- BULLETIN — rendered by bulletin.js from /bulletin.json (notices, alerts,
      events). Hidden until at least one item renders. -->
 <section class="bulletin" id="bulletin" aria-labelledby="bulletin-h" hidden>
+  <div class="obs-break" aria-hidden="true"><img src="/app/favicon.svg" width="30" height="30" alt=""></div>
   <div class="bulletin-head">
     <h2 id="bulletin-h"><span data-en>Bulletin</span><span data-fr>Babillard</span></h2>
     <p><span data-en>Notices, alerts and events the Observer has picked up.</span><span data-fr>Avis, alertes et &eacute;v&eacute;nements rep&eacute;r&eacute;s par l&rsquo;Observer.</span></p>
