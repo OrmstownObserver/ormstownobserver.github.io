@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-19T01:30:59.479Z",
+  "generated_at": "2026-10-20T01:38:53.916Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -52,6 +52,30 @@
       }
     },
     {
+      "slug": "bylaws-regulations-rules-in-plain-language",
+      "path_en": "/en/bylaws-regulations/rules-in-plain-language/",
+      "path_fr": "/fr/bylaws-regulations/les-regles-en-langage-clair/",
+      "label_en": "From the Observer",
+      "label_fr": "Mot de l’Observer",
+      "hed_en": "The rules Ormstown lives by, in plain language",
+      "hed_fr": "Les règles d’Ormstown, en langage clair",
+      "deck_en": "Why the Observer writes plain-language guides to Ormstown's bylaws, why understanding the rules matters, and where to find all 29 guides.",
+      "deck_fr": "Pourquoi l'Observer rédige des guides en langage clair sur les règlements d'Ormstown, pourquoi il importe de comprendre les règles, et où trouver les 29 guides.",
+      "meta_en": "October 19, 2026",
+      "meta_fr": "19 octobre 2026",
+      "cta_en": "Read the explainer →",
+      "cta_fr": "Lire l’explicateur →",
+      "icon": "bylaws",
+      "date_published": "2026-10-19",
+      "image": {
+        "src": "/images/bylaws-regulations-rules-in-plain-language.jpg",
+        "position": "center 60%",
+        "credit": "",
+        "alt_en": "Ormstown's town hall, a red-brick building with a metal roof, flags out front and the water tower behind it.",
+        "alt_fr": "L'hôtel de ville d'Ormstown, un bâtiment de brique rouge au toit de métal, avec des drapeaux devant et le château d'eau derrière."
+      }
+    },
+    {
       "slug": "council-watch-buys-three-lots-loop-water-main",
       "path_en": "/en/council-watch/buys-three-lots-loop-water-main/",
       "path_fr": "/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/",
@@ -77,6 +101,16 @@
     }
   ],
   "latest": [
+    {
+      "slug": "bylaws-regulations-rules-in-plain-language",
+      "path_en": "/en/bylaws-regulations/rules-in-plain-language/",
+      "path_fr": "/fr/bylaws-regulations/les-regles-en-langage-clair/",
+      "label_en": "From the Observer",
+      "label_fr": "Mot de l’Observer",
+      "hed_en": "The rules Ormstown lives by, in plain language",
+      "hed_fr": "Les règles d’Ormstown, en langage clair",
+      "date_published": "2026-10-19"
+    },
     {
       "slug": "bylaws-regulations-conditional-uses-156-2023",
       "path_en": "/en/bylaws-regulations/conditional-uses-156-2023/",
@@ -165,16 +199,6 @@
       "label_fr": "Règlements",
       "hed_en": "In five Ormstown zones, a request to change the planning bylaws requires an overall development plan",
       "hed_fr": "Dans cinq zones d’Ormstown, une demande de modification des règlements d’urbanisme exige un plan d’aménagement d’ensemble",
-      "date_published": "2026-10-18"
-    },
-    {
-      "slug": "bylaws-regulations-public-notices-167-2025",
-      "path_en": "/en/bylaws-regulations/public-notices-167-2025/",
-      "path_fr": "/fr/bylaws-regulations/reglement-avis-publics-167-2025/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Where Ormstown must publish its public notices: the town website and the board outside Town Hall",
-      "hed_fr": "Où Ormstown doit publier ses avis publics : le site internet et le babillard de l’hôtel de ville",
       "date_published": "2026-10-18"
     }
   ],
@@ -433,8 +457,19 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 34,
+      "total": 35,
       "items": [
+        {
+          "slug": "bylaws-regulations-rules-in-plain-language",
+          "path_en": "/en/bylaws-regulations/rules-in-plain-language/",
+          "path_fr": "/fr/bylaws-regulations/les-regles-en-langage-clair/",
+          "label_en": "From the Observer",
+          "label_fr": "Mot de l’Observer",
+          "hed_en": "The rules Ormstown lives by, in plain language",
+          "hed_fr": "Les règles d’Ormstown, en langage clair",
+          "date_published": "2026-10-19",
+          "part": null
+        },
         {
           "slug": "bylaws-regulations-conditional-uses-156-2023",
           "path_en": "/en/bylaws-regulations/conditional-uses-156-2023/",
@@ -476,17 +511,6 @@
           "label_fr": "Règlements",
           "hed_en": "How Ormstown sets its mayor's and councillors' pay: Bylaw 8-2024 and its April 2024 amendment",
           "hed_fr": "Comment Ormstown fixe la rémunération du maire et des conseillers : le Règlement 8-2024 et sa modification d’avril 2024",
-          "date_published": "2026-10-18",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-heavy-vehicles-7-2021",
-          "path_en": "/en/bylaws-regulations/heavy-vehicles-7-2021/",
-          "path_fr": "/fr/bylaws-regulations/reglement-camions-vehicules-outils-7-2021/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Trucks are barred from 14 Ormstown roads, with exceptions that include local delivery",
-          "hed_fr": "Les camions sont interdits sur 14 chemins d’Ormstown, avec des exceptions, dont la livraison locale",
           "date_published": "2026-10-18",
           "part": null
         }
