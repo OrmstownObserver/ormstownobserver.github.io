@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-20T01:38:53.916Z",
+  "generated_at": "2026-10-20T01:44:38.067Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -63,9 +63,9 @@
       "deck_fr": "Pourquoi l'Observer rédige des guides en langage clair sur les règlements d'Ormstown, pourquoi il importe de comprendre les règles, et où trouver les 29 guides.",
       "meta_en": "October 19, 2026",
       "meta_fr": "19 octobre 2026",
-      "cta_en": "Read the explainer →",
-      "cta_fr": "Lire l’explicateur →",
-      "icon": "bylaws",
+      "cta_en": "Read more →",
+      "cta_fr": "Lire la suite →",
+      "icon": "default",
       "date_published": "2026-10-19",
       "image": {
         "src": "/images/bylaws-regulations-rules-in-plain-language.jpg",
