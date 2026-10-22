@@ -130,8 +130,14 @@
     map.textContent = '';
     refs = [];
     var track = add(map, el('div', 'bmap-track'));
-    var start = add(track, el('div', 'bmap-root', UI.start));
+    // The Observer's red O stands where the map starts (2026-10-21); the wires
+    // attach to the logo's centre and "Start here" hangs underneath it.
+    var start = add(track, el('div', 'bmap-root'));
     start.setAttribute('aria-hidden', 'true');
+    var logo = add(start, el('img', 'bmap-logo'));
+    logo.setAttribute('src', '/app/favicon.svg');
+    logo.setAttribute('alt', '');
+    add(start, el('span', 'bmap-root-label', UI.start));
     var node = root, d = 0, last = null, lastFocus = null, prevChosen = start;
 
     while (node.children && node.children.length) {
@@ -306,8 +312,10 @@
       svg.appendChild(p);
     }
     function across(from, to, hot) {
-      var a = from.getBoundingClientRect(), b = to.getBoundingClientRect();
       var round = /\bbmap-root\b/.test(from.getAttribute('class'));
+      // From the start, wires leave the logo itself, not its wider label box.
+      var src = round ? (from.getElementsByClassName('bmap-logo')[0] || from) : from;
+      var a = src.getBoundingClientRect(), b = to.getBoundingClientRect();
       var x1 = a.right - box.left, y1 = a.top - box.top + (round ? a.height / 2 : Math.min(a.height / 2, 26));
       var x2 = b.left - box.left, y2 = b.top - box.top + Math.min(b.height / 2, 26);
       var dx = (x2 - x1) / 2;
