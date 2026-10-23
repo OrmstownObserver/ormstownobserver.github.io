@@ -106,7 +106,11 @@ class Unsupported(Exception):
 def rt_html(rich):
     out = []
     for r in rich or []:
-        t = html.escape(r.get("plain_text", ""), quote=False)
+        raw = r.get("plain_text", "")
+        if not (r.get("annotations") or {}).get("code"):   # typographic quotes, as on the site
+            raw = re.sub(r'(^|[\s(\[«—–-])"', "\\1“", raw)
+            raw = raw.replace('"', "”").replace("'", "’")
+        t = html.escape(raw, quote=False)
         a = r.get("annotations") or {}
         if a.get("code"):
             t = f"<code>{t}</code>"
