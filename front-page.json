@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-20T02:42:57.183Z",
+  "generated_at": "2026-10-23T02:21:45.000Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -28,27 +28,27 @@
   "rail": [],
   "cards": [
     {
-      "slug": "council-watch-full-time-fire-chief-emergency-plan",
-      "path_en": "/en/council-watch/full-time-fire-chief-emergency-plan/",
-      "path_fr": "/fr/conseil-municipal/directeur-incendie-temps-plein/",
-      "label_en": "Council Watch",
-      "label_fr": "Conseil municipal",
-      "hed_en": "Ormstown to hire a full-time fire chief, rewrite emergency plan",
-      "hed_fr": "Ormstown veut un directeur incendie à temps plein et un nouveau plan d'urgence",
-      "deck_en": "At the 8 September sitting, council opened a staffing process for a full-time director of the fire safety service and hired a consultant to rebuild the municipal civil-security plan in four phases.",
-      "deck_fr": "À la séance du 8 septembre, le conseil a lancé la dotation d'un poste de directeur à temps plein au Service de sécurité incendie et confié à une firme la refonte complète du plan municipal de sécurité civile, en quatre phases.",
-      "meta_en": "Sitting of September 8, 2026",
-      "meta_fr": "Séance du 8 septembre 2026",
-      "cta_en": "Read the story →",
-      "cta_fr": "Lire l’article →",
-      "icon": "council",
-      "date_published": "2026-10-16",
+      "slug": "bylaws-regulations-contract-management-129-2026",
+      "path_en": "/en/bylaws-regulations/contract-management-129-2026/",
+      "path_fr": "/fr/bylaws-regulations/gestion-contractuelle-129-2026/",
+      "label_en": "Draft bylaw",
+      "label_fr": "Projet de règlement",
+      "hed_en": "How Ormstown spends your money on contracts, and the new rules council is considering",
+      "hed_fr": "Comment Ormstown dépense votre argent en contrats, et les nouvelles règles à l’étude au conseil",
+      "deck_en": "Every year the town hires contractors and buys equipment and services with public money. Québec changed the law this spring, and council has tabled a draft to rewrite Ormstown's rules. Here is what the bylaw does, how it has worked, and what would change.",
+      "deck_fr": "Chaque année, la Municipalité embauche des entrepreneurs et achète de l’équipement et des services avec des fonds publics. Québec a changé la loi ce printemps, et le conseil a déposé un projet pour réécrire les règles d’Ormstown. Voici à quoi sert ce règlement, comment il fonctionnait et ce qui changerait.",
+      "meta_en": "October 22, 2026",
+      "meta_fr": "22 octobre 2026",
+      "cta_en": "Read more →",
+      "cta_fr": "Lire la suite →",
+      "icon": "bylaws",
+      "date_published": "2026-10-22",
       "image": {
-        "src": "/images/council-watch-full-time-fire-chief-emergency-plan.jpg",
-        "position": "top",
+        "src": "/images/bylaws-regulations-contract-management-129-2026.jpg",
+        "position": "center 30%",
         "credit": "",
-        "alt_en": "Fire badge Ormstown fire department",
-        "alt_fr": "Écusson du service des incendies d'Ormstown"
+        "alt_en": "The cover page of draft Bylaw 129-2026, Règlement de gestion contractuelle, from the Municipalité d'Ormstown, with the word PROJET (draft) watermarked across it. The municipal logo is blurred.",
+        "alt_fr": "La page couverture du projet de règlement 129-2026, Règlement de gestion contractuelle, de la Municipalité d’Ormstown, portant le filigrane PROJET. Le logo municipal est flouté."
       }
     },
     {
