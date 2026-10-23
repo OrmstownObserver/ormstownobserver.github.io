@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('observerTheme');if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comment Ormstown octroie ses contrats : le projet de règlement 129-2026 expliqué — The Ormstown Observer</title>
+<meta name="description" content="Le projet de règlement 129-2026 réécrirait la façon dont Ormstown octroie ses contrats : fin du gré à gré dès 25 000 $, deux prix dès 5 000 $ et des amendes jusqu’à 100 000 $. Ce que fait le règlement, comment il fonctionnait et ce qui changerait.">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/bylaws-regulations/contract-management-129-2026/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/bylaws-regulations/gestion-contractuelle-129-2026/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 32px 20px 60px; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
+  .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
+  h3 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 36px 0 10px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .fact-box { background: var(--sidebar); border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .fact-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+  .fact-box ul { margin-bottom: 0; }
+  .correction-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .correction-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--pending); }
+  .correction-box p:last-child { margin-bottom: 0; }
+  blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
+  .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  .article-footer h3 { font-size: 1rem; font-style: normal; }
+  .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .steps { list-style: none; counter-reset: step; padding-left: 0; margin: 20px 0 24px; border-left: 2px solid var(--border); }
+  .steps li { counter-increment: step; position: relative; padding: 0 0 14px 40px; margin: 0; }
+  .steps li::before { content: counter(step); position: absolute; left: -13px; top: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; font-family: sans-serif; font-size: 0.75rem; font-weight: 700; line-height: 24px; text-align: center; }
+  .steps strong { display: block; }
+  .steps .when { display: block; font-family: sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-top: 2px; }
+  table.fees { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 0.95rem; }
+  table.fees th, table.fees td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.fees th { font-family: sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+  table.fees td:last-child { white-space: nowrap; text-align: right; }
+  .article-figure { margin: 34px 0; }
+  .article-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+  .article-figure figcaption { font-size: 13.5px; line-height: 1.55; color: var(--ink-light); font-style: italic; padding-top: 10px; border-top: 2px solid var(--accent); margin-top: 8px; }
+  .article-figure figcaption .credit { font-style: normal; font-weight: 600; color: var(--ink); }
+  .change { margin: 0 0 20px; }
+  .change .effect { display: block; margin-top: 6px; color: var(--ink-light); font-style: italic; }
+  .draft-note { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 12px 18px; margin: 0 0 24px; font-size: 0.95rem; }
+</style>
+
+
+<script src="/observer-header.js" defer></script>
+<link rel="stylesheet" href="/article-night.css">
+</head>
+<body>
+
+<div class="article-wrap">
+
+  <div class="section-label">Finances et taxation &middot; Projet de règlement 129-2026</div>
+  <h1 class="article-headline">Comment Ormstown dépense votre argent en contrats, et les nouvelles règles à l’étude au conseil</h1>
+  <p class="article-deck">Chaque année, la Municipalité embauche des entrepreneurs et achète de l’équipement et des services avec des fonds publics. Un règlement fixe les règles de ces ententes. Québec a changé la loi ce printemps, et le conseil a déposé un projet pour réécrire les règles d’Ormstown. Voici à quoi sert ce règlement, comment il fonctionnait et ce qui changerait.</p>
+  <div class="byline">The Ormstown Observer &middot; Règlements expliqués</div>
+
+  <figure class="article-figure">
+    <img src="/images/bylaws-regulations-contract-management-129-2026.jpg" alt="La page couverture du projet de règlement 129-2026, Règlement de gestion contractuelle, de la Municipalité d’Ormstown, portant le filigrane PROJET. Le logo municipal est flouté.">
+    <figcaption>Couverture du projet de règlement 129-2026, mis à la disposition du public à la séance du conseil du 6 octobre 2026. Logo municipal flouté. <span class="credit">Photo : The Ormstown Observer.</span></figcaption>
+  </figure>
+
+  <div class="fact-box">
+    <h3>En bref</h3>
+    <ul>
+      <li>Le règlement détermine <strong>comment la Municipalité choisit à qui elle confie un contrat</strong> : quand elle peut simplement embaucher un fournisseur, quand elle doit comparer des prix et quand elle doit lancer un appel d’offres.</li>
+      <li>Selon les règles actuelles, la Municipalité peut embaucher un fournisseur directement, sans offres concurrentes, pour des travaux de 25 000 $ jusqu’au seuil d’appel d’offres public. <strong>Le projet y mettrait fin.</strong> Dès 25 000 $, au moins deux entreprises devraient être invitées à soumissionner.</li>
+      <li>Pour les plus petits contrats, de 5 000 $ à 25 000 $, il faudrait <strong>au moins deux prix</strong>, et le plus bas l’emporterait.</li>
+      <li>Les amendes pour une fausse déclaration, une facture gonflée ou une tentative d’influencer ceux qui choisissent le gagnant passeraient de 1 000 $–2 000 $ à jusqu’à <strong>100 000 $</strong>.</li>
+      <li>C’est encore un <strong>projet</strong>. Le conseil votera à une séance ultérieure, et les résidents peuvent poser leurs questions d’ici là.</li>
+    </ul>
+  </div>
+
+  <h2>À quoi sert ce règlement</h2>
+  <p>Quand Ormstown asphalte une rue, achète un camion, embauche un ingénieur ou commande du sel de déglaçage, elle dépense des fonds publics. Chaque municipalité du Québec doit avoir un règlement de <em>gestion contractuelle</em>. Ce règlement établit comment elle choisit qui fera ce travail.</p>
+  <p>Ces règles visent deux objectifs. Le premier est l’<strong>équité</strong> : les entreprises locales doivent avoir une chance égale d’obtenir du travail de la Municipalité, et personne ne doit obtenir un contrat grâce à ses relations. Le second est la <strong>valeur</strong> : la Municipalité doit obtenir un bon prix et du travail de qualité pour les contribuables. Pour y arriver, le règlement prévoit :</p>
+  <ul>
+    <li><strong>comment choisir un fournisseur</strong>, selon la valeur du contrat ;</li>
+    <li>des <strong>règles d’intégrité</strong> contre le truquage des offres, la corruption, le lobbyisme non déclaré et les conflits d’intérêts ;</li>
+    <li><strong>qui peut approuver des modifications</strong> à un contrat déjà signé, et jusqu’à quel montant ;</li>
+    <li>des <strong>sanctions</strong> en cas de manquement.</li>
+  </ul>
+
+  <h2>Comment ça fonctionnait jusqu’ici</h2>
+  <p>Les règles actuelles d’Ormstown sont celles du <a href="https://www.ormstown.ca/wp-content/uploads/Reg.-129-2020-Gestion-contractuelle-ok.pdf">Règlement 129-2020</a>, en vigueur depuis mars 2020, et de sa modification de 2021, le <a href="https://www.ormstown.ca/wp-content/uploads/Reglement-no.129-2021.pdf">Règlement 129-2021</a>. Concrètement :</p>
+  <ul>
+    <li><strong>Plus le contrat est gros, plus il y a de concurrence.</strong> Les plus gros contrats passent par un appel d’offres public : tout le monde peut soumissionner, par le système électronique d’appel d’offres du Québec, le SEAO. En dessous, la loi exigeait dans certains cas une invitation à soumissionner.</li>
+    <li><strong>Mais la Municipalité pouvait aussi se passer de concurrence dans une large tranche intermédiaire.</strong> Pour les contrats de 25 000 $ jusqu’au seuil d’appel d’offres public, le règlement de 2020 permettait le <em>gré à gré</em>. La Municipalité négocie avec un seul fournisseur plutôt que de comparer des offres. En contrepartie, elle devait favoriser la <strong>rotation</strong> des fournisseurs lorsque possible, pour éviter que la même entreprise obtienne toujours le travail.</li>
+    <li><strong>Sous 25 000 $</strong>, le règlement ne fixait aucune façon de faire.</li>
+    <li><strong>Les soumissionnaires signent une déclaration solennelle</strong> (sous serment). Ils y affirment ne pas s’être entendus avec des concurrents et que tout lobbyisme respectait la loi, et ils déclarent leurs liens familiaux ou d’affaires avec les élus ou le personnel.</li>
+    <li><strong>Une fois le contrat signé</strong>, le directeur général pouvait approuver des coûts supplémentaires de moins de 10 % du contrat, jusqu’à 50 000 $, sans revenir au conseil.</li>
+    <li><strong>Les amendes</strong> étaient de 1 000 $ pour une personne et de 2 000 $ pour une entreprise, doublées en cas de récidive, et ne visaient que quatre articles.</li>
+    <li><strong>Achat québécois :</strong> la modification de 2021 obligeait la Municipalité à favoriser les entreprises québécoises de juin 2021 à juin 2024. Le règlement ne dit pas ce qui s’appliquait ensuite.</li>
+  </ul>
+
+  <h2>Pourquoi ça change maintenant</h2>
+  <p>Québec a adopté une nouvelle loi, la <em>Loi sur les contrats des organismes municipaux</em>. Selon le préambule du projet, elle est entrée en vigueur le 1<sup>er</sup> avril 2026 et oblige chaque municipalité à adopter un nouveau règlement de gestion contractuelle. Depuis, des municipalités partout au Québec déposent leurs nouveaux règlements. Le projet d’Ormstown, le Règlement 129-2026, a fait l’objet d’un avis de motion et a été déposé à la séance du 6 octobre 2026, où des copies ont été mises à la disposition du public. Une fois adopté, il remplacerait les règlements 129-2020 et 129-2021.</p>
+
+  <h2>Ce qui changerait, et à quoi sert chaque changement</h2>
+  <p class="change"><strong>1. Moins de contrats accordés sans concurrence.</strong> Le gré à gré ne serait permis que pour les contrats de <strong>moins de 25 000 $</strong> [art. 12.4]. De 25 000 $ jusqu’au seuil d’appel d’offres public, la Municipalité devrait envoyer une invitation écrite à <strong>au moins deux entreprises</strong> et leur accorder au moins 8 jours [art. 12.3]. <span class="effect">L’effet : les contrats de taille moyenne, qui pouvaient aller directement à un seul fournisseur selon les règles de 2020, exigeraient désormais au moins deux soumissions concurrentes.</span></p>
+  <p class="change"><strong>2. Comparer les prix pour les petits contrats.</strong> De <strong>5 000 $ à moins de 25 000 $</strong>, la Municipalité devrait d’abord obtenir <strong>au moins deux prix</strong> et retenir le plus bas. Elle pourrait se contenter d’un seul prix si elle n’en obtient pas deux, ou pour un motif de « saine administration », à condition de l’expliquer par écrit [art. 12.4]. Ces contrats n’exigent pas de vote distinct du conseil si la personne a le pouvoir de dépenser et que les fonds sont au budget. <span class="effect">L’effet : une comparaison de prix de base pour les achats courants, qui n’avaient aucune règle précise.</span></p>
+  <p class="change"><strong>3. Réfléchir avant d’acheter.</strong> Avant tout contrat, la Municipalité doit faire une « évaluation sérieuse » de ses besoins réels. Elle doit la mettre par écrit pour les contrats de 25 000 $ ou plus, à l’aide d’un formulaire joint au règlement. Elle ne peut pas non plus découper un contrat en morceaux pour passer sous un seuil [art. 3.1, 5]. <span class="effect">L’effet : s’assurer d’acheter la bonne chose, à la bonne échelle, et fermer la porte au fractionnement.</span></p>
+  <p class="change"><strong>4. Un coup de pouce plus ferme à la rotation.</strong> Pour les contrats de moins de 25 000 $, la Municipalité continue de favoriser « si possible » la rotation des fournisseurs. Elle ajoute une ligne directrice : éviter, « dans la mesure du possible », d’accorder à la même entreprise plus de <strong>trois contrats consécutifs de même nature dans une année</strong> [art. 12.6]. Avoir un établissement à Ormstown fait partie des critères considérés. <span class="effect">L’effet : donner une chance à plus d’entreprises, même si le libellé laisse place aux exceptions.</span></p>
+  <p class="change"><strong>5. Acheter québécois, puis canadien.</strong> Sous le seuil d’appel d’offres public, la Municipalité privilégierait les entreprises et les produits québécois « lorsque le marché le permet », puis canadiens [art. 13]. Dans un appel d’offres, elle pourrait accorder aux offres québécoises, canadiennes ou plus durables une <strong>avance d’au plus 10 %</strong> au moment de comparer les prix. Le gagnant est quand même payé le prix qu’il a soumis [art. 14]. Une nouvelle section demande aussi de tenir compte de la durabilité, du recyclage et de l’impact environnemental [art. 16].</p>
+  <p class="change"><strong>6. Langue française.</strong> Tout contrat et tout processus d’attribution doivent respecter la <em>Charte de la langue française</em>, et la Municipalité peut exiger des preuves [art. 3.3]. C’est nouveau dans le règlement.</p>
+  <p class="change"><strong>7. Moins de marge pour approuver des coûts supplémentaires sans le conseil.</strong> Une fois le contrat signé, le directeur général pourrait approuver des modifications ou dépassements de moins de 10 % du contrat, mais jusqu’à <strong>25 000 $</strong> au lieu de 50 000 $. Au-delà, c’est le conseil qui vote [art. 11]. <span class="effect">L’effet : les hausses importantes en cours de contrat reviennent devant les élus.</span></p>
+  <p class="change"><strong>8. Des sanctions beaucoup plus sévères.</strong> Les déclarations sous serment et les règles d’intégrité demeurent. Les amendes changent complètement [art. 15.4] :</p>
+  <table class="fees">
+    <thead><tr><th>Ce qui est visé</th><th>Personne</th><th>Entreprise</th></tr></thead>
+    <tbody>
+      <tr><td>Fausse déclaration dans une soumission ou pendant le contrat</td><td>5 000 $–30 000 $</td><td>15 000 $–100 000 $</td></tr>
+      <tr><td>Communiquer avec un membre d’un comité de sélection pour influencer un appel d’offres public</td><td>5 000 $–30 000 $</td><td>15 000 $–100 000 $</td></tr>
+      <tr><td>Facturer à la Municipalité un montant auquel l’entreprise n’a pas droit</td><td>5 000 $–30 000 $</td><td>15 000 $–100 000 $</td></tr>
+      <tr><td>Un membre d’un comité de sélection qui divulgue de l’information confidentielle</td><td>5 000 $–30 000 $</td><td>s.o.</td></tr>
+      <tr><td>Toute autre contravention au règlement constituant une infraction</td><td>5 000 $–30 000 $</td><td>15 000 $–100 000 $</td></tr>
+    </tbody>
+  </table>
+  <p>Les amendes doublent en cas de récidive, et quiconque aide ou encourage l’infraction est traité de la même façon. Une entreprise fautive peut aussi perdre son contrat et être écartée de la liste des fournisseurs pendant une période possible de cinq ans. Les employés s’exposent à des sanctions pouvant aller jusqu’au renvoi.</p>
+
+  <h2>Ce qui ne change pas</h2>
+  <p>Le directeur général demeure responsable de l’application du règlement. Les soumissionnaires signent toujours une déclaration sous serment, et les cadeaux aux employés ou aux élus restent interdits. Un lien familial ou d’affaires avec un soumissionnaire n’entraîne toujours pas le rejet automatique ; la Municipalité décide au cas par cas. Le directeur général continue aussi de choisir les entreprises invitées à soumissionner et les membres des comités de sélection, dont l’identité reste confidentielle.</p>
+
+  <h2>Ce que ça signifie pour vous</h2>
+  <ul>
+    <li><strong>Vous avez une entreprise locale</strong> qui travaille pour la Municipalité ? Un contrat de 25 000 $ ou plus passerait par une invitation écrite, en concurrence avec au moins une autre entreprise, plutôt que par un appel direct. Dès 5 000 $, attendez-vous à fournir un prix qui sera comparé à celui d’un autre.</li>
+    <li><strong>Vous soumissionnez ?</strong> Vous signez une déclaration sous serment. Une erreur aurait des conséquences beaucoup plus graves.</li>
+    <li><strong>Vous êtes contribuable ?</strong> Ces règles déterminent comment votre argent est dépensé en travaux et services externes. Vous pouvez lire le projet et questionner le conseil avant le vote.</li>
+  </ul>
+
+  <h2>Comment vous faire entendre</h2>
+  <p>Le projet n’est pas final. Le conseil votera à une séance ultérieure et devra alors indiquer ce qui a changé depuis le projet. Chaque séance ordinaire comporte deux périodes de questions. Vous pouvez aussi envoyer une question écrite à <a href="mailto:greffe@ormstown.ca"><strong>greffe@ormstown.ca</strong></a> au plus tard à midi le vendredi précédant la séance. Consultez <a href="/fr/bylaws-regulations/comment-un-reglement-est-adopte/">notre explication sur l’adoption des règlements</a> pour connaître chaque étape.</p>
+
+  <h2>Ce qu’on ne sait pas encore</h2>
+  <p>Certains détails ne figurent pas dans le projet. L’Observer les rapportera à mesure qu’ils seront connus :</p>
+  <ul>
+    <li><strong>Le seuil en dollars de l’appel d’offres public.</strong> Le projet renvoie aux règles provinciales sans donner le montant applicable à Ormstown.</li>
+    <li><strong>L’origine des nouvelles amendes.</strong> Elles sont beaucoup plus élevées que celles du règlement actuel. Le projet ne précise pas si elles découlent de la nouvelle loi provinciale ou de la Municipalité, ni qui intenterait une poursuite.</li>
+    <li><strong>Où sont conservés les motifs</strong> lorsque la Municipalité retient un seul prix plutôt que deux, et si les résidents peuvent les consulter.</li>
+    <li><strong>Si le conseil recevra une liste régulière</strong> des contrats de moins de 25 000 $ et des coûts supplémentaires approuvés par le directeur général.</li>
+    <li><strong>Quelles preuves de conformité linguistique</strong> seront exigées des soumissionnaires.</li>
+    <li><strong>Le délai pour que le personnel déclare</strong> ses liens avec un soumissionnaire. Le projet dit « dans les jours suivant » l’ouverture des soumissions.</li>
+    <li><strong>L’effet concret :</strong> combien de contrats récents entre 25 000 $ et le seuil d’appel d’offres ont été accordés de gré à gré.</li>
+    <li><strong>Quand le conseil votera,</strong> et si le projet sera publié sur le site de la Municipalité.</li>
+  </ul>
+
+  <div class="article-footer">
+    <h3>Sources</h3>
+    <ul>
+      <li>Projet de règlement 129-2026, <em>Règlement de gestion contractuelle</em> (21 pages, marqué PROJET), mis à la disposition du public à la séance du conseil du 6 octobre 2026.</li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/Reg.-129-2020-Gestion-contractuelle-ok.pdf">Règlement 129-2020, à jour au 25 juin 2021 (PDF)</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/Reglement-no.129-2021.pdf">Règlement 129-2021 (PDF)</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/0.-Ordre-du-jour-seance-ordinaire-2026-10-06-1.pdf">Ordre du jour, séance du 6 octobre 2026, point 5.1 (PDF)</a></li>
+      <li><a href="/fr/bylaws-regulations/reglement-delegation-depenses-130-2023/">Qui peut autoriser des dépenses au nom du conseil (Règlement 130-2023 expliqué)</a></li>
+      <li><a href="/fr/bylaws-regulations/comment-un-reglement-est-adopte/">Comment un règlement est adopté, et comment une résolution est votée</a></li>
+      <li><a href="/fr/bylaws-regulations/">Tous les règlements expliqués</a></li>
+    </ul>
+    <p>Ce texte résume un projet de règlement en langage clair. Le projet peut changer avant son adoption. Le texte français officiel fait foi ; consultez-le ou communiquez avec la Municipalité avant de vous fier à un détail.</p>
+    <p class="disclaimer">Cette explication de règlement vous est offerte gracieusement par The Ormstown Observer afin de favoriser une meilleure compréhension des règles et des règlements qui régissent la communauté. Le contenu présenté dans les Règlements expliqués est fourni à des fins éducatives et informatives seulement. Il ne constitue ni un avis juridique ni une opinion juridique, et ne remplace pas les conseils d’un professionnel du droit.</p>
+  </div>
+</div>
+
+</body>
+</html>
