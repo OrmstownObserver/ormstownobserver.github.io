@@ -20,7 +20,7 @@ permissions:
   pages: write
 
 concurrency:
-  group: front-page-slots
+  group: site-writer
   cancel-in-progress: false
 
 jobs:
