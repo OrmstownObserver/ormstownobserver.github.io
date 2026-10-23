@@ -366,6 +366,12 @@ def sync_row(row, blocks, dry):
             changed.append(str(f.relative_to(ROOT)))
             if not dry:
                 f.write_text(new, encoding="utf-8")
+            else:
+                import difflib
+                d = list(difflib.unified_diff(doc.splitlines(), new.splitlines(), str(f.relative_to(ROOT)),
+                                              "after sync", n=0, lineterm=""))
+                print(f"--- {len(d)} diff lines for {f.relative_to(ROOT)} (first 200) ---")
+                print("\n".join(x[:300] for x in d[:200]))
     return title, full, changed
 
 
