@@ -31,6 +31,9 @@ import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import fr_recalibrate  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 ARTICLES_DB = "b18ad2a0f5c94af2bd620523ec2a36b0"   # 📰 Articles (see Notion System Registry)
 API = "https://api.notion.com/v1"
@@ -347,12 +350,27 @@ def page_file(path):
     return f if f.is_file() else None
 
 
-def sync_row(row, blocks, dry):
+def fr_props(row):
+    return {k: prop_text(row, k) for k in ("Headline EN", "Headline FR", "Deck EN", "Deck FR")}
+
+
+def sync_row(row, blocks, dry, recal=True):
     title = prop_text(row, "Title") or row["id"]
     f_en, f_fr = page_file(prop_text(row, "GitHub Path")), page_file(prop_text(row, "Path FR"))
     if not f_en or not f_fr:
         raise Unsupported("GitHub Path or Path FR is missing or doesn't match a page on the site")
     en_t, fr_t = find_toggles(blocks)
+    notes = []
+    if recal:
+        # Editor's standing rule: the French always follows the English.
+        try:
+            touched, notes = fr_recalibrate.recalibrate(row["id"], fr_props(row), en_t, fr_t, call, dry)
+        except fr_recalibrate.Refuse as e:
+            raise Unsupported(str(e)) from None
+        if touched:                      # French was rewritten in Notion: read it back
+            row = call("GET", f"/pages/{row['id']}")
+            blocks = children(row["id"])
+            en_t, fr_t = find_toggles(blocks)
     full = bool(en_t and fr_t)
     changed = []
     for lang, f, tog in (("en", f_en, en_t), ("fr", f_fr, fr_t)):
@@ -376,7 +394,9 @@ def sync_row(row, blocks, dry):
                                               "after sync", n=0, lineterm=""))
                 print(f"--- {len(d)} diff lines for {f.relative_to(ROOT)} (first 200) ---")
                 print("\n".join(x[:300] for x in d[:200]))
-    return title, full, changed
+    if recal and not dry:
+        fr_recalibrate.save_snapshot(row["id"], fr_recalibrate.current_state(fr_props(row), en_t, fr_t))
+    return title, full, changed, notes
 
 
 def main():
@@ -384,7 +404,7 @@ def main():
     if "--fixture" in sys.argv:
         i = sys.argv.index("--fixture")
         data = json.loads(Path(sys.argv[i + 1]).read_text())
-        title, full, changed = sync_row(data["row"], data["blocks"], dry)
+        title, full, changed, _ = sync_row(data["row"], data["blocks"], dry, recal=False)
         print(f"{title}: {'full text' if full else 'headline/deck'}; changed: {changed or 'nothing'}")
         return
     rows = ticked_rows()
@@ -397,10 +417,12 @@ def main():
         name = prop_text(row, "Title") or row["id"]
         try:
             blocks = children(row["id"])
-            title, full, changed = sync_row(row, blocks, dry)
+            title, full, changed, notes = sync_row(row, blocks, dry)
             what = "headline, summary and full text" if full else "headline and summary (text isn't in Notion)"
             msg = (f"Published from Notion {stamp} by the GitHub sync: {what}." if changed
                    else f"Checked {stamp}: the site already matched Notion.")
+            if notes:
+                msg += " " + " ".join(n[0].upper() + n[1:] + "." for n in notes)
             print(f"✓ {title}: {what}; files: {', '.join(changed) or 'none changed'}")
             done.append((row["id"], msg))
         except (Unsupported, RuntimeError) as e:

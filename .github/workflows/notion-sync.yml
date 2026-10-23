@@ -3,6 +3,7 @@
 # front-page cards are rebuilt, and the box is unticked. Runs every 10
 # minutes and from the Actions tab ("Run workflow", with a dry-run option).
 # Needs the repo secret NOTION_TOKEN; without it the run skips quietly.
+# ANTHROPIC_API_KEY lets it bring the French in line with English edits.
 name: Notion sync
 
 on:
@@ -28,6 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      # Lets the sync update the French when only the English changed
+      # (scripts/fr_recalibrate.py). Without it, such stories are held back.
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
       - name: Check for the Notion token
         id: token
@@ -64,12 +68,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -z "$(git status --porcelain -- en fr front-page-slots.json)" ]; then
+          if [ -z "$(git status --porcelain -- en fr front-page-slots.json .notion-sync)" ]; then
             echo "Nothing changed on the site."; exit 0
           fi
           git config user.name "observer-notion-sync[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add en fr front-page-slots.json
+          [ -d .notion-sync ] && git add .notion-sync
           git commit -m "Publish Notion edits"
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin HEAD:main && break
