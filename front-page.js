@@ -1,5 +1,6 @@
-/* Front-page renderer — fills the homepage story slots from /front-page.json,
-   which is generated from the Notion Articles database (Front Page Slot field).
+/* Front-page renderer — fills the homepage story slots from /front-page-slots.json
+   (built from the hand-edited front-page-slots.yml) and, for everything else and
+   as a fallback, from /front-page.json (generated from the Notion Articles DB).
    The static markup in index.html is the permanent fallback: any fetch/parse
    error leaves the page untouched. Builds DOM via textContent only — never
    innerHTML — because the JSON text originates from a CMS. */
@@ -271,10 +272,30 @@
     });
   }
 
-  fetch('/front-page.json')
-    .then(function (r) {
+  function getJson(url) {
+    return fetch(url).then(function (r) {
       if (!r.ok) throw new Error('http ' + r.status);
       return r.json();
+    });
+  }
+
+  /* Story slots (2026-10-22): /front-page-slots.json is built by a GitHub
+     Action from the hand-edited front-page-slots.yml. When it loads and is
+     valid, its hero and cards win; otherwise front-page.json's are used.
+     A failed or missing slots file never blocks the rest of the render. */
+  var slotsReq = getJson('/front-page-slots.json').catch(function () { return null; });
+
+  getJson('/front-page.json')
+    .catch(function () { return null; })
+    .then(function (data) {
+      return slotsReq.then(function (slots) {
+        var ok = slots && typeof slots.version === 'number' && slots.version >= 1;
+        if (!data && !ok) throw new Error('no feed');
+        data = data || { version: 1 };
+        if (ok && validStory(slots.hero)) data.hero = slots.hero;
+        if (ok && Array.isArray(slots.cards) && slots.cards.length) data.cards = slots.cards;
+        return data;
+      });
     })
     .then(function (data) {
       /* Accept any v1+ feed. This used to be a hard `!== 1`, so bumping the

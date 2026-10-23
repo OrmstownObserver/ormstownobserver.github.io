@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "source": "front-page-slots.yml",
+  "hero": {
+    "slug": "council-watch-october-6-2026",
+    "path_en": "/en/council-watch/october-6-2026/",
+    "path_fr": "/fr/conseil-municipal/6-octobre-2026/",
+    "label_en": "Council Watch",
+    "label_fr": "Conseil municipal",
+    "hed_en": "Council orders a traffic study of four problem intersections and pushes 3e Rang paving to 2027",
+    "hed_fr": "Le conseil commande une étude de circulation sur quatre intersections problématiques et reporte le pavage du 3e Rang à 2027",
+    "deck_en": "The October sitting, moved to Tuesday by public notice, approved $2,025,000 in bond financing, a traffic study for the Route 138 and 201 corridor, and four items that were not on the published agenda. One agenda item listed as a PPCMOI was presented from the chair as a sign application. In the first question period, residents asked about recurring odours, access-to-information requests and spending on outside firms.",
+    "deck_fr": "La séance d’octobre, reportée au mardi par avis public, a approuvé un financement par obligations de 2 025 000 $, une étude de circulation pour le corridor des routes 138 et 201, et quatre points qui ne figuraient pas à l’ordre du jour publié. Un point inscrit comme PPCMOI a été présenté par la présidence comme une demande d’enseigne. À la première période de questions, des citoyens ont interrogé le conseil sur des odeurs récurrentes, les demandes d’accès à l’information et des dépenses auprès de firmes externes.",
+    "icon": "council",
+    "meta_en": "Sitting of October 6, 2026",
+    "meta_fr": "Séance du 6 octobre 2026",
+    "cta_en": "Read the recap →",
+    "cta_fr": "Lire le compte rendu →",
+    "image": {
+      "src": "/images/council-watch-october-6-2026.jpg",
+      "position": "center",
+      "credit": "Source: Municipalité d’Ormstown, public livestream",
+      "alt_en": "The Ormstown council table during the regular sitting of October 6, 2026, seen from the back of the council chamber.",
+      "alt_fr": "La table du conseil d’Ormstown pendant la séance ordinaire du 6 octobre 2026, vue du fond de la salle du conseil."
+    }
+  },
+  "cards": [
+    {
+      "slug": "bylaws-regulations-contract-management-129-2026",
+      "path_en": "/en/bylaws-regulations/contract-management-129-2026/",
+      "path_fr": "/fr/bylaws-regulations/gestion-contractuelle-129-2026/",
+      "label_en": "Draft bylaw",
+      "label_fr": "Projet de règlement",
+      "hed_en": "How Ormstown spends your money on contracts, and the new rules council is considering",
+      "hed_fr": "Comment Ormstown dépense votre argent en contrats, et les nouvelles règles à l’étude au conseil",
+      "deck_en": "Every year the town hires contractors and buys equipment and services with public money. A bylaw sets the rules for how those deals are made. Québec changed the law this spring, and council has tabled a draft to rewrite Ormstown's rules. Here is what the bylaw does, how it has worked, and what would change.",
+      "deck_fr": "Chaque année, la Municipalité embauche des entrepreneurs et achète de l’équipement et des services avec des fonds publics. Un règlement fixe les règles de ces ententes. Québec a changé la loi ce printemps, et le conseil a déposé un projet pour réécrire les règles d’Ormstown. Voici à quoi sert ce règlement, comment il fonctionnait et ce qui changerait.",
+      "icon": "bylaws",
+      "meta_en": "October 22, 2026",
+      "meta_fr": "22 octobre 2026",
+      "date_published": "2026-10-22",
+      "cta_en": "Read more →",
+      "cta_fr": "Lire la suite →",
+      "image": {
+        "src": "/images/bylaws-regulations-contract-management-129-2026.jpg",
+        "position": "center 30%",
+        "credit": "",
+        "alt_en": "The cover page of draft Bylaw 129-2026, Règlement de gestion contractuelle, from the Municipalité d'Ormstown, with the word PROJET (draft) watermarked across it. The municipal logo is blurred.",
+        "alt_fr": "La page couverture du projet de règlement 129-2026, Règlement de gestion contractuelle, de la Municipalité d’Ormstown, portant le filigrane PROJET. Le logo municipal est flouté."
+      }
+    },
+    {
+      "slug": "bylaws-regulations-rules-in-plain-language",
+      "path_en": "/en/bylaws-regulations/rules-in-plain-language/",
+      "path_fr": "/fr/bylaws-regulations/les-regles-en-langage-clair/",
+      "label_en": "From the Observer",
+      "label_fr": "Mot de l’Observer",
+      "hed_en": "The rules Ormstown lives by, in plain language",
+      "hed_fr": "Les règles d’Ormstown, en langage clair",
+      "deck_en": "Why the Ormstown Observer writes plain-language guides to Ormstown's bylaws, in English and French, and where to find all 29 of them.",
+      "deck_fr": "Pourquoi l'Ormstown Observer rédige des guides en langage clair sur les règlements d'Ormstown, en français et en anglais, et où trouver les 29 guides.",
+      "icon": "default",
+      "meta_en": "October 19, 2026",
+      "meta_fr": "19 octobre 2026",
+      "date_published": "2026-10-19",
+      "cta_en": "Read more →",
+      "cta_fr": "Lire la suite →",
+      "image": {
+        "src": "/images/bylaws-regulations-rules-in-plain-language.jpg",
+        "position": "center 60%",
+        "credit": "",
+        "alt_en": "Ormstown's town hall, a red-brick building with a metal roof, flags out front and the water tower behind it.",
+        "alt_fr": "L'hôtel de ville d'Ormstown, un bâtiment de brique rouge au toit de métal, avec des drapeaux devant et le château d'eau derrière."
+      }
+    },
+    {
+      "slug": "council-watch-buys-three-lots-loop-water-main",
+      "path_en": "/en/council-watch/buys-three-lots-loop-water-main/",
+      "path_fr": "/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Ormstown buys into three private lots to loop the water main",
+      "hed_fr": "Ormstown acquiert des parcelles de trois terrains privés pour boucler l’aqueduc",
+      "deck_en": "Council approved three negotiated acquisitions on Cullen and Oliver — two servitudes and one strip of land — so the water network in that sector stops dead-ending.",
+      "deck_fr": "Le conseil a approuvé trois acquisitions de gré à gré sur les rues Cullen et Oliver — deux servitudes et une bande de terrain — pour que le réseau d’aqueduc cesse de se terminer en cul-de-sac dans ce secteur.",
+      "icon": "council",
+      "meta_en": "Sitting of October 6, 2026",
+      "meta_fr": "Séance du 6 octobre 2026",
+      "cta_en": "Read the story →",
+      "cta_fr": "Lire l’article →",
+      "image": {
+        "src": "/images/council-watch-buys-three-lots-loop-water-main.jpg",
+        "position": "center",
+        "credit": "",
+        "alt_en": "watermain",
+        "alt_fr": "conduite d'aqueduc"
+      }
+    }
+  ]
+}

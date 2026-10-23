@@ -1,0 +1,35 @@
+# HOMEPAGE STORY SLOTS — edit this file to change the front page.
+#
+# Put each story's English address (the part after ormstownobserver.ca).
+# Commit the change; about a minute later the homepage shows it.
+# Headline, summary, French version and photo come from the article itself.
+#
+# Optional lines under any story (indent them like `path:`):
+#   sitting: 2026-10-06        Council Watch date line ("Sitting of …")
+#   date: 2026-10-22           date line for other stories
+#   position: center 30%       which part of the photo to show (top, center, center 30%)
+#   image: /images/file.jpg    use a different photo than the default
+#   label_en: Draft bylaw      label above the headline (and label_fr:)
+#   headline_en: …             override the headline (and headline_fr:, deck_en:, deck_fr:)
+#
+# If something is wrong, GitHub emails you and the homepage keeps the last good version.
+
+hero:
+  path: /en/council-watch/october-6-2026/
+  sitting: 2026-10-06
+
+cards:
+  - path: /en/bylaws-regulations/contract-management-129-2026/
+    date: 2026-10-22
+    label_en: Draft bylaw
+    label_fr: Projet de règlement
+    position: center 30%
+
+  - path: /en/bylaws-regulations/rules-in-plain-language/
+    date: 2026-10-19
+    label_en: From the Observer
+    label_fr: Mot de l’Observer
+    icon: default
+
+  - path: /en/council-watch/buys-three-lots-loop-water-main/
+    sitting: 2026-10-06
