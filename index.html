@@ -181,7 +181,7 @@
      Replaced the grouped "Latest" lists (2026-10-13): a reader arriving on the
      front page picks a subject, not a date. Each card is one link to a page
      dedicated to that topic. */
-  .topics { padding: 28px 24px 8px; }
+  .topics { padding: 28px 24px 36px; }
   /* Section break: the red O between two double rules, like a newspaper
      dingbat. Replaces the plain border-top. */
   /* Sticky: it pins to the top of the screen while the reader scrolls the
@@ -374,20 +374,6 @@
   .bulletin-signup { font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
   .bulletin-signup a { color: var(--accent); font-weight: 700; }
 
-  /* About — one slim strip under the topics. */
-  .about-strip {
-    display: flex; align-items: center; justify-content: space-between; gap: 18px;
-    margin: 24px 24px 32px; padding: 16px 20px; background: var(--paper-dark);
-  }
-  .about-strip p { font-size: 13px; color: var(--ink-soft); line-height: 1.6; margin: 0; max-width: 780px; }
-  .about-strip strong { color: var(--ink); }
-  .tip-btn {
-    display: inline-block; flex-shrink: 0; background: var(--chrome-bg); color: var(--chrome-text);
-    font-family: sans-serif; font-size: 10px; font-weight: 800;
-    text-transform: uppercase; letter-spacing: .06em; padding: 9px 18px;
-    transition: background .15s;
-  }
-  .tip-btn:hover { background: var(--accent); }
 
   @media (max-width: 1080px) {
     .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -410,7 +396,6 @@
       margin-inline: calc(-1 * var(--page-gutter));
       padding-inline: var(--page-gutter);
     }
-    .about-strip { margin-inline: var(--page-gutter); }
   }
 
   /* ── FOOTER ── */
@@ -456,7 +441,7 @@
     .bulletin { padding: 22px 16px 4px; }
     .bulletin-item { grid-template-columns: 1fr; }
     .bulletin-meta { flex-direction: row; gap: 10px; align-items: baseline; }
-    .topics { padding: 22px 16px 4px; }
+    .topics { padding: 22px 16px 28px; }
     .obs-break { margin: -10px -16px 14px; padding: 10px 16px; }
     .topic-grid { grid-template-columns: 1fr; }
     /* Phone list: every card becomes one row (icon, title, status, ›).
@@ -484,7 +469,6 @@
       font-family: sans-serif; font-size: 10.5px; font-weight: 700; line-height: 1.5;
       text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0;
     }
-    .about-strip { flex-direction: column; align-items: flex-start; margin: 20px 16px 28px; }
     .site-nav { column-gap: 24px; }
     .site-nav a { font-size: 10px; }
   }
@@ -747,18 +731,6 @@
     </a>
   </div>
 </section>
-
-<!-- ABOUT -->
-<div class="about-strip">
-  <p>
-    <strong><span data-en>About the Observer.</span><span data-fr>&Agrave; propos de l&rsquo;Observer.</span></strong>
-    <span data-en>Independent. Bilingual. We cover municipal affairs in Ormstown and the Haut-Saint-Laurent because residents deserve to understand the decisions made on their behalf.</span>
-    <span data-fr>Ind&eacute;pendant. Bilingue. Nous couvrons les affaires municipales &agrave; Ormstown et dans le Haut-Saint-Laurent parce que les r&eacute;sidents m&eacute;ritent de comprendre les d&eacute;cisions prises en leur nom.</span>
-  </p>
-  <a class="tip-btn" href="mailto:ormstownobserver@gmail.com">
-    <span data-en>Send a tip &rarr;</span><span data-fr>Envoyer un conseil &rarr;</span>
-  </a>
-</div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
