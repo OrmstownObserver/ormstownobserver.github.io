@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-23T02:21:45.000Z",
+  "generated_at": "2026-10-25T00:30:19.183Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -33,20 +33,20 @@
       "path_fr": "/fr/bylaws-regulations/gestion-contractuelle-129-2026/",
       "label_en": "Draft bylaw",
       "label_fr": "Projet de règlement",
-      "hed_en": "How Ormstown spends your money on contracts, and the new rules council is considering",
-      "hed_fr": "Comment Ormstown dépense votre argent en contrats, et les nouvelles règles à l’étude au conseil",
-      "deck_en": "Every year the town hires contractors and buys equipment and services with public money. Québec changed the law this spring, and council has tabled a draft to rewrite Ormstown's rules. Here is what the bylaw does, how it has worked, and what would change.",
-      "deck_fr": "Chaque année, la Municipalité embauche des entrepreneurs et achète de l’équipement et des services avec des fonds publics. Québec a changé la loi ce printemps, et le conseil a déposé un projet pour réécrire les règles d’Ormstown. Voici à quoi sert ce règlement, comment il fonctionnait et ce qui changerait.",
-      "meta_en": "October 22, 2026",
-      "meta_fr": "22 octobre 2026",
-      "cta_en": "Read more →",
-      "cta_fr": "Lire la suite →",
+      "hed_en": "New draft bylaw on how Ormstown handles contracts",
+      "hed_fr": "Nouveau projet de règlement sur la gestion des contrats à Ormstown",
+      "deck_en": "Every year the town hires contractors and buys equipment and services with public money. A bylaw sets the rules for how those deals are made. Québec changed the law this spring, and council has tabled a draft to rewrite Ormstown's rules. Here is what the bylaw does, how it has worked, and what would change.",
+      "deck_fr": "Chaque année, la Municipalité embauche des entrepreneurs et achète de l’équipement et des services avec des fonds publics. Un règlement fixe les règles de ces ententes. Québec a changé la loi ce printemps, et le conseil a déposé un projet pour réécrire les règles d’Ormstown. Voici à quoi sert ce règlement, comment il fonctionnait et ce qui changerait.",
+      "meta_en": "Draft Bylaw 129-2026",
+      "meta_fr": "Draft Bylaw 129-2026",
+      "cta_en": "Read the explainer →",
+      "cta_fr": "Lire l’explicateur →",
       "icon": "bylaws",
       "date_published": "2026-10-22",
       "image": {
         "src": "/images/bylaws-regulations-contract-management-129-2026.jpg",
-        "position": "center 30%",
-        "credit": "",
+        "position": "center",
+        "credit": "Photo: The Ormstown Observer (municipal logo blurred)",
         "alt_en": "The cover page of draft Bylaw 129-2026, Règlement de gestion contractuelle, from the Municipalité d'Ormstown, with the word PROJET (draft) watermarked across it. The municipal logo is blurred.",
         "alt_fr": "La page couverture du projet de règlement 129-2026, Règlement de gestion contractuelle, de la Municipalité d’Ormstown, portant le filigrane PROJET. Le logo municipal est flouté."
       }
@@ -57,15 +57,15 @@
       "path_fr": "/fr/bylaws-regulations/les-regles-en-langage-clair/",
       "label_en": "From the Observer",
       "label_fr": "Mot de l’Observer",
-      "hed_en": "The rules Ormstown lives by, in plain language",
+      "hed_en": "The Observer’s unofficial guides to Ormstown’s bylaws",
       "hed_fr": "Les règles d’Ormstown, en langage clair",
       "deck_en": "Why the Observer writes plain-language guides to Ormstown's bylaws, why understanding the rules matters, and where to find all 29 guides.",
       "deck_fr": "Pourquoi l'Observer rédige des guides en langage clair sur les règlements d'Ormstown, pourquoi il importe de comprendre les règles, et où trouver les 29 guides.",
       "meta_en": "October 19, 2026",
       "meta_fr": "19 octobre 2026",
-      "cta_en": "Read more →",
-      "cta_fr": "Lire la suite →",
-      "icon": "default",
+      "cta_en": "Read the explainer →",
+      "cta_fr": "Lire l’explicateur →",
+      "icon": "bylaws",
       "date_published": "2026-10-19",
       "image": {
         "src": "/images/bylaws-regulations-rules-in-plain-language.jpg",
@@ -102,12 +102,32 @@
   ],
   "latest": [
     {
+      "slug": "bylaws-regulations-contract-management-129-2026",
+      "path_en": "/en/bylaws-regulations/contract-management-129-2026/",
+      "path_fr": "/fr/bylaws-regulations/gestion-contractuelle-129-2026/",
+      "label_en": "Draft bylaw",
+      "label_fr": "Projet de règlement",
+      "hed_en": "New draft bylaw on how Ormstown handles contracts — Draft Bylaw 129-2026",
+      "hed_fr": "Nouveau projet de règlement sur la gestion des contrats à Ormstown — Draft Bylaw 129-2026",
+      "date_published": "2026-10-22"
+    },
+    {
+      "slug": "bylaws-regulations-how-bylaws-are-made",
+      "path_en": "/en/bylaws-regulations/how-bylaws-are-made/",
+      "path_fr": "/fr/bylaws-regulations/comment-un-reglement-est-adopte/",
+      "label_en": "Explainer",
+      "label_fr": "Explication",
+      "hed_en": "From notice of motion to public notice: how Ormstown council makes a bylaw, passes a resolution, and where you fit in — How council decides",
+      "hed_fr": "De l’avis de motion à l’avis public : comment le conseil d’Ormstown adopte un règlement ou une résolution, et où vous intervenez — How council decides",
+      "date_published": "2026-10-22"
+    },
+    {
       "slug": "bylaws-regulations-rules-in-plain-language",
       "path_en": "/en/bylaws-regulations/rules-in-plain-language/",
       "path_fr": "/fr/bylaws-regulations/les-regles-en-langage-clair/",
       "label_en": "From the Observer",
       "label_fr": "Mot de l’Observer",
-      "hed_en": "The rules Ormstown lives by, in plain language",
+      "hed_en": "The Observer’s unofficial guides to Ormstown’s bylaws",
       "hed_fr": "Les règles d’Ormstown, en langage clair",
       "date_published": "2026-10-19"
     },
@@ -179,26 +199,6 @@
       "label_fr": "Règlements",
       "hed_en": "Ormstown's human resources bylaw: hours, pay, leave and discipline for municipal staff",
       "hed_fr": "Le règlement sur les ressources humaines d’Ormstown : horaires, salaire, congés et discipline du personnel municipal",
-      "date_published": "2026-10-18"
-    },
-    {
-      "slug": "bylaws-regulations-hiring-staff-158-2023",
-      "path_en": "/en/bylaws-regulations/hiring-staff-158-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-embauche-personnel-158-2023/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Ormstown's director general can hire municipal employees, with the list tabled at council's next sitting",
-      "hed_fr": "À Ormstown, le directeur général peut embaucher des employés municipaux, et la liste est déposée à la séance suivante du conseil",
-      "date_published": "2026-10-18"
-    },
-    {
-      "slug": "bylaws-regulations-pae-153-2023",
-      "path_en": "/en/bylaws-regulations/pae-153-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-pae-153-2023/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "In five Ormstown zones, a request to change the planning bylaws requires an overall development plan",
-      "hed_fr": "Dans cinq zones d’Ormstown, une demande de modification des règlements d’urbanisme exige un plan d’aménagement d’ensemble",
       "date_published": "2026-10-18"
     }
   ],
@@ -457,15 +457,37 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 35,
+      "total": 37,
       "items": [
+        {
+          "slug": "bylaws-regulations-contract-management-129-2026",
+          "path_en": "/en/bylaws-regulations/contract-management-129-2026/",
+          "path_fr": "/fr/bylaws-regulations/gestion-contractuelle-129-2026/",
+          "label_en": "Draft bylaw",
+          "label_fr": "Projet de règlement",
+          "hed_en": "New draft bylaw on how Ormstown handles contracts",
+          "hed_fr": "Nouveau projet de règlement sur la gestion des contrats à Ormstown",
+          "date_published": "2026-10-22",
+          "part": null
+        },
+        {
+          "slug": "bylaws-regulations-how-bylaws-are-made",
+          "path_en": "/en/bylaws-regulations/how-bylaws-are-made/",
+          "path_fr": "/fr/bylaws-regulations/comment-un-reglement-est-adopte/",
+          "label_en": "Explainer",
+          "label_fr": "Explication",
+          "hed_en": "From notice of motion to public notice: how Ormstown council makes a bylaw, passes a resolution, and where you fit in",
+          "hed_fr": "De l’avis de motion à l’avis public : comment le conseil d’Ormstown adopte un règlement ou une résolution, et où vous intervenez",
+          "date_published": "2026-10-22",
+          "part": null
+        },
         {
           "slug": "bylaws-regulations-rules-in-plain-language",
           "path_en": "/en/bylaws-regulations/rules-in-plain-language/",
           "path_fr": "/fr/bylaws-regulations/les-regles-en-langage-clair/",
           "label_en": "From the Observer",
           "label_fr": "Mot de l’Observer",
-          "hed_en": "The rules Ormstown lives by, in plain language",
+          "hed_en": "The Observer’s unofficial guides to Ormstown’s bylaws",
           "hed_fr": "Les règles d’Ormstown, en langage clair",
           "date_published": "2026-10-19",
           "part": null
@@ -489,28 +511,6 @@
           "label_fr": "Règlements",
           "hed_en": "Damaged buildings, open foundations, fortified homes: what Ormstown's construction bylaw requires of owners",
           "hed_fr": "Bâtiments endommagés, fondations à ciel ouvert, maisons fortifiées : ce que le règlement de construction d’Ormstown exige des propriétaires",
-          "date_published": "2026-10-18",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-emergency-911-62-2-2023",
-          "path_en": "/en/bylaws-regulations/emergency-911-62-2-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-taxe-centres-urgence-911-62-2-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Ormstown's 9-1-1 tax: $0.52 a month per telephone number from 2024, indexed every January",
-          "hed_fr": "Taxe 9-1-1 à Ormstown : 0,52 $ par mois par numéro de téléphone dès 2024, indexée chaque janvier",
-          "date_published": "2026-10-18",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-elected-officials-pay-8-2024",
-          "path_en": "/en/bylaws-regulations/elected-officials-pay-8-2024/",
-          "path_fr": "/fr/bylaws-regulations/reglement-traitement-elus-8-2024/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "How Ormstown sets its mayor's and councillors' pay: Bylaw 8-2024 and its April 2024 amendment",
-          "hed_fr": "Comment Ormstown fixe la rémunération du maire et des conseillers : le Règlement 8-2024 et sa modification d’avril 2024",
           "date_published": "2026-10-18",
           "part": null
         }
