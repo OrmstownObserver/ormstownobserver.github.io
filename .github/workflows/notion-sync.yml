@@ -55,7 +55,9 @@ jobs:
 
       - name: Copy ticked Notion stories to the site
         if: steps.token.outputs.ok == 'true'
-        run: python3 scripts/notion_sync.py ${{ inputs.dry_run && '--dry-run' || '' }}
+        run: |
+          pip install pillow==11.0.0   # resizes the story photo to images/<slug>.jpg
+          python3 scripts/notion_sync.py ${{ inputs.dry_run && '--dry-run' || '' }}
 
       - name: Rebuild front-page cards
         if: steps.token.outputs.ok == 'true' && !inputs.dry_run
@@ -68,12 +70,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          if [ -z "$(git status --porcelain -- en fr front-page-slots.json .notion-sync)" ]; then
+          if [ -z "$(git status --porcelain -- en fr images front-page-slots.json .notion-sync)" ]; then
             echo "Nothing changed on the site."; exit 0
           fi
           git config user.name "observer-notion-sync[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add en fr front-page-slots.json
+          git add en fr images front-page-slots.json
           [ -d .notion-sync ] && git add .notion-sync
           git commit -m "Publish Notion edits"
           for i in 1 2 3; do

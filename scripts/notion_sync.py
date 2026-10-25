@@ -9,6 +9,9 @@ For each ticked row with a GitHub Path and Path FR:
     page is rebuilt from that text: fact box, sections, tables, lists,
     sources, notes. Figures already on the page are kept in place.
   * Pages whose text isn't in Notion get the headline and deck only.
+  * The row's Image (Image Finder pick or Seneca upload) becomes the photo
+    under the byline on both pages, with Image Credit and that language's
+    alt text, saved as images/<slug>.jpg (the front-page convention).
 Then the box is unticked and Last Action / Next Step say what happened.
 
 Safety: a page is skipped (and the run fails, so GitHub emails) if Notion
@@ -22,7 +25,9 @@ Nothing is written to Notion or the repo for a skipped story.
 Standard library only.
 """
 
+import hashlib
 import html
+import io
 import json
 import os
 import re
@@ -281,6 +286,110 @@ def find_toggles(blocks):
     return en, fr
 
 
+# ------------------------------------------------------------ story photo
+# The row's Image becomes one figure under the byline, marked data-photo="notion"
+# so a later sync replaces it (or removes it when the Image is cleared) instead
+# of stacking another. Figures placed by hand are never touched.
+PHOTO_MAX_PX = 1600                 # the front page's size
+PHOTO_MAX_DOWNLOAD = 15 * 1024 * 1024
+PHOTO_RE = re.compile(r'\n*[ \t]*<figure class="article-figure" data-photo="notion">.*?</figure>', re.S)
+FIGURE_CSS = """  figure.article-figure { margin: 28px 0; }
+  figure.article-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border); }
+  figure.article-figure figcaption { font-size: 0.85rem; color: var(--muted); padding-top: 8px; line-height: 1.5; }
+  figure.article-figure figcaption .credit { font-style: italic; }
+"""
+
+
+def image_url(row):
+    p = row.get("properties", {}).get("Image") or {}
+    for f in p.get("files") or []:
+        u = (f.get("external") or {}).get("url") or (f.get("file") or {}).get("url")
+        if u:
+            return u
+    return None
+
+
+def story_slug(row):
+    """images/<slug>.jpg: GitHub Path minus en/, slashes → hyphens (see CLAUDE.md)."""
+    return re.sub(r"^en/", "", prop_text(row, "GitHub Path").strip().strip("/")).replace("/", "-")
+
+
+def fetch_photo(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "OrmstownObserver-notion-sync/1 (+https://ormstownobserver.ca)"})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            data = r.read(PHOTO_MAX_DOWNLOAD + 1)
+    except urllib.error.URLError as e:
+        raise Unsupported(f"the Image couldn't be downloaded ({e})") from None
+    if len(data) > PHOTO_MAX_DOWNLOAD:
+        raise Unsupported("the Image is over 15 MB")
+    if not (data[:3] == b"\xff\xd8\xff" or data[:8] == b"\x89PNG\r\n\x1a\n" or (data[:4] == b"RIFF" and data[8:12] == b"WEBP")):
+        raise Unsupported("the Image isn't a JPEG, PNG or WebP photo")
+    return data
+
+
+def to_jpeg(data):
+    """At most 1600 px, JPEG quality 82, upright, transparency on white."""
+    from PIL import Image, ImageOps   # pip install pillow (the workflow does)
+    im = ImageOps.exif_transpose(Image.open(io.BytesIO(data)))
+    if im.mode != "RGB":
+        rgba = im.convert("RGBA")
+        im = Image.new("RGB", rgba.size, "white")
+        im.paste(rgba, mask=rgba.getchannel("A"))
+    im.thumbnail((PHOTO_MAX_PX, PHOTO_MAX_PX))
+    out = io.BytesIO()
+    im.save(out, "JPEG", quality=82, optimize=True, progressive=True)
+    return out.getvalue()
+
+
+def photo_figure(src, alt, credit):
+    cap = f'\n    <figcaption><span class="credit">{html.escape(credit, quote=False)}</span></figcaption>' if credit else ""
+    return f'<figure class="article-figure" data-photo="notion">\n    <img src="{html.escape(src)}" alt="{html.escape(alt)}">{cap}\n  </figure>'
+
+
+def place_photo(doc, fig):
+    """Put the Notion photo under the byline, replace it, or (fig=None) remove it."""
+    if PHOTO_RE.search(doc):
+        return PHOTO_RE.sub(lambda m: ("\n\n  " + fig) if fig else "", doc, count=1)
+    if not fig:
+        return doc
+    by = re.search(r'<div class="byline">.*?</div>', doc, re.S)
+    if not by:
+        raise Unsupported("the page has no byline to put the photo under")
+    if "figure.article-figure" not in doc and "</style>" in doc:
+        doc = doc.replace("</style>", FIGURE_CSS + "</style>", 1)
+        by = re.search(r'<div class="byline">.*?</div>', doc, re.S)
+    return doc[:by.end()] + "\n\n  " + fig + doc[by.end():]
+
+
+def story_photo(row, dry, fetch=None):
+    """The row's photo → (figures by language or None, image file written or None, notes)."""
+    url = image_url(row)
+    if not url:
+        return None, None, []
+    alt_en, alt_fr = prop_text(row, "Alt Text EN"), prop_text(row, "Alt Text FR")
+    if not alt_en and not alt_fr:
+        raise Unsupported("the photo has no alt text: fill Alt Text EN (and FR) in Notion")
+    notes = []
+    if not alt_fr:
+        alt_fr = alt_en
+        notes.append("the photo has no French alt text, so the French page uses the English")
+    slug = story_slug(row)
+    if not re.match(r"^[a-z0-9][a-z0-9-]*$", slug):
+        raise Unsupported(f"can't name the photo file from GitHub Path ({slug!r})")
+    data = to_jpeg((fetch or fetch_photo)(url))
+    rel = f"images/{slug}.jpg"
+    dest = ROOT / rel
+    written = None
+    if not dest.is_file() or dest.read_bytes() != data:
+        written = rel
+        if not dry:
+            dest.write_bytes(data)
+    src = f"/{rel}?v={hashlib.sha1(data).hexdigest()[:8]}"   # a new photo shows at once, not after the cache
+    credit = prop_text(row, "Image Credit")
+    return {"en": photo_figure(src, alt_en, credit), "fr": photo_figure(src, alt_fr, credit)}, written, notes
+
+
 # ------------------------------------------------------------ page surgery
 def text_len(s):
     return len(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", s)))
@@ -373,6 +482,10 @@ def sync_row(row, blocks, dry, recal=True):
             en_t, fr_t = find_toggles(blocks)
     full = bool(en_t and fr_t)
     changed = []
+    figs, photo_file, photo_notes = story_photo(row, dry)
+    notes = notes + photo_notes
+    if photo_file:
+        changed.append(photo_file)
     for lang, f, tog in (("en", f_en, en_t), ("fr", f_fr, fr_t)):
         doc = f.read_text(encoding="utf-8")
         new = doc
@@ -384,6 +497,7 @@ def sync_row(row, blocks, dry, recal=True):
             new = set_header(new, hed or parts["headline"], deck or parts["deck"], None)
         else:
             new = set_header(new, hed, deck, None)
+        new = place_photo(new, figs[lang] if figs else None)
         if new != doc:
             changed.append(str(f.relative_to(ROOT)))
             if not dry:
