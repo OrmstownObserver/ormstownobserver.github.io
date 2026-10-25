@@ -12,6 +12,7 @@ For each ticked row with a GitHub Path and Path FR:
   * The row's Image (Image Finder pick or Seneca upload) becomes the photo
     under the byline on both pages, with Image Credit and that language's
     alt text, saved as images/<slug>.jpg (the front-page convention).
+    A photo with no credit or no alt text holds the story back.
 Then the box is unticked and Last Action / Next Step say what happened.
 
 Safety: a page is skipped (and the run fails, so GitHub emails) if Notion
@@ -370,6 +371,9 @@ def story_photo(row, dry, fetch=None):
     alt_en, alt_fr = prop_text(row, "Alt Text EN"), prop_text(row, "Alt Text FR")
     if not alt_en and not alt_fr:
         raise Unsupported("the photo has no alt text: fill Alt Text EN (and FR) in Notion")
+    credit = prop_text(row, "Image Credit")
+    if not credit:   # a photo of unknown origin never goes out by accident
+        raise Unsupported("the photo has no credit: fill Image Credit in Notion with where it came from")
     notes = []
     if not alt_fr:
         alt_fr = alt_en
@@ -386,7 +390,6 @@ def story_photo(row, dry, fetch=None):
         if not dry:
             dest.write_bytes(data)
     src = f"/{rel}?v={hashlib.sha1(data).hexdigest()[:8]}"   # a new photo shows at once, not after the cache
-    credit = prop_text(row, "Image Credit")
     return {"en": photo_figure(src, alt_en, credit), "fr": photo_figure(src, alt_fr, credit)}, written, notes
 
 

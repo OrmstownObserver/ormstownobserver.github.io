@@ -119,6 +119,12 @@ class StoryPhoto(unittest.TestCase):
         self.assertTrue(written)
         self.assertEqual(list((self.tmp / "images").iterdir()), [])
 
+    def test_no_credit_holds_the_story_back(self):
+        with self.assertRaises(ns.Unsupported) as e:
+            ns.story_photo(row("https://x/y.png", credit=""), dry=True, fetch=self.fetch)
+        self.assertIn("no credit", str(e.exception))
+        self.assertEqual(self.fetched, [], "nothing downloaded")
+
     def test_alt_text_rules(self):
         with self.assertRaises(ns.Unsupported):
             ns.story_photo(row("https://x/y.png", alt_en="", alt_fr=""), dry=True, fetch=self.fetch)
