@@ -44,7 +44,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "law": { "en": "Loi sur les contrats des organismes municipaux, s. 99", "fr": "Loi sur les contrats des organismes municipaux, art. 99", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-65.01#se:99", "note_en": "Before April 1, 2026: Code municipal, s. 961.3", "note_fr": "Avant le 1er avril 2026 : Code municipal, art. 961.3" },
    "requires": { "en": "A list on SEAO, the provincial contract register, of every contract involving $25,000 or more: object, amount, award procedure, contractor, date, the estimate, each bidder and its price, and the total actually paid once the contract is complete. Updated at least monthly, kept three years, linked from the Town's website.", "fr": "Une liste, sur le SEAO (le registre provincial des contrats), de chaque contrat de 25 000 $ ou plus : objet, montant, mode d'adjudication, cocontractant, date, estimation, chaque soumissionnaire et son prix, et la dépense totale effectivement faite une fois le contrat terminé. Mise à jour au moins chaque mois, conservée trois ans, liée depuis le site de la Municipalité." },
    "status": "partial",
-   "town": { "en": "Ormstown's SEAO report lists 12 contracts for 2024–2026. On every one, the \"total actually paid\" field is blank. Contracts awarded on September 8 and October 6, 2026 do not appear. The Town's site links SEAO's general page, not its own report.", "fr": "Le rapport SEAO d'Ormstown liste 12 contrats pour 2024-2026. Pour chacun, le champ « dépense effectivement faite » est vide. Les contrats octroyés les 8 septembre et 6 octobre 2026 n'y figurent pas. Le site de la Municipalité renvoie à la page générale du SEAO, pas à son propre rapport.", "href": "https://www.ormstown.ca/ma-municipalite/administration/appels-doffres-et-gestion-contractuelle", "href_label_en": "Town's contracts page", "href_label_fr": "Page des contrats de la Municipalité" },
+   "town": { "en": "Ormstown's SEAO report lists 12 contracts for 2024–2026. On every one, the \"total actually paid\" field is blank. Contracts awarded on September 8 and October 6, 2026 do not appear. For the 3e Rang contract of August 3, 2026, SEAO names a different winning bidder than the minutes. The Town's site links SEAO's general page, not its own report.", "fr": "Le rapport SEAO d'Ormstown liste 12 contrats pour 2024-2026. Pour chacun, le champ « dépense effectivement faite » est vide. Les contrats octroyés les 8 septembre et 6 octobre 2026 n'y figurent pas. Pour le contrat du 3e Rang du 3 août 2026, le SEAO nomme un adjudicataire différent de celui du procès-verbal. Le site de la Municipalité renvoie à la page générale du SEAO, pas à son propre rapport.", "href": "https://www.ormstown.ca/ma-municipalite/administration/appels-doffres-et-gestion-contractuelle", "href_label_en": "Town's contracts page", "href_label_fr": "Page des contrats de la Municipalité" },
    "observer": { "en": "The contracts register below: each contract, its SEAO entry, and what the payment lists show paid so far.", "fr": "Le registre des contrats ci-dessous : chaque contrat, son entrée SEAO et ce que les listes de paiements montrent de versé à ce jour.", "anchor": "contracts" }
   },
   {
@@ -293,16 +293,16 @@ window.OO_LEDGER_DISCLOSURES = {
   {
    "id": "3e-rang-2026",
    "object": { "en": "Rebuilding the 3e Rang and chemin de la Rivière-Châteauguay", "fr": "Réfection du 3e rang et du chemin Rivière-Châteauguay" },
-   "contractor": "Eurovia Québec Construction Inc.",
+   "contractor": "Agence Chenail",
    "payee": null,
-   "awarded": "2026-08-03",
+   "awarded": "2026-08-03", "resolution": "26-08-225",
    "amount": 1568399.77, "tax": "before",
    "estimate": 1300000,
-   "mode": { "en": "Public tender, 4 bids", "fr": "Appel d'offres public, 4 soumissions" },
-   "bidders": [["Excavation MF Inc.", 1626014.27], ["Ali Excavation Inc.", 1727791.05], ["Groupe M. Potvin", 1751191]],
+   "mode": { "en": "Public tender ORM2025-08.1, 4 bids opened August 3, 2026", "fr": "Appel d'offres public ORM2025-08.1, 4 soumissions ouvertes le 3 août 2026" },
+   "bidders": [["Excavation MF", 1626014.27], ["Ali Excavation Inc.", 1727791.05], ["Groupe MPotvin", 1751191]],
    "seao": { "notice": "20160258/ORM2025-08.1", "year": 2026, "final": "blank" },
    "financing": { "en": "Borrowing by-law 172-2026", "fr": "Règlement d'emprunt 172-2026" },
-   "note": { "en": "The lowest of four bids, $268,400 over the estimate. On October 6, 2026 council moved the 3e Rang paving to 2027 because of the ministry's bridge replacement.", "fr": "La plus basse de quatre soumissions, 268 400 $ au-dessus de l'estimation. Le 6 octobre 2026, le conseil a reporté le pavage du 3e Rang à 2027 en raison du remplacement du pont par le ministère." },
+   "note": { "en": "The minutes award the contract to Agence Chenail, the lowest conforming of four bids, $268,400 over the estimate. Ormstown's SEAO report named Eurovia Québec Construction as the winner of the same notice, at the same price, as of October 25, 2026; the two records disagree. On October 6, 2026 council moved the 3e Rang paving to 2027 because of the ministry's bridge replacement.", "fr": "Le procès-verbal octroie le contrat à Agence Chenail, plus basse de quatre soumissions conformes, 268 400 $ au-dessus de l'estimation. Le rapport SEAO d'Ormstown nommait Eurovia Québec Construction comme adjudicataire du même avis, au même prix, en date du 25 octobre 2026 : les deux documents divergent. Le 6 octobre 2026, le conseil a reporté le pavage du 3e Rang à 2027 en raison du remplacement du pont par le ministère." },
    "links": [{ "kind": "recap", "en": "August 3, 2026 sitting", "fr": "séance du 3 août 2026", "href_en": "/en/council-watch/august-3-2026/", "href_fr": "/fr/conseil-municipal/3-aout-2026/" }, { "kind": "recap", "en": "October 6, 2026: paving moved to 2027", "fr": "6 octobre 2026 : pavage reporté à 2027", "href_en": "/en/council-watch/october-6-2026/", "href_fr": "/fr/conseil-municipal/6-octobre-2026/" }]
   },
   {
