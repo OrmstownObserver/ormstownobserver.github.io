@@ -147,11 +147,14 @@ if (fs.existsSync(payPath)) {
   }
   // Keys reached through a computed name rather than a literal.
   const DYNAMIC = new Set([
-    'orientPayments', 'orientPayees', 'orientCategories', 'orientSittings',
+    'orientPayments', 'orientPayees', 'orientCategories', 'orientSittings', 'orientDisclosures',
     'tocBudget', 'tocCapital', 'tocCoverage', 'tocMethod', 'tocDocuments', 'tocDictionary',
-    'presetLegal', 'presetBig', 'presetPayroll', 'presetCredits',
+    'presetTop', 'presetTopSub', 'presetLast', 'presetLastSub', 'presetWhere', 'presetWhereSub',
+    'presetLaw', 'presetLawSub', 'presetBig', 'presetBigSub', 'presetLegal', 'presetLegalSub',
     'ctxKind_recap', 'ctxKind_story', 'ctxKind_minutes', 'ctxKind_document',
-    'ctxKind_budget', 'ctxKind_method', 'ctxKind_ledger'
+    'ctxKind_budget', 'ctxKind_method', 'ctxKind_ledger', 'ctxKind_seao',
+    'discStatusFound', 'discStatusPartial', 'discStatusStale', 'discStatusMissing',
+    'discTaxBefore', 'discTaxIncluded', 'discTaxUnstated'
   ]);
   let missing = 0, dead = 0;
   for (const k of used) {
@@ -307,7 +310,7 @@ if (fs.existsSync(payPath)) {
     const root = path.join(dir, '..');
     const KINDS = new Set(['recap', 'story', 'minutes', 'document', 'budget', 'method', 'ledger']);
     const SITE = /^\/(en|fr|finances)\/[A-Za-z0-9\-\/]*(#[A-Za-z0-9\-_]+)?$/;
-    const EXT = /^https:\/\/www\.ormstown\.ca\/[^\s"<>]+$/;
+    const EXT = /^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\/[^\s"<>]+$/;
     const slugs = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, 'payee-slugs.json'), 'utf8'))));
     const slugMap = fs.readFileSync(path.join(dir, 'ledger-data.js'), 'utf8').match(/var SLUGS = \{([\s\S]*?)\};/);
     const catSlugs = new Set(slugMap ? [...slugMap[1].matchAll(/: '([a-z-]+)'/g)].map(x => x[1]) : []);
@@ -392,6 +395,113 @@ if (fs.existsSync(payPath)) {
   }
 }
 
+// ---- 14. The Disclosures register (ledger-disclosures.js) — hand-authored,
+// so: bilingual throughout, every law row linked to LegisQuébec, every Town
+// statement with an allowed link, every contract sourced (SEAO notice, a
+// sitting in the ledger, or an Observer page), payee slugs frozen, match
+// rules compiling, amounts numeric, dates real.
+{
+  const dxPath = path.join(dir, 'ledger-disclosures.js');
+  if (!fs.existsSync(dxPath)) fail('ledger-disclosures.js is missing');
+  else {
+    eval(fs.readFileSync(dxPath, 'utf8'));
+    const DX = window.OO_LEDGER_DISCLOSURES || {};
+    const root = path.join(dir, '..');
+    const SITE = /^\/(en|fr|finances)\/[A-Za-z0-9\-\/]*(#[A-Za-z0-9\-_]+)?$/;
+    const EXT = /^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\/[^\s"<>]+$/;
+    const slugs = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, 'payee-slugs.json'), 'utf8'))));
+    const sittingDates = new Set(D.months.map(m => (m.session.match(/\d{4}-\d{2}-\d{2}/) || [''])[0]));
+    const isoDate = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d) && !isNaN(Date.parse(d));
+    let bad = 0;
+    const err = (m) => { bad++; fail('disclosures: ' + m); };
+    const both = (o, where) => {
+      if (!o || typeof o.en !== 'string' || typeof o.fr !== 'string' || !o.en.trim() || !o.fr.trim()) err(`${where} lacks EN or FR text`);
+      for (const l of ['en', 'fr']) if (o && /<[a-z\/]/i.test(o[l] || '')) err(`${where} ${l} contains markup`);
+    };
+    const sitePath = (h, where) => {
+      const f = path.join(root, h.split('#')[0].endsWith('/') ? h.split('#')[0] + 'index.html' : h.split('#')[0]);
+      if (!fs.existsSync(f)) err(`${where} points at a page that does not exist: ${h}`);
+      const anchor = h.split('#')[1];
+      if (anchor && fs.existsSync(f) && !fs.readFileSync(f, 'utf8').includes(`id="${anchor}"`)) err(`${where} anchor #${anchor} is not on the page`);
+    };
+    if (!isoDate(DX.checked)) err('checked date is not an ISO date');
+    if (!isoDate(DX.updated)) err('updated date is not an ISO date');
+    if (!(DX.threshold > 0)) err('threshold missing');
+    if (!DX.seao || !EXT.test(DX.seao.href || '')) err('seao.href is not an allowed SEAO link');
+    for (const k of Object.keys(DX.seao || {})) if (/^href/.test(k) && !EXT.test(DX.seao[k])) err(`seao.${k} is not an allowed link`);
+
+    const STATUS = new Set(['found', 'partial', 'stale', 'missing']);
+    const ids = new Set();
+    for (const it of DX.items || []) {
+      const w = `item ${it.id}`;
+      if (!it.id || ids.has(it.id)) err(`${w}: missing or duplicate id`); ids.add(it.id);
+      both(it, w); both(it.law, `${w} law`); both(it.requires, `${w} requires`); both(it.town, `${w} town`);
+      if (!it.law || !/legisquebec\.gouv\.qc\.ca/.test(it.law.href || '') || !EXT.test(it.law.href)) err(`${w}: law.href must be a LegisQuébec link`);
+      if (!STATUS.has(it.status)) err(`${w}: unknown status "${it.status}"`);
+      if (it.due && !isoDate(it.due)) err(`${w}: due is not an ISO date`);
+      if (it.town && it.town.href && !EXT.test(it.town.href)) err(`${w}: town.href is not an allowed link`);
+      if (it.town && it.town.href && (!it.town.href_label_en || !it.town.href_label_fr)) err(`${w}: town link needs a label in both languages`);
+      if (it.observer) {
+        both(it.observer, `${w} observer`);
+        const o = it.observer, ways = ['anchor', 'payee', 'href_en'].filter(k => o[k]).length;
+        if (ways > 1) err(`${w}: observer may use one of anchor, payee, href_en/fr`);
+        if (o.anchor && !['suppliers', 'contracts', 'register'].includes(o.anchor)) err(`${w}: unknown anchor ${o.anchor}`);
+        if (o.payee && !slugs.has(o.payee)) err(`${w}: observer.payee "${o.payee}" is not a frozen slug`);
+        if (o.href_en || o.href_fr) {
+          for (const l of ['en', 'fr']) {
+            const h = o['href_' + l];
+            if (!h || !(SITE.test(h) || EXT.test(h))) { err(`${w}: observer.href_${l} missing or not allowed`); continue; }
+            if (SITE.test(h)) sitePath(h, `${w} observer.href_${l}`);
+          }
+        }
+      }
+    }
+    const TAX = new Set(['before', 'included', 'unstated']);
+    const FINAL = new Set(['blank', 'absent', null]);
+    const cids = new Set();
+    for (const c of DX.contracts || []) {
+      const w = `contract ${c.id}`;
+      if (!c.id || cids.has(c.id)) err(`${w}: missing or duplicate id`); cids.add(c.id);
+      both(c.object, `${w} object`); both(c.mode, `${w} mode`);
+      if (c.note) both(c.note, `${w} note`);
+      if (c.financing) both(c.financing, `${w} financing`);
+      if (typeof c.contractor !== 'string' || !c.contractor) err(`${w}: contractor missing`);
+      if (!(typeof c.amount === 'number' && c.amount >= DX.threshold)) err(`${w}: amount must be a number at or above the threshold`);
+      if (c.estimate != null && typeof c.estimate !== 'number') err(`${w}: estimate must be a number or null`);
+      if (!TAX.has(c.tax)) err(`${w}: tax must be before | included | unstated`);
+      if (!(typeof c.awarded === 'string' && /^\d{4}(-\d{2}-\d{2})?$/.test(c.awarded))) err(`${w}: awarded must be YYYY or YYYY-MM-DD`);
+      if (isoDate(c.awarded) && !sittingDates.has(c.awarded) && !c.src) err(`${w}: awarded ${c.awarded} is not a sitting in the ledger and no src is given`);
+      if (c.resolution && !/^\d{2}-\d{2}-\d{3}$/.test(c.resolution)) err(`${w}: resolution format`);
+      if (c.payee !== null && !slugs.has(c.payee)) err(`${w}: payee "${c.payee}" is not a frozen slug (use null until paid)`);
+      if (c.payee && !(c.match && (c.match.all === true || (Array.isArray(c.match.text) && c.match.text.length)))) err(`${w}: a paid contractor needs a match rule`);
+      for (const sl of c.payees || []) if (!slugs.has(sl)) err(`${w}: payees "${sl}" is not a frozen slug`);
+      if (c.payees && !c.payee) err(`${w}: payees needs a primary payee`);
+      for (const src of (c.match && c.match.text) || []) { try { new RegExp(src, 'i'); } catch (e) { err(`${w}: match pattern does not compile: ${src}`); } }
+      for (const b of c.bidders || []) if (!Array.isArray(b) || typeof b[0] !== 'string' || (b[1] != null && typeof b[1] !== 'number')) err(`${w}: bidder rows are [name, price|null]`);
+      if (!c.seao || !FINAL.has(c.seao.final) || !c.seao.year) err(`${w}: seao needs {notice, year, final}`);
+      if (c.seao && c.seao.notice && !DX.seao['href_' + c.seao.year] && !DX.seao.href) err(`${w}: no SEAO report link for ${c.seao.year}`);
+      if (c.seao && !c.seao.notice && c.seao.final !== 'absent') err(`${w}: a contract without a SEAO notice must say final: "absent"`);
+      if (c.seao && !c.seao.notice && !c.src) err(`${w}: a contract not on SEAO needs an Observer or minutes src`);
+      if (c.src) {
+        for (const l of ['en', 'fr']) {
+          const h = c.src['href_' + l];
+          if (!h || !(SITE.test(h) || EXT.test(h))) err(`${w}: src.href_${l} missing or not allowed`);
+          else if (SITE.test(h)) sitePath(h, `${w} src.href_${l}`);
+        }
+      }
+      for (const lk of c.links || []) {
+        both(lk, `${w} link`);
+        for (const l of ['en', 'fr']) {
+          const h = lk['href_' + l];
+          if (!h || !(SITE.test(h) || EXT.test(h))) err(`${w}: link href_${l} missing or not allowed`);
+          else if (SITE.test(h)) sitePath(h, `${w} link href_${l}`);
+        }
+      }
+    }
+    if (!bad) ok(`disclosures: ${(DX.items || []).length} obligations, ${(DX.contracts || []).length} contracts, bilingual, sourced, links allowed`);
+  }
+}
+
 // ---- Result
 if (failures) { console.error(`\n${failures} check(s) failed.`); process.exit(1); }
 console.log('\nAll checks passed.');
@@ -410,6 +520,6 @@ function listFiles(root, re) {
 function listScripts(root) {
   return listFiles(root, /\.js$/).filter(p => {
     const rel = path.relative(root, p);
-    return !rel.startsWith('tools' + path.sep) && !rel.startsWith('tests' + path.sep) && rel !== 'i18n.js' && rel !== 'spending-data.js' && rel !== 'ledger-context.js';
+    return !rel.startsWith('tools' + path.sep) && !rel.startsWith('tests' + path.sep) && rel !== 'i18n.js' && rel !== 'spending-data.js' && rel !== 'ledger-context.js' && rel !== 'ledger-disclosures.js';
   });
 }

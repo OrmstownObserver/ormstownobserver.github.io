@@ -979,3 +979,109 @@ tr.ctx-row > td { padding-top: 0; }
     box-sizing: border-box;
   }
 }
+
+/* ---------- Disclosures tab ----------
+   A register, read top to bottom: the law, the Town, the Observer. Same
+   newspaper grammar as the context blocks: heavy rule, hairlines, the
+   status word set like a kicker. */
+.disc-intro { font: var(--size-body)/1.6 var(--serif-body); max-width: 82ch; margin: var(--s3) 0 0; }
+.disc-toc { margin: var(--s2) 0 0; font: 600 var(--size-caption)/1.6 var(--sans); }
+.disc-toc a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+.disc-sec { border-top: var(--rule-heavy) solid var(--ink); margin-top: var(--s5); padding-top: var(--s2); scroll-margin-top: 72px; }
+.disc-h { font-family: var(--serif-display); font-weight: var(--weight-bold); font-size: var(--size-section-title); line-height: var(--leading-tight); margin: 0; }
+.disc-lead { font: var(--size-body)/1.6 var(--serif-body); max-width: 82ch; margin: var(--s2) 0 0; }
+.disc-basis, .disc-note { font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); max-width: 82ch; margin: var(--s2) 0 0; }
+.disc-basis a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+.disc-year {
+  font: 700 var(--size-label-lg)/1.4 var(--sans);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: var(--s4) 0 0;
+  padding-bottom: var(--s1);
+  border-bottom: var(--rule-hair) solid var(--hair);
+}
+.disc-table { margin-top: var(--s2); }
+.disc-table .rank { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.disc-table th[scope=row] .gloss { white-space: normal; max-width: 42ch; }
+.disc-other { list-style: none; margin: var(--s1) 0 0; padding: 0; }
+.disc-other li { padding: 2px 0; }
+.disc-src .gloss { display: inline; margin-left: 4px; }
+.flag { color: var(--pending); font-weight: 700; }
+.gloss.flag { display: block; color: var(--pending); margin-top: 2px; }
+.disc-bidders { margin: var(--s1) 0 var(--s2); padding-left: var(--s3); }
+.disc-item { border-top: var(--rule-hair) solid var(--hair); padding: var(--s3) 0 var(--s2); max-width: 82ch; }
+.disc-item h3 { font: 700 var(--size-body)/1.4 var(--sans); margin: 0 0 var(--s2); }
+.disc-item .status {
+  display: inline-block;
+  font: 700 var(--size-label-sm)/1.2 var(--sans);
+  letter-spacing: var(--track-label);
+  text-transform: uppercase;
+  padding: 3px 7px;
+  margin-right: var(--s1);
+  border: var(--rule-hair) solid currentColor;
+  vertical-align: 2px;
+}
+.disc-item .status.s-found { color: var(--confirm); }
+.disc-item .status.s-partial, .disc-item .status.s-stale { color: var(--pending); }
+.disc-item .status.s-missing { color: var(--accent); }
+.disc-item dl { display: grid; grid-template-columns: minmax(9ch, 16ch) 1fr; gap: var(--s1) var(--s3); margin: 0; font: var(--size-body-sm)/1.6 var(--sans); }
+.disc-item dt { font: 700 var(--size-label-sm)/1.6 var(--sans); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-soft); }
+.disc-item dd { margin: 0; }
+.disc-item dd a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+.disc-item dd a.ctx-src { color: var(--accent); text-decoration: none; }
+.disc-item dd .gloss { display: block; }
+.disc-go { font-weight: 700; }
+@media (max-width: 640px) {
+  .disc-item dl { grid-template-columns: 1fr; gap: 2px var(--s2); }
+  .disc-item dt { margin-top: var(--s1); }
+}
+/* the contracts table: a right-aligned money column meets a left-aligned
+   source column, so give the source column its own breathing room. */
+#contracts-table th:last-child, #contracts-table td:last-child { padding-left: var(--s3); }
+#contracts-table th[scope=row] { min-width: 18ch; }
+
+/* ---------- the front door ----------
+   A search box, then the questions a reader arrives with. Replaces the
+   old reference strip; the page's facts line (lines, suppliers, sittings)
+   and the budget link move under it as .door-about. */
+.lw-door { margin-top: var(--s3); padding-top: var(--s3); border-top: var(--rule-hair) solid var(--rule); }
+.door-search { display: flex; gap: var(--s1); max-width: 82ch; }
+.door-search input {
+  flex: 1 1 auto; min-width: 0;
+  min-height: 46px;
+  padding: 0 var(--s2);
+  border: var(--rule) solid var(--control-line);
+  background: var(--surface-sunk);
+  color: var(--ink);
+  font: var(--size-body)/1.3 var(--sans);
+}
+.door-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.door-search .btn { flex: none; }
+.door-lead { margin: var(--s3) 0 0; font: 700 var(--size-label-lg)/1.4 var(--sans); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-soft); }
+.door-cards { list-style: none; margin: var(--s2) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--s2); }
+.door-cards a {
+  display: block; height: 100%;
+  padding: var(--s2) var(--s3);
+  border: var(--rule-hair) solid var(--hair);
+  border-left: var(--border-fact) solid var(--accent);
+  background: var(--surface-card);
+  color: var(--ink);
+  text-decoration: none;
+}
+.door-cards a:hover, .door-cards a:focus-visible { border-color: var(--accent); background: var(--accent-bg); }
+.door-cards strong { display: block; font: 700 var(--size-body)/1.35 var(--serif-display); }
+.door-cards span { display: block; margin-top: 4px; font: var(--size-fine)/1.5 var(--sans); color: var(--ink-soft); }
+.door-about { margin: var(--s3) 0 0; font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); }
+.door-about a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; margin-left: var(--s1); }
+@media (max-width: 640px) {
+  .door-cards { grid-template-columns: 1fr 1fr; gap: var(--s1); }
+  .door-cards a { padding: var(--s2); }
+  .door-cards strong { font-size: var(--size-body-sm); }
+}
+@media (max-width: 400px) { .door-cards { grid-template-columns: 1fr; } }
+@media print { .lw-door { display: none; } }
+/* the year chip is the frame, not a filter: no ✕, quieter */
+.lw-chips .chip.fixed { border-style: dashed; }
+.pf-years { margin: var(--s2) 0 0; font: var(--size-body-sm)/1.6 var(--sans); }
+.pf-years .lbl { font-weight: 700; color: var(--ink-soft); margin-right: var(--s1); }

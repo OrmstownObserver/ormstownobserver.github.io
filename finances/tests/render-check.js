@@ -65,6 +65,8 @@ const ctxv = vm.createContext(win);
 const run = (p) => vm.runInContext(fs.readFileSync(p, 'utf8'), ctxv, { filename: p });
 run(path.join(dir, 'spending-data.js'));
 run(path.join(dir, 'i18n.js'));
+run(path.join(dir, 'ledger-context.js'));
+run(path.join(dir, 'ledger-disclosures.js'));
 run(path.join(V2, 'ledger-data.js'));
 run(path.join(V2, 'ledger-charts.js'));
 run(path.join(V2, 'ledger-views.js'));
@@ -101,7 +103,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   {
     const order = document.body.find((n) => n.getAttribute && n.getAttribute('role') === 'tab')
       .map((n) => n.getAttribute('data-tab'));
-    eq(order.join(' '), 'categories sittings payees payments', 'tabs run Categories, Sittings, Suppliers, Payments');
+    eq(order.join(' '), 'categories sittings payees payments disclosures', 'tabs run Categories, Sittings, Suppliers, Payments, Disclosures');
   }
 
   // ---- 2. default scope is the most recent year in the data, and "All"
@@ -131,17 +133,20 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   if (!textOf($('q-help'))) fail('search help text is empty');
   else ok('search help text explains what is and is not searched');
 
-  // ---- 3b. from here on, the payments assertions need the Payments tab and
-  // the full record, so ask for both explicitly.
+  // ---- 3b. from here on, the payments assertions need the Payments tab.
+  // The year is the only timeframe: a legacy ?scope=all resolves to the
+  // latest year (2026: 1,769 lines, $5,438,482.77), never to every year.
   navigateTo('?lang=fr&tab=payments&scope=all');
   await tick();
-  eq(rowsIn('payments-table').length, 150, 'Payments renders the 150-row first page, not all 4,439');
+  eq(rowsIn('payments-table').length, 150, 'Payments renders the 150-row first page, not all 1,769');
   {
     const status = textOf($('results-status'));
-    if (!/4\s?439/.test(status.replace(/ | /g, ' '))) fail('status line does not report 4,439 lines: ' + status);
-    else ok('status line reports the full 4,439-line result set');
-    if (!/15[\s  ]?559[\s  ]?623/.test(status)) fail('status line total is not the itemized grand total: ' + status);
-    else ok('status line total is the itemized grand total');
+    if (!/1\s?769/.test(status.replace(/[\u00a0\u202f]/g, ' '))) fail('status line does not report the year\'s 1,769 lines: ' + status);
+    else ok('legacy ?scope=all resolves to the latest year: 1,769 lines');
+    if (!/5[\s\u00a0\u202f]?438[\s\u00a0\u202f]?482/.test(status)) fail('status line total is not the year\'s itemized total: ' + status);
+    else ok('status line total is the year\'s itemized total');
+    if ($('scope-group').find((n) => n.tagName === 'BUTTON').some((b) => /all|toutes/i.test(b.textContent))) fail('the year selector still offers an "all years" pill');
+    else ok('the year selector offers no "all years" pill');
   }
 
   // ---- 4. a hidden payee is reachable by search - the whole point
@@ -151,8 +156,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   await new Promise((r) => setTimeout(r, 220));
   const petroRows = rowsIn('payments-table');
   const petroStatus = textOf($('results-status'));
-  if (!/408/.test(petroStatus)) fail('search "petro" did not reach all 408 lines: ' + petroStatus);
-  else ok('search "petro" reaches all 408 lines of a payee whose name never says "Petro"');
+  if (!/310/.test(petroStatus)) fail('search "petro" did not reach all 310 lines of 2026: ' + petroStatus);
+  else ok('search "petro" reaches all 310 lines of a payee whose name never says "Petro"');
   eq(petroRows.length, 150, 'the search result set is still paged at 150 rows');
   const firstPayee = textOf(petroRows[0].children[0]);
   if (!/9534-8702/.test(firstPayee)) fail('first petro row is not the Petro-Canada payee: ' + firstPayee);
@@ -192,21 +197,21 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   chips[3].click();                          // "Credits only"
   await tick();
   const creditRows = rowsIn('payments-table');
-  eq(creditRows.length, 53, 'the Credits-only chip finds all 53 negative lines');
+  eq(creditRows.length, 20, 'the Credits-only chip finds all 20 negative lines of 2026');
   if (!/credit|crédit/i.test(textOf(creditRows[0]))) fail('a negative line is not tagged as a credit');
   else ok('negative lines are tagged as credits');
   chips[3].click();
   await tick();
 
   // ---- 9. tabs
-  for (const tab of ['payees', 'categories', 'sittings', 'payments']) {
+  for (const tab of ['payees', 'categories', 'sittings', 'disclosures', 'payments']) {
     $('tab-' + tab).click();
     await tick();
     if (panel(tab).hidden) fail(`the ${tab} panel is still hidden after selecting its tab`);
     if ($('tab-' + tab).getAttribute('aria-selected') !== 'true') fail(`tab-${tab} is not aria-selected`);
     if (!panel(tab).children.length) fail(`the ${tab} panel rendered nothing`);
   }
-  ok('all four tabs select, unhide and render');
+  ok('all five tabs select, unhide and render');
 
   // ---- 10. the Sittings view states the reconciliation in public.
   // (The tab loop above ends on Payments, so ask for Sittings again.)
@@ -216,18 +221,22 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const sitText = textOf($('panel-sittings'));
   if (!/0[.,]12/.test(sitText)) fail('the Sittings view does not show the documented 0.12 gap');
   else ok('the Sittings view shows the documented 2026-01 gap of 0.12');
-  if (!/15[\s  ]?559[\s  ]?623[.,]00/.test(sitText)) fail('no itemized grand total in the totals row');
-  else ok('the totals row shows the itemized grand total');
-  if (!/15[\s  ]?549[\s  ]?574[.,]76/.test(sitText)) fail('no adopted grand total in the totals row');
-  else ok('the totals row shows the adopted grand total');
-  if (!/329[\s  ]?508/.test(sitText)) fail('the October 2025 note is not reachable in the Sittings view');
-  else ok('the October 2025 resolution-vs-annexe note is on the page');
-  if (sitRows.length < 10) fail('fewer than 10 sitting rows');
+  if (!/5[\s\u00a0\u202f]?438[\s\u00a0\u202f]?482[.,]77/.test(sitText)) fail('no itemized year total in the totals row');
+  else ok('the totals row shows the year\'s itemized total');
+  if (!/5[\s\u00a0\u202f]?438[\s\u00a0\u202f]?482[.,]89/.test(sitText)) fail('no adopted year total in the totals row');
+  else ok('the totals row shows the year\'s adopted total');
+  if (sitRows.length < 8) fail('fewer than 8 sitting rows for 2026');
+  if (/2025/.test(textOf(sitRows[0].children[0]))) fail('a 2025 sitting is listed under the 2026 frame');
+  else ok('the Sittings view lists only the year in view');
+  navigateTo('?lang=fr&tab=sittings&scope=2025');
+  await tick();
+  if (!/329[\s\u00a0\u202f]?508/.test(textOf($('panel-sittings')))) fail('the October 2025 note is not reachable in the Sittings view');
+  else ok('the October 2025 resolution-vs-annexe note is on the page under 2025');
 
   // ---- 11. payee profile, and it ignores the filters
   $('tab-payments').click(); await tick();
   win.OO_LEDGER_VIEWS; // noop
-  navigateTo('?lang=fr&payee=les-industries-simexco-inc');
+  navigateTo('?lang=fr&scope=2025&payee=les-industries-simexco-inc');
   await tick();
   const prof = $('profile');
   if (prof.hidden) fail('the profile did not open from ?payee=');
@@ -236,13 +245,19 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   if (!/Simexco/.test(ptext)) fail('profile does not name the payee');
   else ok('the profile names the payee');
   if (!/136[\s  ]?527[.,]50/.test(ptext)) fail('profile does not show the known Simexco amount');
-  else ok('the profile shows the payee total across all sittings');
+  else ok('the profile shows the payee\'s largest 2025 line');
+  if (!/2026/.test(ptext)) fail('the profile does not offer the payee\'s other year');
+  else ok('the profile links the payee\'s other years');
 
-  // filters are paused on a profile
-  navigateTo('?lang=fr&sitting=2026-07&payee=les-industries-simexco-inc');
+  // filters are paused on a profile; the year in the URL is the frame
+  navigateTo('?lang=fr&sitting=2025-07&payee=les-industries-simexco-inc');
   await tick();
-  if (!/136[\s  ]?527[.,]50/.test(textOf($('profile')))) fail('the profile changed when a sitting filter was set - a shared link must not');
+  if (!/136[\s\u00a0\u202f]?527[.,]50/.test(textOf($('profile')))) fail('the profile changed when a sitting filter was set - a shared link must not');
   else ok('the profile ignores the rail: a shared link means the same thing to everyone');
+  navigateTo('?lang=fr&scope=2026&payee=les-industries-simexco-inc');
+  await tick();
+  if (/136[\s\u00a0\u202f]?527[.,]50/.test(textOf($('profile')))) fail('a 2026-framed profile still shows a 2025 line');
+  else ok('the profile follows the year in the URL');
 
   // ---- 12. legacy URLs
   navigateTo('?lang=en&tab=payments&year=2025&period=2025-11&category=legal-services');
@@ -286,15 +301,15 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // from articles, so a dead one is a published broken link.
   navigateTo('?lang=fr');
   await tick();
-  const presetLinks = $('presets').children.filter((n) => n.tagName === 'A');
-  eq(presetLinks.length, 4, 'four preset links are offered');
+  const presetLinks = $('presets').find((n) => n.tagName === 'A');
+  eq(presetLinks.length, 6, 'six question links are offered');
   for (const a of presetLinks) {
     const href = a.getAttribute('href');
     const label = a.textContent;
     navigateTo(href);
     await tick();
     const showing = $('profile').hidden
-      ? ['payments-table', 'payees-table', 'categories-table', 'sittings-table']
+      ? ['payments-table', 'payees-table', 'categories-table', 'sittings-table', 'contracts-table']
           .reduce((n, t) => n + rowsIn(t).length, 0)
       : $('profile').children.length;
     if (!showing) fail(`preset "${label}" (${href}) resolves to an empty view`);
@@ -405,10 +420,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     if (n.tagName !== 'A') return;
     const href = n.getAttribute('href');
     if (!href || href[0] === '?' || href[0] === '/' || href[0] === '#') return;
-    if (!/^https:\/\/www\.ormstown\.ca\//.test(href)) { badLink++; fail('external link is not ormstown.ca: ' + href); }
+    if (!/^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\//.test(href)) { badLink++; fail('external link is not an allowed official host: ' + href); }
     if (n.getAttribute('rel') !== 'noopener') { badLink++; fail('external link lacks rel=noopener: ' + href); }
   });
-  if (!badLink) ok('every external link points at ormstown.ca and carries rel=noopener');
+  if (!badLink) ok('every external link points at an allowed official host and carries rel=noopener');
 
   // ---- 15. accessibility surface
   navigateTo('?lang=fr&tab=payments');
@@ -419,7 +434,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const live = document.body.find((n) => n.getAttribute && n.getAttribute('aria-live'));
   eq(live.length, 1, 'exactly one aria-live region on the page');
   const tabs = document.body.find((n) => n.getAttribute && n.getAttribute('role') === 'tab');
-  eq(tabs.length, 4, 'four elements with role=tab');
+  eq(tabs.length, 5, 'five elements with role=tab');
   eq(tabs.filter((t) => t.getAttribute('tabindex') === '0').length, 1, 'exactly one tab is in the tab order (roving tabindex)');
 
   console.log(failures ? `\n${failures} check(s) failed.` : '\nAll render checks passed.');

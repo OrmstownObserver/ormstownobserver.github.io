@@ -6,8 +6,8 @@
    ── THE URL CONTRACT (frozen; do not change a name or a value
       without a migration entry below) ─────────────────────────
      lang      fr | en                       localStorage > navigator > fr
-     tab       payments|payees|categories|sittings      payments
-     scope     all | 2025 | 2026                        all
+     tab       categories|sittings|payees|payments|disclosures   categories
+     scope     2025 | 2026 (a year; 'all' is a legacy alias)   latest year
      sitting   comma list of YYYY-MM                    none (= all in scope)
      category  comma list of category slugs             none (= all)
      q         free text, trimmed, <=120 chars          none
@@ -45,6 +45,8 @@
   // The Observer's context (ledger-context.js). Optional: without it the
   // ledger is exactly the ledger.
   var CX = global.OO_LEDGER_CONTEXT || {};
+  // The Disclosures tab's data (ledger-disclosures.js). Optional too.
+  var DX = global.OO_LEDGER_DISCLOSURES || null;
   function cxGet(group, id) {
     var g = CX[group];
     return (g && id && Object.prototype.hasOwnProperty.call(g, id)) ? g[id] : null;
@@ -52,7 +54,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261019-1';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261025-2';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -88,7 +90,7 @@
   // Tab order runs from the overview to the raw record: where the money went,
   // which sitting approved it, who was paid, then every individual line.
   var DEFAULTS = { tab: 'categories', sort: 'amount:desc' };
-  var TABS = ['categories', 'sittings', 'payees', 'payments'];
+  var TABS = ['categories', 'sittings', 'payees', 'payments', 'disclosures'];
   // The default year is the most recent one in the data, not a hardcoded
   // year — this must not need editing when 2027's first sitting lands.
   // "All" stays one pill away, and it is what cross-year work uses.
@@ -113,18 +115,23 @@
     var tab = p.get('tab');
     state.tab = TABS.indexOf(tab) >= 0 ? tab : DEFAULTS.tab;
 
-    // scope, with ?year= as a permanent alias
+    // scope, with ?year= as a permanent alias. The year is the only
+    // timeframe: disclosure and financial review happen year by year, and
+    // "every sitting itemized so far" is an accident of how far the
+    // Observer has got. A legacy ?scope=all resolves to the latest year.
     var scope = p.get('scope') || p.get('year') || defaultScope();
-    state.scope = (scope === 'all' || years().indexOf(scope) >= 0) ? scope : defaultScope();
+    state.scope = years().indexOf(scope) >= 0 ? scope : defaultScope();
 
     // sitting, with ?period= as a permanent alias
     var sit = (p.get('sitting') || p.get('period') || '').split(',')
       .filter(function (id) { return !!(D.months || []).filter(function (m) { return m.m === id; })[0]; });
     state.sittings = sit.sort();
-    // A requested sitting outside the scope widens the scope rather than
-    // being dropped — a legacy link must never resolve to an empty page.
-    if (state.scope !== 'all' && state.sittings.some(function (id) { return id.slice(0, 4) !== state.scope; })) {
-      state.scope = 'all';
+    // A requested sitting outside the year moves the year to it rather
+    // than being dropped — a legacy link must never resolve to an empty
+    // page. Sittings from a second year are let go.
+    if (state.sittings.some(function (id) { return id.slice(0, 4) !== state.scope; })) {
+      state.scope = state.sittings[0].slice(0, 4);
+      state.sittings = state.sittings.filter(function (id) { return id.slice(0, 4) === state.scope; });
     }
 
     state.categories = (p.get('category') || '').split(',').filter(function (c) { return L.KEY_BY_SLUG[c]; });
@@ -222,8 +229,9 @@
     return out.sort();
   }
 
+  // The year is the frame, not a filter: changing it is not "filtering".
   function hasFilters() {
-    return !!(state.q || state.scope !== defaultScope() || state.sittings.length ||
+    return !!(state.q || state.sittings.length ||
               state.categories.length || state.min !== '' || state.max !== '');
   }
   function filterSpec(over) {
@@ -333,9 +341,13 @@
     }).sort(function (a, b) { return b.amt - a.amt; });
   }
 
-  // The Sittings tab always shows every sitting: it is the reconciliation
-  // table, and a partial one would be worse than none.
-  function sittingRows() { return store.sittings.slice().reverse(); }
+  // The year's sittings, oldest first. Every per-sitting surface (the
+  // Sittings table, presence and heat strips, a profile's chart) runs over
+  // these, so a year reads as a year.
+  function yearSittings() { return store.sittings.filter(function (s) { return s.year === state.scope; }); }
+  // The Sittings tab shows the whole year, whatever the rail says: it is the
+  // reconciliation table, and a partial one would be worse than none.
+  function sittingRows() { return yearSittings().slice().reverse(); }
 
   function sortRows(rows, map, dflt) {
     var parts = state.sort.split(':'), field = map[parts[0]] || dflt, dir = parts[1] === 'asc' ? 1 : -1;
@@ -356,7 +368,18 @@
     var P = store.payees[slug];
     if (!P) return null;
     var scoped = state.payeeScope === 'filters' && hasFilters();
-    var idx = store.byPayee[slug] || [];
+    var all = store.byPayee[slug] || [];
+    // What the payee was paid in each year, for the "other years" line.
+    var byYear = {};
+    all.forEach(function (i) {
+      var ln = store.lines[i], y = ln.s.slice(0, 4);
+      byYear[y] = byYear[y] || { amt: 0, lines: 0 };
+      byYear[y].amt += L.cents(ln.a); byYear[y].lines++;
+    });
+    Object.keys(byYear).forEach(function (y) { byYear[y].amt = L.dollars(byYear[y].amt); });
+    // A profile shows the year in the URL: a shared link means the same
+    // thing to everyone, and the year is the unit of account.
+    var idx = all.filter(function (i) { return store.lines[i].s.slice(0, 4) === state.scope; });
     if (scoped) {
       var keep = {};
       indices().forEach(function (i) { keep[i] = 1; });
@@ -378,7 +401,8 @@
       P: P, slug: slug, idx: idx, scoped: scoped,
       total: L.dollars(c), lines: idx.length,
       sittings: sits, nSittings: sits.length, byCat: byCat, maxLine: maxLine,
-      first: sits[0] || P.first, last: sits[sits.length - 1] || P.last
+      first: sits[0] || P.first, last: sits[sits.length - 1] || P.last,
+      year: state.scope, byYear: byYear
     };
   }
 
@@ -390,7 +414,7 @@
       by[ln.s].amt += L.cents(ln.a);
       by[ln.s].lines++;
     });
-    return store.sittings.map(function (s) {
+    return yearSittings().map(function (s) {
       return { s: s, amt: L.dollars((by[s.m] || {}).amt || 0), lines: (by[s.m] || {}).lines || 0 };
     });
   }
@@ -400,7 +424,7 @@
      ============================================================ */
   function ctx() {
     return {
-      store: store, D: D, T: T(), lang: state.lang, f: f(), state: state,
+      store: store, D: D, dx: DX, T: T(), lang: state.lang, f: f(), state: state,
       idx: indices(), agg: agg(), revealed: revealed, profileRevealed: profileRevealed,
       loading: loading, linesFailed: linesFailed, expectedLines: EXPECTED_LINES,
       catName: catName, payeeName: payeeName, gloss: glossFor,
@@ -421,8 +445,10 @@
       },
       hrefSitting: function (id) { return hrefFor(sittingPatch(id)); },
       hrefCategory: function (key) { return hrefFor(categoryPatch(key)); },
+      hrefTab: function (tab) { return hrefFor({ tab: tab, payee: '', payeeScope: '' }); },
+      hrefYear: function (y) { return hrefFor({ scope: y, sittings: [] }); },
       payeeMatches: payeeMatches,
-      payeeRows: payeeRows, categoryRows: categoryRows, sittingRows: sittingRows,
+      payeeRows: payeeRows, categoryRows: categoryRows, sittingRows: sittingRows, yearSittings: yearSittings,
       payeeBySitting: payeeBySitting, profileData: profileData,
       widenOffers: widenOffers,
       chart: function (name, canvasId, capId, items, opts) {
@@ -440,12 +466,14 @@
         togglePayeeScope: function () { setState({ payeeScope: state.payeeScope === 'filters' ? '' : 'filters' }, { resetReveal: false }); },
         sitting: function (id) { setState({ sittings: toggleIn(state.sittings, id), tab: state.tab }); },
         setScope: function (v) { setState({ scope: v, sittings: [] }); },
+        setScopeKeep: function (v) { setState({ scope: v, sittings: [] }, { resetReveal: false }); },
         setAmount: function (mn, mx) { setState({ min: mn, max: mx }); },
         clearQ: function () { setState({ q: '' }); },
         sort: function (v) { setState({ sort: validSort(v) }, { resetReveal: false }); },
         more: function () { revealed += PAGE_STEP; renderAll(); },
         all: function () { revealAll(); },
         csv: exportCSV,
+        disclosuresCsv: exportSuppliersCSV,
         clearFilters: resetFilters,
         retry: function () { linesFailed = false; loading = true; renderAll(); loadPayments(); }
       }
@@ -534,16 +562,26 @@
   // state does research work instead of apologising.
   function widenOffers() {
     var t = T(), out = [];
-    if (state.sittings.length || state.scope !== 'all') {
-      var n = L.filterLines(store, filterSpec({ sittings: [], scope: 'all' })).length;
+    if (state.sittings.length) {
+      var n = L.filterLines(store, filterSpec({ sittings: [] })).length;
       if (n > indices().length) {
         out.push(V.el('p', null, V.el('button', {
           type: 'button', cls: 'btn ghost',
-          text: L.tpl(t.widenSittings, { n: f().num(n) }),
-          on: { click: function () { setState({ sittings: [], scope: 'all' }); } }
+          text: L.tpl(t.widenYear, { n: f().num(n), year: state.scope }),
+          on: { click: function () { setState({ sittings: [] }); } }
         })));
       }
     }
+    years().forEach(function (y) {
+      if (y === state.scope) return;
+      var ny = L.filterLines(store, filterSpec({ sittings: [], scope: y })).length;
+      if (!ny) return;
+      out.push(V.el('p', null, V.el('button', {
+        type: 'button', cls: 'btn ghost',
+        text: L.tpl(t.widenYear, { n: f().num(ny), year: y }),
+        on: { click: function () { setState({ sittings: [], scope: y }); } }
+      })));
+    });
     if (state.min !== '' || state.max !== '') {
       var n2 = L.filterLines(store, filterSpec({ min: '', max: '' })).length;
       if (n2 > indices().length) {
@@ -611,6 +649,22 @@
     if (idx.length > 1000 && !global.confirm(L.tpl(t.csvBigConfirm, { n: f().num(idx.length) }))) return;
     V.downloadCSV(L.buildCSV(t.csvHeadLines, idx.map(lineCSVRow)), t.csvFileStem + '-' + state.tab + '.csv');
   }
+  // The suppliers-over-threshold table, every year, one row per supplier.
+  function exportSuppliersCSV() {
+    var t = T(), thr = (DX && DX.threshold) || 25000, rows = [];
+    var years = [];
+    store.sittings.forEach(function (s) { if (years.indexOf(s.year) < 0) years.push(s.year); });
+    years.sort().forEach(function (y) {
+      V.yearTotals(ctx(), y).forEach(function (r) {
+        var P = store.payees[r.slug];
+        if (r.amt < thr || !P || P.isRest) return;
+        rows.push([y, payeeName(P), r.n, r.amt.toFixed(2),
+          (P.isPayroll || V.NOT_CONTRACT.test(r.slug)) ? t.discCsvNotContract : t.discCsvContract,
+          (D.provenance && D.provenance.source) || '']);
+      });
+    });
+    V.downloadCSV(L.buildCSV(t.csvHeadSuppliers, rows), t.csvFileStem + '-suppliers-' + thr + '.csv');
+  }
   function exportPayeeCSV(slug) {
     var t = T();
     V.downloadCSV(L.buildCSV(t.csvHeadLines, (store.byPayee[slug] || []).map(lineCSVRow)),
@@ -655,6 +709,7 @@
     renderChips();
     renderStatus();
     renderJump();
+    renderYearJump();
     renderPanels();
     flushCharts();
     renderPrintMeta();
@@ -672,15 +727,22 @@
     setText('disclaimer-more', t.devMore);
     setText('notice-h', t.devBannerH);
     setText('notice-b', t.devBanner);
-    setText('ref-lbl', t.refLabel);
     setText('ref-budget', t.refBudget);
-    setText('preset-lbl', t.presetLabel);
+    setText('l-door-q', t.railSearch);
+    setText('door-go', t.doorGo);
+    setText('door-lead', t.doorLead);
+    var dq = $('door-q');
+    if (dq) {
+      dq.setAttribute('placeholder', t.doorPlaceholder);
+      if (document.activeElement !== dq) dq.value = state.q;
+    }
     var sk = document.getElementsByClassName('lw-skip');
     if (sk[0]) sk[0].textContent = t.skipResults;
     if (sk[1]) sk[1].textContent = t.skipFilters;
     var rb = $('ref-budget'); if (rb) rb.setAttribute('href', '/finances/budget/?lang=' + state.lang);
     setText('basis-note', t.basisNote);
     setText('basis-link', t.basisLink);
+    var basis = $('basis'); if (basis) basis.hidden = state.tab === 'disclosures';
     var bl = $('basis-link'); if (bl) bl.setAttribute('href', '/finances/budget/?lang=' + state.lang + '#budget');
 
     if (store) {
@@ -696,26 +758,30 @@
   }
   function setText(id, s) { var n = $(id); if (n) n.textContent = s; }
 
-  // Preset links are just v2 URLs. They cost nothing, they teach the tool by
-  // example, and they give an article something specific to link to.
-  // Each preset carries its own tab, so following the LINK lands exactly
-  // where clicking it does. (They used to disagree: the click handler forced
-  // Payments while the href inherited the default tab.)
+  // The front door's questions: each one is a plain URL into the tool, so
+  // it teaches by example and gives an article something to link to. The
+  // first two follow the data (latest year, latest sitting) so they never
+  // need editing when a sitting lands. Each carries its own tab, so
+  // following the LINK lands exactly where clicking it does.
   var PRESETS = [
-    { key: 'presetLegal',   q: { category: 'legal-services', scope: 'all', tab: 'payments' } },
-    { key: 'presetBig',     q: { min: '100000', scope: 'all', tab: 'payments' } },
-    { key: 'presetPayroll', q: { payee: 'paie-municipale', scope: 'all' } },
-    { key: 'presetCredits', q: { max: '-0.01', scope: 'all', tab: 'payments' } }
+    { key: 'presetTop',   q: function () { return { tab: 'payees', scope: defaultScope() }; } },
+    { key: 'presetLast',  q: function () { var s = store.sittings[store.sittings.length - 1]; return { sitting: s.m, scope: s.year, tab: 'payments' }; } },
+    { key: 'presetWhere', q: function () { return { tab: 'categories', scope: defaultScope() }; } },
+    { key: 'presetLaw',   q: { tab: 'disclosures' } },
+    { key: 'presetBig',   q: function () { return { min: '25000', scope: defaultScope(), tab: 'payments' }; } },
+    { key: 'presetLegal', q: function () { return { category: 'legal-services', scope: defaultScope(), tab: 'payments' }; } }
   ];
   function renderPresets() {
-    var box = $('presets'); if (!box) return;
+    var box = $('presets'); if (!box || !store) return;
+    var t = T();
     box.textContent = '';
-    PRESETS.forEach(function (p, i) {
-      if (i) box.appendChild(document.createTextNode(' · '));
-      box.appendChild(V.el('a', {
-        href: '?' + presetQuery(p.q), text: T()[p.key],
-        on: { click: function (e) { e.preventDefault(); applyPreset(p.q); } }
-      }));
+    PRESETS.forEach(function (p) {
+      var q = typeof p.q === 'function' ? p.q() : p.q;
+      var sub = L.tpl(t[p.key + 'Sub'], { year: defaultScope(), date: f().dateLong(store.sittings[store.sittings.length - 1].sittingDate) });
+      box.appendChild(V.el('li', null, V.el('a', {
+        href: '?' + presetQuery(q),
+        on: { click: function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return; e.preventDefault(); applyPreset(q); focusPanel(); } }
+      }, [V.el('strong', { text: t[p.key] }), V.el('span', { text: sub })])));
     });
   }
   function presetQuery(q) {
@@ -726,7 +792,7 @@
   }
   function applyPreset(q) {
     // Start from a clean slate so presets never compound with each other.
-    var patch = { q: '', scope: 'all', sittings: [], categories: [], min: '', max: '', payee: '', payeeScope: '', tab: DEFAULTS.tab };
+    var patch = { q: '', scope: defaultScope(), sittings: [], categories: [], min: '', max: '', payee: '', payeeScope: '', tab: DEFAULTS.tab };
     Object.keys(q).forEach(function (k) {
       if (k === 'category') patch.categories = [q[k]];
       else if (k === 'sitting') patch.sittings = String(q[k]).split(',');
@@ -789,7 +855,7 @@
     var sg = $('scope-group');
     if (sg) {
       sg.textContent = '';
-      [{ v: 'all', label: t.scopeAllYears }].concat(years().map(function (y) { return { v: y, label: y }; }))
+      years().map(function (y) { return { v: y, label: y }; })
         .forEach(function (o) {
           sg.appendChild(V.el('button', {
             type: 'button', 'aria-pressed': String(state.scope === o.v), text: o.label,
@@ -857,6 +923,8 @@
 
     var sm = $('sort-mobile');
     if (sm) {
+      // Sort only means something on the two sortable views.
+      sm.hidden = !(state.tab === 'payments' || state.tab === 'payees');
       sm.textContent = '';
       sortOptions().forEach(function (o) {
         sm.appendChild(V.el('option', { value: o.v, selected: state.sort === o.v || null, text: o.label }));
@@ -904,13 +972,14 @@
       payments: a.lines, payees: a.payees,
       categories: a.mix.length, sittings: store.sittings.length
     };
-    var labels = { payments: t.tabPayments, payees: t.tabPayees, categories: t.tabCategories, sittings: t.tabSittings };
+    var labels = { payments: t.tabPayments, payees: t.tabPayees, categories: t.tabCategories, sittings: t.tabSittings, disclosures: t.tabDisclosures };
     TABS.forEach(function (id) {
       var b = $('tab-' + id);
       if (!b) return;
       b.textContent = '';
       b.appendChild(document.createTextNode(labels[id] + ' '));
-      b.appendChild(V.el('span', { cls: 'ct', text: '(' + f().num(counts[id]) + ')' }));
+      // Disclosures is a register, not a result set: no count on its tab.
+      if (counts[id] != null) b.appendChild(V.el('span', { cls: 'ct', text: '(' + f().num(counts[id]) + ')' }));
       var on = state.tab === id && !state.payee;
       b.setAttribute('aria-selected', String(on));
       b.setAttribute('tabindex', on ? '0' : '-1');
@@ -926,6 +995,9 @@
     var box = $('chips'); if (!box) return;
     var t = T();
     box.textContent = '';
+    // The Disclosures register ignores the rail, so its chips would promise
+    // a narrowing that is not happening.
+    if (state.tab === 'disclosures') return;
     var chips = V.chips(ctx());
     if (!chips.children.length) return;
     box.appendChild(V.el('span', { cls: 'lead', id: 'chips-lead', text: t.chipsLead }));
@@ -963,9 +1035,12 @@
     } else if (state.tab === 'categories') {
       parts.push(count('nCategories', a.mix.length));
       parts.push(f().money(a.total));
+    } else if (state.tab === 'disclosures') {
+      parts.push(t.statusDisclosures);
     } else {
-      parts.push(count('nSittings', store.sittings.length));
-      parts.push(L.tpl(t.statusAdopted, { amt: f().money(store.totals.adopted) }));
+      var ys = yearSittings();
+      parts.push(count('nSittings', ys.length));
+      parts.push(L.tpl(t.statusAdopted, { amt: f().money(ys.reduce(function (a, s) { return a + s.total; }, 0)) }));
     }
     var box = $('results-status');
     box.textContent = '';
@@ -994,6 +1069,31 @@
       box.appendChild(V.navLink(hrefFor({ tab: 'payees' }), L.tpl(t.jumpMore, { n: f().num(m.n - m.list.length) }),
         function () { setState({ tab: 'payees' }); focusPanel(); }));
     }
+  }
+
+  // "Also in 2025: 3 lines" — the reader's filters, run against the other
+  // years, so a year frame never hides a hit.
+  function renderYearJump() {
+    var box = $('year-jump'); if (!box) return;
+    box.textContent = '';
+    var show = !state.payee && (state.tab === 'payments' || state.tab === 'payees') && hasFilters();
+    var hits = [];
+    if (show) {
+      years().forEach(function (y) {
+        if (y === state.scope) return;
+        var n = L.filterLines(store, filterSpec({ sittings: [], scope: y })).length;
+        if (n) hits.push({ y: y, n: n });
+      });
+    }
+    box.hidden = !hits.length;
+    if (!hits.length) return;
+    var t = T();
+    box.appendChild(V.el('span', { cls: 'lead', text: t.yearJumpLead }));
+    hits.forEach(function (h, i) {
+      if (i) box.appendChild(document.createTextNode(' · '));
+      box.appendChild(V.navLink(hrefFor({ scope: h.y, sittings: [] }), L.tpl(t.yearJumpItem, { year: h.y, n: f().num(h.n) }),
+        function () { setState({ scope: h.y, sittings: [] }); focusPanel(); }));
+    });
   }
 
   function sortLabel() {
@@ -1054,7 +1154,7 @@
     var t = T(), box = $('print-meta'); if (!box) return;
     var bits = [];
     if (state.q) bits.push(L.tpl(t.chipSearch, { v: state.q }));
-    if (state.scope !== 'all') bits.push(L.tpl(t.chipScope, { v: state.scope }));
+    bits.push(L.tpl(t.chipScope, { v: state.scope }));
     state.sittings.forEach(function (id) { bits.push(L.tpl(t.chipSitting, { v: sittingLabel(store.sittingById[id]) })); });
     state.categories.forEach(function (s) { bits.push(L.tpl(t.chipCategory, { v: catName(L.KEY_BY_SLUG[s]) })); });
     if (state.min !== '') bits.push(L.tpl(t.chipMin, { v: f().money(Number(state.min)) }));
@@ -1070,6 +1170,14 @@
      ============================================================ */
   var qTimer = null, amtTimer = null;
   function wire() {
+    var df = $('door-form');
+    if (df) df.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = ($('door-q').value || '').trim().slice(0, 120);
+      setState({ q: v, tab: state.tab === 'disclosures' || state.tab === 'categories' || state.tab === 'sittings' ? 'payments' : state.tab, payee: '', payeeScope: '' });
+      var qi = $('q'); if (qi) qi.value = v;
+      focusPanel();
+    });
     var q = $('q');
     if (q) {
       q.addEventListener('input', function () {
@@ -1094,7 +1202,7 @@
       n.addEventListener('blur', function () { typingPushed = false; });
     });
 
-    on('sit-all', function () { setState({ sittings: [], scope: 'all' }); });
+    on('sit-all', function () { setState({ sittings: [] }); });
     on('sit-none', function () { if (store) setState({ sittings: store.sittings.map(function (s) { return s.m; }) }); });
     on('cat-all', function () { setState({ categories: [] }); });
     on('cat-none', function () { if (store) setState({ categories: store.categories.map(function (c) { return L.SLUGS[c.key]; }) }); });

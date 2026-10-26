@@ -28,13 +28,14 @@ if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap">
 <link rel="stylesheet" href="/observer.css">
-<link rel="stylesheet" href="/finances/ledger.css?v=20261019-1">
+<link rel="stylesheet" href="/finances/ledger.css?v=20261025-2">
 
 <!-- Data. Absolute paths: /finances/ becomes /finances/ at the swap and
      nothing here may need editing when it does. -->
-<script src="/finances/i18n.js?v=20261019-1"></script>
-<script src="/finances/spending-data.js?v=20261019-1"></script>
-<script src="/finances/ledger-context.js?v=20261019-1"></script>
+<script src="/finances/i18n.js?v=20261025-2"></script>
+<script src="/finances/spending-data.js?v=20261025-2"></script>
+<script src="/finances/ledger-context.js?v=20261025-2"></script>
+<script src="/finances/ledger-disclosures.js?v=20261025-2"></script>
 </head>
 <body>
 <!-- observer-header.js injects the masthead here, as body.firstChild -->
@@ -48,8 +49,6 @@ if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-
     <p class="lw-eyebrow" id="eyebrow">Finances municipales</p>
     <h1 id="title">Le grand livre</h1>
     <p class="lw-deck" id="deck"></p>
-    <p class="lw-status-line"><span id="status"></span> <span class="upd" id="updated"></span></p>
-
     <!-- One-line standing notice. The full notice is #notice at the foot of
          the page. Both ship bilingual in the HTML: a disclaimer must never
          depend on a script having run. -->
@@ -59,12 +58,20 @@ if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-
       <a class="more" href="#notice" id="disclaimer-more">Avis complet · Full notice</a>
     </p>
 
-    <nav class="lw-ref" id="ref-strip" aria-label="Contexte et méthode">
-      <span class="lbl" id="ref-lbl">Contexte</span>
-      <a href="/finances/budget/" id="ref-budget">Budget 2026, méthode et sources</a>
-      <span class="lbl" id="preset-lbl">Pour commencer</span>
-      <span id="presets"></span>
-    </nav>
+    <!-- The front door: a search box and the questions a reader comes
+         with, each a link into the tool. Filled by ledger-app.js
+         (renderPresets); the HTML is the empty frame so a failed script
+         leaves nothing misleading. -->
+    <div class="lw-door" id="door">
+      <form class="door-search" id="door-form" role="search">
+        <label class="visually-hidden" for="door-q" id="l-door-q">Rechercher</label>
+        <input type="search" id="door-q" autocomplete="off" spellcheck="false" enterkeyhint="search">
+        <button type="submit" class="btn" id="door-go">Chercher</button>
+      </form>
+      <p class="door-lead" id="door-lead"></p>
+      <ul class="door-cards" id="presets"></ul>
+      <p class="door-about"><span id="status"></span> <span class="upd" id="updated"></span> <a href="/finances/budget/" id="ref-budget">Budget 2026, méthode et sources</a></p>
+    </div>
   </header>
 
   <div class="notice warn" id="data-error" hidden></div>
@@ -151,6 +158,7 @@ if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-
         <button type="button" role="tab" id="tab-sittings"   aria-controls="panel-sittings"   aria-selected="false" data-tab="sittings" tabindex="-1"></button>
         <button type="button" role="tab" id="tab-payees"     aria-controls="panel-payees"     aria-selected="false" data-tab="payees"   tabindex="-1"></button>
         <button type="button" role="tab" id="tab-payments"   aria-controls="panel-payments"   aria-selected="false" data-tab="payments" tabindex="-1"></button>
+        <button type="button" role="tab" id="tab-disclosures" aria-controls="panel-disclosures" aria-selected="false" data-tab="disclosures" tabindex="-1"></button>
       </div>
 
       <p class="lw-orient" id="orient"></p>
@@ -163,12 +171,16 @@ if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-
       <!-- Shown only while a search matches supplier names: their profiles,
            one click away from any tab. Filled by ledger-app.js. -->
       <p class="lw-jump" id="payee-jump" hidden></p>
+      <!-- The same filters in the other years: the year is a frame, and a
+           search that hits in 2025 must not look like a miss in 2026. -->
+      <p class="lw-jump" id="year-jump" hidden></p>
 
       <div id="results">
         <div role="tabpanel" id="panel-categories" aria-labelledby="tab-categories" tabindex="-1"></div>
         <div role="tabpanel" id="panel-sittings"   aria-labelledby="tab-sittings"   tabindex="-1" hidden></div>
         <div role="tabpanel" id="panel-payees"     aria-labelledby="tab-payees"     tabindex="-1" hidden></div>
         <div role="tabpanel" id="panel-payments"   aria-labelledby="tab-payments"   tabindex="-1" hidden></div>
+        <div role="tabpanel" id="panel-disclosures" aria-labelledby="tab-disclosures" tabindex="-1" hidden></div>
         <div class="profile" id="profile" role="region" aria-labelledby="profile-h" tabindex="-1" hidden></div>
       </div>
     </main>
@@ -183,10 +195,10 @@ if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-
 <div class="lw-scrim" id="lw-scrim"></div>
 <!-- observer-header.js appends the site footer here -->
 
-<script src="/observer-header.js?v=20261019-1" defer></script>
-<script src="/finances/ledger-data.js?v=20261019-1" defer></script>
-<script src="/finances/ledger-charts.js?v=20261019-1" defer></script>
-<script src="/finances/ledger-views.js?v=20261019-1" defer></script>
-<script src="/finances/ledger-app.js?v=20261019-1" defer></script>
+<script src="/observer-header.js?v=20261025-2" defer></script>
+<script src="/finances/ledger-data.js?v=20261025-2" defer></script>
+<script src="/finances/ledger-charts.js?v=20261025-2" defer></script>
+<script src="/finances/ledger-views.js?v=20261025-2" defer></script>
+<script src="/finances/ledger-app.js?v=20261025-2" defer></script>
 </body>
 </html>

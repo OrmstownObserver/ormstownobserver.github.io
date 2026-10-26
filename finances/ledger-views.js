@@ -23,7 +23,10 @@
   'use strict';
 
   var L = global.OO_LEDGER;
-  var OK_URL = /^https:\/\/www\.ormstown\.ca\//;
+  // Official hosts a link may point at: the municipality's own site, SEAO
+  // (the provincial contract register) and LegisQuébec (the law itself).
+  // Nothing else — validate.js and render-check.js enforce the same list.
+  var OK_URL = /^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\//;
 
   /* ---------- DOM helpers ---------- */
   function append(node, kids) {
@@ -354,7 +357,7 @@
       sortableTh(ctx, 'amount', t.colTotal, true)
     ])));
 
-    var body = el('tbody'), nSit = ctx.store.sittings.length;
+    var body = el('tbody'), nSit = ctx.yearSittings().length;
     rows.forEach(function (r) {
       var aliasN = r.aliases.length;
       body.appendChild(el('tr', null, [
@@ -397,7 +400,7 @@
     var strip = el('span', { cls: 'strip', 'aria-hidden': 'true' });
     var paid = {};
     r.sittings.forEach(function (s) { paid[s] = 1; });
-    ctx.store.sittings.forEach(function (s) {
+    ctx.yearSittings().forEach(function (s) {
       strip.appendChild(el('i', { cls: paid[s.m] ? 'on' : null, title: ctx.sittingShort(s) }));
     });
     return strip;
@@ -461,7 +464,7 @@
       }
     });
     body.appendChild(el('tr', { cls: 'totals' }, [
-      el('th', { scope: 'row', text: t.totalsLabel }),
+      el('th', { scope: 'row', text: L.tpl(t.totalsYear, { year: ctx.state.scope }) }),
       el('td', { cls: 'num', text: '100 %' }),
       el('td', { cls: 'num', text: f.num(ctx.agg.payees) }),
       el('td', { cls: 'num', text: f.num(ctx.agg.lines) }),
@@ -478,8 +481,8 @@
     var strip = el('span', { cls: 'strip' });
     var mx = 0;
     r.bySitting.forEach(function (v) { if (v > mx) mx = v; });
-    ctx.store.sittings.forEach(function (s, i) {
-      var v = r.bySitting[i] || 0;
+    ctx.yearSittings().forEach(function (s) {
+      var v = r.bySitting[s.si] || 0;
       strip.appendChild(el('i', {
         style: mx > 0 && v > 0 ? 'background:' + ctx.color(r.color) + ';opacity:' + (0.25 + 0.75 * (v / mx)) : null,
         title: ctx.sittingShort(s) + ' — ' + ctx.f.money(v)
@@ -502,7 +505,7 @@
   function sittings(ctx) {
     var t = ctx.T, f = ctx.f, out = document.createDocumentFragment();
     var rows = ctx.sittingRows();                 // newest first, for the table
-    var chrono = ctx.store.sittings;              // oldest first, for the chart
+    var chrono = ctx.yearSittings();              // oldest first, for the chart
 
     var cv = el('div', { cls: 'chartbox trend' }, el('canvas', { id: 'chart-trend' }));
     out.appendChild(el('figure', null, [cv, el('figcaption', { id: 'cap-trend' })]));
@@ -571,9 +574,10 @@
       }
     });
 
-    var T2 = ctx.store.totals;
+    var T2 = { lines: 0, itemized: 0, adopted: 0, gap: 0 };
+    rows.forEach(function (s) { T2.lines += s.lineCount; T2.itemized += s.lineTotal; T2.adopted += s.total; T2.gap += s.gap; });
     body.appendChild(el('tr', { cls: 'totals' }, [
-      el('th', { scope: 'row', text: t.totalsLabel }),
+      el('th', { scope: 'row', text: L.tpl(t.totalsYear, { year: ctx.state.scope }) }),
       el('td'),
       el('td', { cls: 'num', text: f.num(T2.lines) }),
       el('td', { cls: 'num', text: f.money(T2.itemized) }),
@@ -628,15 +632,28 @@
       ]));
     }
 
-    var share = ctx.store.totals.itemized ? pd.total / ctx.store.totals.itemized : 0;
+    var ys = ctx.yearSittings();
+    var yearItemized = ys.reduce(function (a, s) { return a + s.lineTotal; }, 0);
+    var share = yearItemized ? pd.total / yearItemized : 0;
     out.appendChild(el('div', { cls: 'facts' }, [
-      fact(t.pfTotal, f.money(pd.total), pd.scoped ? '' : t.pfTotalSub),
+      fact(t.pfTotal, f.money(pd.total), pd.scoped ? '' : L.tpl(t.pfTotalSub, { year: pd.year })),
       fact(t.pfLines, f.num(pd.lines), ''),
-      fact(t.pfSittings, L.tpl(t.sittingsPaidVal, { n: pd.nSittings, total: ctx.store.sittings.length }), ''),
+      fact(t.pfSittings, L.tpl(t.sittingsPaidVal, { n: pd.nSittings, total: ys.length }), ''),
       fact(t.pfShare, f.pct(share), ''),
       fact(t.pfMax, f.money(pd.maxLine), ''),
       fact(t.pfFirst, ctx.sittingShort(ctx.store.sittingById[pd.first]), t.pfLast + ' : ' + ctx.sittingShort(ctx.store.sittingById[pd.last]))
     ]));
+    // The same supplier in the other years, one click away.
+    var others = Object.keys(pd.byYear).filter(function (y) { return y !== pd.year; }).sort().reverse();
+    if (others.length) {
+      var oy = el('p', { cls: 'pf-years' }, el('span', { cls: 'lbl', text: t.pfOtherYears }));
+      others.forEach(function (y, i) {
+        if (i) oy.appendChild(txt(' · '));
+        oy.appendChild(navLink(ctx.hrefYear(y), L.tpl(t.pfOtherYear, { year: y, amt: f.money(pd.byYear[y].amt), n: f.num(pd.byYear[y].lines) }),
+          function () { ctx.on.setScopeKeep(y); }));
+      });
+      out.appendChild(oy);
+    }
 
     // Sitting by sitting — the "did they get paid every month" question.
     out.appendChild(el('h3', { text: t.pfBySitting }));
@@ -729,14 +746,15 @@
   function chips(ctx) {
     var t = ctx.T, out = document.createDocumentFragment();
     function chip(label, onRemove) {
-      out.appendChild(el('span', { cls: 'chip' }, [
+      out.appendChild(el('span', { cls: 'chip' + (onRemove ? '' : ' fixed') }, [
         txt(label),
-        el('button', { type: 'button', 'aria-label': t.chipRemove + ' — ' + label, text: '✕', on: { click: onRemove } })
+        onRemove ? el('button', { type: 'button', 'aria-label': t.chipRemove + ' — ' + label, text: '✕', on: { click: onRemove } }) : null
       ]));
     }
     var s = ctx.state;
     if (s.q) chip(L.tpl(t.chipSearch, { v: s.q }), function () { ctx.on.clearQ(); });
-    if (s.scope !== 'all') chip(L.tpl(t.chipScope, { v: s.scope }), function () { ctx.on.setScope('all'); });
+    // The year is the frame, not a filter: shown, never removable.
+    chip(L.tpl(t.chipScope, { v: s.scope }), null);
     s.sittings.forEach(function (id) {
       var sit = ctx.store.sittingById[id];
       if (sit) chip(L.tpl(t.chipSitting, { v: ctx.sittingShort(sit) }), function () { ctx.on.sitting(id); });
@@ -758,7 +776,7 @@
      site or a document on ormstown.ca — anything else stays text.
      ============================================================ */
   var CTX_SITE = /^\/(en|fr|finances)\/[A-Za-z0-9\-\/]*(#[A-Za-z0-9\-_]+)?$/;
-  var CTX_EXT = /^https:\/\/www\.ormstown\.ca\/[^\s"<>]+$/;
+  var CTX_EXT = /^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\/[^\s"<>]+$/;
   function ctxHref(src, lang) {
     var h = src && (lang === 'fr' ? src.href_fr : src.href_en);
     if (!h || h.indexOf('..') >= 0) return null;
@@ -869,10 +887,288 @@
     return wrap;
   }
 
+  /* ============================================================
+     DISCLOSURES — what the law makes the Town publish, what it has
+     published, and the Observer's substitute. Data: ledger-disclosures.js
+     (hand-authored, validate.js check 14). Three sections, each with an
+     id so the register can point into the page: #suppliers, #contracts,
+     #register.
+     ============================================================ */
+  // Payees that cross the threshold but are not supplier contracts: the
+  // payroll sentinels, source deductions, the provincial policing bill,
+  // regional shares. Listed apart, never silently dropped.
+  var NOT_CONTRACT = /^(paie-municipale|salaire-personnel-municipal|municipalite-d-ormstown-paie|ministre-du-revenu|receveur-general|receveur-general-du-canada|ministre-des-finances|m-r-c-haut-saint-laurent|regie-intermunicipale-de-la-patinoire|oh-du-haut-saint-laurent|crsbp-monteregie-inc|caisse-desjardins|saaq-societe-ass-automobile)$/;
+
+  function yearTotals(ctx, year) {
+    var by = {};
+    ctx.store.lines.forEach(function (ln) {
+      if (ln.s.slice(0, 4) !== year) return;
+      var r = by[ln.p] || (by[ln.p] = { slug: ln.p, amt: 0, n: 0, max: 0, maxLine: null });
+      r.amt += ln.a; r.n++;
+      if (ln.a > r.max) { r.max = ln.a; r.maxLine = ln; }
+    });
+    return Object.keys(by).map(function (k) { return by[k]; }).sort(function (a, b) { return b.amt - a.amt; });
+  }
+
+  function suppliersSection(ctx) {
+    var t = ctx.T, f = ctx.f, dx = ctx.dx, out = el('section', { id: 'suppliers', cls: 'disc-sec', 'aria-labelledby': 'disc-sup-h' });
+    var thr = (dx && dx.threshold) || 25000;
+    out.appendChild(el('h2', { id: 'disc-sup-h', cls: 'disc-h', text: L.tpl(t.discSuppliersH, { amt: f.money0(thr) }) }));
+    out.appendChild(el('p', { cls: 'disc-lead', text: t.discSuppliersLead }));
+    out.appendChild(el('p', { cls: 'disc-basis', text: t.discSuppliersBasis }));
+
+    var years = [];
+    ctx.store.sittings.forEach(function (s) { if (years.indexOf(s.year) < 0) years.push(s.year); });
+    years.sort().reverse();
+    years.forEach(function (y) {
+      var rows = yearTotals(ctx, y).filter(function (r) { return r.amt >= thr; });
+      var main = rows.filter(function (r) { var P = ctx.store.payees[r.slug]; return P && !P.isRest && !P.isPayroll && !NOT_CONTRACT.test(r.slug); });
+      var other = rows.filter(function (r) { return main.indexOf(r) < 0; });
+      var last = ctx.store.sittings.filter(function (s) { return s.year === y; }).slice(-1)[0];
+      var ytot = main.reduce(function (a, r) { return a + r.amt; }, 0);
+      out.appendChild(el('h3', { cls: 'disc-year', text: L.tpl(t.discYear, { year: y, last: ctx.sittingShort(last), n: f.num(main.length), amt: f.money(ytot) }) }));
+
+      var table = el('table', { cls: 'lt stack disc-table', id: 'suppliers-' + y });
+      table.appendChild(el('caption', { cls: 'visually-hidden', text: L.tpl(t.capSuppliers, { year: y }) }));
+      table.appendChild(el('thead', null, el('tr', null, [
+        plainTh(t.colPayee), plainTh(t.colLines, true), plainTh(t.colLargest), plainTh(t.colTotal, true)
+      ])));
+      var body = el('tbody');
+      main.forEach(function (r, i) {
+        var P = ctx.store.payees[r.slug];
+        var ml = r.maxLine, ms = ml && ctx.store.sittingById[ml.s];
+        body.appendChild(el('tr', null, [
+          el('th', { scope: 'row', 'data-l': t.colPayee }, [
+            el('span', { cls: 'rank', text: (i + 1) + '. ' }),
+            el('button', { type: 'button', cls: 'linkbtn', text: ctx.payeeName(P), on: { click: function () { ctx.on.payee(r.slug); } } }),
+            ctx.gloss(P) ? el('span', { cls: 'gloss', text: ctx.gloss(P) }) : null
+          ]),
+          el('td', { cls: 'num', 'data-l': t.colLines, text: f.num(r.n) }),
+          el('td', { 'data-l': t.colLargest }, ml ? [
+            txt(f.money(ml.a) + ' · ' + ctx.sittingShort(ms) + ' '),
+            pvLink(ms.url, t.pvShort, t.newTab),
+            el('span', { cls: 'gloss', text: ml.d || ml.e })
+          ] : null),
+          el('td', { cls: 'num', 'data-l': t.colTotal, text: f.money(r.amt) })
+        ]));
+      });
+      table.appendChild(body);
+      out.appendChild(table);
+
+      if (other.length) {
+        var ul = el('ul', { cls: 'disc-other' });
+        other.forEach(function (r) {
+          var P = ctx.store.payees[r.slug];
+          ul.appendChild(el('li', null, [
+            el('button', { type: 'button', cls: 'linkbtn', text: ctx.payeeName(P), on: { click: function () { ctx.on.payee(r.slug); } } }),
+            txt(' ' + f.money(r.amt))
+          ]));
+        });
+        out.appendChild(el('details', { cls: 'ref' }, [
+          el('summary', { text: L.tpl(t.discNotContracts, { n: f.num(other.length) }) }),
+          el('div', { cls: 'inner' }, [el('p', { text: t.discNotContractsNote }), ul])
+        ]));
+      }
+    });
+    out.appendChild(el('p', { cls: 'disc-note', text: t.discSpellingNote }));
+    out.appendChild(csvButton(ctx, t.discCsv, function () { ctx.on.disclosuresCsv(); }));
+    return out;
+  }
+
+  // The lines of one contract, by the contractor's slug and the contract's
+  // match rule. Returns { amt, n, first, last } or null when the contractor
+  // is not on the lists yet.
+  // A contractor spelled two ways in the minutes has two slugs; `payees`
+  // lists the extra ones, and their lines count too.
+  function contractSlugs(c) { return c.payee ? [c.payee].concat(c.payees || []) : []; }
+  function paidToDate(ctx, c) {
+    if (!c.payee) return null;
+    var res = { amt: 0, n: 0, first: null, last: null }, idx = [];
+    contractSlugs(c).forEach(function (sl) { idx = idx.concat(ctx.store.byPayee[sl] || []); });
+    if (!idx.length) return null;
+    var pats = (c.match && c.match.text || []).map(function (src) { return new RegExp(src, 'i'); });
+    var all = !!(c.match && c.match.all);
+    idx.forEach(function (i) {
+      var ln = ctx.store.lines[i];
+      if (!all && !pats.some(function (re) { return re.test(ln.e); })) return;
+      res.amt += ln.a; res.n++;
+      if (!res.first || ln.s < res.first) res.first = ln.s;
+      if (!res.last || ln.s > res.last) res.last = ln.s;
+    });
+    return res;
+  }
+  function seaoHref(dx, year) {
+    if (!dx || !dx.seao) return null;
+    var h = dx.seao['href_' + year] || dx.seao.href;
+    return CTX_EXT.test(h) ? h : null;
+  }
+  function taxWord(t, c) {
+    return c.tax === 'before' ? t.discTaxBefore : c.tax === 'included' ? t.discTaxIncluded : t.discTaxUnstated;
+  }
+
+  function contractsSection(ctx) {
+    var t = ctx.T, f = ctx.f, dx = ctx.dx, lang = ctx.lang;
+    var out = el('section', { id: 'contracts', cls: 'disc-sec', 'aria-labelledby': 'disc-con-h' });
+    var thr = (dx && dx.threshold) || 25000;
+    var list = (dx && dx.contracts || []).slice().sort(function (a, b) { return String(b.awarded).localeCompare(String(a.awarded)); });
+    out.appendChild(el('h2', { id: 'disc-con-h', cls: 'disc-h', text: L.tpl(t.discContractsH, { amt: f.money0(thr) }) }));
+    out.appendChild(el('p', { cls: 'disc-lead', text: L.tpl(t.discContractsLead, { n: f.num(list.length), date: f.dateLong(dx.checked) }) }));
+    var sh = seaoHref(dx, 2026);
+    if (sh) out.appendChild(el('p', { cls: 'disc-basis' }, [txt(t.discSeaoWhere + ' '), el('a', { href: sh, target: '_blank', rel: 'noopener' }, t.discSeaoReport)]));
+
+    var table = el('table', { cls: 'lt stack disc-table', id: 'contracts-table' });
+    table.appendChild(el('caption', { cls: 'visually-hidden', text: t.capContracts }));
+    table.appendChild(el('thead', null, el('tr', null, [
+      plainTh(t.colObject), plainTh(t.colAwarded), plainTh(t.colPrice, true), plainTh(t.colPaid, true), plainTh(t.colSource)
+    ])));
+    var body = el('tbody');
+    list.forEach(function (c) {
+      var paid = paidToDate(ctx, c);
+      var P = c.payee && ctx.store.payees[c.payee];
+      var sit = ctx.store.sittings.filter(function (s) { return s.sittingDate === c.awarded; })[0];
+
+      var paidCell;
+      if (!c.payee) paidCell = el('td', { cls: 'num', 'data-l': t.colPaid }, el('span', { cls: 'gloss', text: t.discNoPayee }));
+      else if (!paid || !paid.n) paidCell = el('td', { cls: 'num', 'data-l': t.colPaid }, [txt(f.money(0)), el('span', { cls: 'gloss', text: t.discNoLines })]);
+      else paidCell = el('td', { cls: 'num', 'data-l': t.colPaid }, [
+        txt(f.money(paid.amt)),
+        el('span', { cls: 'gloss' }, [
+          txt(L.tpl(t.discPaidLines, { n: f.num(paid.n), first: ctx.sittingShort(ctx.store.sittingById[paid.first]), last: ctx.sittingShort(ctx.store.sittingById[paid.last]) }) + ' · '),
+          el('button', { type: 'button', cls: 'linkbtn', text: t.discProfile, on: { click: function () { ctx.on.payee(c.payee); } } })
+        ])
+      ]);
+
+      var src = el('td', { 'data-l': t.colSource, cls: 'disc-src' });
+      var yh = seaoHref(dx, c.seao && c.seao.year);
+      if (c.seao && c.seao.notice && yh) {
+        src.appendChild(el('a', { cls: 'ctx-src', href: yh, target: '_blank', rel: 'noopener', title: t.newTab }, 'SEAO'));
+        src.appendChild(el('span', { cls: 'gloss', text: c.seao.notice }));
+      } else if (c.seao && c.seao.final === 'absent') {
+        src.appendChild(el('span', { cls: 'flag', text: t.discSeaoAbsent }));
+      }
+      if (sit) { src.appendChild(txt(' ')); src.appendChild(pvLink(sit.url, t.pvShort, t.newTab)); }
+      if (c.src) { src.appendChild(txt(' ')); src.appendChild(ctxSource(ctx, c.src)); }
+      if (c.seao && c.seao.final === 'blank') src.appendChild(el('span', { cls: 'gloss flag', text: t.discFinalBlank }));
+
+      body.appendChild(el('tr', null, [
+        el('th', { scope: 'row', 'data-l': t.colObject }, [
+          txt(ctxText(c.object, lang)),
+          el('span', { cls: 'gloss', text: c.contractor + (P ? '' : '') })
+        ]),
+        el('td', { 'data-l': t.colAwarded }, [
+          txt(/^\d{4}-\d{2}-\d{2}$/.test(c.awarded) ? f.dateLong(c.awarded) : String(c.awarded)),
+          c.resolution ? el('span', { cls: 'gloss', text: L.tpl(t.sitResolution, { n: c.resolution }) }) : null
+        ]),
+        el('td', { cls: 'num', 'data-l': t.colPrice }, [
+          txt(f.money(c.amount)),
+          el('span', { cls: 'gloss', text: taxWord(t, c) + (c.estimate ? ' · ' + L.tpl(t.discEstimate, { amt: f.money(c.estimate) }) : '') })
+        ]),
+        paidCell,
+        src
+      ]));
+
+      // Details: mode, bidders, financing, note, further reading.
+      var inner = el('div', { cls: 'inner' });
+      inner.appendChild(el('p', null, [el('strong', { text: t.discMode + ' ' }), txt(ctxText(c.mode, lang))]));
+      if (c.bidders && c.bidders.length) {
+        var bl = el('ul', { cls: 'disc-bidders' });
+        c.bidders.forEach(function (b) { bl.appendChild(el('li', { text: b[0] + (b[1] != null ? ' — ' + f.money(b[1]) : '') })); });
+        inner.appendChild(el('p', null, el('strong', { text: t.discBidders })));
+        inner.appendChild(bl);
+      }
+      if (c.financing) inner.appendChild(el('p', null, [el('strong', { text: t.discFinancing + ' ' }), txt(ctxText(c.financing, lang))]));
+      if (c.note) inner.appendChild(el('p', { text: ctxText(c.note, lang) }));
+      var made = (c.links || []).filter(function (lk) { return ctxHref(lk, lang); });
+      if (made.length) {
+        var more = el('p', { cls: 'ctx-more' }, el('span', { cls: 'lbl', text: t.ctxReadMore }));
+        made.forEach(function (lk, i) {
+          if (i) more.appendChild(txt(' · '));
+          var h = ctxHref(lk, lang), ext = CTX_EXT.test(h);
+          more.appendChild(el('a', { href: h, target: ext ? '_blank' : null, rel: ext ? 'noopener' : null }, [el('span', { cls: 'k', text: t['ctxKind_' + lk.kind] || t.ctxKind_document }), txt(' ' + ctxText(lk, lang))]));
+        });
+        inner.appendChild(more);
+      }
+      body.appendChild(el('tr', { cls: 'ctx-row' }, el('td', { colspan: '5' }, el('details', { cls: 'ref' }, [
+        el('summary', { text: t.discDetails }), inner
+      ]))));
+    });
+    table.appendChild(body);
+    out.appendChild(table);
+    out.appendChild(el('p', { cls: 'disc-note', text: t.discPaidNote }));
+    return out;
+  }
+
+  function registerSection(ctx) {
+    var t = ctx.T, f = ctx.f, dx = ctx.dx, lang = ctx.lang;
+    var out = el('section', { id: 'register', cls: 'disc-sec', 'aria-labelledby': 'disc-reg-h' });
+    out.appendChild(el('h2', { id: 'disc-reg-h', cls: 'disc-h', text: t.discRegisterH }));
+    out.appendChild(el('p', { cls: 'disc-lead', text: L.tpl(t.discRegisterLead, { date: f.dateLong(dx.checked) }) }));
+    var STATUS = { found: 'discStatusFound', partial: 'discStatusPartial', stale: 'discStatusStale', missing: 'discStatusMissing' };
+    (dx.items || []).forEach(function (it) {
+      var box = el('article', { cls: 'disc-item', id: 'disc-' + it.id });
+      box.appendChild(el('h3', null, [
+        el('span', { cls: 'status s-' + it.status, text: t[STATUS[it.status]] || it.status }),
+        txt(' ' + ctxText(it, lang))
+      ]));
+      var dl = el('dl');
+      // the law
+      var lawHref = it.law && CTX_EXT.test(it.law.href || '') ? it.law.href : null;
+      dl.appendChild(el('dt', { text: t.discLaw }));
+      dl.appendChild(el('dd', null, [
+        lawHref ? el('a', { href: lawHref, target: '_blank', rel: 'noopener' }, ctxText(it.law, lang)) : txt(ctxText(it.law, lang)),
+        it.law && it.law['note_' + lang] ? el('span', { cls: 'gloss', text: it.law['note_' + lang] }) : null
+      ]));
+      dl.appendChild(el('dt', { text: t.discRequires }));
+      dl.appendChild(el('dd', { text: ctxText(it.requires, lang) + (it.due ? ' ' + L.tpl(t.discDue, { date: f.dateLong(it.due) }) : '') }));
+      // the Town
+      var th = it.town && CTX_EXT.test(it.town.href || '') ? it.town.href : null;
+      dl.appendChild(el('dt', { text: L.tpl(t.discTown, { date: f.dateLong(dx.checked) }) }));
+      dl.appendChild(el('dd', null, [
+        txt(ctxText(it.town, lang) + ' '),
+        th ? el('a', { cls: 'ctx-src', href: th, target: '_blank', rel: 'noopener', title: t.newTab }, it.town['href_label_' + lang] || 'ormstown.ca') : null
+      ]));
+      // the Observer
+      if (it.observer) {
+        var ob = it.observer, kids = [txt(ctxText(ob, lang) + ' ')];
+        if (ob.anchor) kids.push(navLink(ctx.hrefTab('disclosures') + '#' + ob.anchor, t.discGoSection, function () {
+          var n = document.getElementById(ob.anchor); if (n && n.scrollIntoView) n.scrollIntoView({ block: 'start' });
+        }, { cls: 'linkbtn disc-go' }));
+        else if (ob.payee && ctx.store.payees[ob.payee]) kids.push(el('button', { type: 'button', cls: 'linkbtn', text: ctx.payeeName(ctx.store.payees[ob.payee]) + ' →', on: { click: function () { ctx.on.payee(ob.payee); } } }));
+        else if (ctxHref(ob, lang)) kids.push(el('a', { href: ctxHref(ob, lang) }, t.discReadObserver));
+        dl.appendChild(el('dt', { text: t.discObserver }));
+        dl.appendChild(el('dd', null, kids));
+      }
+      box.appendChild(dl);
+      out.appendChild(box);
+    });
+    return out;
+  }
+
+  function disclosures(ctx) {
+    var t = ctx.T, out = document.createDocumentFragment();
+    if (!ctx.dx || !ctx.dx.items) {
+      out.appendChild(el('div', { cls: 'notice warn', text: t.discUnavailable }));
+      return out;
+    }
+    if (ctx.loading) return frag(el('div', { cls: 'skeleton', 'aria-busy': 'true', text: L.tpl(t.loadingLines, { n: ctx.f.num(ctx.expectedLines || 0) }) }));
+    if (ctx.linesFailed) return frag(linesFailed(ctx));
+    out.appendChild(el('p', { cls: 'disc-intro', text: t.discIntro }));
+    out.appendChild(el('nav', { cls: 'disc-toc', 'aria-label': t.tabDisclosures }, [
+      el('a', { href: '#suppliers', text: t.discTocSuppliers }), txt(' · '),
+      el('a', { href: '#contracts', text: t.discTocContracts }), txt(' · '),
+      el('a', { href: '#register', text: t.discTocRegister })
+    ]));
+    out.appendChild(suppliersSection(ctx));
+    out.appendChild(contractsSection(ctx));
+    out.appendChild(registerSection(ctx));
+    return out;
+  }
+
   global.OO_LEDGER_VIEWS = {
     el: el, txt: txt, frag: frag, append: append, rich: rich, pvLink: pvLink, navLink: navLink,
     fmt: fmt, downloadCSV: downloadCSV, distStrip: distStrip, chips: chips,
     payments: payments, payees: payees, categories: categories, sittings: sittings,
-    profile: profile, emptyBlock: emptyBlock, contextBlock: contextBlock
+    profile: profile, emptyBlock: emptyBlock, contextBlock: contextBlock,
+    disclosures: disclosures, yearTotals: yearTotals, NOT_CONTRACT: NOT_CONTRACT
   };
 })(window);
