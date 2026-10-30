@@ -354,6 +354,10 @@ def place_photo(doc, fig):
         return PHOTO_RE.sub(lambda m: ("\n\n  " + fig) if fig else "", doc, count=1)
     if not fig:
         return doc
+    # The same photo already placed by hand: leave the page alone rather than show it twice.
+    src = re.search(r'<img src="([^"?]+)', fig)
+    if src and re.search(r'<img src="' + re.escape(src.group(1)) + r'["?]', doc):
+        return doc
     by = re.search(r'<div class="byline">.*?</div>', doc, re.S)
     if not by:
         raise Unsupported("the page has no byline to put the photo under")

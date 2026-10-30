@@ -70,6 +70,11 @@ class PlacePhoto(unittest.TestCase):
     def test_no_photo_and_none_on_the_page_changes_nothing(self):
         self.assertEqual(ns.place_photo(self.doc, None), self.doc)
 
+    def test_hand_placed_same_photo_not_duplicated(self):
+        hand = self.doc.replace("</main>", '<figure class="article-figure">\n    <img src="/images/x.jpg" alt="a">\n  </figure>\n</main>', 1)
+        self.assertNotEqual(hand, self.doc)
+        self.assertEqual(ns.place_photo(hand, self.fig), hand, "a hand-placed copy of the same photo blocks a second one")
+
     def test_adds_the_figure_css_when_a_page_lacks_it(self):
         bare = self.doc.replace("figure.article-figure", "figure.gone")
         new = ns.place_photo(bare, self.fig)
