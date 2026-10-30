@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-25T01:00:16.757Z",
+  "generated_at": "2026-10-30T21:00:18.443Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -102,6 +102,16 @@
   ],
   "latest": [
     {
+      "slug": "council-watch-november-2-2026-preview",
+      "path_en": "/en/council-watch/november-2-2026-preview/",
+      "path_fr": "/fr/conseil-municipal/2-novembre-2026-apercu/",
+      "label_en": "Council Watch · Preview",
+      "label_fr": "Conseil municipal · Aperçu",
+      "hed_en": "Council Meeting Preview: November 2, 2026 — Monday, November 2 · 6:30 p.m.",
+      "hed_fr": "Aperçu de la séance du conseil : 2 novembre 2026 — Monday, November 2 · 6:30 p.m.",
+      "date_published": "2026-10-30"
+    },
+    {
       "slug": "bylaws-regulations-contract-management-129-2026",
       "path_en": "/en/bylaws-regulations/contract-management-129-2026/",
       "path_fr": "/fr/bylaws-regulations/gestion-contractuelle-129-2026/",
@@ -190,25 +200,26 @@
       "hed_en": "Ormstown's fire service: who it is, and what firefighters may do in an emergency",
       "hed_fr": "Le service incendie d’Ormstown : qui il est, et ce que les pompiers peuvent faire en situation d’urgence",
       "date_published": "2026-10-18"
-    },
-    {
-      "slug": "bylaws-regulations-hr-policy-99-2023",
-      "path_en": "/en/bylaws-regulations/hr-policy-99-2023/",
-      "path_fr": "/fr/bylaws-regulations/reglement-ressources-humaines-99-2023/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Ormstown's human resources bylaw: hours, pay, leave and discipline for municipal staff",
-      "hed_fr": "Le règlement sur les ressources humaines d’Ormstown : horaires, salaire, congés et discipline du personnel municipal",
-      "date_published": "2026-10-18"
     }
   ],
   "latest_groups": [
     {
       "file": "Council Watch",
       "file_fr": "Conseil municipal",
-      "status_en": "",
-      "status_fr": "",
+      "status_en": "Open",
+      "status_fr": "En cours",
       "items": [
+        {
+          "slug": "council-watch-november-2-2026-preview",
+          "path_en": "/en/council-watch/november-2-2026-preview/",
+          "path_fr": "/fr/conseil-municipal/2-novembre-2026-apercu/",
+          "label_en": "Council Watch · Preview",
+          "label_fr": "Conseil municipal · Aperçu",
+          "hed_en": "Council Meeting Preview: November 2, 2026",
+          "hed_fr": "Aperçu de la séance du conseil : 2 novembre 2026",
+          "date_published": "2026-10-30",
+          "part": null
+        },
         {
           "slug": "council-watch-october-6-2026",
           "path_en": "/en/council-watch/october-6-2026/",
@@ -263,21 +274,10 @@
           "hed_fr": "Le conseil vote à l'unanimité la signature du bail de la tour Bell; une année chargée en travaux d'infrastructure",
           "date_published": "2026-07-08",
           "part": null
-        },
-        {
-          "slug": "council-watch-june-1-2026",
-          "path_en": "/en/council-watch/june-1-2026/",
-          "path_fr": "/fr/conseil-municipal/1-juin-2026/",
-          "label_en": "Council Watch",
-          "label_fr": "Conseil municipal",
-          "hed_en": "Ormstown borrows $4.8M for Prince-Albert, Cullen & Oliver street infrastructure",
-          "hed_fr": "Ormstown emprunte 4,8 M$ pour les rues Prince-Albert, Cullen et Oliver",
-          "date_published": "2026-06-01",
-          "part": null
         }
       ],
-      "newest": "2026-10-07",
-      "total": 7
+      "newest": "2026-10-30",
+      "total": 8
     },
     {
       "file": "PIIA Explained",
