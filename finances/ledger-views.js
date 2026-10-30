@@ -754,7 +754,7 @@
     var s = ctx.state;
     if (s.q) chip(L.tpl(t.chipSearch, { v: s.q }), function () { ctx.on.clearQ(); });
     // The year is the frame, not a filter: shown, never removable.
-    chip(L.tpl(t.chipScope, { v: s.scope }), null);
+    chip(L.tpl(t.chipScope, ctx.periodFields()), null);
     s.sittings.forEach(function (id) {
       var sit = ctx.store.sittingById[id];
       if (sit) chip(L.tpl(t.chipSitting, { v: ctx.sittingShort(sit) }), function () { ctx.on.sitting(id); });

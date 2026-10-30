@@ -348,6 +348,26 @@
   // The Sittings tab shows the whole year, whatever the rail says: it is the
   // reconciliation table, and a partial one would be worse than none.
   function sittingRows() { return yearSittings().slice().reverse(); }
+  // "2026 · sittings of January 19 to August 3": the period the numbers
+  // cover, said in dates, because a year on its own hides that 2026 is
+  // only itemized up to its last published sitting.
+  // The period the RESULT covers: the picked sittings when the rail narrows
+  // them, otherwise the whole year.
+  function periodText() {
+    var pf = resultPeriod(), t = T();
+    return L.tpl(pf.n === 1 ? t.statusPeriodOne : t.statusPeriod, pf);
+  }
+  function resultPeriod() {
+    if (!state.sittings.length) return periodFields();
+    var ids = state.sittings.slice().sort(), f0 = f();
+    var a = store.sittingById[ids[0]], b = store.sittingById[ids[ids.length - 1]];
+    return { year: state.scope, first: f0.dateLong(a.sittingDate), last: f0.dateLong(b.sittingDate), n: ids.length };
+  }
+  function periodFields() {
+    var ys = yearSittings(), f0 = f();
+    if (!ys.length) return { year: state.scope, first: '', last: '', n: 0 };
+    return { year: state.scope, first: f0.dateLong(ys[0].sittingDate), last: f0.dateLong(ys[ys.length - 1].sittingDate), n: ys.length };
+  }
 
   function sortRows(rows, map, dflt) {
     var parts = state.sort.split(':'), field = map[parts[0]] || dflt, dir = parts[1] === 'asc' ? 1 : -1;
@@ -448,7 +468,7 @@
       hrefTab: function (tab) { return hrefFor({ tab: tab, payee: '', payeeScope: '' }); },
       hrefYear: function (y) { return hrefFor({ scope: y, sittings: [] }); },
       payeeMatches: payeeMatches,
-      payeeRows: payeeRows, categoryRows: categoryRows, sittingRows: sittingRows, yearSittings: yearSittings,
+      payeeRows: payeeRows, categoryRows: categoryRows, sittingRows: sittingRows, yearSittings: yearSittings, periodFields: periodFields,
       payeeBySitting: payeeBySitting, profileData: profileData,
       widenOffers: widenOffers,
       chart: function (name, canvasId, capId, items, opts) {
@@ -1026,21 +1046,26 @@
         : count('nLines', a.lines));
       parts.push(f().money(a.total));
       parts.push(count('nPayees', a.payees));
-      parts.push(count('nSittings', a.sittings));
+      // The period already counts the year's sittings; count them separately
+      // only when a filter narrows to fewer.
+      parts.push(periodText());
       parts.push(L.tpl(t.statusSorted, { field: sortLabel() }));
     } else if (state.tab === 'payees') {
       parts.push(count('nPayees', a.payees));
       parts.push(f().money(a.total));
+      parts.push(periodText());
       parts.push(L.tpl(t.statusSorted, { field: sortLabel() }));
     } else if (state.tab === 'categories') {
       parts.push(count('nCategories', a.mix.length));
       parts.push(f().money(a.total));
+      parts.push(periodText());
     } else if (state.tab === 'disclosures') {
       parts.push(t.statusDisclosures);
     } else {
       var ys = yearSittings();
       parts.push(count('nSittings', ys.length));
       parts.push(L.tpl(t.statusAdopted, { amt: f().money(ys.reduce(function (a, s) { return a + s.total; }, 0)) }));
+      parts.push(L.tpl(t.statusPeriod, periodFields()));
     }
     var box = $('results-status');
     box.textContent = '';
@@ -1154,7 +1179,7 @@
     var t = T(), box = $('print-meta'); if (!box) return;
     var bits = [];
     if (state.q) bits.push(L.tpl(t.chipSearch, { v: state.q }));
-    bits.push(L.tpl(t.chipScope, { v: state.scope }));
+    bits.push(L.tpl(t.chipScope, periodFields()));
     state.sittings.forEach(function (id) { bits.push(L.tpl(t.chipSitting, { v: sittingLabel(store.sittingById[id]) })); });
     state.categories.forEach(function (s) { bits.push(L.tpl(t.chipCategory, { v: catName(L.KEY_BY_SLUG[s]) })); });
     if (state.min !== '') bits.push(L.tpl(t.chipMin, { v: f().money(Number(state.min)) }));
