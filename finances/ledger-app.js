@@ -54,7 +54,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261030-1';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261030-2';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -353,9 +353,14 @@
   // only itemized up to its last published sitting.
   // The period the RESULT covers: the picked sittings when the rail narrows
   // them, otherwise the whole year.
+  // A status part with the date range set apart: "8 sittings, <b>Jan 19 to
+  // Aug 3, 2026</b>". renderStatus accepts a node as a part.
   function periodText() {
     var pf = resultPeriod(), t = T();
-    return L.tpl(pf.n === 1 ? t.statusPeriodOne : t.statusPeriod, pf);
+    return V.el('span', null, [
+      document.createTextNode(L.tpl(pf.n === 1 ? t.statusPeriodOne : t.statusPeriod, pf) + ' '),
+      V.el('strong', { cls: 'range', text: L.tpl(pf.n === 1 ? t.statusRangeOne : t.statusRange, pf) })
+    ]);
   }
   function resultPeriod() {
     if (!state.sittings.length) return periodFields();
@@ -1071,7 +1076,8 @@
     box.textContent = '';
     parts.forEach(function (p, i) {
       if (i) box.appendChild(V.el('span', { cls: 'sep', text: '·' }));
-      box.appendChild(V.el('span', { cls: i === 0 ? 'big' : null, text: p }));
+      if (typeof p === 'string') box.appendChild(V.el('span', { cls: i === 0 ? 'big' : null, text: p }));
+      else box.appendChild(p);
     });
   }
   // A search names a supplier more often than not. Whatever tab the reader

@@ -754,7 +754,12 @@
     var s = ctx.state;
     if (s.q) chip(L.tpl(t.chipSearch, { v: s.q }), function () { ctx.on.clearQ(); });
     // The year is the frame, not a filter: shown, never removable.
-    chip(L.tpl(t.chipScope, ctx.periodFields()), null);
+    // The dates are the point: bold and underlined, so the frame is read.
+    var pf = ctx.periodFields();
+    out.appendChild(el('span', { cls: 'chip fixed' }, [
+      txt(L.tpl(t.chipScope, pf) + ' '),
+      el('strong', { cls: 'range', text: L.tpl(t.chipRange, pf) })
+    ]));
     s.sittings.forEach(function (id) {
       var sit = ctx.store.sittingById[id];
       if (sit) chip(L.tpl(t.chipSitting, { v: ctx.sittingShort(sit) }), function () { ctx.on.sitting(id); });

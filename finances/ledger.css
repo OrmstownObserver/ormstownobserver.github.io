@@ -1085,3 +1085,5 @@ tr.ctx-row > td { padding-top: 0; }
 .lw-chips .chip.fixed { border-style: dashed; }
 .pf-years { margin: var(--s2) 0 0; font: var(--size-body-sm)/1.6 var(--sans); }
 .pf-years .lbl { font-weight: 700; color: var(--ink-soft); margin-right: var(--s1); }
+/* the period's dates: the frame every number sits in, set apart */
+.chip .range, .lw-status .range { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; color: var(--ink); }
