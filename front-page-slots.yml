@@ -15,8 +15,12 @@
 # If something is wrong, GitHub emails you and the homepage keeps the last good version.
 
 hero:
-  path: /en/council-watch/october-6-2026/
-  sitting: 2026-10-06
+  path: /en/council-watch/november-2-2026-preview/
+  sitting: 2026-11-02
+  label_en: Council Watch · Preview
+  label_fr: Conseil municipal · Aperçu
+  image: /images/council-watch-november-2-2026-preview.jpg
+  position: 15% top
 
 cards:
   - path: /en/bylaws-regulations/contract-management-129-2026/
