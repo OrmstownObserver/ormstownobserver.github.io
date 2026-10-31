@@ -1071,7 +1071,9 @@ tr.ctx-row > td { padding-top: 0; }
 }
 .door-box .clr:hover { color: var(--accent); }
 .door-help { margin: var(--s1) 0 0; max-width: 82ch; font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); }
-.lw-ask { margin-bottom: var(--s3); padding-bottom: var(--s3); border-bottom: var(--rule-hair) solid var(--rule); }
+.lw-ask { margin-bottom: var(--s3); padding-bottom: var(--s3); border-bottom: var(--rule-hair) solid var(--rule); scroll-margin-top: var(--s3); }
+/* under 901px the mobile control bar is sticky at the top: settle below it */
+@media (max-width: 900px) { .lw-ask { scroll-margin-top: 72px; } }
 .lw-ask .lw-chips { margin-top: var(--s2); }
 @media print { .lw-ask { display: none; } }
 /* the one-sentence answer above the results */

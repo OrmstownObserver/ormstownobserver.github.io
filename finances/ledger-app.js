@@ -959,7 +959,20 @@
     askText = r.text; askNote = r.noSitting;
     setState(patch, { fromAsk: true });
     var dq = $('door-q'); if (dq) dq.value = r.text;
-    focusPanel();
+    settleOnAsk();
+  }
+  // After a question the page settles with the bar at the top of the window,
+  // so the words, the chips they became, the tabs and the answer line are
+  // all in view at once. Focus still moves to the results for keyboard and
+  // screen-reader readers, but without scrolling to them: landing mid-table
+  // left a reader working out what they were looking at.
+  function settleOnAsk() {
+    var bar = $('ask');
+    var reduce = false;
+    try { reduce = global.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+    if (bar && bar.scrollIntoView) { try { bar.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' }); } catch (e) { bar.scrollIntoView(); } }
+    var p = $('panel-' + state.tab);
+    if (p && !p.hidden && p.focus) { try { p.focus({ preventScroll: true }); } catch (e) { p.focus(); } }
   }
   // The supplier chips: one per lexicon entry whose slugs are all selected
   // ("Dunton Rainville" over three spellings), then one per stray slug.
