@@ -59,24 +59,11 @@ if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-
       <a class="more" href="#notice" id="disclaimer-more">Avis complet · Full notice</a>
     </p>
 
-    <!-- The front door: ONE query bar that reads plain words ("gas june
-         2025", "dunton", "plus de 25 000 $") into the chips under it, then
-         the questions a reader comes with, each a link into the tool.
-         Filled by ledger-app.js (parseAsk, renderPresets); the HTML is the
-         empty frame so a failed script leaves nothing misleading. -->
+    <!-- The front door: the questions a reader comes with, each a link
+         into the tool (its words land in the query bar below). Filled by
+         ledger-app.js (renderPresets); the HTML is the empty frame so a
+         failed script leaves nothing misleading. -->
     <div class="lw-door" id="door">
-      <form class="door-search" id="door-form" role="search">
-        <label class="visually-hidden" for="door-q" id="l-door-q">Rechercher</label>
-        <div class="door-box">
-          <input type="search" id="door-q" autocomplete="off" spellcheck="false" enterkeyhint="search">
-          <button type="button" class="clr" id="door-clear" hidden aria-label="Effacer">✕</button>
-        </div>
-        <button type="submit" class="btn" id="door-go">Chercher</button>
-      </form>
-      <p class="door-help" id="door-help"></p>
-      <!-- What the words became: one removable chip per term, the year as
-           the fixed frame. The same chips the rail's controls edit. -->
-      <div class="lw-chips" id="chips" role="group" aria-labelledby="chips-lead"></div>
       <p class="door-lead" id="door-lead"></p>
       <ul class="door-cards" id="presets"></ul>
       <p class="door-about"><span id="status"></span> <span class="upd" id="updated"></span> <a href="/finances/budget/" id="ref-budget">Budget 2026, méthode et sources</a></p>
@@ -153,6 +140,24 @@ if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-
 
     <!-- ── main ─────────────────────────────────────────────── -->
     <main class="lw-main">
+      <!-- ONE query bar, right above the views it narrows: plain words
+           ("gas june 2025", "dunton", "plus de 25 000 $") become the chips
+           under it, and the tabs row is the next step. Parsed by
+           ledger-app.js (parseAsk). -->
+      <div class="lw-ask" id="ask">
+        <form class="door-search" id="door-form" role="search">
+          <label class="visually-hidden" for="door-q" id="l-door-q">Rechercher</label>
+          <div class="door-box">
+            <input type="search" id="door-q" autocomplete="off" spellcheck="false" enterkeyhint="search">
+            <button type="button" class="clr" id="door-clear" hidden aria-label="Effacer">✕</button>
+          </div>
+          <button type="submit" class="btn" id="door-go">Chercher</button>
+        </form>
+        <p class="door-help" id="door-help"></p>
+        <!-- What the words became: one removable chip per term, the year as
+             the fixed frame. The same chips the rail's controls edit. -->
+        <div class="lw-chips" id="chips" role="group" aria-labelledby="chips-lead"></div>
+      </div>
       <div class="lw-tabs" role="tablist" aria-label="Vues">
         <button type="button" role="tab" id="tab-categories" aria-controls="panel-categories" aria-selected="true"  data-tab="categories"></button>
         <button type="button" role="tab" id="tab-sittings"   aria-controls="panel-sittings"   aria-selected="false" data-tab="sittings" tabindex="-1"></button>

@@ -1025,7 +1025,8 @@ tr.ctx-row > td { padding-top: 0; }
    old reference strip; the page's facts line (lines, suppliers, sittings)
    and the budget link move under it as .door-about. */
 .lw-door { margin-top: var(--s3); padding-top: var(--s3); border-top: var(--rule-hair) solid var(--rule); }
-.door-search { display: flex; gap: var(--s1); max-width: 82ch; }
+.lw-door .door-lead { margin-top: 0; }
+.door-search { display: flex; gap: var(--s1); }
 .door-search input {
   flex: 1 1 auto; min-width: 0;
   min-height: 46px;
@@ -1070,7 +1071,9 @@ tr.ctx-row > td { padding-top: 0; }
 }
 .door-box .clr:hover { color: var(--accent); }
 .door-help { margin: var(--s1) 0 0; max-width: 82ch; font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); }
-.lw-door .lw-chips { margin-top: var(--s2); }
+.lw-ask { margin-bottom: var(--s3); padding-bottom: var(--s3); border-bottom: var(--rule-hair) solid var(--rule); }
+.lw-ask .lw-chips { margin-top: var(--s2); }
+@media print { .lw-ask { display: none; } }
 /* the one-sentence answer above the results */
 .lw-answer { margin: var(--s2) 0 0; font: var(--size-body)/1.5 var(--serif-display); color: var(--ink); max-width: 82ch; }
 .lw-answer[hidden] { display: none; }
