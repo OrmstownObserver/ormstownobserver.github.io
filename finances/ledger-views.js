@@ -768,6 +768,9 @@
       var key = L.KEY_BY_SLUG[slug];
       if (key) chip(L.tpl(t.chipCategory, { v: ctx.catName(key) }), function () { ctx.on.category(key); });
     });
+    (ctx.supplierGroups ? ctx.supplierGroups() : []).forEach(function (g) {
+      chip(L.tpl(t.chipSupplier, { v: g.label }), function () { ctx.on.supplier(g.slugs); });
+    });
     if (s.min !== '') chip(L.tpl(t.chipMin, { v: ctx.f.money(Number(s.min)) }), function () { ctx.on.setAmount('', s.max); });
     if (s.max !== '') chip(L.tpl(t.chipMax, { v: ctx.f.money(Number(s.max)) }), function () { ctx.on.setAmount(s.min, ''); });
     return out;

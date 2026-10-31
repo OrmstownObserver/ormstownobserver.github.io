@@ -399,10 +399,12 @@
      keystroke under a frame on a phone.
      ------------------------------------------------------------ */
 
-  // f = { q, sittings:[ids], categories:[keys], min, max, scope }
+  // f = { q, sittings:[ids], categories:[keys], payees:[slugs], min, max, scope }
+  // payees narrows to the named suppliers (the query bar's supplier chips);
+  // absent or empty, every supplier is in.
   function filterLines(store, f) {
     var out = [];
-    var sitSet = null, catSet = null;
+    var sitSet = null, catSet = null, paySet = null;
     if (f.sittings && f.sittings.length) {
       sitSet = {};
       f.sittings.forEach(function (s) { sitSet[s] = 1; });
@@ -414,6 +416,10 @@
       catSet = {};
       f.categories.forEach(function (c) { catSet[c] = 1; });
     }
+    if (f.payees && f.payees.length) {
+      paySet = {};
+      f.payees.forEach(function (p) { paySet[p] = 1; });
+    }
     var toks = f.q ? searchNorm(f.q).split(' ').filter(Boolean) : [];
     var hasMin = f.min != null && f.min !== '' && isFinite(f.min);
     var hasMax = f.max != null && f.max !== '' && isFinite(f.max);
@@ -423,6 +429,7 @@
       var L = store.lines[i];
       if (sitSet && !sitSet[L.s]) continue;          // cheapest first
       if (catSet && !catSet[L.c]) continue;
+      if (paySet && !paySet[L.p]) continue;
       if (hasMin && L.a < mn) continue;
       if (hasMax && L.a > mx) continue;
       if (toks.length) {

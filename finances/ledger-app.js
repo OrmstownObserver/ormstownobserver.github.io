@@ -19,6 +19,14 @@
      payeeScope filters — opt the profile into the rail's filters
                 (absent = the profile shows every sitting, so a link
                  pasted into an article means the same to everyone)
+     supplier  comma list of payee slugs — narrows the LINES to them
+               (added 2026-10-30 with the query bar; ?payee= opens a
+                profile, ?supplier= filters)                none (= all)
+     ask       plain words ("gas june 2025"), parsed by parseAsk into
+               the params above at read time and then DROPPED from the
+               address (added 2026-10-30). Never written back: the
+               address a reader copies is always the explicit one, so
+               the lexicon can grow without moving a published link.
 
    Deliberately NOT in the URL: the reveal count, which rail groups
    are open, whether the mobile sheet is open. A shared link should
@@ -54,7 +62,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261030-2';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261030-3';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -64,7 +72,7 @@
   var state = {
     lang: 'fr', tab: 'categories', scope: '',
     sittings: [], categories: [], q: '', min: '', max: '',
-    sort: 'amount:desc', payee: '', payeeScope: ''
+    sort: 'amount:desc', payee: '', payeeScope: '', supplier: []
   };
   var revealed = PAGE_SIZE, profileRevealed = PROFILE_PAGE;
   var idxCache = null, aggCache = null, printRestore = null;
@@ -80,6 +88,10 @@
   // A burst of typing in the search or amount boxes is ONE history entry:
   // the first keystroke pushes, the rest replace, until the box loses focus.
   var typingPushed = false;
+  // The query bar's words as submitted (shown in the box until a filter is
+  // changed by hand), and the one thing a parse can fail to place: a month
+  // the ledger has no list for yet.
+  var askText = '', askNote = null;
 
   function T() { return I18N[state.lang]; }
   function f() { return V.fmt(state.lang); }
@@ -141,6 +153,25 @@
     state.sort = validSort(p.get('sort'));
     state.payee = (p.get('payee') || '').trim();
     state.payeeScope = p.get('payeeScope') === 'filters' ? 'filters' : '';
+    state.supplier = (p.get('supplier') || '').split(',').map(function (v) { return v.trim(); })
+      .filter(function (v) { return /^[a-z0-9-]{1,64}$/.test(v); }).sort();
+
+    // ?ask= is read LAST so its words win over the explicit params it was
+    // linked with; writeURL then normalises everything to explicit params.
+    var ask = (p.get('ask') || '').trim().slice(0, 120);
+    askText = ''; askNote = null;
+    if (ask) {
+      var r = parseAsk(ask);
+      if (r.tab) state.tab = r.tab; else if (r.matched && !p.get('tab')) state.tab = 'payments';
+      if (r.scope) { state.scope = r.scope; state.sittings = []; }
+      if (r.sittings.length) state.sittings = r.sittings;
+      if (r.categories.length) state.categories = r.categories;
+      if (r.supplierSlugs.length) state.supplier = r.supplierSlugs;
+      if (r.min !== '') state.min = r.min;
+      if (r.max !== '') state.max = r.max;
+      if (r.q) state.q = r.q;
+      askText = ask; askNote = r.noSitting;
+    }
   }
   function numParam(v) {
     if (v == null || v === '') return '';
@@ -166,6 +197,7 @@
     if (state.scope !== defaultScope()) p.set('scope', state.scope);
     if (state.sittings.length) p.set('sitting', state.sittings.join(','));
     if (state.categories.length) p.set('category', state.categories.join(','));
+    if (state.supplier.length) p.set('supplier', state.supplier.join(','));
     if (state.q) p.set('q', state.q);
     if (state.min !== '') p.set('min', state.min);
     if (state.max !== '') p.set('max', state.max);
@@ -210,6 +242,7 @@
     if (!opts.keepReturn) returnTo = null;
     if (!store) { Object.keys(patch).forEach(function (k) { state[k] = patch[k]; }); writeURL(false); renderStandalone(); return; }
     var langChanged = patch.lang && patch.lang !== state.lang;
+    if (!opts.fromAsk && Object.keys(patch).some(function (k) { return FILTER_KEYS[k]; })) { askText = ''; askNote = null; }
     Object.keys(patch).forEach(function (k) { state[k] = patch[k]; });
     if (opts.resetReveal !== false) revealed = PAGE_SIZE;
     idxCache = aggCache = null;
@@ -223,6 +256,7 @@
     }
   }
 
+  var FILTER_KEYS = { q: 1, scope: 1, sittings: 1, categories: 1, supplier: 1, min: 1, max: 1 };
   function toggleIn(list, v) {
     var out = list.slice(), i = out.indexOf(v);
     if (i >= 0) out.splice(i, 1); else out.push(v);
@@ -231,7 +265,7 @@
 
   // The year is the frame, not a filter: changing it is not "filtering".
   function hasFilters() {
-    return !!(state.q || state.sittings.length ||
+    return !!(state.q || state.sittings.length || state.supplier.length ||
               state.categories.length || state.min !== '' || state.max !== '');
   }
   function filterSpec(over) {
@@ -239,6 +273,7 @@
       q: state.q,
       sittings: state.sittings,
       categories: state.categories.map(function (s) { return L.KEY_BY_SLUG[s]; }),
+      payees: state.supplier,
       min: state.min, max: state.max, scope: state.scope
     };
     if (over) Object.keys(over).forEach(function (k) { spec[k] = over[k]; });
@@ -463,6 +498,7 @@
         return C0 ? C0.color : '#888888';
       },
       hasFilters: hasFilters,
+      supplierGroups: supplierGroups,
       context: {
         category: function (key) { return cxGet('categories', L.SLUGS[key]); },
         sitting: function (id) { return cxGet('sittings', id); },
@@ -488,6 +524,7 @@
         copyLink: copyLink,
         category: function (key) { setState({ categories: toggleIn(state.categories, L.SLUGS[key]) }); },
         categoryOnly: function (key) { setState(categoryPatch(key)); focusPanel(); },
+        supplier: function (slugs) { setState({ supplier: state.supplier.filter(function (s) { return slugs.indexOf(s) < 0; }) }); },
         togglePayeeScope: function () { setState({ payeeScope: state.payeeScope === 'filters' ? '' : 'filters' }, { resetReveal: false }); },
         sitting: function (id) { setState({ sittings: toggleIn(state.sittings, id), tab: state.tab }); },
         setScope: function (v) { setState({ scope: v, sittings: [] }); },
@@ -510,7 +547,7 @@
   // reader clicked (the Sittings table ignores the rail, so must this).
   function sittingPatch(id) {
     return { sittings: [id], scope: String(id).slice(0, 4), tab: 'payments', payee: '', payeeScope: '',
-             q: '', categories: [], min: '', max: '' };
+             q: '', categories: [], supplier: [], min: '', max: '' };
   }
   // A category's lines within whatever else is filtered: the Categories
   // table it is clicked from respects the rail, so the total carries over.
@@ -637,9 +674,9 @@
   function resetFilters() {
     // Reset clears the FILTERS; language, tab and sort are the reader's
     // workspace, not a filter, so they survive.
-    setState({ q: '', scope: defaultScope(), sittings: [], categories: [], min: '', max: '', payee: '', payeeScope: '' });
+    setState({ q: '', scope: defaultScope(), sittings: [], categories: [], supplier: [], min: '', max: '', payee: '', payeeScope: '' });
     closeSheet();
-    var q = $('q'); if (q) { q.value = ''; q.focus(); }
+    var q = $('door-q'); if (q) { q.value = ''; q.focus(); }
   }
   function restoreFocus() {
     if (lastFocus && lastFocus.focus) { try { lastFocus.focus(); } catch (e) {} }
@@ -732,6 +769,7 @@
     renderRail();
     renderTabs();
     renderChips();
+    renderAnswer();
     renderStatus();
     renderJump();
     renderYearJump();
@@ -756,11 +794,14 @@
     setText('l-door-q', t.railSearch);
     setText('door-go', t.doorGo);
     setText('door-lead', t.doorLead);
+    setText('door-help', t.doorHelp);
     var dq = $('door-q');
     if (dq) {
       dq.setAttribute('placeholder', t.doorPlaceholder);
-      if (document.activeElement !== dq) dq.value = state.q;
+      if (document.activeElement !== dq) dq.value = askText || state.q;
     }
+    var dc = $('door-clear');
+    if (dc) { dc.setAttribute('aria-label', t.doorClear); dc.hidden = !(askText || hasFilters()); }
     var sk = document.getElementsByClassName('lw-skip');
     if (sk[0]) sk[0].textContent = t.skipResults;
     if (sk[1]) sk[1].textContent = t.skipFilters;
@@ -783,48 +824,187 @@
   }
   function setText(id, s) { var n = $(id); if (n) n.textContent = s; }
 
-  // The front door's questions: each one is a plain URL into the tool, so
-  // it teaches by example and gives an article something to link to. The
-  // first two follow the data (latest year, latest sitting) so they never
-  // need editing when a sitting lands. Each carries its own tab, so
-  // following the LINK lands exactly where clicking it does.
-  var PRESETS = [
-    { key: 'presetTop',   q: function () { return { tab: 'payees', scope: defaultScope() }; } },
-    { key: 'presetLast',  q: function () { var s = store.sittings[store.sittings.length - 1]; return { sitting: s.m, scope: s.year, tab: 'payments' }; } },
-    { key: 'presetWhere', q: function () { return { tab: 'categories', scope: defaultScope() }; } },
-    { key: 'presetLaw',   q: { tab: 'disclosures' } },
-    { key: 'presetBig',   q: function () { return { min: '25000', scope: defaultScope(), tab: 'payments' }; } },
-    { key: 'presetLegal', q: function () { return { category: 'legal-services', scope: defaultScope(), tab: 'payments' }; } }
-  ];
+  // The front door's questions: each one is WORDS the query bar understands,
+  // so the card teaches by example — the reader sees the words land in the
+  // bar and turn into chips — and its link (?ask=…) gives an article
+  // something to point at. The first three follow the data (latest year,
+  // latest sitting) so they never need editing when a sitting lands.
+  var PRESETS = ['presetTop', 'presetLast', 'presetWhere', 'presetLaw', 'presetBig', 'presetLegal'];
+  function presetWords(key) { return L.tpl(T()[key + 'Ask'], { year: defaultScope() }); }
   function renderPresets() {
     var box = $('presets'); if (!box || !store) return;
     var t = T();
     box.textContent = '';
-    PRESETS.forEach(function (p) {
-      var q = typeof p.q === 'function' ? p.q() : p.q;
-      var sub = L.tpl(t[p.key + 'Sub'], { year: defaultScope(), date: f().dateLong(store.sittings[store.sittings.length - 1].sittingDate) });
+    PRESETS.forEach(function (key) {
+      var words = presetWords(key);
+      var sub = L.tpl(t[key + 'Sub'], { year: defaultScope(), date: f().dateLong(store.sittings[store.sittings.length - 1].sittingDate) });
+      var p = new URLSearchParams(); p.set('lang', state.lang); p.set('ask', words);
       box.appendChild(V.el('li', null, V.el('a', {
-        href: '?' + presetQuery(q),
-        on: { click: function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return; e.preventDefault(); applyPreset(q); focusPanel(); } }
-      }, [V.el('strong', { text: t[p.key] }), V.el('span', { text: sub })])));
+        href: '?' + p.toString(),
+        on: { click: function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return; e.preventDefault(); applyAsk(words); } }
+      }, [V.el('strong', { text: t[key] }), V.el('span', { text: sub })])));
     });
   }
-  function presetQuery(q) {
-    var p = new URLSearchParams();
-    p.set('lang', state.lang);
-    Object.keys(q).forEach(function (k) { p.set(k, q[k]); });
-    return p.toString();
+
+  /* ============================================================
+     the query bar: plain words → filters. Deterministic, offline, and
+     the lexicon (ledger-lexicon.js) is the whole of what it knows.
+     ============================================================ */
+  var LX = global.OO_LEDGER_LEXICON || null;
+  var lexIndex = null;           // [{ words, kind, value }], longest phrase first
+  function lexicon() {
+    if (lexIndex) return lexIndex;
+    var out = [];
+    function add(kind, value, words) {
+      (words || []).forEach(function (w) {
+        var norm = L.searchNorm(w);
+        if (norm) out.push({ words: norm.split(' '), kind: kind, value: value });
+      });
+    }
+    function both(e) { return ((e && e.en) || []).concat((e && e.fr) || []); }
+    if (LX) {
+      Object.keys(LX.categories || {}).forEach(function (slug) { add('category', slug, both(LX.categories[slug])); });
+      Object.keys(LX.suppliers || {}).forEach(function (k) { add('supplier', k, LX.suppliers[k].words); });
+      Object.keys(LX.views || {}).forEach(function (tab) { if (TABS.indexOf(tab) >= 0) add('view', tab, both(LX.views[tab])); });
+      Object.keys(LX.amount || {}).forEach(function (k) { add('amount', k, both(LX.amount[k])); });
+      Object.keys(LX.months || {}).forEach(function (m) { add('month', Number(m), both(LX.months[m])); });
+      Object.keys(LX.time || {}).forEach(function (k) { add('time', k, both(LX.time[k])); });
+      add('stop', null, both(LX.stop));
+    }
+    out.sort(function (a, b) { return b.words.length - a.words.length; });
+    lexIndex = out;
+    return out;
   }
-  function applyPreset(q) {
-    // Start from a clean slate so presets never compound with each other.
-    var patch = { q: '', scope: defaultScope(), sittings: [], categories: [], min: '', max: '', payee: '', payeeScope: '', tab: DEFAULTS.tab };
-    Object.keys(q).forEach(function (k) {
-      if (k === 'category') patch.categories = [q[k]];
-      else if (k === 'sitting') patch.sittings = String(q[k]).split(',');
-      else patch[k] = q[k];
+  function monthIds() { return (D.months || []).map(function (m) { return m.m; }).sort(); }
+  function supplierSlugs(keys) {
+    var out = [];
+    keys.forEach(function (k) {
+      ((LX && LX.suppliers[k] && LX.suppliers[k].slugs) || []).forEach(function (s) { if (out.indexOf(s) < 0) out.push(s); });
     });
-    setState(patch);
-    var qi = $('q'); if (qi) qi.value = patch.q;
+    return out.sort();
+  }
+  // Tokens are matched against the lexicon longest phrase first; what is
+  // left is the free-text search. month + year → that month's list; a month
+  // alone → the latest year that has it; a year alone → the frame. Nothing
+  // recognised → the whole text is searched, exactly as before.
+  function parseAsk(text) {
+    var raw = String(text || '').trim().slice(0, 120);
+    var res = { text: raw, categories: [], suppliers: [], supplierSlugs: [], tab: '', scope: '', sittings: [], min: '', max: '', q: '', matched: false, noSitting: null };
+    if (!raw) return res;
+    // "25,000" / "25 000" / "1 112 884" → one number token
+    var pre = raw.replace(/(\d)[ ,\u00a0\u202f](?=\d{3}(?!\d))/g, '$1');
+    var toks = L.searchNorm(pre).split(' ').filter(Boolean);
+    var lex = lexicon(), free = [], month = null, year = '', qual = null, parts = 0, ys = years();
+    for (var i = 0; i < toks.length;) {
+      var hit = null;
+      for (var k = 0; k < lex.length && !hit; k++) {
+        var e = lex[k], n = e.words.length;
+        if (i + n > toks.length) continue;
+        var same = true;
+        for (var w = 0; w < n; w++) if (toks[i + w] !== e.words[w]) { same = false; break; }
+        if (same) hit = e;
+      }
+      if (hit) {
+        i += hit.words.length;
+        if (hit.kind === 'stop') continue;
+        parts++;
+        if (hit.kind === 'category') { if (res.categories.indexOf(hit.value) < 0) res.categories.push(hit.value); }
+        else if (hit.kind === 'supplier') { if (res.suppliers.indexOf(hit.value) < 0) res.suppliers.push(hit.value); }
+        else if (hit.kind === 'view') res.tab = hit.value;
+        else if (hit.kind === 'month') month = hit.value;
+        else if (hit.kind === 'time') {
+          var ms = monthIds();
+          if (hit.value === 'lastSitting' && ms.length) { res.sittings = [ms[ms.length - 1]]; year = ms[ms.length - 1].slice(0, 4); }
+          else if (hit.value === 'thisYear') year = defaultScope();
+          else if (hit.value === 'lastYear') year = ys[ys.length - 2] || ys[0] || '';
+        }
+        else if (hit.kind === 'amount') { if (hit.value === 'credits') res.max = '-0.01'; else qual = hit.value; }
+        continue;
+      }
+      var tok = toks[i++];
+      var num = /^(\d+)(k)?$/.exec(tok);
+      if (num) {
+        if (!num[2] && !qual && ys.indexOf(tok) >= 0) { year = tok; parts++; continue; }
+        if (qual) {
+          var v = Number(num[1]) * (num[2] ? 1000 : 1);
+          if (qual === 'over') res.min = String(v); else res.max = String(v);
+          qual = null; parts++; continue;
+        }
+      }
+      free.push(tok);
+    }
+    if (month) {
+      var mm = (month < 10 ? '0' : '') + month, found = null, ids = monthIds();
+      if (year) found = ids.indexOf(year + '-' + mm) >= 0 ? year + '-' + mm : null;
+      else for (var j = ids.length - 1; j >= 0; j--) if (ids[j].slice(5) === mm) { found = ids[j]; break; }
+      if (found) { res.sittings = [found]; year = found.slice(0, 4); }
+      else res.noSitting = { month: month, year: year || defaultScope() };
+      parts++;
+    }
+    res.scope = year && ys.indexOf(year) >= 0 ? year : '';
+    res.supplierSlugs = supplierSlugs(res.suppliers);
+    res.matched = parts > 0;
+    res.q = res.matched ? free.join(' ') : raw;
+    return res;
+  }
+  // A question replaces the filters: the chips under the bar ARE the
+  // answer's terms, so two questions must never compound.
+  function applyAsk(text) {
+    var r = parseAsk(text);
+    var patch = {
+      q: r.q, scope: r.scope || state.scope, sittings: r.sittings, categories: r.categories,
+      supplier: r.supplierSlugs, min: r.min, max: r.max, payee: '', payeeScope: ''
+    };
+    patch.tab = r.tab || ((r.matched || state.tab === 'disclosures' || state.tab === 'categories' || state.tab === 'sittings') ? 'payments' : state.tab);
+    askText = r.text; askNote = r.noSitting;
+    setState(patch, { fromAsk: true });
+    var dq = $('door-q'); if (dq) dq.value = r.text;
+    focusPanel();
+  }
+  // The supplier chips: one per lexicon entry whose slugs are all selected
+  // ("Dunton Rainville" over three spellings), then one per stray slug.
+  function supplierGroups() {
+    var left = state.supplier.slice(), out = [];
+    if (LX) Object.keys(LX.suppliers || {}).forEach(function (k) {
+      var e = LX.suppliers[k], slugs = e.slugs || [];
+      if (!slugs.length || !slugs.every(function (s) { return left.indexOf(s) >= 0; })) return;
+      out.push({ label: e[state.lang] || e.en, slugs: slugs.slice() });
+      left = left.filter(function (s) { return slugs.indexOf(s) < 0; });
+    });
+    left.forEach(function (s) { out.push({ label: store && store.payees[s] ? payeeName(store.payees[s]) : s, slugs: [s] }); });
+    return out;
+  }
+  // One sentence above the results: the amount, what it is for, which list
+  // or year, how many lines and suppliers — the answer to the words typed.
+  function renderAnswer() {
+    var box = $('answer'); if (!box) return;
+    box.textContent = '';
+    var show = !!store && !state.payee && state.tab !== 'disclosures' && state.tab !== 'sittings' && (hasFilters() || !!askText);
+    box.hidden = !show;
+    if (!show) return;
+    var t = T(), a = agg(), what = [];
+    state.categories.forEach(function (sl) { var key = L.KEY_BY_SLUG[sl]; if (key) what.push(L.tpl(t.answerCat, { v: catName(key) })); });
+    supplierGroups().forEach(function (g) { what.push(L.tpl(t.answerSupplier, { v: g.label })); });
+    if (state.min === '' && state.max === '-0.01') what.push(t.answerCredits);
+    else {
+      if (state.min !== '') what.push(L.tpl(t.answerMin, { v: f().money(Number(state.min)) }));
+      if (state.max !== '') what.push(L.tpl(t.answerMax, { v: f().money(Number(state.max)) }));
+    }
+    if (state.q) what.push(L.tpl(t.answerSearch, { v: state.q }));
+    var frame;
+    if (state.sittings.length === 1) frame = L.tpl(t.answerSitting, { date: f().dateLong(store.sittingById[state.sittings[0]].sittingDate) });
+    else if (state.sittings.length) frame = L.tpl(t.answerSittings, { n: f().num(state.sittings.length), year: state.scope });
+    else frame = L.tpl(t.answerYear, { year: state.scope });
+    box.appendChild(V.el('strong', { text: L.tpl(t.answerLine, {
+      amt: f().money(a.total), what: what.length ? what.join(t.answerJoin) : t.answerAll, frame: frame,
+      lines: count('nLines', a.lines), payees: count('nPayees', a.payees)
+    }) }));
+    if (askNote) {
+      var mname = '';
+      try { mname = new Intl.DateTimeFormat(f().locale, { month: 'long' }).format(new Date(askNote.year + '-' + (askNote.month < 10 ? '0' : '') + askNote.month + '-15T12:00:00')); } catch (e) { mname = String(askNote.month); }
+      box.appendChild(V.el('span', { cls: 'note', text: L.tpl(t.answerNoSitting, { month: mname, year: askNote.year }) }));
+    }
+    if (state.sittings.length) box.appendChild(V.el('span', { cls: 'note', text: t.answerNote }));
   }
 
   /* ---------- rail ---------- */
@@ -847,7 +1027,6 @@
     var refocus = railFocusId();
     setText('rail-h', t.railTitle);
     setText('rail-h-desktop', t.railTitle);
-    setText('l-search', t.railSearch);
     setText('l-scope', t.railScope);
     setText('l-sittings', t.railSittings);
     setText('l-cats', t.railCats);
@@ -859,17 +1038,8 @@
     setText('sheet-reset', t.wsReset);
     setText('sit-all', t.selAll); setText('sit-none', t.selNone);
     setText('cat-all', t.selAll); setText('cat-none', t.selNone);
-    setText('q-help', t.railSearchHelp);
     setText('sheet-open-label', t.filtersBtn);
     setText('l-sort-mobile', t.sortLabel);
-    var qEl = $('q');
-    if (qEl) {
-      qEl.setAttribute('placeholder', t.railSearchPh);
-      qEl.setAttribute('aria-label', t.railSearch);
-      if (qEl.value !== state.q) qEl.value = state.q;
-    }
-    var qc = $('q-clear');
-    if (qc) { qc.hidden = !state.q; qc.setAttribute('aria-label', t.railSearchClear); }
     var sc = $('sheet-close'); if (sc) sc.setAttribute('aria-label', t.sheetClose);
     var sa = $('sheet-apply'); if (sa) sa.textContent = L.tpl(t.sheetApply, { n: f().num(indices().length) });
     var mn = $('amt-min'), mx = $('amt-max');
@@ -974,7 +1144,7 @@
     var n = 0;
     if (state.q) n++;
     if (state.scope !== defaultScope()) n++;
-    n += state.sittings.length + state.categories.length;
+    n += state.sittings.length + state.categories.length + supplierGroups().length;
     if (state.min !== '') n++;
     if (state.max !== '') n++;
     return n;
@@ -1087,6 +1257,16 @@
     var box = $('payee-jump'); if (!box) return;
     box.textContent = '';
     var m = (state.q && !state.payee && state.tab !== 'payees') ? payeeMatches(5) : { list: [], n: 0 };
+    if (!m.list.length && state.supplier.length && !state.payee && state.tab !== 'payees') {
+      var list = [];
+      state.supplier.forEach(function (slug) {
+        var P = store.payees[slug]; if (!P) return;
+        var c = 0; (store.byPayee[slug] || []).forEach(function (i) { c += L.cents(store.lines[i].a); });
+        list.push({ slug: slug, name: payeeName(P), total: L.dollars(c) });
+      });
+      list.sort(function (a, b) { return b.total - a.total; });
+      m = { list: list.slice(0, 5), n: list.length };
+    }
     box.hidden = !m.list.length;
     if (!m.list.length) return;
     var t = T();
@@ -1188,6 +1368,7 @@
     bits.push(L.tpl(t.chipScope, periodFields()));
     state.sittings.forEach(function (id) { bits.push(L.tpl(t.chipSitting, { v: sittingLabel(store.sittingById[id]) })); });
     state.categories.forEach(function (s) { bits.push(L.tpl(t.chipCategory, { v: catName(L.KEY_BY_SLUG[s]) })); });
+    supplierGroups().forEach(function (g) { bits.push(L.tpl(t.chipSupplier, { v: g.label })); });
     if (state.min !== '') bits.push(L.tpl(t.chipMin, { v: f().money(Number(state.min)) }));
     if (state.max !== '') bits.push(L.tpl(t.chipMax, { v: f().money(Number(state.max)) }));
     box.textContent = '';
@@ -1199,28 +1380,14 @@
   /* ============================================================
      wiring
      ============================================================ */
-  var qTimer = null, amtTimer = null;
+  var amtTimer = null;
   function wire() {
     var df = $('door-form');
     if (df) df.addEventListener('submit', function (e) {
       e.preventDefault();
-      var v = ($('door-q').value || '').trim().slice(0, 120);
-      setState({ q: v, tab: state.tab === 'disclosures' || state.tab === 'categories' || state.tab === 'sittings' ? 'payments' : state.tab, payee: '', payeeScope: '' });
-      var qi = $('q'); if (qi) qi.value = v;
-      focusPanel();
+      applyAsk(($('door-q') || {}).value || '');
     });
-    var q = $('q');
-    if (q) {
-      q.addEventListener('input', function () {
-        clearTimeout(qTimer);
-        var v = q.value.trim().slice(0, 120);
-        qTimer = setTimeout(function () { if (v !== state.q) typed({ q: v }); }, 150);
-      });
-      q.addEventListener('keydown', function (e) { if (e.key === 'Enter') e.preventDefault(); });
-      q.addEventListener('blur', function () { typingPushed = false; });
-    }
-    var qc = $('q-clear');
-    if (qc) qc.addEventListener('click', function () { if (q) q.value = ''; setState({ q: '' }); if (q) q.focus(); });
+    on('door-clear', resetFilters);
 
     ['amt-min', 'amt-max'].forEach(function (id) {
       var n = $(id); if (!n) return;
@@ -1331,7 +1498,7 @@
   function isMobile() { try { return global.matchMedia('(max-width: 900px)').matches; } catch (e) { return false; } }
   function sheetOpen() { var r = $('rail'); return !!(r && r.classList.contains('is-open')); }
   function openSheet() {
-    if (!isMobile()) { var q = $('q'); if (q) q.focus(); return; }
+    if (!isMobile()) { var q = $('door-q'); if (q) q.focus(); return; }
     var r = $('rail'), s = $('lw-scrim'), b = $('sheet-open');
     r.classList.add('is-open');
     r.setAttribute('role', 'dialog');
@@ -1339,7 +1506,6 @@
     s.classList.add('is-open');
     b.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
-    var q2 = $('q'); if (q2) q2.focus();
   }
   function closeSheet() {
     var r = $('rail'), s = $('lw-scrim'), b = $('sheet-open');
@@ -1426,6 +1592,10 @@
     renderStandalone();
     loadPayments();
   }
+
+  // For finances/tests/render-check.js only: the parser, so a case can be
+  // asserted without typing it into the box.
+  global.OO_LEDGER_APP = { parseAsk: parseAsk };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
   else boot();

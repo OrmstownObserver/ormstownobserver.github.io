@@ -172,27 +172,6 @@
 }
 .rail-help { font: var(--size-fine)/1.5 var(--sans); color: var(--ink-soft); margin-top: var(--s1); }
 
-.rail-search { position: relative; }
-.rail-search input {
-  width: 100%;
-  min-height: 44px;
-  border: var(--rule-strong) solid var(--control-line);
-  background: var(--surface-page);
-  color: var(--ink);
-  padding: 0 34px 0 var(--s2);
-  font: var(--size-body-sm) var(--sans);
-  border-radius: var(--radius-0);
-}
-.rail-search .clr {
-  position: absolute;
-  right: 2px; top: 50%;
-  transform: translateY(-50%);
-  width: 40px; height: 40px;
-  border: 0; background: none; cursor: pointer;
-  color: var(--ink-soft);
-  font-size: 18px; line-height: 1;
-}
-.rail-search .clr:hover { color: var(--accent); }
 
 .seg { display: flex; flex-wrap: wrap; gap: 0; border: var(--rule-hair) solid var(--hair); }
 .seg button {
@@ -1081,6 +1060,22 @@ tr.ctx-row > td { padding-top: 0; }
 }
 @media (max-width: 400px) { .door-cards { grid-template-columns: 1fr; } }
 @media print { .lw-door { display: none; } }
+/* the query bar: box with its own clear ✕, help line, chips under it */
+.door-box { position: relative; flex: 1; min-width: 0; }
+.door-box input { width: 100%; padding-right: 2.2em; }
+.door-box .clr {
+  position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  border: 0; background: none; color: var(--ink-soft); font: inherit; cursor: pointer;
+  min-width: 32px; min-height: 32px; line-height: 1;
+}
+.door-box .clr:hover { color: var(--accent); }
+.door-help { margin: var(--s1) 0 0; max-width: 82ch; font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); }
+.lw-door .lw-chips { margin-top: var(--s2); }
+/* the one-sentence answer above the results */
+.lw-answer { margin: var(--s2) 0 0; font: var(--size-body)/1.5 var(--serif-display); color: var(--ink); max-width: 82ch; }
+.lw-answer[hidden] { display: none; }
+.lw-answer strong { font-weight: 700; }
+.lw-answer .note { display: block; margin-top: 4px; font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); }
 /* the year chip is the frame, not a filter: no ✕, quieter */
 .lw-chips .chip.fixed { border-style: dashed; }
 .pf-years { margin: var(--s2) 0 0; font: var(--size-body-sm)/1.6 var(--sans); }
