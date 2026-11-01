@@ -62,7 +62,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261030-3';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261101-1';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -835,14 +835,15 @@
     var box = $('presets'); if (!box || !store) return;
     var t = T();
     box.textContent = '';
-    PRESETS.forEach(function (key) {
+    PRESETS.forEach(function (key, i) {
       var words = presetWords(key);
       var sub = L.tpl(t[key + 'Sub'], { year: defaultScope(), date: f().dateLong(store.sittings[store.sittings.length - 1].sittingDate) });
       var p = new URLSearchParams(); p.set('lang', state.lang); p.set('ask', words);
-      box.appendChild(V.el('li', null, V.el('a', {
-        href: '?' + p.toString(),
+      if (i) box.appendChild(V.el('span', { cls: 'sep', 'aria-hidden': 'true', text: ' · ' }));
+      box.appendChild(V.el('a', {
+        href: '?' + p.toString(), title: sub, text: t[key],
         on: { click: function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return; e.preventDefault(); applyAsk(words); } }
-      }, [V.el('strong', { text: t[key] }), V.el('span', { text: sub })])));
+      }));
     });
   }
 
@@ -1285,7 +1286,7 @@
     var t = T();
     box.appendChild(V.el('span', { cls: 'lead', text: t.jumpLead }));
     m.list.forEach(function (r, i) {
-      if (i) box.appendChild(document.createTextNode(' · '));
+      if (i) box.appendChild(V.el('span', { cls: 'sep', 'aria-hidden': 'true', text: ' · ' }));
       box.appendChild(V.navLink(hrefFor({ payee: r.slug }), r.name, function () { openProfile(r.slug); }));
     });
     if (m.n > m.list.length) {
@@ -1314,7 +1315,7 @@
     var t = T();
     box.appendChild(V.el('span', { cls: 'lead', text: t.yearJumpLead }));
     hits.forEach(function (h, i) {
-      if (i) box.appendChild(document.createTextNode(' · '));
+      if (i) box.appendChild(V.el('span', { cls: 'sep', 'aria-hidden': 'true', text: ' · ' }));
       box.appendChild(V.navLink(hrefFor({ scope: h.y, sittings: [] }), L.tpl(t.yearJumpItem, { year: h.y, n: f().num(h.n) }),
         function () { setState({ scope: h.y, sittings: [] }); focusPanel(); }));
     });
@@ -1378,7 +1379,8 @@
     var t = T(), box = $('print-meta'); if (!box) return;
     var bits = [];
     if (state.q) bits.push(L.tpl(t.chipSearch, { v: state.q }));
-    bits.push(L.tpl(t.chipScope, periodFields()));
+    var pf = periodFields();
+    bits.push(state.scope + ' · ' + L.tpl(t.chipScope, pf) + ' ' + L.tpl(t.chipRange, pf));
     state.sittings.forEach(function (id) { bits.push(L.tpl(t.chipSitting, { v: sittingLabel(store.sittingById[id]) })); });
     state.categories.forEach(function (s) { bits.push(L.tpl(t.chipCategory, { v: catName(L.KEY_BY_SLUG[s]) })); });
     supplierGroups().forEach(function (g) { bits.push(L.tpl(t.chipSupplier, { v: g.label })); });
@@ -1427,7 +1429,6 @@
     // the filters" would land nowhere. There it opens the sheet instead.
     var skips = document.getElementsByClassName('lw-skip');
     if (skips[1]) skips[1].addEventListener('click', function (e) {
-      if (!isMobile()) return;
       if (e && e.preventDefault) e.preventDefault();
       openSheet();
     });
@@ -1508,11 +1509,10 @@
   }
 
   /* ---------- mobile sheet ---------- */
-  function isMobile() { try { return global.matchMedia('(max-width: 900px)').matches; } catch (e) { return false; } }
   function sheetOpen() { var r = $('rail'); return !!(r && r.classList.contains('is-open')); }
   function openSheet() {
-    if (!isMobile()) { var q = $('door-q'); if (q) q.focus(); return; }
     var r = $('rail'), s = $('lw-scrim'), b = $('sheet-open');
+    if (!r || !s || !b) return;
     r.classList.add('is-open');
     r.setAttribute('role', 'dialog');
     r.setAttribute('aria-modal', 'true');
@@ -1527,7 +1527,7 @@
     r.removeAttribute('role');
     r.removeAttribute('aria-modal');
     if (s) s.classList.remove('is-open');
-    if (b) { b.setAttribute('aria-expanded', 'false'); if (isMobile()) b.focus(); }
+    if (b) { b.setAttribute('aria-expanded', 'false'); b.focus(); }
     document.body.style.overflow = '';
   }
 
