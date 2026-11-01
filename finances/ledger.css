@@ -615,6 +615,42 @@ table.lt td.num .gloss { white-space: normal; min-width: 18ch; max-width: 34ch; 
 figure { margin: 0; }
 figcaption { font: var(--size-fine)/1.5 var(--sans); color: var(--ink-soft); margin-top: var(--s1); }
 
+/* ---------- the category donut ---------- */
+.donut-fig {
+  display: grid; grid-template-columns: minmax(200px, 280px) 1fr;
+  gap: var(--s3) var(--s5); align-items: center;
+  margin-top: var(--s3);
+}
+.donut-fig figcaption { grid-column: 1 / -1; }
+.donut-pic svg { display: block; width: 100%; height: auto; }
+.donut-pic path { stroke: var(--surface-card); stroke-width: 1.2; }
+.donut-pic path[data-key]:not([data-key="rest"]) { cursor: pointer; }
+.donut-pic path:hover { opacity: .78; }
+.donut-pic text { fill: var(--ink); }
+.donut-pic text.big { font: 700 15px var(--serif-display); letter-spacing: -0.01em; }
+.donut-pic text.yr { font: 700 9px var(--sans); fill: var(--ink-soft); letter-spacing: 0.08em; }
+.donut-list { list-style: none; margin: 0; padding: 0; counter-reset: none; font: var(--size-body-sm)/1.5 var(--sans); }
+.donut-list li {
+  display: grid; grid-template-columns: auto 1fr auto auto;
+  gap: 2px var(--s2); align-items: baseline;
+  padding: var(--s1) 0 var(--s2);
+  border-top: var(--rule-hair) solid var(--hair);
+}
+.donut-list li:first-child { border-top: var(--rule-heavy) solid var(--ink); }
+.donut-list .dot { width: 10px; height: 10px; display: inline-block; align-self: center; }
+.donut-list .name { font-weight: 700; color: var(--ink); }
+.donut-list a.name { text-decoration-color: var(--hair); }
+.donut-list a.name:hover { color: var(--accent); }
+.donut-list .share { font-weight: 700; font-variant-numeric: tabular-nums; }
+.donut-list .amt { color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.donut-list .why { grid-column: 2 / -1; margin: 0; font: var(--size-fine)/1.5 var(--serif-body); color: var(--ink-soft); max-width: 60ch; }
+@media (max-width: 640px) {
+  .donut-fig { grid-template-columns: 1fr; }
+  .donut-pic { max-width: 240px; margin: 0 auto; }
+  .donut-list li { grid-template-columns: auto 1fr auto; }
+  .donut-list .amt { grid-column: 2 / -1; }
+}
+
 /* ---------- payee profile ---------- */
 .profile { margin-top: var(--s3); }
 .profile-top { display: flex; flex-wrap: wrap; gap: var(--s2); align-items: baseline; justify-content: space-between; }
