@@ -35,7 +35,7 @@
 //    on www.ormstown.ca. Both languages, each to its own page.
 // ============================================================
 window.OO_LEDGER_CONTEXT = {
- "updated": "2026-10-19",
+ "updated": "2026-11-01",
  "categories": {
   "salaries-hr": {
    "en": "What it costs to employ the Town's staff: the payroll itself, the source deductions sent on to Revenu Québec and the Receiver General, the employees' group RRSP, plus training and job postings. Payroll appears in the minutes as one lump sum per sitting, so no one's individual pay can be read here.",
@@ -875,6 +875,17 @@ window.OO_LEDGER_CONTEXT = {
       "href_en": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-01_WEB.pdf",
       "href_fr": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-01_WEB.pdf"
      }
+    },
+    {
+     "en": "Resolution 26-06-159 extended CM Lex Conseil's specialized HR legal mandate (fees capped at $7,000 plus taxes), the third resolution on that file after 25-12-333 (Dec. 1, 2025, $12,500) and 26-01-012 (Jan. 19, 2026, $28,000).",
+     "fr": "La résolution 26-06-159 a prolongé le mandat de services juridiques spécialisés en ressources humaines de CM Lex Conseil (honoraires plafonnés à 7 000 $ plus taxes), troisième résolution sur ce dossier après 25-12-333 (1er déc. 2025, 12 500 $) et 26-01-012 (19 janv. 2026, 28 000 $).",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, June 1, 2026",
+      "fr": "PV du 1er juin 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-01_WEB.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-01_WEB.pdf"
+     }
     }
    ],
    "links": [
@@ -1252,6 +1263,61 @@ window.OO_LEDGER_CONTEXT = {
       "href_en": "/en/council-watch/july-6-2026/",
       "href_fr": "/fr/conseil-municipal/6-juillet-2026/"
      }
+    }
+   ]
+  },
+  "cmlex-conseil-inc": {
+   "en": "The law firm council hired for an external analysis of human-resources files, under three resolutions: 25-12-333 (Dec. 1, 2025, up to $12,500), 26-01-012 (Jan. 19, 2026, up to $28,000) and 26-06-159 (June 1, 2026, up to $7,000), all plus taxes. The lists bill it to file CM-112, and once to CM-263.",
+   "fr": "Le cabinet d'avocats que le conseil a retenu pour une analyse externe de dossiers de ressources humaines, en vertu de trois résolutions : 25-12-333 (1er déc. 2025, jusqu'à 12 500 $), 26-01-012 (19 janv. 2026, jusqu'à 28 000 $) et 26-06-159 (1er juin 2026, jusqu'à 7 000 $), plus taxes. Les listes la facturent au dossier CM-112, et une fois au dossier CM-263.",
+   "points": [
+    {
+     "en": "Original mandate, resolution 25-12-333: an \"analyse de recevabilité\" in human resources, on an offer of services dated November 28, 2025, added to the agenda at the table.",
+     "fr": "Mandat initial, résolution 25-12-333 : une analyse de recevabilité en ressources humaines, sur une offre de services datée du 28 novembre 2025, ajoutée à l'ordre du jour séance tenante.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Dec. 1, 2025",
+      "fr": "PV du 1er déc. 2025",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/PV-2025-12-01-Signe.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/PV-2025-12-01-Signe.pdf"
+     }
+    },
+    {
+     "en": "Renewal, resolution 26-01-012: a new offer dated January 14, 2026 to complete the analysis begun December 3, 2025.",
+     "fr": "Renouvellement, résolution 26-01-012 : une nouvelle offre datée du 14 janvier 2026 pour compléter l'analyse amorcée le 3 décembre 2025.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Jan. 19, 2026",
+      "fr": "PV du 19 janv. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/2026-01-19-Signe.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/2026-01-19-Signe.pdf"
+     }
+    },
+    {
+     "en": "Extension, resolution 26-06-159: a supplementary analysis. The August 3, 2026 list cites both 26-01-012 and 26-06-159 on its $4,024 line.",
+     "fr": "Prolongation, résolution 26-06-159 : un complément d'analyse. La liste du 3 août 2026 cite 26-01-012 et 26-06-159 sur sa ligne de 4 024 $.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, June 1, 2026",
+      "fr": "PV du 1er juin 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-01_WEB.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-01_WEB.pdf"
+     }
+    }
+   ],
+   "links": [
+    {
+     "kind": "recap",
+     "href_en": "/en/council-watch/june-1-2026/",
+     "href_fr": "/fr/conseil-municipal/1-juin-2026/",
+     "en": "June 1, 2026 sitting: the mandate extended",
+     "fr": "séance du 1er juin 2026 : le mandat prolongé"
+    },
+    {
+     "kind": "recap",
+     "href_en": "/en/council-watch/april-13-2026/",
+     "href_fr": "/fr/conseil-municipal/13-avril-2026/",
+     "en": "April 13, 2026: questions on staff turnover",
+     "fr": "séance du 13 avril 2026 : questions sur le roulement du personnel"
     }
    ]
   },
