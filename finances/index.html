@@ -68,9 +68,18 @@ if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-
          link into the tool (its words land in the bar): filled by
          renderPresets, the HTML is the empty frame so a failed script
          leaves nothing misleading. -->
+    <!-- What the law makes the Town publish and it has not posted, as of
+         the day ormstown.ca was last read: the stale items of the
+         Disclosures register, each linking to its row. Filled by
+         ledger-app.js (renderGaps); empty frame without a script. -->
+    <div class="lw-gaps" id="gaps" hidden>
+      <p class="gaps-lead" id="gaps-lead"></p>
+      <ul class="gaps-list" id="gaps-list"></ul>
+    </div>
+
     <div class="lw-ask" id="ask">
       <form class="door-search" id="door-form" role="search">
-        <label class="visually-hidden" for="door-q" id="l-door-q">Rechercher</label>
+        <label class="door-label" for="door-q" id="l-door-q">Rechercher</label>
         <div class="door-box">
           <input type="search" id="door-q" autocomplete="off" spellcheck="false" enterkeyhint="search">
           <button type="button" class="clr" id="door-clear" hidden aria-label="Effacer">✕</button>

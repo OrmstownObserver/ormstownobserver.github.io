@@ -1010,20 +1010,41 @@ tr.ctx-row > td { padding-top: 0; }
 /* ---------- the query bar ----------
    The page's one control, in the head. Under it the questions to try
    (.door-try), then the chips row. */
-.door-search { display: flex; gap: var(--s1); }
+.door-search { display: flex; flex-wrap: wrap; gap: var(--s1); }
+/* the label reads as the page's invitation, in the house red */
+.door-label {
+  flex: 1 0 100%;
+  font: 700 var(--size-label-lg)/1.3 var(--sans);
+  letter-spacing: var(--track-kicker);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 2px;
+}
 .door-search input {
   flex: 1 1 auto; min-width: 0;
-  min-height: 46px;
+  min-height: 50px;
   padding: 0 var(--s2);
-  border: var(--rule) solid var(--control-line);
+  border: 2px solid var(--accent);
   background: var(--surface-sunk);
   color: var(--ink);
   font: var(--size-body)/1.3 var(--sans);
 }
-.door-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-.door-search .btn { flex: none; }
+.door-search input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.door-search .btn { flex: none; min-height: 50px; background: var(--accent); border-color: var(--accent); color: var(--text-on-accent); }
+.door-search .btn:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+/* what the law requires and the Town has not posted: dated, factual, linked */
+.lw-gaps { margin: var(--s3) 0 0; padding: var(--s2) var(--s3); border: var(--rule-hair) solid var(--hair); border-left: 3px solid var(--accent); background: var(--surface-card); max-width: 82ch; }
+.lw-gaps[hidden] { display: none; }
+.gaps-lead { margin: 0; font: 700 var(--size-label-lg)/1.4 var(--sans); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink); }
+.gaps-list { list-style: none; margin: var(--s1) 0 0; padding: 0; font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); }
+.gaps-list li { padding: 3px 0; border-top: var(--rule-hair) solid var(--hair); }
+.gaps-list li:first-child { border-top: 0; }
+.gaps-list a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--hair); }
+.gaps-list a:hover, .gaps-list a:focus-visible { color: var(--accent); text-decoration-color: currentColor; }
+.gaps-list .st { font-weight: 700; color: var(--accent); margin-right: 6px; }
+.gaps-list .more a { color: var(--accent); }
 /* the query bar: box with its own clear ✕, help line, chips under it */
-.door-box { position: relative; flex: 1; min-width: 0; }
+.door-box { position: relative; flex: 1 1 auto; min-width: 0; }
 .door-box input { width: 100%; padding-right: 2.2em; }
 .door-box .clr {
   position: absolute; right: 6px; top: 50%; transform: translateY(-50%);

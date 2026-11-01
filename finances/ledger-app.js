@@ -821,8 +821,46 @@
     }
     setText('updated', L.tpl(t.updated, { date: f().dateLong(D.generated) }));
     renderPresets();
+    renderGaps();
   }
   function setText(id, s) { var n = $(id); if (n) n.textContent = s; }
+
+  // The head's standing notice of what the law makes the Town publish and
+  // it has not posted: the Disclosures register's "stale" and "missing"
+  // rows, by title, dated to the day ormstown.ca was last read. Each links
+  // to its row on the "What the law requires" tab, where the full dated
+  // statement and the law's article are. Nothing is characterized here.
+  function renderGaps() {
+    var box = $('gaps'), list = $('gaps-list'); if (!box || !list) return;
+    var t = T();
+    var items = ((DX && DX.items) || []).filter(function (it) { return it.status === 'stale' || it.status === 'missing'; });
+    box.hidden = !items.length;
+    if (!items.length) return;
+    setText('gaps-lead', L.tpl(t.gapsLead, { date: f().dateLong(DX.checked) }));
+    list.textContent = '';
+    function go(id) {
+      return function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return;
+        e.preventDefault();
+        setState({ tab: 'disclosures', payee: '' });
+        var row = $('disc-' + id);
+        if (row && row.scrollIntoView) row.scrollIntoView({ block: 'start' });
+        focusPanel();
+      };
+    }
+    items.forEach(function (it) {
+      var p = new URLSearchParams(); p.set('lang', state.lang); p.set('tab', 'disclosures');
+      list.appendChild(V.el('li', null, [
+        V.el('span', { cls: 'st', text: t.gapsNot }),
+        V.el('a', { href: '?' + p.toString() + '#disc-' + it.id, text: it[state.lang] || it.en, on: { click: go(it.id) } })
+      ]));
+    });
+    var pm = new URLSearchParams(); pm.set('lang', state.lang); pm.set('tab', 'disclosures');
+    list.appendChild(V.el('li', { cls: 'more' }, V.el('a', {
+      href: '?' + pm.toString() + '#register', text: t.gapsMore,
+      on: { click: go('') }
+    })));
+  }
 
   // The front door's questions: each one is WORDS the query bar understands,
   // so the card teaches by example — the reader sees the words land in the
