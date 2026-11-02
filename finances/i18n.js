@@ -183,9 +183,9 @@ window.OO_I18N = {
   // in the same edit or validate.js check #5 fails immediately.
 
   wsDeck: "Les dépenses municipales, rendues consultables et vérifiables pour une plus grande transparence.",
-  welcomeLead: "Première visite ?",
-  welcomeText: "Tout ce qui se trouve ici est un paiement approuvé par le conseil d'Ormstown, copié ligne par ligne des procès-verbaux officiels. Il n'y a pas de mauvaise façon d'entrer : tapez un mot dans la case, choisissez une des questions en dessous, ou faites simplement défiler et suivez ce qui vous intéresse. Chaque chiffre se retrace jusqu'au procès-verbal d'où il vient.",
   wsStatus: "{lines} lignes de paiement · {payees} fournisseurs · {sittings} séances · {first} à {last}",
+  pulseAria: "Les paiements approuvés à chaque séance, de la première à la plus récente ; cliquez une barre pour ouvrir la séance",
+  pulsePartial: "saisie en cours",
   skipResults: "Aller aux résultats",
   skipFilters: "Aller aux filtres",
   refBudget: "Budget 2026, méthode et sources",
@@ -229,7 +229,7 @@ window.OO_I18N = {
   railTitle: "Filtres",
   railSearch: "Posez une question au grand livre",
   gapsKicker: "Des documents auxquels les citoyens ont droit",
-  gapsLead: "La loi québécoise demande à chaque municipalité de publier ces documents. En attendant qu'ils paraissent sur ormstown.ca (dernière vérification le {date}), l'Observer en offre sa propre lecture :",
+  gapsLead: "La loi demande à chaque municipalité de les publier. En attendant Ormstown (vérifié le {date}), l'Observer en offre sa lecture :",
   gapsMore: "Le registre complet : chaque obligation, ce qui est publié, et ce que l'Observer y supplée",
   railScope: "Année",
   railSittings: "Séances",
@@ -654,9 +654,9 @@ window.OO_I18N = {
   // in the same edit or validate.js check #5 fails immediately.
 
   wsDeck: "Municipal spending, made searchable and verifiable for greater transparency.",
-  welcomeLead: "New here?",
-  welcomeText: "Everything on this page is a payment Ormstown's council approved, copied line by line from the official minutes. There is no wrong way in: type a word in the box, pick one of the questions beneath it, or simply scroll and follow what catches your eye. Every number can be traced back to the minutes it came from.",
   wsStatus: "{lines} payment lines · {payees} suppliers · {sittings} sittings · {first} to {last}",
+  pulseAria: "Payments approved at each sitting, first to latest; click a bar to open that sitting",
+  pulsePartial: "still being entered",
   skipResults: "Skip to the results",
   skipFilters: "Skip to the filters",
   refBudget: "Budget 2026, method and sources",
@@ -700,7 +700,7 @@ window.OO_I18N = {
   railTitle: "Filters",
   railSearch: "Ask the Ledger a question",
   gapsKicker: "Records residents are entitled to",
-  gapsLead: "Québec law asks every municipality to publish these. Until they appear on ormstown.ca (last checked {date}), the Observer offers its own reading of each:",
+  gapsLead: "The law asks every municipality to post these. Until Ormstown does (checked {date}), the Observer offers its reading:",
   gapsMore: "The full register: every obligation, what is posted, and what the Observer fills in",
   railScope: "Year",
   railSittings: "Sittings",

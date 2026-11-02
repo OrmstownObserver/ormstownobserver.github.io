@@ -56,15 +56,32 @@
    the drawer of filters). The double rule closes the head. */
 .lw-head { border-bottom: var(--rule-heavy) double var(--line); padding-bottom: var(--s3); }
 .lw-facts { margin: var(--s1) 0 0; font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); }
-.lw-welcome {
-  margin: var(--s3) 0 0;
-  padding-left: var(--s3);
-  border-left: var(--rule-hair) solid var(--hair);
-  font: var(--size-body)/1.65 var(--serif-body);
-  color: var(--ink);
-  max-width: 62ch;
+.lw-pulse { margin: var(--s3) 0 0; max-width: 82ch; }
+.pulse-bars {
+  display: flex; align-items: flex-end; gap: 3px;
+  height: 64px; padding-bottom: 1px;
+  border-bottom: var(--rule-hair) solid var(--hair);
 }
-.lw-welcome strong { font-weight: 700; color: var(--accent); }
+.pulse-bars .bar {
+  flex: 1 1 0; min-width: 0; height: var(--h, 6%);
+  margin: 0; padding: 0; border: 0; border-radius: 1px 1px 0 0;
+  background: var(--ink-soft); opacity: .45; cursor: pointer;
+  transition: height .35s ease-out, background-color .2s;
+}
+.pulse-bars .bar.on { background: var(--accent); opacity: .85; }
+.pulse-bars .bar.part { background-image: repeating-linear-gradient(135deg, transparent 0 3px, var(--surface-card) 3px 5px); }
+.pulse-bars .bar:hover, .pulse-bars .bar.picked { opacity: 1; background-color: var(--ink); }
+.pulse-bars .bar.on:hover, .pulse-bars .bar.on.picked { background-color: var(--accent); }
+.pulse-bars .bar:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pulse-bars .yr {
+  flex: none; align-self: flex-end;
+  font: 700 var(--size-label-sm)/1 var(--sans); letter-spacing: var(--track-label);
+  color: var(--ink-soft); padding: 0 4px 2px 0;
+}
+.pulse-bars .yr.on { color: var(--accent); }
+.pulse-bars .yr + .yr, .pulse-bars .bar + .yr { margin-left: var(--s2); }
+.lw-pulse .lw-facts { margin-top: var(--s1); }
+@media (prefers-reduced-motion: reduce) { .pulse-bars .bar { transition: none; } }
 .lw-head .lw-ask { margin: var(--s3) 0 0; padding: 0; border: 0; }
 .door-try { margin: var(--s2) 0 0; font: var(--size-caption)/1.8 var(--sans); color: var(--ink-soft); }
 .door-try .door-lead { display: inline; margin: 0; font: 700 var(--size-label)/1.3 var(--sans); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-soft); margin-right: var(--s1); }

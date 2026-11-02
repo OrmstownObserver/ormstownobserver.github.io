@@ -62,7 +62,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261102-4';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261102-5';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -785,8 +785,6 @@
     setText('eyebrow', t.eyebrow);
     setText('title', t.title);
     setText('deck', t.wsDeck);
-    setText('welcome-lead', t.welcomeLead);
-    setText('welcome-text', t.welcomeText);
     setText('disclaimer-h', t.devShortH);
     setText('disclaimer-b', t.devShort);
     setText('disclaimer-more', t.devMore);
@@ -823,7 +821,36 @@
     }
     setText('updated', L.tpl(t.updated, { date: f().dateLong(D.generated) }));
     renderPresets();
+    renderPulse();
     renderGaps();
+  }
+
+  // The head's picture: every sitting in the record as a bar, oldest first,
+  // the year in view in red, the other year in soft ink, a sitting still
+  // being entered hatched. A click opens that sitting's lines.
+  function renderPulse() {
+    var box = $('pulse-bars'); if (!box || !store) return;
+    var t = T(), f0 = f();
+    var sits = store.sittings, max = 0;
+    sits.forEach(function (s) { if (s.total > max) max = s.total; });
+    box.textContent = '';
+    box.setAttribute('aria-label', t.pulseAria);
+    var lastYear = null;
+    sits.forEach(function (s) {
+      if (s.year !== lastYear) {
+        box.appendChild(V.el('span', { cls: 'yr' + (s.year === state.scope ? ' on' : ''), text: s.year, 'aria-hidden': 'true' }));
+        lastYear = s.year;
+      }
+      var h = max ? Math.max(6, Math.round(100 * s.total / max)) : 6;
+      var label = sittingLabel(s) + ' — ' + f0.money(s.total) + (s.coverage !== 'full' ? ' · ' + t.pulsePartial : '');
+      box.appendChild(V.el('button', {
+        type: 'button',
+        cls: 'bar' + (s.year === state.scope ? ' on' : '') + (s.coverage !== 'full' ? ' part' : '') + (state.sittings.indexOf(s.m) >= 0 ? ' picked' : ''),
+        style: '--h:' + h + '%',
+        title: label, 'aria-label': label,
+        on: { click: function () { setState(sittingPatch(s.m)); focusPanel(); } }
+      }));
+    });
   }
   function setText(id, s) { var n = $(id); if (n) n.textContent = s; }
 
