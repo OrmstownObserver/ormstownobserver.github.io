@@ -1138,7 +1138,6 @@ tr.ctx-row > td { padding-top: 0; }
   min-width: 32px; min-height: 32px; line-height: 1;
 }
 .door-box .clr:hover { color: var(--accent); }
-.door-help { margin: var(--s1) 0 0; max-width: 82ch; font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); }
 .lw-ask { scroll-margin-top: var(--s3); }
 /* under 901px the mobile control bar is sticky at the top: settle below it */
 @media print { .lw-ask { display: none; } }

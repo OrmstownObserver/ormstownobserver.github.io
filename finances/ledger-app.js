@@ -62,7 +62,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261102-7';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261102-8';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -794,7 +794,6 @@
     setText('l-door-q', t.railSearch);
     setText('door-go', t.doorGo);
     setText('door-lead', t.doorLead);
-    setText('door-help', t.doorHelp);
     var dq = $('door-q');
     if (dq) {
       dq.setAttribute('placeholder', t.doorPlaceholder);
