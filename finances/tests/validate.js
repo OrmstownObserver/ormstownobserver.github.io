@@ -151,6 +151,7 @@ if (fs.existsSync(payPath)) {
     'tocBudget', 'tocCapital', 'tocCoverage', 'tocMethod', 'tocDocuments', 'tocDictionary',
     'presetTop', 'presetTopSub', 'presetLast', 'presetLastSub', 'presetWhere', 'presetWhereSub',
     'presetLaw', 'presetLawSub', 'presetBig', 'presetBigSub', 'presetLegal', 'presetLegalSub',
+    'presetTopAsk', 'presetLastAsk', 'presetWhereAsk', 'presetLawAsk', 'presetBigAsk', 'presetLegalAsk',
     'ctxKind_recap', 'ctxKind_story', 'ctxKind_minutes', 'ctxKind_document',
     'ctxKind_budget', 'ctxKind_method', 'ctxKind_ledger', 'ctxKind_seao',
     'discStatusFound', 'discStatusPartial', 'discStatusStale', 'discStatusMissing',
@@ -502,6 +503,85 @@ if (fs.existsSync(payPath)) {
   }
 }
 
+// ---- 15. The lexicon (ledger-lexicon.js) — hand-authored, so: every target
+// is a real category slug, tab or payee slug (frozen in payee-slugs.json or
+// built by the live store from payments.json), every entry has words in
+// both languages, no word points at two targets (the parser takes the
+// longest phrase, so a shared word would be a silent coin toss), and the
+// stop list never swallows a word another group needs.
+{
+  const lxPath = path.join(dir, 'ledger-lexicon.js');
+  if (!fs.existsSync(lxPath)) fail('ledger-lexicon.js is missing');
+  else {
+    eval(fs.readFileSync(lxPath, 'utf8'));
+    eval(fs.readFileSync(path.join(dir, 'ledger-data.js'), 'utf8'));
+    const LX = window.OO_LEDGER_LEXICON || {};
+    const L = window.OO_LEDGER;
+    const norm = (w) => L.searchNorm(w);
+    const frozen = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, 'payee-slugs.json'), 'utf8'))));
+    const live = fs.existsSync(path.join(dir, 'payments.json'))
+      ? new Set(Object.keys(L.build(D, JSON.parse(fs.readFileSync(path.join(dir, 'payments.json'), 'utf8'))).payees))
+      : new Set();
+    const catSlugs = new Set(Object.values(L.SLUGS));
+    const TABS = new Set(['categories', 'sittings', 'payees', 'payments', 'disclosures']);
+    let bad = 0, words = 0;
+    const err = (m) => { bad++; fail('lexicon: ' + m); };
+    const owner = new Map();          // normalised word -> target
+    const claim = (w, target, where) => {
+      const n = norm(w);
+      if (!n) return err(`${where}: empty word "${w}"`);
+      if (w !== w.toLowerCase()) err(`${where}: "${w}" is not lower-case`);
+      words++;
+      if (owner.has(n) && owner.get(n) !== target) err(`"${w}" belongs to both ${owner.get(n)} and ${target}`);
+      owner.set(n, target);
+    };
+    const both = (e, where) => {
+      if (!e || !Array.isArray(e.en) || !Array.isArray(e.fr) || !e.en.length || !e.fr.length) err(`${where} needs en[] and fr[] words`);
+    };
+    for (const [slug, e] of Object.entries(LX.categories || {})) {
+      if (!catSlugs.has(slug)) err(`category "${slug}" is not a ledger category slug`);
+      both(e, `category ${slug}`);
+      [...(e.en || []), ...(e.fr || [])].forEach((w) => claim(w, 'category:' + slug, `category ${slug}`));
+    }
+    for (const slug of catSlugs) if (slug !== 'other' && !(LX.categories || {})[slug]) err(`category "${slug}" has no words`);
+    let notFrozen = [];
+    for (const [k, e] of Object.entries(LX.suppliers || {})) {
+      if (typeof e.en !== 'string' || typeof e.fr !== 'string' || !e.en.trim() || !e.fr.trim()) err(`supplier ${k} needs an en and fr label`);
+      if (!Array.isArray(e.slugs) || !e.slugs.length) err(`supplier ${k} has no slugs`);
+      if (!Array.isArray(e.words) || !e.words.length) err(`supplier ${k} has no words`);
+      for (const s of e.slugs || []) {
+        if (!frozen.has(s) && !live.has(s)) err(`supplier ${k}: slug "${s}" is neither frozen nor built from payments.json`);
+        else if (!frozen.has(s)) notFrozen.push(s);
+      }
+      (e.words || []).forEach((w) => claim(w, 'supplier:' + k, `supplier ${k}`));
+    }
+    for (const [tab, e] of Object.entries(LX.views || {})) {
+      if (!TABS.has(tab)) err(`view "${tab}" is not a tab`);
+      both(e, `view ${tab}`);
+      [...(e.en || []), ...(e.fr || [])].forEach((w) => claim(w, 'view:' + tab, `view ${tab}`));
+    }
+    for (const k of ['over', 'under', 'credits']) {
+      const e = (LX.amount || {})[k];
+      both(e, `amount ${k}`);
+      [...((e && e.en) || []), ...((e && e.fr) || [])].forEach((w) => claim(w, 'amount:' + k, `amount ${k}`));
+    }
+    for (let m = 1; m <= 12; m++) {
+      const e = (LX.months || {})[String(m)];
+      both(e, `month ${m}`);
+      [...((e && e.en) || []), ...((e && e.fr) || [])].forEach((w) => claim(w, 'month:' + m, `month ${m}`));
+    }
+    for (const k of ['lastSitting', 'thisYear', 'lastYear']) {
+      const e = (LX.time || {})[k];
+      both(e, `time ${k}`);
+      [...((e && e.en) || []), ...((e && e.fr) || [])].forEach((w) => claim(w, 'time:' + k, `time ${k}`));
+    }
+    both(LX.stop, 'stop');
+    [...((LX.stop && LX.stop.en) || []), ...((LX.stop && LX.stop.fr) || [])].forEach((w) => claim(w, 'stop', 'stop'));
+    if (!bad) ok(`lexicon: ${words} words over ${Object.keys(LX.categories || {}).length} categories, ${Object.keys(LX.suppliers || {}).length} suppliers, ${Object.keys(LX.views || {}).length} views; no word serves two targets` +
+      (notFrozen.length ? ` (${notFrozen.length} supplier slugs resolve live but are not yet in payee-slugs.json)` : ''));
+  }
+}
+
 // ---- Result
 if (failures) { console.error(`\n${failures} check(s) failed.`); process.exit(1); }
 console.log('\nAll checks passed.');
@@ -520,6 +600,6 @@ function listFiles(root, re) {
 function listScripts(root) {
   return listFiles(root, /\.js$/).filter(p => {
     const rel = path.relative(root, p);
-    return !rel.startsWith('tools' + path.sep) && !rel.startsWith('tests' + path.sep) && rel !== 'i18n.js' && rel !== 'spending-data.js' && rel !== 'ledger-context.js' && rel !== 'ledger-disclosures.js';
+    return !rel.startsWith('tools' + path.sep) && !rel.startsWith('tests' + path.sep) && rel !== 'i18n.js' && rel !== 'spending-data.js' && rel !== 'ledger-context.js' && rel !== 'ledger-disclosures.js' && rel !== 'ledger-lexicon.js';
   });
 }

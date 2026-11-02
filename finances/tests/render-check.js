@@ -67,6 +67,7 @@ run(path.join(dir, 'spending-data.js'));
 run(path.join(dir, 'i18n.js'));
 run(path.join(dir, 'ledger-context.js'));
 run(path.join(dir, 'ledger-disclosures.js'));
+run(path.join(dir, 'ledger-lexicon.js'));
 run(path.join(V2, 'ledger-data.js'));
 run(path.join(V2, 'ledger-charts.js'));
 run(path.join(V2, 'ledger-views.js'));
@@ -130,8 +131,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // whatever the current scope is)
   eq(rowsChildren('sitting-list'), 22, 'sitting checklist lists 20 sittings under 2 year headings');
   eq(rowsChildren('category-list'), 14, 'category checklist lists all 14 used categories');
-  if (!textOf($('q-help'))) fail('search help text is empty');
-  else ok('search help text explains what is and is not searched');
+  if ($('q')) fail('the rail still has a search box (#q) — the query bar at the top is the only one');
+  else ok('the rail has no search box of its own');
+  if (!textOf($('door-help'))) fail('the query bar has no help text');
+  else ok('the query bar explains what plain words it understands');
 
   // ---- 3b. from here on, the payments assertions need the Payments tab.
   // The year is the only timeframe: a legacy ?scope=all resolves to the
@@ -149,15 +152,19 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     else ok('the year selector offers no "all years" pill');
   }
 
-  // ---- 4. a hidden payee is reachable by search - the whole point
-  const q = $('q');
+  // ---- 4. a hidden payee is reachable by search - the whole point.
+  // "petro" is a lexicon supplier now, so it narrows by slug; the free-text
+  // path is exercised in 4b with a word the lexicon does not know.
+  const q = $('door-q');
   q.value = 'petro';
-  q.dispatch('input');
-  await new Promise((r) => setTimeout(r, 220));
+  $('door-form').dispatch('submit');
+  await tick();
   const petroRows = rowsIn('payments-table');
   const petroStatus = textOf($('results-status'));
-  if (!/310/.test(petroStatus)) fail('search "petro" did not reach all 310 lines of 2026: ' + petroStatus);
-  else ok('search "petro" reaches all 310 lines of a payee whose name never says "Petro"');
+  // 311, not the 310 a text search found: the supplier filter also takes the
+  // one line billed under the bare numbered company, with no trade name.
+  if (!/311/.test(petroStatus)) fail('"petro" did not reach all 311 lines of 2026: ' + petroStatus);
+  else ok('"petro" reaches all 311 lines of a payee whose name never says "Petro", one more than text search did');
   eq(petroRows.length, 150, 'the search result set is still paged at 150 rows');
   const firstPayee = textOf(petroRows[0].children[0]);
   if (!/9534-8702/.test(firstPayee)) fail('first petro row is not the Petro-Canada payee: ' + firstPayee);
@@ -165,10 +172,118 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   if (!petroRows.some((r) => /Petro-Canada/.test(textOf(r.children[1])))) fail('no trade-name chip rendered');
   else ok('the trade-name prefix is kept as a chip, not discarded');
 
-  // ---- 5. clearing the search restores everything
-  $('q-clear').click();
+  // ---- 4b. free text still reaches the line descriptions
+  q.value = 'déneigement';
+  $('door-form').dispatch('submit');
   await tick();
-  eq(rowsIn('payments-table').length, 150, 'clearing the search restores the full result set');
+  if (!rowsIn('payments-table').length) fail('free-text search "déneigement" found nothing');
+  else ok(`free-text search still reaches line descriptions (${rowsIn('payments-table').length} rows for "déneigement")`);
+  if (!/Recherche/.test(textOf($('chips')))) fail('a free-text search shows no search chip');
+  else ok('a free-text search is shown as a chip under the bar');
+
+  // ---- 5. clearing the bar restores everything
+  $('door-clear').click();
+  await tick();
+  navigateTo('?lang=fr&tab=payments&scope=all');
+  await tick();
+  eq(rowsIn('payments-table').length, 150, 'clearing the bar restores the full result set');
+
+  // ---- 5b. THE QUERY BAR: plain words become chips and an answer line.
+  // Each case is driven through the box exactly as a reader types it.
+  {
+    const parse = win.OO_LEDGER_APP.parseAsk;
+    const ask = async (text, lang) => {
+      navigateTo('?lang=' + (lang || 'en'));
+      await tick();
+      $('door-q').value = text;
+      $('door-form').dispatch('submit');
+      await tick();
+      return { chips: textOf($('chips')), answer: textOf($('answer')), search: win.location.search, rows: rowsIn('payments-table').length };
+    };
+    let r = await ask('gas june 2025', 'en');
+    if (!/category=vehicle-fuel-maintenance/.test(r.search) || !/sitting=2025-06/.test(r.search)) fail('"gas june 2025" did not resolve to the fuel category on the June 2025 list: ' + r.search);
+    else ok('"gas june 2025" → fuel category + the June 2025 sitting, both as explicit URL params');
+    if (/[?&]q=/.test(r.search)) fail('"gas june 2025" left words in the free-text search: ' + r.search);
+    else ok('"gas june 2025" leaves no free text behind');
+    if (!/Vehicle fuel/.test(r.chips) || !/Sitting/.test(r.chips)) fail('chips do not show the category and the sitting: ' + r.chips);
+    else ok('the chips under the bar name the category and the sitting');
+    if (!/\$[\d,]+\.\d\d on Vehicle fuel & maintenance on the June 2, 2025 list: \d+ lines, \d+ suppliers\./.test(r.answer)) fail('EN answer line is not "$X on <category> on the <date> list: N lines, M suppliers.": ' + r.answer);
+    else ok('EN answer line: ' + r.answer.slice(0, 90));
+    if (!/previous month/.test(r.answer)) fail('the answer line does not say a list mostly pays the previous month\'s invoices');
+    else ok('the answer line carries the previous-month note');
+    if (!r.rows) fail('"gas june 2025" rendered no rows');
+    if (/[?&]ask=/.test(r.search)) fail('the address still carries ?ask= after parsing');
+    else ok('the address is normalised to explicit params, never ?ask=');
+
+    const r2 = await ask('essence juin 2025', 'fr');
+    if (r2.search.replace('lang=fr', 'lang=en') !== r.search) fail(`FR "essence juin 2025" (${r2.search}) differs from EN "gas june 2025" (${r.search})`);
+    else ok('"essence juin 2025" resolves to exactly the same view as "gas june 2025"');
+    if (!/Carburant et entretien des véhicules à la liste du 2 juin 2025 : \d+ lignes, \d+ fournisseurs\./.test(r2.answer)) fail('FR answer line: ' + r2.answer);
+    else ok('FR answer line: ' + r2.answer.slice(0, 90));
+    if (!/mois précédent/.test(r2.answer)) fail('FR answer line lacks the previous-month note');
+
+    r = await ask('dunton', 'en');
+    if (!/supplier=/.test(r.search)) fail('"dunton" did not become a supplier filter: ' + r.search);
+    else ok('"dunton" → a supplier filter over every spelling of the name: ' + decodeURIComponent(r.search).slice(0, 110));
+    if (!/Supplier: Dunton Rainville/.test(r.chips)) fail('no single "Supplier: Dunton Rainville" chip: ' + r.chips);
+    else ok('three slugs, one chip: "Supplier: Dunton Rainville"');
+    if (!r.rows) fail('"dunton" rendered no rows');
+    else ok(`"dunton" renders ${r.rows} rows`);
+    if (!/to Dunton Rainville in 2026/.test(r.answer)) fail('"dunton" answer line: ' + r.answer);
+    else ok('"dunton" answer: ' + r.answer.slice(0, 80));
+    const cnt = rowsIn('payments-table');
+    if (cnt.some((tr) => !/dunton/i.test(textOf(tr.children[0])))) fail('a non-Dunton row is in the Dunton result');
+    else ok('every row of the supplier filter is a Dunton Rainville line');
+
+    r = await ask('over 25000 2026', 'en');
+    if (!/min=25000/.test(r.search) || /scope=/.test(r.search)) fail('"over 25000 2026" did not resolve to min=25000 in the default year: ' + r.search);
+    else ok('"over 25000 2026" → $25,000 and up, 2026 as the frame');
+    if (!/\$25,000\.00 and up/.test(r.chips)) fail('no amount chip: ' + r.chips);
+    r = await ask('plus de 25 000 $ en 2025', 'fr');
+    if (!/min=25000/.test(r.search) || !/scope=2025/.test(r.search)) fail('"plus de 25 000 $ en 2025" → ' + r.search);
+    else ok('"plus de 25 000 $ en 2025" → 25 000 $ et plus, en 2025 (spaces and $ understood)');
+
+    r = await ask('last sitting', 'en');
+    if (!/sitting=2026-08/.test(r.search)) fail('"last sitting" is not the August 2026 list: ' + r.search);
+    else ok('"last sitting" → the latest itemized sitting');
+    r = await ask('dernière séance', 'fr');
+    if (!/sitting=2026-08/.test(r.search)) fail('"dernière séance" is not the August 2026 list: ' + r.search);
+    else ok('"dernière séance" → the same');
+
+    // month without a year → the latest year that has that sitting
+    r = await ask('september', 'en');
+    if (!/sitting=2025-09/.test(r.search)) fail('"september" (no 2026 list yet) did not fall back to 2025-09: ' + r.search);
+    else ok('"september" alone → September 2025, the latest year with that list');
+    // month + year with no list → the year, and a note
+    r = await ask('september 2026', 'en');
+    if (/sitting=/.test(r.search)) fail('"september 2026" invented a sitting: ' + r.search);
+    else if (!/No September 2026 list/.test(r.answer)) fail('"september 2026" does not explain the missing list: ' + r.answer);
+    else ok('"september 2026" → the 2026 frame with a note that no such list exists yet');
+
+    // a full sentence: stop words vanish, the rest is parsed
+    r = await ask('how much did the Town spend on lawyers in March 2026', 'en');
+    if (!/category=legal-services/.test(r.search) || !/sitting=2026-03/.test(r.search) || /[?&]q=/.test(r.search)) fail('the sentence did not parse clean: ' + r.search);
+    else ok('"how much did the Town spend on lawyers in March 2026" → legal services, March 2026 list, no leftovers');
+
+    // nonsense: exactly today's text search
+    r = await ask('zorblax quux', 'en');
+    if (!/q=zorblax\+quux/.test(r.search) || /category=|sitting=|supplier=|min=|max=/.test(r.search)) fail('a nonsense query did not fall back to plain text search: ' + r.search);
+    else ok('a nonsense query falls back to the plain text search: ' + r.search);
+    if (!/matching “zorblax quux”/.test(r.answer)) fail('the answer line for a text search: ' + r.answer);
+    else ok('a text search still gets an answer line (0 lines, honestly)');
+
+    // the parser is pure: same words, same result, no store needed
+    const p1 = parse('Essence JUIN 2025'), p2 = parse('essence juin 2025');
+    delete p1.text; delete p2.text;
+    eq(JSON.stringify(p1), JSON.stringify(p2), 'the parser ignores case and accents');
+    eq(parse('').matched, false, 'an empty question matches nothing');
+
+    // ?ask= in a link reproduces the parsed state
+    navigateTo('?lang=en&ask=' + encodeURIComponent('gas june 2025'));
+    await tick();
+    if (!/Vehicle fuel/.test(textOf($('chips'))) || !/Sitting/.test(textOf($('chips')))) fail('?ask= link did not reproduce the parsed state: ' + textOf($('chips')));
+    else ok('a ?ask= link reproduces the parsed state (boot then normalises the address to explicit params)');
+  }
 
   // ---- 6. sorting
   clickSort('payments-table', 4);            // Amount
