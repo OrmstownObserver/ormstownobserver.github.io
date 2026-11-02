@@ -56,6 +56,15 @@
    the drawer of filters). The double rule closes the head. */
 .lw-head { border-bottom: var(--rule-heavy) double var(--line); padding-bottom: var(--s3); }
 .lw-facts { margin: var(--s1) 0 0; font: var(--size-caption)/1.6 var(--sans); color: var(--ink-soft); }
+.lw-welcome {
+  margin: var(--s3) 0 0;
+  padding-left: var(--s3);
+  border-left: var(--rule-hair) solid var(--hair);
+  font: var(--size-body)/1.65 var(--serif-body);
+  color: var(--ink);
+  max-width: 62ch;
+}
+.lw-welcome strong { font-weight: 700; color: var(--accent); }
 .lw-head .lw-ask { margin: var(--s3) 0 0; padding: 0; border: 0; }
 .door-try { margin: var(--s2) 0 0; font: var(--size-caption)/1.8 var(--sans); color: var(--ink-soft); }
 .door-try .door-lead { display: inline; margin: 0; font: 700 var(--size-label)/1.3 var(--sans); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-soft); margin-right: var(--s1); }

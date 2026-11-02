@@ -183,6 +183,8 @@ window.OO_I18N = {
   // in the same edit or validate.js check #5 fails immediately.
 
   wsDeck: "Les dépenses municipales, rendues consultables et vérifiables pour une plus grande transparence.",
+  welcomeLead: "Première visite ?",
+  welcomeText: "Tout ce qui se trouve ici est un paiement approuvé par le conseil d'Ormstown, copié ligne par ligne des procès-verbaux officiels. Il n'y a pas de mauvaise façon d'entrer : tapez un mot dans la case, choisissez une des questions en dessous, ou faites simplement défiler et suivez ce qui vous intéresse. Chaque chiffre se retrace jusqu'au procès-verbal d'où il vient.",
   wsStatus: "{lines} lignes de paiement · {payees} fournisseurs · {sittings} séances · {first} à {last}",
   skipResults: "Aller aux résultats",
   skipFilters: "Aller aux filtres",
@@ -652,6 +654,8 @@ window.OO_I18N = {
   // in the same edit or validate.js check #5 fails immediately.
 
   wsDeck: "Municipal spending, made searchable and verifiable for greater transparency.",
+  welcomeLead: "New here?",
+  welcomeText: "Everything on this page is a payment Ormstown's council approved, copied line by line from the official minutes. There is no wrong way in: type a word in the box, pick one of the questions beneath it, or simply scroll and follow what catches your eye. Every number can be traced back to the minutes it came from.",
   wsStatus: "{lines} payment lines · {payees} suppliers · {sittings} sittings · {first} to {last}",
   skipResults: "Skip to the results",
   skipFilters: "Skip to the filters",
