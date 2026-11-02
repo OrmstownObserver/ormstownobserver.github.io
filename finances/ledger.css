@@ -609,7 +609,6 @@ table.lt td.num .gloss { white-space: normal; min-width: 18ch; max-width: 34ch; 
 /* ---------- charts ---------- */
 .chartbox { position: relative; width: 100%; margin-top: var(--s3); }
 .chartbox.trend { height: 240px; }
-.chartbox.cats  { height: 380px; }
 .chartbox.top   { height: 420px; }
 .chartbox.mini  { height: 180px; }
 figure { margin: 0; }

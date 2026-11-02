@@ -538,19 +538,8 @@
     if (!rows.length) { out.appendChild(emptyBlock(ctx, t.emptyCats, ctx.widenOffers())); return out; }
     var total = rows.reduce(function (a, r) { return a + r.amt; }, 0) || 1;
 
-    // Mock-up (2026-11-01): the donut is the default picture; ?chart=bars
-    // keeps the horizontal bars reachable so the two can be compared.
-    var bars = /[?&]chart=bars(?:&|$)/.test((global.location && global.location.search) || '');
-    if (bars) {
-      var cv = el('div', { cls: 'chartbox cats' }, el('canvas', { id: 'chart-cats' }));
-      out.appendChild(el('figure', null, [cv, el('figcaption', { id: 'cap-cats' })]));
-      ctx.chart('cats', 'chart-cats', 'cap-cats', rows.map(function (r) {
-        var picked = ctx.state.categories.length && ctx.state.categories.indexOf(L.SLUGS[r.key]) < 0;
-        return { label: ctx.catName(r.key), value: r.amt, color: picked ? ctx.dim(r.color) : ctx.color(r.color), id: r.key };
-      }), { onPick: function (key) { ctx.on.category(key); } });
-    } else {
-      out.appendChild(catDonut(ctx, rows, total));
-    }
+    // The donut replaced the horizontal bars on 2026-11-02 (editor's choice).
+    out.appendChild(catDonut(ctx, rows, total));
 
     var table = el('table', { cls: 'lt', id: 'categories-table' });
     table.appendChild(el('caption', { cls: 'visually-hidden', text: t.capCategories }));
