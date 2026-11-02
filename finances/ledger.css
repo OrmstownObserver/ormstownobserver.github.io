@@ -623,9 +623,32 @@ figcaption { font: var(--size-fine)/1.5 var(--sans); color: var(--ink-soft); mar
 }
 .donut-fig figcaption { grid-column: 1 / -1; }
 .donut-pic svg { display: block; width: 100%; height: auto; }
-.donut-pic path { stroke: var(--surface-card); stroke-width: 1.2; }
+.donut-pic path {
+  stroke: var(--surface-card); stroke-width: 1.2;
+  transform-box: view-box; transform-origin: 100px 100px;
+  transition: transform .22s ease-out, opacity .22s ease-out, filter .22s ease-out;
+}
 .donut-pic path[data-key]:not([data-key="rest"]) { cursor: pointer; }
-.donut-pic path:hover { opacity: .78; }
+/* One slice lit: it lifts and brightens, the others step back. */
+.donut-fig.is-hot .donut-pic path { opacity: .38; }
+.donut-fig.is-hot .donut-pic path.hot { opacity: 1; transform: scale(1.06); filter: brightness(1.12) saturate(1.1); stroke: var(--ink); }
+.donut-pic text { transition: opacity .15s; }
+.donut-list li { transition: background-color .2s ease-out, box-shadow .2s ease-out; cursor: default; }
+.donut-list li.hot {
+  background: var(--surface-sunk);
+  box-shadow: inset 3px 0 0 var(--accent), 0 0 0 var(--s1) var(--surface-sunk);
+}
+.donut-list li.hot .name, .donut-list li.hot a.name { color: var(--accent); }
+.donut-list li.hot .dot { animation: donut-pulse .9s ease-out 1; }
+@keyframes donut-pulse {
+  0%   { box-shadow: 0 0 0 0 currentColor; }
+  100% { box-shadow: 0 0 0 9px transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .donut-pic path, .donut-list li { transition: none; }
+  .donut-fig.is-hot .donut-pic path.hot { transform: none; }
+  .donut-list li.hot .dot { animation: none; }
+}
 .donut-pic text { fill: var(--ink); }
 .donut-pic text.big { font: 700 15px var(--serif-display); letter-spacing: -0.01em; }
 .donut-pic text.yr { font: 700 9px var(--sans); fill: var(--ink-soft); letter-spacing: 0.08em; }
@@ -637,7 +660,7 @@ figcaption { font: var(--size-fine)/1.5 var(--sans); color: var(--ink-soft); mar
   border-top: var(--rule-hair) solid var(--hair);
 }
 .donut-list li:first-child { border-top: var(--rule-heavy) solid var(--ink); }
-.donut-list .dot { width: 10px; height: 10px; display: inline-block; align-self: center; }
+.donut-list .dot { width: 10px; height: 10px; display: inline-block; align-self: center; border-radius: 50%; }
 .donut-list .name { font-weight: 700; color: var(--ink); }
 .donut-list a.name { text-decoration-color: var(--hair); }
 .donut-list a.name:hover { color: var(--accent); }

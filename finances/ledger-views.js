@@ -464,25 +464,50 @@
     var sum = pos.reduce(function (a, s) { return a + s.amt; }, 0) || 1;
 
     var svg = svgEl('svg', { viewBox: '0 0 200 200', role: 'img', 'aria-label': L.tpl(t.donutAria, { year: ctx.state.scope }), focusable: 'false' });
+    var fig = el('figure', { cls: 'donut-fig' });
+    var big = svgEl('text', { x: '100', y: '96', 'text-anchor': 'middle', 'class': 'big', text: f.money0(total) });
+    var sub = svgEl('text', { x: '100', y: '114', 'text-anchor': 'middle', 'class': 'yr', text: String(ctx.state.scope) });
+    // Hovering a slice lights its row, and hovering a row lights its slice;
+    // the centre swaps to that category's share. Pointer only: the rows
+    // keep every figure, so nothing is lost without a mouse.
+    var parts = {}, lit = null;
+    function hot(id, on) {
+      var pr = parts[id]; if (!pr) return;
+      if (lit && lit !== pr) { lit.path.setAttribute('class', ''); lit.li.setAttribute('class', ''); }
+      lit = on ? pr : null;
+      if (on) fig.setAttribute('class', 'donut-fig is-hot'); else fig.setAttribute('class', 'donut-fig');
+      pr.path.setAttribute('class', on ? 'hot' : '');
+      pr.li.setAttribute('class', on ? 'hot' : '');
+      big.textContent = on ? f.pct(pr.s.amt / sum) : f.money0(total);
+      sub.textContent = on ? pr.s.short : String(ctx.state.scope);
+    }
+    function hoverable(node, id) {
+      node.addEventListener('mouseenter', function () { hot(id, true); });
+      node.addEventListener('mouseleave', function () { hot(id, false); });
+    }
     var a = 0;
     pos.forEach(function (s) {
-      var a1 = a + s.amt / sum;
-      var path = svgEl('path', { d: arcPath(a, a1, 92, 60), fill: s.color, 'data-key': s.key || 'rest' },
+      var a1 = a + s.amt / sum, id = s.key || 'rest';
+      s.short = s.name.length > 22 ? s.name.slice(0, 21).replace(/[\s,&]+\S*$/, '') + '…' : s.name;
+      var path = svgEl('path', { d: arcPath(a, a1, 92, 60), fill: s.color, 'data-key': id },
         svgEl('title', { text: s.name + ' — ' + f.pct(s.amt / sum) + ' · ' + f.money(s.amt) }));
       if (s.key) {
         path.setAttribute('tabindex', '-1');
         path.addEventListener('click', function () { ctx.on.categoryOnly(s.key); });
       }
+      hoverable(path, id);
+      parts[id] = { path: path, s: s };
       svg.appendChild(path);
       a = a1;
     });
-    svg.appendChild(svgEl('text', { x: '100', y: '96', 'text-anchor': 'middle', 'class': 'big', text: f.money0(total) }));
-    svg.appendChild(svgEl('text', { x: '100', y: '114', 'text-anchor': 'middle', 'class': 'yr', text: String(ctx.state.scope) }));
+    svg.appendChild(big);
+    svg.appendChild(sub);
 
     var list = el('ol', { cls: 'donut-list' });
     pos.forEach(function (s) {
+      var id = s.key || 'rest';
       var head = [
-        el('span', { cls: 'dot', style: 'background:' + s.color, 'aria-hidden': 'true' }),
+        el('span', { cls: 'dot', style: 'background:' + s.color + ';color:' + s.color, 'aria-hidden': 'true' }),
         s.key
           ? navLink(ctx.hrefCategory(s.key), s.name, function () { ctx.on.categoryOnly(s.key); }, { cls: 'linkbtn name', title: t.catSeeLines })
           : el('span', { cls: 'name', text: s.name }),
@@ -490,12 +515,14 @@
         el('span', { cls: 'amt', text: f.money(s.amt) })
       ];
       var why = s.key ? firstSentence(ctxText(ctx.context.category(s.key), lang)) : s.restNames.join(' · ');
-      var li = el('li', null, head);
+      var li = el('li', { 'data-key': id }, head);
       if (why) li.appendChild(el('p', { cls: 'why', text: why }));
+      hoverable(li, id);
+      parts[id].li = li;
       list.appendChild(li);
     });
 
-    return el('figure', { cls: 'donut-fig' }, [
+    return append(fig, [
       el('div', { cls: 'donut-pic' }, svg),
       list,
       el('figcaption', { text: t.donutCaption })
