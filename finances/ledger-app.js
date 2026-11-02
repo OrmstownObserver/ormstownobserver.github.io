@@ -62,7 +62,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261102-2';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261102-3';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -836,6 +836,7 @@
     var items = ((DX && DX.items) || []).filter(function (it) { return it.status === 'stale' || it.status === 'missing'; });
     box.hidden = !items.length;
     if (!items.length) return;
+    setText('gaps-kick', t.gapsKicker);
     setText('gaps-lead', L.tpl(t.gapsLead, { date: f().dateLong(DX.checked) }));
     list.textContent = '';
     function go(id) {
@@ -850,10 +851,9 @@
     }
     items.forEach(function (it) {
       var p = new URLSearchParams(); p.set('lang', state.lang); p.set('tab', 'disclosures');
-      list.appendChild(V.el('li', null, [
-        V.el('span', { cls: 'st', text: t.gapsNot }),
+      list.appendChild(V.el('li', null,
         V.el('a', { href: '?' + p.toString() + '#disc-' + it.id, text: it[state.lang] || it.en, on: { click: go(it.id) } })
-      ]));
+      ));
     });
     var pm = new URLSearchParams(); pm.set('lang', state.lang); pm.set('tab', 'disclosures');
     list.appendChild(V.el('li', { cls: 'more' }, V.el('a', {
