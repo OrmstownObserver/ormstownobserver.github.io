@@ -133,8 +133,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   eq(rowsChildren('category-list'), 14, 'category checklist lists all 14 used categories');
   if ($('q')) fail('the rail still has a search box (#q) — the query bar at the top is the only one');
   else ok('the rail has no search box of its own');
-  if (!textOf($('door-help'))) fail('the query bar has no help text');
-  else ok('the query bar explains what plain words it understands');
+  if ($('door-help')) fail('the query bar still has a help line (removed 2026-11-02, editor\'s choice)');
+  else ok('the query bar has no help line under it');
 
   // ---- 3b. from here on, the payments assertions need the Payments tab.
   // The year is the only timeframe: a legacy ?scope=all resolves to the

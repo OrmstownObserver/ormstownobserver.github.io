@@ -406,6 +406,129 @@
     return strip;
   }
 
+
+  /* ---------- the category donut ----------
+     The Categories tab's picture: a donut of the year's approved payments
+     with the explanation of each slice beside it, drawn from the category's
+     "Why the Town pays for this" lead in ledger-context.js. Hand-drawn SVG,
+     not Chart.js: it is theme-aware through CSS, needs no library on the
+     default tab, and the reading order (slice, share, amount, why) is real
+     DOM a screen reader walks. Six named slices plus one grey "other"
+     bucket — more wedges than that stop being distinguishable, and the
+     table underneath still lists every category.                          */
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  function svgEl(tag, props, kids) {
+    var n = document.createElementNS ? document.createElementNS(SVG_NS, tag) : document.createElement(tag), k;
+    if (props) for (k in props) if (Object.prototype.hasOwnProperty.call(props, k) && props[k] != null) {
+      if (k === 'text') n.textContent = String(props[k]);
+      else if (k === 'on') { for (var ev in props[k]) n.addEventListener(ev, props[k][ev]); }
+      else n.setAttribute(k, String(props[k]));
+    }
+    return append(n, kids);
+  }
+  function arcPath(a0, a1, R, r) {
+    // a0..a1 in turns from 12 o'clock, clockwise. A full ring is two halves.
+    if (a1 - a0 >= 0.9999) return arcPath(a0, a0 + 0.5, R, r) + ' ' + arcPath(a0 + 0.5, a1, R, r);
+    function pt(a, rad) { var t = (a - 0.25) * 2 * Math.PI; return (100 + rad * Math.cos(t)).toFixed(2) + ' ' + (100 + rad * Math.sin(t)).toFixed(2); }
+    var big = (a1 - a0) > 0.5 ? 1 : 0;
+    return 'M' + pt(a0, R) + ' A' + R + ' ' + R + ' 0 ' + big + ' 1 ' + pt(a1, R) +
+      ' L' + pt(a1, r) + ' A' + r + ' ' + r + ' 0 ' + big + ' 0 ' + pt(a0, r) + ' Z';
+  }
+  function firstSentence(s) {
+    s = String(s || '').trim();
+    // The lead's opening clause: what comes before its first colon,
+    // semicolon or full stop. The leads are written "What it is: the list",
+    // so the clause alone is the plain definition.
+    var m = s.match(/^[^.!?:;]*(?=[.!?:;](?:\s|$))/);
+    var out = (m ? m[0] : s).replace(/\s+$/, '');
+    if (out.length > 120) out = out.slice(0, 118).replace(/[\s,]+\S*$/, '') + '…';
+    return out;
+  }
+  function catDonut(ctx, rows, total) {
+    var t = ctx.T, f = ctx.f, lang = ctx.lang;
+    var sorted = rows.slice().sort(function (a, b) { return b.amt - a.amt; });
+    var NAMED = sorted.length > 7 ? 6 : sorted.length;
+    var slices = sorted.slice(0, NAMED).map(function (r) {
+      var picked = ctx.state.categories.length && ctx.state.categories.indexOf(L.SLUGS[r.key]) < 0;
+      return { key: r.key, name: ctx.catName(r.key), amt: r.amt, color: picked ? ctx.dim(r.color) : ctx.color(r.color), lines: r.lines };
+    });
+    var rest = sorted.slice(NAMED);
+    if (rest.length) {
+      slices.push({
+        key: null, name: L.tpl(t.donutRest, { n: f.num(rest.length) }),
+        amt: rest.reduce(function (a, r) { return a + r.amt; }, 0),
+        color: ctx.color('#9c948b'), restNames: rest.map(function (r) { return ctx.catName(r.key); })
+      });
+    }
+    var pos = slices.filter(function (s) { return s.amt > 0; });
+    var sum = pos.reduce(function (a, s) { return a + s.amt; }, 0) || 1;
+
+    var svg = svgEl('svg', { viewBox: '0 0 200 200', role: 'img', 'aria-label': L.tpl(t.donutAria, { year: ctx.state.scope }), focusable: 'false' });
+    var fig = el('figure', { cls: 'donut-fig' });
+    var big = svgEl('text', { x: '100', y: '96', 'text-anchor': 'middle', 'class': 'big', text: f.money0(total) });
+    var sub = svgEl('text', { x: '100', y: '114', 'text-anchor': 'middle', 'class': 'yr', text: String(ctx.state.scope) });
+    // Hovering a slice lights its row, and hovering a row lights its slice;
+    // the centre swaps to that category's share. Pointer only: the rows
+    // keep every figure, so nothing is lost without a mouse.
+    var parts = {}, lit = null;
+    function hot(id, on) {
+      var pr = parts[id]; if (!pr) return;
+      if (lit && lit !== pr) { lit.path.setAttribute('class', ''); lit.li.setAttribute('class', ''); }
+      lit = on ? pr : null;
+      if (on) fig.setAttribute('class', 'donut-fig is-hot'); else fig.setAttribute('class', 'donut-fig');
+      pr.path.setAttribute('class', on ? 'hot' : '');
+      pr.li.setAttribute('class', on ? 'hot' : '');
+      big.textContent = on ? f.pct(pr.s.amt / sum) : f.money0(total);
+      sub.textContent = on ? pr.s.short : String(ctx.state.scope);
+    }
+    function hoverable(node, id) {
+      node.addEventListener('mouseenter', function () { hot(id, true); });
+      node.addEventListener('mouseleave', function () { hot(id, false); });
+    }
+    var a = 0;
+    pos.forEach(function (s) {
+      var a1 = a + s.amt / sum, id = s.key || 'rest';
+      s.short = s.name.length > 22 ? s.name.slice(0, 21).replace(/[\s,&]+\S*$/, '') + '…' : s.name;
+      var path = svgEl('path', { d: arcPath(a, a1, 92, 60), fill: s.color, 'data-key': id },
+        svgEl('title', { text: s.name + ' — ' + f.pct(s.amt / sum) + ' · ' + f.money(s.amt) }));
+      if (s.key) {
+        path.setAttribute('tabindex', '-1');
+        path.addEventListener('click', function () { ctx.on.categoryOnly(s.key); });
+      }
+      hoverable(path, id);
+      parts[id] = { path: path, s: s };
+      svg.appendChild(path);
+      a = a1;
+    });
+    svg.appendChild(big);
+    svg.appendChild(sub);
+
+    var list = el('ol', { cls: 'donut-list' });
+    pos.forEach(function (s) {
+      var id = s.key || 'rest';
+      var head = [
+        el('span', { cls: 'dot', style: 'background:' + s.color + ';color:' + s.color, 'aria-hidden': 'true' }),
+        s.key
+          ? navLink(ctx.hrefCategory(s.key), s.name, function () { ctx.on.categoryOnly(s.key); }, { cls: 'linkbtn name', title: t.catSeeLines })
+          : el('span', { cls: 'name', text: s.name }),
+        el('span', { cls: 'share', text: f.pct(s.amt / sum) }),
+        el('span', { cls: 'amt', text: f.money(s.amt) })
+      ];
+      var why = s.key ? firstSentence(ctxText(ctx.context.category(s.key), lang)) : s.restNames.join(' · ');
+      var li = el('li', { 'data-key': id }, head);
+      if (why) li.appendChild(el('p', { cls: 'why', text: why }));
+      hoverable(li, id);
+      parts[id].li = li;
+      list.appendChild(li);
+    });
+
+    return append(fig, [
+      el('div', { cls: 'donut-pic' }, svg),
+      list,
+      el('figcaption', { text: t.donutCaption })
+    ]);
+  }
+
   /* ============================================================
      CATEGORIES
      ============================================================ */
@@ -415,12 +538,8 @@
     if (!rows.length) { out.appendChild(emptyBlock(ctx, t.emptyCats, ctx.widenOffers())); return out; }
     var total = rows.reduce(function (a, r) { return a + r.amt; }, 0) || 1;
 
-    var cv = el('div', { cls: 'chartbox cats' }, el('canvas', { id: 'chart-cats' }));
-    out.appendChild(el('figure', null, [cv, el('figcaption', { id: 'cap-cats' })]));
-    ctx.chart('cats', 'chart-cats', 'cap-cats', rows.map(function (r) {
-      var picked = ctx.state.categories.length && ctx.state.categories.indexOf(L.SLUGS[r.key]) < 0;
-      return { label: ctx.catName(r.key), value: r.amt, color: picked ? ctx.dim(r.color) : ctx.color(r.color), id: r.key };
-    }), { onPick: function (key) { ctx.on.category(key); } });
+    // The donut replaced the horizontal bars on 2026-11-02 (editor's choice).
+    out.appendChild(catDonut(ctx, rows, total));
 
     var table = el('table', { cls: 'lt', id: 'categories-table' });
     table.appendChild(el('caption', { cls: 'visually-hidden', text: t.capCategories }));

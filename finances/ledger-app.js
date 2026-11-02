@@ -62,7 +62,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261030-3';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261102-8';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -794,7 +794,6 @@
     setText('l-door-q', t.railSearch);
     setText('door-go', t.doorGo);
     setText('door-lead', t.doorLead);
-    setText('door-help', t.doorHelp);
     var dq = $('door-q');
     if (dq) {
       dq.setAttribute('placeholder', t.doorPlaceholder);
@@ -821,8 +820,75 @@
     }
     setText('updated', L.tpl(t.updated, { date: f().dateLong(D.generated) }));
     renderPresets();
+    renderPulse();
+    renderGaps();
+  }
+
+  // The head's picture: every sitting in the record as a bar, oldest first,
+  // the year in view in red, the other year in soft ink, a sitting still
+  // being entered hatched. A click opens that sitting's lines.
+  function renderPulse() {
+    var box = $('pulse-bars'); if (!box || !store) return;
+    var t = T(), f0 = f();
+    var sits = store.sittings, max = 0;
+    sits.forEach(function (s) { if (s.total > max) max = s.total; });
+    box.textContent = '';
+    box.setAttribute('aria-label', t.pulseAria);
+    var lastYear = null;
+    sits.forEach(function (s) {
+      if (s.year !== lastYear) {
+        box.appendChild(V.el('span', { cls: 'yr' + (s.year === state.scope ? ' on' : ''), text: s.year, 'aria-hidden': 'true' }));
+        lastYear = s.year;
+      }
+      var h = max ? Math.max(6, Math.round(100 * s.total / max)) : 6;
+      var label = sittingLabel(s) + ' — ' + f0.money(s.total) + (s.coverage !== 'full' ? ' · ' + t.pulsePartial : '');
+      box.appendChild(V.el('button', {
+        type: 'button',
+        cls: 'bar' + (s.year === state.scope ? ' on' : '') + (s.coverage !== 'full' ? ' part' : '') + (state.sittings.indexOf(s.m) >= 0 ? ' picked' : ''),
+        style: '--h:' + h + '%',
+        title: label, 'aria-label': label,
+        on: { click: function () { setState(sittingPatch(s.m)); focusPanel(); } }
+      }));
+    });
   }
   function setText(id, s) { var n = $(id); if (n) n.textContent = s; }
+
+  // The head's standing notice of what the law makes the Town publish and
+  // it has not posted: the Disclosures register's "stale" and "missing"
+  // rows, by title, dated to the day ormstown.ca was last read. Each links
+  // to its row on the "What the law requires" tab, where the full dated
+  // statement and the law's article are. Nothing is characterized here.
+  function renderGaps() {
+    var box = $('gaps'), list = $('gaps-list'); if (!box || !list) return;
+    var t = T();
+    var items = ((DX && DX.items) || []).filter(function (it) { return it.status === 'stale' || it.status === 'missing'; });
+    box.hidden = !items.length;
+    if (!items.length) return;
+    setText('gaps-kick', t.gapsKicker);
+    setText('gaps-lead', L.tpl(t.gapsLead, { date: f().dateLong(DX.checked) }));
+    list.textContent = '';
+    function go(id) {
+      return function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return;
+        e.preventDefault();
+        setState({ tab: 'disclosures', payee: '' });
+        var row = $('disc-' + id);
+        if (row && row.scrollIntoView) row.scrollIntoView({ block: 'start' });
+        focusPanel();
+      };
+    }
+    items.forEach(function (it) {
+      var p = new URLSearchParams(); p.set('lang', state.lang); p.set('tab', 'disclosures');
+      list.appendChild(V.el('li', null,
+        V.el('a', { href: '?' + p.toString() + '#disc-' + it.id, text: it[state.lang] || it.en, on: { click: go(it.id) } })
+      ));
+    });
+    var pm = new URLSearchParams(); pm.set('lang', state.lang); pm.set('tab', 'disclosures');
+    list.appendChild(V.el('li', { cls: 'more' }, V.el('a', {
+      href: '?' + pm.toString() + '#register', text: t.gapsMore,
+      on: { click: go('') }
+    })));
+  }
 
   // The front door's questions: each one is WORDS the query bar understands,
   // so the card teaches by example — the reader sees the words land in the
@@ -835,14 +901,15 @@
     var box = $('presets'); if (!box || !store) return;
     var t = T();
     box.textContent = '';
-    PRESETS.forEach(function (key) {
+    PRESETS.forEach(function (key, i) {
       var words = presetWords(key);
       var sub = L.tpl(t[key + 'Sub'], { year: defaultScope(), date: f().dateLong(store.sittings[store.sittings.length - 1].sittingDate) });
       var p = new URLSearchParams(); p.set('lang', state.lang); p.set('ask', words);
-      box.appendChild(V.el('li', null, V.el('a', {
-        href: '?' + p.toString(),
+      if (i) box.appendChild(V.el('span', { cls: 'sep', 'aria-hidden': 'true', text: ' · ' }));
+      box.appendChild(V.el('a', {
+        href: '?' + p.toString(), title: sub, text: t[key],
         on: { click: function (e) { if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button > 0) return; e.preventDefault(); applyAsk(words); } }
-      }, [V.el('strong', { text: t[key] }), V.el('span', { text: sub })])));
+      }));
     });
   }
 
@@ -1285,7 +1352,7 @@
     var t = T();
     box.appendChild(V.el('span', { cls: 'lead', text: t.jumpLead }));
     m.list.forEach(function (r, i) {
-      if (i) box.appendChild(document.createTextNode(' · '));
+      if (i) box.appendChild(V.el('span', { cls: 'sep', 'aria-hidden': 'true', text: ' · ' }));
       box.appendChild(V.navLink(hrefFor({ payee: r.slug }), r.name, function () { openProfile(r.slug); }));
     });
     if (m.n > m.list.length) {
@@ -1314,7 +1381,7 @@
     var t = T();
     box.appendChild(V.el('span', { cls: 'lead', text: t.yearJumpLead }));
     hits.forEach(function (h, i) {
-      if (i) box.appendChild(document.createTextNode(' · '));
+      if (i) box.appendChild(V.el('span', { cls: 'sep', 'aria-hidden': 'true', text: ' · ' }));
       box.appendChild(V.navLink(hrefFor({ scope: h.y, sittings: [] }), L.tpl(t.yearJumpItem, { year: h.y, n: f().num(h.n) }),
         function () { setState({ scope: h.y, sittings: [] }); focusPanel(); }));
     });
@@ -1378,7 +1445,8 @@
     var t = T(), box = $('print-meta'); if (!box) return;
     var bits = [];
     if (state.q) bits.push(L.tpl(t.chipSearch, { v: state.q }));
-    bits.push(L.tpl(t.chipScope, periodFields()));
+    var pf = periodFields();
+    bits.push(state.scope + ' · ' + L.tpl(t.chipScope, pf) + ' ' + L.tpl(t.chipRange, pf));
     state.sittings.forEach(function (id) { bits.push(L.tpl(t.chipSitting, { v: sittingLabel(store.sittingById[id]) })); });
     state.categories.forEach(function (s) { bits.push(L.tpl(t.chipCategory, { v: catName(L.KEY_BY_SLUG[s]) })); });
     supplierGroups().forEach(function (g) { bits.push(L.tpl(t.chipSupplier, { v: g.label })); });
@@ -1427,7 +1495,6 @@
     // the filters" would land nowhere. There it opens the sheet instead.
     var skips = document.getElementsByClassName('lw-skip');
     if (skips[1]) skips[1].addEventListener('click', function (e) {
-      if (!isMobile()) return;
       if (e && e.preventDefault) e.preventDefault();
       openSheet();
     });
@@ -1508,11 +1575,10 @@
   }
 
   /* ---------- mobile sheet ---------- */
-  function isMobile() { try { return global.matchMedia('(max-width: 900px)').matches; } catch (e) { return false; } }
   function sheetOpen() { var r = $('rail'); return !!(r && r.classList.contains('is-open')); }
   function openSheet() {
-    if (!isMobile()) { var q = $('door-q'); if (q) q.focus(); return; }
     var r = $('rail'), s = $('lw-scrim'), b = $('sheet-open');
+    if (!r || !s || !b) return;
     r.classList.add('is-open');
     r.setAttribute('role', 'dialog');
     r.setAttribute('aria-modal', 'true');
@@ -1527,7 +1593,7 @@
     r.removeAttribute('role');
     r.removeAttribute('aria-modal');
     if (s) s.classList.remove('is-open');
-    if (b) { b.setAttribute('aria-expanded', 'false'); if (isMobile()) b.focus(); }
+    if (b) { b.setAttribute('aria-expanded', 'false'); b.focus(); }
     document.body.style.overflow = '';
   }
 
