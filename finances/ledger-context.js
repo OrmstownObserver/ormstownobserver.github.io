@@ -1044,6 +1044,13 @@ window.OO_LEDGER_CONTEXT = {
    ],
    "links": [
     {
+     "kind": "document",
+     "href_en": "/finances/sources/pv-2026-09-08/#en",
+     "href_fr": "/finances/sources/pv-2026-09-08/#fr",
+     "en": "The corrected annex (minutes of Sept. 8, 2026, as sent by the clerk's office)",
+     "fr": "L'annexe corrigée (PV du 8 sept. 2026, tel que transmis par le greffe)"
+    },
+    {
      "kind": "recap",
      "href_en": "/en/council-watch/full-time-fire-chief-emergency-plan/",
      "href_fr": "/fr/conseil-municipal/directeur-incendie-temps-plein/",
