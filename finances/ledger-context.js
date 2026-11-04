@@ -35,7 +35,7 @@
 //    on www.ormstown.ca. Both languages, each to its own page.
 // ============================================================
 window.OO_LEDGER_CONTEXT = {
- "updated": "2026-11-01",
+ "updated": "2026-11-04",
  "categories": {
   "salaries-hr": {
    "en": "What it costs to employ the Town's staff: the payroll itself, the source deductions sent on to Revenu Québec and the Receiver General, the employees' group RRSP, plus training and job postings. Payroll appears in the minutes as one lump sum per sitting, so no one's individual pay can be read here.",
@@ -990,6 +990,72 @@ window.OO_LEDGER_CONTEXT = {
      "href_fr": "/fr/conseil-municipal/emprunts-172-173-2026/",
      "en": "Two borrowing by-laws, $11.2 million",
      "fr": "Deux règlements d'emprunt, 11,2 millions $"
+    }
+   ]
+  },
+  "2026-09": {
+   "en": "Council approved a list totalling $641,844.24 at this sitting (resolution 26-09-236). The annex first posted with these minutes repeated the August list line for line; the lines shown here come from the corrected annex the clerk's office sent the Observer on November 2, 2026, whose total matches the resolution to the cent. As of November 4, 2026, the copy on ormstown.ca still carries the August annex.",
+   "fr": "Le conseil a approuvé à cette séance une liste totalisant 641 844,24 $ (résolution 26-09-236). L'annexe d'abord publiée avec ce procès-verbal reprenait ligne pour ligne la liste d'août; les lignes affichées ici proviennent de l'annexe corrigée que le greffe a transmise à l'Observer le 2 novembre 2026, dont le total correspond à la résolution au cent près. Au 4 novembre 2026, la copie publiée sur ormstown.ca porte encore l'annexe d'août.",
+   "points": [
+    {
+     "en": "Resolution 26-09-236 approves the list « pour des montants totalisant 641 844,24 $ ».",
+     "fr": "La résolution 26-09-236 approuve la liste « pour des montants totalisant 641 844,24 $ ».",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Sept. 8, 2026",
+      "fr": "PV du 8 sept. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf"
+     }
+    },
+    {
+     "en": "Also decided that night, as commitments rather than payments on this list: the digitization of the Town's plans to Everial, $6,000 before taxes, the lower of two offers (resolution 26-09-237).",
+     "fr": "Aussi décidé ce soir-là, à titre d'engagements et non de paiements de cette liste : la numérisation des plans de la Municipalité confiée à Everial, 6 000 $ avant taxes, la plus basse de deux offres (résolution 26-09-237).",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Sept. 8, 2026",
+      "fr": "PV du 8 sept. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf"
+     }
+    },
+    {
+     "en": "$23,393 before taxes to Prudent groupe coopératif to revise and produce the municipal emergency (civil security) plan (resolution 26-09-246).",
+     "fr": "23 393 $ avant taxes à Prudent groupe coopératif pour la révision et la production du plan municipal de sécurité civile (résolution 26-09-246).",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Sept. 8, 2026",
+      "fr": "PV du 8 sept. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf"
+     }
+    },
+    {
+     "en": "Two strips of land bought by agreement for the rue du Prince-Albert reconstruction: part of lot 5 807 209 for $1,360 and part of lot 5 807 109 for $7,315 (resolutions 26-09-249 and 26-09-250).",
+     "fr": "Deux parcelles achetées de gré à gré pour la réfection de la rue du Prince-Albert : une partie du lot 5 807 209 pour 1 360 $ et une partie du lot 5 807 109 pour 7 315 $ (résolutions 26-09-249 et 26-09-250).",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Sept. 8, 2026",
+      "fr": "PV du 8 sept. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf"
+     }
+    }
+   ],
+   "links": [
+    {
+     "kind": "recap",
+     "href_en": "/en/council-watch/full-time-fire-chief-emergency-plan/",
+     "href_fr": "/fr/conseil-municipal/directeur-incendie-temps-plein/",
+     "en": "Ormstown to hire a full-time fire chief, rewrite emergency plan",
+     "fr": "Ormstown veut un directeur incendie à temps plein et un nouveau plan d’urgence"
+    },
+    {
+     "kind": "recap",
+     "href_en": "/en/council-watch/who-gets-the-rec-center/",
+     "href_fr": "/fr/conseil-municipal/qui-obtient-la-salle/",
+     "en": "Who gets the Rec-Center? The new policy for local non-profits",
+     "fr": "Qui obtient la salle? Les nouvelles règles d’Ormstown"
     }
    ]
   }

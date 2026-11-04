@@ -9,10 +9,10 @@
 // «Autres fournisseurs», so every month sums exactly to its
 // category totals and (for full-coverage months) to the adopted total.
 // Categories are Observer-assigned (see provenance + tools/apply-category-rules.js).
-// Generated: 2026-10-05
+// Generated: 2026-11-04
 // ============================================================
 window.OO_SPENDING = {
- "generated": "2026-10-05",
+ "generated": "2026-11-04",
  "provenance": {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
@@ -1593,6 +1593,57 @@ window.OO_SPENDING = {
     ],
     "Subsidies & community": [
      300,
+     1
+    ]
+   }
+  },
+  {
+   "m": "2026-09",
+   "label_fr": "Septembre 2026",
+   "label_en": "September 2026",
+   "total": 641844.24,
+   "coverage": "full",
+   "session": "Séance ordinaire 2026-09-08, rés. 26-09-236",
+   "url": "https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf",
+   "cats": {
+    "Contracts — works": [
+     175902.13,
+     14
+    ],
+    "Salaries & HR": [
+     172261.01,
+     4
+    ],
+    "Professional services": [
+     97355.18,
+     20
+    ],
+    "Waste & recycling": [
+     95800.97,
+     3
+    ],
+    "Supplies & operations": [
+     41875.9,
+     71
+    ],
+    "Utilities": [
+     21638.18,
+     26
+    ],
+    "Vehicle fuel & maintenance": [
+     19252.03,
+     39
+    ],
+    "Software & IT": [
+     12714.31,
+     7
+    ],
+    "Legal — external counsel": [
+     4872.07,
+     2
+    ],
+    "Regional shares & memberships": [
+     172.46,
      1
     ]
    }
@@ -8954,6 +9005,335 @@ window.OO_SPENDING = {
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Subsidies & community",
    300,
+   1
+  ],
+  [
+   "2026-09",
+   "— (paie municipale)",
+   "Salaries & HR",
+   171417.55,
+   1
+  ],
+  [
+   "2026-09",
+   "Les Industries Simexco Inc.",
+   "Contracts — works",
+   156207.02,
+   1
+  ],
+  [
+   "2026-09",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   93725.67,
+   2
+  ],
+  [
+   "2026-09",
+   "BCGO S.E.N.C.R.L.",
+   "Professional services",
+   42021.94,
+   4
+  ],
+  [
+   "2026-09",
+   "Orflow Géosciences Inc.",
+   "Professional services",
+   39466.84,
+   4
+  ],
+  [
+   "2026-09",
+   "Hydro-Québec",
+   "Utilities",
+   21189.21,
+   23
+  ],
+  [
+   "2026-09",
+   "Archives Lanaudière",
+   "Professional services",
+   7853.11,
+   2
+  ],
+  [
+   "2026-09",
+   "Pelouse Alex Gaulin",
+   "Contracts — works",
+   7661.17,
+   1
+  ],
+  [
+   "2026-09",
+   "Chemtrade Chemicals Canada Ltd.",
+   "Supplies & operations",
+   7659.93,
+   1
+  ],
+  [
+   "2026-09",
+   "Garage C.P. & Fils Inc.",
+   "Vehicle fuel & maintenance",
+   7029.92,
+   3
+  ],
+  [
+   "2026-09",
+   "Complexe Médical Ormstown inc",
+   "Supplies & operations",
+   7012.12,
+   1
+  ],
+  [
+   "2026-09",
+   "Laplante Radiateurs Inc.",
+   "Vehicle fuel & maintenance",
+   5471.39,
+   1
+  ],
+  [
+   "2026-09",
+   "Solution Informatique de la Montérégie",
+   "Software & IT",
+   5340.49,
+   1
+  ],
+  [
+   "2026-09",
+   "2547-0857 Québec Inc. (Infotech)",
+   "Software & IT",
+   4990.79,
+   2
+  ],
+  [
+   "2026-09",
+   "Technivolt Électrique Inc.",
+   "Contracts — works",
+   4654.12,
+   3
+  ],
+  [
+   "2026-09",
+   "DUNTON RAINVILLE SENC AVOCATS",
+   "Legal — external counsel",
+   4225.33,
+   1
+  ],
+  [
+   "2026-09",
+   "Ouellet Samantha",
+   "Professional services",
+   3505.36,
+   2
+  ],
+  [
+   "2026-09",
+   "9141855 Canada Inc.",
+   "Vehicle fuel & maintenance",
+   3242.24,
+   2
+  ],
+  [
+   "2026-09",
+   "Environor Canada Inc.",
+   "Supplies & operations",
+   3057.02,
+   1
+  ],
+  [
+   "2026-09",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2667.42,
+   1
+  ],
+  [
+   "2026-09",
+   "9534-8702 Québec Inc. (Petro Canada)",
+   "Vehicle fuel & maintenance",
+   2497.09,
+   22
+  ],
+  [
+   "2026-09",
+   "Sanibert",
+   "Supplies & operations",
+   2319.25,
+   8
+  ],
+  [
+   "2026-09",
+   "Ministre des Finances (Y2007896)",
+   "Supplies & operations",
+   2300.14,
+   2
+  ],
+  [
+   "2026-09",
+   "Visa Desjardins",
+   "Supplies & operations",
+   2234.15,
+   2
+  ],
+  [
+   "2026-09",
+   "Eurofins Environex",
+   "Professional services",
+   2211.51,
+   5
+  ],
+  [
+   "2026-09",
+   "Grue Mobile Veilleux Inc.",
+   "Contracts — works",
+   2201.78,
+   1
+  ],
+  [
+   "2026-09",
+   "9386-0120 Québec Inc",
+   "Waste & recycling",
+   2075.3,
+   1
+  ],
+  [
+   "2026-09",
+   "Glover James Samuel",
+   "Contracts — works",
+   2000,
+   1
+  ],
+  [
+   "2026-09",
+   "Équipements Pro-Fit Inc.",
+   "Supplies & operations",
+   1762.17,
+   1
+  ],
+  [
+   "2026-09",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   1618.38,
+   3
+  ],
+  [
+   "2026-09",
+   "Bionest Inc.",
+   "Supplies & operations",
+   1529.05,
+   4
+  ],
+  [
+   "2026-09",
+   "Hibon Inc.",
+   "Contracts — works",
+   1476.41,
+   2
+  ],
+  [
+   "2026-09",
+   "Entreprises S. Besner Inc.",
+   "Contracts — works",
+   1448.68,
+   4
+  ],
+  [
+   "2026-09",
+   "JBF Javel-Bois-Franc Inc.",
+   "Supplies & operations",
+   1410.84,
+   1
+  ],
+  [
+   "2026-09",
+   "Discair Productions",
+   "Professional services",
+   1092.26,
+   1
+  ],
+  [
+   "2026-09",
+   "Librairies Boyer",
+   "Supplies & operations",
+   1065.81,
+   7
+  ],
+  [
+   "2026-09",
+   "9483-3100 Québec Inc.",
+   "Supplies & operations",
+   1034.78,
+   2
+  ],
+  [
+   "2026-09",
+   "Service Informatique D.L. Inc",
+   "Software & IT",
+   1014.08,
+   1
+  ],
+  [
+   "2026-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   448.97,
+   3
+  ],
+  [
+   "2026-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   1368.95,
+   3
+  ],
+  [
+   "2026-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   6204.84,
+   37
+  ],
+  [
+   "2026-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   843.46,
+   3
+  ],
+  [
+   "2026-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   1011.39,
+   11
+  ],
+  [
+   "2026-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   252.95,
+   1
+  ],
+  [
+   "2026-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   1204.16,
+   2
+  ],
+  [
+   "2026-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Legal — external counsel",
+   646.74,
+   1
+  ],
+  [
+   "2026-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Regional shares & memberships",
+   172.46,
    1
   ]
  ]

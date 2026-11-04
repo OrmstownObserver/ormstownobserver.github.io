@@ -123,13 +123,13 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
     // the header status line still describes the WHOLE dataset
     const head = textOf($('status'));
-    if (!/4[\s  ]?439/.test(head)) fail('the page head no longer states the full dataset: ' + head);
-    else ok('the page head still states the whole dataset (4,439 lines, 20 sittings)');
+    if (!/4[\s  ]?626/.test(head)) fail('the page head no longer states the full dataset: ' + head);
+    else ok('the page head still states the whole dataset (4,626 lines, 21 sittings)');
   }
 
   // ---- 3. the rail is populated (it lists every sitting and category,
   // whatever the current scope is)
-  eq(rowsChildren('sitting-list'), 22, 'sitting checklist lists 20 sittings under 2 year headings');
+  eq(rowsChildren('sitting-list'), 23, 'sitting checklist lists 21 sittings under 2 year headings');
   eq(rowsChildren('category-list'), 14, 'category checklist lists all 14 used categories');
   if ($('q')) fail('the rail still has a search box (#q) — the query bar at the top is the only one');
   else ok('the rail has no search box of its own');
@@ -138,15 +138,15 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
   // ---- 3b. from here on, the payments assertions need the Payments tab.
   // The year is the only timeframe: a legacy ?scope=all resolves to the
-  // latest year (2026: 1,769 lines, $5,438,482.77), never to every year.
+  // latest year (2026: 1,956 lines, $6,080,327.01), never to every year.
   navigateTo('?lang=fr&tab=payments&scope=all');
   await tick();
-  eq(rowsIn('payments-table').length, 150, 'Payments renders the 150-row first page, not all 1,769');
+  eq(rowsIn('payments-table').length, 150, 'Payments renders the 150-row first page, not all 1,956');
   {
     const status = textOf($('results-status'));
-    if (!/1\s?769/.test(status.replace(/[\u00a0\u202f]/g, ' '))) fail('status line does not report the year\'s 1,769 lines: ' + status);
-    else ok('legacy ?scope=all resolves to the latest year: 1,769 lines');
-    if (!/5[\s\u00a0\u202f]?438[\s\u00a0\u202f]?482/.test(status)) fail('status line total is not the year\'s itemized total: ' + status);
+    if (!/1\s?956/.test(status.replace(/[\u00a0\u202f]/g, ' '))) fail('status line does not report the year\'s 1,956 lines: ' + status);
+    else ok('legacy ?scope=all resolves to the latest year: 1,956 lines');
+    if (!/6[\s\u00a0\u202f]?080[\s\u00a0\u202f]?327/.test(status)) fail('status line total is not the year\'s itemized total: ' + status);
     else ok('status line total is the year\'s itemized total');
     if ($('scope-group').find((n) => n.tagName === 'BUTTON').some((b) => /all|toutes/i.test(b.textContent))) fail('the year selector still offers an "all years" pill');
     else ok('the year selector offers no "all years" pill');
@@ -163,8 +163,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const petroStatus = textOf($('results-status'));
   // 311, not the 310 a text search found: the supplier filter also takes the
   // one line billed under the bare numbered company, with no trade name.
-  if (!/311/.test(petroStatus)) fail('"petro" did not reach all 311 lines of 2026: ' + petroStatus);
-  else ok('"petro" reaches all 311 lines of a payee whose name never says "Petro", one more than text search did');
+  if (!/334/.test(petroStatus)) fail('"petro" did not reach all 334 lines of 2026: ' + petroStatus);
+  else ok('"petro" reaches all 334 lines of a payee whose name never says "Petro", one more than text search did');
   eq(petroRows.length, 150, 'the search result set is still paged at 150 rows');
   const firstPayee = textOf(petroRows[0].children[0]);
   if (!/9534-8702/.test(firstPayee)) fail('first petro row is not the Petro-Canada payee: ' + firstPayee);
@@ -244,21 +244,24 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     else ok('"plus de 25 000 $ en 2025" → 25 000 $ et plus, en 2025 (spaces and $ understood)');
 
     r = await ask('last sitting', 'en');
-    if (!/sitting=2026-08/.test(r.search)) fail('"last sitting" is not the August 2026 list: ' + r.search);
+    if (!/sitting=2026-09/.test(r.search)) fail('"last sitting" is not the September 2026 list: ' + r.search);
     else ok('"last sitting" → the latest itemized sitting');
     r = await ask('dernière séance', 'fr');
-    if (!/sitting=2026-08/.test(r.search)) fail('"dernière séance" is not the August 2026 list: ' + r.search);
+    if (!/sitting=2026-09/.test(r.search)) fail('"dernière séance" is not the September 2026 list: ' + r.search);
     else ok('"dernière séance" → the same');
 
     // month without a year → the latest year that has that sitting
-    r = await ask('september', 'en');
-    if (!/sitting=2025-09/.test(r.search)) fail('"september" (no 2026 list yet) did not fall back to 2025-09: ' + r.search);
-    else ok('"september" alone → September 2025, the latest year with that list');
-    // month + year with no list → the year, and a note
+    r = await ask('november', 'en');
+    if (!/sitting=2025-11/.test(r.search)) fail('"november" (no 2026 list yet) did not fall back to 2025-11: ' + r.search);
+    else ok('"november" alone → November 2025, the latest year with that list');
     r = await ask('september 2026', 'en');
-    if (/sitting=/.test(r.search)) fail('"september 2026" invented a sitting: ' + r.search);
-    else if (!/No September 2026 list/.test(r.answer)) fail('"september 2026" does not explain the missing list: ' + r.answer);
-    else ok('"september 2026" → the 2026 frame with a note that no such list exists yet');
+    if (!/sitting=2026-09/.test(r.search)) fail('"september 2026" did not open the September 2026 list: ' + r.search);
+    else ok('"september 2026" → the September 2026 list');
+    // month + year with no list → the year, and a note
+    r = await ask('november 2026', 'en');
+    if (/sitting=/.test(r.search)) fail('"november 2026" invented a sitting: ' + r.search);
+    else if (!/No November 2026 list/.test(r.answer)) fail('"november 2026" does not explain the missing list: ' + r.answer);
+    else ok('"november 2026" → the 2026 frame with a note that no such list exists yet');
 
     // a full sentence: stop words vanish, the rest is parsed
     r = await ask('how much did the Town spend on lawyers in March 2026', 'en');
@@ -312,7 +315,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   chips[3].click();                          // "Credits only"
   await tick();
   const creditRows = rowsIn('payments-table');
-  eq(creditRows.length, 20, 'the Credits-only chip finds all 20 negative lines of 2026');
+  eq(creditRows.length, 23, 'the Credits-only chip finds all 23 negative lines of 2026');
   if (!/credit|crédit/i.test(textOf(creditRows[0]))) fail('a negative line is not tagged as a credit');
   else ok('negative lines are tagged as credits');
   chips[3].click();
@@ -336,9 +339,9 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const sitText = textOf($('panel-sittings'));
   if (!/0[.,]12/.test(sitText)) fail('the Sittings view does not show the documented 0.12 gap');
   else ok('the Sittings view shows the documented 2026-01 gap of 0.12');
-  if (!/5[\s\u00a0\u202f]?438[\s\u00a0\u202f]?482[.,]77/.test(sitText)) fail('no itemized year total in the totals row');
+  if (!/6[\s\u00a0\u202f]?080[\s\u00a0\u202f]?327[.,]01/.test(sitText)) fail('no itemized year total in the totals row');
   else ok('the totals row shows the year\'s itemized total');
-  if (!/5[\s\u00a0\u202f]?438[\s\u00a0\u202f]?482[.,]89/.test(sitText)) fail('no adopted year total in the totals row');
+  if (!/6[\s\u00a0\u202f]?080[\s\u00a0\u202f]?327[.,]13/.test(sitText)) fail('no adopted year total in the totals row');
   else ok('the totals row shows the year\'s adopted total');
   if (sitRows.length < 8) fail('fewer than 8 sitting rows for 2026');
   if (/2025/.test(textOf(sitRows[0].children[0]))) fail('a 2025 sitting is listed under the 2026 frame');
