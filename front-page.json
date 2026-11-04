@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-10-30T21:00:18.443Z",
+  "generated_at": "2026-11-04T03:30:41.264Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -102,6 +102,16 @@
   ],
   "latest": [
     {
+      "slug": "editorials-sign-charter-2026",
+      "path_en": "/en/editorials/sign-charter-2026/",
+      "path_fr": "/fr/editoriaux/enseigne-charte-2026/",
+      "label_en": "Editorial",
+      "label_fr": "Éditorial",
+      "hed_en": "A sign, the Charter, and who gets to decide",
+      "hed_fr": "Une enseigne, la Charte, et qui doit trancher",
+      "date_published": "2026-11-03"
+    },
+    {
       "slug": "council-watch-november-2-2026-preview",
       "path_en": "/en/council-watch/november-2-2026-preview/",
       "path_fr": "/fr/conseil-municipal/2-novembre-2026-apercu/",
@@ -189,16 +199,6 @@
       "label_fr": "Règlements",
       "hed_en": "Trucks are barred from 14 Ormstown roads, with exceptions that include local delivery",
       "hed_fr": "Les camions sont interdits sur 14 chemins d’Ormstown, avec des exceptions, dont la livraison locale",
-      "date_published": "2026-10-18"
-    },
-    {
-      "slug": "bylaws-regulations-fire-service-103-2015",
-      "path_en": "/en/bylaws-regulations/fire-service-103-2015/",
-      "path_fr": "/fr/bylaws-regulations/reglement-service-securite-incendie-103-2015/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Ormstown's fire service: who it is, and what firefighters may do in an emergency",
-      "hed_fr": "Le service incendie d’Ormstown : qui il est, et ce que les pompiers peuvent faire en situation d’urgence",
       "date_published": "2026-10-18"
     }
   ],
@@ -457,8 +457,19 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 37,
+      "total": 38,
       "items": [
+        {
+          "slug": "editorials-sign-charter-2026",
+          "path_en": "/en/editorials/sign-charter-2026/",
+          "path_fr": "/fr/editoriaux/enseigne-charte-2026/",
+          "label_en": "Editorial",
+          "label_fr": "Éditorial",
+          "hed_en": "A sign, the Charter, and who gets to decide",
+          "hed_fr": "Une enseigne, la Charte, et qui doit trancher",
+          "date_published": "2026-11-03",
+          "part": null
+        },
         {
           "slug": "bylaws-regulations-contract-management-129-2026",
           "path_en": "/en/bylaws-regulations/contract-management-129-2026/",
@@ -500,17 +511,6 @@
           "label_fr": "Règlements",
           "hed_en": "In Ormstown's farm zones, council can authorize two kinds of activity case by case",
           "hed_fr": "Dans les zones agricoles d’Ormstown, le conseil peut autoriser deux types d’activités au cas par cas",
-          "date_published": "2026-10-18",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-construction-150-2023",
-          "path_en": "/en/bylaws-regulations/construction-150-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-construction-150-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "Damaged buildings, open foundations, fortified homes: what Ormstown's construction bylaw requires of owners",
-          "hed_fr": "Bâtiments endommagés, fondations à ciel ouvert, maisons fortifiées : ce que le règlement de construction d’Ormstown exige des propriétaires",
           "date_published": "2026-10-18",
           "part": null
         }
