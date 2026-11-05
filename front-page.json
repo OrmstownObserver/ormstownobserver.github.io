@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-11-04T03:30:41.264Z",
+  "generated_at": "2026-11-05T02:00:39.758Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -102,6 +102,16 @@
   ],
   "latest": [
     {
+      "slug": "council-watch-november-2-2026",
+      "path_en": "/en/council-watch/november-2-2026/",
+      "path_fr": "/fr/conseil-municipal/2-novembre-2026/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "Council wrap-up: Nov. 2, 2026",
+      "hed_fr": "Bilan du conseil : 2 novembre 2026",
+      "date_published": "2026-11-04"
+    },
+    {
       "slug": "editorials-sign-charter-2026",
       "path_en": "/en/editorials/sign-charter-2026/",
       "path_fr": "/fr/editoriaux/enseigne-charte-2026/",
@@ -189,16 +199,6 @@
       "label_fr": "Règlements",
       "hed_en": "How Ormstown sets its mayor's and councillors' pay: Bylaw 8-2024 and its April 2024 amendment",
       "hed_fr": "Comment Ormstown fixe la rémunération du maire et des conseillers : le Règlement 8-2024 et sa modification d’avril 2024",
-      "date_published": "2026-10-18"
-    },
-    {
-      "slug": "bylaws-regulations-heavy-vehicles-7-2021",
-      "path_en": "/en/bylaws-regulations/heavy-vehicles-7-2021/",
-      "path_fr": "/fr/bylaws-regulations/reglement-camions-vehicules-outils-7-2021/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "Trucks are barred from 14 Ormstown roads, with exceptions that include local delivery",
-      "hed_fr": "Les camions sont interdits sur 14 chemins d’Ormstown, avec des exceptions, dont la livraison locale",
       "date_published": "2026-10-18"
     }
   ],
@@ -457,8 +457,19 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 38,
+      "total": 39,
       "items": [
+        {
+          "slug": "council-watch-november-2-2026",
+          "path_en": "/en/council-watch/november-2-2026/",
+          "path_fr": "/fr/conseil-municipal/2-novembre-2026/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "Council wrap-up: Nov. 2, 2026",
+          "hed_fr": "Bilan du conseil : 2 novembre 2026",
+          "date_published": "2026-11-04",
+          "part": null
+        },
         {
           "slug": "editorials-sign-charter-2026",
           "path_en": "/en/editorials/sign-charter-2026/",
@@ -502,23 +513,23 @@
           "hed_fr": "Les règles d’Ormstown, en langage clair",
           "date_published": "2026-10-19",
           "part": null
-        },
-        {
-          "slug": "bylaws-regulations-conditional-uses-156-2023",
-          "path_en": "/en/bylaws-regulations/conditional-uses-156-2023/",
-          "path_fr": "/fr/bylaws-regulations/reglement-usages-conditionnels-156-2023/",
-          "label_en": "Bylaws",
-          "label_fr": "Règlements",
-          "hed_en": "In Ormstown's farm zones, council can authorize two kinds of activity case by case",
-          "hed_fr": "Dans les zones agricoles d’Ormstown, le conseil peut autoriser deux types d’activités au cas par cas",
-          "date_published": "2026-10-18",
-          "part": null
         }
       ],
       "newest": ""
     }
   ],
   "council": [
+    {
+      "path_en": "/en/council-watch/november-2-2026/",
+      "path_fr": "/fr/conseil-municipal/2-novembre-2026/",
+      "hed_en": "Council wrap-up: Nov. 2, 2026",
+      "hed_fr": "Bilan du conseil : 2 novembre 2026",
+      "sitting": "2026-11-02",
+      "sitting_en": "Monday, November 2, 2026",
+      "sitting_fr": "Lundi 2 novembre 2026",
+      "short_en": "Nov 2",
+      "short_fr": "2 nov."
+    },
     {
       "path_en": "/en/council-watch/october-6-2026/",
       "path_fr": "/fr/conseil-municipal/6-octobre-2026/",
@@ -551,17 +562,6 @@
       "sitting_fr": "Lundi 6 juillet 2026",
       "short_en": "Jul 6",
       "short_fr": "6 juil."
-    },
-    {
-      "path_en": "/en/council-watch/june-1-2026/",
-      "path_fr": "/fr/conseil-municipal/1-juin-2026/",
-      "hed_en": "2025 financials tabled, 24-unit housing project proposed",
-      "hed_fr": "États financiers 2025 déposés, projet de 24 logements proposé",
-      "sitting": "2026-06-01",
-      "sitting_en": "Monday, June 1, 2026",
-      "sitting_fr": "Lundi 1er juin 2026",
-      "short_en": "Jun 1",
-      "short_fr": "1er juin"
     }
   ]
 }
