@@ -35,7 +35,7 @@
 //    on www.ormstown.ca. Both languages, each to its own page.
 // ============================================================
 window.OO_LEDGER_CONTEXT = {
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "categories": {
   "salaries-hr": {
    "en": "What it costs to employ the Town's staff: the payroll itself, the source deductions sent on to Revenu Québec and the Receiver General, the employees' group RRSP, plus training and job postings. Payroll appears in the minutes as one lump sum per sitting, so no one's individual pay can be read here.",
@@ -100,6 +100,13 @@ window.OO_LEDGER_CONTEXT = {
     }
    ],
    "links": [
+    {
+     "kind": "story",
+     "href_en": "/en/municipal-finances/reading-the-spending-lists/",
+     "href_fr": "/fr/finances-municipales/lire-les-listes-de-depenses/",
+     "en": "Why the lists are not a budget report, and the budget follow-ups announced for 2027",
+     "fr": "Pourquoi les listes ne sont pas un rapport budgétaire, et les suivis annoncés pour 2027"
+    },
     {
      "kind": "recap",
      "en": "The Town buys into three private lots to loop the water main",
@@ -212,6 +219,13 @@ window.OO_LEDGER_CONTEXT = {
    "en": "Loan principal and interest. Borrowing itself is decided by by-law, not on the payment lists, and no line on the lists itemized so far falls in this category.",
    "fr": "Le capital et les intérêts des emprunts. L'emprunt lui-même se décide par règlement, et non aux listes de paiements; aucune ligne des listes détaillées jusqu'ici ne tombe dans cette catégorie.",
    "links": [
+    {
+     "kind": "story",
+     "href_en": "/en/municipal-finances/reading-the-spending-lists/",
+     "href_fr": "/fr/finances-municipales/lire-les-listes-de-depenses/",
+     "en": "Why the lists are not a budget report, and the budget follow-ups announced for 2027",
+     "fr": "Pourquoi les listes ne sont pas un rapport budgétaire, et les suivis annoncés pour 2027"
+    },
     {
      "kind": "recap",
      "en": "Two borrowing by-laws, $4.8 million",
@@ -1043,6 +1057,13 @@ window.OO_LEDGER_CONTEXT = {
     }
    ],
    "links": [
+    {
+     "kind": "story",
+     "href_en": "/en/municipal-finances/reading-the-spending-lists/",
+     "href_fr": "/fr/finances-municipales/lire-les-listes-de-depenses/",
+     "en": "Why the lists are not a budget report, and the budget follow-ups announced for 2027",
+     "fr": "Pourquoi les listes ne sont pas un rapport budgétaire, et les suivis annoncés pour 2027"
+    },
     {
      "kind": "document",
      "href_en": "/finances/sources/pv-2026-09-08/#en",

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('observerTheme');if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ce que montrent les listes de dépenses d&rsquo;Ormstown, et les suivis budgétaires annoncés par le maire — The Ormstown Observer</title>
+<meta name="description" content="Le maire a rappelé que les listes de dépenses annexées aux procès-verbaux sont des données brutes, et annoncé des suivis budgétaires en 2027. Ce qu&rsquo;il a dit, ce que contiennent les listes et où se trouve la comparaison avec le budget.">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/municipal-finances/reading-the-spending-lists/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/finances-municipales/lire-les-listes-de-depenses/">
+<link rel="canonical" href="https://ormstownobserver.ca/fr/finances-municipales/lire-les-listes-de-depenses/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .article-wrap { max-width: 740px; margin: 0 auto; padding: 32px 20px 60px; }
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
+  .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
+  h3 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 36px 0 10px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+  .fact-box { background: var(--sidebar); border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .fact-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+  .fact-box ul { margin-bottom: 0; }
+  .correction-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .correction-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--pending); }
+  .correction-box p:last-child { margin-bottom: 0; }
+  blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
+  .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  .article-footer h3 { font-size: 1rem; font-style: normal; }
+  .site-footer p { margin: 4px 0; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .steps { list-style: none; counter-reset: step; padding-left: 0; margin: 20px 0 24px; border-left: 2px solid var(--border); }
+  .steps li { counter-increment: step; position: relative; padding: 0 0 14px 40px; margin: 0; }
+  .steps li::before { content: counter(step); position: absolute; left: -13px; top: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: #fff; font-family: sans-serif; font-size: 0.75rem; font-weight: 700; line-height: 24px; text-align: center; }
+  .steps strong { display: block; }
+  .steps .when { display: block; font-family: sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-top: 2px; }
+  table.fees { width: 100%; border-collapse: collapse; margin: 0 0 16px; font-size: 0.95rem; }
+  table.fees th, table.fees td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.fees th { font-family: sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); }
+  table.fees td:last-child { white-space: nowrap; text-align: right; }
+  .article-figure { margin: 34px 0; }
+  .article-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--rule); }
+  .article-figure figcaption { font-size: 13.5px; line-height: 1.55; color: var(--ink-light); font-style: italic; padding-top: 10px; border-top: 2px solid var(--accent); margin-top: 8px; }
+  .article-figure figcaption .credit { font-style: normal; font-weight: 600; color: var(--ink); }
+  .change { margin: 0 0 20px; }
+  .change .effect { display: block; margin-top: 6px; color: var(--ink-light); font-style: italic; }
+  .draft-note { background: var(--accent-light); border-left: 4px solid var(--accent); padding: 12px 18px; margin: 0 0 24px; font-size: 0.95rem; }
+  .back-link { display: inline-block; margin-bottom: 22px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .back-link:hover { color: var(--accent); }
+</style>
+
+
+<script src="/observer-header.js" defer></script>
+<link rel="stylesheet" href="/article-night.css">
+</head>
+<body>
+
+<div class="article-wrap">
+
+  <a class="back-link" href="/finances/?lang=fr">&larr; Le grand livre</a>
+  <div class="section-label">Le grand livre &middot; Explication</div>
+  <h1 class="article-headline">Ce que montrent les listes de d&eacute;penses d&rsquo;Ormstown, et les suivis budg&eacute;taires annonc&eacute;s par le maire</h1>
+  <p class="article-deck">&Agrave; la s&eacute;ance du 2 novembre, le maire Philippe Besombes a rappel&eacute; que les listes de d&eacute;penses annex&eacute;es aux proc&egrave;s-verbaux sont des donn&eacute;es brutes, pas un rapport budg&eacute;taire, et que tenir la population inform&eacute;e des suivis budg&eacute;taires est un objectif du conseil pour 2027. Voici ce qu&rsquo;il a dit, ce que contiennent les listes et o&ugrave; se trouve vraiment la comparaison avec le budget.</p>
+  <div class="byline">The Ormstown Observer &middot; Le grand livre &middot; 5 novembre 2026</div>
+
+  <div class="fact-box">
+    <h3>L&rsquo;essentiel</h3>
+    <ul>
+      <li>La liste des paiements jointe &agrave; chaque proc&egrave;s-verbal (l&rsquo;&laquo;&nbsp;annexe A&nbsp;&raquo;) m&ecirc;le les d&eacute;penses de fonctionnement et des travaux pay&eacute;s par des <strong>subventions</strong> et des <strong>r&egrave;glements d&rsquo;emprunt</strong>. En faire la somme ne dit pas si le budget est d&eacute;pass&eacute;.</li>
+      <li>Le maire a indiqu&eacute; que l&rsquo;administration pr&eacute;pare un <strong>point budget</strong> o&ugrave; les chiffres seront class&eacute;s au bon endroit, et que tenir la population inform&eacute;e des suivis budg&eacute;taires est <strong>l&rsquo;un des objectifs du conseil pour 2027</strong>.</li>
+      <li>Aucun format, aucune date ni fr&eacute;quence n&rsquo;ont encore &eacute;t&eacute; annonc&eacute;s.</li>
+      <li>Les documents qui comparent vraiment les d&eacute;penses au budget sont les deux <strong>&eacute;tats comparatifs</strong>, d&eacute;pos&eacute;s le 2 novembre en vue de la s&eacute;ance du budget 2027.</li>
+    </ul>
+  </div>
+
+  <h2>Pourquoi la question s&rsquo;est pos&eacute;e</h2>
+  <p>Chaque proc&egrave;s-verbal publi&eacute; par Ormstown se termine par une annexe qui &eacute;num&egrave;re les paiements approuv&eacute;s par le conseil &agrave; cette s&eacute;ance : fournisseur, description et montant. Le <a href="/finances/?lang=fr">grand livre</a> de l&rsquo;Observer est construit &agrave; partir de ces annexes. Le maire a dit que des citoyens lui avaient demand&eacute; si les totaux de ces listes voulaient dire que la Municipalit&eacute; d&eacute;passait son budget. Il a r&eacute;pondu &agrave; cette question &agrave; la fin de son allocution du 2 novembre (<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=489">00:08:09</a>).</p>
+
+  <h2>Ce qu&rsquo;a dit le maire</h2>
+  <p>Il a qualifi&eacute; les chiffres de l&rsquo;annexe de donn&eacute;es brutes (<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=489">00:08:09</a>). Selon lui :</p>
+  <ul>
+    <li><strong>Les listes comprennent toutes les d&eacute;penses de la Municipalit&eacute;,</strong> pas seulement celles imput&eacute;es au budget de fonctionnement (<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=489">00:08:09</a>).</li>
+    <li><strong>Les p&eacute;riodes vis&eacute;es varient.</strong> Les dates de d&eacute;but et de fin des d&eacute;penses d&rsquo;une liste ne sont pas toujours les m&ecirc;mes (<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=489">00:08:09</a>).</li>
+    <li><strong>Les travaux d&rsquo;immobilisation y figurent aussi.</strong> Il a donn&eacute; l&rsquo;exemple des travaux routiers de cette ann&eacute;e : ces d&eacute;penses apparaissent dans les m&ecirc;mes listes, si bien qu&rsquo;en les additionnant on obtient un total sup&eacute;rieur au budget de fonctionnement. Une partie, a-t-il pr&eacute;cis&eacute;, est pay&eacute;e par des subventions et des r&egrave;glements d&rsquo;emprunt (<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=534">00:08:54</a>).</li>
+    <li><strong>&Agrave; ceux qui demandaient si la Municipalit&eacute; d&eacute;passe son budget, il a r&eacute;pondu non :</strong> les deux types de d&eacute;penses sont simplement m&ecirc;l&eacute;s dans le m&ecirc;me document (<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=534">00:08:54</a>).</li>
+  </ul>
+  <p>Plus tard dans la s&eacute;ance, lors de l&rsquo;approbation de la liste des paiements du 2 novembre, il a ajout&eacute; que cette liste ne comprend que les d&eacute;penses, alors que l&rsquo;annexe jointe au proc&egrave;s-verbal inclut aussi les salaires et est plus compl&egrave;te (<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=866">00:14:26</a>).</p>
+
+  <h2>Le changement annonc&eacute;</h2>
+  <p>Le maire a indiqu&eacute; que le conseil travaille avec l&rsquo;&eacute;quipe administrative &agrave; un <strong>point budget</strong> pour la population, o&ugrave; les chiffres seront class&eacute;s au bon endroit, afin qu&rsquo;on puisse suivre l&rsquo;&eacute;volution du budget. Il a qualifi&eacute; ces suivis budg&eacute;taires d&rsquo;<strong>objectif du conseil pour 2027</strong> (<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=534">00:08:54</a>, <a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=580">00:09:40</a>).</p>
+  <p>C&rsquo;est l&rsquo;ensemble de l&rsquo;annonce. Il n&rsquo;a pas pr&eacute;cis&eacute; ce que contiendront ces suivis, &agrave; quelle fr&eacute;quence ils para&icirc;tront, ni si l&rsquo;annexe elle-m&ecirc;me changera.</p>
+
+  <h2>Ce que contient l&rsquo;annexe aujourd&rsquo;hui</h2>
+  <p>La plus r&eacute;cente annexe publi&eacute;e sur ormstown.ca est jointe au <a href="https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf">proc&egrave;s-verbal de la s&eacute;ance du 8 septembre 2026</a>, o&ugrave; la r&eacute;solution 26-09-236 approuve &laquo;&nbsp;la liste des op&eacute;rations financi&egrave;res&nbsp;&raquo; de l&rsquo;annexe A.</p>
+  <ul>
+    <li>Elle est organis&eacute;e par fournisseur, avec une description et le montant de la facture. Elle n&rsquo;indique pas le poste budg&eacute;taire imput&eacute;, ni si un paiement est financ&eacute; par le budget de fonctionnement, une subvention ou un r&egrave;glement d&rsquo;emprunt.</li>
+    <li>La paie tient en une seule ligne (salaires, retenues &agrave; la source et REER) : le salaire d&rsquo;une personne ne peut donc pas s&rsquo;y lire.</li>
+    <li>Certaines descriptions citent la r&eacute;solution qui a autoris&eacute; la d&eacute;pense (par exemple &laquo;&nbsp;R&eacute;so #26-06-163&nbsp;&raquo;), ce qui permet de remonter d&rsquo;un paiement &agrave; une d&eacute;cision du conseil.</li>
+    <li>Les cr&eacute;dits apparaissent en montants n&eacute;gatifs, entre parenth&egrave;ses.</li>
+  </ul>
+
+  <h2>Ce que cela veut dire pour le grand livre</h2>
+  <p>Le grand livre fait la m&ecirc;me mise en garde sur sa <a href="/finances/budget/#method">page de m&eacute;thode</a> : les listes mensuelles sont des sorties de fonds approuv&eacute;es par le conseil, qui incluent des immobilisations financ&eacute;es par r&egrave;glement d&rsquo;emprunt ou subvention, tandis que le budget est tenu en comptabilit&eacute; d&rsquo;exercice. Comparer les deux donne un ordre de grandeur, jamais un &laquo;&nbsp;budget consomm&eacute;&nbsp;&raquo;.</p>
+  <p>Le grand livre ne peut pas non plus r&eacute;partir un paiement selon sa source de financement, puisque l&rsquo;annexe ne le dit pas. Si les suivis budg&eacute;taires de la Municipalit&eacute; le pr&eacute;cisent, le grand livre s&rsquo;en servira.</p>
+
+  <h2>O&ugrave; se trouve vraiment la comparaison avec le budget</h2>
+  <p>Au point 4.3 du 2 novembre, le conseil a pris acte du d&eacute;p&ocirc;t des deux <strong>&eacute;tats comparatifs</strong> 2025-2026 (<a href="https://www.ormstown.ca/wp-content/uploads/0.-Ordre-du-jour-seance-ordinaire-2026-11-02.pdf">ordre du jour</a>; <a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=963">00:16:03</a>). Le Code municipal (art. 176.4) les exige chaque ann&eacute;e :</p>
+  <ul>
+    <li>Le premier compare les revenus et d&eacute;penses de l&rsquo;exercice courant, jusqu&rsquo;au dernier jour du mois termin&eacute; au moins 15 jours avant le d&eacute;p&ocirc;t, &agrave; ceux de la m&ecirc;me p&eacute;riode l&rsquo;an dernier.</li>
+    <li>Le second compare les revenus et d&eacute;penses pr&eacute;vus pour l&rsquo;ensemble de l&rsquo;exercice &agrave; ce que pr&eacute;voyait le budget adopt&eacute;.</li>
+  </ul>
+  <p>Ils doivent &ecirc;tre d&eacute;pos&eacute;s &agrave; la derni&egrave;re s&eacute;ance ordinaire tenue au moins quatre semaines avant la s&eacute;ance du budget. D&eacute;pos&eacute;s le 2 novembre, ils placent la s&eacute;ance du budget 2027 <strong>au plus t&ocirc;t le 30 novembre</strong>. Le maire a indiqu&eacute; qu&rsquo;elle aura lieu dans quelques semaines, lors d&rsquo;une s&eacute;ance extraordinaire o&ugrave; il dressera aussi le bilan de la premi&egrave;re ann&eacute;e du conseil (<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=170">00:02:50</a>). Au 5 novembre, les &eacute;tats n&rsquo;&eacute;taient pas publi&eacute;s sur ormstown.ca.</p>
+
+  <h2>Ce qu&rsquo;on ne sait pas encore</h2>
+  <ul>
+    <li>Ce que contiendront le point budget et les suivis de 2027 et &agrave; quelle fr&eacute;quence ils seront publi&eacute;s.</li>
+    <li>S&rsquo;ils distingueront, paiement par paiement, les d&eacute;penses de fonctionnement des travaux financ&eacute;s par subvention ou r&egrave;glement d&rsquo;emprunt.</li>
+    <li>Si l&rsquo;annexe jointe aux proc&egrave;s-verbaux changera de format.</li>
+    <li>La date de la s&eacute;ance du budget 2027.</li>
+    <li>Ce que montrent les deux &eacute;tats comparatifs d&eacute;pos&eacute;s le 2 novembre.</li>
+  </ul>
+
+  <h2>Ce que vous pouvez faire</h2>
+  <ul>
+    <li><strong>Lisez les listes en gardant ceci en t&ecirc;te.</strong> Un gros total mensuel peut correspondre &agrave; des travaux de voirie ou d&rsquo;aqueduc pay&eacute;s par une subvention ou un r&egrave;glement d&rsquo;emprunt, pas &agrave; un d&eacute;passement.</li>
+    <li><strong>Demandez les &eacute;tats comparatifs.</strong> S&rsquo;ils ne sont pas publi&eacute;s avec le proc&egrave;s-verbal, le greffe (<a href="mailto:greffe@ormstown.ca">greffe@ormstown.ca</a>) peut les fournir.</li>
+    <li><strong>Surveillez l&rsquo;avis de la s&eacute;ance du budget.</strong> Le Code exige un avis public d&rsquo;au moins huit jours. &Agrave; cette s&eacute;ance, les questions doivent porter sur le budget et le financement de ses d&eacute;penses (art. 956).</li>
+    <li><strong>Servez-vous des mentions &laquo;&nbsp;R&eacute;so #&nbsp;&raquo;</strong> de l&rsquo;annexe pour retrouver la d&eacute;cision derri&egrave;re un paiement.</li>
+  </ul>
+
+  <div class="article-footer">
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=8PwawybqMCQ">Enregistrement de la s&eacute;ance ordinaire du 2 novembre 2026 (YouTube)</a>; allocution du maire <a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=489">00:08:09</a>&ndash;<a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=580">00:09:40</a>, point 4.1 <a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=866">00:14:26</a>, point 4.3 <a href="https://www.youtube.com/watch?v=8PwawybqMCQ&amp;t=963">00:16:03</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/0.-Ordre-du-jour-seance-ordinaire-2026-11-02.pdf">Ordre du jour de la s&eacute;ance ordinaire du 2 novembre 2026 (PDF)</a></li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/9.-PV_2026-09-08_Signe.pdf">Proc&egrave;s-verbal de la s&eacute;ance ordinaire du 8 septembre 2026, r&eacute;solution 26-09-236 et annexe A (PDF)</a></li>
+      <li><a href="https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-27.1"><em>Code municipal du Qu&eacute;bec</em>, RLRQ c. C-27.1, art. 176.4 et 956 (L&eacute;gisQu&eacute;bec)</a></li>
+      <li><a href="/finances/budget/#method">Le grand livre : budget, m&eacute;thode et sources</a></li>
+    </ul>
+    <p>Les propos du maire sont r&eacute;sum&eacute;s &agrave; partir de l&rsquo;enregistrement; suivez les horodatages pour les entendre. Le proc&egrave;s-verbal du 2 novembre fera foi une fois adopt&eacute; et publi&eacute;.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
