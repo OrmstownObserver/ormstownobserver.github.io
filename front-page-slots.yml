@@ -15,18 +15,23 @@
 # If something is wrong, GitHub emails you and the homepage keeps the last good version.
 
 hero:
-  path: /en/council-watch/november-2-2026-preview/
+  path: /en/council-watch/november-2-2026/
   sitting: 2026-11-02
-  label_en: Council Watch · Preview
-  label_fr: Conseil municipal · Aperçu
-  image: /images/council-watch-november-2-2026-preview.jpg
-  position: 15% top
+  label_en: Council Watch · Wrap-up
+  label_fr: Conseil municipal · Bilan
+  image: /images/council-watch-november-2-2026.jpg
+  position: center 40%
 
 cards:
+  - path: /en/editorials/sign-charter-2026/
+    date: 2026-11-04
+    label_en: Editorial
+    label_fr: Éditorial
+
   - path: /en/bylaws-regulations/contract-management-129-2026/
     date: 2026-10-22
-    label_en: Draft bylaw
-    label_fr: Projet de règlement
+    label_en: Adopted Nov. 2
+    label_fr: Adopté le 2 nov.
     position: center 30%
 
   - path: /en/bylaws-regulations/rules-in-plain-language/
@@ -34,6 +39,3 @@ cards:
     label_en: From the Observer
     label_fr: Mot de l’Observer
     icon: default
-
-  - path: /en/council-watch/buys-three-lots-loop-water-main/
-    sitting: 2026-10-06
