@@ -1,6 +1,76 @@
 {
-  "updated": "2026-10-18",
+  "updated": "2026-11-05",
   "items": [
+    {
+      "id": "paving-nov-2026",
+      "type": "alert",
+      "date": "2026-11-02",
+      "title_en": "Paving work under way: Route 201, the 138/201 intersection and in front of RONA",
+      "title_fr": "Travaux de pavage : route 201, intersection 138/201 et devant le RONA",
+      "text_en": "Work began November 2. The Town's public works crew is paving in front of RONA; Québec's transport ministry (MTMD) is handling the Route 138/201 intersection and Route 201. Expect temporary signs, detours and slowdowns.",
+      "text_fr": "Les travaux ont débuté le 2 novembre. L'équipe des travaux publics de la Municipalité pave devant le RONA; le ministère des Transports et de la Mobilité durable (MTMD) s'occupe de l'intersection des routes 138 et 201 et de la route 201. Prévoyez de la signalisation temporaire, des détours et des ralentissements.",
+      "source": {
+        "label_en": "Town of Ormstown on Facebook",
+        "label_fr": "Municipalité d'Ormstown sur Facebook",
+        "url": "https://www.facebook.com/ormstown"
+      }
+    },
+    {
+      "id": "barrie-auxiliary-bazaar-2026",
+      "type": "event",
+      "date": "2026-11-07",
+      "title_en": "Barrie Memorial Women's Auxiliary bazaar, Saturday at CVR",
+      "title_fr": "Bazar des Dames auxiliaires de l'Hôpital Barrie Memorial, samedi à l'école CVR",
+      "text_en": "9 a.m. to 3 p.m. at Chateauguay Valley Regional. The Auxiliary and the Barrie Memorial Hospital Foundation have pledged $1 million toward a new CT scanner for the hospital.",
+      "text_fr": "De 9 h à 15 h à l'école Chateauguay Valley Regional. Les Dames auxiliaires et la Fondation de l'Hôpital Barrie Memorial se sont engagées à verser 1 million $ pour un nouveau tomodensitomètre à l'hôpital.",
+      "source": {
+        "label_en": "Town of Ormstown on Facebook (post of Nov. 4)",
+        "label_fr": "Municipalité d'Ormstown sur Facebook (publication du 4 nov.)",
+        "url": "https://www.facebook.com/ormstown"
+      }
+    },
+    {
+      "id": "noel-enchante-2026",
+      "type": "event",
+      "date": "2026-12-04",
+      "title_en": "\"Noël enchanté\" returns to rue Lambton on December 4",
+      "title_fr": "« Noël enchanté » sur la rue Lambton le 4 décembre",
+      "text_en": "The Town announced the holiday celebration on November 3, calling it a much-requested return. Times and program have not been posted yet.",
+      "text_fr": "La Municipalité a annoncé la fête le 3 novembre, en la présentant comme un retour très demandé. L'horaire et la programmation ne sont pas encore publiés.",
+      "source": {
+        "label_en": "Town of Ormstown on Facebook (Nov. 3)",
+        "label_fr": "Municipalité d'Ormstown sur Facebook (3 nov.)",
+        "url": "https://www.facebook.com/ormstown"
+      }
+    },
+    {
+      "id": "marche-de-noel-2026",
+      "type": "event",
+      "date": "2026-12-06",
+      "title_en": "Ormstown Christmas Market at the community centre",
+      "title_fr": "Marché de Noël d'Ormstown au centre communautaire",
+      "text_en": "Sunday, December 6, 9 a.m. to 4 p.m. Hosted by the Marché Fermier Huntingdon, the farmers' market for Haut-Saint-Laurent producers.",
+      "text_fr": "Le dimanche 6 décembre, de 9 h à 16 h. Organisé par le Marché Fermier Huntingdon, le marché des producteurs du Haut-Saint-Laurent.",
+      "source": {
+        "label_en": "Facebook event",
+        "label_fr": "Événement Facebook",
+        "url": "https://www.facebook.com/events/2144557009478139/"
+      }
+    },
+    {
+      "id": "mrc-waterways-2026",
+      "type": "notice",
+      "date": "2026-11-04",
+      "title_en": "MRC awards $3.5 million in waterway maintenance, including work in Ormstown",
+      "title_fr": "La MRC accorde 3,5 M$ en entretien de cours d'eau, dont des travaux à Ormstown",
+      "text_en": "Fourteen contracts cover about 76 km of watercourses in seven municipalities, Ormstown among them. The MRC manages the contracts, but each municipality pays for its share. Work is to finish by year-end.",
+      "text_fr": "Quatorze contrats couvrent environ 76 km de cours d'eau dans sept municipalités, dont Ormstown. La MRC gère les contrats, mais chaque municipalité paie sa part. Les travaux doivent se terminer d'ici la fin de l'année.",
+      "source": {
+        "label_en": "The Gleaner (Nov. 4)",
+        "label_fr": "The Gleaner (4 nov., en anglais)",
+        "url": "https://the-gleaner.com/mrc-approves-3-5-million-in-waterway-management-projects/"
+      }
+    },
     {
       "id": "6-rue-edward-variance-2026",
       "type": "notice",

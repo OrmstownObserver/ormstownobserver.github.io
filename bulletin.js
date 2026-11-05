@@ -2,7 +2,8 @@
    and events from /bulletin.json. The section stays hidden until at least
    one item renders, so a missing or broken file costs nothing. Same rules as
    front-page.js: DOM built with textContent only, and links limited to the
-   site's own paths and the official hosts below.
+   site's own paths and the hosts below (official sources, plus the Town's
+   Facebook page, Facebook events and The Gleaner).
 
    Item fields: type (alert | notice | event), date (YYYY-MM-DD: posted date,
    or the day of an event), title_en/fr, text_en/fr, optional link
@@ -19,7 +20,10 @@
   var ALERT_DAYS = 7;
   var HOSTS = [
     'www.ormstown.ca', 'ormstown.ca', 'ormstown.alertesmunicipales.com',
-    'www.mrchsl.com', 'mrchsl.com', 'www.quebec.ca', 'quebec.ca'
+    'www.mrchsl.com', 'mrchsl.com', 'www.quebec.ca', 'quebec.ca',
+    // Community sources (editor, 2026-11-05): the Town's own Facebook page and
+    // Facebook events, and The Gleaner, the Valley's community paper.
+    'www.facebook.com', 'facebook.com', 'the-gleaner.com', 'www.the-gleaner.com'
   ];
   var TYPES = {
     alert:  { en: 'Alert',  fr: 'Alerte' },
