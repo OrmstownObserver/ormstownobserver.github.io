@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-11-05T02:00:39.758Z",
+  "generated_at": "2026-11-06T00:00:40.035Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -102,6 +102,16 @@
   ],
   "latest": [
     {
+      "slug": "municipal-finances-reading-the-spending-lists-index.html",
+      "path_en": "/en/municipal-finances/reading-the-spending-lists/index.html/",
+      "path_fr": "/fr/finances-municipales/lire-les-listes-de-depenses/index.html/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "What Ormstown's spending lists show, and the budget update the mayor says is coming",
+      "hed_fr": "Ce que montrent les listes de dépenses d'Ormstown, et les suivis budgétaires annoncés par le maire",
+      "date_published": "2026-11-05"
+    },
+    {
       "slug": "council-watch-november-2-2026",
       "path_en": "/en/council-watch/november-2-2026/",
       "path_fr": "/fr/conseil-municipal/2-novembre-2026/",
@@ -189,16 +199,6 @@
       "label_fr": "Règlements",
       "hed_en": "Ormstown's 9-1-1 tax: $0.52 a month per telephone number from 2024, indexed every January",
       "hed_fr": "Taxe 9-1-1 à Ormstown : 0,52 $ par mois par numéro de téléphone dès 2024, indexée chaque janvier",
-      "date_published": "2026-10-18"
-    },
-    {
-      "slug": "bylaws-regulations-elected-officials-pay-8-2024",
-      "path_en": "/en/bylaws-regulations/elected-officials-pay-8-2024/",
-      "path_fr": "/fr/bylaws-regulations/reglement-traitement-elus-8-2024/",
-      "label_en": "Bylaws",
-      "label_fr": "Règlements",
-      "hed_en": "How Ormstown sets its mayor's and councillors' pay: Bylaw 8-2024 and its April 2024 amendment",
-      "hed_fr": "Comment Ormstown fixe la rémunération du maire et des conseillers : le Règlement 8-2024 et sa modification d’avril 2024",
       "date_published": "2026-10-18"
     }
   ],
@@ -457,8 +457,19 @@
       "file_fr": "",
       "status_en": "",
       "status_fr": "",
-      "total": 39,
+      "total": 40,
       "items": [
+        {
+          "slug": "municipal-finances-reading-the-spending-lists-index.html",
+          "path_en": "/en/municipal-finances/reading-the-spending-lists/index.html/",
+          "path_fr": "/fr/finances-municipales/lire-les-listes-de-depenses/index.html/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "What Ormstown's spending lists show, and the budget update the mayor says is coming",
+          "hed_fr": "Ce que montrent les listes de dépenses d'Ormstown, et les suivis budgétaires annoncés par le maire",
+          "date_published": "2026-11-05",
+          "part": null
+        },
         {
           "slug": "council-watch-november-2-2026",
           "path_en": "/en/council-watch/november-2-2026/",
@@ -501,17 +512,6 @@
           "hed_en": "From notice of motion to public notice: how Ormstown council makes a bylaw, passes a resolution, and where you fit in",
           "hed_fr": "De l’avis de motion à l’avis public : comment le conseil d’Ormstown adopte un règlement ou une résolution, et où vous intervenez",
           "date_published": "2026-10-22",
-          "part": null
-        },
-        {
-          "slug": "bylaws-regulations-rules-in-plain-language",
-          "path_en": "/en/bylaws-regulations/rules-in-plain-language/",
-          "path_fr": "/fr/bylaws-regulations/les-regles-en-langage-clair/",
-          "label_en": "From the Observer",
-          "label_fr": "Mot de l’Observer",
-          "hed_en": "The Observer’s unofficial guides to Ormstown’s bylaws",
-          "hed_fr": "Les règles d’Ormstown, en langage clair",
-          "date_published": "2026-10-19",
           "part": null
         }
       ],
