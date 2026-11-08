@@ -76,25 +76,6 @@
   }
   .masthead-tagline { font-size: 12px; color: var(--muted); font-style: italic; margin-top: 5px; }
 
-  /* ── NAV ──
-     A newspaper section line: the words centred under the language toggle,
-     spaced apart, no boxes. They wrap onto a second centred line on narrow
-     windows instead of scrolling sideways. Hover turns a link red with a
-     thin red underline. */
-  .site-nav {
-    display: flex; flex-wrap: wrap; justify-content: center; column-gap: 34px;
-    border-bottom: 2px solid var(--line); background: var(--paper);
-    font-family: sans-serif; font-size: 11px; font-weight: 700;
-    text-transform: uppercase; letter-spacing: .1em;
-    padding: 2px 16px;
-  }
-  .site-nav a {
-    padding: 13px 0 11px; white-space: nowrap;
-    border-bottom: 2px solid transparent;
-    color: var(--ink); transition: color .12s, border-color .12s;
-  }
-  .site-nav a:hover, .site-nav a.is-active { color: var(--accent); border-bottom-color: var(--accent); }
-
   /* ── HERO — Option A: full-width lead, then two secondary cards BELOW.
      The old 3fr/2fr grid put a side column next to the lead; that column is
      what read as leftovers on desktop and collapsed badly on mobile. ── */
@@ -388,7 +369,6 @@
      exactly. Phones keep the edge-to-edge layout below 720px. ── */
   @media (min-width: 721px) {
     body { --page-gutter: max(24px, calc((100vw - 1100px) / 2)); }
-    .site-nav { padding-inline: var(--page-gutter); }
     .hero { margin: 24px var(--page-gutter) 0; }
     .latest-stories { margin-inline: var(--page-gutter); }
     .council-band, .bulletin, .topics { padding-inline: var(--page-gutter); }
@@ -469,8 +449,6 @@
       font-family: sans-serif; font-size: 10.5px; font-weight: 700; line-height: 1.5;
       text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0;
     }
-    .site-nav { column-gap: 24px; }
-    .site-nav a { font-size: 10px; }
   }
 </style>
 <script src="/observer-header.js" defer></script>
@@ -502,27 +480,6 @@
     <span data-fr>Chien de garde civique bilingue ind&eacute;pendant &mdash; Ormstown &amp; le Haut-Saint-Laurent</span>
   </div>
 </header>
-
-<!-- NAV -->
-<nav class="site-nav" aria-label="Main navigation">
-  <!-- The five sections readers come for. Everything else, contact included,
-       is in the ☰ menu (observer-header.js) and the topic cards below. -->
-  <a data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/" href="/en/council-watch/">
-    <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>
-  </a>
-  <a data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/" href="/en/bylaws-regulations/">
-    <span data-en>Bylaws &amp; Regs</span><span data-fr>R&egrave;glements</span>
-  </a>
-  <a data-href-en="/finances/?lang=en" data-href-fr="/finances/?lang=fr" href="/finances/?lang=en">
-    <span data-en>The Ledger</span><span data-fr>Le grand livre</span>
-  </a>
-  <a data-href-en="/en/investigations/" data-href-fr="/fr/investigations/" href="/en/investigations/">
-    <span data-en>Investigations</span><span data-fr>Enqu&ecirc;tes</span>
-  </a>
-  <a data-href-en="/en/editorials/" data-href-fr="/fr/editoriaux/" href="/en/editorials/">
-    <span data-en>Editorials</span><span data-fr>&Eacute;ditoriaux</span>
-  </a>
-</nav>
 
 <!-- HERO -->
 <section class="hero" aria-label="Featured stories">
@@ -753,10 +710,6 @@
     document.getElementById('btn-fr').classList.toggle('is-active', lang === 'fr');
     document.querySelectorAll('[data-href-en]').forEach(function(el){
       el.setAttribute('href', lang === 'fr' ? el.getAttribute('data-href-fr') : el.getAttribute('data-href-en'));
-    });
-    document.querySelectorAll('.site-nav a').forEach(function(el){
-      if (el.getAttribute('data-href-en') === '/' || el.getAttribute('href') === '/') return;
-      el.classList.remove('is-active');
     });
   }
   setObserverLang(document.documentElement.classList.contains('lang-fr') ? 'fr' : 'en');

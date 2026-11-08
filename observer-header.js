@@ -87,8 +87,17 @@
 
     /* ── LANG BAR (centred, under the masthead) ── */
     .obs-langbar{
-      display:flex; justify-content:center; margin-top:18px;
+      display:flex; justify-content:center; margin-top:12px;
     }
+    .obs-langbar{align-items:center; gap:10px;}
+    .obs-hist{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:30px; height:22px; padding:0; cursor:pointer;
+      border:1px solid var(--control-line, var(--ink)); background:var(--paper); color:var(--ink);
+      transition:background .15s,color .15s;
+    }
+    .obs-hist:hover{background:var(--paper-dark);}
+    .obs-hist svg{width:14px;height:14px;display:block;}
     .obs-lang{
       display:inline-flex; border:1px solid var(--control-line, var(--ink)); overflow:hidden;
     }
@@ -96,8 +105,8 @@
       font-family:'Libre Baskerville',serif; font-weight:700; font-size:11px;
       letter-spacing:.06em;
       color:var(--ink); background:var(--paper); border:none;
-      border-right:1px solid var(--control-line, var(--ink)); padding:6px 14px; cursor:pointer;
-      min-height:30px; line-height:1;
+      border-right:1px solid var(--control-line, var(--ink)); padding:4px 14px; cursor:pointer;
+      min-height:22px; line-height:1;
       transition:background .15s,color .15s;
     }
     .obs-lang button:last-child{border-right:none;}
@@ -151,8 +160,9 @@
       .obs-flag,.obs-tagline{display:none;}
       .obs-name{display:block;font-size:21px;line-height:1.15;max-width:calc(100vw - 128px);white-space:normal;margin:0 auto;}
       .obs-rule-bottom{margin-top:10px;}
-      .obs-langbar{margin-top:10px;}
-      .obs-lang button{min-height:34px;padding:6px 14px;}
+      .obs-langbar{margin-top:8px;}
+      .obs-lang button{min-height:28px;padding:5px 14px;}
+      .obs-hist{width:36px;height:28px;}
       .obs-controls,.obs-hamburger{top:calc(50% - 23px);}
       .obs-hamburger{right:-6px;padding:11px 8px;}
       .obs-theme{width:36px;height:36px;}
@@ -160,21 +170,28 @@
 
     /* ── INSTALLED APP (display-mode: standalone) ──
        Home-screen launches have no browser chrome: no address bar and, on
-       iOS, no back button. Pad under the status bar and show our own back
-       control (obs-back) in the left-hand control group. */
-    .obs-back{display:none;}
-    html.obs-app .obs-back{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:36px; height:36px; padding:0; cursor:pointer;
-      border:1.5px solid var(--control-line, var(--ink)); background:var(--paper); color:var(--ink);
-    }
-    html.obs-app .obs-back[hidden]{display:none;}
-    .obs-back svg{width:18px;height:18px;display:block;}
+       iOS, no back button. Pad under the status bar; the back/forward
+       arrows beside the language toggle stand in for browser chrome. */
     html.obs-app .obs-masthead{padding-top:calc(12px + env(safe-area-inset-top));}
     html.obs-app .obs-footer{padding-bottom:calc(30px + env(safe-area-inset-bottom));}
-    /* Back + theme side by side would touch the name on the narrowest phones;
-       there the theme simply follows the system setting. */
-    @media (max-width:360px){ html.obs-app .obs-back:not([hidden]) ~ .obs-theme{display:none;} }
+
+    /* ── MAIN NAV (the five sections, on every page) ──
+       A newspaper section line under the language toggle: centred words, no
+       boxes, wrapping onto a second line on narrow screens. Lives here, not in
+       index.html, so every page carries it. */
+    .obs-nav{
+      display:flex; flex-wrap:wrap; justify-content:center; column-gap:34px;
+      border-bottom:2px solid var(--line, var(--ink)); background:var(--paper);
+      font-family:sans-serif; font-size:11px; font-weight:700;
+      text-transform:uppercase; letter-spacing:.1em; padding:2px 16px;
+    }
+    .obs-nav a{
+      padding:12px 0 10px; white-space:nowrap;
+      border-bottom:2px solid transparent; color:var(--ink);
+      transition:color .12s,border-color .12s;
+    }
+    .obs-nav a:hover,.obs-nav a.is-active{color:var(--accent);border-bottom-color:var(--accent);}
+    @media (max-width:640px){ .obs-nav{column-gap:20px;font-size:10px;letter-spacing:.08em;padding:0 10px;} .obs-nav a{padding:10px 0 8px;} }
 
     /* ── DRAWER NAV ── */
     .obs-drawer{
@@ -334,13 +351,6 @@
   <div class="obs-masthead">
     <div class="obs-masthead-inner">
       <div class="obs-controls">
-        <button class="obs-back" id="obs-back-btn" type="button" hidden
-          aria-label="Back / Retour" title="Back / Retour">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M15 5l-7 7 7 7"></path>
-          </svg>
-        </button>
         <button class="obs-theme" id="obs-theme-btn" type="button" hidden
           aria-label="Toggle light or dark theme" title="Light / dark">
           <svg class="obs-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -365,18 +375,49 @@
       </div>
       <div class="obs-rule-bottom"></div>
       <div class="obs-langbar">
+        <button class="obs-hist" id="obs-hist-back" type="button" aria-label="Back / Retour" title="Back / Retour">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+        </button>
         <div class="obs-lang" id="obs-lang-group" role="group" aria-label="Language / Langue">
           <button type="button" id="obs-btn-en" aria-pressed="false" lang="en"
             onclick="obsSetLang('en')">English</button>
           <button type="button" id="obs-btn-fr" aria-pressed="false" lang="fr"
             onclick="obsSetLang('fr')">Fran&ccedil;ais</button>
         </div>
+        <button class="obs-hist" id="obs-hist-fwd" type="button" aria-label="Forward / Avance" title="Forward / Avance">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"></path></svg>
+        </button>
       </div>
       <button class="obs-hamburger" id="obs-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="obs-drawer">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
+
+  <nav class="obs-nav" aria-label="Main navigation">
+    <a data-href-en="/en/council-watch/" data-href-fr="/fr/conseil-municipal/" href="/en/council-watch/"
+      class="${isActive('/en/council') || isActive('/fr/conseil') ? 'is-active' : ''}">
+      <span data-en>Council Watch</span><span data-fr>Conseil municipal</span>
+    </a>
+    <a data-href-en="/en/bylaws-regulations/" data-href-fr="/fr/bylaws-regulations/" href="/en/bylaws-regulations/"
+      class="${isActive('/en/bylaws') || isActive('/fr/bylaws') ? 'is-active' : ''}">
+      <span data-en>Bylaws &amp; Regs</span><span data-fr>R&egrave;glements</span>
+    </a>
+    <a data-href-en="/finances/?lang=en" data-href-fr="/finances/?lang=fr" href="/finances/?lang=en"
+      class="${isActive('/finances') ? 'is-active' : ''}">
+      <span data-en>The Ledger</span><span data-fr>Le grand livre</span>
+    </a>
+    <a data-href-en="/en/investigations/" data-href-fr="/fr/investigations/" href="/en/investigations/"
+      class="${isActive('/en/investigations') || isActive('/fr/investigations') ? 'is-active' : ''}">
+      <span data-en>Investigations</span><span data-fr>Enqu&ecirc;tes</span>
+    </a>
+    <a data-href-en="/en/editorials/" data-href-fr="/fr/editoriaux/" href="/en/editorials/"
+      class="${isActive('/en/editorials') || isActive('/fr/editoriaux') ? 'is-active' : ''}">
+      <span data-en>Editorials</span><span data-fr>&Eacute;ditoriaux</span>
+    </a>
+  </nav>
 
   <div class="obs-scrim" id="obs-scrim"></div>
   <div class="obs-drawer" id="obs-drawer" role="dialog" aria-label="Navigation">
@@ -485,7 +526,7 @@
   headerDiv.innerHTML = header;
   document.body.insertBefore(headerDiv, document.body.firstChild);
 
-  document.querySelectorAll('.topbar, .masthead, .site-header-old').forEach(function(el){ el.remove(); });
+  document.querySelectorAll('.topbar, .masthead, .site-header-old, .site-nav').forEach(function(el){ el.remove(); });
 
   var existingFooter = document.querySelector('.site-footer, footer.obs-footer-old');
   if(existingFooter) existingFooter.remove();
@@ -577,19 +618,19 @@
     });
   });
 
-  // ── BACK (installed app only) ──
-  // Offered everywhere except the front page. With no history inside the app
-  // (opened from a link or a cold start on a deep page) it goes home.
-  var backBtn = document.getElementById('obs-back-btn');
-  if(backBtn && isApp && path !== '/' && path !== '/index.html'){
-    backBtn.hidden = false;
-    backBtn.addEventListener('click', function(){
-      var fromSite = false;
-      try{ fromSite = document.referrer && new URL(document.referrer).origin === location.origin; }catch(e){}
-      if(fromSite && history.length > 1){ history.back(); }
-      else { window.location.href = '/'; }
-    });
-  }
+  // ── BACK / FORWARD ARROWS (every page) ──
+  // Flank the language toggle. In the installed app there is no browser chrome,
+  // and a cold start on a deep page has no history: Back then goes home.
+  var histBack = document.getElementById('obs-hist-back');
+  var histFwd  = document.getElementById('obs-hist-fwd');
+  if(histBack) histBack.addEventListener('click', function(){
+    var fromSite = false;
+    try{ fromSite = document.referrer && new URL(document.referrer).origin === location.origin; }catch(e){}
+    if(history.length > 1 && (fromSite || !isApp)){ history.back(); }
+    else if(isApp){ window.location.href = '/'; }
+    else { history.back(); }
+  });
+  if(histFwd) histFwd.addEventListener('click', function(){ history.forward(); });
 
   // ── THEME LOGIC ──
   // The toggle is only offered on pages whose colours invert: pages on
