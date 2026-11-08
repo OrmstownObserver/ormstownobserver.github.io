@@ -46,7 +46,7 @@
       searchPh: 'e.g. 131-2026, fence, hens, burning permit',
       clear: 'Clear search',
       statusGroup: 'Legal status',
-      sCurrent: 'Current law', sDraft: 'Drafts', sRepealed: 'Repealed', sUnverified: 'Status not verified', sAll: 'All',
+      sCurrent: 'Current law', sDraft: 'Pending', sRepealed: 'Repealed', sUnverified: 'Status not verified', sAll: 'All',
       catAll: 'All categories',
       topicAll: 'Any situation',
       reset: 'Reset filters',
@@ -68,10 +68,10 @@
       explainer: 'Read the Observer explainer', coverage: 'Observer coverage',
       newTab: '(opens in a new tab)',
       draftsTitle: 'Being decided now',
-      draftsSub: 'Draft bylaws council has tabled but not adopted. Steps are listed only where the register records them.',
+      draftsSub: 'Draft bylaws council has tabled but not adopted, and bylaws it has adopted that are not yet in force. Steps are listed only where the register records them.',
       seeCard: 'See the card',
       registerAll: 'All bylaws', registerCurrent: 'Bylaws in force',
-      registerDraft: 'Draft bylaws', registerRepealed: 'Repealed bylaws (history)', registerUnverified: 'Bylaws whose status is not verified',
+      registerDraft: 'Draft and newly adopted bylaws', registerRepealed: 'Repealed bylaws (history)', registerUnverified: 'Bylaws whose status is not verified',
       repealedNote: 'Repealed bylaws are kept for history. They are not current law.',
       dataNote: function (n, date) { return 'Register snapshot of ' + n + ' bylaws, generated ' + date + ' from the Observer’s bylaw registry.'; },
       gapsNote: '“Not recorded” means the register has no verified value yet. It does not mean the information does not exist.',
@@ -82,7 +82,7 @@
       searchPh: 'ex. 131-2026, chiens, eau potable, incendie',
       clear: 'Effacer la recherche',
       statusGroup: 'Statut juridique',
-      sCurrent: 'En vigueur', sDraft: 'Projets', sRepealed: 'Abrogés', sUnverified: 'Statut à vérifier', sAll: 'Tous',
+      sCurrent: 'En vigueur', sDraft: 'En cours', sRepealed: 'Abrogés', sUnverified: 'Statut à vérifier', sAll: 'Tous',
       catAll: 'Toutes les catégories',
       topicAll: 'Toute situation',
       reset: 'Réinitialiser les filtres',
@@ -104,10 +104,10 @@
       explainer: 'Lire l’explicateur de l’Observer', coverage: 'Couverture de l’Observer',
       newTab: '(s’ouvre dans un nouvel onglet)',
       draftsTitle: 'En cours d’adoption',
-      draftsSub: 'Projets de règlement déposés au conseil mais pas encore adoptés. Les étapes ne sont indiquées que si le registre les consigne.',
+      draftsSub: 'Projets de règlement déposés au conseil mais pas encore adoptés, et règlements adoptés qui ne sont pas encore en vigueur. Les étapes ne sont indiquées que si le registre les consigne.',
       seeCard: 'Voir la fiche',
       registerAll: 'Tous les règlements', registerCurrent: 'Règlements en vigueur',
-      registerDraft: 'Projets de règlement', registerRepealed: 'Règlements abrogés (historique)', registerUnverified: 'Règlements dont le statut reste à vérifier',
+      registerDraft: 'Projets et règlements adoptés (pas encore en vigueur)', registerRepealed: 'Règlements abrogés (historique)', registerUnverified: 'Règlements dont le statut reste à vérifier',
       repealedNote: 'Les règlements abrogés restent visibles pour l’historique. Ils ne sont plus en vigueur.',
       dataNote: function (n, date) { return 'Instantané du registre : ' + n + ' règlements, produit le ' + date + ' à partir du registre des règlements de l’Observer.'; },
       gapsNote: '« Non consigné » signifie que le registre n’a pas encore de valeur vérifiée. Cela ne veut pas dire que l’information n’existe pas.',
@@ -121,6 +121,9 @@
     'In force': { group: 'current', cls: 'st-in', en: 'In force', fr: 'En vigueur' },
     'Amended':  { group: 'current', cls: 'st-am', en: 'In force, amended', fr: 'En vigueur, modifié' },
     'Draft':    { group: 'draft',   cls: 'st-draft', en: 'Draft', fr: 'Projet' },
+    // Adopted by council but the notice of coming into force is not yet public.
+    // Kept in the "pending" group so it is never shown as current law early.
+    'Adopted':  { group: 'draft',   cls: 'st-draft', en: 'Adopted, not yet in force', fr: 'Adopté, pas encore en vigueur' },
     'Repealed': { group: 'repealed', cls: 'st-rep', en: 'Repealed', fr: 'Abrogé' }
   };
   var UNVERIFIED = { group: 'unverified', cls: 'st-unk', en: 'Status not verified', fr: 'Statut à vérifier' };

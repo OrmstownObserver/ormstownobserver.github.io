@@ -1,16 +1,16 @@
 {
   "version": 1,
-  "generated_at": "2026-10-08T00:01:38.787415Z",
+  "generated_at": "2026-11-07T00:00:00Z",
   "source_note": "Local publication snapshot generated from public municipal bylaw records reviewed in the Observer Notion bylaw registry.",
   "legal_note_en": "Unofficial public-interest index. French official documents published by the municipality remain the authoritative source.",
   "legal_note_fr": "Index non officiel d’intérêt public. Les documents officiels français publiés par la municipalité demeurent la source faisant autorité.",
   "records": [
     {
-      "bylaw_number": "Projet de règlement 149.1-2026",
-      "title_en": "First draft — Subdivision Bylaw amendment (parks contribution exemptions)",
-      "title_fr": "Premier projet de règlement 149.1-2026 modifiant le Règlement de lotissement 149-2023",
-      "status": "Draft",
-      "adopted_date": null,
+      "bylaw_number": "Règlement 149.1-2026",
+      "title_en": "Subdivision Bylaw amendment 149.1-2026 (parks contribution exemptions)",
+      "title_fr": "Règlement 149.1-2026 modifiant le Règlement de lotissement 149-2023",
+      "status": "Adopted",
+      "adopted_date": "2026-11-02",
       "amended_date": null,
       "enforced_by": "Municipality",
       "fines": null,
@@ -18,21 +18,22 @@
       "key_facts_en": [
         "Adds exemptions k)–q) to art. 4.2 of Règl. 149-2023 (parks/playgrounds contribution)",
         "Exempts qualifying non-profits, schools, daycares/CPEs, municipal and public-purpose operations",
-        "Contains provisions subject to referendum approval, territory-wide",
-        "Notice of motion 6 July 2026 (J. Fairhurst); consultation held 26 Aug 2026"
+        "The first draft contained provisions subject to referendum approval, territory-wide",
+        "Notice of motion 6 July 2026; consultation held 26 Aug 2026; adopted 2 Nov 2026 (council recording and agenda; minutes not yet published)"
       ],
       "category": "Zoning & Land Use",
       "topics": [
         "Build & renovate",
         "Trees & land"
-      ]
+      ],
+      "next_step": "MRC certificate of conformity, then notice of coming into force"
     },
     {
-      "bylaw_number": "Projet de règlement 129-2026",
-      "title_en": "Draft — Contract Management Bylaw 129-2026",
-      "title_fr": "Projet de règlement 129-2026 de gestion contractuelle",
-      "status": "Draft",
-      "adopted_date": null,
+      "bylaw_number": "Règlement 129-2026",
+      "title_en": "Contract Management Bylaw 129-2026",
+      "title_fr": "Règlement 129-2026 de gestion contractuelle",
+      "status": "Adopted",
+      "adopted_date": "2026-11-02",
       "amended_date": null,
       "enforced_by": "Municipality",
       "fines": "$5,000–$30,000 (person); $15,000–$100,000 (other); doubled on repeat",
@@ -41,10 +42,11 @@
         "Direct awards (gré à gré) only under $25,000; invitation to at least 2 businesses from $25,000 (art. 12.3–12.4)",
         "Two prices required from $5,000 to under $25,000, lowest wins (art. 12.4)",
         "Fines $5,000–$30,000 (person) / $15,000–$100,000 (other), doubled on repeat (art. 15.4)",
-        "Notice of motion and draft tabled 6 Oct 2026; copies made available at the sitting"
+        "Figures above are from the draft tabled 6 Oct 2026; the adopted text had not been posted as of 7 Nov 2026",
+        "Notice of motion and draft tabled 6 Oct 2026; adopted 2 Nov 2026 (council recording and agenda; minutes not yet published)"
       ],
-      "summary_en": "Would replace bylaws 129-2020 and 129-2021 under Québec's new municipal contracts law.",
-      "next_step": "Adoption at a later sitting (date not yet announced)",
+      "summary_en": "Adopted by council on 2 November 2026; to replace bylaws 129-2020 and 129-2021 under Québec’s new municipal contracts law once it comes into force.",
+      "next_step": "Notice of coming into force (not yet published as of 7 Nov 2026); adopted text not yet posted on ormstown.ca",
       "category": "Finance & Taxation",
       "topics": [
         "Council & ethics",

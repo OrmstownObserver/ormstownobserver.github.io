@@ -86,7 +86,7 @@ PUBLIC_FIELDS = [
     "official_url", "key_facts_en", "key_facts_fr", "summary_en", "summary_fr",
     "next_step", "next_step_date", "amends", "amended_by", "explainer",
 ]
-KNOWN_STATUSES = {"In force", "Amended", "Repealed", "Draft"}
+KNOWN_STATUSES = {"In force", "Amended", "Repealed", "Draft", "Adopted"}
 OFFICIAL_HOSTS = {"www.ormstown.ca", "ormstown.ca", "drive.google.com", "docs.google.com", "www.mrchsl.com", "mrchsl.com"}
 DATE_RE = re.compile(r"^\d{4}(-\d{2}-\d{2})?$")
 SITE_PATH_RE = re.compile(r"^/(en|fr)/[a-z0-9\-/]*$", re.I)
@@ -278,7 +278,7 @@ def build_records(rows, gate, overlay):
             "amended_by": related(P_AMENDED_BY),
             "explainer": _explainer(r.get(P_ARTICLE)),
         }
-        if rec["next_step"] and status != "Draft":
+        if rec["next_step"] and status not in ("Draft", "Adopted"):
             warnings.append(f"{number}: Next Step is set on a non-draft row — not published")
             rec["next_step"], rec["next_step_date"] = None, None
 

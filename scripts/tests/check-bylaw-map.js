@@ -31,7 +31,7 @@ const settle = async () => { for (let i = 0; i < 6; i++) await new Promise((r) =
 
 const BY_NUMBER = {};
 SNAPSHOT.records.forEach((r) => { BY_NUMBER[r.bylaw_number] = r; });
-const SHOWN = ['In force', 'Amended', 'Draft'];
+const SHOWN = ['In force', 'Amended', 'Draft', 'Adopted'];
 
 // every node, with its path of ids
 const NODES = [];

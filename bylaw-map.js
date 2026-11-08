@@ -44,7 +44,7 @@
       notQuite: 'Not quite it? Choose another box, or ', searchAll: 'search the full register', end: '.',
       disclaim: 'Unofficial public-interest summary. The French text published by the municipality is the authoritative version. Not legal advice.',
       whole: 'See every path', hideWhole: 'Hide every path',
-      status: { 'In force': ['st-in', 'In force'], 'Amended': ['st-am', 'In force, amended'], 'Draft': ['st-draft', 'Draft'] }
+      status: { 'In force': ['st-in', 'In force'], 'Amended': ['st-am', 'In force, amended'], 'Draft': ['st-draft', 'Draft'], 'Adopted': ['st-draft', 'Adopted, not yet in force'] }
     },
     fr: {
       start: 'Départ', step: 'Étape', result: 'Résultat', applies: 'Ce qui s’applique', subject: 'Règlements sur ce sujet',
@@ -55,7 +55,7 @@
       notQuite: 'Ce n’est pas tout à fait ça ? Choisissez une autre case, ou ', searchAll: 'cherchez dans le registre complet', end: '.',
       disclaim: 'Résumé non officiel d’intérêt public. Le texte français publié par la Municipalité fait autorité. Pas un avis juridique.',
       whole: 'Voir tous les parcours', hideWhole: 'Masquer les parcours',
-      status: { 'In force': ['st-in', 'En vigueur'], 'Amended': ['st-am', 'En vigueur, modifié'], 'Draft': ['st-draft', 'Projet'] }
+      status: { 'In force': ['st-in', 'En vigueur'], 'Amended': ['st-am', 'En vigueur, modifié'], 'Draft': ['st-draft', 'Projet'], 'Adopted': ['st-draft', 'Adopté, pas encore en vigueur'] }
     }
   }[lang];
 
