@@ -3,3 +3,6 @@
 drafts/
 scripts/__pycache__/
 **/__pycache__/
+
+# Claude desktop preview-server config (local paths, not part of the site)
+.claude/launch.json
