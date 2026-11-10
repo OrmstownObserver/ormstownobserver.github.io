@@ -15,14 +15,24 @@
 # If something is wrong, GitHub emails you and the homepage keeps the last good version.
 
 hero:
-  path: /en/council-watch/november-2-2026/
-  sitting: 2026-11-02
-  label_en: Council Watch · Wrap-up
-  label_fr: Conseil municipal · Bilan
-  image: /images/council-watch-november-2-2026.jpg
+  path: /en/community/ormstown-fires/
+  date: 2026-11-09
+  label_en: Community series · Developing
+  label_fr: Série communautaire · En développement
+  image: /images/community-ormstown-fires.jpg
   position: center 40%
+  credit: Video still, The Ormstown Observer
+  alt_en: A firefighter stands beside a fire truck as an excavator clears the burned Pizzeria Ormstown building on rue Lambton.
+  alt_fr: Un pompier se tient près d’un camion d’incendie pendant qu’une pelle mécanique déblaie l’édifice incendié de Pizzeria Ormstown, rue Lambton.
 
 cards:
+  - path: /en/council-watch/november-2-2026/
+    sitting: 2026-11-02
+    label_en: Council Watch · Wrap-up
+    label_fr: Conseil municipal · Bilan
+    image: /images/council-watch-november-2-2026.jpg
+    position: center 40%
+
   - path: /en/editorials/sign-charter-2026/
     date: 2026-11-04
     label_en: Editorial
@@ -33,9 +43,3 @@ cards:
     label_en: Adopted Nov. 2
     label_fr: Adopté le 2 nov.
     position: center 30%
-
-  - path: /en/bylaws-regulations/rules-in-plain-language/
-    date: 2026-10-19
-    label_en: From the Observer
-    label_fr: Mot de l’Observer
-    icon: default
