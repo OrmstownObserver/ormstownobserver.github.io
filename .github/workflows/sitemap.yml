@@ -1,0 +1,55 @@
+# Rebuilds sitemap.xml whenever a public page changes, so search engines see new
+# stories and updates. Never touches the homepage slots. If it fails, the last
+# sitemap stays live.
+name: Sitemap
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/build_sitemap.py
+      - "en/**/index.html"
+      - "fr/**/index.html"
+      - index.html
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: site-writer
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build sitemap.xml
+        run: python3 scripts/build_sitemap.py
+
+      - name: Commit if changed
+        id: commit
+        run: |
+          if git diff --quiet -- sitemap.xml && git ls-files --error-unmatch sitemap.xml >/dev/null 2>&1; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"; echo "Sitemap unchanged."; exit 0
+          fi
+          git config user.name "observer-sitemap[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sitemap.xml
+          git commit -m "sitemap: rebuild"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && break
+            sleep 5
+          done
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Request a Pages build
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages build request failed; the next push will deploy it."
