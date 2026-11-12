@@ -252,7 +252,7 @@
   </url>
   <url>
     <loc>https://ormstownobserver.ca/en/council-watch/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/"/>
   </url>
@@ -309,6 +309,12 @@
     <lastmod>2026-11-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/june-1-2026/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/1-juin-2026/"/>
+  </url>
+  <url>
+    <loc>https://ormstownobserver.ca/en/council-watch/november-11-2026/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/november-11-2026/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/11-novembre-2026/"/>
   </url>
   <url>
     <loc>https://ormstownobserver.ca/en/council-watch/november-2-2026-preview/</loc>
@@ -678,7 +684,7 @@
   </url>
   <url>
     <loc>https://ormstownobserver.ca/fr/conseil-municipal/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/"/>
   </url>
@@ -687,6 +693,12 @@
     <lastmod>2026-11-01</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/june-1-2026/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/1-juin-2026/"/>
+  </url>
+  <url>
+    <loc>https://ormstownobserver.ca/fr/conseil-municipal/11-novembre-2026/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/november-11-2026/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/11-novembre-2026/"/>
   </url>
   <url>
     <loc>https://ormstownobserver.ca/fr/conseil-municipal/13-avril-2026/</loc>
