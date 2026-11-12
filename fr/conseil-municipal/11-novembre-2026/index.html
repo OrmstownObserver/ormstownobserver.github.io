@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('observerTheme');if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilan du conseil : 11 novembre 2026 &mdash; The Ormstown Observer</title>
+<meta name="description" content="Compte rendu de la s&eacute;ance extraordinaire du conseil d&rsquo;Ormstown du 11 novembre 2026 sur les incendies de la rue Lambton : le maire remercie les pompiers et les services d&rsquo;entraide, et le conseil demande &agrave; l&rsquo;unanimit&eacute; plus de ressources polici&egrave;res &agrave; Qu&eacute;bec.">
+<link rel="canonical" href="https://ormstownobserver.ca/fr/conseil-municipal/11-novembre-2026/">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/november-11-2026/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/11-novembre-2026/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a; --ink-light: #444; --accent: #b5161b; --accent-light: #f5e8e8;
+    --paper: #faf8f4; --paper-dark: #f0ece4; --rule: #c8b97a; --border: #d4c9b8;
+    --muted: #555; --sidebar: #f5f2eb; --confirm: #155724; --warn: #721c24; --pending: #856404;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Source Serif 4', Georgia, serif; line-height: 1.65; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .article-wrap { max-width: 800px; margin: 0 auto; padding: 32px 20px 60px; }
+
+  .back-link { display: inline-block; margin-bottom: 22px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); }
+  .back-link:hover { color: var(--accent); }
+
+  .section-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-weight: 600; margin-bottom: 10px; }
+  .article-headline { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.9rem; line-height: 1.25; margin: 0 0 14px; }
+  .article-deck { font-size: 1.1rem; color: var(--ink-light); font-style: italic; margin-bottom: 16px; }
+  /* Sitting stamp: la séance couverte par la page, avant le titre,
+     pour que la date de la séance se lise avant la date de publication. */
+  .sitting-stamp { display: inline-flex; align-items: stretch; margin: 2px 0 16px; border: 1px solid var(--accent); }
+  .sitting-stamp .ss-kind { background: var(--accent); color: #fff; font-family: sans-serif; font-size: 0.68rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 1.2px; padding: 7px 10px; display: flex; align-items: center; }
+  .sitting-stamp .ss-date { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.05rem; padding: 6px 12px; color: var(--ink); }
+  :root[data-theme="dark"] .sitting-stamp .ss-kind { color: #0f141b; }
+  .sitting-stamp { flex-wrap: wrap; max-width: 100%; }
+  .sitting-stamp .ss-kind, .sitting-stamp .ss-date { white-space: nowrap; }
+  @media (max-width: 480px) {
+    .sitting-stamp .ss-kind { font-size: 0.6rem; padding: 6px 8px; }
+    .sitting-stamp .ss-date { font-size: 0.92rem; padding: 5px 10px; }
+  }
+  /* Cross-link between a sitting's full recap and its single-decision stories. */
+  .sitting-link { border-left: 3px solid var(--accent); padding: 8px 14px; margin: 0 0 22px; font-size: 0.9rem; }
+  .sitting-link .sl-label { display: block; font-family: sans-serif; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 2px; }
+  .sitting-link a { color: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .byline { font-size: 0.85rem; color: var(--muted); border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+
+  h2 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 1.35rem; margin: 48px 0 14px; }
+  h3 { font-family: 'Libre Baskerville', serif; font-weight: 700; font-style: italic; font-size: 1.1rem; margin: 36px 0 10px; }
+  /* observer-header.js injects h1,h2,h3{margin:0} after this block; body h2/h3 outranks it */
+  body h2 { margin: 48px 0 14px; }
+  body h3 { margin: 36px 0 10px; }
+  p { margin: 0 0 16px; }
+  p.lede { font-size: 1.08rem; }
+  ul, ol { margin: 0 0 16px; padding-left: 22px; }
+  li { margin-bottom: 6px; }
+
+  .fact-box { background: var(--sidebar); border-left: 4px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 2px; }
+  .fact-box h3 { margin-top: 0; font-style: normal; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--accent); }
+  .fact-box ul { margin-bottom: 0; }
+
+  .note-box { background: #fdf6e3; border-left: 4px solid var(--pending); padding: 14px 18px; margin: 20px 0; border-radius: 2px; font-size: 0.95rem; }
+  .note-box strong { color: var(--pending); }
+
+  .status-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; padding: 6px 14px; border-radius: 20px; margin-bottom: 20px; }
+  .status-badge .status-dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; flex-shrink: 0; }
+  .status-badge.unofficial { background: #fdf6e3; color: var(--pending); border: 1px solid #e8d9a0; }
+  .status-badge.confirmed { background: #e8f3ea; color: var(--confirm); border: 1px solid #b8dcc0; }
+  .status-badge.preview { background: var(--accent-light); color: var(--accent); border: 1px solid #e3c4c5; }
+
+  /* ── SOURCE CHIPS ──────────────────────────────────────────────────────────
+     Named .src-chip, NOT .chip: .chip / .chip.active is the filter bar in
+     en/council-watch/index.html and a name collision would restyle it. */
+  .src-chips { display: inline-flex; gap: 4px; vertical-align: 2px; margin-right: 8px; flex-wrap: wrap; }
+  .src-chip {
+    display: inline-block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 0.62rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; padding: 2px 7px; border-radius: 3px;
+    white-space: nowrap; line-height: 1.5;
+  }
+  .src-chip.src-min    { background: #e8f3ea;          color: var(--confirm); border: 1px solid #b8dcc0; }
+  .src-chip.src-doc    { background: #eef1f7;          color: #2c3e63;        border: 1px solid #c4cde0; }
+  .src-chip.src-rec    { background: #fdf6e3;          color: var(--pending); border: 1px solid #e8d9a0; }
+  a.rec-link { color: inherit; text-decoration: underline; text-decoration-color: var(--accent); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  a.rec-link:hover { color: var(--accent); }
+  a.rec-end { margin-left: 0.4em; white-space: nowrap; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); text-decoration: none; }
+  a.rec-end:hover { text-decoration: underline; }
+  @media print { a[data-t]::after { content: " [" attr(data-t) "]"; font-weight: 400; } }
+  .src-chip.src-agenda { background: var(--paper-dark); color: var(--muted);   border: 1px solid var(--border); }
+  .src-chip.src-obs    { background: var(--accent-light); color: var(--accent); border: 1px solid #e3c4c5; }
+
+  .src-legend { font-size: 0.82rem; color: var(--muted); border: 1px solid var(--border); background: var(--paper-dark); padding: 12px 16px; margin: 0 0 28px; border-radius: 2px; line-height: 1.55; }
+  .src-legend p { margin: 0; }
+
+  blockquote { border-left: 3px solid var(--rule); margin: 24px 0; padding: 4px 20px; font-style: italic; color: var(--ink-light); }
+  blockquote cite { display: block; margin-top: 8px; font-size: 0.75rem; font-style: normal; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+  .pull-quote { border-top: 3px solid var(--accent); border-bottom: 3px solid var(--accent); padding: 20px 0 16px; margin: 32px 0; text-align: center; }
+  .pull-quote p { font-family: 'Libre Baskerville', serif; font-size: 1.15rem; font-style: italic; font-weight: 700; line-height: 1.45; margin: 0; }
+  .pull-quote cite { display: block; margin-top: 10px; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); font-style: normal; }
+
+  table.follow-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; margin: 16px 0 28px; }
+  table.follow-table th { background: var(--paper-dark); text-align: left; padding: 8px 10px; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--ink); }
+  table.follow-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+
+  .reso-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 4px; margin: 16px 0 28px; }
+  table.reso-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; background: #fff; }
+  table.reso-table th { background: var(--ink); color: #f0ece4; text-align: left; padding: 8px 10px; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap; }
+  table.reso-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  table.reso-table td.pt { font-weight: 600; white-space: nowrap; color: var(--muted); }
+  table.reso-table tr:nth-child(even) td { background: var(--paper-dark); }
+  .res-carried { color: var(--confirm); white-space: nowrap; }
+  .res-tabled  { color: var(--pending); white-space: nowrap; }
+  .res-refused { color: var(--warn);    white-space: nowrap; }
+
+  figure.article-figure { margin: 28px 0; }
+  figure.article-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border); }
+  figure.article-figure figcaption { font-size: 0.85rem; color: var(--muted); padding-top: 8px; line-height: 1.5; }
+  figure.article-figure figcaption .credit { font-style: italic; }
+
+  /* ── PREVIEW BANNER ── the bold "what this is" block at the top of every article */
+  .preview-banner { background: var(--ink); color: var(--paper); padding: 24px 26px; margin: 0 0 24px; border-radius: 3px; border-left: 8px solid var(--accent); }
+  .pb-kicker { font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rule); font-weight: 700; margin-bottom: 9px; }
+  .pb-title { font-family: 'Libre Baskerville', serif; font-size: clamp(1.45rem, 4.4vw, 2.05rem); font-weight: 700; line-height: 1.15; margin: 0; color: var(--paper); }
+  .pb-sub { margin: 10px 0 0; font-size: 0.9rem; color: #d8d2c4; }
+
+  /* ── MEETING CARD ── when / where / documents, scannable */
+  .meeting-card { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); border: 1px solid var(--border); border-radius: 3px; overflow: hidden; margin: 0 0 28px; }
+  .mc-cell { padding: 13px 16px; border-right: 1px solid var(--border); background: var(--paper-dark); }
+  .mc-cell:last-child { border-right: none; }
+  .mc-label { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 700; margin-bottom: 5px; }
+  .mc-value { font-size: 0.97rem; font-weight: 600; line-height: 1.4; }
+
+  /* ── AGENDA ── the literal, verbatim agenda. Never paraphrase inside .ag-fr. */
+  .agenda { border: 1px solid var(--border); border-radius: 3px; overflow: hidden; margin: 22px 0 30px; }
+  .ag-sec { border-bottom: 1px solid var(--border); }
+  .ag-sec:last-child { border-bottom: none; }
+  .ag-sec-head { background: var(--ink); color: var(--paper); padding: 9px 14px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; }
+  .ag-sec-num { color: var(--rule); margin-right: 9px; }
+  .ag-item { padding: 12px 14px; border-bottom: 1px solid #e6dfd2; display: flex; gap: 12px; align-items: flex-start; }
+  .ag-item:last-child { border-bottom: none; }
+  .ag-item:nth-child(even) { background: var(--paper-dark); }
+  .ag-num { flex: 0 0 44px; font-weight: 700; color: var(--accent); font-size: 0.9rem; }
+  .ag-body { flex: 1; min-width: 0; }
+  .ag-fr { font-size: 0.95rem; }
+  .ag-en { font-size: 0.87rem; color: var(--muted); font-style: italic; margin-top: 3px; }
+  .ag-docs { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .doc-link { display: inline-block; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.03em; padding: 3px 9px; border-radius: 3px; background: #eef1f7; color: #2c3e63; border: 1px solid #c4cde0; }
+  .doc-link:hover { background: #2c3e63; color: #fff; text-decoration: none; }
+  .ag-none { font-size: 0.79rem; color: var(--muted); font-style: italic; margin-top: 6px; }
+
+  /* ── TIMELINE ── for the "how this file got here" explainer */
+  .timeline { border-left: 3px solid var(--rule); margin: 22px 0 28px; padding: 0 0 0 0; list-style: none; }
+  .timeline li { position: relative; padding: 0 0 18px 22px; margin: 0; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before { content: ''; position: absolute; left: -7px; top: 6px; width: 11px; height: 11px; border-radius: 50%; background: var(--accent); border: 2px solid var(--paper); }
+  .tl-date { font-size: 0.71rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+  .tl-body { font-size: 0.95rem; margin-top: 3px; }
+
+  .article-footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 0.9rem; }
+  .article-footer h3 { font-size: 1rem; font-style: normal; margin-top: 0; }
+  .article-footer li { margin-bottom: 8px; }
+
+  .disclaimer { margin-top: 14px; font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .disclaimer strong { color: var(--ink); }
+
+  @media (max-width: 680px) {
+    table.follow-table { font-size: 0.8rem; }
+    table.reso-table { font-size: 0.78rem; }
+  }
+  @media print {
+    .src-chip { border-color: #999; color: #000; background: #fff; }
+  }
+
+  /* Phones: comfortable tap targets + running text (2026-10-14) */
+  @media (max-width: 560px) {
+    .back-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: -13px; margin-bottom: 9px; }
+    a.rec-end, cite a.rec-link { display: inline-block; padding: 14px 4px; margin-top: -14px; margin-bottom: -14px; }
+    .doc-link { display: inline-flex; align-items: center; min-height: 40px; font-size: 0.78rem; }
+    .src-legend, .disclaimer, .article-footer { font-size: 0.94rem; }
+  }
+</style>
+<script src="/observer-header.js" defer></script>
+<link rel="stylesheet" href="/article-night.css">
+</head>
+<body>
+
+<main class="article-wrap">
+  <a class="back-link" href="/fr/conseil-municipal/">&larr; Conseil municipal</a>
+
+  <div class="section-label">Conseil municipal</div>
+  <div class="sitting-stamp"><span class="ss-kind">S&eacute;ance extraordinaire</span><span class="ss-date">Mercredi 11 novembre 2026</span></div>
+
+  <h1 class="article-headline">Bilan du conseil : 11 novembre 2026</h1>
+
+  <p class="article-deck">Le maire salue les pompiers qui ont sauv&eacute; la rue principale &middot; Le conseil demande &agrave; l&rsquo;unanimit&eacute; des ressources polici&egrave;res durables &agrave; Qu&eacute;bec &middot; Les municipalit&eacute;s voisines invit&eacute;es &agrave; appuyer la d&eacute;marche</p>
+
+  <div class="byline">
+    L&rsquo;Ormstown Observer &middot; Publi&eacute; le 11 novembre 2026 &middot; 17&nbsp;h, h&ocirc;tel de ville, 5, rue Gale
+  </div>
+
+  <figure class="article-figure">
+    <img src="/images/council-watch-november-11-2026.jpg" alt="Des membres du conseil d&rsquo;Ormstown et trois officiers du service incendie r&eacute;unis apr&egrave;s la s&eacute;ance extraordinaire du 11 novembre, coquelicot &agrave; la boutonni&egrave;re.">
+    <figcaption>Des membres du conseil et des officiers du service de s&eacute;curit&eacute; incendie d&rsquo;Ormstown apr&egrave;s la s&eacute;ance extraordinaire. <span class="credit">Photo : Stray Dog Media</span></figcaption>
+  </figure>
+
+  <div class="status-badge unofficial"><span class="status-dot"></span>Notes de l&rsquo;Observer &middot; R&eacute;sum&eacute; non officiel &mdash; proc&egrave;s-verbal &agrave; venir</div>
+
+  <div class="sitting-link"><span class="sl-label">S&eacute;rie communautaire</span><a href="/fr/incendies-ormstown/">Les incendies suspects d&rsquo;Ormstown&nbsp;: ce que l&rsquo;on sait jusqu&rsquo;ici</a></div>
+
+  <p class="lede">Le conseil d&rsquo;Ormstown a tenu une s&eacute;ance extraordinaire le soir du jour du Souvenir, avec un seul point &agrave; l&rsquo;ordre du jour : la s&eacute;rie d&rsquo;incendies sur la rue Lambton. Le maire Philippe Besombes a consacr&eacute; l&rsquo;essentiel de l&rsquo;heure &agrave; remercier ceux qui les ont combattus, &agrave; expliquer ce qu&rsquo;il a demand&eacute; &agrave; Qu&eacute;bec et &agrave; lire la r&eacute;solution que le conseil a ensuite adopt&eacute;e &agrave; l&rsquo;unanimit&eacute;.</p>
+
+  <h2>&laquo;&nbsp;Si la rue principale est encore debout, c&rsquo;est gr&acirc;ce &agrave; vous&nbsp;&raquo;</h2>
+
+  <p>Trois officiers du service de s&eacute;curit&eacute; incendie d&rsquo;Ormstown assistaient &agrave; la s&eacute;ance. Le maire s&rsquo;est adress&eacute; directement &agrave; eux.</p>
+
+  <div class="pull-quote">
+    <p>&laquo;&nbsp;Nos pompiers ont &eacute;t&eacute; exemplaires. Je pense que si la rue principale est encore debout, c&rsquo;est gr&acirc;ce &agrave; vous.&nbsp;&raquo;</p>
+    <cite>&mdash; Le maire Philippe Besombes</cite>
+  </div>
+
+  <p>La salle a offert une ovation debout aux pompiers.</p>
+
+  <p>Le maire a racont&eacute; &ecirc;tre rest&eacute; un moment sur les lieux et avoir vu que plusieurs pompiers &eacute;taient &eacute;branl&eacute;s. Deux familles habitaient au-dessus du b&acirc;timent incendi&eacute;, a-t-il rappel&eacute; : il y avait de quoi l&rsquo;&ecirc;tre. Mais il leur a dit qu&rsquo;ils pouvaient &ecirc;tre fiers de leur travail et de leurs &eacute;quipes. Il a aussi remerci&eacute; les services venus en entraide : Franklin, Saint-&Eacute;tienne-de-Beauharnois, Saint-Louis-de-Gonzague, Saint-Stanislas-de-Kostka et Huntingdon. C&rsquo;est gr&acirc;ce &agrave; cette aide, a-t-il dit, qu&rsquo;il n&rsquo;y a eu ni bless&eacute; ni mort et que les b&acirc;timents voisins ont &eacute;t&eacute; prot&eacute;g&eacute;s.</p>
+
+  <p>Le maire a &eacute;galement remerci&eacute; les commer&ccedil;ants et les citoyens pour leur r&eacute;silience et pour les messages d&rsquo;encouragement re&ccedil;us, d&rsquo;Ormstown, de partout au Qu&eacute;bec et d&rsquo;ailleurs. Il a soulign&eacute; que les incendies ont eu une couverture nationale, notamment une entrevue qu&rsquo;il a accord&eacute;e &agrave; l&rsquo;&eacute;mission <i>As It Happens</i> de CBC. Il a remerci&eacute; ses coll&egrave;gues du conseil pour leur soutien.</p>
+
+  <h2>Ce que le maire a demand&eacute;</h2>
+
+  <p>Le maire a fait le r&eacute;cit des derniers jours. Il s&rsquo;est rendu sur les lieux dimanche. Le d&eacute;couragement &eacute;tait r&eacute;el, a-t-il dit, mais comme maire, il devait &ecirc;tre court, parce qu&rsquo;il fallait agir. Le jour m&ecirc;me (dimanche 8 novembre), il a appel&eacute; le d&eacute;put&eacute; Fr&eacute;d&eacute;ric Laplante pour lui dire que &ccedil;a ne pouvait plus durer. Le lundi matin, il a rencontr&eacute;, avec les conseillers Ren&eacute; Gauthier et Jen Fairhurst, membres du comit&eacute; de s&eacute;curit&eacute; civile, le ministre de la S&eacute;curit&eacute; publique, venu &agrave; Ormstown, ainsi que des hauts grad&eacute;s de la S&ucirc;ret&eacute; du Qu&eacute;bec et le d&eacute;put&eacute;.</p>
+
+  <blockquote>&laquo;&nbsp;Le temps n&rsquo;&eacute;tait plus aux paroles, le temps &eacute;tait aux actions.&nbsp;&raquo;<cite>&mdash; Le maire Philippe Besombes</cite></blockquote>
+
+  <p>Le ministre a demand&eacute; &agrave; la SQ de pr&eacute;senter un plan. En quelques jours, selon le maire, le directeur g&eacute;n&eacute;ral de la SQ l&rsquo;a appel&eacute; pour lui en proposer un : des policiers suppl&eacute;mentaires, de jour comme de nuit, d&eacute;di&eacute;s &agrave; Ormstown. Le maire a insist&eacute; sur le mot <i>d&eacute;di&eacute;s</i>, puisque le poste r&eacute;gional de la SQ dessert 13 municipalit&eacute;s.</p>
+
+  <p>Il a dit n&rsquo;avoir aucune information sur l&rsquo;enqu&ecirc;te et ne pas la commenter : c&rsquo;est le travail de la SQ. Le r&ocirc;le du conseil est de s&rsquo;assurer que les ressources sont l&agrave; et d&rsquo;en demander davantage au besoin. Il a aussi indiqu&eacute; avoir rencontr&eacute; individuellement des commer&ccedil;ants de la rue et qu&rsquo;une r&eacute;union avec eux aura lieu la semaine prochaine.</p>
+
+  <h2>La r&eacute;solution</h2>
+
+  <p>Le maire a lu la r&eacute;solution en entier, affirmant que &laquo;&nbsp;tout est important dans ce qui est &eacute;crit&nbsp;&raquo;. Son but, a-t-il dit, est de formaliser ce qui a &eacute;t&eacute; fait ces derniers jours. Le conseil y&nbsp;:</p>
+
+  <ul>
+    <li>affirme que la situation est <strong>inacceptable</strong> et que les citoyens, les commer&ccedil;ants et les familles ont droit &agrave; un milieu de vie s&eacute;curitaire&nbsp;;</li>
+    <li><strong>remercie</strong> les pompiers, les premiers r&eacute;pondants, la SQ et toutes les personnes intervenues&nbsp;;</li>
+    <li>demande au gouvernement du Qu&eacute;bec, au ministre de la S&eacute;curit&eacute; publique et au d&eacute;put&eacute; de reconna&icirc;tre le caract&egrave;re <strong>urgent</strong> de la situation&nbsp;;</li>
+    <li>demande des <strong>ressources polici&egrave;res additionnelles</strong> &agrave; Ormstown, avec la SQ, pour soutenir l&rsquo;enqu&ecirc;te et accro&icirc;tre la pr&eacute;sence polici&egrave;re aussi longtemps que n&eacute;cessaire&nbsp;;</li>
+    <li>demande que la SQ dispose de <strong>tous les outils n&eacute;cessaires</strong> pour faire avancer les enqu&ecirc;tes et pr&eacute;venir d&rsquo;autres incendies&nbsp;;</li>
+    <li>demande un <strong>canal de communication r&eacute;gulier</strong> entre la municipalit&eacute;, la SQ et le minist&egrave;re de la S&eacute;curit&eacute; publique&nbsp;;</li>
+    <li>demande &agrave; Qu&eacute;bec d&rsquo;&eacute;valuer un <strong>soutien aux commer&ccedil;ants et aux citoyens</strong> touch&eacute;s, notamment pour la relance &eacute;conomique&nbsp;;</li>
+    <li>demande que des <strong>mesures pr&eacute;ventives de surveillance et de s&eacute;curisation</strong> soient discut&eacute;es rapidement avec les partenaires&nbsp;;</li>
+    <li>demande au minist&egrave;re d&rsquo;&eacute;valuer les <strong>besoins policiers &agrave; moyen et long terme</strong> du territoire, y compris des ressources permanentes &agrave; la SQ. &laquo;&nbsp;L&agrave;, on est dans du temporaire pour l&rsquo;instant&nbsp;&raquo;, a pr&eacute;cis&eacute; le maire&nbsp;;</li>
+    <li>r&eacute;clame une <strong>rencontre de suivi</strong> avec le minist&egrave;re, la SQ et le d&eacute;put&eacute;&nbsp;;</li>
+    <li>mandate le maire et la direction g&eacute;n&eacute;rale de poursuivre les repr&eacute;sentations&nbsp;;</li>
+    <li>transmet la r&eacute;solution au ministre, au d&eacute;put&eacute;, &agrave; la SQ et &agrave; la MRC du Haut-Saint-Laurent, la rend <strong>publique</strong> et invite les 13 municipalit&eacute;s de la MRC ainsi que celles des MRC voisines &agrave; adopter des <strong>r&eacute;solutions d&rsquo;appui</strong>.</li>
+  </ul>
+
+  <p>Personne n&rsquo;a vot&eacute; contre. La r&eacute;solution a &eacute;t&eacute; <strong>adopt&eacute;e &agrave; l&rsquo;unanimit&eacute;</strong>.</p>
+
+  <h2>P&eacute;riode de questions</h2>
+
+  <p>Un citoyen a demand&eacute; si des cam&eacute;ras avaient &eacute;t&eacute; install&eacute;es au centre du village. Le maire a dit ne pas pouvoir donner de d&eacute;tails, mais que les cam&eacute;ras &laquo;&nbsp;ne sont pas un enjeu&nbsp;&raquo; : il y en a d&eacute;j&agrave; beaucoup, et la SQ ne les a pas cibl&eacute;es comme un besoin.</p>
+
+  <p>La s&eacute;ance a &eacute;t&eacute; enregistr&eacute;e, mais pas diffus&eacute;e en direct. Le maire a indiqu&eacute; que la vid&eacute;o sera publi&eacute;e sur la cha&icirc;ne YouTube de la Ville.</p>
+
+  <div class="fact-box">
+    <h3>Ce qu&rsquo;on ne sait pas encore</h3>
+    <ul>
+      <li>Combien de policiers le plan de la SQ ajoute, et pour combien de temps.</li>
+      <li>Quand la r&eacute;solution adopt&eacute;e sera publi&eacute;e.</li>
+      <li>Quelles municipalit&eacute;s voisines adopteront une r&eacute;solution d&rsquo;appui.</li>
+      <li>La date de la rencontre de suivi avec le minist&egrave;re et la SQ.</li>
+    </ul>
+  </div>
+
+  <p><i>Toute personne ayant de l&rsquo;information sur les incendies doit communiquer avec la S&ucirc;ret&eacute; du Qu&eacute;bec (Centrale de l&rsquo;information criminelle : 1&nbsp;800&nbsp;659-4264).</i></p>
+
+  <div class="article-footer">
+    <h3>Sources</h3>
+    <ul>
+      <li>Enregistrement de la s&eacute;ance publique par l&rsquo;Observer, 11 novembre 2026 (la vid&eacute;o de la Ville sera publi&eacute;e sur sa cha&icirc;ne YouTube)</li>
+      <li><a href="https://www.ormstown.ca/wp-content/uploads/AVIS_Seance-extraordinaire-2026-11-11_Signe.pdf">Avis de la s&eacute;ance extraordinaire du 11 novembre 2026</a></li>
+      <li>Proc&egrave;s-verbal officiel &mdash; publication &agrave; venir sur ormstown.ca</li>
+    </ul>
+    <p class="disclaimer"><strong>&Agrave; propos de cet article.</strong> Ceci est un r&eacute;sum&eacute; non officiel d&rsquo;une s&eacute;ance publique du conseil, publi&eacute; &agrave; titre de service public par The Ormstown Observer. <strong>The Ormstown Observer est une publication ind&eacute;pendante. Elle n&rsquo;est ni affili&eacute;e &agrave; la Municipalit&eacute; d&rsquo;Ormstown, ni endoss&eacute;e par elle, et ne parle pas en son nom.</strong> Ce compte rendu a &eacute;t&eacute; pr&eacute;par&eacute; &agrave; partir d&rsquo;un enregistrement de la s&eacute;ance publique et de l&rsquo;avis public de la municipalit&eacute;, avant le proc&egrave;s-verbal officiel. Le proc&egrave;s-verbal officiel, une fois adopt&eacute; et publi&eacute; par la municipalit&eacute;, constitue le document faisant foi. De l&eacute;g&egrave;res inexactitudes sont possibles; l&rsquo;Observer mettra cet article &agrave; jour et ajoutera le lien vers le proc&egrave;s-verbal officiel d&egrave;s sa publication, et corrigera toute erreur publiquement. Questions ou corrections : <a href="mailto:ormstownobserver@gmail.com">ormstownobserver@gmail.com</a></p>
+  </div>
+
+</main>
+
+</body>
+</html>
