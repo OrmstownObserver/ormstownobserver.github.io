@@ -112,6 +112,56 @@ class Unsupported(Exception):
     pass
 
 
+NBSP_UNITS = r"(?:MW|kV|km|m|mètres|metres|TWh|\$|%|mois|months|jours|days|ans)\b|\$|%"
+
+
+def nbsp(s):
+    """Keep guillemets with their words, and numbers with their thousands groups and units,
+    so a phone screen never breaks '1 000 MW' or '« quote »' across lines."""
+    s = s.replace("« ", "« ").replace(" »", " »")
+    s = re.sub(r"(?<=\d) (?=\d{3}\b)", " ", s)
+    s = re.sub(r"(?<=\d) (?=" + NBSP_UNITS + ")", " ", s)
+    return s
+
+
+FR_PUNCT_RE = re.compile(r"(?<=[^\s<\"']) ([:;?!])(?=[\s<*)]|$)")
+TOC_TITLE = {"en": "In this article", "fr": "Dans cet article"}
+
+
+def slug(text):
+    """Stable anchor id for a heading: plain ASCII, lowercase, words joined by hyphens."""
+    import unicodedata
+    t = re.sub(r"<[^>]+>", "", html.unescape(text))
+    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", t.lower()).strip("-")[:60] or "section"
+
+
+def page_lang(doc):
+    m = re.search(r'<html[^>]*\blang="([a-z]{2})', doc)
+    return m.group(1) if m else "en"
+
+
+def toc_html(body_html, lang):
+    items = re.findall(r'<h2 id="([^"]+)">(.*?)</h2>', body_html, re.S)
+    if len(items) < 3:
+        return ""
+    lis = "\n".join(f'      <li><a href="#{i}">{t}</a></li>' for i, t in items)
+    title = TOC_TITLE.get(lang, TOC_TITLE["en"])
+    return (f'  <nav class="toc" aria-label="{title}">\n    <h3>{title}</h3>\n    <ol>\n{lis}\n    </ol>\n  </nav>')
+
+
+def insert_toc(tail, lang):
+    """Put the contents list right after the first fact box (or before the first heading)."""
+    toc = toc_html(tail, lang)
+    if not toc:
+        return tail
+    m = re.search(r'<div class="fact-box">.*?\n  </div>', tail, re.S)
+    if m:
+        return tail[:m.end()] + "\n\n" + toc + tail[m.end():]
+    h = re.search(r"\n  <h2", tail)
+    return (tail[:h.start()] + "\n\n" + toc + tail[h.start():]) if h else tail
+
+
 def rt_html(rich):
     out = []
     for r in rich or []:
@@ -119,6 +169,7 @@ def rt_html(rich):
         if not (r.get("annotations") or {}).get("code"):   # typographic quotes, as on the site
             raw = re.sub(r'(^|[\s(\[«—–-])"', "\\1“", raw)
             raw = raw.replace('"', "”").replace("'", "’")
+            raw = nbsp(raw)
         t = html.escape(raw, quote=False)
         a = r.get("annotations") or {}
         if a.get("code"):
@@ -212,7 +263,7 @@ def render_blocks(blocks):
         lvl = heading_level(b)
         if lvl:
             text = rt_html(b[t].get("rich_text"))
-            out.append(f"  <h2>{text}</h2>")
+            out.append(f'  <h2 id="{slug(text)}">{text}</h2>')
         elif t == "paragraph":
             inner = rt_html(b[t].get("rich_text"))
             if inner.strip():
@@ -442,13 +493,19 @@ def rebuild_body(doc, parts):
         nxt = re.search(r"<h2[^>]*>(.*?)</h2>", tail[m.end():], re.S)
         figs.append((m.group(0).strip(), re.sub(r"<[^>]+>", "", nxt.group(1)).strip() if nxt else None,
                      not re.search(r"<(p|h2|div class=\"fact-box)", tail[:m.start()])))
+    lang = page_lang(doc)
+    had_toc = '<nav class="toc"' in tail
     body = render_blocks(parts["body"])
     new_tail = "\n\n" + "\n\n".join(body) + "\n\n" + render_footer(parts["foot"]) + "\n"
+    if lang == "fr":
+        new_tail = FR_PUNCT_RE.sub("\u00a0\\1", new_tail)
+    if had_toc:                       # opt-in: only pages that already carry a contents list
+        new_tail = insert_toc(new_tail, lang)
     for fig, before_h2, at_top in figs:
         if at_top:
             new_tail = "\n\n  " + fig + new_tail
             continue
-        pat = re.compile(r"(\n  <h2>" + re.escape(html.escape(before_h2, quote=False)) + r"</h2>)") if before_h2 else None
+        pat = re.compile(r"(\n  <h2[^>]*>" + re.escape(html.escape(before_h2, quote=False)) + r"</h2>)") if before_h2 else None
         if pat and pat.search(new_tail):
             new_tail = pat.sub(lambda m: "\n  " + fig + "\n" + m.group(1), new_tail, count=1)
         else:
