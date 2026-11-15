@@ -9,10 +9,10 @@
 // «Autres fournisseurs», so every month sums exactly to its
 // category totals and (for full-coverage months) to the adopted total.
 // Categories are Observer-assigned (see provenance + tools/apply-category-rules.js).
-// Generated: 2026-11-04
+// Generated: 2026-11-15
 // ============================================================
 window.OO_SPENDING = {
- "generated": "2026-11-04",
+ "generated": "2026-11-15",
  "provenance": {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
@@ -21,16 +21,17 @@ window.OO_SPENDING = {
   "gloss_method": "observer-editorial-v1",
   "tolerances": {
    "2026-01": 0.12,
-   "2025-07": 10048.36
+   "2025-07": 10048.36,
+   "2026-10": 1016878.91
   },
-  "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS), and 2025-07 carries a 10 048,36 $ gap between the annexe's three printed subtotals and its printed grand total / the adopted resolution — see that sitting's note.",
+  "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS), and 2025-07 carries a 10 048,36 $ gap between the annexe's three printed subtotals and its printed grand total / the adopted resolution — see that sitting's note; 2026-10 carries a 1 016 878,91 $ gap because rés. 26-10-268 adopts only the accounts-payable portion of Annexe A (285 664,47 $), while the annexe also lists salaries (238 685,33 $), payments already issued (133 610,01 $) and credit-line invoices (644 583,57 $), grand total 1 302 543,38 $ — every line is shown, the adopted figure is the resolution's.",
   "categories_note": "v4 (2026-08-14): content-aware mapping (finances/tools/category-rules.js) applied per ledger line by rebuild-entries.js. v3 added Regional shares & memberships and Insurance; v4 adds Policing — Sûreté du Québec (the provincial policing bill, previously inside Regional shares) and Software & IT (software, subscriptions and IT services previously split between Professional services and Supplies & operations). Each line is assigned by its payee AND entry text, leaving Other for genuinely unclassifiable items such as resident damage reimbursements.",
   "months_direct": {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
   }
  },
- "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>3 août 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance de septembre paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé au complet, jusqu'à la séance du 20 janvier 2025.",
- "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>August 3, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the September sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized in full, down to the January 20, 2025 sitting.",
+ "availability_fr": "<strong>Ce que la Municipalité a rendu public :</strong> les procès-verbaux sont publiés jusqu'à la séance du <strong>6 octobre 2026</strong>, et cette page détaille les listes de dépenses jusqu'à cette même séance. Le PV de la séance de novembre paraîtra de 4 à 6 semaines après son adoption; sa liste s'ajoutera ici dès sa publication. Vers le passé, 2025 est maintenant détaillé au complet, jusqu'à la séance du 20 janvier 2025.",
+ "availability_en": "<strong>What the Town has made public:</strong> minutes are published up to the <strong>October 6, 2026</strong> sitting, and this page itemizes the spending lists up to that same sitting. Minutes of the November sitting will appear 4–6 weeks after adoption; its list will be added here as soon as it is published. Going back, 2025 is now itemized in full, down to the January 20, 2025 sitting.",
  "budget": {
   "year": 2026,
   "adopted": "2025-12-17",
@@ -1644,6 +1645,65 @@ window.OO_SPENDING = {
     ],
     "Regional shares & memberships": [
      172.46,
+     1
+    ]
+   }
+  },
+  {
+   "m": "2026-10",
+   "label_fr": "Octobre 2026",
+   "label_en": "October 2026",
+   "total": 285664.47,
+   "coverage": "full",
+   "session": "Séance ordinaire 2026-10-06, rés. 26-10-268",
+   "url": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf",
+   "cats": {
+    "Contracts — works": [
+     566279.69,
+     17
+    ],
+    "Salaries & HR": [
+     239185.45,
+     4
+    ],
+    "Regional shares & memberships": [
+     183336.75,
+     1
+    ],
+    "Professional services": [
+     113038.88,
+     9
+    ],
+    "Supplies & operations": [
+     72802.9,
+     47
+    ],
+    "Subsidies & community": [
+     42751.86,
+     4
+    ],
+    "Legal — external counsel": [
+     28259.16,
+     6
+    ],
+    "Waste & recycling": [
+     27759.25,
+     7
+    ],
+    "Utilities": [
+     17932.13,
+     19
+    ],
+    "Vehicle fuel & maintenance": [
+     6077.41,
+     32
+    ],
+    "Software & IT": [
+     4688.74,
+     7
+    ],
+    "Other": [
+     431.16,
      1
     ]
    }
@@ -9334,6 +9394,307 @@ window.OO_SPENDING = {
    "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
    "Regional shares & memberships",
    172.46,
+   1
+  ],
+  [
+   "2026-10",
+   "Le groupe MPOTVIN",
+   "Contracts — works",
+   428409.3,
+   1
+  ],
+  [
+   "2026-10",
+   "Salaires et DAS",
+   "Salaries & HR",
+   238685.33,
+   1
+  ],
+  [
+   "2026-10",
+   "M.R.C. Haut Saint Laurent",
+   "Regional shares & memberships",
+   183336.75,
+   1
+  ],
+  [
+   "2026-10",
+   "Forage Métropolitain Inc.",
+   "Contracts — works",
+   112017.84,
+   1
+  ],
+  [
+   "2026-10",
+   "Artelia Canada Inc.",
+   "Professional services",
+   98925.07,
+   1
+  ],
+  [
+   "2026-10",
+   "Cmp Mayer Inc.",
+   "Supplies & operations",
+   40287.75,
+   2
+  ],
+  [
+   "2026-10",
+   "OH du Haut-Saint-Laurent",
+   "Subsidies & community",
+   33826.86,
+   2
+  ],
+  [
+   "2026-10",
+   "DUNTON RAINVILLE SENC AVOCATS",
+   "Legal — external counsel",
+   28259.16,
+   6
+  ],
+  [
+   "2026-10",
+   "Hydro-Québec",
+   "Utilities",
+   17468.13,
+   15
+  ],
+  [
+   "2026-10",
+   "Services de Rebuts Soulanges Inc.",
+   "Waste & recycling",
+   16031.74,
+   3
+  ],
+  [
+   "2026-10",
+   "9386-0120 Québec Inc",
+   "Waste & recycling",
+   11498.94,
+   3
+  ],
+  [
+   "2026-10",
+   "9303-1599 QUEBEC INC Académie Jeunesse",
+   "Subsidies & community",
+   8425,
+   1
+  ],
+  [
+   "2026-10",
+   "Complexe Médical Ormstown inc",
+   "Supplies & operations",
+   7012.12,
+   1
+  ],
+  [
+   "2026-10",
+   "Compteurs d'Eau du Québec",
+   "Supplies & operations",
+   6905.88,
+   1
+  ],
+  [
+   "2026-10",
+   "Pelouse Alex Gaulin",
+   "Contracts — works",
+   6895.05,
+   1
+  ],
+  [
+   "2026-10",
+   "SIMO Management Inc.",
+   "Professional services",
+   6612.84,
+   1
+  ],
+  [
+   "2026-10",
+   "Technivolt Électrique Inc.",
+   "Contracts — works",
+   6098.51,
+   5
+  ],
+  [
+   "2026-10",
+   "Solmatech Inc.",
+   "Professional services",
+   5231.36,
+   1
+  ],
+  [
+   "2026-10",
+   "Mcclintock, les Entreprises",
+   "Contracts — works",
+   4803.1,
+   2
+  ],
+  [
+   "2026-10",
+   "9534-8702 Québec Inc. (Petro Canada)",
+   "Vehicle fuel & maintenance",
+   4466.18,
+   28
+  ],
+  [
+   "2026-10",
+   "Pompaction Inc.",
+   "Supplies & operations",
+   4152.56,
+   2
+  ],
+  [
+   "2026-10",
+   "Ouellet Samantha",
+   "Contracts — works",
+   3505.36,
+   2
+  ],
+  [
+   "2026-10",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2667.42,
+   1
+  ],
+  [
+   "2026-10",
+   "Bauval Carrières Régionales",
+   "Supplies & operations",
+   2189.12,
+   1
+  ],
+  [
+   "2026-10",
+   "Service Informatique D.L. Inc",
+   "Software & IT",
+   2028.16,
+   2
+  ],
+  [
+   "2026-10",
+   "STELEM (une division d’EMCO Corporation)",
+   "Supplies & operations",
+   1793.61,
+   1
+  ],
+  [
+   "2026-10",
+   "Eurofins Environex",
+   "Professional services",
+   1709,
+   4
+  ],
+  [
+   "2026-10",
+   "9141855 Canada Inc.",
+   "Vehicle fuel & maintenance",
+   1672.38,
+   2
+  ],
+  [
+   "2026-10",
+   "Sanibert",
+   "Supplies & operations",
+   1595.62,
+   7
+  ],
+  [
+   "2026-10",
+   "Anctil Égout Aqueduc Systèmes septiques & excavatio",
+   "Contracts — works",
+   1563.67,
+   1
+  ],
+  [
+   "2026-10",
+   "Groupe SGM Inc.",
+   "Contracts — works",
+   1538.18,
+   1
+  ],
+  [
+   "2026-10",
+   "Entreprises S. Besner Inc.",
+   "Contracts — works",
+   1448.68,
+   3
+  ],
+  [
+   "2026-10",
+   "Contrôle Animal Vaudreuil-Soulanges",
+   "Supplies & operations",
+   1218.74,
+   1
+  ],
+  [
+   "2026-10",
+   "Discair Productions",
+   "Software & IT",
+   1092.26,
+   1
+  ],
+  [
+   "2026-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   500.12,
+   3
+  ],
+  [
+   "2026-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   -61.15,
+   2
+  ],
+  [
+   "2026-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Other",
+   431.16,
+   1
+  ],
+  [
+   "2026-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   4980.08,
+   30
+  ],
+  [
+   "2026-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Subsidies & community",
+   500,
+   1
+  ],
+  [
+   "2026-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   464,
+   4
+  ],
+  [
+   "2026-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   1568.32,
+   4
+  ],
+  [
+   "2026-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   560.61,
+   2
+  ],
+  [
+   "2026-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Waste & recycling",
+   228.57,
    1
   ]
  ]

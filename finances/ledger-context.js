@@ -35,7 +35,7 @@
 //    on www.ormstown.ca. Both languages, each to its own page.
 // ============================================================
 window.OO_LEDGER_CONTEXT = {
- "updated": "2026-11-05",
+ "updated": "2026-11-15",
  "categories": {
   "salaries-hr": {
    "en": "What it costs to employ the Town's staff: the payroll itself, the source deductions sent on to Revenu Québec and the Receiver General, the employees' group RRSP, plus training and job postings. Payroll appears in the minutes as one lump sum per sitting, so no one's individual pay can be read here.",
@@ -1084,6 +1084,83 @@ window.OO_LEDGER_CONTEXT = {
      "href_fr": "/fr/conseil-municipal/qui-obtient-la-salle/",
      "en": "Who gets the Rec-Center? The new policy for local non-profits",
      "fr": "Qui obtient la salle? Les nouvelles règles d’Ormstown"
+    }
+   ]
+  },
+  "2026-10": {
+   "en": "Council approved $285,664.47 at this sitting (resolution 26-10-268), the accounts payable on the list. The annex printed with the minutes also lists the payroll to September 30, payments issued during the month and invoices paid from lines of credit, for a grand total of $1,302,543.38. Every line of the annex is shown here; the approved figure is the one the resolution states.",
+   "fr": "Le conseil a approuvé 285 664,47 $ à cette séance (résolution 26-10-268), soit les comptes à payer de la liste. L'annexe imprimée avec le procès-verbal énumère aussi la paie au 30 septembre, les paiements émis durant le mois et des factures payées sur marges de crédit, pour un grand total de 1 302 543,38 $. Toutes les lignes de l'annexe sont affichées ici; le montant approuvé est celui qu'indique la résolution.",
+   "points": [
+    {
+     "en": "Annex A prints four blocks: accounts payable $285,664.47, payroll including source deductions and RRSP $238,685.33, payments issued during the month $133,610.01, and invoices paid from lines of credit $644,583.57.",
+     "fr": "L'annexe A imprime quatre blocs : comptes à payer 285 664,47 $, salaires incluant les retenues à la source et le REER 238 685,33 $, paiements émis durant le mois 133 610,01 $, et factures payées sur marges de crédit 644 583,57 $.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Oct. 6, 2026",
+      "fr": "PV du 6 oct. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"
+     }
+    },
+    {
+     "en": "Also decided that night, as financing rather than a payment on this list: a $2,025,000 bond issue dated October 23, 2026, under borrowing by-law 166-2025, on a five-year term (resolution 26-10-269).",
+     "fr": "Aussi décidé ce soir-là, à titre de financement et non de paiement de cette liste : une émission d'obligations de 2 025 000 $ datée du 23 octobre 2026, en vertu du règlement d'emprunt 166-2025, pour un terme de cinq ans (résolution 26-10-269).",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Oct. 6, 2026",
+      "fr": "PV du 6 oct. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"
+     }
+    },
+    {
+     "en": "Transfers between budget families totalling $418,402.47 to bring every 2026 budget line back into balance (resolution 26-10-270). The table of lines referred to in the resolution is not attached to the posted minutes.",
+     "fr": "Des transferts entre familles budgétaires totalisant 418 402,47 $ pour ramener à l'équilibre tous les postes du budget 2026 (résolution 26-10-270). Le tableau des postes auquel renvoie la résolution n'est pas joint au procès-verbal publié.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Oct. 6, 2026",
+      "fr": "PV du 6 oct. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"
+     }
+    },
+    {
+     "en": "Commitments: a traffic study of four intersections on routes 138 and 201 to GBI, $54,772.17 before taxes, the lowest of three price requests (resolution 26-10-274); an amendment of up to $67,840 before taxes to Artelia Canada's contract for rue Gale and rue Church, with eligible costs shared equally with the Quebec transport ministry under agreement 202739 (resolution 26-10-277); and a 100-hour block of IT services, up to $8,000 before taxes (resolution 26-10-271).",
+     "fr": "Engagements : une étude de circulation de quatre intersections des routes 138 et 201 confiée à GBI, 54 772,17 $ avant taxes, le plus bas de trois prix demandés (résolution 26-10-274); un amendement d'au plus 67 840 $ avant taxes au contrat d'Artelia Canada pour les rues Gale et Church, les coûts admissibles étant partagés à parts égales avec le ministère des Transports selon l'entente 202739 (résolution 26-10-277); et une banque de 100 heures de services informatiques, au plus 8 000 $ avant taxes (résolution 26-10-271).",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Oct. 6, 2026",
+      "fr": "PV du 6 oct. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"
+     }
+    },
+    {
+     "en": "For the water-main looping on rue Cullen and rue Oliver: a servitude on lot 5 807 233 for $15,000, a servitude on lot 5 807 239 in exchange for connecting the building to the municipal networks and removing its septic tank (estimated at $18,650), and part of lot 5 807 245 for a turnaround, $11,300 plus applicable taxes (resolutions 26-10-280 to 26-10-282).",
+     "fr": "Pour le bouclage de l'aqueduc des rues Cullen et Oliver : une servitude sur le lot 5 807 233 pour 15 000 $, une servitude sur le lot 5 807 239 en échange du raccordement du bâtiment aux réseaux municipaux et du retrait de sa fosse septique (estimé à 18 650 $), et une partie du lot 5 807 245 pour une aire de virage, 11 300 $ plus les taxes applicables (résolutions 26-10-280 à 26-10-282).",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Oct. 6, 2026",
+      "fr": "PV du 6 oct. 2026",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"
+     }
+    }
+   ],
+   "links": [
+    {
+     "kind": "recap",
+     "href_en": "/en/council-watch/october-6-2026/",
+     "href_fr": "/fr/conseil-municipal/6-octobre-2026/",
+     "en": "Council Watch: October 6, 2026 — traffic study for four intersections, 3e Rang paving moved to 2027",
+     "fr": "Conseil municipal : 6 octobre 2026 — étude de circulation sur quatre intersections, pavage du 3e Rang reporté à 2027"
+    },
+    {
+     "kind": "story",
+     "href_en": "/en/municipal-finances/reading-the-spending-lists/",
+     "href_fr": "/fr/finances-municipales/lire-les-listes-de-depenses/",
+     "en": "Why the lists are not a budget report, and the budget follow-ups announced for 2027",
+     "fr": "Pourquoi les listes ne sont pas un rapport budgétaire, et les suivis annoncés pour 2027"
     }
    ]
   }
