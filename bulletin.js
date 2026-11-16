@@ -23,7 +23,12 @@
     'www.mrchsl.com', 'mrchsl.com', 'www.quebec.ca', 'quebec.ca',
     // Community sources (editor, 2026-11-05): the Town's own Facebook page and
     // Facebook events, and The Gleaner, the Valley's community paper.
-    'www.facebook.com', 'facebook.com', 'the-gleaner.com', 'www.the-gleaner.com'
+    'www.facebook.com', 'facebook.com', 'the-gleaner.com', 'www.the-gleaner.com',
+    // Official sources (editor, 2026-11-15): provincial bodies, the courts'
+    // and police notices, and Québec's open-data portal.
+    'cdn-contenu.quebec.ca', 'www.legisquebec.gouv.qc.ca', 'www.seao.gouv.qc.ca', 'seao.gouv.qc.ca',
+    'www.cmq.gouv.qc.ca', 'www.amp.quebec', 'amp.quebec', 'www.cai.gouv.qc.ca', 'www.donneesquebec.ca',
+    'www.sq.gouv.qc.ca', 'www.electionsquebec.qc.ca', 'www.santemonteregie.qc.ca'
   ];
   var TYPES = {
     alert:  { en: 'Alert',  fr: 'Alerte' },

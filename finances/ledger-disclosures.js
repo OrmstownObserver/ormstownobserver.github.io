@@ -7,6 +7,10 @@
 // SEAO and LegisQuébec.
 //
 // RULES
+//  - `sources`: the province's own guidance and the laws, shown under the
+//    page heading. Official hosts only (same list as CTX_EXT).
+//  - Each obligation's `short` is its finding in one line for the list view;
+//    it restates only what its `town` text already says.
 //  - Every row states the law by name and article and links the article.
 //  - "Town" statements are dated: `checked` is the day ormstown.ca and
 //    SEAO were last read. A missing item says "not on ormstown.ca as of
@@ -26,9 +30,36 @@
 //    `tax` says which: "before" | "included" | "unstated".
 // ============================================================
 window.OO_LEDGER_DISCLOSURES = {
- "updated": "2026-10-25",
+ "updated": "2026-11-15",
  "checked": "2026-10-25",
  "threshold": 25000,
+ "sources": [
+  {
+   "href": "https://www.quebec.ca/gouvernement/gestion-municipale/gestion-contrats-municipaux/sollicitation-adjudication/transparence",
+   "en": "Québec: transparency in municipal contracts (in French)",
+   "fr": "Québec : transparence dans l'attribution des contrats municipaux"
+  },
+  {
+   "href": "https://www.quebec.ca/gouvernement/gestion-municipale/organisation-municipale/democratie-municipale/conseil-municipal-elus-municipaux/remuneration-depenses-elus-municipaux",
+   "en": "Québec: pay and expenses of municipal councillors (in French)",
+   "fr": "Québec : rémunération et dépenses des élus municipaux"
+  },
+  {
+   "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-65.01",
+   "en": "Act respecting contracts of municipal bodies (C-65.01)",
+   "fr": "Loi sur les contrats des organismes municipaux (C-65.01)"
+  },
+  {
+   "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-27.1",
+   "en": "Municipal Code of Québec (C-27.1)",
+   "fr": "Code municipal du Québec (C-27.1)"
+  },
+  {
+   "href": "https://www.cmq.gouv.qc.ca/rapport-audit-publication-contrats-dans-seao",
+   "en": "Commission municipale: audit of contract publication in SEAO",
+   "fr": "Commission municipale : audit de la publication des contrats dans le SEAO"
+  }
+ ],
  "seao": {
   "org": "Municipalité d'Ormstown",
   "href": "https://seao.gouv.qc.ca/contrats-par-organisation/rapport?ItemId=fb3c6364-600d-4257-8e1c-db937a232638&dteCcFrm=2026-01-01T05:00:00.000Z&dteCcTo=2026-12-31T05:00:00.000Z",
@@ -39,16 +70,18 @@ window.OO_LEDGER_DISCLOSURES = {
  "items": [
   {
    "id": "contracts-25k",
+   "short": {"en": "No final cost published on any of the 12 contracts listed; September and October 2026 awards not yet entered.", "fr": "Aucune dépense finale publiée pour les 12 contrats listés; les octrois de septembre et d'octobre 2026 n'y sont pas encore."},
    "en": "Every contract of $25,000 or more",
    "fr": "Chaque contrat de 25 000 $ ou plus",
    "law": { "en": "Loi sur les contrats des organismes municipaux, s. 99", "fr": "Loi sur les contrats des organismes municipaux, art. 99", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-65.01#se:99", "note_en": "Before April 1, 2026: Code municipal, s. 961.3", "note_fr": "Avant le 1er avril 2026 : Code municipal, art. 961.3" },
    "requires": { "en": "A list on SEAO, the provincial contract register, of every contract involving $25,000 or more: object, amount, award procedure, contractor, date, the estimate, each bidder and its price, and the total actually paid once the contract is complete. Updated at least monthly, kept three years, linked from the Town's website.", "fr": "Une liste, sur le SEAO (le registre provincial des contrats), de chaque contrat de 25 000 $ ou plus : objet, montant, mode d'adjudication, cocontractant, date, estimation, chaque soumissionnaire et son prix, et la dépense totale effectivement faite une fois le contrat terminé. Mise à jour au moins chaque mois, conservée trois ans, liée depuis le site de la Municipalité." },
    "status": "partial",
    "town": { "en": "Ormstown's SEAO report lists 12 contracts for 2024–2026. On every one, the \"total actually paid\" field is blank. Contracts awarded on September 8 and October 6, 2026 do not appear. For the 3e Rang contract of August 3, 2026, SEAO names a different winning bidder than the minutes. The Town's site links SEAO's general page, not its own report.", "fr": "Le rapport SEAO d'Ormstown liste 12 contrats pour 2024-2026. Pour chacun, le champ « dépense effectivement faite » est vide. Les contrats octroyés les 8 septembre et 6 octobre 2026 n'y figurent pas. Pour le contrat du 3e Rang du 3 août 2026, le SEAO nomme un adjudicataire différent de celui du procès-verbal. Le site de la Municipalité renvoie à la page générale du SEAO, pas à son propre rapport.", "href": "https://www.ormstown.ca/ma-municipalite/administration/appels-doffres-et-gestion-contractuelle", "href_label_en": "Town's contracts page", "href_label_fr": "Page des contrats de la Municipalité" },
-   "observer": { "en": "The contracts register below: each contract, its SEAO entry, and what the payment lists show paid so far.", "fr": "Le registre des contrats ci-dessous : chaque contrat, son entrée SEAO et ce que les listes de paiements montrent de versé à ce jour.", "anchor": "contracts" }
+   "observer": { "en": "The contracts register on this page: each contract, its SEAO entry, and what the payment lists show paid so far.", "fr": "Le registre des contrats sur cette page : chaque contrat, son entrée SEAO et ce que les listes de paiements montrent de versé à ce jour.", "anchor": "contracts" }
   },
   {
    "id": "annual-list",
+   "short": {"en": "The latest list posted is for 2022; the 2023, 2024 and 2025 lists are not on ormstown.ca.", "fr": "La dernière liste en ligne est celle de 2022; celles de 2023, 2024 et 2025 ne sont pas sur ormstown.ca."},
    "en": "The yearly list of contractors paid $25,000 or more",
    "fr": "La liste annuelle des cocontractants payés 25 000 $ ou plus",
    "law": { "en": "Loi sur les contrats des organismes municipaux, s. 100", "fr": "Loi sur les contrats des organismes municipaux, art. 100", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-65.01#se:100", "note_en": "Before April 1, 2026: Code municipal, s. 961.4 (contracts over $2,000)", "note_fr": "Avant le 1er avril 2026 : Code municipal, art. 961.4 (contrats de plus de 2 000 $)" },
@@ -56,10 +89,11 @@ window.OO_LEDGER_DISCLOSURES = {
    "due": "2026-03-31",
    "status": "stale",
    "town": { "en": "The latest list on ormstown.ca is for 2022 (posted June 2025). The 2023, 2024 and 2025 lists, due March 31 of 2024, 2025 and 2026, are not on ormstown.ca.", "fr": "La liste la plus récente sur ormstown.ca est celle de 2022 (mise en ligne en juin 2025). Les listes de 2023, 2024 et 2025, dues le 31 mars 2024, 2025 et 2026, ne sont pas sur ormstown.ca.", "href": "https://www.ormstown.ca/wp-content/uploads/Liste-des-contrats-2022-Finale.pdf", "href_label_en": "2022 list (PDF)", "href_label_fr": "Liste 2022 (PDF)" },
-   "observer": { "en": "The table above: every supplier paid $25,000 or more in a year, built from the payment lines council approved.", "fr": "Le tableau ci-dessus : chaque fournisseur payé 25 000 $ ou plus dans l'année, bâti à partir des lignes de paiement approuvées par le conseil.", "anchor": "suppliers" }
+   "observer": { "en": "The suppliers table on this page: every supplier paid $25,000 or more in a year, built from the payment lines council approved.", "fr": "Le tableau des fournisseurs sur cette page : chaque fournisseur payé 25 000 $ ou plus dans l'année, bâti à partir des lignes de paiement approuvées par le conseil.", "anchor": "suppliers" }
   },
   {
    "id": "contract-bylaw",
+   "short": {"en": "By-laws 129-2020 and 129-2021 are posted; their replacement, 129-2026, is in progress.", "fr": "Les règlements 129-2020 et 129-2021 sont en ligne; leur remplaçant, 129-2026, est en cours."},
    "en": "The contract-management by-law and complaints procedure",
    "fr": "Le règlement de gestion contractuelle et la procédure de plaintes",
    "law": { "en": "Loi sur les contrats des organismes municipaux, ss. 10 and 115", "fr": "Loi sur les contrats des organismes municipaux, art. 10 et 115", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-65.01#se:10" },
@@ -70,6 +104,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "highlights",
+   "short": {"en": "The 2025 highlights, tabled June 1, 2026, are not on ormstown.ca.", "fr": "Les faits saillants 2025, déposés le 1er juin 2026, ne sont pas sur ormstown.ca."},
    "en": "The mayor's report on the year's finances",
    "fr": "Le rapport du maire sur les finances de l'année",
    "law": { "en": "Code municipal du Québec, s. 176.2.2", "fr": "Code municipal du Québec, art. 176.2.2", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-27.1#se:176_2_2" },
@@ -80,6 +115,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "council-pay",
+   "short": {"en": "One combined figure for all councillors, not one per member; 2025 figures missing.", "fr": "Un seul chiffre pour l'ensemble des conseillers, pas un par membre; les chiffres de 2025 manquent."},
    "en": "What each council member is paid",
    "fr": "Ce que chaque membre du conseil reçoit",
    "law": { "en": "Act respecting the remuneration of elected municipal officers, s. 11", "fr": "Loi sur le traitement des élus municipaux, art. 11", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/T-11.001#se:11" },
@@ -90,6 +126,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "budget-pti",
+   "short": {"en": "The 2026 budget and 2026–2028 capital program are posted.", "fr": "Le budget 2026 et le PTI 2026-2028 sont en ligne."},
    "en": "The budget and the three-year capital program",
    "fr": "Le budget et le programme triennal d'immobilisations",
    "law": { "en": "Code municipal du Québec, ss. 953.1, 954 and 957", "fr": "Code municipal du Québec, art. 953.1, 954 et 957", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-27.1#se:954" },
@@ -100,6 +137,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "financial-report",
+   "short": {"en": "Only the highlights are posted, not the statements themselves.", "fr": "Seuls les faits saillants sont en ligne, pas les états financiers eux-mêmes."},
    "en": "The audited financial statements",
    "fr": "Les états financiers vérifiés",
    "law": { "en": "Code municipal du Québec, ss. 176 to 176.2", "fr": "Code municipal du Québec, art. 176 à 176.2", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-27.1#se:176" },
@@ -110,6 +148,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "ethics",
+   "short": {"en": "No training list found; the council page still links the 2021 code, replaced in May 2026.", "fr": "Aucune liste de formation trouvée; la page du conseil renvoie encore au code de 2021, remplacé en mai 2026."},
    "en": "Ethics training of council members, and the code of ethics",
    "fr": "La formation en éthique des élus, et le code d'éthique",
    "law": { "en": "Municipal Ethics and Good Conduct Act, ss. 13 and 15", "fr": "Loi sur l'éthique et la déontologie en matière municipale, art. 13 et 15", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/E-15.1.0.1#se:15" },
@@ -120,6 +159,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "tax-bylaw",
+   "short": {"en": "By-law 1-2026, which sets the 2026 tax rates, is not posted.", "fr": "Le règlement 1-2026, qui fixe les taux de 2026, n'est pas en ligne."},
    "en": "The year's tax-rate by-law",
    "fr": "Le règlement de taxation de l'année",
    "law": { "en": "Code municipal du Québec, s. 433.1 (notices and by-laws online)", "fr": "Code municipal du Québec, art. 433.1 (avis et règlements en ligne)", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-27.1#se:433_1" },

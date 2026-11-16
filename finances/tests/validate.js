@@ -311,7 +311,7 @@ if (fs.existsSync(payPath)) {
     const root = path.join(dir, '..');
     const KINDS = new Set(['recap', 'story', 'minutes', 'document', 'budget', 'method', 'ledger']);
     const SITE = /^\/(en|fr|finances)\/[A-Za-z0-9\-\/]*(#[A-Za-z0-9\-_]+)?$/;
-    const EXT = /^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\/[^\s"<>]+$/;
+    const EXT = /^https:\/\/(?:(?:www\.)?ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca|(?:www\.|cdn-contenu\.)?quebec\.ca|www\.cmq\.gouv\.qc\.ca|(?:www\.)?amp\.quebec|www\.cai\.gouv\.qc\.ca|www\.donneesquebec\.ca|(?:www\.)?mrchsl\.com)\/[^\s"<>]+$/;
     const slugs = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, 'payee-slugs.json'), 'utf8'))));
     const slugMap = fs.readFileSync(path.join(dir, 'ledger-data.js'), 'utf8').match(/var SLUGS = \{([\s\S]*?)\};/);
     const catSlugs = new Set(slugMap ? [...slugMap[1].matchAll(/: '([a-z-]+)'/g)].map(x => x[1]) : []);
@@ -409,7 +409,7 @@ if (fs.existsSync(payPath)) {
     const DX = window.OO_LEDGER_DISCLOSURES || {};
     const root = path.join(dir, '..');
     const SITE = /^\/(en|fr|finances)\/[A-Za-z0-9\-\/]*(#[A-Za-z0-9\-_]+)?$/;
-    const EXT = /^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\/[^\s"<>]+$/;
+    const EXT = /^https:\/\/(?:(?:www\.)?ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca|(?:www\.|cdn-contenu\.)?quebec\.ca|www\.cmq\.gouv\.qc\.ca|(?:www\.)?amp\.quebec|www\.cai\.gouv\.qc\.ca|www\.donneesquebec\.ca|(?:www\.)?mrchsl\.com)\/[^\s"<>]+$/;
     const slugs = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(__dirname, 'payee-slugs.json'), 'utf8'))));
     const sittingDates = new Set(D.months.map(m => (m.session.match(/\d{4}-\d{2}-\d{2}/) || [''])[0]));
     const isoDate = (d) => /^\d{4}-\d{2}-\d{2}$/.test(d) && !isNaN(Date.parse(d));

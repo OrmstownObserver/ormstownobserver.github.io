@@ -1035,8 +1035,59 @@ tr.ctx-row > td { padding-top: 0; }
    newspaper grammar as the context blocks: heavy rule, hairlines, the
    status word set like a kicker. */
 .disc-intro { font: var(--size-body)/1.6 var(--serif-body); max-width: 82ch; margin: var(--s3) 0 0; }
-.disc-toc { margin: var(--s2) 0 0; font: 600 var(--size-caption)/1.6 var(--sans); }
-.disc-toc a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+/* The three stops on the page, in reading order. The bar stays in view
+   while the reader scrolls, so any section is one tap away. */
+.disc-toc {
+  position: sticky; top: 0; z-index: 3;
+  margin: var(--s3) 0 0; padding: var(--s1) 0;
+  background: var(--paper);
+  border-bottom: var(--rule-hair) solid var(--hair);
+}
+.disc-toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); }
+.disc-stop {
+  display: inline-flex; align-items: center; gap: 6px;
+  font: 600 var(--size-caption)/1.3 var(--sans); color: var(--ink);
+  text-decoration: none; padding: 6px 10px;
+  border: var(--rule-hair) solid var(--hair); border-radius: 999px;
+}
+.disc-stop:hover, .disc-stop:focus-visible { border-color: var(--ink); }
+.disc-stop .n {
+  display: inline-grid; place-items: center; width: 1.5em; height: 1.5em; border-radius: 50%;
+  background: var(--ink); color: var(--paper); font-size: 0.85em;
+}
+.disc-sec-first { margin-top: var(--s3); }
+/* The tally: how the obligations stand, before anything is opened. */
+.disc-tally { list-style: none; margin: var(--s2) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s1); font: var(--size-caption)/1.3 var(--sans); }
+.disc-tally li { padding: 4px 10px; border: var(--rule-hair) solid currentColor; border-radius: 999px; }
+.disc-tally li strong { font-variant-numeric: tabular-nums; }
+.disc-tally .s-found { color: var(--confirm); }
+.disc-tally .s-partial, .disc-tally .s-stale { color: var(--pending); }
+.disc-tally .s-missing { color: var(--accent); }
+/* One line per obligation: status, title, the finding in a sentence. */
+.disc-list { list-style: none; margin: var(--s2) 0 0; padding: 0; max-width: 82ch; }
+.disc-list .disc-item { padding: 0; }
+.disc-ob > summary {
+  list-style: none; cursor: pointer;
+  display: grid; grid-template-columns: 11ch 1fr auto; gap: var(--s2); align-items: baseline;
+  padding: var(--s2) 0;
+}
+.disc-ob > summary::-webkit-details-marker { display: none; }
+.disc-ob > summary::after { content: "+"; font: 400 1.3em/1 var(--sans); color: var(--ink-soft); }
+.disc-ob[open] > summary::after { content: "\2212"; }
+.disc-ob > summary:hover .disc-ob-h { text-decoration: underline; text-underline-offset: 2px; }
+.disc-ob .status { margin-right: 0; text-align: center; }
+.disc-ob-h { display: block; font: 700 var(--size-body)/1.35 var(--sans); }
+.disc-ob-f { display: block; font: var(--size-caption)/1.5 var(--sans); color: var(--ink-soft); margin-top: 2px; }
+.disc-ob dl { margin: 0 0 var(--s3); padding-left: calc(11ch + var(--s2)); grid-template-columns: 14ch 1fr; }
+.disc-back { margin: var(--s2) 0 0; font: 600 var(--size-caption)/1.6 var(--sans); }
+.disc-toggle {
+  margin-top: var(--s1); font: 600 var(--size-caption)/1.3 var(--sans);
+  background: none; color: var(--link); border: var(--rule-hair) solid var(--hair);
+  padding: 6px 12px; cursor: pointer;
+}
+.disc-toggle:hover { border-color: var(--ink); }
+.disc-older { margin-top: var(--s3); }
+.disc-table thead th + th { padding-left: var(--s3); }
 .disc-sec { border-top: var(--rule-heavy) solid var(--ink); margin-top: var(--s5); padding-top: var(--s2); scroll-margin-top: 72px; }
 .disc-h { font-family: var(--serif-display); font-weight: var(--weight-bold); font-size: var(--size-section-title); line-height: var(--leading-tight); margin: 0; }
 .disc-lead { font: var(--size-body)/1.6 var(--serif-body); max-width: 82ch; margin: var(--s2) 0 0; }
@@ -1084,6 +1135,11 @@ tr.ctx-row > td { padding-top: 0; }
 .disc-go { font-weight: 700; }
 @media (max-width: 640px) {
   .disc-item dl { grid-template-columns: 1fr; gap: 2px var(--s2); }
+  .disc-ob > summary { grid-template-columns: 1fr auto; }
+  .disc-ob .status { grid-column: 1; justify-self: start; }
+  .disc-ob-t { grid-column: 1; }
+  .disc-ob > summary::after { grid-column: 2; grid-row: 1; }
+  .disc-ob dl { padding-left: 0; }
   .disc-item dt { margin-top: var(--s1); }
 }
 /* the contracts table: a right-aligned money column meets a left-aligned
@@ -1152,3 +1208,13 @@ tr.ctx-row > td { padding-top: 0; }
 .pf-years .lbl { font-weight: 700; color: var(--ink-soft); margin-right: var(--s1); }
 /* the period's dates: the frame every number sits in, set apart */
 .chip .range, .lw-status .range { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 2px; color: var(--ink); }
+/* the stops bar is sticky at the top of the Disclosures tab: table headers settle under it */
+.disc-table thead th { top: 52px; }
+@media print { .disc-toc { position: static; } .disc-toggle { display: none; } }
+/* Disclosures tab heading: the tracker's title, what it does, the province's own rules */
+.disc-head { margin: var(--s3) 0 0; max-width: 46rem; }
+.disc-title { font: 700 clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem)/1.15 var(--serif-display); margin: 0; color: var(--ink); }
+.disc-sub { font: 400 var(--size-body)/1.6 var(--serif-body); margin: var(--s2) 0 0; color: var(--ink); }
+.disc-sources-h { margin: var(--s2) 0 4px; font: 700 var(--size-label-sm)/1.3 var(--sans); letter-spacing: var(--track-label); text-transform: uppercase; color: var(--ink-soft); }
+.disc-sources { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px var(--s2); font: var(--size-caption)/1.5 var(--sans); }
+.disc-sources a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }

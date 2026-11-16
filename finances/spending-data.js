@@ -9,10 +9,10 @@
 // «Autres fournisseurs», so every month sums exactly to its
 // category totals and (for full-coverage months) to the adopted total.
 // Categories are Observer-assigned (see provenance + tools/apply-category-rules.js).
-// Generated: 2026-11-15
+// Generated: 2026-11-16
 // ============================================================
 window.OO_SPENDING = {
- "generated": "2026-11-15",
+ "generated": "2026-11-16",
  "provenance": {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
@@ -9405,7 +9405,7 @@ window.OO_SPENDING = {
   ],
   [
    "2026-10",
-   "Salaires et DAS",
+   "— (paie municipale)",
    "Salaries & HR",
    238685.33,
    1

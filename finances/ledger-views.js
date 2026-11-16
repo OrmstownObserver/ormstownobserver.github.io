@@ -26,7 +26,7 @@
   // Official hosts a link may point at: the municipality's own site, SEAO
   // (the provincial contract register) and LegisQuébec (the law itself).
   // Nothing else — validate.js and render-check.js enforce the same list.
-  var OK_URL = /^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\//;
+  var OK_URL = /^https:\/\/(?:(?:www\.)?ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca|(?:www\.|cdn-contenu\.)?quebec\.ca|www\.cmq\.gouv\.qc\.ca|(?:www\.)?amp\.quebec|www\.cai\.gouv\.qc\.ca|www\.donneesquebec\.ca|(?:www\.)?mrchsl\.com)\//;
 
   /* ---------- DOM helpers ---------- */
   function append(node, kids) {
@@ -903,7 +903,7 @@
      site or a document on ormstown.ca — anything else stays text.
      ============================================================ */
   var CTX_SITE = /^\/(en|fr|finances)\/[A-Za-z0-9\-\/]*(#[A-Za-z0-9\-_]+)?$/;
-  var CTX_EXT = /^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\/[^\s"<>]+$/;
+  var CTX_EXT = /^https:\/\/(?:(?:www\.)?ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca|(?:www\.|cdn-contenu\.)?quebec\.ca|www\.cmq\.gouv\.qc\.ca|(?:www\.)?amp\.quebec|www\.cai\.gouv\.qc\.ca|www\.donneesquebec\.ca|(?:www\.)?mrchsl\.com)\/[^\s"<>]+$/;
   function ctxHref(src, lang) {
     var h = src && (lang === 'fr' ? src.href_fr : src.href_en);
     if (!h || h.indexOf('..') >= 0) return null;
@@ -1047,13 +1047,24 @@
     var years = [];
     ctx.store.sittings.forEach(function (s) { if (years.indexOf(s.year) < 0) years.push(s.year); });
     years.sort().reverse();
-    years.forEach(function (y) {
+    var TOP = 10;
+    years.forEach(function (y, yi) {
+      // The latest year is open; earlier years sit in a closed <details>
+      // so the page reads as one year at a time.
+      var host = out;
+      if (yi > 0) {
+        var older = el('details', { cls: 'ref disc-older' });
+        older.appendChild(el('summary', { text: L.tpl(t.discEarlierYear, { year: y }) }));
+        host = el('div', { cls: 'inner' });
+        older.appendChild(host);
+        out.appendChild(older);
+      }
       var rows = yearTotals(ctx, y).filter(function (r) { return r.amt >= thr; });
       var main = rows.filter(function (r) { var P = ctx.store.payees[r.slug]; return P && !P.isRest && !P.isPayroll && !NOT_CONTRACT.test(r.slug); });
       var other = rows.filter(function (r) { return main.indexOf(r) < 0; });
       var last = ctx.store.sittings.filter(function (s) { return s.year === y; }).slice(-1)[0];
       var ytot = main.reduce(function (a, r) { return a + r.amt; }, 0);
-      out.appendChild(el('h3', { cls: 'disc-year', text: L.tpl(t.discYear, { year: y, last: ctx.sittingShort(last), n: f.num(main.length), amt: f.money(ytot) }) }));
+      host.appendChild(el('h3', { cls: 'disc-year', text: L.tpl(t.discYear, { year: y, last: ctx.sittingShort(last), n: f.num(main.length), amt: f.money(ytot) }) }));
 
       var table = el('table', { cls: 'lt stack disc-table', id: 'suppliers-' + y });
       table.appendChild(el('caption', { cls: 'visually-hidden', text: L.tpl(t.capSuppliers, { year: y }) }));
@@ -1064,7 +1075,7 @@
       main.forEach(function (r, i) {
         var P = ctx.store.payees[r.slug];
         var ml = r.maxLine, ms = ml && ctx.store.sittingById[ml.s];
-        body.appendChild(el('tr', null, [
+        body.appendChild(el('tr', { cls: i >= TOP ? 'disc-more' : null, hidden: i >= TOP ? 'hidden' : null }, [
           el('th', { scope: 'row', 'data-l': t.colPayee }, [
             el('span', { cls: 'rank', text: (i + 1) + '. ' }),
             el('button', { type: 'button', cls: 'linkbtn', text: ctx.payeeName(P), on: { click: function () { ctx.on.payee(r.slug); } } }),
@@ -1080,7 +1091,18 @@
         ]));
       });
       table.appendChild(body);
-      out.appendChild(table);
+      host.appendChild(table);
+      if (main.length > TOP) {
+        var shown = false;
+        var tog = el('button', { type: 'button', cls: 'disc-toggle', 'aria-controls': 'suppliers-' + y, 'aria-expanded': 'false', text: L.tpl(t.discShowAll, { n: f.num(main.length) }) });
+        tog.addEventListener('click', function () {
+          shown = !shown;
+          Array.prototype.forEach.call(body.querySelectorAll('tr.disc-more'), function (tr) { tr.hidden = !shown; });
+          tog.setAttribute('aria-expanded', shown ? 'true' : 'false');
+          tog.textContent = shown ? L.tpl(t.discShowTop, { n: f.num(TOP) }) : L.tpl(t.discShowAll, { n: f.num(main.length) });
+        });
+        host.appendChild(tog);
+      }
 
       if (other.length) {
         var ul = el('ul', { cls: 'disc-other' });
@@ -1091,7 +1113,7 @@
             txt(' ' + f.money(r.amt))
           ]));
         });
-        out.appendChild(el('details', { cls: 'ref' }, [
+        host.appendChild(el('details', { cls: 'ref' }, [
           el('summary', { text: L.tpl(t.discNotContracts, { n: f.num(other.length) }) }),
           el('div', { cls: 'inner' }, [el('p', { text: t.discNotContractsNote }), ul])
         ]));
@@ -1099,6 +1121,7 @@
     });
     out.appendChild(el('p', { cls: 'disc-note', text: t.discSpellingNote }));
     out.appendChild(csvButton(ctx, t.discCsv, function () { ctx.on.disclosuresCsv(); }));
+    out.appendChild(backToTop(ctx));
     return out;
   }
 
@@ -1222,23 +1245,66 @@
     table.appendChild(body);
     out.appendChild(table);
     out.appendChild(el('p', { cls: 'disc-note', text: t.discPaidNote }));
+    out.appendChild(backToTop(ctx));
     return out;
+  }
+
+  // Worst first: what is missing or out of date is what a reader came for.
+  var STATUS_KEY = { found: 'discStatusFound', partial: 'discStatusPartial', stale: 'discStatusStale', missing: 'discStatusMissing' };
+  var STATUS_ORDER = ['missing', 'stale', 'partial', 'found'];
+  function firstSentence(s) {
+    var m = /^(.+?[.!?])(\s|$)/.exec(String(s || ''));
+    return m ? m[1] : String(s || '');
+  }
+  function jumpTo(id) {
+    var n = document.getElementById(id);
+    if (n && n.scrollIntoView) { try { n.scrollIntoView({ block: 'start' }); } catch (e) {} }
+  }
+  function backToTop(ctx) {
+    return el('p', { cls: 'disc-back' }, navLink(ctx.hrefTab('disclosures') + '#register', ctx.T.discBackTop, function () { jumpTo('register'); }, { cls: 'linkbtn' }));
+  }
+
+  // A sentence never opens on a numeral: spell out one to twelve.
+  function numWord(n, lang) {
+    var en = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
+    var fr = ['Zéro', 'Une', 'Deux', 'Trois', 'Quatre', 'Cinq', 'Six', 'Sept', 'Huit', 'Neuf', 'Dix', 'Onze', 'Douze'];
+    var w = lang === 'fr' ? fr : en;
+    return n >= 0 && n < w.length ? w[n] : String(n);
   }
 
   function registerSection(ctx) {
     var t = ctx.T, f = ctx.f, dx = ctx.dx, lang = ctx.lang;
-    var out = el('section', { id: 'register', cls: 'disc-sec', 'aria-labelledby': 'disc-reg-h' });
+    var out = el('section', { id: 'register', cls: 'disc-sec disc-sec-first', 'aria-labelledby': 'disc-reg-h' });
     out.appendChild(el('h2', { id: 'disc-reg-h', cls: 'disc-h', text: t.discRegisterH }));
     out.appendChild(el('p', { cls: 'disc-lead', text: L.tpl(t.discRegisterLead, { date: f.dateLong(dx.checked) }) }));
-    var STATUS = { found: 'discStatusFound', partial: 'discStatusPartial', stale: 'discStatusStale', missing: 'discStatusMissing' };
-    (dx.items || []).forEach(function (it) {
-      var box = el('article', { cls: 'disc-item', id: 'disc-' + it.id });
-      box.appendChild(el('h3', null, [
-        el('span', { cls: 'status s-' + it.status, text: t[STATUS[it.status]] || it.status }),
-        txt(' ' + ctxText(it, lang))
+
+    var items = (dx.items || []).slice();
+    var rank = function (it) { var r = STATUS_ORDER.indexOf(it.status); return r < 0 ? 9 : r; };
+    items = items.map(function (it, i) { return { it: it, i: i }; })
+      .sort(function (a, b) { return rank(a.it) - rank(b.it) || a.i - b.i; })
+      .map(function (x) { return x.it; });
+
+    // The tally: one line a reader can take away before opening anything.
+    var tally = el('ul', { cls: 'disc-tally', 'aria-label': t.discTallyLabel });
+    STATUS_ORDER.forEach(function (st) {
+      var n = items.filter(function (it) { return it.status === st; }).length;
+      if (!n) return;
+      tally.appendChild(el('li', { cls: 's-' + st }, [el('strong', { text: f.num(n) }), txt(' ' + (t[STATUS_KEY[st]] || st))]));
+    });
+    out.appendChild(tally);
+
+    var list = el('ol', { cls: 'disc-list' });
+    items.forEach(function (it) {
+      var li = el('li', { cls: 'disc-item', id: 'disc-' + it.id });
+      var det = el('details', { cls: 'disc-ob' });
+      det.appendChild(el('summary', null, [
+        el('span', { cls: 'status s-' + it.status, text: t[STATUS_KEY[it.status]] || it.status }),
+        el('span', { cls: 'disc-ob-t' }, [
+          el('span', { cls: 'disc-ob-h', text: ctxText(it, lang) }),
+          el('span', { cls: 'disc-ob-f', text: it.short ? ctxText(it.short, lang) : firstSentence(ctxText(it.town, lang)) })
+        ])
       ]));
       var dl = el('dl');
-      // the law
       var lawHref = it.law && CTX_EXT.test(it.law.href || '') ? it.law.href : null;
       dl.appendChild(el('dt', { text: t.discLaw }));
       dl.appendChild(el('dd', null, [
@@ -1247,47 +1313,65 @@
       ]));
       dl.appendChild(el('dt', { text: t.discRequires }));
       dl.appendChild(el('dd', { text: ctxText(it.requires, lang) + (it.due ? ' ' + L.tpl(t.discDue, { date: f.dateLong(it.due) }) : '') }));
-      // the Town
       var th = it.town && CTX_EXT.test(it.town.href || '') ? it.town.href : null;
       dl.appendChild(el('dt', { text: L.tpl(t.discTown, { date: f.dateLong(dx.checked) }) }));
       dl.appendChild(el('dd', null, [
         txt(ctxText(it.town, lang) + ' '),
         th ? el('a', { cls: 'ctx-src', href: th, target: '_blank', rel: 'noopener', title: t.newTab }, it.town['href_label_' + lang] || 'ormstown.ca') : null
       ]));
-      // the Observer
       if (it.observer) {
         var ob = it.observer, kids = [txt(ctxText(ob, lang) + ' ')];
-        if (ob.anchor) kids.push(navLink(ctx.hrefTab('disclosures') + '#' + ob.anchor, t.discGoSection, function () {
-          var n = document.getElementById(ob.anchor); if (n && n.scrollIntoView) n.scrollIntoView({ block: 'start' });
-        }, { cls: 'linkbtn disc-go' }));
+        if (ob.anchor) kids.push(navLink(ctx.hrefTab('disclosures') + '#' + ob.anchor, t.discGoSection, function () { jumpTo(ob.anchor); }, { cls: 'linkbtn disc-go' }));
         else if (ob.payee && ctx.store.payees[ob.payee]) kids.push(el('button', { type: 'button', cls: 'linkbtn', text: ctx.payeeName(ctx.store.payees[ob.payee]) + ' →', on: { click: function () { ctx.on.payee(ob.payee); } } }));
         else if (ctxHref(ob, lang)) kids.push(el('a', { href: ctxHref(ob, lang) }, t.discReadObserver));
         dl.appendChild(el('dt', { text: t.discObserver }));
         dl.appendChild(el('dd', null, kids));
       }
-      box.appendChild(dl);
-      out.appendChild(box);
+      det.appendChild(dl);
+      li.appendChild(det);
+      list.appendChild(li);
     });
+    out.appendChild(list);
     return out;
   }
 
   function disclosures(ctx) {
-    var t = ctx.T, out = document.createDocumentFragment();
+    var t = ctx.T, f = ctx.f, out = document.createDocumentFragment();
     if (!ctx.dx || !ctx.dx.items) {
       out.appendChild(el('div', { cls: 'notice warn', text: t.discUnavailable }));
       return out;
     }
     if (ctx.loading) return frag(el('div', { cls: 'skeleton', 'aria-busy': 'true', text: L.tpl(t.loadingLines, { n: ctx.f.num(ctx.expectedLines || 0) }) }));
     if (ctx.linesFailed) return frag(linesFailed(ctx));
-    out.appendChild(el('p', { cls: 'disc-intro', text: t.discIntro }));
-    out.appendChild(el('nav', { cls: 'disc-toc', 'aria-label': t.tabDisclosures }, [
-      el('a', { href: '#suppliers', text: t.discTocSuppliers }), txt(' · '),
-      el('a', { href: '#contracts', text: t.discTocContracts }), txt(' · '),
-      el('a', { href: '#register', text: t.discTocRegister })
-    ]));
+    var thr = (ctx.dx && ctx.dx.threshold) || 25000;
+    var head = el('header', { cls: 'disc-head' });
+    head.appendChild(el('h2', { cls: 'disc-title', text: t.discIntro }));
+    head.appendChild(el('p', { cls: 'disc-sub', text: L.tpl(t.discSub, { n: numWord(ctx.dx.items.length, ctx.lang) }) }));
+    var srcs = (ctx.dx.sources || []).filter(function (x) { return CTX_EXT.test(x.href || ''); });
+    if (srcs.length) {
+      var ul = el('ul', { cls: 'disc-sources', 'aria-label': t.discSourcesH });
+      srcs.forEach(function (x) { ul.appendChild(el('li', null, el('a', { href: x.href, target: '_blank', rel: 'noopener', title: t.newTab }, x[ctx.lang] || x.en))); });
+      head.appendChild(el('p', { cls: 'disc-sources-h', text: t.discSourcesH }));
+      head.appendChild(ul);
+    }
+    out.appendChild(head);
+    // Three stops, in reading order; the bar stays in view while scrolling.
+    var nav = el('nav', { cls: 'disc-toc', 'aria-label': t.discTocLabel });
+    var ol = el('ol');
+    [['register', L.tpl(t.discTocRegister, { n: f.num(ctx.dx.items.length) })],
+     ['suppliers', L.tpl(t.discTocSuppliers, { amt: f.money0(thr) })],
+     ['contracts', L.tpl(t.discTocContracts, { amt: f.money0(thr) })]].forEach(function (s, i) {
+      var a = navLink(ctx.hrefTab('disclosures') + '#' + s[0], '', function () { jumpTo(s[0]); }, { cls: 'disc-stop' });
+      a.textContent = '';
+      a.appendChild(el('span', { cls: 'n', text: String(i + 1) }));
+      a.appendChild(txt(' ' + s[1]));
+      ol.appendChild(el('li', null, a));
+    });
+    nav.appendChild(ol);
+    out.appendChild(nav);
+    out.appendChild(registerSection(ctx));
     out.appendChild(suppliersSection(ctx));
     out.appendChild(contractsSection(ctx));
-    out.appendChild(registerSection(ctx));
     return out;
   }
 

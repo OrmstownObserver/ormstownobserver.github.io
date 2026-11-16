@@ -538,7 +538,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     if (n.tagName !== 'A') return;
     const href = n.getAttribute('href');
     if (!href || href[0] === '?' || href[0] === '/' || href[0] === '#') return;
-    if (!/^https:\/\/(?:www\.ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca)\//.test(href)) { badLink++; fail('external link is not an allowed official host: ' + href); }
+    if (!/^https:\/\/(?:(?:www\.)?ormstown\.ca|(?:www\.)?seao\.gouv\.qc\.ca|www\.legisquebec\.gouv\.qc\.ca|(?:www\.|cdn-contenu\.)?quebec\.ca|www\.cmq\.gouv\.qc\.ca|(?:www\.)?amp\.quebec|www\.cai\.gouv\.qc\.ca|www\.donneesquebec\.ca|(?:www\.)?mrchsl\.com)\//.test(href)) { badLink++; fail('external link is not an allowed official host: ' + href); }
     if (n.getAttribute('rel') !== 'noopener') { badLink++; fail('external link lacks rel=noopener: ' + href); }
   });
   if (!badLink) ok('every external link points at an allowed official host and carries rel=noopener');
