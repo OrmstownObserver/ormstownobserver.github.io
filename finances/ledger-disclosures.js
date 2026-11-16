@@ -29,11 +29,19 @@
 //    `all: true`, or `text: [regex sources]` tested against the line text.
 //    "Paid to date" is the sum of those lines; it is the Observer's
 //    arithmetic on the lists, not the legal "dépense effectivement faite".
+//  - `funds` says who pays, one entry per source the resolutions name:
+//    kind grant (granted, per the minutes) | pending (requested, not yet
+//    granted) | shared (cost-sharing agreement) | borrowing (loan by-law,
+//    bonds) | lease (crédit-bail) | reserves (Town surplus) | unstated
+//    (the minutes name no source). Each non-unstated entry cites its
+//    resolution `res` and links that sitting's PV (`href`, ormstown.ca).
+//    `amount` only when the resolution prints it. Never infer a source:
+//    "eligible" is not "granted", and an account number is not a source.
 //  - Amounts are as printed on SEAO ("Prix du contrat") or in the minutes;
 //    `tax` says which: "before" | "included" | "unstated".
 // ============================================================
 window.OO_LEDGER_DISCLOSURES = {
- "updated": "2026-11-15",
+ "updated": "2026-11-16",
  "checked": "2026-11-15",
  "threshold": 25000,
  "groups": [
@@ -253,6 +261,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 6 bids", "fr": "Appel d'offres public, 6 soumissions" },
    "bidders": [["Eurovia Québec Construction Inc.", 1396885.25], ["Roxboro Excavation Inc.", 1397181.33], ["Les Pavages Céka Inc.", 1539674.24], ["Pavage Axion Inc.", 1559317.21], ["Les Pavages Ultra Inc.", 1683711.58]],
    "seao": { "notice": "1826806/ORM240319", "year": 2024, "final": "blank" },
+   "funds": [{"kind": "unstated", "en": "Not stated in the 2025–2026 minutes (awarded in 2024)", "fr": "Non précisé aux procès-verbaux de 2025-2026 (octroyé en 2024)"}],
    "note": { "en": "Awarded in 2024; payments made that year predate the Ledger, which is itemized from January 2025.", "fr": "Octroyé en 2024; les paiements de cette année-là précèdent le grand livre, détaillé à partir de janvier 2025." }
   },
   {
@@ -266,6 +275,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 2 bids", "fr": "Appel d'offres public, 2 soumissions" },
    "bidders": [["International Rive Nord", 139667.40]],
    "seao": { "notice": "20018468/ORM240604.02", "year": 2024, "final": "blank" },
+   "funds": [{"kind": "lease", "en": "Lease-to-own over 60 months through Rexcap (lessor: TD Bank), $117,568 before tax; first planned from the Town's surplus", "fr": "Crédit-bail de 60 mois par Rexcap (locateur : Banque TD), 117 568 $ avant taxes; d'abord prévu à même le surplus de la Municipalité", "amount": 117568, "res": "25-04-119", "href": "https://www.ormstown.ca/wp-content/uploads/2025-04-03_PV-SE-1.pdf"}],
    "note": { "en": "No payment to this contractor appears on the lists itemized since January 2025.", "fr": "Aucun paiement à ce fournisseur ne figure aux listes détaillées depuis janvier 2025." }
   },
   {
@@ -280,6 +290,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 3 bidders listed", "fr": "Appel d'offres public, 3 soumissionnaires inscrits" },
    "bidders": [["9386-3025 Québec inc", null], ["Tessier Récréo-Parc inc.", null]],
    "seao": { "notice": "20040006/ORM241225", "year": 2025, "final": "blank" },
+   "funds": [{"kind": "reserves", "en": "Town's unrestricted surplus", "fr": "Surplus non affecté de la Municipalité", "amount": 175000, "res": "25-01-027", "href": "https://www.ormstown.ca/wp-content/uploads/2025-01-20_PV.pdf"}, {"kind": "unstated", "en": "Charged to project account 23-084-00-722; the source is not named", "fr": "Imputé au poste 23-084-00-722; la source n'est pas nommée", "amount": 125000, "res": "25-01-027", "href": "https://www.ormstown.ca/wp-content/uploads/2025-01-20_PV.pdf"}, {"kind": "unstated", "en": "No source is stated for the rest of the contract price", "fr": "Aucune source n'est indiquée pour le reste du prix du contrat"}],
    "note": { "en": "SEAO prints $600,003.75 as the contract price; the payment lists show $185,575 to Simexco for the splash pad's phase 1 equipment. The difference is not explained in either record.", "fr": "Le SEAO inscrit 600 003,75 $ comme prix du contrat; les listes de paiements montrent 185 575 $ à Simexco pour l'équipement de la phase 1 des jeux d'eau. Ni l'un ni l'autre n'explique l'écart." }
   },
   {
@@ -294,6 +305,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 3 bids", "fr": "Appel d'offres public, 3 soumissions" },
    "bidders": [["Construction Jacques Théorêt Inc.", 501810], ["Les Constructions B. Martel Inc.", 599600]],
    "seao": { "notice": "20043520/ORM250120", "year": 2025, "final": "blank" },
+   "funds": [{"kind": "reserves", "en": "Town's unrestricted surplus at December 31, 2023", "fr": "Surplus non affecté de la Municipalité au 31 décembre 2023", "res": "25-02-064", "href": "https://www.ormstown.ca/wp-content/uploads/2025-02-10_PV-SE.pdf"}],
    "note": { "en": "Paid in six progress payments from April 2025 to the final one in August 2026, each citing resolution 25-02-064. SEAO's estimate equals the winning bid to the dollar.", "fr": "Payé en six décomptes, d'avril 2025 au décompte final d'août 2026, chacun citant la résolution 25-02-064. L'estimation du SEAO est égale au dollar près à la soumission retenue." }
   },
   {
@@ -308,6 +320,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 2 bidders listed", "fr": "Appel d'offres public, 2 soumissionnaires inscrits" },
    "bidders": [["Shellex Groupe Conseil Inc.", null]],
    "seao": { "notice": "20044347/ORM250121", "year": 2025, "final": "blank" },
+   "funds": [{"kind": "unstated", "en": "Base contract: charged half and half to two project accounts; the source is not named", "fr": "Contrat de base : imputé moitié-moitié à deux postes de projet; la source n'est pas nommée", "res": "25-02-065", "href": "https://www.ormstown.ca/wp-content/uploads/2025-02-10_PV-SE.pdf"}, {"kind": "grant", "en": "Change order (paving done with the master-plan work, up to 25%): \"entirely covered\" by the TECQ 2024-2028 water-infrastructure transfer", "fr": "Avenant (pavage fait avec les travaux du plan directeur, jusqu'à 25 %) : « entièrement couvert » par la TECQ 2024-2028", "res": "25-10-296", "href": "https://www.ormstown.ca/wp-content/uploads/2025-10-02-Extra.pdf"}, {"kind": "shared", "en": "October 2026 amendment, before tax: eligible costs shared 50/50 with Québec's transport ministry (agreement 202739), subject to its approval", "fr": "Amendement d'octobre 2026, avant taxes : coûts admissibles partagés à parts égales avec le ministère des Transports (entente 202739), sous réserve de son approbation", "amount": 67840, "res": "26-10-277", "href": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"}],
    "note": { "en": "No estimate is published. The lines cite resolution 25-02-065; the engineer's April 2026 estimate also defined the works in borrowing by-law 173-2026.", "fr": "Aucune estimation n'est publiée. Les lignes citent la résolution 25-02-065; l'estimation de l'ingénieur d'avril 2026 a aussi défini les travaux du règlement d'emprunt 173-2026." },
    "links": [{ "kind": "recap", "en": "Two borrowing by-laws, $11.2 million", "fr": "Deux règlements d'emprunt, 11,2 millions $", "href_en": "/en/council-watch/borrowing-172-173-2026/", "href_fr": "/fr/conseil-municipal/emprunts-172-173-2026/" }]
   },
@@ -323,6 +336,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 1 bid", "fr": "Appel d'offres public, 1 soumission" },
    "bidders": [],
    "seao": { "notice": "20045175/ORM250127", "year": 2025, "final": "blank" },
+   "funds": [{"kind": "lease", "en": "Lease-to-own through Rexcap (lessor: TD Bank), $95,186.45 before tax, shortened to 57 months on June 10, 2025 (25-06-211)", "fr": "Crédit-bail par Rexcap (locateur : Banque TD), 95 186,45 $ avant taxes, ramené à 57 mois le 10 juin 2025 (25-06-211)", "amount": 95186.45, "res": "25-04-119", "href": "https://www.ormstown.ca/wp-content/uploads/2025-04-03_PV-SE-1.pdf"}],
    "note": { "en": "SEAO's estimate equals the single bid to the cent. The payment lists show only small repair lines to this supplier; the equipment itself does not appear on them.", "fr": "L'estimation du SEAO est égale au sou près à l'unique soumission. Les listes de paiements ne montrent que de petites lignes de réparation à ce fournisseur; l'équipement lui-même n'y figure pas." }
   },
   {
@@ -337,6 +351,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 1 bid", "fr": "Appel d'offres public, 1 soumission" },
    "bidders": [],
    "seao": { "notice": "20049162/ORM-250212", "year": 2025, "final": "blank" },
+   "funds": [{"kind": "grant", "en": "A grant; the minutes do not name the program", "fr": "Une subvention; le procès-verbal ne nomme pas le programme", "amount": 125000, "res": "25-03-108", "href": "https://www.ormstown.ca/wp-content/uploads/2025-03-13_PV-SE-1.pdf"}, {"kind": "unstated", "en": "Project account 23-084-00-722, plus taxes; the source is not named", "fr": "Poste 23-084-00-722, plus taxes; la source n'est pas nommée", "amount": 89460.4, "res": "25-03-108", "href": "https://www.ormstown.ca/wp-content/uploads/2025-03-13_PV-SE-1.pdf"}],
    "note": { "en": "SEAO's estimate equals the single bid to the cent. Paid in phase 1 (2025) and phase 2 (July 6, 2026 list).", "fr": "L'estimation du SEAO est égale au sou près à l'unique soumission. Payé en phase 1 (2025) et phase 2 (liste du 6 juillet 2026)." }
   },
   {
@@ -351,6 +366,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 5 bids", "fr": "Appel d'offres public, 5 soumissions" },
    "bidders": [["Eurovia Québec Construction Inc.", 1996435.63], ["Roxboro Excavation Inc.", 2075000], ["Les Pavages Céka Inc.", 2511301.82], ["Les Pavages Ultra Inc.", 2770689.44]],
    "seao": { "notice": "20094120/ORM2025-03", "year": 2025, "final": "blank" },
+   "funds": [{"kind": "borrowing", "en": "Borrowing by-law 166-2025 ($2,025,416.63, approved by Québec July 14, 2025); $2,025,000 in bonds issued October 2026 (26-10-269)", "fr": "Règlement d'emprunt 166-2025 (2 025 416,63 $, approuvé par Québec le 14 juillet 2025); 2 025 000 $ d'obligations émises en octobre 2026 (26-10-269)", "res": "25-10-294", "href": "https://www.ormstown.ca/wp-content/uploads/2025-10-02-Extra.pdf"}],
    "note": { "en": "Progress payments on this project are financed by a credit line and approved by separate resolutions, outside the monthly payment lists, so the Ledger does not carry them.", "fr": "Les décomptes de ce projet sont financés par une marge de crédit et approuvés par des résolutions distinctes, hors des listes mensuelles : le grand livre ne les porte donc pas." },
    "links": [{ "kind": "method", "en": "Why credit-line progress payments are excluded", "fr": "Pourquoi les décomptes sur marge de crédit sont exclus", "href_en": "/finances/budget/#method", "href_fr": "/finances/budget/#method" }]
   },
@@ -366,6 +382,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "1 bidder listed", "fr": "1 soumissionnaire inscrit" },
    "bidders": [],
    "seao": { "notice": "20110700/ORM-2025-15", "year": 2026, "final": "blank" },
+   "funds": [{"kind": "unstated", "en": "Not stated in the minutes", "fr": "Non précisé au procès-verbal"}],
    "note": { "en": "Three years of audits. The 2025 audit would be billed in 2026; no such line is on the lists itemized so far. BCGO's earlier audit lines (2024 audit, grant audits) are under its profile.", "fr": "Trois années d'audit. L'audit de 2025 serait facturé en 2026; aucune ligne de ce genre ne figure aux listes détaillées jusqu'ici. Les lignes d'audit antérieures de BCGO (audit 2024, audits de subventions) sont à son profil." }
   },
   {
@@ -380,7 +397,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 4 bids", "fr": "Appel d'offres public, 4 soumissions" },
    "bidders": [["Gérald Théoret Inc.", 3898212.23], ["Excavation Gricon", 4259411.54], ["Ali Excavation Inc.", 4683436.08]],
    "seao": { "notice": "20128370/ORM2025-02.1", "year": 2026, "final": "blank" },
-   "financing": { "en": "Borrowing by-law 173-2026 ($4.8 million, 40 years), conditional on Québec's approval", "fr": "Règlement d'emprunt 173-2026 (4,8 millions $, 40 ans), sous réserve de l'approbation de Québec" },
+   "funds": [{"kind": "borrowing", "en": "Borrowing by-law 173-2026 ($4.8 million, 40 years); Québec approved it July 7, 2026", "fr": "Règlement d'emprunt 173-2026 (4,8 millions $, 40 ans); approuvé par Québec le 7 juillet 2026", "res": "26-08-218", "href": "https://www.ormstown.ca/wp-content/uploads/PV_2026-08-03_WEB.pdf"}, {"kind": "unstated", "en": "The award also cites \"any applicable grant\"; none is named", "fr": "L'octroi mentionne aussi « toute subvention applicable »; aucune n'est nommée", "res": "26-04-115", "href": "https://www.ormstown.ca/wp-content/uploads/PV_2026-04-13_WEB.pdf"}],
    "note": { "en": "$4,379,873.23 taxes included, per the minutes. A first progress payment to this contractor ($428,409.30) is on the October 6, 2026 list; the line does not name the project, and this is the contractor's only contract on record.", "fr": "4 379 873,23 $ taxes incluses, selon le procès-verbal. Un premier décompte à ce fournisseur (428 409,30 $) figure à la liste du 6 octobre 2026; la ligne ne nomme pas le projet, et c'est le seul contrat de ce fournisseur au dossier." },
    "links": [{ "kind": "recap", "en": "Two borrowing by-laws, $11.2 million", "fr": "Deux règlements d'emprunt, 11,2 millions $", "href_en": "/en/council-watch/borrowing-172-173-2026/", "href_fr": "/fr/conseil-municipal/emprunts-172-173-2026/" }]
   },
@@ -397,7 +414,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender, 3 bids", "fr": "Appel d'offres public, 3 soumissions" },
    "bidders": [["Eurovia Québec Construction Inc.", 5733952.73], ["Roxboro Excavation Inc.", 7651663.40]],
    "seao": { "notice": "20146530/ORM2025-08", "year": 2026, "final": "blank" },
-   "financing": { "en": "Provincial road grant of $3,704,749 (PAVL), the balance under borrowing by-law 172-2026", "fr": "Subvention routière provinciale de 3 704 749 $ (PAVL), le solde par le règlement d'emprunt 172-2026" },
+   "funds": [{"kind": "grant", "en": "Québec road grant (PAVL, file NGE77363), up to this amount: 70% when work starts, 30% after the final report", "fr": "Subvention routière du Québec (PAVL, dossier NGE77363), jusqu'à ce montant : 70 % au début des travaux, 30 % après la reddition de comptes", "amount": 3704749, "res": "26-06-182", "href": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-15_WEB.pdf"}, {"kind": "borrowing", "en": "The balance, under borrowing by-law 172-2026 ($6,370,221)", "fr": "Le solde, par le règlement d'emprunt 172-2026 (6 370 221 $)", "res": "26-06-182", "href": "https://www.ormstown.ca/wp-content/uploads/PV_2026-06-15_WEB.pdf"}],
    "note": { "en": "$4,136,554.78 taxes included, per the minutes; the lowest bid came in $1.16 million under the estimate.", "fr": "4 136 554,78 $ taxes incluses, selon le procès-verbal; la plus basse soumission est arrivée 1,16 million $ sous l'estimation." },
    "links": [{ "kind": "recap", "en": "Two borrowing by-laws, $11.2 million", "fr": "Deux règlements d'emprunt, 11,2 millions $", "href_en": "/en/council-watch/borrowing-172-173-2026/", "href_fr": "/fr/conseil-municipal/emprunts-172-173-2026/" }]
   },
@@ -412,7 +429,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Public tender ORM2025-08.1, 4 bids opened August 3, 2026", "fr": "Appel d'offres public ORM2025-08.1, 4 soumissions ouvertes le 3 août 2026" },
    "bidders": [["Excavation MF", 1626014.27], ["Ali Excavation Inc.", 1727791.05], ["Groupe MPotvin", 1751191]],
    "seao": { "notice": "20160258/ORM2025-08.1", "year": 2026, "final": "blank" },
-   "financing": { "en": "Borrowing by-law 172-2026", "fr": "Règlement d'emprunt 172-2026" },
+   "funds": [{"kind": "borrowing", "en": "Borrowing by-law 172-2026", "fr": "Règlement d'emprunt 172-2026", "res": "26-08-225", "href": "https://www.ormstown.ca/wp-content/uploads/PV_2026-08-03_WEB.pdf"}, {"kind": "pending", "en": "Council asked Québec to add this work to the road grant (PAVL) using savings on the 138A contract, subject to approval", "fr": "Le conseil a demandé à Québec d'ajouter ces travaux à la subvention routière (PAVL) grâce aux économies du contrat de la 138A, sous réserve d'approbation", "res": "26-07-202", "href": "https://www.ormstown.ca/wp-content/uploads/PV-2026-07-06-WEB.pdf"}],
    "note": { "en": "The minutes award the contract to Agence Chenail, the lowest conforming of four bids, $268,400 over the estimate. Ormstown's SEAO report named Eurovia Québec Construction as the winner of the same notice, at the same price, as of October 25, 2026; the two records disagree. On October 6, 2026 council moved the 3e Rang paving to 2027 because of the ministry's bridge replacement.", "fr": "Le procès-verbal octroie le contrat à Agence Chenail, plus basse de quatre soumissions conformes, 268 400 $ au-dessus de l'estimation. Le rapport SEAO d'Ormstown nommait Eurovia Québec Construction comme adjudicataire du même avis, au même prix, en date du 25 octobre 2026 : les deux documents divergent. Le 6 octobre 2026, le conseil a reporté le pavage du 3e Rang à 2027 en raison du remplacement du pont par le ministère." },
    "links": [{ "kind": "recap", "en": "August 3, 2026 sitting", "fr": "séance du 3 août 2026", "href_en": "/en/council-watch/august-3-2026/", "href_fr": "/fr/conseil-municipal/3-aout-2026/" }, { "kind": "recap", "en": "October 6, 2026: paving moved to 2027", "fr": "6 octobre 2026 : pavage reporté à 2027", "href_en": "/en/council-watch/october-6-2026/", "href_fr": "/fr/conseil-municipal/6-octobre-2026/" }]
   },
@@ -427,6 +444,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "Lowest of 5 bids, as read at the sitting", "fr": "Plus basse de 5 soumissions, telle que lue en séance" },
    "bidders": [["GIE", 99000], ["Laboratoires GS", 105392.70], ["Solmatech", 117167.16], ["Laboratoire Montérégie", 167295.18]],
    "seao": { "notice": null, "year": 2026, "final": "absent" },
+   "funds": [{"kind": "unstated", "en": "Not stated in the minutes", "fr": "Non précisé au procès-verbal"}],
    "note": { "en": "Reported by the Observer from the sitting (the livestream failed). Not on Ormstown's SEAO report as of the checked date.", "fr": "Rapporté par l'Observer depuis la salle (la diffusion a échoué). Absent du rapport SEAO d'Ormstown à la date de vérification." },
    "src": { "kind": "recap", "href_en": "/en/council-watch/july-6-2026/", "href_fr": "/fr/conseil-municipal/6-juillet-2026/" }
   },
@@ -441,6 +459,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "$137.21 a tonne, about 750 tonnes a year; a one-year bid from Sel Windsor at $109.94 was not retained", "fr": "137,21 $ la tonne, environ 750 tonnes par année; une soumission d'un an de Sel Windsor à 109,94 $ n'a pas été retenue" },
    "bidders": [["Sel Windsor (one year)", null]],
    "seao": { "notice": null, "year": 2026, "final": "absent" },
+   "funds": [{"kind": "unstated", "en": "Not stated in the minutes", "fr": "Non précisé au procès-verbal"}],
    "note": { "en": "Yearly maximum as read at the sitting. Not on Ormstown's SEAO report as of the checked date. Salt bought earlier came from Mines Seleine.", "fr": "Maximum annuel tel que lu en séance. Absent du rapport SEAO d'Ormstown à la date de vérification. Le sel acheté auparavant venait de Mines Seleine." },
    "src": { "kind": "recap", "href_en": "/en/council-watch/july-6-2026/", "href_fr": "/fr/conseil-municipal/6-juillet-2026/" }
   },
@@ -455,6 +474,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "mode": { "en": "As read at the sitting", "fr": "Tel que lu en séance" },
    "bidders": [],
    "seao": { "notice": null, "year": 2026, "final": "absent" },
+   "funds": [{"kind": "unstated", "en": "Not stated in the minutes", "fr": "Non précisé au procès-verbal"}],
    "note": { "en": "The mayor said it complements the Town's single water employee after a second hire could not be recruited. Not on Ormstown's SEAO report as of the checked date.", "fr": "Le maire a dit qu'il complète l'unique employé de l'eau de la Municipalité, après l'échec du recrutement d'un second. Absent du rapport SEAO d'Ormstown à la date de vérification." },
    "src": { "kind": "recap", "href_en": "/en/council-watch/july-6-2026/", "href_fr": "/fr/conseil-municipal/6-juillet-2026/" }
   },
@@ -489,6 +509,7 @@ window.OO_LEDGER_DISCLOSURES = {
     "year": 2026,
     "final": "absent"
    },
+   "funds": [{"kind": "unstated", "en": "Done in coordination with Québec's transport ministry; the minutes state no cost share", "fr": "Réalisée en coordination avec le ministère des Transports; le procès-verbal n'indique aucun partage des coûts", "res": "26-10-274", "href": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"}],
    "note": {
     "en": "Resolution 26-10-274. Not on Ormstown's SEAO report as of the checked date.",
     "fr": "Résolution 26-10-274. Absent du rapport SEAO d'Ormstown à la date de vérification."

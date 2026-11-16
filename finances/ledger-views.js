@@ -1155,6 +1155,34 @@
     return c.tax === 'before' ? t.discTaxBefore : c.tax === 'included' ? t.discTaxIncluded : t.discTaxUnstated;
   }
 
+  // Funding tags ("Who pays"): kinds from the contract's resolutions.
+  var FUND_KINDS = ['grant', 'borrowing', 'lease', 'reserves', 'shared', 'pending', 'unstated'];
+  function fundKinds(c) {
+    var seen = {};
+    (c.funds || []).forEach(function (fd) { seen[fd.kind] = true; });
+    return FUND_KINDS.filter(function (k) { return seen[k]; });
+  }
+  function fundChips(t, c) {
+    var ks = fundKinds(c);
+    if (!ks.length) return null;
+    var p = el('span', { cls: 'fund-line' }, el('span', { cls: 'fund-lbl', text: t.discWhoPays + ' ' }));
+    ks.forEach(function (k) { p.appendChild(el('span', { cls: 'fund fund-' + k, text: t['fundKind_' + k] })); });
+    return p;
+  }
+  function fundList(ctx, c) {
+    var t = ctx.T, f = ctx.f, lang = ctx.lang;
+    var ul = el('ul', { cls: 'fund-list' });
+    (c.funds || []).forEach(function (fd) {
+      var li = el('li', null, [
+        el('span', { cls: 'fund fund-' + fd.kind, text: t['fundKind_' + fd.kind] }),
+        txt(' ' + (fd.amount != null ? f.money(fd.amount) + ' · ' : '') + ctxText(fd, lang))
+      ]);
+      if (fd.res && fd.href && CTX_EXT.test(fd.href)) { li.appendChild(txt(' · ')); li.appendChild(el('a', { href: fd.href, target: '_blank', rel: 'noopener', title: t.newTab }, L.tpl(t.sitResolution, { n: fd.res }))); }
+      ul.appendChild(li);
+    });
+    return ul;
+  }
+
   function contractsSection(ctx) {
     var t = ctx.T, f = ctx.f, dx = ctx.dx, lang = ctx.lang;
     var out = el('section', { id: 'contracts', cls: 'disc-sec', 'aria-labelledby': 'disc-con-h' });
@@ -1162,6 +1190,7 @@
     var list = (dx && dx.contracts || []).slice().sort(function (a, b) { return String(b.awarded).localeCompare(String(a.awarded)); });
     out.appendChild(el('h2', { id: 'disc-con-h', cls: 'disc-h', text: L.tpl(t.discContractsH, { amt: f.money0(thr) }) }));
     out.appendChild(el('p', { cls: 'disc-lead', text: L.tpl(t.discContractsLead, { n: f.num(list.length), date: f.dateLong(dx.checked) }) }));
+    out.appendChild(el('p', { cls: 'disc-basis', text: t.discFundsLead }));
     var sh = seaoHref(dx, 2026);
     if (sh) out.appendChild(el('p', { cls: 'disc-basis' }, [txt(t.discSeaoWhere + ' '), el('a', { href: sh, target: '_blank', rel: 'noopener' }, t.discSeaoReport)]));
 
@@ -1202,7 +1231,8 @@
       body.appendChild(el('tr', null, [
         el('th', { scope: 'row', 'data-l': t.colObject }, [
           txt(ctxText(c.object, lang)),
-          el('span', { cls: 'gloss', text: c.contractor + (P ? '' : '') })
+          el('span', { cls: 'gloss', text: c.contractor + (P ? '' : '') }),
+          fundChips(t, c)
         ]),
         el('td', { 'data-l': t.colAwarded }, [
           txt(/^\d{4}-\d{2}-\d{2}$/.test(c.awarded) ? f.dateLong(c.awarded) : String(c.awarded)),
@@ -1216,8 +1246,12 @@
         src
       ]));
 
-      // Details: mode, bidders, financing, note, further reading.
+      // Details: who pays, mode, bidders, note, further reading.
       var inner = el('div', { cls: 'inner' });
+      if (c.funds && c.funds.length) {
+        inner.appendChild(el('p', null, el('strong', { text: t.discFundsH })));
+        inner.appendChild(fundList(ctx, c));
+      }
       inner.appendChild(el('p', null, [el('strong', { text: t.discMode + ' ' }), txt(ctxText(c.mode, lang))]));
       if (c.bidders && c.bidders.length) {
         var bl = el('ul', { cls: 'disc-bidders' });
@@ -1225,7 +1259,6 @@
         inner.appendChild(el('p', null, el('strong', { text: t.discBidders })));
         inner.appendChild(bl);
       }
-      if (c.financing) inner.appendChild(el('p', null, [el('strong', { text: t.discFinancing + ' ' }), txt(ctxText(c.financing, lang))]));
       if (c.note) inner.appendChild(el('p', { text: ctxText(c.note, lang) }));
       var made = (c.links || []).filter(function (lk) { return ctxHref(lk, lang); });
       if (made.length) {

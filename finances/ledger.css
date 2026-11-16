@@ -1237,3 +1237,24 @@ tr.ctx-row > td { padding-top: 0; }
 .disc-card-b { display: block; margin-top: 4px; font: var(--size-caption)/1.5 var(--sans); color: var(--ink-soft); }
 .disc-foot { margin-top: var(--s5, 48px); padding-top: var(--s2); border-top: var(--rule-hair) solid var(--hair); max-width: 82ch; }
 .disc-foot .disc-sources { flex-direction: column; gap: 4px; }
+
+/* Who pays: funding tags on contracts (ledger-disclosures.js `funds`) */
+.fund-line { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; margin-top: 4px; font-size: .78rem; }
+.fund-lbl { color: var(--ink-soft); }
+.fund { display: inline-block; padding: 1px 7px; border-radius: 999px; border: 1px solid currentColor; font-size: .74rem; font-weight: 600; line-height: 1.5; white-space: nowrap; }
+.fund-grant { color: #1f7a4d; }
+.fund-pending { color: #1f7a4d; border-style: dashed; }
+.fund-shared { color: #2a6f97; }
+.fund-borrowing { color: #a35a00; }
+.fund-lease { color: #8a5a9e; }
+.fund-reserves { color: #5c6b2e; }
+.fund-unstated { color: var(--ink-soft); border-style: dotted; }
+.fund-list { list-style: none; padding: 0; margin: 0 0 var(--s2); }
+.fund-list li { margin: 4px 0; }
+.fund-list .fund { margin-right: 4px; }
+:root:not([data-theme="light"]) .fund-grant, :root:not([data-theme="light"]) .fund-pending { color: #6fd3a0; }
+:root:not([data-theme="light"]) .fund-shared { color: #7fbfe3; }
+:root:not([data-theme="light"]) .fund-borrowing { color: #f0a85a; }
+:root:not([data-theme="light"]) .fund-lease { color: #c9a2dc; }
+:root:not([data-theme="light"]) .fund-reserves { color: #b9c97a; }
+.fund-list a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }

@@ -154,6 +154,8 @@ if (fs.existsSync(payPath)) {
     'presetTopAsk', 'presetLastAsk', 'presetWhereAsk', 'presetLawAsk', 'presetBigAsk', 'presetLegalAsk',
     'ctxKind_recap', 'ctxKind_story', 'ctxKind_minutes', 'ctxKind_document',
     'ctxKind_budget', 'ctxKind_method', 'ctxKind_ledger', 'ctxKind_seao',
+    'fundKind_grant', 'fundKind_pending', 'fundKind_shared', 'fundKind_borrowing',
+    'fundKind_lease', 'fundKind_reserves', 'fundKind_unstated',
     'discStatusFound', 'discStatusPartial', 'discStatusStale', 'discStatusMissing',
     'discTaxBefore', 'discTaxIncluded', 'discTaxUnstated'
   ]);
@@ -465,7 +467,17 @@ if (fs.existsSync(payPath)) {
       if (!c.id || cids.has(c.id)) err(`${w}: missing or duplicate id`); cids.add(c.id);
       both(c.object, `${w} object`); both(c.mode, `${w} mode`);
       if (c.note) both(c.note, `${w} note`);
-      if (c.financing) both(c.financing, `${w} financing`);
+      const FK = new Set(['grant', 'pending', 'shared', 'borrowing', 'lease', 'reserves', 'unstated']);
+      if (!Array.isArray(c.funds) || !c.funds.length) err(`${w}: funds missing (use kind "unstated" when the minutes name no source)`);
+      for (const fd of c.funds || []) {
+        if (!FK.has(fd.kind)) err(`${w}: fund kind "${fd.kind}" unknown`);
+        both(fd, `${w} fund`);
+        if (fd.amount != null && typeof fd.amount !== 'number') err(`${w}: fund amount must be a number`);
+        if (fd.kind !== 'unstated' && !(fd.res && fd.href)) err(`${w}: a ${fd.kind} fund needs its resolution and PV link`);
+        if (fd.res && !/^\d{2}-\d{2}-\d{3}$/.test(fd.res)) err(`${w}: fund res format`);
+        if (fd.href && !EXT.test(fd.href)) err(`${w}: fund href not allowed`);
+        if (!!fd.res !== !!fd.href) err(`${w}: fund res and href go together`);
+      }
       if (typeof c.contractor !== 'string' || !c.contractor) err(`${w}: contractor missing`);
       if (!(typeof c.amount === 'number' && c.amount >= DX.threshold)) err(`${w}: amount must be a number at or above the threshold`);
       if (c.estimate != null && typeof c.estimate !== 'number') err(`${w}: estimate must be a number or null`);
