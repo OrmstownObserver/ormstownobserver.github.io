@@ -31,7 +31,7 @@
 // ============================================================
 window.OO_LEDGER_DISCLOSURES = {
  "updated": "2026-11-15",
- "checked": "2026-10-25",
+ "checked": "2026-11-15",
  "threshold": 25000,
  "sources": [
   {
@@ -93,13 +93,13 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "contract-bylaw",
-   "short": {"en": "By-laws 129-2020 and 129-2021 are posted; their replacement, 129-2026, is in progress.", "fr": "Les règlements 129-2020 et 129-2021 sont en ligne; leur remplaçant, 129-2026, est en cours."},
+   "short": {"en": "By-law 129-2026, in force since November 3, 2026, is posted; the contracts page still shows the by-laws it replaced.", "fr": "Le règlement 129-2026, en vigueur depuis le 3 novembre 2026, est en ligne; la page des contrats affiche encore les règlements qu'il remplace."},
    "en": "The contract-management by-law and complaints procedure",
    "fr": "Le règlement de gestion contractuelle et la procédure de plaintes",
    "law": { "en": "Loi sur les contrats des organismes municipaux, ss. 10 and 115", "fr": "Loi sur les contrats des organismes municipaux, art. 10 et 115", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-65.01#se:10" },
    "requires": { "en": "The by-law that sets how the Town awards contracts below the tender threshold, and the procedure for complaints about an award, both on the website.", "fr": "Le règlement qui fixe comment la Municipalité octroie les contrats sous le seuil d'appel d'offres, et la procédure de plaintes sur un octroi, tous deux sur le site." },
    "status": "found",
-   "town": { "en": "By-laws 129-2020 and 129-2021 are posted. Their replacement, 129-2026, reached notice of motion on October 6, 2026. A complaints policy dated September 19, 2023 is posted.", "fr": "Les règlements 129-2020 et 129-2021 sont en ligne. Leur remplaçant, 129-2026, en était à l'avis de motion le 6 octobre 2026. Une politique de plaintes datée du 19 septembre 2023 est en ligne.", "href": "https://www.ormstown.ca/ma-municipalite/administration/appels-doffres-et-gestion-contractuelle", "href_label_en": "Town's contracts page", "href_label_fr": "Page des contrats de la Municipalité" },
+   "town": {"en": "By-law 129-2026, adopted November 2, 2026 and in force November 3, is posted on the by-laws page. The contracts page still lists the by-laws it replaced, 129-2020 and 129-2021. A complaints policy dated September 19, 2023 is posted on the policies page.", "fr": "Le règlement 129-2026, adopté le 2 novembre 2026 et en vigueur le 3 novembre, est en ligne sur la page des règlements. La page des contrats affiche encore les règlements qu'il remplace, 129-2020 et 129-2021. Une politique de gestion des plaintes datée du 19 septembre 2023 est en ligne sur la page des politiques.", "href": "https://www.ormstown.ca/wp-content/uploads/129-2026_RGC.pdf", "href_label_en": "By-law 129-2026 (PDF)", "href_label_fr": "Règlement 129-2026 (PDF)"},
    "observer": { "en": "The Observer's explainer of by-law 129-2026 and what changes.", "fr": "L'explication par l'Observer du règlement 129-2026 et de ce qui change.", "href_en": "/en/bylaws-regulations/contract-management-129-2026/", "href_fr": "/fr/bylaws-regulations/gestion-contractuelle-129-2026/" }
   },
   {
@@ -154,7 +154,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "law": { "en": "Municipal Ethics and Good Conduct Act, ss. 13 and 15", "fr": "Loi sur l'éthique et la déontologie en matière municipale, art. 13 et 15", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/E-15.1.0.1#se:15" },
    "requires": { "en": "A list, kept current on the website, of the council members who have completed the required ethics training; a revised code of ethics after each election.", "fr": "Une liste, tenue à jour sur le site, des membres du conseil ayant suivi la formation obligatoire en éthique; un code d'éthique révisé après chaque élection." },
    "status": "stale",
-   "town": { "en": "No training list was found on ormstown.ca. The council page still links the 2021 code (74-2021); by-law 74-2026 was adopted on May 4, 2026 (resolution 26-05-140).", "fr": "Aucune liste de formation n'a été trouvée sur ormstown.ca. La page du conseil renvoie encore au code de 2021 (74-2021); le règlement 74-2026 a été adopté le 4 mai 2026 (résolution 26-05-140).", "href": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal", "href_label_en": "Town's council page", "href_label_fr": "Page du conseil de la Municipalité" },
+   "town": { "en": "No training list was found on ormstown.ca. The council page still links the 2021 code (74-2021); by-law 74-2026 was adopted on May 4, 2026 (resolution 26-05-140).", "fr": "Aucune liste de formation n'a été trouvée sur ormstown.ca. La page du conseil renvoie encore au code de 2021 (74-2021); le règlement 74-2026 a été adopté le 4 mai 2026 (résolution 26-05-140).", "href": "https://www.ormstown.ca/ma-municipalite/vie-democratique/conseil-municipal", "href_label_en": "Town's council page", "href_label_fr": "Page du conseil de la Municipalité" },
    "observer": { "en": "The May 4, 2026 sitting, where 74-2026 was adopted.", "fr": "La séance du 4 mai 2026, où le règlement 74-2026 a été adopté.", "href_en": "/en/council-watch/council-asks-quebec-to-ban-trucks/", "href_fr": "/fr/conseil-municipal/demande-interdire-camions-trois-rues/" }
   },
   {
@@ -165,7 +165,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "law": { "en": "Code municipal du Québec, s. 433.1 (notices and by-laws online)", "fr": "Code municipal du Québec, art. 433.1 (avis et règlements en ligne)", "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-27.1#se:433_1" },
    "requires": { "en": "Since by-law 167-2025, the Town publishes its public notices on its website; the by-laws themselves are posted on the Town's by-laws page.", "fr": "Depuis le règlement 167-2025, la Municipalité publie ses avis publics sur son site; les règlements eux-mêmes sont affichés à la page des règlements." },
    "status": "stale",
-   "town": { "en": "The by-laws page lists 1-2025 and the draft amendment 1.1-2026. By-law 1-2026, which sets the 2026 rates, is not posted.", "fr": "La page des règlements liste 1-2025 et le projet de modification 1.1-2026. Le règlement 1-2026, qui fixe les taux de 2026, n'est pas en ligne.", "href": "https://www.ormstown.ca/ma-municipalite/administration/reglements-municipaux", "href_label_en": "Town's by-laws page", "href_label_fr": "Page des règlements de la Municipalité" },
+   "town": { "en": "The by-laws page lists 1-2025 and the draft amendment 1.1-2026. By-law 1-2026, which sets the 2026 rates, is not posted.", "fr": "La page des règlements liste 1-2025 et le projet de modification 1.1-2026. Le règlement 1-2026, qui fixe les taux de 2026, n'est pas en ligne.", "href": "https://www.ormstown.ca/services/reglementation/reglements-principaux", "href_label_en": "Town's by-laws page", "href_label_fr": "Page des règlements de la Municipalité" },
    "observer": { "en": "The 2026 rates as printed in the budget leaflet: residential $0.5794 per $100 of valuation, up from $0.5463.", "fr": "Les taux de 2026 tels qu'imprimés au dépliant du budget : résidentiel 0,5794 $ par 100 $ d'évaluation, contre 0,5463 $.", "href_en": "/en/council-watch/borrowing-172-173-2026/", "href_fr": "/fr/conseil-municipal/emprunts-172-173-2026/" }
   }
  ],
@@ -302,7 +302,8 @@ window.OO_LEDGER_DISCLOSURES = {
    "id": "prince-albert-2026",
    "object": { "en": "Rebuilding rue Prince-Albert (with Cullen and Oliver)", "fr": "Réfection de la rue Prince-Albert (avec Cullen et Oliver)" },
    "contractor": "Groupe M. Potvin",
-   "payee": null,
+   "payee": "le-groupe-mpotvin",
+   "match": { "all": true },
    "awarded": "2026-04-13",
    "amount": 3809413.55, "tax": "before",
    "estimate": 3786125,
@@ -310,7 +311,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "bidders": [["Gérald Théoret Inc.", 3898212.23], ["Excavation Gricon", 4259411.54], ["Ali Excavation Inc.", 4683436.08]],
    "seao": { "notice": "20128370/ORM2025-02.1", "year": 2026, "final": "blank" },
    "financing": { "en": "Borrowing by-law 173-2026 ($4.8 million, 40 years), conditional on Québec's approval", "fr": "Règlement d'emprunt 173-2026 (4,8 millions $, 40 ans), sous réserve de l'approbation de Québec" },
-   "note": { "en": "$4,379,873.23 taxes included, per the minutes. No payment to this contractor is on the lists itemized so far.", "fr": "4 379 873,23 $ taxes incluses, selon le procès-verbal. Aucun paiement à ce fournisseur ne figure aux listes détaillées jusqu'ici." },
+   "note": { "en": "$4,379,873.23 taxes included, per the minutes. A first progress payment to this contractor ($428,409.30) is on the October 6, 2026 list; the line does not name the project, and this is the contractor's only contract on record.", "fr": "4 379 873,23 $ taxes incluses, selon le procès-verbal. Un premier décompte à ce fournisseur (428 409,30 $) figure à la liste du 6 octobre 2026; la ligne ne nomme pas le projet, et c'est le seul contrat de ce fournisseur au dossier." },
    "links": [{ "kind": "recap", "en": "Two borrowing by-laws, $11.2 million", "fr": "Deux règlements d'emprunt, 11,2 millions $", "href_en": "/en/council-watch/borrowing-172-173-2026/", "href_fr": "/fr/conseil-municipal/emprunts-172-173-2026/" }]
   },
   {
@@ -386,6 +387,47 @@ window.OO_LEDGER_DISCLOSURES = {
    "seao": { "notice": null, "year": 2026, "final": "absent" },
    "note": { "en": "The mayor said it complements the Town's single water employee after a second hire could not be recruited. Not on Ormstown's SEAO report as of the checked date.", "fr": "Le maire a dit qu'il complète l'unique employé de l'eau de la Municipalité, après l'échec du recrutement d'un second. Absent du rapport SEAO d'Ormstown à la date de vérification." },
    "src": { "kind": "recap", "href_en": "/en/council-watch/july-6-2026/", "href_fr": "/fr/conseil-municipal/6-juillet-2026/" }
+  },
+  {
+   "id": "traffic-study-2026",
+   "object": {
+    "en": "Traffic study of four intersections on routes 138 and 201, with the Québec transport ministry",
+    "fr": "Étude de circulation de quatre intersections des routes 138 et 201, avec le ministère des Transports"
+   },
+   "contractor": "GBI",
+   "payee": null,
+   "awarded": "2026-10-06",
+   "amount": 54772.17,
+   "tax": "before",
+   "estimate": null,
+   "mode": {
+    "en": "Lowest of 3 price requests",
+    "fr": "Plus bas de 3 prix demandés"
+   },
+   "bidders": [
+    [
+     "Artelia",
+     62500
+    ],
+    [
+     "Équipe Laurence",
+     113900
+    ]
+   ],
+   "seao": {
+    "notice": null,
+    "year": 2026,
+    "final": "absent"
+   },
+   "note": {
+    "en": "Resolution 26-10-274. Not on Ormstown's SEAO report as of the checked date.",
+    "fr": "Résolution 26-10-274. Absent du rapport SEAO d'Ormstown à la date de vérification."
+   },
+   "src": {
+    "kind": "minutes",
+    "href_en": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf",
+    "href_fr": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"
+   }
   }
  ]
 };
