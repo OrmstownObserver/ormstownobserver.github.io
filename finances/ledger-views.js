@@ -1047,7 +1047,7 @@
     var years = [];
     ctx.store.sittings.forEach(function (s) { if (years.indexOf(s.year) < 0) years.push(s.year); });
     years.sort().reverse();
-    var TOP = 10;
+    var TOP = Infinity;
     years.forEach(function (y, yi) {
       // The latest year is open; earlier years sit in a closed <details>
       // so the page reads as one year at a time.
@@ -1121,7 +1121,6 @@
     });
     out.appendChild(el('p', { cls: 'disc-note', text: t.discSpellingNote }));
     out.appendChild(csvButton(ctx, t.discCsv, function () { ctx.on.disclosuresCsv(); }));
-    out.appendChild(backToTop(ctx));
     return out;
   }
 
@@ -1245,25 +1244,17 @@
     table.appendChild(body);
     out.appendChild(table);
     out.appendChild(el('p', { cls: 'disc-note', text: t.discPaidNote }));
-    out.appendChild(backToTop(ctx));
     return out;
   }
 
-  // Worst first: what is missing or out of date is what a reader came for.
+  // Within a category, worst first: what is missing or out of date is what
+  // a reader came for.
   var STATUS_KEY = { found: 'discStatusFound', partial: 'discStatusPartial', stale: 'discStatusStale', missing: 'discStatusMissing' };
   var STATUS_ORDER = ['missing', 'stale', 'partial', 'found'];
   function firstSentence(s) {
     var m = /^(.+?[.!?])(\s|$)/.exec(String(s || ''));
     return m ? m[1] : String(s || '');
   }
-  function jumpTo(id) {
-    var n = document.getElementById(id);
-    if (n && n.scrollIntoView) { try { n.scrollIntoView({ block: 'start' }); } catch (e) {} }
-  }
-  function backToTop(ctx) {
-    return el('p', { cls: 'disc-back' }, navLink(ctx.hrefTab('disclosures') + '#register', ctx.T.discBackTop, function () { jumpTo('register'); }, { cls: 'linkbtn' }));
-  }
-
   // A sentence never opens on a numeral: spell out one to twelve.
   function numWord(n, lang) {
     var en = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve'];
@@ -1271,107 +1262,153 @@
     var w = lang === 'fr' ? fr : en;
     return n >= 0 && n < w.length ? w[n] : String(n);
   }
-
-  function registerSection(ctx) {
-    var t = ctx.T, f = ctx.f, dx = ctx.dx, lang = ctx.lang;
-    var out = el('section', { id: 'register', cls: 'disc-sec disc-sec-first', 'aria-labelledby': 'disc-reg-h' });
-    out.appendChild(el('h2', { id: 'disc-reg-h', cls: 'disc-h', text: t.discRegisterH }));
-    out.appendChild(el('p', { cls: 'disc-lead', text: L.tpl(t.discRegisterLead, { date: f.dateLong(dx.checked) }) }));
-
-    var items = (dx.items || []).slice();
-    var rank = function (it) { var r = STATUS_ORDER.indexOf(it.status); return r < 0 ? 9 : r; };
-    items = items.map(function (it, i) { return { it: it, i: i }; })
-      .sort(function (a, b) { return rank(a.it) - rank(b.it) || a.i - b.i; })
-      .map(function (x) { return x.it; });
-
-    // The tally: one line a reader can take away before opening anything.
-    var tally = el('ul', { cls: 'disc-tally', 'aria-label': t.discTallyLabel });
+  function backToTracker(ctx) {
+    return el('p', { cls: 'disc-back' }, navLink(ctx.hrefDisc(''), ctx.T.discBackTracker, function () { ctx.on.discList(''); }, { cls: 'linkbtn' }));
+  }
+  function tally(ctx, items, label) {
+    var t = ctx.T, ul = el('ul', { cls: 'disc-tally', 'aria-label': label });
     STATUS_ORDER.forEach(function (st) {
       var n = items.filter(function (it) { return it.status === st; }).length;
-      if (!n) return;
-      tally.appendChild(el('li', { cls: 's-' + st }, [el('strong', { text: f.num(n) }), txt(' ' + (t[STATUS_KEY[st]] || st))]));
+      if (n) ul.appendChild(el('li', { cls: 's-' + st }, [el('strong', { text: ctx.f.num(n) }), txt(' ' + (t[STATUS_KEY[st]] || st))]));
     });
-    out.appendChild(tally);
+    return ul;
+  }
 
+  // One obligation: a closed line (status, title, the finding in a
+  // sentence); opened, the law, what it requires, what is online and what
+  // the Observer offers.
+  function obligation(ctx, it) {
+    var t = ctx.T, f = ctx.f, dx = ctx.dx, lang = ctx.lang;
+    var li = el('li', { cls: 'disc-item', id: 'disc-' + it.id });
+    var det = el('details', { cls: 'disc-ob' });
+    det.appendChild(el('summary', null, [
+      el('span', { cls: 'status s-' + it.status, text: t[STATUS_KEY[it.status]] || it.status }),
+      el('span', { cls: 'disc-ob-t' }, [
+        el('span', { cls: 'disc-ob-h', text: ctxText(it, lang) }),
+        el('span', { cls: 'disc-ob-f', text: it.short ? ctxText(it.short, lang) : firstSentence(ctxText(it.town, lang)) })
+      ])
+    ]));
+    var dl = el('dl');
+    var lawHref = it.law && CTX_EXT.test(it.law.href || '') ? it.law.href : null;
+    dl.appendChild(el('dt', { text: t.discLaw }));
+    dl.appendChild(el('dd', null, [
+      lawHref ? el('a', { href: lawHref, target: '_blank', rel: 'noopener' }, ctxText(it.law, lang)) : txt(ctxText(it.law, lang)),
+      it.law && it.law['note_' + lang] ? el('span', { cls: 'gloss', text: it.law['note_' + lang] }) : null
+    ]));
+    dl.appendChild(el('dt', { text: t.discRequires }));
+    dl.appendChild(el('dd', { text: ctxText(it.requires, lang) + (it.due ? ' ' + L.tpl(t.discDue, { date: f.dateLong(it.due) }) : '') }));
+    var th = it.town && CTX_EXT.test(it.town.href || '') ? it.town.href : null;
+    dl.appendChild(el('dt', { text: L.tpl(t.discTown, { date: f.dateLong(dx.checked) }) }));
+    dl.appendChild(el('dd', null, [
+      txt(ctxText(it.town, lang) + ' '),
+      th ? el('a', { cls: 'ctx-src', href: th, target: '_blank', rel: 'noopener', title: t.newTab }, it.town['href_label_' + lang] || 'ormstown.ca') : null
+    ]));
+    if (it.observer) {
+      var ob = it.observer, kids = [txt(ctxText(ob, lang) + ' ')];
+      // The two long tables live on their own pages.
+      if (ob.anchor === 'suppliers' || ob.anchor === 'contracts') kids.push(navLink(ctx.hrefDisc(ob.anchor), t.discOpenList, function () { ctx.on.discList(ob.anchor); }, { cls: 'linkbtn disc-go' }));
+      else if (ob.payee && ctx.store.payees[ob.payee]) kids.push(el('button', { type: 'button', cls: 'linkbtn', text: ctx.payeeName(ctx.store.payees[ob.payee]) + ' →', on: { click: function () { ctx.on.payee(ob.payee); } } }));
+      else if (ctxHref(ob, lang)) kids.push(el('a', { href: ctxHref(ob, lang) }, t.discReadObserver));
+      dl.appendChild(el('dt', { text: t.discObserver }));
+      dl.appendChild(el('dd', null, kids));
+    }
+    det.appendChild(dl);
+    li.appendChild(det);
+    return li;
+  }
+
+  function groupSection(ctx, g, items) {
+    var t = ctx.T, lang = ctx.lang;
+    var sec = el('section', { id: 'group-' + g.id, cls: 'disc-group', 'aria-labelledby': 'group-' + g.id + '-h' });
+    var hd = el('div', { cls: 'disc-group-head' }, [
+      el('h3', { id: 'group-' + g.id + '-h', cls: 'disc-group-h', text: ctxText(g, lang) }),
+      tally(ctx, items, ctxText(g, lang))
+    ]);
+    sec.appendChild(hd);
+    var why = el('p', { cls: 'disc-why' }, [el('strong', { text: t.discWhy + ' ' }), txt(ctxText(g.why, lang) + ' ')]);
+    if (g.src && CTX_EXT.test(g.src.href || '')) why.appendChild(el('a', { cls: 'ctx-src', href: g.src.href, target: '_blank', rel: 'noopener', title: t.newTab }, g.src[lang] || g.src.en));
+    sec.appendChild(why);
+    var rank = function (it) { var r = STATUS_ORDER.indexOf(it.status); return r < 0 ? 9 : r; };
     var list = el('ol', { cls: 'disc-list' });
-    items.forEach(function (it) {
-      var li = el('li', { cls: 'disc-item', id: 'disc-' + it.id });
-      var det = el('details', { cls: 'disc-ob' });
-      det.appendChild(el('summary', null, [
-        el('span', { cls: 'status s-' + it.status, text: t[STATUS_KEY[it.status]] || it.status }),
-        el('span', { cls: 'disc-ob-t' }, [
-          el('span', { cls: 'disc-ob-h', text: ctxText(it, lang) }),
-          el('span', { cls: 'disc-ob-f', text: it.short ? ctxText(it.short, lang) : firstSentence(ctxText(it.town, lang)) })
-        ])
-      ]));
-      var dl = el('dl');
-      var lawHref = it.law && CTX_EXT.test(it.law.href || '') ? it.law.href : null;
-      dl.appendChild(el('dt', { text: t.discLaw }));
-      dl.appendChild(el('dd', null, [
-        lawHref ? el('a', { href: lawHref, target: '_blank', rel: 'noopener' }, ctxText(it.law, lang)) : txt(ctxText(it.law, lang)),
-        it.law && it.law['note_' + lang] ? el('span', { cls: 'gloss', text: it.law['note_' + lang] }) : null
-      ]));
-      dl.appendChild(el('dt', { text: t.discRequires }));
-      dl.appendChild(el('dd', { text: ctxText(it.requires, lang) + (it.due ? ' ' + L.tpl(t.discDue, { date: f.dateLong(it.due) }) : '') }));
-      var th = it.town && CTX_EXT.test(it.town.href || '') ? it.town.href : null;
-      dl.appendChild(el('dt', { text: L.tpl(t.discTown, { date: f.dateLong(dx.checked) }) }));
-      dl.appendChild(el('dd', null, [
-        txt(ctxText(it.town, lang) + ' '),
-        th ? el('a', { cls: 'ctx-src', href: th, target: '_blank', rel: 'noopener', title: t.newTab }, it.town['href_label_' + lang] || 'ormstown.ca') : null
-      ]));
-      if (it.observer) {
-        var ob = it.observer, kids = [txt(ctxText(ob, lang) + ' ')];
-        if (ob.anchor) kids.push(navLink(ctx.hrefTab('disclosures') + '#' + ob.anchor, t.discGoSection, function () { jumpTo(ob.anchor); }, { cls: 'linkbtn disc-go' }));
-        else if (ob.payee && ctx.store.payees[ob.payee]) kids.push(el('button', { type: 'button', cls: 'linkbtn', text: ctx.payeeName(ctx.store.payees[ob.payee]) + ' →', on: { click: function () { ctx.on.payee(ob.payee); } } }));
-        else if (ctxHref(ob, lang)) kids.push(el('a', { href: ctxHref(ob, lang) }, t.discReadObserver));
-        dl.appendChild(el('dt', { text: t.discObserver }));
-        dl.appendChild(el('dd', null, kids));
-      }
-      det.appendChild(dl);
-      li.appendChild(det);
-      list.appendChild(li);
-    });
-    out.appendChild(list);
-    return out;
+    items.map(function (it, i) { return { it: it, i: i }; })
+      .sort(function (a, b) { return rank(a.it) - rank(b.it) || a.i - b.i; })
+      .forEach(function (x) { list.appendChild(obligation(ctx, x.it)); });
+    sec.appendChild(list);
+    if (g.id === 'contracts') {
+      var thr = (ctx.dx && ctx.dx.threshold) || 25000;
+      var cards = el('ul', { cls: 'disc-cards', 'aria-label': t.discListsLabel });
+      [['suppliers', L.tpl(t.discTocSuppliers, { amt: ctx.f.money0(thr) }), t.discCardSuppliers],
+       ['contracts', L.tpl(t.discTocContracts, { amt: ctx.f.money0(thr) }), L.tpl(t.discCardContracts, { n: ctx.f.num((ctx.dx.contracts || []).length) })]
+      ].forEach(function (c) {
+        var a = navLink(ctx.hrefDisc(c[0]), '', function () { ctx.on.discList(c[0]); }, { cls: 'disc-card' });
+        a.textContent = '';
+        a.appendChild(el('span', { cls: 'disc-card-h', text: c[1] + ' →' }));
+        a.appendChild(el('span', { cls: 'disc-card-b', text: c[2] }));
+        cards.appendChild(el('li', null, a));
+      });
+      sec.appendChild(cards);
+    }
+    return sec;
+  }
+
+  function trackerHead(ctx) {
+    var t = ctx.T, f = ctx.f;
+    var head = el('header', { cls: 'disc-head' });
+    head.appendChild(el('h2', { cls: 'disc-title', text: t.discIntro }));
+    head.appendChild(el('p', { cls: 'disc-sub', text: L.tpl(t.discSub, { n: numWord(ctx.dx.items.length, ctx.lang) }) }));
+    head.appendChild(el('p', { cls: 'disc-checked', text: L.tpl(t.discChecked, { date: f.dateLong(ctx.dx.checked) }) }));
+    head.appendChild(tally(ctx, ctx.dx.items, t.discTallyLabel));
+    // Jump to a category: four short stops, not a sticky bar.
+    var gs = (ctx.dx.groups || []);
+    if (gs.length) {
+      var nav = el('nav', { cls: 'disc-toc', 'aria-label': t.discTocLabel });
+      var ol = el('ol');
+      gs.forEach(function (g) {
+        var id = 'group-' + g.id;
+        ol.appendChild(el('li', null, navLink(ctx.hrefDisc('') + '#' + id, ctxText(g, ctx.lang), function () {
+          var n = document.getElementById(id); if (n && n.scrollIntoView) { try { n.scrollIntoView({ block: 'start' }); } catch (e) {} }
+        }, { cls: 'disc-stop' })));
+      });
+      nav.appendChild(ol);
+      head.appendChild(nav);
+    }
+    return head;
+  }
+
+  function trackerFoot(ctx) {
+    var t = ctx.T;
+    var srcs = (ctx.dx.sources || []).filter(function (x) { return CTX_EXT.test(x.href || ''); });
+    if (!srcs.length) return null;
+    var box = el('aside', { cls: 'disc-foot', 'aria-labelledby': 'disc-src-h' });
+    box.appendChild(el('h3', { id: 'disc-src-h', cls: 'disc-sources-h', text: t.discSourcesH }));
+    var ul = el('ul', { cls: 'disc-sources' });
+    srcs.forEach(function (x) { ul.appendChild(el('li', null, el('a', { href: x.href, target: '_blank', rel: 'noopener', title: t.newTab }, x[ctx.lang] || x.en))); });
+    box.appendChild(ul);
+    return box;
   }
 
   function disclosures(ctx) {
-    var t = ctx.T, f = ctx.f, out = document.createDocumentFragment();
+    var t = ctx.T, out = document.createDocumentFragment();
     if (!ctx.dx || !ctx.dx.items) {
       out.appendChild(el('div', { cls: 'notice warn', text: t.discUnavailable }));
       return out;
     }
     if (ctx.loading) return frag(el('div', { cls: 'skeleton', 'aria-busy': 'true', text: L.tpl(t.loadingLines, { n: ctx.f.num(ctx.expectedLines || 0) }) }));
     if (ctx.linesFailed) return frag(linesFailed(ctx));
-    var thr = (ctx.dx && ctx.dx.threshold) || 25000;
-    var head = el('header', { cls: 'disc-head' });
-    head.appendChild(el('h2', { cls: 'disc-title', text: t.discIntro }));
-    head.appendChild(el('p', { cls: 'disc-sub', text: L.tpl(t.discSub, { n: numWord(ctx.dx.items.length, ctx.lang) }) }));
-    var srcs = (ctx.dx.sources || []).filter(function (x) { return CTX_EXT.test(x.href || ''); });
-    if (srcs.length) {
-      var ul = el('ul', { cls: 'disc-sources', 'aria-label': t.discSourcesH });
-      srcs.forEach(function (x) { ul.appendChild(el('li', null, el('a', { href: x.href, target: '_blank', rel: 'noopener', title: t.newTab }, x[ctx.lang] || x.en))); });
-      head.appendChild(el('p', { cls: 'disc-sources-h', text: t.discSourcesH }));
-      head.appendChild(ul);
+    // The two long tables: each on its own page, with the way back first.
+    if (ctx.discList === 'suppliers' || ctx.discList === 'contracts') {
+      out.appendChild(backToTracker(ctx));
+      out.appendChild(ctx.discList === 'suppliers' ? suppliersSection(ctx) : contractsSection(ctx));
+      out.appendChild(backToTracker(ctx));
+      return out;
     }
-    out.appendChild(head);
-    // Three stops, in reading order; the bar stays in view while scrolling.
-    var nav = el('nav', { cls: 'disc-toc', 'aria-label': t.discTocLabel });
-    var ol = el('ol');
-    [['register', L.tpl(t.discTocRegister, { n: f.num(ctx.dx.items.length) })],
-     ['suppliers', L.tpl(t.discTocSuppliers, { amt: f.money0(thr) })],
-     ['contracts', L.tpl(t.discTocContracts, { amt: f.money0(thr) })]].forEach(function (s, i) {
-      var a = navLink(ctx.hrefTab('disclosures') + '#' + s[0], '', function () { jumpTo(s[0]); }, { cls: 'disc-stop' });
-      a.textContent = '';
-      a.appendChild(el('span', { cls: 'n', text: String(i + 1) }));
-      a.appendChild(txt(' ' + s[1]));
-      ol.appendChild(el('li', null, a));
+    out.appendChild(trackerHead(ctx));
+    var byGroup = {};
+    ctx.dx.items.forEach(function (it) { (byGroup[it.group] = byGroup[it.group] || []).push(it); });
+    (ctx.dx.groups || []).forEach(function (g) {
+      if (byGroup[g.id] && byGroup[g.id].length) out.appendChild(groupSection(ctx, g, byGroup[g.id]));
     });
-    nav.appendChild(ol);
-    out.appendChild(nav);
-    out.appendChild(registerSection(ctx));
-    out.appendChild(suppliersSection(ctx));
-    out.appendChild(contractsSection(ctx));
+    var ft = trackerFoot(ctx); if (ft) out.appendChild(ft);
     return out;
   }
 

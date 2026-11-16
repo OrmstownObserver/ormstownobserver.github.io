@@ -7,6 +7,9 @@
 // SEAO and LegisQuébec.
 //
 // RULES
+//  - `groups`: the tracker's four categories, in reading order, each with
+//    the province's own stated reason (`why`) and its source. Every item
+//    names its `group`.
 //  - `sources`: the province's own guidance and the laws, shown under the
 //    page heading. Official hosts only (same list as CTX_EXT).
 //  - Each obligation's `short` is its finding in one line for the list view;
@@ -33,6 +36,64 @@ window.OO_LEDGER_DISCLOSURES = {
  "updated": "2026-11-15",
  "checked": "2026-11-15",
  "threshold": 25000,
+ "groups": [
+  {
+   "id": "contracts",
+   "en": "Contracts",
+   "fr": "Contrats",
+   "why": {
+    "en": "Québec's law on municipal contracts says it aims to encourage competition and promote integrity and transparency in public procurement, so that public funds are soundly managed and businesses are treated fairly. Publishing who receives each contract, and for how much, is how residents and competing businesses can see that for themselves.",
+    "fr": "La loi québécoise sur les contrats municipaux dit viser à favoriser la concurrence et à promouvoir l'intégrité et la transparence des marchés publics, pour assurer une saine gestion des fonds publics et un traitement équitable des entreprises. Publier qui obtient chaque contrat, et pour combien, permet aux citoyens et aux entreprises concurrentes de le constater eux-mêmes."
+   },
+   "src": {
+    "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/C-65.01#se:1",
+    "en": "Act respecting contracts of municipal bodies, s. 1",
+    "fr": "Loi sur les contrats des organismes municipaux, art. 1"
+   }
+  },
+  {
+   "id": "ethics",
+   "en": "Ethics",
+   "fr": "Éthique",
+   "why": {
+    "en": "Québec's municipal ethics law exists to secure council members' explicit commitment to their municipality's ethical values, to require rules of conduct, and to provide ways to enforce them. Members must take recognized training early in each term, and the municipality keeps the list of those who have done so on its website.",
+    "fr": "La loi québécoise sur l'éthique municipale vise à assurer l'adhésion explicite des membres du conseil aux valeurs de leur municipalité en matière d'éthique, à prévoir des règles déontologiques et des mécanismes pour les faire respecter. Les élus doivent suivre une formation reconnue en début de mandat, et la municipalité tient à jour sur son site la liste de ceux qui l'ont suivie."
+   },
+   "src": {
+    "href": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/E-15.1.0.1#se:1",
+    "en": "Municipal Ethics and Good Conduct Act, ss. 1 and 15",
+    "fr": "Loi sur l'éthique et la déontologie en matière municipale, art. 1 et 15"
+   }
+  },
+  {
+   "id": "finance",
+   "en": "Finances",
+   "fr": "Finances",
+   "why": {
+    "en": "The Commission municipale du Québec, which audits municipalities, describes the financial report as an important exercise in transparency: it is how a town accounts for its financial management and the use of its resources. Residents can also expect clear information on how their taxes are set and how they change.",
+    "fr": "La Commission municipale du Québec, qui audite les municipalités, qualifie le rapport financier d'important exercice de transparence : c'est par lui qu'une municipalité rend compte de sa gestion financière et de l'utilisation de ses ressources. Les citoyens peuvent aussi s'attendre à une information claire sur l'établissement et l'évolution de leurs taxes."
+   },
+   "src": {
+    "href": "https://www.cmq.gouv.qc.ca/rapport-audit-transmission-rapport-financier-municipalite",
+    "en": "Commission municipale: audit of financial-report filing",
+    "fr": "Commission municipale : audit de la transmission du rapport financier"
+   }
+  },
+  {
+   "id": "council-pay",
+   "en": "Council pay",
+   "fr": "Rémunération des élus",
+   "why": {
+    "en": "Council sets its own members' pay by by-law. In return, Québec says, it owes residents an account of it: the pay and expense allowance members received appear in the municipality's financial report.",
+    "fr": "Le conseil fixe lui-même la rémunération de ses membres par règlement. En contrepartie, précise Québec, il a une obligation de reddition de comptes envers les citoyens : la rémunération et l'allocation de dépenses versées aux élus figurent au rapport financier de la municipalité."
+   },
+   "src": {
+    "href": "https://www.quebec.ca/gouvernement/gestion-municipale/organisation-municipale/democratie-municipale/conseil-municipal-elus-municipaux/remuneration-depenses-elus-municipaux",
+    "en": "Québec: pay and expenses of municipal councillors (in French)",
+    "fr": "Québec : rémunération et dépenses des élus municipaux"
+   }
+  }
+ ],
  "sources": [
   {
    "href": "https://www.quebec.ca/gouvernement/gestion-municipale/gestion-contrats-municipaux/sollicitation-adjudication/transparence",
@@ -70,6 +131,7 @@ window.OO_LEDGER_DISCLOSURES = {
  "items": [
   {
    "id": "contracts-25k",
+   "group": "contracts",
    "short": {"en": "No final cost published on any of the 12 contracts listed; September and October 2026 awards not yet entered.", "fr": "Aucune dépense finale publiée pour les 12 contrats listés; les octrois de septembre et d'octobre 2026 n'y sont pas encore."},
    "en": "Every contract of $25,000 or more",
    "fr": "Chaque contrat de 25 000 $ ou plus",
@@ -81,6 +143,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "annual-list",
+   "group": "contracts",
    "short": {"en": "The latest list posted is for 2022; the 2023, 2024 and 2025 lists are not on ormstown.ca.", "fr": "La dernière liste en ligne est celle de 2022; celles de 2023, 2024 et 2025 ne sont pas sur ormstown.ca."},
    "en": "The yearly list of contractors paid $25,000 or more",
    "fr": "La liste annuelle des cocontractants payés 25 000 $ ou plus",
@@ -93,6 +156,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "contract-bylaw",
+   "group": "contracts",
    "short": {"en": "By-law 129-2026, in force since November 3, 2026, is posted; the contracts page still shows the by-laws it replaced.", "fr": "Le règlement 129-2026, en vigueur depuis le 3 novembre 2026, est en ligne; la page des contrats affiche encore les règlements qu'il remplace."},
    "en": "The contract-management by-law and complaints procedure",
    "fr": "Le règlement de gestion contractuelle et la procédure de plaintes",
@@ -104,6 +168,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "highlights",
+   "group": "finance",
    "short": {"en": "The 2025 highlights, tabled June 1, 2026, are not on ormstown.ca.", "fr": "Les faits saillants 2025, déposés le 1er juin 2026, ne sont pas sur ormstown.ca."},
    "en": "The mayor's report on the year's finances",
    "fr": "Le rapport du maire sur les finances de l'année",
@@ -115,6 +180,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "council-pay",
+   "group": "council-pay",
    "short": {"en": "One combined figure for all councillors, not one per member; 2025 figures missing.", "fr": "Un seul chiffre pour l'ensemble des conseillers, pas un par membre; les chiffres de 2025 manquent."},
    "en": "What each council member is paid",
    "fr": "Ce que chaque membre du conseil reçoit",
@@ -126,6 +192,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "budget-pti",
+   "group": "finance",
    "short": {"en": "The 2026 budget and 2026–2028 capital program are posted.", "fr": "Le budget 2026 et le PTI 2026-2028 sont en ligne."},
    "en": "The budget and the three-year capital program",
    "fr": "Le budget et le programme triennal d'immobilisations",
@@ -137,6 +204,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "financial-report",
+   "group": "finance",
    "short": {"en": "Only the highlights are posted, not the statements themselves.", "fr": "Seuls les faits saillants sont en ligne, pas les états financiers eux-mêmes."},
    "en": "The audited financial statements",
    "fr": "Les états financiers vérifiés",
@@ -148,6 +216,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "ethics",
+   "group": "ethics",
    "short": {"en": "No training list found; the council page still links the 2021 code, replaced in May 2026.", "fr": "Aucune liste de formation trouvée; la page du conseil renvoie encore au code de 2021, remplacé en mai 2026."},
    "en": "Ethics training of council members, and the code of ethics",
    "fr": "La formation en éthique des élus, et le code d'éthique",
@@ -159,6 +228,7 @@ window.OO_LEDGER_DISCLOSURES = {
   },
   {
    "id": "tax-bylaw",
+   "group": "finance",
    "short": {"en": "By-law 1-2026, which sets the 2026 tax rates, is not posted.", "fr": "Le règlement 1-2026, qui fixe les taux de 2026, n'est pas en ligne."},
    "en": "The year's tax-rate by-law",
    "fr": "Le règlement de taxation de l'année",
@@ -424,9 +494,9 @@ window.OO_LEDGER_DISCLOSURES = {
     "fr": "Résolution 26-10-274. Absent du rapport SEAO d'Ormstown à la date de vérification."
    },
    "src": {
-    "kind": "minutes",
-    "href_en": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf",
-    "href_fr": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"
+    "kind": "recap",
+    "href_en": "/en/council-watch/october-6-2026/",
+    "href_fr": "/fr/conseil-municipal/6-octobre-2026/"
    }
   }
  ]

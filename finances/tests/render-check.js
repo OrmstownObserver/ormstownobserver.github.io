@@ -429,6 +429,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     const showing = $('profile').hidden
       ? ['payments-table', 'payees-table', 'categories-table', 'sittings-table', 'contracts-table']
           .reduce((n, t) => n + rowsIn(t).length, 0)
+        // the transparency tracker shows obligations, not a table
+        + $('panel-disclosures').find((n) => /\bdisc-item\b/.test(n.getAttribute && n.getAttribute('class') || '')).length
       : $('profile').children.length;
     if (!showing) fail(`preset "${label}" (${href}) resolves to an empty view`);
     else ok(`preset "${label}" resolves to a populated view`);

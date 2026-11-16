@@ -62,7 +62,7 @@
   var I18N = global.OO_I18N;
   var $ = function (id) { return document.getElementById(id); };
 
-  var PAYMENTS_URL = '/finances/payments.json?v=20261115-4';
+  var PAYMENTS_URL = '/finances/payments.json?v=20261115-5';
   var PAGE_SIZE = 150, PAGE_STEP = 250, PROFILE_PAGE = 100, PROFILE_STEP = 200;
   // Rollups carry the exact line counts, so the loading message stays current
   // before payments.json has arrived and needs no hand-maintained constant.
@@ -72,8 +72,12 @@
   var state = {
     lang: 'fr', tab: 'categories', scope: '',
     sittings: [], categories: [], q: '', min: '', max: '',
-    sort: 'amount:desc', payee: '', payeeScope: '', supplier: []
+    sort: 'amount:desc', payee: '', payeeScope: '', supplier: [],
+    // The transparency tracker's two long tables each have their own page:
+    // ?tab=disclosures&list=suppliers|contracts. Empty = the tracker itself.
+    list: ''
   };
+  var LISTS = ['suppliers', 'contracts'];
   var revealed = PAGE_SIZE, profileRevealed = PROFILE_PAGE;
   var idxCache = null, aggCache = null, printRestore = null;
   var pendingCharts = [];
@@ -126,6 +130,7 @@
 
     var tab = p.get('tab');
     state.tab = TABS.indexOf(tab) >= 0 ? tab : DEFAULTS.tab;
+    state.list = state.tab === 'disclosures' && LISTS.indexOf(p.get('list')) >= 0 ? p.get('list') : '';
 
     // scope, with ?year= as a permanent alias. The year is the only
     // timeframe: disclosure and financial review happen year by year, and
@@ -194,6 +199,7 @@
     var p = new URLSearchParams();
     p.set('lang', state.lang);
     if (state.tab !== DEFAULTS.tab) p.set('tab', state.tab);
+    if (state.tab === 'disclosures' && state.list) p.set('list', state.list);
     if (state.scope !== defaultScope()) p.set('scope', state.scope);
     if (state.sittings.length) p.set('sitting', state.sittings.join(','));
     if (state.categories.length) p.set('category', state.categories.join(','));
@@ -243,6 +249,8 @@
     if (!store) { Object.keys(patch).forEach(function (k) { state[k] = patch[k]; }); writeURL(false); renderStandalone(); return; }
     var langChanged = patch.lang && patch.lang !== state.lang;
     if (!opts.fromAsk && Object.keys(patch).some(function (k) { return FILTER_KEYS[k]; })) { askText = ''; askNote = null; }
+    // Changing tab leaves a tracker sub-page unless the patch names one.
+    if ('tab' in patch && !('list' in patch)) patch.list = '';
     Object.keys(patch).forEach(function (k) { state[k] = patch[k]; });
     if (opts.resetReveal !== false) revealed = PAGE_SIZE;
     idxCache = aggCache = null;
@@ -506,7 +514,9 @@
       },
       hrefSitting: function (id) { return hrefFor(sittingPatch(id)); },
       hrefCategory: function (key) { return hrefFor(categoryPatch(key)); },
-      hrefTab: function (tab) { return hrefFor({ tab: tab, payee: '', payeeScope: '' }); },
+      hrefTab: function (tab) { return hrefFor({ tab: tab, list: '', payee: '', payeeScope: '' }); },
+      discList: state.list,
+      hrefDisc: function (list) { return hrefFor({ tab: 'disclosures', list: list || '', payee: '', payeeScope: '' }); },
       hrefYear: function (y) { return hrefFor({ scope: y, sittings: [] }); },
       payeeMatches: payeeMatches,
       payeeRows: payeeRows, categoryRows: categoryRows, sittingRows: sittingRows, yearSittings: yearSittings, periodFields: periodFields,
@@ -536,6 +546,11 @@
         all: function () { revealAll(); },
         csv: exportCSV,
         disclosuresCsv: exportSuppliersCSV,
+        discList: function (list) {
+          setState({ tab: 'disclosures', list: list || '', payee: '' });
+          var top = document.getElementsByClassName('lw-tabs')[0];
+          if (top && top.scrollIntoView) { try { top.scrollIntoView({ block: 'start' }); } catch (e) {} }
+        },
         clearFilters: resetFilters,
         retry: function () { linesFailed = false; loading = true; renderAll(); loadPayments(); }
       }
@@ -765,6 +780,10 @@
     var pp = $('panel-payments');
     if (pp) pp.removeAttribute('aria-busy');
     pendingCharts = [];
+    // The tracker is a reading page, not a query: the Ledger's search,
+    // year switch, filters and status line step aside on that tab.
+    var root = document.getElementsByClassName('lw')[0];
+    if (root) root.classList.toggle('is-tracker', state.tab === 'disclosures' && !state.payee);
     renderChrome();
     renderRail();
     renderTabs();
