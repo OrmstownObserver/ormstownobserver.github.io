@@ -360,7 +360,7 @@
   </url>
   <url>
     <loc>https://ormstownobserver.ca/en/investigations/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/investigations/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/investigations/"/>
   </url>
@@ -431,8 +431,14 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/toit-vert-development/"/>
   </url>
   <url>
+    <loc>https://ormstownobserver.ca/en/wind-energy-hsl/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/wind-energy-hsl/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/eolien-haut-saint-laurent/"/>
+  </url>
+  <url>
     <loc>https://ormstownobserver.ca/finances/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/finances/?lang=en"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/finances/?lang=fr"/>
   </url>
@@ -791,6 +797,12 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/editoriaux/politique-linguistique-2026/"/>
   </url>
   <url>
+    <loc>https://ormstownobserver.ca/fr/eolien-haut-saint-laurent/</loc>
+    <lastmod>2026-11-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/wind-energy-hsl/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/eolien-haut-saint-laurent/"/>
+  </url>
+  <url>
     <loc>https://ormstownobserver.ca/fr/finances-municipales/lire-les-listes-de-depenses/</loc>
     <lastmod>2026-11-05</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/municipal-finances/reading-the-spending-lists/"/>
@@ -804,7 +816,7 @@
   </url>
   <url>
     <loc>https://ormstownobserver.ca/fr/investigations/</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/investigations/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/investigations/"/>
   </url>
