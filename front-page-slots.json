@@ -2,29 +2,53 @@
   "version": 1,
   "source": "front-page-slots.yml",
   "hero": {
-    "slug": "council-watch-november-11-2026",
-    "path_en": "/en/council-watch/november-11-2026/",
-    "path_fr": "/fr/conseil-municipal/11-novembre-2026/",
-    "label_en": "Council wrap-up · Special sitting",
-    "label_fr": "Bilan du conseil · Séance extraordinaire",
-    "hed_en": "Urgent sitting on the fires: council presses Québec for more police",
-    "hed_fr": "Séance urgente sur les incendies : le conseil presse Québec d’envoyer plus de policiers",
-    "deck_en": "Mayor credits firefighters with saving the main street · Council unanimously asks Québec for lasting police resources · Neighbouring towns invited to back the call",
-    "deck_fr": "Le maire salue les pompiers qui ont sauvé la rue principale · Le conseil demande à l’unanimité des ressources policières durables à Québec · Les municipalités voisines invitées à appuyer la démarche",
-    "icon": "council",
-    "meta_en": "Sitting of November 11, 2026",
-    "meta_fr": "Séance du 11 novembre 2026",
-    "cta_en": "Read the recap →",
-    "cta_fr": "Lire le compte rendu →",
+    "slug": "wind-energy-hsl",
+    "path_en": "/en/wind-energy-hsl/",
+    "path_fr": "/fr/eolien-haut-saint-laurent/",
+    "label_en": "Investigation · Wind Energy Watch",
+    "label_fr": "Enquête · Dossier éolien",
+    "hed_en": "Wind turbines in the Haut-Saint-Laurent: where things actually stand",
+    "hed_fr": "Éoliennes dans le Haut-Saint-Laurent : où en sont réellement les choses",
+    "deck_en": "A Hydro-Québec map, a petition, lawn signs and a survey in every mailbox have put wind energy on the region’s agenda. The Observer read the laws, the bylaw, the tender documents and the public statements. This is what the record shows, and what it doesn’t.",
+    "deck_fr": "Une carte d’Hydro-Québec, une pétition, des pancartes et un sondage dans chaque boîte aux lettres ont mis l’éolien à l’ordre du jour de la région. L’Observer a lu les lois, le règlement, les documents d’appel d’offres et les déclarations publiques. Voici ce que le dossier montre, et ce qu’il ne montre pas.",
+    "icon": "default",
+    "meta_en": "November 16, 2026",
+    "meta_fr": "16 novembre 2026",
+    "date_published": "2026-11-16",
+    "cta_en": "Read more →",
+    "cta_fr": "Lire la suite →",
     "image": {
-      "src": "/images/council-watch-november-11-2026.jpg",
-      "position": "38% 30%",
-      "credit": "Photo, Stray Dog Media",
-      "alt_en": "Ormstown council members and three fire department officers stand together after the November 11 special sitting, poppies on their lapels.",
-      "alt_fr": "Des membres du conseil d’Ormstown et trois officiers du service incendie réunis après la séance extraordinaire du 11 novembre, coquelicot à la boutonnière."
+      "src": "/images/wind-energy-hsl.jpg",
+      "position": "center 50%",
+      "credit": "Photo, Cantons-de-l’Est, Wikimedia Commons, CC BY-SA 4.0",
+      "alt_en": "A row of white wind turbines on a grassy ridge under a blue sky, seen across a field of wildflowers.",
+      "alt_fr": "Une rangée d’éoliennes blanches sur une crête herbeuse sous un ciel bleu, vue de l’autre côté d’un champ de fleurs sauvages."
     }
   },
   "cards": [
+    {
+      "slug": "council-watch-november-11-2026",
+      "path_en": "/en/council-watch/november-11-2026/",
+      "path_fr": "/fr/conseil-municipal/11-novembre-2026/",
+      "label_en": "Council wrap-up · Special sitting",
+      "label_fr": "Bilan du conseil · Séance extraordinaire",
+      "hed_en": "Urgent sitting on the fires: council presses Québec for more police",
+      "hed_fr": "Séance urgente sur les incendies : le conseil presse Québec d’envoyer plus de policiers",
+      "deck_en": "Mayor credits firefighters with saving the main street · Council unanimously asks Québec for lasting police resources · Neighbouring towns invited to back the call",
+      "deck_fr": "Le maire salue les pompiers qui ont sauvé la rue principale · Le conseil demande à l’unanimité des ressources policières durables à Québec · Les municipalités voisines invitées à appuyer la démarche",
+      "icon": "council",
+      "meta_en": "Sitting of November 11, 2026",
+      "meta_fr": "Séance du 11 novembre 2026",
+      "cta_en": "Read the recap →",
+      "cta_fr": "Lire le compte rendu →",
+      "image": {
+        "src": "/images/council-watch-november-11-2026.jpg",
+        "position": "38% 30%",
+        "credit": "Photo, Stray Dog Media",
+        "alt_en": "Ormstown council members and three fire department officers stand together after the November 11 special sitting, poppies on their lapels.",
+        "alt_fr": "Des membres du conseil d’Ormstown et trois officiers du service incendie réunis après la séance extraordinaire du 11 novembre, coquelicot à la boutonnière."
+      }
+    },
     {
       "slug": "community-ormstown-fires",
       "path_en": "/en/community/ormstown-fires/",
@@ -47,29 +71,6 @@
         "credit": "Video still, Stray Dog Media",
         "alt_en": "A firefighter stands beside a fire truck as an excavator clears the burned Pizzeria Ormstown building on rue Lambton.",
         "alt_fr": "Un pompier se tient près d’un camion d’incendie pendant qu’une pelle mécanique déblaie l’édifice incendié de Pizzeria Ormstown, rue Lambton."
-      }
-    },
-    {
-      "slug": "council-watch-november-2-2026",
-      "path_en": "/en/council-watch/november-2-2026/",
-      "path_fr": "/fr/conseil-municipal/2-novembre-2026/",
-      "label_en": "Council Watch · Wrap-up",
-      "label_fr": "Conseil municipal · Bilan",
-      "hed_en": "Council wrap-up: Nov. 2, 2026",
-      "hed_fr": "Bilan du conseil : 2 novembre 2026",
-      "deck_en": "A new shop’s sign tied to the language Charter; a 15% contingency added to the 3e Rang culvert contract; new contract rules adopted.",
-      "deck_fr": "Une enseigne liée à la Charte de la langue française; une contingence de 15 % ajoutée au contrat de ponceaux du 3e Rang; de nouvelles règles contractuelles adoptées.",
-      "icon": "council",
-      "meta_en": "Sitting of November 2, 2026",
-      "meta_fr": "Séance du 2 novembre 2026",
-      "cta_en": "Read the recap →",
-      "cta_fr": "Lire le compte rendu →",
-      "image": {
-        "src": "/images/council-watch-november-2-2026.jpg",
-        "position": "center 40%",
-        "credit": "",
-        "alt_en": "The Ormstown council table during the regular sitting of November 2, 2026, seen from the public seating.",
-        "alt_fr": "La table du conseil d’Ormstown pendant la séance ordinaire du 2 novembre 2026, vue depuis les sièges du public."
       }
     },
     {
