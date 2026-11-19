@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-19",
   "items": [
     {
       "id": "paving-nov-2026",
@@ -103,6 +103,165 @@
         "label_en": "Public notice (PDF, French)",
         "label_fr": "Avis public (PDF)",
         "url": "https://www.ormstown.ca/wp-content/uploads/Certificat-publication-358-2026_Ormstown_SIGNE.pdf"
+      }
+    },
+    {
+      "id": "clearbrooke-bridge-closure-2026",
+      "type": "alert",
+      "date": "2026-08-17",
+      "until": "2026-11-30",
+      "title_en": "Clearbrooke bridge (3rd Rang) closed to traffic until late November",
+      "title_fr": "Pont Clearbrooke (3e Rang) fermé à la circulation jusqu'à la fin novembre",
+      "text_en": "Québec's transport ministry is rebuilding the bridge, which is fully closed until the end of November. Northbound detour: Rockburn hill, chemin de la Rivière-aux-Outardes, Route 138, then Route 201; southbound: Rockburn hill, chemin Williams/rang des Botreaux, then Route 201.",
+      "text_fr": "Le ministère des Transports et de la Mobilité durable reconstruit le pont, entièrement fermé jusqu'à la fin novembre. Détour vers le nord : côte de Rockburn, chemin de la Rivière-aux-Outardes, route 138, puis route 201; vers le sud : côte de Rockburn, chemin Williams/rang des Botreaux, puis route 201.",
+      "source": {
+        "label_en": "Town of Ormstown, Info-travaux page (updated Nov. 4)",
+        "label_fr": "Municipalité d'Ormstown, page Info-travaux (mise à jour du 4 nov.)",
+        "url": "https://www.ormstown.ca/services/info-travaux"
+      }
+    },
+    {
+      "id": "route-138a-culverts-nov-2026",
+      "type": "alert",
+      "date": "2026-11-04",
+      "until": "2026-11-30",
+      "title_en": "Route 138A: culvert replacements to bring road closures",
+      "title_fr": "Route 138A : le remplacement de ponceaux entraînera des fermetures",
+      "text_en": "The Town's Info-travaux page (updated November 4) says four major culverts on Route 138A still have to be replaced, so road closures are expected. Only local traffic is allowed; follow the posted detour. The work is scheduled to end in late November; closure dates have not been posted.",
+      "text_fr": "La page Info-travaux de la Municipalité (mise à jour le 4 novembre) indique que quatre ponceaux majeurs restent à remplacer sur la route 138A et que des fermetures sont à prévoir. Seule la circulation locale est permise; suivez le détour indiqué. Les travaux doivent se terminer à la fin novembre; les dates de fermeture ne sont pas publiées.",
+      "source": {
+        "label_en": "Town of Ormstown, Info-travaux page (updated Nov. 4)",
+        "label_fr": "Municipalité d'Ormstown, page Info-travaux (mise à jour du 4 nov.)",
+        "url": "https://www.ormstown.ca/services/info-travaux"
+      }
+    },
+    {
+      "id": "intersection-safety-study-2026",
+      "type": "notice",
+      "date": "2026-11-04",
+      "title_en": "Town and Québec's transport ministry to study four busy intersections",
+      "title_fr": "La Municipalité et le ministère des Transports étudient quatre intersections achalandées",
+      "text_en": "On October 6, council hired the firm GBI for a traffic study, at just over $54,772, of Route 138 at Route 201, Route 138 at chemin de la Rivière-aux-Outardes and rue Roy, Route 138A at rue Gale, and rue Gale at rue Church. It will count cars and trucks and look at lane width, traffic flow and pedestrian and cyclist safety. No completion date was given.",
+      "text_fr": "Le 6 octobre, le conseil a retenu la firme GBI pour une étude de circulation d'un peu plus de 54 772 $ portant sur la route 138 à la route 201, la route 138 au chemin de la Rivière-aux-Outardes et à la rue Roy, la route 138A à la rue Gale, et la rue Gale à la rue Church. L'étude comptera les voitures et les camions et examinera la largeur des voies, la fluidité et la sécurité des piétons et des cyclistes. Aucune date de fin n'a été donnée.",
+      "source": {
+        "label_en": "The Gleaner (Nov. 4)",
+        "label_fr": "The Gleaner (4 nov., en anglais)",
+        "url": "https://the-gleaner.com/ormstown-analyzes-main-intersections-for-safety/"
+      }
+    },
+    {
+      "id": "cvhs-verner-klaus-talk-2026",
+      "type": "event",
+      "date": "2026-11-22",
+      "title_en": "Historical society talk on the Verner and Klaus families, November 22 at the Legion",
+      "title_fr": "Conférence de la Société historique sur les familles Verner et Klaus, le 22 novembre à la Légion",
+      "text_en": "\"Revolution, Rebellion and Roots: The Verner and Klaus families\", presented by the Chateauguay Valley Historical Society on Sunday, November 22, 1 to 3 p.m., at the Ormstown Legion, 33 Prince Albert Street. Free, with refreshments.",
+      "text_fr": "« Revolution, Rebellion and Roots: The Verner and Klaus families », présentée par la Société historique de la vallée de la Châteauguay le dimanche 22 novembre, de 13 h à 15 h, à la Légion d'Ormstown, 33, rue Prince-Albert. Gratuit, rafraîchissements servis.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 4)",
+        "label_fr": "The Gleaner, « This & That in Town » (4 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-4-2026/"
+      }
+    },
+    {
+      "id": "legion-lions-christmas-market-2026",
+      "type": "event",
+      "date": "2026-11-21",
+      "title_en": "Legion and Lions Christmas Market at the rec centre, November 21",
+      "title_fr": "Marché de Noël de la Légion et des Lions au centre récréatif, le 21 novembre",
+      "text_en": "Saturday, November 21, 10 a.m. to 3 p.m., organized by the Ormstown Legion and Lions. Visits with Santa from 11 a.m. to 2:30 p.m.; visitors can bring non-perishable food for the food baskets.",
+      "text_fr": "Le samedi 21 novembre, de 10 h à 15 h, organisé par la Légion et les Lions d'Ormstown. Visite du père Noël de 11 h à 14 h 30; on peut apporter des denrées non périssables pour les paniers de Noël.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 4)",
+        "label_fr": "The Gleaner, « This & That in Town » (4 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-4-2026/"
+      }
+    },
+    {
+      "id": "3e-rang-paving-nov-2026",
+      "type": "alert",
+      "date": "2026-11-23",
+      "until": "2026-11-25",
+      "title_en": "3rd Rang closed 7 a.m. to 5 p.m. for paving, November 23 to 25",
+      "title_fr": "3e Rang fermé de 7 h à 17 h pour du pavage, du 23 au 25 novembre",
+      "text_en": "The 3rd Rang will be fully closed to traffic, except emergency vehicles, from 7 a.m. to 5 p.m. on each of the three paving days, November 23 to 25; on rainy days the work moves to the next working day. Not all residents are affected at the same time, and a bypass route is planned. If weather delays the work, recycling collection may be postponed.",
+      "text_fr": "Le 3e Rang sera complètement fermé à la circulation, sauf aux véhicules d'urgence, de 7 h à 17 h pendant les trois journées de pavage, du 23 au 25 novembre; en cas de pluie, les travaux sont remis au jour ouvrable suivant. Les résidents ne seront pas tous touchés en même temps, et une voie de contournement est prévue. Si la météo retarde les travaux, la collecte des matières recyclables pourrait être reportée.",
+      "source": {
+        "label_en": "Town of Ormstown, Info-travaux page (updated Nov. 12)",
+        "label_fr": "Municipalité d'Ormstown, page Info-travaux (mise à jour du 12 nov.)",
+        "url": "https://www.ormstown.ca/services/info-travaux"
+      }
+    },
+    {
+      "id": "reglement-129-2026-gestion-contractuelle",
+      "type": "notice",
+      "date": "2026-11-03",
+      "title_en": "Contract management bylaw 129-2026 now in force",
+      "title_fr": "Le Règlement 129-2026 sur la gestion contractuelle est en vigueur",
+      "text_en": "Council adopted bylaw 129-2026 on contract management at its November 2 sitting, and it took effect on November 3, when the public notice was published. It can be consulted at the clerk's office at town hall, 5 rue Gale, during office hours.",
+      "text_fr": "Le conseil a adopté le Règlement 129-2026 sur la gestion contractuelle à sa séance du 2 novembre; il est entré en vigueur le 3 novembre, jour de la publication de l'avis public. On peut le consulter au bureau du greffe, à l'hôtel de ville, 5, rue Gale, pendant les heures d'ouverture.",
+      "source": {
+        "label_en": "Town of Ormstown, public notice (Nov. 3)",
+        "label_fr": "Municipalité d'Ormstown, avis public (3 nov.)",
+        "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Adoption-reglement-129-2026_2026-11-03.pdf"
+      }
+    },
+    {
+      "id": "mrc-359-2026-revision-evaluation",
+      "type": "notice",
+      "date": "2026-11-03",
+      "title_en": "MRC regulation 359-2026 sets the fee for requesting a review of a property assessment",
+      "title_fr": "Le règlement 359-2026 de la MRC fixe la somme à verser pour une demande de révision de l'évaluation foncière",
+      "text_en": "The Town has posted the MRC du Haut-Saint-Laurent's notice that it adopted regulation 359-2026, on the amount payable when filing a request for review of a property assessment. The amounts are not given in the posted notice.",
+      "text_fr": "La Municipalité a publié l'avis de la MRC du Haut-Saint-Laurent annonçant l'adoption du règlement 359-2026, concernant la somme payable lors du dépôt d'une demande de révision de l'évaluation foncière. Les montants ne figurent pas dans l'avis publié.",
+      "source": {
+        "label_en": "Town of Ormstown, public notices (Nov. 3)",
+        "label_fr": "Municipalité d'Ormstown, avis publics (3 nov.)",
+        "url": "https://www.ormstown.ca/actualites/avis-publics"
+      }
+    },
+    {
+      "id": "bouffe-additionnelle-paniers-noel-2026",
+      "type": "notice",
+      "date": "2026-11-18",
+      "until": "2026-11-30",
+      "title_en": "Christmas basket registration with La Bouffe Additionnelle closes November 30",
+      "title_fr": "Inscription aux paniers de Noël de La Bouffe Additionnelle jusqu'au 30 novembre",
+      "text_en": "La Bouffe Additionnelle, the Huntingdon food bank, is taking Christmas basket registrations until November 30, online at labouffeadditionnelle.com/noel or by phone at 450-264-2241. The Gleaner's article does not list eligibility criteria or the area served.",
+      "text_fr": "La Bouffe Additionnelle, la banque alimentaire de Huntingdon, reçoit les inscriptions aux paniers de Noël jusqu'au 30 novembre, en ligne à labouffeadditionnelle.com/noel ou par téléphone au 450-264-2241. L'article du Gleaner ne précise ni les critères d'admissibilité ni le territoire desservi.",
+      "source": {
+        "label_en": "The Gleaner (Nov. 18)",
+        "label_fr": "The Gleaner (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/la-bouffe-additionnelle-preps-for-spike-in-christmas-basket-demand/"
+      }
+    },
+    {
+      "id": "nutcracker-cvr-2026",
+      "type": "event",
+      "date": "2026-12-05",
+      "until": "2026-12-06",
+      "title_en": "The Nutcracker at the CVR stage, December 5 and 6",
+      "title_fr": "Casse-Noisette sur la scène de CVR, les 5 et 6 décembre",
+      "text_en": "The Neva Shelton School of Dance presents The Nutcracker, with about 75 performers, on the CVR stage on Saturday, December 5 at 7 p.m. and Sunday, December 6 at 2 p.m. Tickets are sold at the door; prices have not been posted.",
+      "text_fr": "L'école de danse Neva Shelton présente Casse-Noisette, avec environ 75 interprètes, sur la scène de CVR le samedi 5 décembre à 19 h et le dimanche 6 décembre à 14 h. Billets en vente à la porte; les prix ne sont pas publiés.",
+      "source": {
+        "label_en": "The Gleaner (Nov. 18)",
+        "label_fr": "The Gleaner (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/the-nutcracker-returns-to-the-cvr-stage/"
+      }
+    },
+    {
+      "id": "sq-patrols-lambton-fires-2026",
+      "type": "notice",
+      "date": "2026-11-18",
+      "title_en": "Sûreté du Québec adds patrols in Ormstown village after a fourth suspicious fire",
+      "title_fr": "La Sûreté du Québec ajoute des patrouilles au village d'Ormstown après un quatrième incendie suspect",
+      "text_en": "The Gleaner reports that a suspected arson fire overnight on November 8 destroyed the pizzeria on rue Lambton, the fourth suspicious incident targeting restaurants on that street since July. After meeting the mayor and provincial officials, the SQ drew up a plan that adds officers for the investigation, daytime community contact and night patrols. The SQ has not said whether the fires are connected.",
+      "text_fr": "The Gleaner rapporte qu'un incendie présumé criminel survenu dans la nuit du 8 novembre a détruit la pizzeria de la rue Lambton, le quatrième incident suspect visant des restaurants de cette rue depuis juillet. Après une rencontre avec le maire et des représentants provinciaux, la SQ a établi un plan qui ajoute des policiers pour l'enquête, le contact avec la population le jour et les patrouilles de nuit. La SQ n'a pas dit si les incendies sont liés.",
+      "source": {
+        "label_en": "The Gleaner (Nov. 18)",
+        "label_fr": "The Gleaner (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/police-boost-ormstown-patrols-after-fourth-suspicious-fire/"
       }
     }
   ]
