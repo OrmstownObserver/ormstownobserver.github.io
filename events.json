@@ -1,0 +1,184 @@
+{
+  "updated": "2026-11-19",
+  "events": [
+    {
+      "id": "legion-lions-christmas-market-2026",
+      "date": "2026-11-21",
+      "town": "ormstown",
+      "kind": "market",
+      "title_en": "Legion and Lions Christmas Market",
+      "title_fr": "Marché de Noël de la Légion et des Lions",
+      "times_en": "10 a.m. to 3 p.m.",
+      "times_fr": "10 h à 15 h",
+      "place": "Rec centre, Ormstown",
+      "place_fr": "Centre récréatif, Ormstown",
+      "text_en": "Organized by the Ormstown Legion and Lions, with visits with Santa from 11 a.m. to 2:30 p.m. Bring non-perishable food for the food baskets.",
+      "text_fr": "Organisé par la Légion et les Lions d'Ormstown, avec la visite du père Noël de 11 h à 14 h 30. Apportez des denrées non périssables pour les paniers de Noël.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-19"
+    },
+    {
+      "id": "ecole-saint-jean-marche-noel-2026",
+      "date": "2026-11-21",
+      "end": "2026-11-22",
+      "town": "howick",
+      "kind": "market",
+      "title_en": "École Saint-Jean Christmas market",
+      "title_fr": "Marché de Noël de l'école Saint-Jean",
+      "times_en": "10 a.m. to 4 p.m. both days",
+      "times_fr": "10 h à 16 h les deux jours",
+      "place": "École Saint-Jean, 9 rue de l'Académie, Howick",
+      "place_fr": "École Saint-Jean, 9, rue de l'Académie, Howick",
+      "text_en": "One of the Christmas markets held in the school service centre's schools this season.",
+      "text_fr": "L'un des marchés de Noël organisés cette saison dans les écoles du centre de services scolaire.",
+      "source": {
+        "label_en": "Centre de services scolaire de la Vallée-des-Tisserands (in French)",
+        "label_fr": "Centre de services scolaire de la Vallée-des-Tisserands",
+        "url": "https://cssvt.gouv.qc.ca/marches-de-noel-dans-nos-milieux-2026/"
+      },
+      "added": "2026-11-19"
+    },
+    {
+      "id": "cvhs-verner-klaus-talk-2026",
+      "date": "2026-11-22",
+      "town": "ormstown",
+      "kind": "culture",
+      "title_en": "\"Revolution, Rebellion and Roots: The Verner and Klaus families\"",
+      "title_fr": "« Revolution, Rebellion and Roots: The Verner and Klaus families »",
+      "times_en": "1 to 3 p.m.",
+      "times_fr": "13 h à 15 h",
+      "place": "Ormstown Legion, 33 Prince Albert Street",
+      "place_fr": "Légion d'Ormstown, 33, rue Prince-Albert",
+      "text_en": "A \"Taste of History\" talk by the Chateauguay Valley Historical Society. Free, with refreshments.",
+      "text_fr": "Une présentation « A Taste of History » de la Société historique de la vallée de la Châteauguay. Gratuit, rafraîchissements servis. La langue de la présentation n'est pas précisée.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-19"
+    },
+    {
+      "id": "course-marche-rudolph-2026",
+      "date": "2026-11-28",
+      "town": "ormstown",
+      "kind": "sport",
+      "title_en": "Rudolph Run/Walk, 17th edition",
+      "title_fr": "Course/Marche de Rudolph, 17e édition",
+      "times_en": "Starts at 9 a.m.; the centre closes at 11 a.m.",
+      "times_fr": "Départ à 9 h; le centre ferme à 11 h",
+      "place": "Ormstown Rec Centre, 87 rue Roy",
+      "place_fr": "Centre récréatif d'Ormstown, 87, rue Roy",
+      "text_en": "Distances from 1 km to 10 km, for the benefit of La Bouffe Additionnelle (local Christmas baskets). Minimum donation $5 per adult; receipts for $20 and more. Free cookies and refreshments after the race.",
+      "text_fr": "Distances de 1 km à 10 km, au profit de La Bouffe Additionnelle (paniers de Noël locaux). Don minimum de 5 $ par adulte; reçu pour 20 $ et plus. Biscuits et rafraîchissements gratuits après la course.",
+      "source": {
+        "label_en": "Event flyer, in French (photographed Nov. 19)",
+        "label_fr": "Affiche de l'événement (photographiée le 19 nov.)",
+        "seen": "2026-11-19"
+      },
+      "added": "2026-11-19"
+    },
+    {
+      "id": "ecole-notre-dame-huntingdon-marche-noel-2026",
+      "date": "2026-12-03",
+      "town": "huntingdon",
+      "kind": "market",
+      "title_en": "École Notre-Dame Christmas market",
+      "title_fr": "Marché de Noël de l'école Notre-Dame",
+      "times_en": "3:30 to 6 p.m.",
+      "times_fr": "15 h 30 à 18 h",
+      "place": "École Notre-Dame, 15 rue York, Huntingdon",
+      "place_fr": "École Notre-Dame, 15, rue York, Huntingdon",
+      "text_en": "One of the Christmas markets held in the school service centre's schools this season.",
+      "text_fr": "L'un des marchés de Noël organisés cette saison dans les écoles du centre de services scolaire.",
+      "source": {
+        "label_en": "Centre de services scolaire de la Vallée-des-Tisserands (in French)",
+        "label_fr": "Centre de services scolaire de la Vallée-des-Tisserands",
+        "url": "https://cssvt.gouv.qc.ca/marches-de-noel-dans-nos-milieux-2026/"
+      },
+      "added": "2026-11-19"
+    },
+    {
+      "id": "noel-enchante-2026",
+      "date": "2026-12-04",
+      "town": "ormstown",
+      "kind": "holiday",
+      "title_en": "\"Noël enchanté\" on rue Lambton",
+      "title_fr": "« Noël enchanté » sur la rue Lambton",
+      "place": "Rue Lambton, Ormstown",
+      "text_en": "The Town announced the holiday celebration on November 3, calling it a much-requested return. Times and program have not been posted yet.",
+      "text_fr": "La Municipalité a annoncé la fête le 3 novembre, en la présentant comme un retour très demandé. L'horaire et la programmation ne sont pas encore publiés.",
+      "source": {
+        "label_en": "Town of Ormstown on Facebook (Nov. 3)",
+        "label_fr": "Municipalité d'Ormstown sur Facebook (3 nov.)",
+        "url": "https://www.facebook.com/ormstown"
+      },
+      "added": "2026-11-19"
+    },
+    {
+      "id": "nutcracker-cvr-2026",
+      "date": "2026-12-05",
+      "end": "2026-12-06",
+      "town": "ormstown",
+      "kind": "culture",
+      "title_en": "The Nutcracker, Neva Shelton School of Dance",
+      "title_fr": "Casse-Noisette, école de danse Neva Shelton",
+      "times_en": "Sat. Dec. 5 at 7 p.m., Sun. Dec. 6 at 2 p.m.",
+      "times_fr": "Sam. 5 déc. à 19 h, dim. 6 déc. à 14 h",
+      "place": "CVR stage, Ormstown",
+      "place_fr": "Scène de CVR, Ormstown",
+      "text_en": "About 75 performers, from children aged four to adults. Tickets at the door; prices have not been posted.",
+      "text_fr": "Environ 75 interprètes, des enfants de quatre ans aux adultes. Billets à la porte; les prix ne sont pas publiés.",
+      "source": {
+        "label_en": "The Gleaner (Nov. 18)",
+        "label_fr": "The Gleaner (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/the-nutcracker-returns-to-the-cvr-stage/"
+      },
+      "added": "2026-11-19"
+    },
+    {
+      "id": "marche-de-noel-ormstown-2026",
+      "date": "2026-12-06",
+      "town": "ormstown",
+      "kind": "market",
+      "title_en": "Ormstown Christmas Market",
+      "title_fr": "Marché de Noël d'Ormstown",
+      "times_en": "9 a.m. to 4 p.m.",
+      "times_fr": "9 h à 16 h",
+      "place": "Ormstown Rec Centre, 87 rue Roy",
+      "place_fr": "Centre récréatif d'Ormstown, 87, rue Roy",
+      "text_en": "Hosted by the Marché Fermier Huntingdon, the farmers' market for Haut-Saint-Laurent producers.",
+      "text_fr": "Organisé par le Marché Fermier Huntingdon, le marché des producteurs du Haut-Saint-Laurent.",
+      "source": {
+        "label_en": "Marché Fermier Huntingdon, market calendar",
+        "label_fr": "Marché Fermier Huntingdon, calendrier des marchés",
+        "url": "https://www.marchefermierhuntingdon.ca/en/calendar/"
+      },
+      "added": "2026-11-19"
+    },
+    {
+      "id": "marche-de-noel-saint-anicet-2026",
+      "date": "2026-12-13",
+      "town": "saint-anicet",
+      "kind": "market",
+      "title_en": "Saint-Anicet Christmas Market",
+      "title_fr": "Marché de Noël de Saint-Anicet",
+      "times_en": "10 a.m. to 4 p.m.",
+      "times_fr": "10 h à 16 h",
+      "place": "Saint-Anicet Community Centre, 1560 rue Saint-Anicet",
+      "place_fr": "Centre communautaire de Saint-Anicet, 1560, rue Saint-Anicet",
+      "text_en": "Producers and artisans from the Haut-Saint-Laurent, hosted by the Marché Fermier Huntingdon.",
+      "text_fr": "Des producteurs et artisans du Haut-Saint-Laurent, avec le Marché Fermier Huntingdon.",
+      "source": {
+        "label_en": "Marché Fermier Huntingdon, market calendar",
+        "label_fr": "Marché Fermier Huntingdon, calendrier des marchés",
+        "url": "https://www.marchefermierhuntingdon.ca/en/calendar/"
+      },
+      "added": "2026-11-19"
+    }
+  ]
+}

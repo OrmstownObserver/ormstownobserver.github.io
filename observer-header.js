@@ -444,6 +444,10 @@
         class="${isActive('/finances') ? 'is-active' : ''}">
         <span data-en>Municipal Ledger</span><span data-fr>Grand livre municipal</span>
       </a>
+      <a href="/en/events/" data-href-en="/en/events/" data-href-fr="/fr/evenements/"
+        class="${isActive('/en/events') || isActive('/fr/evenements') ? 'is-active' : ''}">
+        <span data-en>Events in the Valley</span><span data-fr>Événements dans la vallée</span>
+      </a>
       <a href="/en/editorials/" data-href-en="/en/editorials/" data-href-fr="/fr/editoriaux/"
         class="${isActive('/en/editorials') || isActive('/fr/editoriaux') ? 'is-active' : ''}">
         <span data-en>Editorials</span><span data-fr>Éditoriaux</span>

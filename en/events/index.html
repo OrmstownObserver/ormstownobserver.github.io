@@ -2,13 +2,53 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>The Ormstown Observer</title>
-<meta name="robots" content="noindex">
-<link rel="canonical" href="https://ormstownobserver.ca/">
-<script>location.replace('/');</script>
-<meta http-equiv="refresh" content="0; url=/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What’s on in the Valley — The Ormstown Observer</title>
+<meta name="description" content="Christmas markets, craft fairs, shows and community events across the Haut-Saint-Laurent, from Ormstown to Saint-Anicet and Dundee. Every listing links to its source.">
+<link rel="canonical" href="https://ormstownobserver.ca/en/events/">
+<link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/events/">
+<link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/evenements/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Ormstown Observer">
+<meta property="og:title" content="What’s on in the Valley">
+<meta property="og:description" content="Christmas markets, craft fairs, shows and community events across the Haut-Saint-Laurent, from Ormstown to Saint-Anicet and Dundee. Every listing links to its source.">
+<meta property="og:url" content="https://ormstownobserver.ca/en/events/">
+<meta property="og:image" content="https://ormstownobserver.ca/images/events-calendar-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Pre-paint theme: a saved dark preference must not flash light.
+     MUST come before the observer.css link. -->
+<script>(function(){try{var t=localStorage.getItem('observerTheme');
+if(t!=='dark'&&t!=='light')t='dark';document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/observer.css">
+<link rel="stylesheet" href="/topic.css?v=20261014-2">
+<link rel="stylesheet" href="/events.css?v=20261119">
+<script src="/observer-header.js" defer></script>
+<script src="/events.js?v=20261119" defer></script>
 </head>
 <body>
-<p><a href="/">The events calendar has been retired — click here if you are not redirected.</a></p>
+
+<!-- MASTHEAD -->
+
+<main class="topic events">
+  <a class="back-link" href="/">&larr; Home</a>
+
+  <p class="topic-eyebrow">Events calendar &middot; Haut-Saint-Laurent</p>
+  <h1>What&rsquo;s on in the Valley</h1>
+  <p class="topic-status"><span>All 13 municipalities of the MRC du Haut-Saint-Laurent</span> <span id="events-updated"></span></p>
+
+  <p class="topic-lede">Markets, craft fairs, shows, suppers and community events from Ormstown to Saint-Anicet, Huntingdon to Dundee. Pick a town or a kind of event; every listing links to where we found it.</p>
+
+  <div id="events-app">
+    <p id="events-fallback">Loading the calendar&hellip; If nothing appears, the <a href="/#bulletin">Bulletin</a> on the homepage lists Ormstown events.</p>
+  </div>
+
+  <p class="ev-about">Listings come from municipal websites, organizers&rsquo; pages, Facebook events and The Gleaner, and say only what the source says. Times and details can change: check the source before you go. Missing an event, or spotted an error? <a href="mailto:ormstownobserver@gmail.com?subject=Event%20for%20the%20calendar">Write to us</a>. Listings are free; there is no advertising.</p>
+</main>
+
 </body>
 </html>
