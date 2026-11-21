@@ -1,25 +1,23 @@
 {
-  "updated": "2026-11-19",
+  "updated": "2026-11-20",
   "events": [
     {
-      "id": "legion-lions-christmas-market-2026",
-      "date": "2026-11-21",
-      "town": "ormstown",
-      "kind": "market",
-      "title_en": "Legion and Lions Christmas Market",
-      "title_fr": "Marché de Noël de la Légion et des Lions",
-      "times_en": "10 a.m. to 3 p.m.",
-      "times_fr": "10 h à 15 h",
-      "place": "Rec centre, Ormstown",
-      "place_fr": "Centre récréatif, Ormstown",
-      "text_en": "Organized by the Ormstown Legion and Lions, with visits with Santa from 11 a.m. to 2:30 p.m. Bring non-perishable food for the food baskets.",
-      "text_fr": "Organisé par la Légion et les Lions d'Ormstown, avec la visite du père Noël de 11 h à 14 h 30. Apportez des denrées non périssables pour les paniers de Noël.",
+      "id": "krump-oblique-perspectives-2026",
+      "date": "2026-11-15",
+      "end": "2026-12-06",
+      "town": "huntingdon",
+      "kind": "culture",
+      "title_en": "Photo exhibition \"Oblique Perspectives\" by George Krump",
+      "title_fr": "Exposition de photos « Oblique Perspectives » de George Krump",
+      "place": "JREAM Café, Huntingdon",
+      "text_en": "On until Dec. 6. The photographer will give 40 per cent of proceeds from photo sales to the Huntingdon Maison des Jeunes expansion project. Hours not given.",
+      "text_fr": "Jusqu'au 6 décembre. Le photographe remettra 40 % du produit de la vente des photos au projet d'agrandissement de la Maison des jeunes de Huntingdon. Heures non précisées.",
       "source": {
-        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
-        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
-        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+        "label_en": "The Gleaner (Nov. 18)",
+        "label_fr": "The Gleaner (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/photo-exhibition-supports-maison-des-jeunes-expansion-project/"
       },
-      "added": "2026-11-19"
+      "added": "2026-11-20"
     },
     {
       "id": "ecole-saint-jean-marche-noel-2026",
@@ -43,6 +41,104 @@
       "added": "2026-11-19"
     },
     {
+      "id": "howick-craft-fair-2026",
+      "date": "2026-11-21",
+      "town": "howick",
+      "kind": "market",
+      "title_en": "Howick Craft Fair",
+      "title_fr": "Salon d'artisans de Howick",
+      "place": "5 Lambton Street, Howick",
+      "place_fr": "5, rue Lambton, Howick",
+      "text_en": "Christmas crafts, indoors and outdoors. Times not posted yet.",
+      "text_fr": "Artisanat de Noël, à l'intérieur et à l'extérieur. Heures pas encore annoncées.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-20"
+    },
+    {
+      "id": "legion-lions-christmas-market-2026",
+      "date": "2026-11-21",
+      "town": "ormstown",
+      "kind": "market",
+      "title_en": "Legion and Lions Christmas Market",
+      "title_fr": "Marché de Noël de la Légion et des Lions",
+      "times_en": "10 a.m. to 3 p.m.",
+      "times_fr": "10 h à 15 h",
+      "place": "Rec centre, Ormstown",
+      "place_fr": "Centre récréatif, Ormstown",
+      "text_en": "Organized by the Ormstown Legion and Lions, with visits with Santa from 11 a.m. to 2:30 p.m. Bring non-perishable food for the food baskets.",
+      "text_fr": "Organisé par la Légion et les Lions d'Ormstown, avec la visite du père Noël de 11 h à 14 h 30. Apportez des denrées non périssables pour les paniers de Noël.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-19"
+    },
+    {
+      "id": "les-aidants-line-dancing-2026",
+      "date": "2026-11-21",
+      "town": "saint-chrysostome",
+      "kind": "community",
+      "title_en": "Line dancing with Les Aidants",
+      "title_fr": "Danse en ligne avec Les Aidants",
+      "times_en": "7 p.m.",
+      "times_fr": "19 h",
+      "place": "400 Rang Saint-Antoine, Saint-Chrysostome",
+      "place_fr": "400, rang Saint-Antoine, Saint-Chrysostome",
+      "text_en": "Presented by Les Aidants du Haut-Saint-Laurent. $15 per person, $5 for children 12 and under, or $35 per family.",
+      "text_fr": "Présentée par Les Aidants du Haut-Saint-Laurent. 15 $ par personne, 5 $ pour les enfants de 12 ans et moins, ou 35 $ par famille.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-20"
+    },
+    {
+      "id": "lgl-story-time-2026-11-21",
+      "date": "2026-11-21",
+      "town": "huntingdon",
+      "kind": "culture",
+      "title_en": "Story time at the Little Green Library",
+      "title_fr": "Heure du conte à la Little Green Library",
+      "times_en": "10:30 a.m.",
+      "times_fr": "10 h 30",
+      "place": "Little Green Library, 4 Lorne Street, Huntingdon",
+      "place_fr": "Little Green Library, 4, rue Lorne, Huntingdon",
+      "text_en": "For children aged 3 to 8, featuring Beautiful Oops by Barney Saltzberg.",
+      "text_fr": "Pour les enfants de 3 à 8 ans, autour du livre Beautiful Oops de Barney Saltzberg.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-20"
+    },
+    {
+      "id": "lgl-vernissage-balanzario-2026",
+      "date": "2026-11-21",
+      "town": "huntingdon",
+      "kind": "culture",
+      "title_en": "Art show vernissage: Alejandra V. Balanzario",
+      "title_fr": "Vernissage de l'exposition d'Alejandra V. Balanzario",
+      "times_en": "2 to 4 p.m.",
+      "times_fr": "14 h à 16 h",
+      "place": "Little Green Library, 4 Lorne Street, Huntingdon",
+      "place_fr": "Little Green Library, 4, rue Lorne, Huntingdon",
+      "text_en": "Vernissage for an exhibition of paintings by Alejandra V. Balanzario, which opened at the Little Green Library on Nov. 19.",
+      "text_fr": "Vernissage d'une exposition de tableaux d'Alejandra V. Balanzario, présentée à la Little Green Library depuis le 19 novembre.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-20"
+    },
+    {
       "id": "cvhs-verner-klaus-talk-2026",
       "date": "2026-11-22",
       "town": "ormstown",
@@ -61,6 +157,42 @@
         "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
       },
       "added": "2026-11-19"
+    },
+    {
+      "id": "mrc-hsl-conseil-2026-11-25",
+      "date": "2026-11-25",
+      "town": "huntingdon",
+      "kind": "civic",
+      "title_en": "MRC du Haut-Saint-Laurent regional council, regular sitting",
+      "title_fr": "Séance régulière du Conseil régional de la MRC du Haut-Saint-Laurent",
+      "text_en": "Regular sitting of the MRC's regional council. The event page lists Huntingdon; the time and room are in the notice of meeting on the MRC's site.",
+      "text_fr": "Séance régulière du Conseil régional de la MRC. La page de l'événement indique Huntingdon; l'heure et la salle figurent dans l'avis de convocation sur le site de la MRC.",
+      "source": {
+        "label_en": "MRC du Haut-Saint-Laurent, event page (in French)",
+        "label_fr": "MRC du Haut-Saint-Laurent, page de l'événement",
+        "url": "https://mrchsl.com/evenement/src-nov-2026"
+      },
+      "added": "2026-11-20"
+    },
+    {
+      "id": "cine-cinema-la-venue-de-lavenir-2026",
+      "date": "2026-11-27",
+      "town": "huntingdon",
+      "kind": "culture",
+      "title_en": "Film night: La Venue de l'Avenir",
+      "title_fr": "Soirée cinéma : La Venue de l'Avenir",
+      "times_en": "7:30 p.m.",
+      "times_fr": "19 h 30",
+      "place": "Little Green Library, 4 Lorne Street, Huntingdon",
+      "place_fr": "Little Green Library, 4, rue Lorne, Huntingdon",
+      "text_en": "Presented by Cine-Cinema, in French with English subtitles.",
+      "text_fr": "Présenté par Cine-Cinema, en français avec sous-titres anglais.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-20"
     },
     {
       "id": "course-marche-rudolph-2026",
@@ -103,6 +235,24 @@
       "added": "2026-11-19"
     },
     {
+      "id": "guignolee-medias-huntingdon-2026",
+      "date": "2026-12-03",
+      "town": "huntingdon",
+      "kind": "community",
+      "title_en": "La Guignolée des médias",
+      "title_fr": "La Guignolée des médias",
+      "place": "Huntingdon intersection",
+      "place_fr": "Intersection à Huntingdon",
+      "text_en": "Collection for Moisson Sud-Ouest at a Huntingdon intersection; have some change on hand. Time not posted yet.",
+      "text_fr": "Collecte au profit de Moisson Sud-Ouest à une intersection de Huntingdon; prévoyez de la monnaie. Heure pas encore annoncée.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-20"
+    },
+    {
       "id": "noel-enchante-2026",
       "date": "2026-12-04",
       "town": "ormstown",
@@ -118,6 +268,26 @@
         "url": "https://www.facebook.com/ormstown"
       },
       "added": "2026-11-19"
+    },
+    {
+      "id": "jimmy-stratosphere-lgl-2026",
+      "date": "2026-12-05",
+      "town": "huntingdon",
+      "kind": "culture",
+      "title_en": "Children's theatre: Le Noël Magique de Jimmy Stratosphère",
+      "title_fr": "Théâtre jeunesse : Le Noël Magique de Jimmy Stratosphère",
+      "times_en": "10:30 a.m.",
+      "times_fr": "10 h 30",
+      "place": "Little Green Library, 4 Lorne Street, Huntingdon",
+      "place_fr": "Little Green Library, 4, rue Lorne, Huntingdon",
+      "text_en": "A children's play at the Little Green Library.",
+      "text_fr": "Une pièce pour enfants à la Little Green Library.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-20"
     },
     {
       "id": "nutcracker-cvr-2026",
@@ -159,6 +329,24 @@
         "url": "https://www.marchefermierhuntingdon.ca/en/calendar/"
       },
       "added": "2026-11-19"
+    },
+    {
+      "id": "rendez-vous-communau-t-christmas-2026",
+      "date": "2026-12-10",
+      "town": "huntingdon",
+      "kind": "community",
+      "title_en": "A Rendez-vous Communau-T Christmas",
+      "title_fr": "Un Noël Rendez-vous Communau-T",
+      "place": "Huntingdon Adult Education and Community Centre (HAECC)",
+      "place_fr": "Centre d'éducation des adultes et communautaire de Huntingdon (HAECC)",
+      "text_en": "Christmas gathering with a free spaghetti meal. Time not posted yet.",
+      "text_fr": "Rencontre de Noël avec un repas de spaghetti gratuit. Heure pas encore annoncée.",
+      "source": {
+        "label_en": "The Gleaner, \"This & That in Town\" (Nov. 18)",
+        "label_fr": "The Gleaner, « This & That in Town » (18 nov., en anglais)",
+        "url": "https://the-gleaner.com/this-that-in-town-november-18-2026/"
+      },
+      "added": "2026-11-20"
     },
     {
       "id": "marche-de-noel-saint-anicet-2026",
