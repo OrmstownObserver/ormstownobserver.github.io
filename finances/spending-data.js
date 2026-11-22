@@ -21,10 +21,11 @@ window.OO_SPENDING = {
   "gloss_method": "observer-editorial-v1",
   "tolerances": {
    "2026-01": 0.12,
+   "2024-09": 1700,
    "2025-07": 10048.36,
    "2026-10": 1016878.91
   },
-  "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS), and 2025-07 carries a 10 048,36 $ gap between the annexe's three printed subtotals and its printed grand total / the adopted resolution — see that sitting's note; 2026-10 carries a 1 016 878,91 $ gap because rés. 26-10-268 adopts only the accounts-payable portion of Annexe A (285 664,47 $), while the annexe also lists salaries (238 685,33 $), payments already issued (133 610,01 $) and credit-line invoices (644 583,57 $), grand total 1 302 543,38 $ — every line is shown, the adopted figure is the resolution's.",
+  "tolerance_note": "Reconciliation tolerance is 0.005 $ (penny-exact) except where documented; 2024-09 carries a 1 700,00 $ gap because the lines printed in the annexe's \"Paiements à effectuer\" section add up to 289 814,28 $ while its printed subtotal is 291 514,28 $ (grand total and adopted figure 506 609,85 $) — see that sitting's note; 2026-01 carries a 0.12 $ gap from two digits unreadable in the scanned annex (BCGO, ICS), and 2025-07 carries a 10 048,36 $ gap between the annexe's three printed subtotals and its printed grand total / the adopted resolution — see that sitting's note; 2026-10 carries a 1 016 878,91 $ gap because rés. 26-10-268 adopts only the accounts-payable portion of Annexe A (285 664,47 $), while the annexe also lists salaries (238 685,33 $), payments already issued (133 610,01 $) and credit-line invoices (644 583,57 $), grand total 1 302 543,38 $ — every line is shown, the adopted figure is the resolution's.",
   "categories_note": "v4 (2026-08-14): content-aware mapping (finances/tools/category-rules.js) applied per ledger line by rebuild-entries.js. v3 added Regional shares & memberships and Insurance; v4 adds Policing — Sûreté du Québec (the provincial policing bill, previously inside Regional shares) and Software & IT (software, subscriptions and IT services previously split between Professional services and Supplies & operations). Each line is assigned by its payee AND entry text, leaving Other for genuinely unclassifiable items such as resident damage reimbursements.",
   "months_direct": {
    "2026-06": "Extracted from PV_2026-06-01_WEB.pdf (Annexe A, 214 lines), reconciled to every printed subtotal; fully itemized in the Notion ledger on 2026-08-06 (214 lines = 857,483.73, query-verified)."
@@ -546,6 +547,67 @@ window.OO_SPENDING = {
     "Software & IT": [
      4100.7,
      7
+    ]
+   }
+  },
+  {
+   "m": "2024-09",
+   "label_fr": "Septembre 2024",
+   "label_en": "September 2024",
+   "total": 506609.85,
+   "coverage": "full",
+   "session": "PV 2024-09-09, Annexe A",
+   "url": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+   "note_fr": "Écart documenté de 1 700,00 $. À l'Annexe A, les lignes imprimées de la section « Paiements à effectuer » totalisent 289 814,28 $, alors que le sous-total imprimé de cette section est de 291 514,28 $. Les deux autres sections (salaires 113 853,45 $, paiements émis 101 242,12 $) concordent. Le grand total de l'annexe et le montant adopté par le conseil sont de 506 609,85 $; les 282 lignes affichées ici totalisent 504 909,85 $. Une ligne (Easy-Kleen) est imprimée « 031,33 $ » et est inscrite telle quelle. L'annexe n'explique pas l'écart.",
+   "note_en": "Documented 1,700.00 $ discrepancy. In Annexe A, the printed lines of the \"payments to be made\" section add up to 289,814.28 $, while that section's printed subtotal is 291,514.28 $. The other two sections (salaries 113,853.45 $, payments issued 101,242.12 $) match. The annexe's grand total and the amount council adopted are 506,609.85 $; the 282 lines shown here add up to 504,909.85 $. One line (Easy-Kleen) is printed \"031,33 $\" and is entered as printed. The annexe does not explain the gap.",
+   "cats": {
+    "Salaries & HR": [
+     179567.95,
+     10
+    ],
+    "Supplies & operations": [
+     114059.61,
+     168
+    ],
+    "Professional services": [
+     84603.74,
+     22
+    ],
+    "Waste & recycling": [
+     71847.47,
+     3
+    ],
+    "Vehicle fuel & maintenance": [
+     20963.18,
+     55
+    ],
+    "Utilities": [
+     14292.42,
+     8
+    ],
+    "Contracts — works": [
+     11987.92,
+     6
+    ],
+    "Software & IT": [
+     3584.42,
+     5
+    ],
+    "Legal — external counsel": [
+     1807.15,
+     2
+    ],
+    "Subsidies & community": [
+     1263.02,
+     1
+    ],
+    "Regional shares & memberships": [
+     834.72,
+     1
+    ],
+    "Other": [
+     98.25,
+     1
     ]
    }
   },
@@ -2299,6 +2361,363 @@ window.OO_SPENDING = {
    "Vehicle fuel & maintenance",
    748.97,
    8
+  ],
+  [
+   "2024-09",
+   "— (paie municipale)",
+   "Salaries & HR",
+   113853.45,
+   1
+  ],
+  [
+   "2024-09",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   69414.31,
+   2
+  ],
+  [
+   "2024-09",
+   "BCGO S.E.N.C.R.L.",
+   "Professional services",
+   44926.5,
+   5
+  ],
+  [
+   "2024-09",
+   "Ministre du Revenu",
+   "Salaries & HR",
+   41547.1,
+   2
+  ],
+  [
+   "2024-09",
+   "PLOMBERIE DESMARAIS INC.",
+   "Supplies & operations",
+   19844.94,
+   46
+  ],
+  [
+   "2024-09",
+   "Receveur Général",
+   "Salaries & HR",
+   18342.56,
+   2
+  ],
+  [
+   "2024-09",
+   "Distribution Lazure Inc.",
+   "Supplies & operations",
+   17963.16,
+   4
+  ],
+  [
+   "2024-09",
+   "Hydro-Québec",
+   "Utilities",
+   13760.13,
+   5
+  ],
+  [
+   "2024-09",
+   "EMS INFRASTRUCTURE INC.",
+   "Professional services",
+   13720.83,
+   1
+  ],
+  [
+   "2024-09",
+   "Garage C.P. & Fils Inc.",
+   "Vehicle fuel & maintenance",
+   11699,
+   6
+  ],
+  [
+   "2024-09",
+   "EASY-KLEEN",
+   "Supplies & operations",
+   10395.69,
+   3
+  ],
+  [
+   "2024-09",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   9919.47,
+   2
+  ],
+  [
+   "2024-09",
+   "Complexe Médical Ormstown",
+   "Supplies & operations",
+   9787,
+   1
+  ],
+  [
+   "2024-09",
+   "PUITS ARTESIENS VIAU (LES)",
+   "Supplies & operations",
+   8853.07,
+   1
+  ],
+  [
+   "2024-09",
+   "Ormstown Fire Department",
+   "Supplies & operations",
+   7989.5,
+   6
+  ],
+  [
+   "2024-09",
+   "Chemtrade Chemicals Canada Ltd.",
+   "Supplies & operations",
+   7001.45,
+   1
+  ],
+  [
+   "2024-09",
+   "INFOTECH",
+   "Supplies & operations",
+   5246.32,
+   1
+  ],
+  [
+   "2024-09",
+   "Ouellet Samantha",
+   "Professional services",
+   4835.59,
+   5
+  ],
+  [
+   "2024-09",
+   "Caisse Desjardins",
+   "Salaries & HR",
+   4594.14,
+   1
+  ],
+  [
+   "2024-09",
+   "Solmatech Inc.",
+   "Professional services",
+   4560.49,
+   1
+  ],
+  [
+   "2024-09",
+   "Compteurs d'Eau du Québec",
+   "Professional services",
+   4121.86,
+   2
+  ],
+  [
+   "2024-09",
+   "Eurofins Environex",
+   "Professional services",
+   4094.27,
+   3
+  ],
+  [
+   "2024-09",
+   "PRODUCTIONS DU 3 JUIN INC.",
+   "Professional services",
+   3975.46,
+   2
+  ],
+  [
+   "2024-09",
+   "SAE ESTRIE (Centre de services scolaire",
+   "Professional services",
+   3738.53,
+   1
+  ],
+  [
+   "2024-09",
+   "GARAGE .P. & FILS INC.",
+   "Vehicle fuel & maintenance",
+   3374.75,
+   1
+  ],
+  [
+   "2024-09",
+   "C. S. Brunette Inc.",
+   "Vehicle fuel & maintenance",
+   3129.08,
+   24
+  ],
+  [
+   "2024-09",
+   "Quincaillerie R. Gauthier Inc.",
+   "Supplies & operations",
+   2850.83,
+   29
+  ],
+  [
+   "2024-09",
+   "Visa Desjardins",
+   "Supplies & operations",
+   2785.13,
+   1
+  ],
+  [
+   "2024-09",
+   "Construction DJL Inc.",
+   "Supplies & operations",
+   2693.4,
+   3
+  ],
+  [
+   "2024-09",
+   "TBL Telecom",
+   "Software & IT",
+   2508.76,
+   3
+  ],
+  [
+   "2024-09",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2466.21,
+   1
+  ],
+  [
+   "2024-09",
+   "Géant du Conteneur (Le)",
+   "Waste & recycling",
+   2433.16,
+   1
+  ],
+  [
+   "2024-09",
+   "GESPRO Groupe Conseil Inc.",
+   "Supplies & operations",
+   1948.83,
+   1
+  ],
+  [
+   "2024-09",
+   "JAMUNIK",
+   "Supplies & operations",
+   1834.41,
+   2
+  ],
+  [
+   "2024-09",
+   "DHC Avocats",
+   "Legal — external counsel",
+   1807.15,
+   2
+  ],
+  [
+   "2024-09",
+   "LOCATION SAUVAGEAU INC",
+   "Supplies & operations",
+   1718.88,
+   1
+  ],
+  [
+   "2024-09",
+   "Roy Samuel",
+   "Subsidies & community",
+   1263.02,
+   1
+  ],
+  [
+   "2024-09",
+   "D'Amour & Fils Inc. (R.S)",
+   "Supplies & operations",
+   1236.81,
+   16
+  ],
+  [
+   "2024-09",
+   "Uline Canada Corporation",
+   "Supplies & operations",
+   1209.55,
+   1
+  ],
+  [
+   "2024-09",
+   "GAUTHIER, RENÉ",
+   "Vehicle fuel & maintenance",
+   1140.68,
+   9
+  ],
+  [
+   "2024-09",
+   "Technivolt Électrique Inc.",
+   "Contracts — works",
+   1097.02,
+   2
+  ],
+  [
+   "2024-09",
+   "Sanibert",
+   "Supplies & operations",
+   1043.77,
+   5
+  ],
+  [
+   "2024-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   1230.7,
+   4
+  ],
+  [
+   "2024-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   532.29,
+   3
+  ],
+  [
+   "2024-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Other",
+   98.25,
+   1
+  ],
+  [
+   "2024-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   7190.66,
+   45
+  ],
+  [
+   "2024-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   630.21,
+   2
+  ],
+  [
+   "2024-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   971.43,
+   2
+  ],
+  [
+   "2024-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   1619.67,
+   15
+  ],
+  [
+   "2024-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   1075.66,
+   2
+  ],
+  [
+   "2024-09",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Regional shares & memberships",
+   834.72,
+   1
   ],
   [
    "2024-10",

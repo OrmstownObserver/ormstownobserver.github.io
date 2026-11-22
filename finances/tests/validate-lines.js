@@ -99,9 +99,9 @@ if (!undeclared.length && !mismatched.length && !unused.length) {
 
 // ---- e. Grand totals.
 const T = store.totals;
-if (c(T.itemized) !== 1982027268) fail(`grand itemized ${money(T.itemized)} != 19,820,272.68`);
-if (c(T.adopted) !== 1879334553) fail(`grand adopted ${money(T.adopted)} != 18,793,345.53`);
-if (c(T.gap) !== -102692715) fail(`grand gap ${money(T.gap)} != -1,026,927.15`);
+if (c(T.itemized) !== 2032518253) fail(`grand itemized ${money(T.itemized)} != 20,325,182.53`);
+if (c(T.adopted) !== 1929995538) fail(`grand adopted ${money(T.adopted)} != 19,299,955.38`);
+if (c(T.gap) !== -102522715) fail(`grand gap ${money(T.gap)} != -1,025,227.15`);
 if (!failures) ok(`grand totals: itemized ${money(T.itemized)} / adopted ${money(T.adopted)} / gap ${money(T.gap)}`);
 
 // ---- f. payments.json is a STRICT SUPERSET of the rollup: replaying

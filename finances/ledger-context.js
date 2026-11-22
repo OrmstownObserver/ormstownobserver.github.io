@@ -373,6 +373,56 @@ window.OO_LEDGER_CONTEXT = {
     }
    ]
   },
+  "2024-09": {
+   "en": "A list without one dominant bill: payroll is the largest line, followed by waste collection and the auditor's fees.",
+   "fr": "Une liste sans facture dominante : la paie est la plus grosse ligne, suivie de la collecte des matières résiduelles et des honoraires de l'auditeur.",
+   "points": [
+    {
+     "en": "$113,853.45 in salaries to be authorized as at August 30, 2024, out of $506,609.85 approved that night.",
+     "fr": "113 853,45 $ en salaires à autoriser au 30 août 2024, sur les 506 609,85 $ approuvés ce soir-là.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Sept. 9, 2024 (linked from the Town's council sittings page)",
+      "fr": "PV du 9 sept. 2024 (lié depuis la page des séances de la Municipalité)",
+      "href_en": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+      "href_fr": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal"
+     }
+    },
+    {
+     "en": "$69,414.31 to Robert Daoust et Fils in two lines: garbage collection for July 2024 and recycling collection for August 2024.",
+     "fr": "69 414,31 $ à Robert Daoust et Fils en deux lignes : la collecte des ordures de juillet 2024 et celle des matières recyclables d'août 2024.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Sept. 9, 2024 (linked from the Town's council sittings page)",
+      "fr": "PV du 9 sept. 2024 (lié depuis la page des séances de la Municipalité)",
+      "href_en": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+      "href_fr": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal"
+     }
+    },
+    {
+     "en": "$44,926.50 to BCGO in five lines, among them the 2023 annual audit, miscellaneous work during the audit and technical support for the 2024 budget.",
+     "fr": "44 926,50 $ à BCGO en cinq lignes, dont l'audit annuel de 2023, divers travaux au cours de l'audit et un soutien technique pour le budget de 2024.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Sept. 9, 2024 (linked from the Town's council sittings page)",
+      "fr": "PV du 9 sept. 2024 (lié depuis la page des séances de la Municipalité)",
+      "href_en": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+      "href_fr": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal"
+     }
+    },
+    {
+     "en": "The printed lines add up to $1,700.00 less than the total council adopted; the annexe does not explain the difference. See this sitting's note.",
+     "fr": "Les lignes imprimées totalisent 1 700,00 $ de moins que le total adopté par le conseil; l'annexe n'explique pas l'écart. Voir la note de cette séance.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Sept. 9, 2024 (linked from the Town's council sittings page)",
+      "fr": "PV du 9 sept. 2024 (lié depuis la page des séances de la Municipalité)",
+      "href_en": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+      "href_fr": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal"
+     }
+    }
+   ]
+  },
   "2024-10": {
    "en": "Nearly half of this list is one line: the second instalment of the provincial police bill for 2024.",
    "fr": "Près de la moitié de cette liste tient en une ligne : le deuxième versement de la facture de la Sûreté du Québec pour 2024.",

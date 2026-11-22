@@ -123,13 +123,13 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
     // the header status line still describes the WHOLE dataset
     const head = textOf($('status'));
-    if (!/5[\s  ]?619/.test(head)) fail('the page head no longer states the full dataset: ' + head);
-    else ok('the page head still states the whole dataset (5,619 lines, 26 sittings)');
+    if (!/5[\s  ]?901/.test(head)) fail('the page head no longer states the full dataset: ' + head);
+    else ok('the page head still states the whole dataset (5,901 lines, 27 sittings)');
   }
 
   // ---- 3. the rail is populated (it lists every sitting and category,
   // whatever the current scope is)
-  eq(rowsChildren('sitting-list'), 29, 'sitting checklist lists 26 sittings under 3 year headings');
+  eq(rowsChildren('sitting-list'), 30, 'sitting checklist lists 27 sittings under 3 year headings');
   eq(rowsChildren('category-list'), 14, 'category checklist lists all 14 used categories');
   if ($('q')) fail('the rail still has a search box (#q) — the query bar at the top is the only one');
   else ok('the rail has no search box of its own');
