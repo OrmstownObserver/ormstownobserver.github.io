@@ -262,7 +262,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "bidders": [["Eurovia Québec Construction Inc.", 1396885.25], ["Roxboro Excavation Inc.", 1397181.33], ["Les Pavages Céka Inc.", 1539674.24], ["Pavage Axion Inc.", 1559317.21], ["Les Pavages Ultra Inc.", 1683711.58]],
    "seao": { "notice": "1826806/ORM240319", "year": 2024, "final": "blank" },
    "funds": [{"kind": "unstated", "en": "Not stated in the 2025–2026 minutes (awarded in 2024)", "fr": "Non précisé aux procès-verbaux de 2025-2026 (octroyé en 2024)"}],
-   "note": { "en": "Awarded in 2024; payments made before October 2024 predate the Ledger, which is itemized from the October 7, 2024 sitting.", "fr": "Octroyé en 2024; les paiements antérieurs à octobre 2024 précèdent le grand livre, détaillé à partir de la séance du 7 octobre 2024." }
+   "note": { "en": "Awarded in 2024; payments made before August 2024 predate the Ledger, which is itemized from the August 5, 2024 sitting (the September 9, 2024 list is not yet itemized).", "fr": "Octroyé en 2024; les paiements antérieurs à août 2024 précèdent le grand livre, détaillé à partir de la séance du 5 août 2024 (la liste du 9 septembre 2024 n'est pas encore détaillée)." }
   },
   {
    "id": "camion-2024",
@@ -276,7 +276,7 @@ window.OO_LEDGER_DISCLOSURES = {
    "bidders": [["International Rive Nord", 139667.40]],
    "seao": { "notice": "20018468/ORM240604.02", "year": 2024, "final": "blank" },
    "funds": [{"kind": "lease", "en": "Lease-to-own over 60 months through Rexcap (lessor: TD Bank), $117,568 before tax; first planned from the Town's surplus", "fr": "Crédit-bail de 60 mois par Rexcap (locateur : Banque TD), 117 568 $ avant taxes; d'abord prévu à même le surplus de la Municipalité", "amount": 117568, "res": "25-04-119", "href": "https://www.ormstown.ca/wp-content/uploads/2025-04-03_PV-SE-1.pdf"}],
-   "note": { "en": "No payment to this contractor appears on the lists itemized since the October 7, 2024 sitting.", "fr": "Aucun paiement à ce fournisseur ne figure aux listes détaillées depuis la séance du 7 octobre 2024." }
+   "note": { "en": "No payment to this contractor appears on the lists itemized since the August 5, 2024 sitting (the September 9, 2024 list is not yet itemized).", "fr": "Aucun paiement à ce fournisseur ne figure aux listes détaillées depuis la séance du 5 août 2024 (la liste du 9 septembre 2024 n'est pas encore détaillée)." }
   },
   {
    "id": "splash-pad-design-2025",

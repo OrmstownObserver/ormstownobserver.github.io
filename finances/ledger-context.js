@@ -334,6 +334,45 @@ window.OO_LEDGER_CONTEXT = {
   }
  },
  "sittings": {
+  "2024-08": {
+   "en": "The largest line on this list is a transfer to the regional county, not a purchase: the second instalment of Ormstown's 2024 share of the MRC's budget.",
+   "fr": "La plus grosse ligne de cette liste est un transfert à la MRC, pas un achat : le deuxième versement de la quote-part d'Ormstown pour 2024.",
+   "points": [
+    {
+     "en": "$228,072 to the MRC du Haut-Saint-Laurent, the second instalment of the 2024 shares, out of $770,770.29 approved that night.",
+     "fr": "228 072 $ à la MRC du Haut-Saint-Laurent, deuxième versement des quotes-parts de 2024, sur les 770 770,29 $ approuvés ce soir-là.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Aug. 5, 2024 (linked from the Town's council sittings page)",
+      "fr": "PV du 5 août 2024 (lié depuis la page des séances de la Municipalité)",
+      "href_en": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+      "href_fr": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal"
+     }
+    },
+    {
+     "en": "$42,264.85 to Roxboro Excavation: the release of a 5% holdback, which the list ties to resolution 24-07-189.",
+     "fr": "42 264,85 $ à Roxboro Excavation : la libération d'une retenue de 5 %, que la liste rattache à la résolution 24-07-189.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Aug. 5, 2024 (linked from the Town's council sittings page)",
+      "fr": "PV du 5 août 2024 (lié depuis la page des séances de la Municipalité)",
+      "href_en": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+      "href_fr": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal"
+     }
+    },
+    {
+     "en": "$39,944.95 to the Office d'habitation du Haut-Saint-Laurent, the municipal contribution for its 2023 financial statements.",
+     "fr": "39 944,95 $ à l'Office d'habitation du Haut-Saint-Laurent, la contribution municipale pour ses états financiers de 2023.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Aug. 5, 2024 (linked from the Town's council sittings page)",
+      "fr": "PV du 5 août 2024 (lié depuis la page des séances de la Municipalité)",
+      "href_en": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal",
+      "href_fr": "https://www.ormstown.ca/ma-municipalite/vie-democratique/seances-du-conseil-municipal"
+     }
+    }
+   ]
+  },
   "2024-10": {
    "en": "Nearly half of this list is one line: the second instalment of the provincial police bill for 2024.",
    "fr": "Près de la moitié de cette liste tient en une ligne : le deuxième versement de la facture de la Sûreté du Québec pour 2024.",
