@@ -334,6 +334,79 @@ window.OO_LEDGER_CONTEXT = {
   }
  },
  "sittings": {
+  "2024-10": {
+   "en": "Nearly half of this list is one line: the second instalment of the provincial police bill for 2024.",
+   "fr": "Près de la moitié de cette liste tient en une ligne : le deuxième versement de la facture de la Sûreté du Québec pour 2024.",
+   "points": [
+    {
+     "en": "$304,552 to the Ministre des Finances for Sûreté du Québec service, the second instalment for 2024, out of $634,091.62 approved that night.",
+     "fr": "304 552 $ au ministre des Finances pour les services de la Sûreté du Québec, deuxième versement de 2024, sur les 634 091,62 $ approuvés ce soir-là.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Oct. 7, 2024",
+      "fr": "PV du 7 oct. 2024",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/2024-10-07.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/2024-10-07.pdf"
+     }
+    },
+    {
+     "en": "$23,351.42 to Pavages Ultra for eight speed bumps on Church, Bridge, Roy, Georges and Jamestown streets.",
+     "fr": "23 351,42 $ à Pavages Ultra pour huit dos d'âne dans les rues Church, Bridge, Roy, Georges et Jamestown.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Oct. 7, 2024",
+      "fr": "PV du 7 oct. 2024",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/2024-10-07.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/2024-10-07.pdf"
+     }
+    }
+   ]
+  },
+  "2024-11": {
+   "en": "Payroll, two months of garbage collection and outside human-resources support make up most of this list.",
+   "fr": "La paie, deux mois de collecte des ordures et un soutien externe en ressources humaines composent l'essentiel de cette liste.",
+   "points": [
+    {
+     "en": "$81,255.88 to Robert Daoust et Fils for garbage collection in August and September 2024.",
+     "fr": "81 255,88 $ à Robert Daoust et Fils pour la collecte des ordures d'août et de septembre 2024.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Nov. 11, 2024",
+      "fr": "PV du 11 nov. 2024",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/2024-11-11.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/2024-11-11.pdf"
+     }
+    },
+    {
+     "en": "$37,787.70 to the Union des municipalités du Québec, described as Sismik human-resources support from June to September 2024.",
+     "fr": "37 787,70 $ à l'Union des municipalités du Québec, décrits comme le soutien en ressources humaines de Sismik de juin à septembre 2024.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Nov. 11, 2024",
+      "fr": "PV du 11 nov. 2024",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/2024-11-11.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/2024-11-11.pdf"
+     }
+    }
+   ]
+  },
+  "2024-12": {
+   "en": "A short list, a month after the last one: $268,308.98, mostly payroll, payroll remittances and yearly service contracts.",
+   "fr": "Une courte liste, un mois après la précédente : 268 308,98 $, surtout la paie, les remises sur la paie et des contrats de service annuels.",
+   "points": [
+    {
+     "en": "$20,985.24 to Infotech for the yearly maintenance and support contract for the Town's management software.",
+     "fr": "20 985,24 $ à Infotech pour le contrat annuel d'entretien et de soutien des logiciels de gestion de la Municipalité.",
+     "src": {
+      "kind": "minutes",
+      "en": "Minutes, Dec. 2, 2024",
+      "fr": "PV du 2 déc. 2024",
+      "href_en": "https://www.ormstown.ca/wp-content/uploads/2024-12-02-1.pdf",
+      "href_fr": "https://www.ormstown.ca/wp-content/uploads/2024-12-02-1.pdf"
+     }
+    }
+   ]
+  },
   "2025-01": {
    "en": "The largest list in the ledger, and one line explains most of it: the paving of Upper Concession.",
    "fr": "La plus grosse liste du grand livre, et une seule ligne en explique l'essentiel : le pavage de la montée Upper Concession.",

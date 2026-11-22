@@ -9,10 +9,10 @@
 // «Autres fournisseurs», so every month sums exactly to its
 // category totals and (for full-coverage months) to the adopted total.
 // Categories are Observer-assigned (see provenance + tools/apply-category-rules.js).
-// Generated: 2026-11-16
+// Generated: 2026-11-22
 // ============================================================
 window.OO_SPENDING = {
- "generated": "2026-11-16",
+ "generated": "2026-11-22",
  "provenance": {
   "source": "Notion — 💰 Municipal Spending Ledger (built exclusively from official procès-verbaux at ormstown.ca)",
   "official_fields": "months[].total, months[].session, months[].url, budget.*, entries amounts/line counts",
@@ -494,6 +494,163 @@ window.OO_SPENDING = {
   }
  },
  "months": [
+  {
+   "m": "2024-10",
+   "label_fr": "Octobre 2024",
+   "label_en": "October 2024",
+   "total": 634091.62,
+   "coverage": "full",
+   "session": "PV 2024-10-07, Annexe A",
+   "url": "https://www.ormstown.ca/wp-content/uploads/2024-10-07.pdf",
+   "cats": {
+    "Policing — SQ": [
+     304552,
+     1
+    ],
+    "Salaries & HR": [
+     149733.72,
+     8
+    ],
+    "Supplies & operations": [
+     60492.4,
+     88
+    ],
+    "Contracts — works": [
+     31894.08,
+     5
+    ],
+    "Professional services": [
+     28073.41,
+     16
+    ],
+    "Waste & recycling": [
+     24025.79,
+     4
+    ],
+    "Software & IT": [
+     15341.27,
+     7
+    ],
+    "Utilities": [
+     10386.69,
+     5
+    ],
+    "Legal — external counsel": [
+     6956.29,
+     8
+    ],
+    "Vehicle fuel & maintenance": [
+     2635.97,
+     23
+    ]
+   }
+  },
+  {
+   "m": "2024-11",
+   "label_fr": "Novembre 2024",
+   "label_en": "November 2024",
+   "total": 643091.17,
+   "coverage": "full",
+   "session": "PV 2024-11-11, Annexe A",
+   "url": "https://www.ormstown.ca/wp-content/uploads/2024-11-11.pdf",
+   "cats": {
+    "Salaries & HR": [
+     183416.02,
+     12
+    ],
+    "Waste & recycling": [
+     104677.04,
+     4
+    ],
+    "Supplies & operations": [
+     89782.21,
+     129
+    ],
+    "Contracts — works": [
+     79714.81,
+     11
+    ],
+    "Regional shares & memberships": [
+     57853.33,
+     3
+    ],
+    "Legal — external counsel": [
+     35900.34,
+     5
+    ],
+    "Subsidies & community": [
+     21225,
+     2
+    ],
+    "Software & IT": [
+     21152.05,
+     12
+    ],
+    "Utilities": [
+     17661.16,
+     9
+    ],
+    "Professional services": [
+     16334.49,
+     13
+    ],
+    "Other": [
+     9225,
+     1
+    ],
+    "Vehicle fuel & maintenance": [
+     6149.72,
+     51
+    ]
+   }
+  },
+  {
+   "m": "2024-12",
+   "label_fr": "Décembre 2024",
+   "label_en": "December 2024",
+   "total": 268308.98,
+   "coverage": "full",
+   "session": "PV 2024-12-02, Annexe A",
+   "url": "https://www.ormstown.ca/wp-content/uploads/2024-12-02-1.pdf",
+   "cats": {
+    "Salaries & HR": [
+     118316.23,
+     5
+    ],
+    "Supplies & operations": [
+     77311.02,
+     106
+    ],
+    "Professional services": [
+     18884.04,
+     14
+    ],
+    "Software & IT": [
+     16358.21,
+     7
+    ],
+    "Utilities": [
+     10792.58,
+     5
+    ],
+    "Vehicle fuel & maintenance": [
+     9932.4,
+     48
+    ],
+    "Contracts — works": [
+     7766.59,
+     7
+    ],
+    "Subsidies & community": [
+     6555,
+     5
+    ],
+    "Waste & recycling": [
+     2392.91,
+     1
+    ]
+   }
+  },
   {
    "m": "2025-01",
    "label_fr": "Janvier 2025",
@@ -1710,6 +1867,993 @@ window.OO_SPENDING = {
   }
  ],
  "entries": [
+  [
+   "2024-10",
+   "Ministre des Finances",
+   "Policing — SQ",
+   304552,
+   1
+  ],
+  [
+   "2024-10",
+   "— (paie municipale)",
+   "Salaries & HR",
+   89071.83,
+   1
+  ],
+  [
+   "2024-10",
+   "Ministre du Revenu",
+   "Salaries & HR",
+   38375.03,
+   2
+  ],
+  [
+   "2024-10",
+   "PAVAGES ULTRA INC.",
+   "Contracts — works",
+   23351.42,
+   1
+  ],
+  [
+   "2024-10",
+   "Receveur Général",
+   "Salaries & HR",
+   16892.98,
+   2
+  ],
+  [
+   "2024-10",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   16253.47,
+   1
+  ],
+  [
+   "2024-10",
+   "Laboratoires de la Montérégie Inc.",
+   "Supplies & operations",
+   15061.73,
+   1
+  ],
+  [
+   "2024-10",
+   "Solution Informatique de la Montérégie",
+   "Software & IT",
+   12811.17,
+   3
+  ],
+  [
+   "2024-10",
+   "Hydro-Québec",
+   "Utilities",
+   10097.62,
+   2
+  ],
+  [
+   "2024-10",
+   "COMPLEXE MEDICAL",
+   "Supplies & operations",
+   9627.92,
+   1
+  ],
+  [
+   "2024-10",
+   "Dagenais, J. Architecte & Ass. Inc.",
+   "Professional services",
+   8048.25,
+   1
+  ],
+  [
+   "2024-10",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   7374.62,
+   1
+  ],
+  [
+   "2024-10",
+   "AREO-FEU",
+   "Supplies & operations",
+   6376.58,
+   2
+  ],
+  [
+   "2024-10",
+   "DUNTON RAINVILLE SENC AVOCATS",
+   "Legal — external counsel",
+   5847.58,
+   5
+  ],
+  [
+   "2024-10",
+   "Enseignes Dumas",
+   "Supplies & operations",
+   5794.74,
+   1
+  ],
+  [
+   "2024-10",
+   "Caisse Desjardins",
+   "Salaries & HR",
+   4819.68,
+   1
+  ],
+  [
+   "2024-10",
+   "GROUPE BRUNET/BETON BRUNET LTÉE",
+   "Waste & recycling",
+   4254.08,
+   2
+  ],
+  [
+   "2024-10",
+   "Géant du Conteneur (Le)",
+   "Waste & recycling",
+   3518.24,
+   1
+  ],
+  [
+   "2024-10",
+   "CCESI - Centre conseil en sécurité incendie",
+   "Professional services",
+   2950,
+   1
+  ],
+  [
+   "2024-10",
+   "Environor Canada Inc.",
+   "Supplies & operations",
+   2942.56,
+   1
+  ],
+  [
+   "2024-10",
+   "Ouellet Samantha",
+   "Professional services",
+   2790,
+   2
+  ],
+  [
+   "2024-10",
+   "Fqm Services, Coopérative de Solidarité",
+   "Professional services",
+   2598.24,
+   2
+  ],
+  [
+   "2024-10",
+   "GESPRO Groupe Conseil Inc.",
+   "Supplies & operations",
+   2569.69,
+   1
+  ],
+  [
+   "2024-10",
+   "Construction DJL Inc.",
+   "Supplies & operations",
+   2553.95,
+   2
+  ],
+  [
+   "2024-10",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   2466.21,
+   1
+  ],
+  [
+   "2024-10",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   2426.61,
+   2
+  ],
+  [
+   "2024-10",
+   "Compteurs d'Eau du Québec",
+   "Professional services",
+   2379.98,
+   1
+  ],
+  [
+   "2024-10",
+   "Écho-Tech H2O Inc.",
+   "Professional services",
+   2006.31,
+   1
+  ],
+  [
+   "2024-10",
+   "PRODUCTIONS DU 3 JUIN INC.",
+   "Professional services",
+   1987.73,
+   1
+  ],
+  [
+   "2024-10",
+   "Centre de Formation Éric Langevin Inc.",
+   "Professional services",
+   1948.83,
+   1
+  ],
+  [
+   "2024-10",
+   "Hart, Daniel",
+   "Professional services",
+   1530,
+   1
+  ],
+  [
+   "2024-10",
+   "Gauthier, René (Essence)",
+   "Vehicle fuel & maintenance",
+   1297.96,
+   10
+  ],
+  [
+   "2024-10",
+   "Martech Inc.",
+   "Supplies & operations",
+   1224.37,
+   2
+  ],
+  [
+   "2024-10",
+   "Eurofins Environex",
+   "Professional services",
+   1141.71,
+   3
+  ],
+  [
+   "2024-10",
+   "D'Amour & Fils Inc. (R.S)",
+   "Supplies & operations",
+   1123.81,
+   14
+  ],
+  [
+   "2024-10",
+   "DHC Avocats",
+   "Legal — external counsel",
+   1108.71,
+   3
+  ],
+  [
+   "2024-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   289.07,
+   3
+  ],
+  [
+   "2024-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   574.2,
+   2
+  ],
+  [
+   "2024-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   2530.1,
+   4
+  ],
+  [
+   "2024-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   8324.23,
+   60
+  ],
+  [
+   "2024-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   1168.04,
+   3
+  ],
+  [
+   "2024-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   692.36,
+   2
+  ],
+  [
+   "2024-10",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   1338.01,
+   13
+  ],
+  [
+   "2024-11",
+   "— (paie municipale)",
+   "Salaries & HR",
+   131940.98,
+   1
+  ],
+  [
+   "2024-11",
+   "Robert Daoust Et Fils Inc.",
+   "Waste & recycling",
+   101572.71,
+   3
+  ],
+  [
+   "2024-11",
+   "Union des Municipalités du Québec",
+   "Regional shares & memberships",
+   37787.7,
+   1
+  ],
+  [
+   "2024-11",
+   "DUNTON RAINVILLE SENC AVOCATS",
+   "Legal — external counsel",
+   33824.92,
+   3
+  ],
+  [
+   "2024-11",
+   "Ministre du Revenu",
+   "Salaries & HR",
+   33018.45,
+   2
+  ],
+  [
+   "2024-11",
+   "PAVAGES MCM",
+   "Contracts — works",
+   29617.56,
+   1
+  ],
+  [
+   "2024-11",
+   "CLUB DE SOCCER ORMSTOWN",
+   "Subsidies & community",
+   21000,
+   1
+  ],
+  [
+   "2024-11",
+   "M.R.C. Haut Saint Laurent",
+   "Regional shares & memberships",
+   19490.75,
+   1
+  ],
+  [
+   "2024-11",
+   "COMPLEXE MEDICAL",
+   "Supplies & operations",
+   19255.84,
+   2
+  ],
+  [
+   "2024-11",
+   "Technivolt Électrique Inc.",
+   "Contracts — works",
+   18665.45,
+   3
+  ],
+  [
+   "2024-11",
+   "Hydro-Québec",
+   "Utilities",
+   17377.13,
+   6
+  ],
+  [
+   "2024-11",
+   "Receveur Général",
+   "Salaries & HR",
+   12932.38,
+   2
+  ],
+  [
+   "2024-11",
+   "MUNICIPALITÉ DE FRANKLIN",
+   "Supplies & operations",
+   12435.27,
+   1
+  ],
+  [
+   "2024-11",
+   "9188-0781 Québec Inc",
+   "Contracts — works",
+   10362.59,
+   1
+  ],
+  [
+   "2024-11",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   9591.11,
+   2
+  ],
+  [
+   "2024-11",
+   "Lefebvre Karina",
+   "Other",
+   9225,
+   1
+  ],
+  [
+   "2024-11",
+   "MJR INDUSTRIES",
+   "Contracts — works",
+   8508.56,
+   2
+  ],
+  [
+   "2024-11",
+   "Groupe X-Telia Inc.",
+   "Software & IT",
+   8292.33,
+   1
+  ],
+  [
+   "2024-11",
+   "PLOMBERIE DESMARAIS INC.",
+   "Supplies & operations",
+   8163.69,
+   27
+  ],
+  [
+   "2024-11",
+   "Ics Inc.",
+   "Software & IT",
+   7782.89,
+   2
+  ],
+  [
+   "2024-11",
+   "Eurofins Environex",
+   "Professional services",
+   7516.51,
+   5
+  ],
+  [
+   "2024-11",
+   "Carrière Ali Inc.",
+   "Supplies & operations",
+   5002.86,
+   5
+  ],
+  [
+   "2024-11",
+   "Gestion MSDM Inc.",
+   "Supplies & operations",
+   4932.42,
+   2
+  ],
+  [
+   "2024-11",
+   "Caisse Desjardins",
+   "Salaries & HR",
+   4638.71,
+   1
+  ],
+  [
+   "2024-11",
+   "Les Formulaires Ducharme Inc.",
+   "Supplies & operations",
+   4127.07,
+   2
+  ],
+  [
+   "2024-11",
+   "Solution Informatique de la Montérégie",
+   "Software & IT",
+   3512.01,
+   5
+  ],
+  [
+   "2024-11",
+   "Entretien Paysager Yan Garand Inc.",
+   "Supplies & operations",
+   3449.25,
+   1
+  ],
+  [
+   "2024-11",
+   "Sanibert",
+   "Supplies & operations",
+   3211.43,
+   5
+  ],
+  [
+   "2024-11",
+   "IMPRESSIONS 1ER PRIX INC.",
+   "Supplies & operations",
+   3200,
+   1
+  ],
+  [
+   "2024-11",
+   "Géant du Conteneur (Le)",
+   "Waste & recycling",
+   3104.33,
+   1
+  ],
+  [
+   "2024-11",
+   "Ouellet Samantha",
+   "Professional services",
+   2841.93,
+   2
+  ],
+  [
+   "2024-11",
+   "HAINAULT ROCH, JACQUELINE",
+   "Professional services",
+   2557.5,
+   1
+  ],
+  [
+   "2024-11",
+   "AGRÉGATS STE-CLOTILDE INC",
+   "Supplies & operations",
+   2518.77,
+   2
+  ],
+  [
+   "2024-11",
+   "Quincaillerie Machabée",
+   "Supplies & operations",
+   2425.69,
+   4
+  ],
+  [
+   "2024-11",
+   "Quadient Canada Ltée",
+   "Supplies & operations",
+   2299.5,
+   1
+  ],
+  [
+   "2024-11",
+   "Gauthier, René (Essence)",
+   "Vehicle fuel & maintenance",
+   2110.33,
+   19
+  ],
+  [
+   "2024-11",
+   "DHC Avocats",
+   "Legal — external counsel",
+   2075.42,
+   2
+  ],
+  [
+   "2024-11",
+   "C. S. Brunette Inc.",
+   "Vehicle fuel & maintenance",
+   2011.61,
+   19
+  ],
+  [
+   "2024-11",
+   "Construction DJL Inc.",
+   "Supplies & operations",
+   1744.48,
+   5
+  ],
+  [
+   "2024-11",
+   "Mcclintock, les Entreprises",
+   "Contracts — works",
+   1733.54,
+   1
+  ],
+  [
+   "2024-11",
+   "Nordikeau",
+   "Professional services",
+   1724.63,
+   1
+  ],
+  [
+   "2024-11",
+   "GESPRO Groupe Conseil Inc.",
+   "Supplies & operations",
+   1575.16,
+   1
+  ],
+  [
+   "2024-11",
+   "Tech-Mix, Division BauVal Inc.",
+   "Supplies & operations",
+   1405.08,
+   1
+  ],
+  [
+   "2024-11",
+   "Quincaillerie R. Gauthier Inc.",
+   "Supplies & operations",
+   1364.59,
+   7
+  ],
+  [
+   "2024-11",
+   "Pépinière VERT FÔRET Nursery",
+   "Supplies & operations",
+   1280.54,
+   1
+  ],
+  [
+   "2024-11",
+   "Bottier du Cinq (Le)",
+   "Supplies & operations",
+   1257.23,
+   6
+  ],
+  [
+   "2024-11",
+   "Noël & Fils",
+   "Contracts — works",
+   1236,
+   1
+  ],
+  [
+   "2024-11",
+   "Équip. Albert Billette Inc. (Les)",
+   "Supplies & operations",
+   1016.48,
+   4
+  ],
+  [
+   "2024-11",
+   "TBL Telecom",
+   "Software & IT",
+   1014.08,
+   2
+  ],
+  [
+   "2024-11",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   885.5,
+   6
+  ],
+  [
+   "2024-11",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   284.03,
+   3
+  ],
+  [
+   "2024-11",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Subsidies & community",
+   225,
+   1
+  ],
+  [
+   "2024-11",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   9116.86,
+   51
+  ],
+  [
+   "2024-11",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   1693.92,
+   4
+  ],
+  [
+   "2024-11",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   2027.78,
+   13
+  ],
+  [
+   "2024-11",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   550.74,
+   2
+  ],
+  [
+   "2024-11",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Regional shares & memberships",
+   574.88,
+   1
+  ],
+  [
+   "2024-12",
+   "— (paie municipale)",
+   "Salaries & HR",
+   63867.41,
+   1
+  ],
+  [
+   "2024-12",
+   "Ministre du Revenu",
+   "Salaries & HR",
+   32930.24,
+   1
+  ],
+  [
+   "2024-12",
+   "Receveur Général",
+   "Salaries & HR",
+   21461.84,
+   2
+  ],
+  [
+   "2024-12",
+   "INFOTECH",
+   "Supplies & operations",
+   20985.24,
+   1
+  ],
+  [
+   "2024-12",
+   "Hydro-Québec",
+   "Utilities",
+   10325.43,
+   2
+  ],
+  [
+   "2024-12",
+   "Sécurité L. Demers & Fils Inc.",
+   "Supplies & operations",
+   8636.22,
+   3
+  ],
+  [
+   "2024-12",
+   "Groupe Kopers Inc.",
+   "Software & IT",
+   7761.82,
+   1
+  ],
+  [
+   "2024-12",
+   "Solution Informatique de la Montérégie",
+   "Software & IT",
+   7238.53,
+   4
+  ],
+  [
+   "2024-12",
+   "Chemtrade Chemicals Canada Ltd.",
+   "Supplies & operations",
+   7010.45,
+   1
+  ],
+  [
+   "2024-12",
+   "Gestar Inc.",
+   "Professional services",
+   5460.8,
+   2
+  ],
+  [
+   "2024-12",
+   "LOCATION SAUVAGEAU INC",
+   "Supplies & operations",
+   5156.64,
+   3
+  ],
+  [
+   "2024-12",
+   "Pompaction Inc.",
+   "Supplies & operations",
+   5095.92,
+   1
+  ],
+  [
+   "2024-12",
+   "JAMUNIK",
+   "Supplies & operations",
+   4857.27,
+   3
+  ],
+  [
+   "2024-12",
+   "Services de Rebuts Soulanges Inc.",
+   "Contracts — works",
+   4843.44,
+   1
+  ],
+  [
+   "2024-12",
+   "PLOMBERIE DESMARAIS INC.",
+   "Supplies & operations",
+   4711.71,
+   23
+  ],
+  [
+   "2024-12",
+   "Garage C.P. & Fils Inc.",
+   "Vehicle fuel & maintenance",
+   4671.8,
+   4
+  ],
+  [
+   "2024-12",
+   "Distribution Lazure Inc.",
+   "Supplies & operations",
+   4290.72,
+   4
+  ],
+  [
+   "2024-12",
+   "IMPRESSIONS 1ER PRIX INC. (LE",
+   "Supplies & operations",
+   4177.08,
+   1
+  ],
+  [
+   "2024-12",
+   "C. S. Brunette Inc.",
+   "Vehicle fuel & maintenance",
+   2913.59,
+   18
+  ],
+  [
+   "2024-12",
+   "Ouellet Samantha",
+   "Professional services",
+   2740,
+   2
+  ],
+  [
+   "2024-12",
+   "Xylem Canada",
+   "Supplies & operations",
+   2621.04,
+   1
+  ],
+  [
+   "2024-12",
+   "Solmatech Inc.",
+   "Professional services",
+   2517.38,
+   1
+  ],
+  [
+   "2024-12",
+   "LIVESTOCK BREEDERS ASSOCIA",
+   "Subsidies & community",
+   2500,
+   1
+  ],
+  [
+   "2024-12",
+   "Géant du Conteneur (Le)",
+   "Waste & recycling",
+   2392.91,
+   1
+  ],
+  [
+   "2024-12",
+   "BCGO S.E.N.C.R.L.",
+   "Professional services",
+   2299.5,
+   1
+  ],
+  [
+   "2024-12",
+   "LEGION ROYALE CANADIENNE O",
+   "Subsidies & community",
+   2000,
+   1
+  ],
+  [
+   "2024-12",
+   "Eurofins Environex",
+   "Professional services",
+   1994.83,
+   3
+  ],
+  [
+   "2024-12",
+   "PRODUCTIONS DU 3 JUIN INC.",
+   "Professional services",
+   1987.73,
+   1
+  ],
+  [
+   "2024-12",
+   "Technivolt Électrique Inc.",
+   "Contracts — works",
+   1897.86,
+   4
+  ],
+  [
+   "2024-12",
+   "Gauthier, René (Essence)",
+   "Vehicle fuel & maintenance",
+   1543.48,
+   13
+  ],
+  [
+   "2024-12",
+   "Club Lions Ormstown",
+   "Subsidies & community",
+   1500,
+   1
+  ],
+  [
+   "2024-12",
+   "G.P. ag Distribution",
+   "Supplies & operations",
+   1189.94,
+   4
+  ],
+  [
+   "2024-12",
+   "TBL Telecom",
+   "Software & IT",
+   1014.08,
+   1
+  ],
+  [
+   "2024-12",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Utilities",
+   467.15,
+   3
+  ],
+  [
+   "2024-12",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Subsidies & community",
+   555,
+   2
+  ],
+  [
+   "2024-12",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Salaries & HR",
+   56.74,
+   1
+  ],
+  [
+   "2024-12",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Supplies & operations",
+   8578.79,
+   61
+  ],
+  [
+   "2024-12",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Contracts — works",
+   1025.29,
+   2
+  ],
+  [
+   "2024-12",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Professional services",
+   1883.8,
+   4
+  ],
+  [
+   "2024-12",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Vehicle fuel & maintenance",
+   803.53,
+   13
+  ],
+  [
+   "2024-12",
+   "— Autres fournisseurs (voir PV) / Other suppliers (see minutes)",
+   "Software & IT",
+   343.78,
+   1
+  ],
   [
    "2025-01",
    "Ali Excavation Inc.",
