@@ -1,3098 +1,3698 @@
 {
- "2024-10": {
-  "session": "2024-10-07",
-  "adopted_total": 634091.62,
-  "source": "https://www.ormstown.ca/wp-content/uploads/2024-10-07.pdf",
-  "lines": [
-   [
-    "9226-6444 QUÉBEC INC.",
-    "Produits de nettoyage H-V & centre réc",
-    173.0
-   ],
-   [
-    "ADN COMMUNICATION",
-    "Alertes Municipales août 2024",
-    142.36
-   ],
-   [
-    "ALI EXCAVATION INC.",
-    "Dépôt asphalte - 12,43 TM",
-    142.92
-   ],
-   [
-    "AREO-FEU",
-    "Tuyaux pour camions pompiers",
-    2884.21
-   ],
-   [
-    "AREO-FEU",
-    "25 lampes frontales - Pompiers",
-    3492.37
-   ],
-   [
-    "AVENSYS SOLUTIONS",
-    "Échantillonneur auto.pour analyse eau",
-    615.12
-   ],
-   [
-    "BROSSEAU ET LAMARRE INC.",
-    "VEH #8 - Entretien Switch starter",
-    142.35
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 56,5 L - VEH #32",
-    91.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 33,3 L - VEH #21",
-    60.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 23,9 L - VEH #21",
-    43.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #31",
-    117.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 81 L - VEH #32",
-    124.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 78,4 L - VEH #13",
-    116.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 86,6 L - VEH #35",
-    142.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #35",
-    128.0
-   ],
-   [
-    "CARRIÈRE ALI INC.",
-    "53,38 TM pierre 0-3/4 - 76 rue Linda et inventaire",
-    1448.42
-   ],
-   [
-    "CARRIÈRE ALI INC.",
-    "36,05 TM 0-3/4 - Bris d'aqueduc 15 rue Liggett",
-    978.19
-   ],
-   [
-    "CCESI - Centre conseil en Rédaction protocole d'intervention séc. sécurite incendie",
-    "Incendie",
-    2950.0
-   ],
-   [
-    "CENTRE DE FORMATION ÉRIC Défibrillateur pompiers - Don Damres LANGEVIN INC.",
-    "Auxiliaires",
-    1948.83
-   ],
-   [
-    "COMPTEURS D'EAU DU QUÉBEC",
-    "Frais annuel - licence - X-TELIA (lecture compteurs)",
-    2379.98
-   ],
-   [
-    "CONSTRUCTION DJL INC.",
-    "EC-10 - Chemin de la Ferme, Rang #4, rue Linda",
-    1964.7
-   ],
-   [
-    "CONSTRUCTION DJL INC.",
-    "EC-10 - Jamestown et Rang 3",
-    589.25
-   ],
-   [
-    "DAGENAIS, J. ARCHITECTE & ASS. INC.",
-    "Esquisses & plans - Projet Sous-sol H-V",
-    8048.25
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Compteurs eau",
-    "Couvre marche - inst. Antenne X-Telia",
-    156.28
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Pompiers",
-    "Panneaux OSB carré pour Training Center",
-    91.52
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) 1 raccord - Pompiers #205",
-    "",
-    6.89
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Bouche-pore pour Centre récréatif",
-    "",
-    14.94
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Garage 201",
-    "Ampoule & ruban pr enseigne Riv. Outardes &",
-    58.62
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Outardes",
-    "Scellant, lame pour enseigne Riv. Aux",
-    71.81
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Protecteur pour solives - Hôtel de Ville",
-    "",
-    20.68
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Bois traité pour colonne Hôtel de Ville",
-    "",
-    10.11
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Bois traité pour colonne Hôtel de Ville",
-    "",
-    8.08
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Pelle & 2 plywood l. pr dos d'âne et T-P",
-    "",
-    120.21
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Ampoule sodium Centre récréatif",
-    "",
-    28.73
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) 8 contreplaqué-émissaire poste principale",
-    "",
-    516.47
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Attache pour abris bus rue Bridge",
-    "",
-    3.78
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S) Treillis pour abris bus rue Bridge",
-    "",
-    15.69
-   ],
-   [
-    "DHC Avocats",
-    "Services Août 2024 - Opinion (Puits eau potable)",
-    57.49
-   ],
-   [
-    "DHC Avocats",
-    "Services Août 24 - Clément, Jeannine et Drapeau, Louis",
-    950.87
-   ],
-   [
-    "DHC Avocats",
-    "Services août 2024 - Gestion ImSeel inc.",
-    100.35
-   ],
-   [
-    "DIVERS - FOURNISSEURS",
-    "Client #2080 - Remb. Taxes payées en double",
-    783.87
-   ],
-   [
-    "DUNTON RAINVILLE SENC AVOCATS",
-    "Services juridiques #115302",
-    841.62
-   ],
-   [
-    "DUNTON RAINVILLE SENC AVOCATS",
-    "Services juridiques #97325",
-    484.56
-   ],
-   [
-    "DUNTON RAINVILLE SENC AVOCATS",
-    "Services juridiques #112817",
-    2611.66
-   ],
-   [
-    "DUNTON RAINVILLE SENC AVOCATS",
-    "Services juridiques #69019",
-    287.44
-   ],
-   [
-    "DUNTON RAINVILLE SENC AVOCATS",
-    "Services juridiques #113336",
-    1622.3
-   ],
-   [
-    "ÉCHO-TECH H2O INC.",
-    "Mesures de boues 2024 - étangs aérés #1, 2, 3 et 4",
-    2006.31
-   ],
-   [
-    "ENSEIGNES DUMAS",
-    "3 tentes Pop-up - loisirs",
-    5794.74
-   ],
-   [
-    "ENVIRONOR CANADA INC.",
-    "Séquestrant - Station Dumas puits #6 et 8",
-    2942.56
-   ],
-   [
-    "ÉQUIP. ALBERT BILLETTE INC. (LES)",
-    "Réparation débrousailleuse - débloquer muffler",
-    13.8
-   ],
-   [
-    "ÉQUIP. ALBERT BILLETTE INC. (LES)",
-    "Chaine et huile à moteur - Parcs",
-    49.54
-   ],
-   [
-    "ÉQUIP. ALBERT BILLETTE INC. (LES)",
-    "Pièces & réparation scie à chaine",
-    77.43
-   ],
-   [
-    "ÉQUIP. ALBERT BILLETTE INC. (LES)",
-    "Lames- VEH #21 et trimeur parcs",
-    248.44
-   ],
-   [
-    "ÉQUIP. LAPLANTE & LEVESQUE LTEE",
-    "Huile hydr.VEH #11fusible lumière Riv. Outardes",
-    91.33
-   ],
-   [
-    "ÉQUIP. LAPLANTE & LEVESQUE LTEE",
-    "5 Tubes rond pour clôture St-Paul",
-    42.26
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Analyse eau - 87 Roy et 5 rue Gale - potable",
-    331.13
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Analyse eau - Usine d'épuration - Effluent",
-    392.07
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Analyse eau brute - Puits",
-    418.51
-   ],
-   [
-    "FONDS D'INFORMATION TERRITOIRE",
-    "Frais - 6 avis de mutation",
-    36.0
-   ],
-   [
-    "FQM Services, coopérative de solidarité",
-    "Hon.demandes de révision (5)",
-    1941.15
-   ],
-   [
-    "FQM Services, coopérative de solidarité",
-    "Demande révision terrain de golf",
-    657.09
-   ],
-   [
-    "GARAGE C.P. & FILS INC.",
-    "1 relais 70 amp pr pompe à brake - VEH |11",
-    167.87
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 175,735 L - VEH #7",
-    281.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 81,712 L - VEH #34",
-    147.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 20,017 L - VEH #7",
-    36.21
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 36,687 L - VEH #7",
-    66.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 93,385 L - VEH #35",
-    168.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 130,557 L - VEH #7",
-    197.01
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 82,174 L - VEH #13",
-    124.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 94,497 L - VEH #11",
-    170.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 27,871 L - VEH #21",
-    50.14
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 32,574 L - VEH #21",
-    58.6
-   ],
-   [
-    "GDLB",
-    "8 - Déglaçant Peladow",
-    672.55
-   ],
-   [
-    "GÉANT DU CONTENEUR (LE)",
-    "3 conteneurs écocentre",
-    3518.24
-   ],
-   [
-    "GESPRO Groupe Conseil Inc.",
-    "Devis ingénierie rues Hector, Gale & Church",
-    2569.69
-   ],
-   [
-    "Gestion Écono Plus Inc.",
-    "Repérage GPS - du 1er au 30 sept. 24",
-    151.54
-   ],
-   [
-    "GROUPE BRUNET/BETON BRUNET LTÉE",
-    "15 blocs pour Entreposage Top Soil",
-    2414.48
-   ],
-   [
-    "GROUPE BRUNET/BETON BRUNET LTÉE",
-    "10 blocs pour entreposage top soil",
-    1839.6
-   ],
-   [
-    "GROUPE SGM INC.",
-    "Entretien éclairage de rue - 863 Rte 201",
-    181.23
-   ],
-   [
-    "HART, DANIEL",
-    "Contrôle 17 castors - Rg Dumas, Rg 4 et des Botreaux",
-    1530.0
-   ],
-   [
-    "ICS Inc.",
-    "Microsoft sept.- 10 exchange, 3 Prémium, 24 standard",
-    731.88
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Café, breuvages Hôtel de Ville",
-    43.28
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Crème - Hôtel de Ville",
-    9.58
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Biscuits - Anniversaire Erica",
-    11.98
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Café et lait - Hôtel de Ville",
-    23.28
-   ],
-   [
-    "J.T. SPORT",
-    "Location rotoculteur - Parcs",
-    93.12
-   ],
-   [
-    "JALEC INC.",
-    "20 Accès réseau (17 mobiles, 3 portatifs) - Sept. 2024",
-    343.78
-   ],
-   [
-    "Laboratoires de la Montérégie Inc.",
-    "Étude géotechnique - projet jeux d'eaux",
-    15061.73
-   ],
-   [
-    "LAURENTIDE RE/SOURCES INC.",
-    "Collecte RDD organiques - Écocentre",
-    270.59
-   ],
-   [
-    "LIBRAIRIE RENAUD-BRAY INC. Achat 3 livres - Biblio",
-    "",
-    97.64
-   ],
-   [
-    "LIBRAIRIE RENAUD-BRAY INC. Achat 2 livres - Biblio",
-    "",
-    69.28
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "Achat 4 livres - Bibliothèque",
-    113.18
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "Achat 21 livres - Biblio",
-    516.8
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "Acaht 14 livres - Biblio",
-    177.08
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "Achat 1 livre - Biblio",
-    24.95
-   ],
-   [
-    "MARTECH INC.",
-    "Panneau signalisation - Mtée Guérin",
-    121.87
-   ],
-   [
-    "MARTECH INC.",
-    "Enseignes pour noms de rues - Entretien",
-    1102.5
-   ],
-   [
-    "MINISTRE DES FINANCES",
-    "Service SQ pour 2024 - 2e versement",
-    304552.0
-   ],
-   [
-    "O-MAX INC",
-    "Articles nettoyage, veste circulation, gants",
-    521.66
-   ],
-   [
-    "PAVAGES ULTRA INC.",
-    "8 dos d'âne- Church,Bridge,Roy,Georges,Jamestown",
-    23351.42
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence 69,663 L - VEH #31",
-    110.0
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence 45,423 L - VEH #33",
-    79.44
-   ],
-   [
-    "PHANEUF ÉQUIPEMENT AGRICOLE",
-    "Filtres veh #35",
-    162.43
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "Interrupteur démarreur, porte fusible - VEH #8",
-    17.35
-   ],
-   [
-    "PRODUCTIONS DU 3 JUIN INC.",
-    "Mandat communication sept (3 de 13) réso 24-07-195",
-    1987.73
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteur - Parc des Érables rue Adèle",
-    40.82
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteurs - Bibliothèque rue Isabelle",
-    93.13
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteurs - Garage 138A",
-    82.21
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteur - Garage sel - 9 rue St- Paul",
-    40.82
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteur - Puits St-Paul - 9 rue Gale",
-    40.82
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteur - Usine épuration - 2145 Ch. Riv.",
-    105.78
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteur - Usine de filtration - 3 Madelei",
-    40.82
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteur - Station pompage - Rte 201",
-    40.82
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteur - Station de Pompage Dumas",
-    58.64
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection extincteur - Station pompage rue Roy",
-    52.32
-   ],
-   [
-    "PUROLATOR INC.",
-    "Retour gants à CMP Mayer inc",
-    11.51
-   ],
-   [
-    "PUROLATOR INC.",
-    "De Avensys - Produits analyse d'eau",
-    9.34
-   ],
-   [
-    "QUINCAILLERIE MACHABÉE",
-    "Pièces pour machine à pression - Voirie",
-    157.81
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Agrafes T50 - Parcs",
-    7.22
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Peinture plancher - parc Dumas",
-    75.87
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Réservoir essence 20L, gants PVC et tricot",
-    89.01
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Ancrage souille - H.-V. Boîte aux lettres",
-    27.57
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Entonnoir + couvercle jaune 15\" - Bibliothèque",
-    9.52
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Bac recyclage - 15 rue Cross -A/S Colette",
-    120.69
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Botte EVA - Nicolas Therrien",
-    229.93
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Composé joints & tuyauterie - Centre Rec.",
-    12.14
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Pulvérisateur main, gants PVC - Voirie",
-    71.21
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Coton fromage pr peinturer dos d'âne",
-    14.76
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "3 cruches eau 18L - Garage 201",
-    23.28
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "5 bloc lettre ligné - H.-V.",
-    20.06
-   ],
-   [
-    "REFUGE CHABY ET CHIENS",
-    "Contrôle animalier - oct. 2024",
-    550.0
-   ],
-   [
-    "ROBERT DAOUST ET FILS INC.",
-    "4 collectes - Recyclables septembre 2024",
-    16253.47
-   ],
-   [
-    "SANIBERT",
-    "Loc, 1 toilette - Parc Lyndsay Cullen - août",
-    194.82
-   ],
-   [
-    "SANIBERT",
-    "Location toilette - Écocentre août x 4 sem.",
-    194.82
-   ],
-   [
-    "SANIBERT",
-    "Location 2 toilettes - Parc Baseball août x 4 sem.",
-    389.66
-   ],
-   [
-    "SANIBERT",
-    "Location 1 toilette - Parc Lyndsay Cullen sept x 4 sem.",
-    194.82
-   ],
-   [
-    "SERVICES DE REBUTS SOULANGES INC.",
-    "Nettoyage bonhomme à eau, égout, conduit et Bassin",
-    7374.62
-   ],
-   [
-    "SERVICOFAX",
-    "1015 copies couleur, 2669 copies N&B - Août/sept 2024",
-    109.62
-   ],
-   [
-    "SOCIÉTÉ CANADIENNE DES POSTES",
-    "Av. public élection & prévention incendie",
-    317.57
-   ],
-   [
-    "SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
-    "2 ordinateurs - Gestion eau et filtration",
-    2990.07
-   ],
-   [
-    "SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
-    "Restorer session comm, wifi, remplacer bornes",
-    1197.97
-   ],
-   [
-    "SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
-    "Achat bloc d'heures - 100 heures",
-    8623.13
-   ],
-   [
-    "TBL Telecom",
-    "Service internet Fibre - septembre 2024 H-V",
-    908.3
-   ],
-   [
-    "TECHNIVOLT ÉLECTRIQUE INC.",
-    "Télémétrie des postes - Septembre 2024",
-    202.94
-   ],
-   [
-    "TELMATIK",
-    "Appels d'urgence - Septembre 2024",
-    90.4
-   ],
-   [
-    "TENAQUIP LIMITED",
-    "Sonomètre pour dept. Urbanisme",
-    608.22
-   ],
-   [
-    "ULINE CANADA CORPORATION",
-    "Trousse de secours - Pompiers",
-    299.42
-   ],
-   [
-    "UNION DES MUNICIPALITÉS DU QUÉBEC",
-    "Formation domaine mun. D. Leduc - DG",
-    224.2
-   ],
-   [
-    "ZEL",
-    "Maintenance du site Web",
-    546.14
-   ],
-   [
-    "SALAIRES",
-    "Salaire à autoriser au 28 septembre 2024",
-    89071.83
-   ],
-   [
-    "GESTION MSDM INC.",
-    "Loyer garage - septembre 2024",
-    2466.21
-   ],
-   [
-    "COMPLEXE MEDICAL",
-    "Loyer bibliothèque - septembre",
-    9627.92
-   ],
-   [
-    "CIBC BANQUE IMPÉRIALE",
-    "RÉER CIBC août 2024",
-    350.0
-   ],
-   [
-    "HYDRO-QUEBEC",
-    "Multiples factures",
-    6571.18
-   ],
-   [
-    "RECEVEUR GENERAL",
-    "DAS FÉD AOÛT 2024 (RÉG)",
-    13151.04
-   ],
-   [
-    "RECEVEUR GÉNÉRAL",
-    "DAS FÉD AOÛT 2024 (OCC)",
-    3741.94
-   ],
-   [
-    "MINISTRE DU REVENU",
-    "DAS PROV AOÛT (DU 16 AU 31)",
-    21782.47
-   ],
-   [
-    "CAISSE DESJARDINS",
-    "RÉER Desjardins août 2024",
-    4819.68
-   ],
-   [
-    "OUELLET SAMANTHA",
-    "Paement factures #25 & #26",
-    1420.0
-   ],
-   [
-    "HYDRO-QUEBEC",
-    "299 000 771 913 (2024-09-03)",
-    3526.44
-   ],
-   [
-    "Cogeco",
-    "Téléphonie alarme garage 138A",
-    48.93
-   ],
-   [
-    "MINISTRE DU REVENU",
-    "DAS PROV SEPT (1-15)",
-    16592.56
-   ],
-   [
-    "BELL MOBILITE",
-    "Ligne cellulaire traitement",
-    66.14
-   ],
-   [
-    "OUELLET SAMANTHA",
-    "Entretien ménager du 9 sept au 22",
-    1370.0
-   ],
-   [
-    "BELL Canada",
-    "Internet Biblio du 23 août au 22",
-    174.0
-   ]
-  ]
- },
- "2024-11": {
-  "session": "2024-11-11",
-  "adopted_total": 643091.17,
-  "source": "https://www.ormstown.ca/wp-content/uploads/2024-11-11.pdf",
-  "lines": [
-   [
-    "9188-0781 QUÉBEC INC",
-    "Fauchage des Rangs été 2024 + terrains municipales",
-    10362.59
-   ],
-   [
-    "ADN COMMUNICATION",
-    "Alertes Municipales septembre 2024",
-    163.92
-   ],
-   [
-    "AESL INSTRUMENTATION INC.",
-    "PH-mètre - pour test d'eau potable",
-    192.01
-   ],
-   [
-    "AGRÉGATS STE-CLOTILDE INC",
-    "Dispo. Sols excavés-Bris aqueduc & égouts",
-    1654.89
-   ],
-   [
-    "AGRÉGATS STE-CLOTILDE INC",
-    "Dispo. Sols excavés-Bris aqueduc & Nett. Balai de Rues",
-    863.88
-   ],
-   [
-    "AL-JO CHAUSSURES",
-    "Michel Soulières - Bottes CSA",
-    229.94
-   ],
-   [
-    "BOTTIER DU CINQ (LE)",
-    "Mathew Pilon - 2 Pantalons, 2 T-Shirt, 1 kangourou",
-    176.69
-   ],
-   [
-    "BOTTIER DU CINQ (LE)",
-    "Colin Beaulieu - 3 Pantalons, 1 Kangourou",
-    193.3
-   ],
-   [
-    "BOTTIER DU CINQ (LE)",
-    "Colin Beaulieu - 1 Casque, 1 pantalon sign, 1 manteau sign",
-    131.27
-   ],
-   [
-    "BOTTIER DU CINQ (LE)",
-    "Michel Soulière - 1 Casque, manteau sign, 1 pantalon sign",
-    168.84
-   ],
-   [
-    "BOTTIER DU CINQ (LE)",
-    "Michel Soulière - 3 Pantalons, 6 T-Shirt, 3 Kangourous",
-    483.65
-   ],
-   [
-    "BOTTIER DU CINQ (LE)",
-    "Colin Beaulieu - Couturière, 6 inst. De bandes",
-    103.48
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 71,9 L - VEH #35",
-    118.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #21",
-    45.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 83,5 L - VEH #35",
-    137.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #29",
-    8.84
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #21",
-    40.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #35",
-    163.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #11",
-    154.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #31",
-    98.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 76,9 L - VEH #32",
-    113.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - Laveuse à pression",
-    29.71
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 107,9 L - VEH #35",
-    177.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - Laveuse à pression",
-    9.56
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #32",
-    70.5
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 140,3 L - VEH #33",
-    230.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 24,4 L - VEH #34",
-    40.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 115,9 L - VEH #34",
-    190.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 65,9 L - VEH #33",
-    107.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 128,7 L - VEH #34",
-    211.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 47,3 L - VEH #32",
-    70.0
-   ],
-   [
-    "CARRIÈRE ALI INC.",
-    "36,39 Tonnes Pierre 0-3/4 - Bris aqueduc rue Derby",
-    987.42
-   ],
-   [
-    "CARRIÈRE ALI INC.",
-    "35,91 Tonnes Pierre 0-3/4 - Abri bus rue Bridge",
-    974.38
-   ],
-   [
-    "CARRIÈRE ALI INC.",
-    "18,2 Tonnes Pierre 2\" à 4\" - Abri bus Bridge",
-    540.92
-   ],
-   [
-    "CARRIÈRE ALI INC.",
-    "55,17 T. Pierre 0-3/4 - 9 St-Paul, Bris aque. 4 fulford",
-    1496.99
-   ],
-   [
-    "CARRIÈRE ALI INC.",
-    "36,97 Tonnes Pierre 0-3/4 - Stock St-Paul",
-    1003.15
-   ],
-   [
-    "CCESI - Centre conseil en sécurite incendie",
-    "1 visite risque élever - 1 rue Bain",
-    480.0
-   ],
-   [
-    "CONSTRUCTION DJL INC.",
-    "4,13 Tonnes - EC-10 - 6 différentes adresses",
-    567.45
-   ],
-   [
-    "CONSTRUCTION DJL INC.",
-    "8,56 Tonnes EC-10 - Rue Linda, Roy, 4e Ave.",
-    1176.09
-   ],
-   [
-    "CONSTRUCTION DJL INC.",
-    "Ajust. Prix selon réso fact. 5002523010",
-    5.03
-   ],
-   [
-    "CONSTRUCTION DJL INC.",
-    "Ajust. Prix selon réso - EC-10",
-    -18.86
-   ],
-   [
-    "CONSTRUCTION DJL INC.",
-    "Ajust. Prix selon réso - fact. 5002605826",
-    14.77
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Sacs déchets - Parc",
-    22.98
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Pièces Drapeau parc Lindsay Cullen",
-    42.85
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Pièces pour drapeaux Parc Lindsay Cullen",
-    17.09
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "3 Capuchons galvanisé - réseau aqueduc",
-    6.87
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Rubans élect, courroies pr VEH #16",
-    15.01
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Couvercle prise - lampadaire rue Lambton",
-    6.89
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "couteau à mastic, grattoir - pour véh #37",
-    92.21
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Manchon, adaptateur, ciment PVC - Rinçage aqueduc",
-    30.66
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Peinture noir lustré - rampe écocentre",
-    68.02
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Goupille rapide, sable sec pour van #37",
-    22.92
-   ],
-   [
-    "DHC Avocats",
-    "Serv. Juridiques (Jeannine Clément et Louis Drapeau)",
-    951.53
-   ],
-   [
-    "DHC Avocats",
-    "Serv. Juridiques (Gestion ImSeel inc.) Sept. 2024",
-    1123.89
-   ],
-   [
-    "DISTRIBUTION LAZURE INC.",
-    "Émissaire poste principale - Sellette et adapteur en cuivre",
-    409.54
-   ],
-   [
-    "DUNTON RAINVILLE SENC AVOCATS",
-    "Services juridique Dossier #97325",
-    3815.28
-   ],
-   [
-    "DUNTON RAINVILLE SENC AVOCATS",
-    "Services juridique Dossier #112817",
-    29721.62
-   ],
-   [
-    "DUNTON RAINVILLE SENC AVOCATS",
-    "Services juridiques - Dossier #69019",
-    288.02
-   ],
-   [
-    "ÉMULSION SÉRIGRAPHIE",
-    "Broderie sur 2 chemises Logo- stéphane Leclerc",
-    65.54
-   ],
-   [
-    "ENSEIGNES DUMAS",
-    "Kit de vinyle givré portes H.V.",
-    534.63
-   ],
-   [
-    "Entretien Paysager Yan Garand Inc.",
-    "Entretien paysager 2024",
-    3449.25
-   ],
-   [
-    "ÉQUIP. ALBERT BILLETTE INC. (LES)",
-    "1 scie à chaine - remplacer scie brisée",
-    459.89
-   ],
-   [
-    "ÉQUIP. ALBERT BILLETTE INC. (LES)",
-    "Chaine 3.02', chaine 4.00'",
-    48.43
-   ],
-   [
-    "ÉQUIP. ALBERT BILLETTE INC. (LES)",
-    "1 pneu, tube et huile - VEH #29 (pneu avant)",
-    232.45
-   ],
-   [
-    "ÉQUIP. ALBERT BILLETTE INC. (LES)",
-    "4 attaches pour remorquage et levage (APSAM)",
-    275.71
-   ],
-   [
-    "ÉQUIP. LAPLANTE & LEVESQUE LTEE",
-    "checker plate & tube - Modifier Escalier écocentre (APSAM)",
-    114.55
-   ],
-   [
-    "ÉQUIP. LAPLANTE & LEVESQUE LTEE",
-    "FER, grillage de sécurité/demande CNESST #33 & #34",
-    54.9
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Analyses/eau potable rues Linda, Roy, Gale, Liggett",
-    1141.13
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Analyse eau potable - 87 Roy et 5 rue Gale",
-    205.81
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Analyse eau - Usine épuration Effluent",
-    620.3
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Analyse eau potable - rues Roy, Gale, Derby",
-    811.15
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Analyses- Poursuite 6 & 8 & puits Madeleine, St-Paul",
-    4738.12
-   ],
-   [
-    "FERME A. & S. GRUER INC.",
-    "40 L - Motor Oil (Maintenance annuelle camions pompiers",
-    298.94
-   ],
-   [
-    "FONDS D'INFORMATION TERRITOIRE",
-    "Avis de mutation - Septembre 2024",
-    72.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 83,380 L - VEH #34",
-    150.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 27,237 L - VEH #21",
-    49.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 39,624 L - VEH #31",
-    59.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 78,431 L - VEH #13",
-    116.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 77,755 L - VEH #32",
-    115.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 50,584 L - VEH #11",
-    91.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 139,959 L - VEH #7",
-    207.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 63,556 L - VEH #13",
-    94.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 82,488 L - VEH #31",
-    122.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 69,642 L - VEH #13",
-    103.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 73,712 L - VEH #32",
-    109.02
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 67,613 L - VEH #31",
-    100.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 68,018 L - VEH #13",
-    104.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 139,961 L - VEH #7",
-    214.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 38,846 L - VEH #7",
-    66.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 68,875 L - VEH #7",
-    105.31
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 58,270 L - VEH #35",
-    99.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 60,968 L - VEH #31",
-    92.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 76,209 L - VEH #13",
-    115.0
-   ],
-   [
-    "GÉANT DU CONTENEUR (LE)",
-    "Conteneur - échange 9, 18 et 30 sept - écocentre",
-    3104.33
-   ],
-   [
-    "GESPRO Groupe Conseil Inc.",
-    "Rédaction de thèmes références - 1er au 28 sept. 24",
-    1575.16
-   ],
-   [
-    "Gestion Écono Plus Inc.",
-    "Frais repérage GPS - du 1er au 31 oct. 2024",
-    151.54
-   ],
-   [
-    "GROUPE KOPERS INC.",
-    "Abonnement annuel - Accès ordi distant oc t24 à sept 25",
-    206.96
-   ],
-   [
-    "GROUPE X-TELIA INC.",
-    "Inst. et maintenance passerelles - Compteurs eau",
-    8292.33
-   ],
-   [
-    "ICS Inc.",
-    "26 licences M365 - de oct. 2024 à sept. 2025",
-    7257.22
-   ],
-   [
-    "ICS Inc.",
-    "Ajout 2 licences M365 - oct. 2024 à sept. 2025",
-    525.67
-   ],
-   [
-    "IDentité Québec",
-    "Vérification antécédents - Diane Forgues",
-    60.01
-   ],
-   [
-    "IDentité Québec",
-    "Vérification antécédents - Christine Rheault",
-    60.01
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Pompiers - Ess. Tout, pinesol, sac ordure",
-    63.76
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Café, crème - HDV",
-    27.47
-   ],
-   [
-    "IGA ORMSTOWN",
-    "2 Crèmes pr café - HDV",
-    9.98
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Café, crème, Mayo, Biscuits fête Manon - HDV",
-    39.45
-   ],
-   [
-    "INFO EXCAVATION",
-    "Cotisation Municipale 2024-2025",
-    574.88
-   ],
-   [
-    "INFOTECH",
-    "3000 enveloppes 2 fenêtres - Élections 3 nov. 24",
-    667.21
-   ],
-   [
-    "J.T. SPORT",
-    "Tune up - + huile - Camion Pompiers",
-    73.58
-   ],
-   [
-    "JALEC INC.",
-    "20 Accès réseau - 17 mobiles, 3 portatifs - Oct. 24",
-    343.78
-   ],
-   [
-    "Judy Chisholm",
-    "Superviser Examens pompiers",
-    500.0
-   ],
-   [
-    "Laplante Radiateurs Inc.",
-    "Service routier - Crevaison tracteur - VEH #35",
-    302.56
-   ],
-   [
-    "Les Formulaires Ducharme Inc. nov. 2024",
-    "Enveloppes, bande pr sceller - Élections 3",
-    728.69
-   ],
-   [
-    "Les Formulaires Ducharme Inc. Bulletins de vote - Élections 3 novembre 2024",
-    "",
-    3398.38
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "CRÉDIT - Référ. Facture #7468574",
-    -29.41
-   ],
-   [
-    "M.R.C. HAUT SAINT LAURENT",
-    "Évaluation 4e trimestre",
-    19490.75
-   ],
-   [
-    "MARTECH INC.",
-    "Enseignes - Mtée Bryson, Mtée Durocher",
-    137.05
-   ],
-   [
-    "MCCLINTOCK, LES ENTREPRISES",
-    "Bris aqueduc derrière caserne pompiers",
-    1733.54
-   ],
-   [
-    "Ministre des Finances (Y2007896)",
-    "Traçabilté sols A-B Melocheville - Bris aqueduc",
-    364.61
-   ],
-   [
-    "Ministre des Finances (Y2007896)",
-    "Traçabilté sols -Bris aqueduc B-C - disposer à Terrebonne",
-    614.27
-   ],
-   [
-    "MJR INDUSTRIES",
-    "Réfection poste principal - réso: 24-05-134",
-    7136.5
-   ],
-   [
-    "MJR INDUSTRIES",
-    "Finaliser travaux émissaire - poste principal",
-    1372.06
-   ],
-   [
-    "MULTI GRAPH ORMSTOWN SENC",
-    "2050 dépliants - Nettoyage réseau Aqueduc",
-    471.4
-   ],
-   [
-    "MUNICIPALITÉ DE FRANKLIN",
-    "Déneigement Rang Dumas 2023-2024",
-    12435.27
-   ],
-   [
-    "NESS, D.R.",
-    "1 tuyau 18\" X 30' pour Abribus - rue Bridge",
-    551.88
-   ],
-   [
-    "NEUMANN DVORAH",
-    "remb facture - Jardins communautaires - Piège scarab, support plantes",
-    58.61
-   ],
-   [
-    "NOËL & FILS",
-    "Transport & terre de finition - Terrassement - 50 verges",
-    1236.0
-   ],
-   [
-    "NORDIKEAU",
-    "Calcul débit des pompes - Poste pompage principal",
-    1724.63
-   ],
-   [
-    "OXYGENE INDUSTRIEL GIRARDIN INC.",
-    "Acetylene et Buse - torches garage 138A",
-    226.14
-   ],
-   [
-    "PAVAGES MCM",
-    "Pavage Centre Réc. & 2 dos d'âne Borden",
-    29617.56
-   ],
-   [
-    "Pépinière VERT FÔRET Nursery 21 arbres Quercus rubra",
-    "",
-    1280.54
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence 66,269L - VEH #13",
-    100.0
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence 66,269 L - VEH #31",
-    100.0
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence 66,269 L - VEH #32",
-    100.0
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence 58,858 L - VEH Pompiers",
-    100.0
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence 70,630 L - Camion Pompiers",
-    120.0
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence 65,791 L - VEH #31",
-    99.28
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence 64,757 L - Camion Pompiers",
-    110.02
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "Accessoires nettoyage - Camions Pompiers",
-    45.27
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "Antirouille, Fluide échap. Diesel, 55Hp 20L",
-    434.32
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "Outils - Eau et égout",
-    208.99
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "Connecteurs en cuivre - Poste pompage Borden",
-    8.4
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 23 rue Church",
-    390.2
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 4 rue Edward",
-    167.56
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 1607 Rue de l'Étang",
-    250.88
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 2 Rue Argyle",
-    276.88
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 17 Rue de Jamestown",
-    295.72
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 25 Rue Bridge",
-    214.93
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 36 Rue Bridge",
-    332.02
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 1243 Rue de la Vallée",
-    447.03
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 1411, Route 201",
-    120.72
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 13 Rue de Jamestown",
-    326.61
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 92, Rue Roy",
-    360.0
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 1868, Rue Osmond",
-    200.65
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 19, Rue Bridge",
-    150.9
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 15, Rue Bridge",
-    708.99
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 2, Rue Church",
-    242.42
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 1620, Route 201",
-    285.51
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 69, Rue Lambton",
-    320.01
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 78, Rue Roy",
-    174.49
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 49, Rue Lambton",
-    181.09
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 2161, Route 201",
-    373.92
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 17, Rue Lambton",
-    297.06
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 17B, Rue Lambton",
-    240.17
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 26, Rue Lambton",
-    276.68
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 1474, Route 201",
-    259.18
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 6, Rue Bridge",
-    388.61
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 52, Rue Lambton",
-    214.99
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. Compteur d'eau - 2, rue Liggett",
-    666.47
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection/entretien extincteurs - Caserne pompiers",
-    256.65
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection/entretien extincteurs Hôtel de Ville",
-    283.52
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection/entretien extincteurs - Garage Municipal",
-    104.0
-   ],
-   [
-    "PRUD'HOMME TECHNOLOGIES INC.",
-    "Inspection/entretien extincteurs - Centre récréatif",
-    209.78
-   ],
-   [
-    "QUINCAILLERIE MACHABÉE",
-    "Raccord boyau et adapta. Pr machine à pression",
-    8.78
-   ],
-   [
-    "QUINCAILLERIE MACHABÉE",
-    "Pièces pour laveuse à pression - Voirie",
-    106.09
-   ],
-   [
-    "QUINCAILLERIE MACHABÉE",
-    "Conduit électrique - Poste Borden",
-    2224.59
-   ],
-   [
-    "QUINCAILLERIE MACHABÉE",
-    "Compacteur à essence - Poste pompage Borden",
-    86.23
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "3 Clés simple - Cabanon Baseball",
-    12.0
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "3 bouteilles eau - 20 L - Garage 201",
-    23.28
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "32 Chlore-1 pour Acqueduc Dumas",
-    1066.6
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Râteau, Pelle, Brosse Métal., Peintures - Véh 37",
-    189.28
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "2 plaques de métal - Garage 201",
-    5.93
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Réservoir pr diesel, pièces et réservoir essence - Parc",
-    45.11
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Ens. Tournevis - Garage 201",
-    22.39
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "4 cartons - Pour affiche Durham County Poets - Loisirs",
-    3.45
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "2 drapeaux Québec et 2 Canada",
-    275.9
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "3 pqt piles 2 AA - Micros-salle du Conseil",
-    27.5
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "1 bte. De 100 Chemises - Archives",
-    35.51
-   ],
-   [
-    "REFUGE CHABY ET CHIENS",
-    "Contrôle animalier - Novembre 2024",
-    550.0
-   ],
-   [
-    "Réseau Information Municipale Offre emploi - Conseiller aux communications",
-    "",
-    201.21
-   ],
-   [
-    "Réseau Information Municipale Offre emploi - Technicien comptable",
-    "",
-    201.21
-   ],
-   [
-    "ROBERT DAOUST ET FILS INC.",
-    "Collecte Ordures - Août 2024",
-    41697.3
-   ],
-   [
-    "ROBERT DAOUST ET FILS INC.",
-    "Collecte Ordures - Septembre 2024",
-    39558.58
-   ],
-   [
-    "ROBERT DAOUST ET FILS INC.",
-    "Recyclables - 5 collectes - Oct. 2024",
-    20316.83
-   ],
-   [
-    "SANIBERT",
-    "Location 1 toilette - St-James Church",
-    186.72
-   ],
-   [
-    "SANIBERT",
-    "Location 1 toilette - Rue Du moulin - Géant Mandala",
-    272.95
-   ],
-   [
-    "SANIBERT",
-    "Toilette Halte Urbaine - Assurances",
-    2167.28
-   ],
-   [
-    "SANIBERT",
-    "Location 2 toilettes 4 sem - Parc Baseball",
-    389.66
-   ],
-   [
-    "SANIBERT",
-    "Location 1 toilette 4 sem - Écocentre",
-    194.82
-   ],
-   [
-    "SÉCURITÉ & SERRURIER CLÉMENT",
-    "Appel de service - Changer Batterie 12V - C Récréatif",
-    333.43
-   ],
-   [
-    "SERVICES DE REBUTS SOULANGES INC.",
-    "Rempl. 2 Bonhommes eau, nettoyer égouts pluvial",
-    3810.45
-   ],
-   [
-    "SERVICES DE REBUTS SOULANGES INC.",
-    "Travaux émissaire - Poste principale",
-    5780.66
-   ],
-   [
-    "SERVICOFAX",
-    "4653 copies couleur, 9449 copies N&B - sept/oct 2024",
-    473.36
-   ],
-   [
-    "SOCIÉTÉ CANADIENNE DES POSTES",
-    "Feuillet tempête Debby & collecte feuilles",
-    330.08
-   ],
-   [
-    "SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
-    "Garantie prolongé portatif conseiller 6",
-    124.14
-   ],
-   [
-    "SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
-    "Finaliser inst. 2 postes pompages, clonage",
-    410.41
-   ],
-   [
-    "SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
-    "Portable Lenovo thinkpad pr Ingénieure",
-    1621.6
-   ],
-   [
-    "SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
-    "Installation station accueil DG, Ingénieure, RH",
-    1352.03
-   ],
-   [
-    "SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
-    "Crédit facture ICS et Adapter WIFI, +Souris & Carte Eth",
-    3.83
-   ],
-   [
-    "ST-JAMES ANGLICAN CHURCH",
-    "Location église St-James pr Concert Durham County Poets",
-    200.0
-   ],
-   [
-    "TBL Telecom",
-    "Téléphonie - Septembre 2024 H.-V.",
-    105.78
-   ],
-   [
-    "TBL Telecom",
-    "Service Internet Fibre - Oct. 2024 H.-V.",
-    908.3
-   ],
-   [
-    "TECH-MIX, Division BauVal Inc.",
-    "80,4 Tonnes - Asphalte Top-Mix - Voirie",
-    1405.08
-   ],
-   [
-    "TECHNIVOLT ÉLECTRIQUE INC.",
-    "Lampadaire - Parc Mario-Dumas (assurance)",
-    17706.15
-   ],
-   [
-    "TECHNIVOLT ÉLECTRIQUE INC.",
-    "Remonter filet parc Dumas, inst. wire drapeau Cullen",
-    756.36
-   ],
-   [
-    "TECHNIVOLT ÉLECTRIQUE INC.",
-    "Télémétries des postes - Octobre 2024",
-    202.94
-   ],
-   [
-    "TELMATIK",
-    "Appels d'urgence - Octobre 2024",
-    86.23
-   ],
-   [
-    "UNION DES MUNICIPALITÉS DU QUÉBEC",
-    "SISMIK - Soutien RH - Juin à Sept. 2024",
-    37787.7
-   ],
-   [
-    "WURTH CANADA LIMITED/LIMITÉE",
-    "Gant nitrile, peint inversée orange fluo - Voirie",
-    548.86
-   ],
-   [
-    "SALAIRES",
-    "Salaire à autoriser au 01 novembre 2024",
-    131940.98
-   ],
-   [
-    "COMPLEXE MEDICAL",
-    "Loyer bibliothèque - octobre 2024",
-    9627.92
-   ],
-   [
-    "GESTION MSDM INC.",
-    "Loyer Garage 201 - Octobre 2024",
-    2466.21
-   ],
-   [
-    "IMPRESSIONS 1ER PRIX INC.",
-    "Acompte facture #20788",
-    3200.0
-   ],
-   [
-    "DIVERS - EMPLOYÉ",
-    "Luc Pilon Remb. Déjeuner (TAT)",
-    20.0
-   ],
-   [
-    "DIVERS - EMPLOYÉ",
-    "Colette Rochefort Remb. Déjeuner",
-    15.53
-   ],
-   [
-    "HYDRO-QUEBEC",
-    "Multiples factures",
-    10514.08
-   ],
-   [
-    "Durham County Poets",
-    "Durham County Poets - 29 sept.",
-    225.0
-   ],
-   [
-    "CLUB DE SOCCER ORMSTOWN",
-    "Contribution camp de jour été 2024",
-    21000.0
-   ],
-   [
-    "Lefebvre Karina",
-    "Client #710 - 1603 Jamestown,",
-    9225.0
-   ],
-   [
-    "CIBC BANQUE IMPÉRIALE",
-    "RÉER CIBC septembre 2024",
-    350.0
-   ],
-   [
-    "COMPLEXE MEDICAL",
-    "Loyer Bibliothèque - Novembre",
-    9627.92
-   ],
-   [
-    "GESTION MSDM INC.",
-    "Loyer Garage 201 - Novembre",
-    2466.21
-   ],
-   [
-    "BELL Canada",
-    "Internet Bibliothèque 23 sept - 22",
-    168.96
-   ],
-   [
-    "BELL MOBILITE",
-    "Ligne cellulaire traitement",
-    66.14
-   ],
-   [
-    "OUELLET SAMANTHA",
-    "Entretien ménager du 23 sept. au 6",
-    1471.93
-   ],
-   [
-    "MINISTRE DU REVENU",
-    "DAS PROV SEPT 2024 (DU 16 AU",
-    14797.48
-   ],
-   [
-    "RECEVEUR GENERAL",
-    "DAS FED SEPT 2024 (DU 16 AU",
-    12299.44
-   ],
-   [
-    "RECEVEUR GÉNÉRAL",
-    "DAS FED SEPT 2024 (DU 16 AU",
-    632.94
-   ],
-   [
-    "HYDRO-QUEBEC",
-    "299 105 361 222 (2024-09-24)",
-    43.21
-   ],
-   [
-    "HYDRO-QUEBEC",
-    "299 000 772 085 (2024-09-24)",
-    227.28
-   ],
-   [
-    "HYDRO-QUEBEC",
-    "299 000 772 325 (2024-09-24)",
-    328.46
-   ],
-   [
-    "QUADIENT CANADA LTÉE",
-    "Timbres - élection partielle 3 nov.",
-    2299.5
-   ],
-   [
-    "HYDRO-QUEBEC",
-    "299 000 771 913 (2024-09-30)",
-    3937.31
-   ],
-   [
-    "Cogeco",
-    "Téléphonie Alarmes garage 138A",
-    48.93
-   ],
-   [
-    "DIVERS - EMPLOYÉ",
-    "Steve Gruer - Remb. articles bureau",
-    59.72
-   ],
-   [
-    "MINISTRE DU REVENU",
-    "DAS PROV OCT. 2024 (DU 1ER",
-    18220.97
-   ],
-   [
-    "CAISSE DESJARDINS",
-    "RÉER septembre 2024",
-    4638.71
-   ],
-   [
-    "OUELLET SAMANTHA",
-    "Entretien ménager du 7 oct. au 20",
-    1370.0
-   ],
-   [
-    "HAINAULT ROCH, JACQUELINE",
-    "Calendrier 2025 - Prise, choix et",
-    2557.5
-   ],
-   [
-    "HYDRO-QUEBEC",
-    "299 075 244 549 (2024-10-10)",
-    2326.79
-   ],
-   [
-    "DIVERS - EMPLOYÉ",
-    "Remb. Guy Dandurand - Mêche",
-    389.77
-   ],
-   [
-    "DIVERS - EMPLOYÉ",
-    "Sylvain Gagnier - Remb. Express -",
-    50.48
-   ]
-  ]
- },
- "2024-12": {
-  "session": "2024-12-02",
-  "adopted_total": 268308.98,
-  "source": "https://www.ormstown.ca/wp-content/uploads/2024-12-02-1.pdf",
-  "lines": [
-   [
-    "9226-6444 QUÉBEC INC.",
-    "Divers articles de nettoyage",
-    329.37
-   ],
-   [
-    "9226-6444 QUÉBEC INC.",
-    "Divers articles de nettoyage",
-    212.38
-   ],
-   [
-    "ADN COMMUNICATION",
-    "Alertes Municipales - octobre 2024",
-    83.8
-   ],
-   [
-    "ALI EXCAVATION INC.",
-    "Dépôt d'asphalte 26,57 TM (bitumineux",
-    1916.79
-   ],
-   [
-    "ALI EXCAVATION INC.",
-    "CRÉDIT à suivre) Dépôt d'asphalte bris aqueduc - 8.95 TM",
-    205.81
-   ],
-   [
-    "ALI EXCAVATION INC.",
-    "CRÉDIT Facture 027834 - Bitumineux",
-    -1305.81
-   ],
-   [
-    "BCGO S.E.N.C.R.L.",
-    "Audit ref. Régie Patinoire Huntingdon",
-    2299.5
-   ],
-   [
-    "BOHEMEN JAMIE (ENR.)",
-    "Réparation porte du garage - Caserne",
-    691.86
-   ],
-   [
-    "BOTTIER DU CINQ (LE)",
-    "Broderie X 3 LOGO - Voirie",
-    220.47
-   ],
-   [
-    "BOTTIER DU CINQ (LE)",
-    "CRÉDIT - Facture #385593 - Acompte payé",
-    34.78
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "par Colin Essence 87,2 L - VEH #35",
-    143.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 23,9 L - VEH #21",
-    39.22
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 22,5 L - VEH #21",
-    37.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 59,1 L - VEH #07",
-    97.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 98,2 L - VEH #35",
-    161.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 56,5 L - VEH #32",
-    128.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #13",
-    134.37
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 96,4 L - VEH #35",
-    158.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #31",
-    104.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 46,1 L - VEH #31",
-    69.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #32",
-    109.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 154,7 L - VEH #33",
-    270.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 97,1 L - VEH #27",
-    170.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 171,5 L - VEH #7 - Génératrice",
-    300.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Dumas Essence 86,5 L - VEH #13",
-    128.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence 100,0 L - VEH #35",
-    175.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence - VEH #11",
-    160.0
-   ],
-   [
-    "C. S. BRUNETTE INC.",
-    "Essence Diesel - VEH #30",
-    531.0
-   ],
-   [
-    "CARRIÈRE ALI INC.",
-    "17,87 T Pierres - Rép. filage électr S-Terr -",
-    490.04
-   ],
-   [
-    "CCESI - Centre conseil en sécurité",
-    "P. Borden Rédaction 2e visite - 1 rue McBain",
-    350.0
-   ],
-   [
-    "incendie CHEMTRADE CHEMICALS CANADA",
-    "17,095 Tonnes ALUM - réso 24-01-083",
-    7010.45
-   ],
-   [
-    "LTD. CORPORATE EXPRESS CANADA INC.",
-    "2 pqt. Papiers 8.5 X 11, Bloc autocollant,",
-    171.24
-   ],
-   [
-    "CORPORATE EXPRESS CANADA INC.",
-    "post-it Plateau 3 étages, tapis souris, bloc lignés,",
-    137.46
-   ],
-   [
-    "CORPORATE EXPRESS CANADA INC. Carnet, ruban, trombones, marqueurs...",
-    "ruban…",
-    65.0
-   ],
-   [
-    "CRSBP MONTÉRÉGIE INC.",
-    "Fournitures biblio - Cartes, étiquettes,",
-    174.71
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "feuillet promo Vis plancher, épinette - pr Stage -",
-    67.28
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Spectacle Elvis Équip. Compteur d'eau - 35 Bridge",
-    67.92
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Isolation - Bris aqueduc rue Fulford",
-    219.32
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Lame scie finition - Couper coin d'un",
-    21.25
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "bureau Échelle 24' - Voirie (très utile)",
-    349.52
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Vis inst. Lumières de Noël - H.-V.",
-    12.94
-   ],
-   [
-    "D'AMOUR & FILS INC. (R.S)",
-    "Ens.peinture, vis, plaque mur. - Salle du",
-    28.73
-   ],
-   [
-    "DISTRIBUTION LAZURE INC.",
-    "Conseil H.-V, Tuyau SDR 4 po - pour inventaire",
-    314.2
-   ],
-   [
-    "DISTRIBUTION LAZURE INC.",
-    "Base pr boite de vanne et une plaque",
-    191.95
-   ],
-   [
-    "DISTRIBUTION LAZURE INC.",
-    "guide Différentes pièces pour inventaire",
-    3701.79
-   ],
-   [
-    "DISTRIBUTION LAZURE INC.",
-    "20 tuyau municipex fourreau 3/4\" -",
-    82.78
-   ],
-   [
-    "ÉNERGIE P38 Inc. / BUDGET",
-    "Inventaire Propane - 139,70 L - 1441 Rte 201",
-    140.28
-   ],
-   [
-    "PROPANE ÉNERGIE P38 Inc. / BUDGET",
-    "Propane - 290,30 L - 1441 Rte 201",
-    277.94
-   ],
-   [
-    "PROPANE ÉQUIP. ALBERT BILLETTE INC. (LES)",
-    "1 Ose d'aliment d'eau - machine à",
-    103.54
-   ],
-   [
-    "ÉQUIP. LAPLANTE & LEVESQUE",
-    "pression - Garage 201 Huile universelle tracteur, 4 O-Ring -",
-    292.22
-   ],
-   [
-    "LTEE EUROFINS ENVIRONEX",
-    "Voirie Analyse eau - Usine d'épuration - Effluent",
-    580.05
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Analyses/eau potable rues McBain, Roy,",
-    1076.75
-   ],
-   [
-    "EUROFINS ENVIRONEX",
-    "Gale, Argyle Analy Puits Madeleine 1, 4, 5, 8 St-Paul,",
-    338.03
-   ],
-   [
-    "FONDS D'INFORMATION",
-    "Dumas 6, Avis de Mutation - Octobre 2024",
-    78.0
-   ],
-   [
-    "TERRITOIRE G.P. AG DISTRIBUTION",
-    "Chaine pour remorquage - VEH #16",
-    58.64
-   ],
-   [
-    "G.P. AG DISTRIBUTION",
-    "38 chaines pr levage demandé par",
-    333.93
-   ],
-   [
-    "G.P. AG DISTRIBUTION",
-    "L'APSAM 1 chaine de sécurité - VEH #16",
-    91.55
-   ],
-   [
-    "G.P. AG DISTRIBUTION",
-    "Pièces et main d'œuvre - VEH #21",
-    705.82
-   ],
-   [
-    "GARAGE C.P. & FILS INC.",
-    "Enlever cylindre/rebâtir, changer 2 oses -",
-    1986.77
-   ],
-   [
-    "GARAGE C.P. & FILS INC.",
-    "VEH 33 Pièces et main d'œuvre - Réparation VEH",
-    985.98
-   ],
-   [
-    "GARAGE C.P. & FILS INC.",
-    "#11 Cylindre reconstruit - VEH #27",
-    1565.96
-   ],
-   [
-    "GARAGE C.P. & FILS INC.",
-    "Pièces et main d'œuvre - Répa VEH #36",
-    133.09
-   ],
-   [
-    "GARAGE S.D. INC.",
-    "Réparation crevaison - VEH #13",
-    17.25
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 74,049 L - VEH #31",
-    111.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 73,629 L - VEH #32",
-    110.37
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 52,702 L - VEH #31",
-    79.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 93,729 L - VEH #13",
-    140.5
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 66,711 L - VEH #32",
-    100.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 107,218 L - VEH #7",
-    160.72
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 68,966 L - VEH #31",
-    102.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 108,326 L - VEH #34",
-    181.88
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 104,229 L - VEH #33",
-    175.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 55,443 L - VEH #13",
-    82.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 50,034 L - VEH #34",
-    88.01
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 120,0 L - VEH #7",
-    180.0
-   ],
-   [
-    "GAUTHIER, RENÉ (essence)",
-    "Essence 18,761 L - VEH #7",
-    33.0
-   ],
-   [
-    "GÉANT DU CONTENEUR (LE)",
-    "1 container échangé, 1 ramassé Finale -",
-    2392.91
-   ],
-   [
-    "GESTAR INC.",
-    "Écocentre Soutien annuel du logiciel Documentik -",
-    574.36
-   ],
-   [
-    "GESTAR INC.",
-    "Service tech. De traitement + frais",
-    4886.44
-   ],
-   [
-    "Gestion Écono Plus Inc.",
-    "déplacement Frais mensuel - Repérage GPS - Nov. 2024",
-    151.54
-   ],
-   [
-    "GROUPE KOPERS INC.",
-    "Mise à jour AVEVA Edge - Logiciel H.-V.",
-    7761.82
-   ],
-   [
-    "GROUPE LOU-TEC INC.",
-    "Nacelle 45' -Arbre de Noël et Filet terrain",
-    553.42
-   ],
-   [
-    "HART, DANIEL",
-    "de baseball Trappage 10 castors - Rang 4, Dumas et",
-    900.0
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Botreaux Café, crème, Biscuits, brioches fête Carole",
-    85.74
-   ],
-   [
-    "IGA ORMSTOWN",
-    "D. Eau, biscuits, lait, crème - Élections 3 nov.",
-    42.75
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Papiers mouchoir, Mayo, Ketchup -",
-    24.32
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Garage 201 Breuvages, eau - Pompiers",
-    122.21
-   ],
-   [
-    "IGA ORMSTOWN",
-    "Café, crème - Hôtel de Ville",
-    15.28
-   ],
-   [
-    "INFOTECH",
-    "Contrat annuel entretien et soutien appli.",
-    20985.24
-   ],
-   [
-    "J.T. SPORT",
-    "Sygem - 2025 Pièces et main d'œuvre - Entretien du",
-    203.41
-   ],
-   [
-    "JALEC INC.",
-    "jumping jack 20 Accès réseau (17 mobiles, 3 portatifs) -",
-    343.78
-   ],
-   [
-    "JAMUNIK",
-    "NOV 2024 Meubles & inst. nouveau poste de travail",
-    2664.11
-   ],
-   [
-    "JAMUNIK",
-    "Meubles & inst. nouveau poste de travail",
-    1504.46
-   ],
-   [
-    "JAMUNIK",
-    "Appui bras, support pr clavier - Poste",
-    688.7
-   ],
-   [
-    "LAURENTIDE RE/SOURCES INC.",
-    "réception RDD- 23 oct. 2024",
-    71.9
-   ],
-   [
-    "LIBRAIRIE RENAUD-BRAY INC.",
-    "Achat 9 livres - Bibliothèque",
-    276.05
-   ],
-   [
-    "LIBRAIRIE RENAUD-BRAY INC.",
-    "Achat 2 livres - Bibliothèque",
-    83.98
-   ],
-   [
-    "LIBRAIRIE RENAUD-BRAY INC.",
-    "Achat 15 livres - Bibliothèque",
-    298.87
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "CRÉDIT - Référ. Facture #7468574",
-    -29.41
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "Achat 25 livres - Bibliothèque",
-    592.46
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "Crédit - a été facturé 2 fois - Facture",
-    -15.13
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "#7559100 Achat 1 livre - Bibliothèque",
-    24.06
-   ],
-   [
-    "LIBRAIRIES BOYER",
-    "Achat 9 livres - Bibliothèque",
-    255.77
-   ],
-   [
-    "LOCATION SAUVAGEAU INC",
-    "Location Pick-up Voirie - Août 2024",
-    1718.88
-   ],
-   [
-    "LOCATION SAUVAGEAU INC",
-    "Location Pick-up Voirie - Septembre 2024",
-    1718.88
-   ],
-   [
-    "LOCATION SAUVAGEAU INC",
-    "Location Pick-up Voirie - Octobre 2024",
-    1718.88
-   ],
-   [
-    "OXYGÈNE RÉGIONAL INC.",
-    "Piles alcaline 9V et 1.5 AA pour Airpack -",
-    128.31
-   ],
-   [
-    "PETRO-CANADA",
-    "Pompiers Essence 81,007 L - Camion Pompiers",
-    140.06
-   ],
-   [
-    "PETRO-CANADA",
-    "Essence - 49,883 L - Camion pompier",
-    84.25
-   ],
-   [
-    "PIÈCES D'AUTO MERCIER",
-    "Batterie - VEH #16",
-    137.67
-   ],
-   [
-    "PIÈCES D'AUTO MERCIER",
-    "CRÉDIT - Retour vieille batterie - VEH #16",
-    -17.25
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "7 lunettes de sécurité - Voirie",
-    24.07
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "4 lunettes de sécurité - Voirie",
-    17.19
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "3 liquide wash&wax - pr tous les VEH -",
-    100.03
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "Voirie 25 lbs chiffons tout usage - Voirie",
-    62.03
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "1 Booster Pack pour les VEH - Voirie",
-    65.4
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "12 nettoyants à freins pr tous les VEH -",
-    82.64
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "Voirie 20 Lave vitres - tous VEH - Voirie",
-    87.15
-   ],
-   [
-    "PIECES D'AUTO VALLEYFIELD INC.",
-    "Lumières avant VEH #34",
-    3.04
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 26 rue St-Paul",
-    767.2
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 24 rue Bridge",
-    279.74
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 49 rue Lambton",
-    470.45
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 10 rue Bridge",
-    438.54
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - Église rue Roy",
-    193.97
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 39 rue Bridge",
-    211.27
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 10 rue Victoria",
-    473.55
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 6 rue McBain",
-    243.14
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 1865 rue Osmond",
-    441.67
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 88 rue Linda",
-    291.8
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 65 rue Hector",
-    297.0
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 13 rue Victoria",
-    257.52
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 65 rue Saint-Paul",
-    150.9
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 7 rue Chateauguay",
-    242.04
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 22 rue Lambton",
-    283.27
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 2 rue Edward",
-    239.79
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 1212 rue Du Marais",
-    201.25
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 1232 rue Du Marais",
-    201.25
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 20 rue Liggett",
-    217.1
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 16 rue Cross",
-    241.45
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "Inst. compteur d'eau - 65 rue Saint-Paul",
-    1320.69
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "CRÉDIT - Facture #7697 - 26 rue St-Paul",
-    -383.6
-   ],
-   [
-    "PLOMBERIE DESMARAIS INC.",
-    "CRÉDIT - erreur prix pièces - plusieurs",
-    -2368.28
-   ],
-   [
-    "POMPACTION INC",
-    "factures 6 Ens. Connecteur, 9 Ens.",
-    5095.92
-   ],
-   [
-    "PUROLATOR INC.",
-    "Valve/diaphragme/Pompe doseus De AESL Inst. - outil pour test eau potable",
-    8.34
-   ],
-   [
-    "PUROLATOR INC.",
-    "De Xylem Inc - 4 Flottes pour Poste Border",
-    16.39
-   ],
-   [
-    "QUINCAILLERIE MACHABÉE",
-    "2 adaptateurs - compteur d'eau - Express",
-    23.57
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Antigel pr borne fontaine et abrevoirs",
-    53.16
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Ensemble douilles 123 mcx - Voirie",
-    118.4
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Gants cotons - Voirie",
-    27.57
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "3 cruches eau 18L - Garage 201",
-    23.28
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Brosse de lavage 3D télescopique - Garage",
-    68.97
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "2 néons fluorescent - Garage 201",
-    43.65
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "4 peintures noire lustré, gant blanc -",
-    82.68
-   ],
-   [
-    "QUINCAILLERIE R. GAUTHIER INC.",
-    "Entretien tous VEH Gant de tricot - Voirie",
-    13.79
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "Formulaire d'achat - Voirie",
-    16.89
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "Classeur mural pour D.G., formulaire",
-    59.08
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "d'achat - Voirie 4 BTE AGRAFES pour brocheuses",
-    17.43
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "2 pqt piles AA, 2 ruban transp, 1 paire",
-    29.82
-   ],
-   [
-    "RATTE, MAGASIN F.",
-    "ciseau - H.-V. 1 bte chemises format légal - H.-V.",
-    35.51
-   ],
-   [
-    "REFUGE CHABY ET CHIENS",
-    "Contrôle animalier - Déc. 2024",
-    550.0
-   ],
-   [
-    "SANIBERT",
-    "Location 1 toilette 4 sem - Parc Lindsay-",
-    194.82
-   ],
-   [
-    "SANIBERT",
-    "Cullen Location 2 toilettes 4 sem - Parc Baseball",
-    389.66
-   ],
-   [
-    "SANIBERT",
-    "Location 1 toilette 4 sem - Écocentre - 9",
-    194.82
-   ],
-   [
-    "Sécurité L. Demers & Fils Inc.",
-    "St-Paul Inst. 3 contrôleurs d'accès, caméra ...",
-    7417.14
-   ],
-   [
-    "Sécurité L. Demers & Fils Inc.",
-    "Ajout de 2 Caméras + main d'œuvre",
-    1006.38
-   ],
-   [
-    "Sécurité L. Demers & Fils Inc.",
-    "Contrat annuel Centrale d'alarme - Nov 24",
-    212.7
-   ],
-   [
-    "SERVICES DE REBUTS SOULANGES INC.",
-    "Nett. Poste pomp Delage, Hôpital, Hector, Borden",
-    4843.44
-   ],
-   [
-    "SHELLEX GROUPE CONSEIL",
-    "Dossier Ali - Répondre questions avocats",
-    333.43
-   ],
-   [
-    "SOCIÉTÉ CANADIENNE DES POSTES",
-    "Courrier de quartier - Nett. Réseau",
-    296.24
-   ],
-   [
-    "SOLMATECH INC.",
-    "Aqueduc OCT 24 Caractéris. Environ. Des sols en piles - 9 St-",
-    2517.38
-   ],
-   [
-    "SOLUTION INFORMATIQUE DE LA",
-    "Paul Différents travaux pr personnel bureau",
-    521.36
-   ],
-   [
-    "MONTÉRÉGIE SOLUTION INFORMATIQUE DE LA",
-    "Ordi. Réception/nouv logiciel pr caméras",
-    1196.41
-   ],
-   [
-    "MONTÉRÉGIE SOLUTION INFORMATIQUE DE LA",
-    "+lic. MS W11 Clavier,souris poste comm, 2 supports",
-    177.48
-   ],
-   [
-    "MONTÉRÉGIE SOLUTION INFORMATIQUE DE LA",
-    "écrans FC, CD Écran mobile salle conseil, Écran bureau",
-    5343.28
-   ],
-   [
-    "MONTÉRÉGIE TBL Telecom",
-    "D.G. Service internet Fibre - Oct. 24 + 4 ligne",
-    1014.08
-   ],
-   [
-    "TECHNIVOLT ÉLECTRIQUE INC.",
-    "SIP Appel de service. - Vérif. Pompe puit #1",
-    400.11
-   ],
-   [
-    "TECHNIVOLT ÉLECTRIQUE INC.",
-    "Pompe pr Srvc. Incendie - Usine",
-    450.88
-   ],
-   [
-    "TECHNIVOLT ÉLECTRIQUE INC.",
-    "d'épuration Entretien et Rép. Usine Madeleine et",
-    687.91
-   ],
-   [
-    "TECHNIVOLT ÉLECTRIQUE INC.",
-    "Dumas Télémétrie des postes Nov. 24+ frais",
-    358.96
-   ],
-   [
-    "TELMATIK",
-    "Nouv. Poste Borden Appels d'urgence - Novembre 2024",
-    86.23
-   ],
-   [
-    "XYLEM CANADA",
-    "4 Flottes - Poste Borden",
-    2621.04
-   ],
-   [
-    "SALAIRES",
-    "Salaire à autoriser au 22 novembre 2024 $",
-    63867.41
-   ],
-   [
-    "DIVERS - EMPLOYÉ",
-    "Remb. Mairesse - Friandises Halloween -",
-    56.74
-   ],
-   [
-    "IMPRESSIONS 1ER PRIX INC. (LE",
-    "H. Chandails & manteaux - pompiers réso 24-",
-    4177.08
-   ],
-   [
-    "OUELLET SAMANTHA",
-    "Entretien ménager du 21 oct au 3 nov.",
-    1370.0
-   ],
-   [
-    "HYDRO QUÉBEC",
-    "Multiple factures",
-    9577.03
-   ],
-   [
-    "Légion Royale Canadienne",
-    "Achat couronne pour Jour du souvenir",
-    55.0
-   ],
-   [
-    "MINISTRE DU REVENU",
-    "DAS PROV OCT 2024 ( du 16 au 31)",
-    32930.24
-   ],
-   [
-    "RECEVEUR GENERAL",
-    "DAS FED OCT 2024 rég",
-    20156.32
-   ],
-   [
-    "RECEVEUR GÉNÉRAL",
-    "DAS FED OCT 2024 occ",
-    1305.52
-   ],
-   [
-    "CLUB LIONS ORMSTOWN",
-    "Don - Guignolé temps des Fêtes - Réso #24",
-    1500.0
-   ],
-   [
-    "FADOQ ORMSTOWN (CLUB)",
-    "Souper de Noël",
-    500.0
-   ],
-   [
-    "LEGION ROYALE CANADIENNE O",
-    "Contribution financière - Réso #24-11-302",
-    2000.0
-   ],
-   [
-    "LIVESTOCK BREEDERS ASSOCIA",
-    "Demande de commandite - Réso #24-11-",
-    2500.0
-   ],
-   [
-    "Cogeco",
-    "Téléphonie alarme garage 138A - Nov.",
-    48.93
-   ],
-   [
-    "HYDRO QUÉBEC",
-    "Multiple factures",
-    748.4
-   ],
-   [
-    "OUELLET SAMANTHA",
-    "Entretien ménager du 04-11-2024 au 17-",
-    1370.0
-   ],
-   [
-    "PRODUCTIONS DU 3 JUIN INC.",
-    "11- Mandat communication oct (4 de 13) réso",
-    1987.73
-   ]
-  ]
- }
+"2024-10": [
+[
+"9226-6444 QUÉBEC INC.",
+"Produits de nettoyage H-V & centre réc",
+173,
+"Supplies & operations"
+],
+[
+"ADN COMMUNICATION",
+"Alertes Municipales août 2024",
+142.36,
+"Professional services"
+],
+[
+"ALI EXCAVATION INC.",
+"Dépôt asphalte - 12,43 TM",
+142.92,
+"Supplies & operations"
+],
+[
+"AREO-FEU",
+"Tuyaux pour camions pompiers",
+2884.21,
+"Supplies & operations"
+],
+[
+"AREO-FEU",
+"25 lampes frontales - Pompiers",
+3492.37,
+"Supplies & operations"
+],
+[
+"AVENSYS SOLUTIONS",
+"Échantillonneur auto.pour analyse eau",
+615.12,
+"Supplies & operations"
+],
+[
+"BROSSEAU ET LAMARRE INC.",
+"VEH #8 - Entretien Switch starter",
+142.35,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 56,5 L - VEH #32",
+91,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 33,3 L - VEH #21",
+60,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 23,9 L - VEH #21",
+43,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #31",
+117,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 81 L - VEH #32",
+124,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 78,4 L - VEH #13",
+116,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 86,6 L - VEH #35",
+142,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #35",
+128,
+"Vehicle fuel & maintenance"
+],
+[
+"CARRIÈRE ALI INC.",
+"53,38 TM pierre 0-3/4 - 76 rue Linda et inventaire",
+1448.42,
+"Supplies & operations"
+],
+[
+"CARRIÈRE ALI INC.",
+"36,05 TM 0-3/4 - Bris d'aqueduc 15 rue Liggett",
+978.19,
+"Supplies & operations"
+],
+[
+"CCESI - Centre conseil en sécurite incendie",
+"Rédaction protocole d'intervention séc. Incendie",
+2950,
+"Professional services"
+],
+[
+"CENTRE DE FORMATION ÉRIC LANGEVIN INC.",
+"Défibrillateur pompiers - Don Damres Auxiliaires",
+1948.83,
+"Professional services"
+],
+[
+"COMPTEURS D'EAU DU QUÉBEC",
+"Frais annuel - licence - X-TELIA (lecture compteurs)",
+2379.98,
+"Professional services"
+],
+[
+"CONSTRUCTION DJL INC.",
+"EC-10 - Chemin de la Ferme, Rang #4, rue Linda",
+1964.7,
+"Supplies & operations"
+],
+[
+"CONSTRUCTION DJL INC.",
+"EC-10 - Jamestown et Rang 3",
+589.25,
+"Supplies & operations"
+],
+[
+"DAGENAIS, J. ARCHITECTE & ASS. INC.",
+"Esquisses & plans - Projet Sous-sol H-V",
+8048.25,
+"Professional services"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Couvre marche - inst. Antenne X-Telia Compteurs eau",
+156.28,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Panneaux OSB carré pour Training Center Pompiers",
+91.52,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"1 raccord - Pompiers #205",
+6.89,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Bouche-pore pour Centre récréatif",
+14.94,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Ampoule & ruban pr enseigne Riv. Outardes & Garage 201",
+58.62,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Scellant, lame pour enseigne Riv. Aux Outardes",
+71.81,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Protecteur pour solives - Hôtel de Ville",
+20.68,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Bois traité pour colonne Hôtel de Ville",
+10.11,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Bois traité pour colonne Hôtel de Ville",
+8.08,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Pelle & 2 plywood l. pr dos d'âne et T-P",
+120.21,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Ampoule sodium Centre récréatif",
+28.73,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"8 contreplaqué-émissaire poste principale",
+516.47,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Attache pour abris bus rue Bridge",
+3.78,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Treillis pour abris bus rue Bridge",
+15.69,
+"Supplies & operations"
+],
+[
+"DHC Avocats",
+"Services Août 2024 - Opinion (Puits eau potable)",
+57.49,
+"Legal — external counsel"
+],
+[
+"DHC Avocats",
+"Services Août 24 - Clément, Jeannine et Drapeau, Louis",
+950.87,
+"Legal — external counsel"
+],
+[
+"DHC Avocats",
+"Services août 2024 - Gestion ImSeel inc.",
+100.35,
+"Legal — external counsel"
+],
+[
+"DIVERS - FOURNISSEURS",
+"Client #2080 - Remb. Taxes payées en double",
+783.87,
+"Contracts — works"
+],
+[
+"DUNTON RAINVILLE SENC AVOCATS",
+"Services juridiques #115302",
+841.62,
+"Legal — external counsel"
+],
+[
+"DUNTON RAINVILLE SENC AVOCATS",
+"Services juridiques #97325",
+484.56,
+"Legal — external counsel"
+],
+[
+"DUNTON RAINVILLE SENC AVOCATS",
+"Services juridiques #112817",
+2611.66,
+"Legal — external counsel"
+],
+[
+"DUNTON RAINVILLE SENC AVOCATS",
+"Services juridiques #69019",
+287.44,
+"Legal — external counsel"
+],
+[
+"DUNTON RAINVILLE SENC AVOCATS",
+"Services juridiques #113336",
+1622.3,
+"Legal — external counsel"
+],
+[
+"ÉCHO-TECH H2O INC.",
+"Mesures de boues 2024 - étangs aérés #1, 2, 3 et 4",
+2006.31,
+"Professional services"
+],
+[
+"ENSEIGNES DUMAS",
+"3 tentes Pop-up - loisirs",
+5794.74,
+"Supplies & operations"
+],
+[
+"ENVIRONOR CANADA INC.",
+"Séquestrant - Station Dumas puits #6 et 8",
+2942.56,
+"Supplies & operations"
+],
+[
+"ÉQUIP. ALBERT BILLETTE INC. (LES)",
+"Réparation débrousailleuse - débloquer muffler",
+13.8,
+"Supplies & operations"
+],
+[
+"ÉQUIP. ALBERT BILLETTE INC. (LES)",
+"Chaine et huile à moteur - Parcs",
+49.54,
+"Supplies & operations"
+],
+[
+"ÉQUIP. ALBERT BILLETTE INC. (LES)",
+"Pièces & réparation scie à chaine",
+77.43,
+"Supplies & operations"
+],
+[
+"ÉQUIP. ALBERT BILLETTE INC. (LES)",
+"Lames- VEH #21 et trimeur parcs",
+248.44,
+"Supplies & operations"
+],
+[
+"ÉQUIP. LAPLANTE & LEVESQUE LTEE",
+"Huile hydr.VEH #11fusible lumière Riv. Outardes",
+91.33,
+"Supplies & operations"
+],
+[
+"ÉQUIP. LAPLANTE & LEVESQUE LTEE",
+"5 Tubes rond pour clôture St-Paul",
+42.26,
+"Supplies & operations"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyse eau - 87 Roy et 5 rue Gale - potable",
+331.13,
+"Professional services"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyse eau - Usine d'épuration - Effluent",
+392.07,
+"Professional services"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyse eau brute - Puits",
+418.51,
+"Professional services"
+],
+[
+"FONDS D'INFORMATION TERRITOIRE",
+"Frais - 6 avis de mutation",
+36,
+"Supplies & operations"
+],
+[
+"FQM Services, coopérative de solidarité",
+"Hon.demandes de révision (5)",
+1941.15,
+"Professional services"
+],
+[
+"FQM Services, coopérative de solidarité",
+"Demande révision terrain de golf",
+657.09,
+"Professional services"
+],
+[
+"GARAGE C.P. & FILS INC.",
+"1 relais 70 amp pr pompe à brake - VEH |11",
+167.87,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 175,735 L - VEH #7",
+281,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 81,712 L - VEH #34",
+147,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 20,017 L - VEH #7",
+36.21,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 36,687 L - VEH #7",
+66,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 93,385 L - VEH #35",
+168,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 130,557 L - VEH #7",
+197.01,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 82,174 L - VEH #13",
+124,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 94,497 L - VEH #11",
+170,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 27,871 L - VEH #21",
+50.14,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 32,574 L - VEH #21",
+58.6,
+"Vehicle fuel & maintenance"
+],
+[
+"GDLB",
+"8 - Déglaçant Peladow",
+672.55,
+"Supplies & operations"
+],
+[
+"GÉANT DU CONTENEUR (LE)",
+"3 conteneurs écocentre",
+3518.24,
+"Waste & recycling"
+],
+[
+"GESPRO Groupe Conseil Inc.",
+"Devis ingénierie rues Hector, Gale & Church",
+2569.69,
+"Supplies & operations"
+],
+[
+"Gestion Écono Plus Inc.",
+"Repérage GPS - du 1er au 30 sept. 24",
+151.54,
+"Supplies & operations"
+],
+[
+"GROUPE BRUNET/BETON BRUNET LTÉE",
+"15 blocs pour Entreposage Top Soil",
+2414.48,
+"Waste & recycling"
+],
+[
+"GROUPE BRUNET/BETON BRUNET LTÉE",
+"10 blocs pour entreposage top soil",
+1839.6,
+"Waste & recycling"
+],
+[
+"GROUPE SGM INC.",
+"Entretien éclairage de rue - 863 Rte 201",
+181.23,
+"Contracts — works"
+],
+[
+"HART, DANIEL",
+"Contrôle 17 castors - Rg Dumas, Rg 4 et des Botreaux",
+1530,
+"Professional services"
+],
+[
+"ICS Inc.",
+"Microsoft sept.- 10 exchange, 3 Prémium, 24 standard",
+731.88,
+"Software & IT"
+],
+[
+"IGA ORMSTOWN",
+"Café, breuvages Hôtel de Ville",
+43.28,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Crème - Hôtel de Ville",
+9.58,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Biscuits - Anniversaire Erica",
+11.98,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Café et lait - Hôtel de Ville",
+23.28,
+"Supplies & operations"
+],
+[
+"J.T. SPORT",
+"Location rotoculteur - Parcs",
+93.12,
+"Supplies & operations"
+],
+[
+"JALEC INC.",
+"20 Accès réseau (17 mobiles, 3 portatifs) - Sept. 2024",
+343.78,
+"Software & IT"
+],
+[
+"Laboratoires de la Montérégie Inc.",
+"Étude géotechnique - projet jeux d'eaux",
+15061.73,
+"Supplies & operations"
+],
+[
+"LAURENTIDE RE/SOURCES INC.",
+"Collecte RDD organiques - Écocentre",
+270.59,
+"Supplies & operations"
+],
+[
+"LIBRAIRIE RENAUD-BRAY INC.",
+"Achat 3 livres - Biblio",
+97.64,
+"Supplies & operations"
+],
+[
+"LIBRAIRIE RENAUD-BRAY INC.",
+"Achat 2 livres - Biblio",
+69.28,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"Achat 4 livres - Bibliothèque",
+113.18,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"Achat 21 livres - Biblio",
+516.8,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"Acaht 14 livres - Biblio",
+177.08,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"Achat 1 livre - Biblio",
+24.95,
+"Supplies & operations"
+],
+[
+"MARTECH INC.",
+"Panneau signalisation - Mtée Guérin",
+121.87,
+"Supplies & operations"
+],
+[
+"MARTECH INC.",
+"Enseignes pour noms de rues - Entretien",
+1102.5,
+"Supplies & operations"
+],
+[
+"MINISTRE DES FINANCES",
+"Service SQ pour 2024 - 2e versement",
+304552,
+"Policing — SQ"
+],
+[
+"O-MAX INC",
+"Articles nettoyage, veste circulation, gants",
+521.66,
+"Supplies & operations"
+],
+[
+"PAVAGES ULTRA INC.",
+"8 dos d'âne- Church,Bridge,Roy,Georges,Jamestown",
+23351.42,
+"Contracts — works"
+],
+[
+"PETRO-CANADA",
+"Essence 69,663 L - VEH #31",
+110,
+"Vehicle fuel & maintenance"
+],
+[
+"PETRO-CANADA",
+"Essence 45,423 L - VEH #33",
+79.44,
+"Vehicle fuel & maintenance"
+],
+[
+"PHANEUF ÉQUIPEMENT AGRICOLE",
+"Filtres veh #35",
+162.43,
+"Supplies & operations"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"Interrupteur démarreur, porte fusible - VEH #8",
+17.35,
+"Vehicle fuel & maintenance"
+],
+[
+"PRODUCTIONS DU 3 JUIN INC.",
+"Mandat communication sept (3 de 13) réso 24-07-195",
+1987.73,
+"Professional services"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteur - Parc des Érables rue Adèle",
+40.82,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteurs - Bibliothèque rue Isabelle",
+93.13,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteurs - Garage 138A",
+82.21,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteur - Garage sel - 9 rue St- Paul",
+40.82,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteur - Puits St-Paul - 9 rue Gale",
+40.82,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteur - Usine épuration - 2145 Ch. Riv.",
+105.78,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteur - Usine de filtration - 3 Madelei",
+40.82,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteur - Station pompage - Rte 201",
+40.82,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteur - Station de Pompage Dumas",
+58.64,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection extincteur - Station pompage rue Roy",
+52.32,
+"Supplies & operations"
+],
+[
+"PUROLATOR INC.",
+"Retour gants à CMP Mayer inc",
+11.51,
+"Supplies & operations"
+],
+[
+"PUROLATOR INC.",
+"De Avensys - Produits analyse d'eau",
+9.34,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE MACHABÉE",
+"Pièces pour machine à pression - Voirie",
+157.81,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Agrafes T50 - Parcs",
+7.22,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Peinture plancher - parc Dumas",
+75.87,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Réservoir essence 20L, gants PVC et tricot",
+89.01,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Ancrage souille - H.-V. Boîte aux lettres",
+27.57,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Entonnoir + couvercle jaune 15\" - Bibliothèque",
+9.52,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Bac recyclage - 15 rue Cross -A/S Colette",
+120.69,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Botte EVA - Nicolas Therrien",
+229.93,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Composé joints & tuyauterie - Centre Rec.",
+12.14,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Pulvérisateur main, gants PVC - Voirie",
+71.21,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Coton fromage pr peinturer dos d'âne",
+14.76,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"3 cruches eau 18L - Garage 201",
+23.28,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"5 bloc lettre ligné - H.-V.",
+20.06,
+"Supplies & operations"
+],
+[
+"REFUGE CHABY ET CHIENS",
+"Contrôle animalier - oct. 2024",
+550,
+"Professional services"
+],
+[
+"ROBERT DAOUST ET FILS INC.",
+"4 collectes - Recyclables septembre 2024",
+16253.47,
+"Waste & recycling"
+],
+[
+"SANIBERT",
+"Loc, 1 toilette - Parc Lyndsay Cullen - août",
+194.82,
+"Supplies & operations"
+],
+[
+"SANIBERT",
+"Location toilette - Écocentre août x 4 sem.",
+194.82,
+"Supplies & operations"
+],
+[
+"SANIBERT",
+"Location 2 toilettes - Parc Baseball août x 4 sem.",
+389.66,
+"Supplies & operations"
+],
+[
+"SANIBERT",
+"Location 1 toilette - Parc Lyndsay Cullen sept x 4 sem.",
+194.82,
+"Supplies & operations"
+],
+[
+"SERVICES DE REBUTS SOULANGES INC.",
+"Nettoyage bonhomme à eau, égout, conduit et Bassin",
+7374.62,
+"Contracts — works"
+],
+[
+"SERVICOFAX",
+"1015 copies couleur, 2669 copies N&B - Août/sept 2024",
+109.62,
+"Supplies & operations"
+],
+[
+"SOCIÉTÉ CANADIENNE DES POSTES",
+"Av. public élection & prévention incendie",
+317.57,
+"Supplies & operations"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"2 ordinateurs - Gestion eau et filtration",
+2990.07,
+"Software & IT"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Restorer session comm, wifi, remplacer bornes",
+1197.97,
+"Software & IT"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Achat bloc d'heures - 100 heures",
+8623.13,
+"Software & IT"
+],
+[
+"TBL Telecom",
+"Service internet Fibre - septembre 2024 H-V",
+908.3,
+"Software & IT"
+],
+[
+"TECHNIVOLT ÉLECTRIQUE INC.",
+"Télémétrie des postes - Septembre 2024",
+202.94,
+"Contracts — works"
+],
+[
+"TELMATIK",
+"Appels d'urgence - Septembre 2024",
+90.4,
+"Supplies & operations"
+],
+[
+"TENAQUIP LIMITED",
+"Sonomètre pour dept. Urbanisme",
+608.22,
+"Supplies & operations"
+],
+[
+"ULINE CANADA CORPORATION",
+"Trousse de secours - Pompiers",
+299.42,
+"Supplies & operations"
+],
+[
+"UNION DES MUNICIPALITÉS DU QUÉBEC",
+"Formation domaine mun. D. Leduc - DG",
+224.2,
+"Salaries & HR"
+],
+[
+"ZEL",
+"Maintenance du site Web",
+546.14,
+"Software & IT"
+],
+[
+"— (paie municipale)",
+"Salaire à autoriser au 28 septembre 2024",
+89071.83,
+"Salaries & HR"
+],
+[
+"GESTION MSDM INC.",
+"Loyer garage - septembre 2024",
+2466.21,
+"Supplies & operations"
+],
+[
+"COMPLEXE MEDICAL",
+"Loyer bibliothèque - septembre",
+9627.92,
+"Supplies & operations"
+],
+[
+"CIBC BANQUE IMPÉRIALE",
+"RÉER CIBC août 2024",
+350,
+"Salaries & HR"
+],
+[
+"HYDRO-QUEBEC",
+"Multiples factures",
+6571.18,
+"Utilities"
+],
+[
+"RECEVEUR GENERAL",
+"DAS FÉD AOÛT 2024 (RÉG)",
+13151.04,
+"Salaries & HR"
+],
+[
+"RECEVEUR GÉNÉRAL",
+"DAS FÉD AOÛT 2024 (OCC)",
+3741.94,
+"Salaries & HR"
+],
+[
+"MINISTRE DU REVENU",
+"DAS PROV AOÛT (DU 16 AU 31)",
+21782.47,
+"Salaries & HR"
+],
+[
+"CAISSE DESJARDINS",
+"RÉER Desjardins août 2024",
+4819.68,
+"Salaries & HR"
+],
+[
+"OUELLET SAMANTHA",
+"Paement factures #25 & #26",
+1420,
+"Professional services"
+],
+[
+"HYDRO-QUEBEC",
+"299 000 771 913 (2024-09-03)",
+3526.44,
+"Utilities"
+],
+[
+"Cogeco",
+"Téléphonie alarme garage 138A",
+48.93,
+"Utilities"
+],
+[
+"MINISTRE DU REVENU",
+"DAS PROV SEPT (1-15)",
+16592.56,
+"Salaries & HR"
+],
+[
+"BELL MOBILITE",
+"Ligne cellulaire traitement",
+66.14,
+"Utilities"
+],
+[
+"OUELLET SAMANTHA",
+"Entretien ménager du 9 sept au 22",
+1370,
+"Professional services"
+],
+[
+"BELL Canada",
+"Internet Biblio du 23 août au 22",
+174,
+"Utilities"
+]
+],
+"2024-11": [
+[
+"9188-0781 QUÉBEC INC",
+"Fauchage des Rangs été 2024 + terrains municipales",
+10362.59,
+"Contracts — works"
+],
+[
+"ADN COMMUNICATION",
+"Alertes Municipales septembre 2024",
+163.92,
+"Professional services"
+],
+[
+"AESL INSTRUMENTATION INC.",
+"PH-mètre - pour test d'eau potable",
+192.01,
+"Supplies & operations"
+],
+[
+"AGRÉGATS STE-CLOTILDE INC",
+"Dispo. Sols excavés-Bris aqueduc & égouts",
+1654.89,
+"Supplies & operations"
+],
+[
+"AGRÉGATS STE-CLOTILDE INC",
+"Dispo. Sols excavés-Bris aqueduc & Nett. Balai de Rues",
+863.88,
+"Supplies & operations"
+],
+[
+"AL-JO CHAUSSURES",
+"Michel Soulières - Bottes CSA",
+229.94,
+"Supplies & operations"
+],
+[
+"BOTTIER DU CINQ (LE)",
+"Mathew Pilon - 2 Pantalons, 2 T-Shirt, 1 kangourou",
+176.69,
+"Supplies & operations"
+],
+[
+"BOTTIER DU CINQ (LE)",
+"Colin Beaulieu - 3 Pantalons, 1 Kangourou",
+193.3,
+"Supplies & operations"
+],
+[
+"BOTTIER DU CINQ (LE)",
+"Colin Beaulieu - 1 Casque, 1 pantalon sign, 1 manteau sign",
+131.27,
+"Supplies & operations"
+],
+[
+"BOTTIER DU CINQ (LE)",
+"Michel Soulière - 1 Casque, manteau sign, 1 pantalon sign",
+168.84,
+"Supplies & operations"
+],
+[
+"BOTTIER DU CINQ (LE)",
+"Michel Soulière - 3 Pantalons, 6 T-Shirt, 3 Kangourous",
+483.65,
+"Supplies & operations"
+],
+[
+"BOTTIER DU CINQ (LE)",
+"Colin Beaulieu - Couturière, 6 inst. De bandes",
+103.48,
+"Supplies & operations"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 71,9 L - VEH #35",
+118,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #21",
+45,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 83,5 L - VEH #35",
+137,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #29",
+8.84,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #21",
+40,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #35",
+163,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #11",
+154,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #31",
+98,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 76,9 L - VEH #32",
+113,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - Laveuse à pression",
+29.71,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 107,9 L - VEH #35",
+177,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - Laveuse à pression",
+9.56,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #32",
+70.5,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 140,3 L - VEH #33",
+230,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 24,4 L - VEH #34",
+40,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 115,9 L - VEH #34",
+190,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 65,9 L - VEH #33",
+107,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 128,7 L - VEH #34",
+211,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 47,3 L - VEH #32",
+70,
+"Vehicle fuel & maintenance"
+],
+[
+"CARRIÈRE ALI INC.",
+"36,39 Tonnes Pierre 0-3/4 - Bris aqueduc rue Derby",
+987.42,
+"Supplies & operations"
+],
+[
+"CARRIÈRE ALI INC.",
+"35,91 Tonnes Pierre 0-3/4 - Abri bus rue Bridge",
+974.38,
+"Supplies & operations"
+],
+[
+"CARRIÈRE ALI INC.",
+"18,2 Tonnes Pierre 2\" à 4\" - Abri bus Bridge",
+540.92,
+"Supplies & operations"
+],
+[
+"CARRIÈRE ALI INC.",
+"55,17 T. Pierre 0-3/4 - 9 St-Paul, Bris aque. 4 fulford",
+1496.99,
+"Supplies & operations"
+],
+[
+"CARRIÈRE ALI INC.",
+"36,97 Tonnes Pierre 0-3/4 - Stock St-Paul",
+1003.15,
+"Supplies & operations"
+],
+[
+"CCESI - Centre conseil en sécurite incendie",
+"1 visite risque élever - 1 rue Bain",
+480,
+"Professional services"
+],
+[
+"CONSTRUCTION DJL INC.",
+"4,13 Tonnes - EC-10 - 6 différentes adresses",
+567.45,
+"Supplies & operations"
+],
+[
+"CONSTRUCTION DJL INC.",
+"8,56 Tonnes EC-10 - Rue Linda, Roy, 4e Ave.",
+1176.09,
+"Supplies & operations"
+],
+[
+"CONSTRUCTION DJL INC.",
+"Ajust. Prix selon réso fact. 5002523010",
+5.03,
+"Supplies & operations"
+],
+[
+"CONSTRUCTION DJL INC.",
+"Ajust. Prix selon réso - EC-10",
+-18.86,
+"Supplies & operations"
+],
+[
+"CONSTRUCTION DJL INC.",
+"Ajust. Prix selon réso - fact. 5002605826",
+14.77,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Sacs déchets - Parc",
+22.98,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Pièces Drapeau parc Lindsay Cullen",
+42.85,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Pièces pour drapeaux Parc Lindsay Cullen",
+17.09,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"3 Capuchons galvanisé - réseau aqueduc",
+6.87,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Rubans élect, courroies pr VEH #16",
+15.01,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Couvercle prise - lampadaire rue Lambton",
+6.89,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"couteau à mastic, grattoir - pour véh #37",
+92.21,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Manchon, adaptateur, ciment PVC - Rinçage aqueduc",
+30.66,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Peinture noir lustré - rampe écocentre",
+68.02,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Goupille rapide, sable sec pour van #37",
+22.92,
+"Supplies & operations"
+],
+[
+"DHC Avocats",
+"Serv. Juridiques (Jeannine Clément et Louis Drapeau)",
+951.53,
+"Legal — external counsel"
+],
+[
+"DHC Avocats",
+"Serv. Juridiques (Gestion ImSeel inc.) Sept. 2024",
+1123.89,
+"Legal — external counsel"
+],
+[
+"DISTRIBUTION LAZURE INC.",
+"Émissaire poste principale - Sellette et adapteur en cuivre",
+409.54,
+"Supplies & operations"
+],
+[
+"DUNTON RAINVILLE SENC AVOCATS",
+"Services juridique Dossier #97325",
+3815.28,
+"Legal — external counsel"
+],
+[
+"DUNTON RAINVILLE SENC AVOCATS",
+"Services juridique Dossier #112817",
+29721.62,
+"Legal — external counsel"
+],
+[
+"DUNTON RAINVILLE SENC AVOCATS",
+"Services juridiques - Dossier #69019",
+288.02,
+"Legal — external counsel"
+],
+[
+"ÉMULSION SÉRIGRAPHIE",
+"Broderie sur 2 chemises Logo- stéphane Leclerc",
+65.54,
+"Supplies & operations"
+],
+[
+"ENSEIGNES DUMAS",
+"Kit de vinyle givré portes H.V.",
+534.63,
+"Supplies & operations"
+],
+[
+"Entretien Paysager Yan Garand Inc.",
+"Entretien paysager 2024",
+3449.25,
+"Supplies & operations"
+],
+[
+"ÉQUIP. ALBERT BILLETTE INC. (LES)",
+"1 scie à chaine - remplacer scie brisée",
+459.89,
+"Supplies & operations"
+],
+[
+"ÉQUIP. ALBERT BILLETTE INC. (LES)",
+"Chaine 3.02', chaine 4.00'",
+48.43,
+"Supplies & operations"
+],
+[
+"ÉQUIP. ALBERT BILLETTE INC. (LES)",
+"1 pneu, tube et huile - VEH #29 (pneu avant)",
+232.45,
+"Supplies & operations"
+],
+[
+"ÉQUIP. ALBERT BILLETTE INC. (LES)",
+"4 attaches pour remorquage et levage (APSAM)",
+275.71,
+"Supplies & operations"
+],
+[
+"ÉQUIP. LAPLANTE & LEVESQUE LTEE",
+"checker plate & tube - Modifier Escalier écocentre (APSAM)",
+114.55,
+"Supplies & operations"
+],
+[
+"ÉQUIP. LAPLANTE & LEVESQUE LTEE",
+"FER, grillage de sécurité/demande CNESST #33 & #34",
+54.9,
+"Supplies & operations"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyses/eau potable rues Linda, Roy, Gale, Liggett",
+1141.13,
+"Professional services"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyse eau potable - 87 Roy et 5 rue Gale",
+205.81,
+"Professional services"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyse eau - Usine épuration Effluent",
+620.3,
+"Professional services"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyse eau potable - rues Roy, Gale, Derby",
+811.15,
+"Professional services"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyses- Poursuite 6 & 8 & puits Madeleine, St-Paul",
+4738.12,
+"Professional services"
+],
+[
+"FERME A. & S. GRUER INC.",
+"40 L - Motor Oil (Maintenance annuelle camions pompiers",
+298.94,
+"Vehicle fuel & maintenance"
+],
+[
+"FONDS D'INFORMATION TERRITOIRE",
+"Avis de mutation - Septembre 2024",
+72,
+"Supplies & operations"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 83,380 L - VEH #34",
+150,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 27,237 L - VEH #21",
+49,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 39,624 L - VEH #31",
+59,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 78,431 L - VEH #13",
+116,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 77,755 L - VEH #32",
+115,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 50,584 L - VEH #11",
+91,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 139,959 L - VEH #7",
+207,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 63,556 L - VEH #13",
+94,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 82,488 L - VEH #31",
+122,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 69,642 L - VEH #13",
+103,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 73,712 L - VEH #32",
+109.02,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 67,613 L - VEH #31",
+100,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 68,018 L - VEH #13",
+104,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 139,961 L - VEH #7",
+214,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 38,846 L - VEH #7",
+66,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 68,875 L - VEH #7",
+105.31,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 58,270 L - VEH #35",
+99,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 60,968 L - VEH #31",
+92,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 76,209 L - VEH #13",
+115,
+"Vehicle fuel & maintenance"
+],
+[
+"GÉANT DU CONTENEUR (LE)",
+"Conteneur - échange 9, 18 et 30 sept - écocentre",
+3104.33,
+"Waste & recycling"
+],
+[
+"GESPRO Groupe Conseil Inc.",
+"Rédaction de thèmes références - 1er au 28 sept. 24",
+1575.16,
+"Supplies & operations"
+],
+[
+"Gestion Écono Plus Inc.",
+"Frais repérage GPS - du 1er au 31 oct. 2024",
+151.54,
+"Supplies & operations"
+],
+[
+"GROUPE KOPERS INC.",
+"Abonnement annuel - Accès ordi distant oc t24 à sept 25",
+206.96,
+"Software & IT"
+],
+[
+"GROUPE X-TELIA INC.",
+"Inst. et maintenance passerelles - Compteurs eau",
+8292.33,
+"Software & IT"
+],
+[
+"ICS Inc.",
+"26 licences M365 - de oct. 2024 à sept. 2025",
+7257.22,
+"Software & IT"
+],
+[
+"ICS Inc.",
+"Ajout 2 licences M365 - oct. 2024 à sept. 2025",
+525.67,
+"Software & IT"
+],
+[
+"IDentité Québec",
+"Vérification antécédents - Diane Forgues",
+60.01,
+"Supplies & operations"
+],
+[
+"IDentité Québec",
+"Vérification antécédents - Christine Rheault",
+60.01,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Pompiers - Ess. Tout, pinesol, sac ordure",
+63.76,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Café, crème - HDV",
+27.47,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"2 Crèmes pr café - HDV",
+9.98,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Café, crème, Mayo, Biscuits fête Manon - HDV",
+39.45,
+"Supplies & operations"
+],
+[
+"INFO EXCAVATION",
+"Cotisation Municipale 2024-2025",
+574.88,
+"Regional shares & memberships"
+],
+[
+"INFOTECH",
+"3000 enveloppes 2 fenêtres - Élections 3 nov. 24",
+667.21,
+"Supplies & operations"
+],
+[
+"J.T. SPORT",
+"Tune up - + huile - Camion Pompiers",
+73.58,
+"Supplies & operations"
+],
+[
+"JALEC INC.",
+"20 Accès réseau - 17 mobiles, 3 portatifs - Oct. 24",
+343.78,
+"Software & IT"
+],
+[
+"Judy Chisholm",
+"Superviser Examens pompiers",
+500,
+"Professional services"
+],
+[
+"Laplante Radiateurs Inc.",
+"Service routier - Crevaison tracteur - VEH #35",
+302.56,
+"Vehicle fuel & maintenance"
+],
+[
+"Les Formulaires Ducharme Inc.",
+"Enveloppes, bande pr sceller - Élections 3 nov. 2024",
+728.69,
+"Supplies & operations"
+],
+[
+"Les Formulaires Ducharme Inc.",
+"Bulletins de vote - Élections 3 novembre 2024",
+3398.38,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"CRÉDIT - Référ. Facture #7468574",
+-29.41,
+"Supplies & operations"
+],
+[
+"M.R.C. HAUT SAINT LAURENT",
+"Évaluation 4e trimestre",
+19490.75,
+"Regional shares & memberships"
+],
+[
+"MARTECH INC.",
+"Enseignes - Mtée Bryson, Mtée Durocher",
+137.05,
+"Supplies & operations"
+],
+[
+"MCCLINTOCK, LES ENTREPRISES",
+"Bris aqueduc derrière caserne pompiers",
+1733.54,
+"Contracts — works"
+],
+[
+"Ministre des Finances (Y2007896)",
+"Traçabilté sols A-B Melocheville - Bris aqueduc",
+364.61,
+"Supplies & operations"
+],
+[
+"Ministre des Finances (Y2007896)",
+"Traçabilté sols -Bris aqueduc B-C - disposer à Terrebonne",
+614.27,
+"Supplies & operations"
+],
+[
+"MJR INDUSTRIES",
+"Réfection poste principal - réso: 24-05-134",
+7136.5,
+"Contracts — works"
+],
+[
+"MJR INDUSTRIES",
+"Finaliser travaux émissaire - poste principal",
+1372.06,
+"Contracts — works"
+],
+[
+"MULTI GRAPH ORMSTOWN SENC",
+"2050 dépliants - Nettoyage réseau Aqueduc",
+471.4,
+"Supplies & operations"
+],
+[
+"MUNICIPALITÉ DE FRANKLIN",
+"Déneigement Rang Dumas 2023-2024",
+12435.27,
+"Supplies & operations"
+],
+[
+"NESS, D.R.",
+"1 tuyau 18\" X 30' pour Abribus - rue Bridge",
+551.88,
+"Supplies & operations"
+],
+[
+"NEUMANN DVORAH",
+"remb facture - Jardins communautaires - Piège scarab, support plantes",
+58.61,
+"Supplies & operations"
+],
+[
+"NOËL & FILS",
+"Transport & terre de finition - Terrassement - 50 verges",
+1236,
+"Contracts — works"
+],
+[
+"NORDIKEAU",
+"Calcul débit des pompes - Poste pompage principal",
+1724.63,
+"Professional services"
+],
+[
+"OXYGENE INDUSTRIEL GIRARDIN INC.",
+"Acetylene et Buse - torches garage 138A",
+226.14,
+"Supplies & operations"
+],
+[
+"PAVAGES MCM",
+"Pavage Centre Réc. & 2 dos d'âne Borden",
+29617.56,
+"Contracts — works"
+],
+[
+"Pépinière VERT FÔRET Nursery",
+"21 arbres Quercus rubra",
+1280.54,
+"Supplies & operations"
+],
+[
+"PETRO-CANADA",
+"Essence 66,269L - VEH #13",
+100,
+"Vehicle fuel & maintenance"
+],
+[
+"PETRO-CANADA",
+"Essence 66,269 L - VEH #31",
+100,
+"Vehicle fuel & maintenance"
+],
+[
+"PETRO-CANADA",
+"Essence 66,269 L - VEH #32",
+100,
+"Vehicle fuel & maintenance"
+],
+[
+"PETRO-CANADA",
+"Essence 58,858 L - VEH Pompiers",
+100,
+"Vehicle fuel & maintenance"
+],
+[
+"PETRO-CANADA",
+"Essence 70,630 L - Camion Pompiers",
+120,
+"Vehicle fuel & maintenance"
+],
+[
+"PETRO-CANADA",
+"Essence 65,791 L - VEH #31",
+99.28,
+"Vehicle fuel & maintenance"
+],
+[
+"PETRO-CANADA",
+"Essence 64,757 L - Camion Pompiers",
+110.02,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"Accessoires nettoyage - Camions Pompiers",
+45.27,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"Antirouille, Fluide échap. Diesel, 55Hp 20L",
+434.32,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"Outils - Eau et égout",
+208.99,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"Connecteurs en cuivre - Poste pompage Borden",
+8.4,
+"Vehicle fuel & maintenance"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 23 rue Church",
+390.2,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 4 rue Edward",
+167.56,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 1607 Rue de l'Étang",
+250.88,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 2 Rue Argyle",
+276.88,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 17 Rue de Jamestown",
+295.72,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 25 Rue Bridge",
+214.93,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 36 Rue Bridge",
+332.02,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 1243 Rue de la Vallée",
+447.03,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 1411, Route 201",
+120.72,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 13 Rue de Jamestown",
+326.61,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 92, Rue Roy",
+360,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 1868, Rue Osmond",
+200.65,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 19, Rue Bridge",
+150.9,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 15, Rue Bridge",
+708.99,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 2, Rue Church",
+242.42,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 1620, Route 201",
+285.51,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 69, Rue Lambton",
+320.01,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 78, Rue Roy",
+174.49,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 49, Rue Lambton",
+181.09,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 2161, Route 201",
+373.92,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 17, Rue Lambton",
+297.06,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 17B, Rue Lambton",
+240.17,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 26, Rue Lambton",
+276.68,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 1474, Route 201",
+259.18,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 6, Rue Bridge",
+388.61,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 52, Rue Lambton",
+214.99,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. Compteur d'eau - 2, rue Liggett",
+666.47,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection/entretien extincteurs - Caserne pompiers",
+256.65,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection/entretien extincteurs Hôtel de Ville",
+283.52,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection/entretien extincteurs - Garage Municipal",
+104,
+"Supplies & operations"
+],
+[
+"PRUD'HOMME TECHNOLOGIES INC.",
+"Inspection/entretien extincteurs - Centre récréatif",
+209.78,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE MACHABÉE",
+"Raccord boyau et adapta. Pr machine à pression",
+8.78,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE MACHABÉE",
+"Pièces pour laveuse à pression - Voirie",
+106.09,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE MACHABÉE",
+"Conduit électrique - Poste Borden",
+2224.59,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE MACHABÉE",
+"Compacteur à essence - Poste pompage Borden",
+86.23,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"3 Clés simple - Cabanon Baseball",
+12,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"3 bouteilles eau - 20 L - Garage 201",
+23.28,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"32 Chlore-1 pour Acqueduc Dumas",
+1066.6,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Râteau, Pelle, Brosse Métal., Peintures - Véh 37",
+189.28,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"2 plaques de métal - Garage 201",
+5.93,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Réservoir pr diesel, pièces et réservoir essence - Parc",
+45.11,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Ens. Tournevis - Garage 201",
+22.39,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"4 cartons - Pour affiche Durham County Poets - Loisirs",
+3.45,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"2 drapeaux Québec et 2 Canada",
+275.9,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"3 pqt piles 2 AA - Micros-salle du Conseil",
+27.5,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"1 bte. De 100 Chemises - Archives",
+35.51,
+"Supplies & operations"
+],
+[
+"REFUGE CHABY ET CHIENS",
+"Contrôle animalier - Novembre 2024",
+550,
+"Professional services"
+],
+[
+"Réseau Information Municipale",
+"Offre emploi - Conseiller aux communications",
+201.21,
+"Supplies & operations"
+],
+[
+"Réseau Information Municipale",
+"Offre emploi - Technicien comptable",
+201.21,
+"Supplies & operations"
+],
+[
+"ROBERT DAOUST ET FILS INC.",
+"Collecte Ordures - Août 2024",
+41697.3,
+"Waste & recycling"
+],
+[
+"ROBERT DAOUST ET FILS INC.",
+"Collecte Ordures - Septembre 2024",
+39558.58,
+"Waste & recycling"
+],
+[
+"ROBERT DAOUST ET FILS INC.",
+"Recyclables - 5 collectes - Oct. 2024",
+20316.83,
+"Waste & recycling"
+],
+[
+"SANIBERT",
+"Location 1 toilette - St-James Church",
+186.72,
+"Supplies & operations"
+],
+[
+"SANIBERT",
+"Location 1 toilette - Rue Du moulin - Géant Mandala",
+272.95,
+"Supplies & operations"
+],
+[
+"SANIBERT",
+"Toilette Halte Urbaine - Assurances",
+2167.28,
+"Supplies & operations"
+],
+[
+"SANIBERT",
+"Location 2 toilettes 4 sem - Parc Baseball",
+389.66,
+"Supplies & operations"
+],
+[
+"SANIBERT",
+"Location 1 toilette 4 sem - Écocentre",
+194.82,
+"Supplies & operations"
+],
+[
+"SÉCURITÉ & SERRURIER CLÉMENT",
+"Appel de service - Changer Batterie 12V - C Récréatif",
+333.43,
+"Supplies & operations"
+],
+[
+"SERVICES DE REBUTS SOULANGES INC.",
+"Rempl. 2 Bonhommes eau, nettoyer égouts pluvial",
+3810.45,
+"Contracts — works"
+],
+[
+"SERVICES DE REBUTS SOULANGES INC.",
+"Travaux émissaire - Poste principale",
+5780.66,
+"Contracts — works"
+],
+[
+"SERVICOFAX",
+"4653 copies couleur, 9449 copies N&B - sept/oct 2024",
+473.36,
+"Supplies & operations"
+],
+[
+"SOCIÉTÉ CANADIENNE DES POSTES",
+"Feuillet tempête Debby & collecte feuilles",
+330.08,
+"Supplies & operations"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Garantie prolongé portatif conseiller 6",
+124.14,
+"Software & IT"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Finaliser inst. 2 postes pompages, clonage",
+410.41,
+"Software & IT"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Portable Lenovo thinkpad pr Ingénieure",
+1621.6,
+"Software & IT"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Installation station accueil DG, Ingénieure, RH",
+1352.03,
+"Software & IT"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Crédit facture ICS et Adapter WIFI, +Souris & Carte Eth",
+3.83,
+"Software & IT"
+],
+[
+"ST-JAMES ANGLICAN CHURCH",
+"Location église St-James pr Concert Durham County Poets",
+200,
+"Supplies & operations"
+],
+[
+"TBL Telecom",
+"Téléphonie - Septembre 2024 H.-V.",
+105.78,
+"Software & IT"
+],
+[
+"TBL Telecom",
+"Service Internet Fibre - Oct. 2024 H.-V.",
+908.3,
+"Software & IT"
+],
+[
+"TECH-MIX, Division BauVal Inc.",
+"80,4 Tonnes - Asphalte Top-Mix - Voirie",
+1405.08,
+"Supplies & operations"
+],
+[
+"TECHNIVOLT ÉLECTRIQUE INC.",
+"Lampadaire - Parc Mario-Dumas (assurance)",
+17706.15,
+"Contracts — works"
+],
+[
+"TECHNIVOLT ÉLECTRIQUE INC.",
+"Remonter filet parc Dumas, inst. wire drapeau Cullen",
+756.36,
+"Contracts — works"
+],
+[
+"TECHNIVOLT ÉLECTRIQUE INC.",
+"Télémétries des postes - Octobre 2024",
+202.94,
+"Contracts — works"
+],
+[
+"TELMATIK",
+"Appels d'urgence - Octobre 2024",
+86.23,
+"Supplies & operations"
+],
+[
+"UNION DES MUNICIPALITÉS DU QUÉBEC",
+"SISMIK - Soutien RH - Juin à Sept. 2024",
+37787.7,
+"Regional shares & memberships"
+],
+[
+"WURTH CANADA LIMITED/LIMITÉE",
+"Gant nitrile, peint inversée orange fluo - Voirie",
+548.86,
+"Supplies & operations"
+],
+[
+"— (paie municipale)",
+"Salaire à autoriser au 01 novembre 2024",
+131940.98,
+"Salaries & HR"
+],
+[
+"COMPLEXE MEDICAL",
+"Loyer bibliothèque - octobre 2024",
+9627.92,
+"Supplies & operations"
+],
+[
+"GESTION MSDM INC.",
+"Loyer Garage 201 - Octobre 2024",
+2466.21,
+"Supplies & operations"
+],
+[
+"IMPRESSIONS 1ER PRIX INC.",
+"Acompte facture #20788",
+3200,
+"Supplies & operations"
+],
+[
+"DIVERS - EMPLOYÉ",
+"Luc Pilon Remb. Déjeuner (TAT)",
+20,
+"Salaries & HR"
+],
+[
+"DIVERS - EMPLOYÉ",
+"Colette Rochefort Remb. Déjeuner",
+15.53,
+"Salaries & HR"
+],
+[
+"HYDRO-QUEBEC",
+"Multiples factures",
+10514.08,
+"Utilities"
+],
+[
+"Durham County Poets",
+"Durham County Poets - 29 sept.",
+225,
+"Subsidies & community"
+],
+[
+"CLUB DE SOCCER ORMSTOWN",
+"Contribution camp de jour été 2024",
+21000,
+"Subsidies & community"
+],
+[
+"Lefebvre Karina",
+"Client #710 - 1603 Jamestown,",
+9225,
+"Other"
+],
+[
+"CIBC BANQUE IMPÉRIALE",
+"RÉER CIBC septembre 2024",
+350,
+"Salaries & HR"
+],
+[
+"COMPLEXE MEDICAL",
+"Loyer Bibliothèque - Novembre",
+9627.92,
+"Supplies & operations"
+],
+[
+"GESTION MSDM INC.",
+"Loyer Garage 201 - Novembre",
+2466.21,
+"Supplies & operations"
+],
+[
+"BELL Canada",
+"Internet Bibliothèque 23 sept - 22",
+168.96,
+"Utilities"
+],
+[
+"BELL MOBILITE",
+"Ligne cellulaire traitement",
+66.14,
+"Utilities"
+],
+[
+"OUELLET SAMANTHA",
+"Entretien ménager du 23 sept. au 6",
+1471.93,
+"Professional services"
+],
+[
+"MINISTRE DU REVENU",
+"DAS PROV SEPT 2024 (DU 16 AU",
+14797.48,
+"Salaries & HR"
+],
+[
+"RECEVEUR GENERAL",
+"DAS FED SEPT 2024 (DU 16 AU",
+12299.44,
+"Salaries & HR"
+],
+[
+"RECEVEUR GÉNÉRAL",
+"DAS FED SEPT 2024 (DU 16 AU",
+632.94,
+"Salaries & HR"
+],
+[
+"HYDRO-QUEBEC",
+"299 105 361 222 (2024-09-24)",
+43.21,
+"Utilities"
+],
+[
+"HYDRO-QUEBEC",
+"299 000 772 085 (2024-09-24)",
+227.28,
+"Utilities"
+],
+[
+"HYDRO-QUEBEC",
+"299 000 772 325 (2024-09-24)",
+328.46,
+"Utilities"
+],
+[
+"QUADIENT CANADA LTÉE",
+"Timbres - élection partielle 3 nov.",
+2299.5,
+"Supplies & operations"
+],
+[
+"HYDRO-QUEBEC",
+"299 000 771 913 (2024-09-30)",
+3937.31,
+"Utilities"
+],
+[
+"Cogeco",
+"Téléphonie Alarmes garage 138A",
+48.93,
+"Utilities"
+],
+[
+"DIVERS - EMPLOYÉ",
+"Steve Gruer - Remb. articles bureau",
+59.72,
+"Salaries & HR"
+],
+[
+"MINISTRE DU REVENU",
+"DAS PROV OCT. 2024 (DU 1ER",
+18220.97,
+"Salaries & HR"
+],
+[
+"CAISSE DESJARDINS",
+"RÉER septembre 2024",
+4638.71,
+"Salaries & HR"
+],
+[
+"OUELLET SAMANTHA",
+"Entretien ménager du 7 oct. au 20",
+1370,
+"Professional services"
+],
+[
+"HAINAULT ROCH, JACQUELINE",
+"Calendrier 2025 - Prise, choix et",
+2557.5,
+"Professional services"
+],
+[
+"HYDRO-QUEBEC",
+"299 075 244 549 (2024-10-10)",
+2326.79,
+"Utilities"
+],
+[
+"DIVERS - EMPLOYÉ",
+"Remb. Guy Dandurand - Mêche",
+389.77,
+"Salaries & HR"
+],
+[
+"DIVERS - EMPLOYÉ",
+"Sylvain Gagnier - Remb. Express -",
+50.48,
+"Salaries & HR"
+]
+],
+"2024-12": [
+[
+"9226-6444 QUÉBEC INC.",
+"Divers articles de nettoyage",
+329.37,
+"Supplies & operations"
+],
+[
+"9226-6444 QUÉBEC INC.",
+"Divers articles de nettoyage",
+212.38,
+"Supplies & operations"
+],
+[
+"ADN COMMUNICATION",
+"Alertes Municipales - octobre 2024",
+83.8,
+"Professional services"
+],
+[
+"ALI EXCAVATION INC.",
+"Dépôt d'asphalte 26,57 TM (bitumineux CRÉDIT à suivre)",
+1916.79,
+"Supplies & operations"
+],
+[
+"ALI EXCAVATION INC.",
+"Dépôt d'asphalte bris aqueduc - 8.95 TM",
+205.81,
+"Supplies & operations"
+],
+[
+"ALI EXCAVATION INC.",
+"CRÉDIT Facture 027834 - Bitumineux",
+-1305.81,
+"Supplies & operations"
+],
+[
+"BCGO S.E.N.C.R.L.",
+"Audit ref. Régie Patinoire Huntingdon",
+2299.5,
+"Professional services"
+],
+[
+"BOHEMEN JAMIE (ENR.)",
+"Réparation porte du garage - Caserne",
+691.86,
+"Contracts — works"
+],
+[
+"BOTTIER DU CINQ (LE)",
+"Broderie X 3 LOGO - Voirie",
+220.47,
+"Supplies & operations"
+],
+[
+"BOTTIER DU CINQ (LE)",
+"CRÉDIT - Facture #385593 - Acompte payé par Colin",
+34.78,
+"Supplies & operations"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 87,2 L - VEH #35",
+143,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 23,9 L - VEH #21",
+39.22,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 22,5 L - VEH #21",
+37,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 59,1 L - VEH #07",
+97,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 98,2 L - VEH #35",
+161,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 56,5 L - VEH #32",
+128,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #13",
+134.37,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 96,4 L - VEH #35",
+158,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #31",
+104,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 46,1 L - VEH #31",
+69,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #32",
+109,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 154,7 L - VEH #33",
+270,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 97,1 L - VEH #27",
+170,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 171,5 L - VEH #7 - Génératrice Dumas",
+300,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 86,5 L - VEH #13",
+128,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence 100,0 L - VEH #35",
+175,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence - VEH #11",
+160,
+"Vehicle fuel & maintenance"
+],
+[
+"C. S. BRUNETTE INC.",
+"Essence Diesel - VEH #30",
+531,
+"Vehicle fuel & maintenance"
+],
+[
+"CARRIÈRE ALI INC.",
+"17,87 T Pierres - Rép. filage électr S-Terr - P. Borden",
+490.04,
+"Supplies & operations"
+],
+[
+"CCESI - Centre conseil en sécurité incendie",
+"Rédaction 2e visite - 1 rue McBain",
+350,
+"Professional services"
+],
+[
+"CHEMTRADE CHEMICALS CANADA LTD.",
+"17,095 Tonnes ALUM - réso 24-01-083",
+7010.45,
+"Supplies & operations"
+],
+[
+"CORPORATE EXPRESS CANADA INC.",
+"2 pqt. Papiers 8.5 X 11, Bloc autocollant, post-it",
+171.24,
+"Supplies & operations"
+],
+[
+"CORPORATE EXPRESS CANADA INC.",
+"Plateau 3 étages, tapis souris, bloc lignés, ruban…",
+137.46,
+"Supplies & operations"
+],
+[
+"CORPORATE EXPRESS CANADA INC.",
+"Carnet, ruban, trombones, marqueurs...",
+65,
+"Supplies & operations"
+],
+[
+"CRSBP MONTÉRÉGIE INC.",
+"Fournitures biblio - Cartes, étiquettes, feuillet promo",
+174.71,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Vis plancher, épinette - pr Stage - Spectacle Elvis",
+67.28,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Équip. Compteur d'eau - 35 Bridge",
+67.92,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Isolation - Bris aqueduc rue Fulford",
+219.32,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Lame scie finition - Couper coin d'un bureau",
+21.25,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Échelle 24' - Voirie (très utile)",
+349.52,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Vis inst. Lumières de Noël - H.-V.",
+12.94,
+"Supplies & operations"
+],
+[
+"D'AMOUR & FILS INC. (R.S)",
+"Ens.peinture, vis, plaque mur. - Salle du Conseil H.-V,",
+28.73,
+"Supplies & operations"
+],
+[
+"DISTRIBUTION LAZURE INC.",
+"Tuyau SDR 4 po - pour inventaire",
+314.2,
+"Supplies & operations"
+],
+[
+"DISTRIBUTION LAZURE INC.",
+"Base pr boite de vanne et une plaque guide",
+191.95,
+"Supplies & operations"
+],
+[
+"DISTRIBUTION LAZURE INC.",
+"Différentes pièces pour inventaire",
+3701.79,
+"Supplies & operations"
+],
+[
+"DISTRIBUTION LAZURE INC.",
+"20 tuyau municipex fourreau 3/4\" - Inventaire",
+82.78,
+"Supplies & operations"
+],
+[
+"ÉNERGIE P38 Inc. / BUDGET PROPANE",
+"Propane - 139,70 L - 1441 Rte 201",
+140.28,
+"Utilities"
+],
+[
+"ÉNERGIE P38 Inc. / BUDGET PROPANE",
+"Propane - 290,30 L - 1441 Rte 201",
+277.94,
+"Utilities"
+],
+[
+"ÉQUIP. ALBERT BILLETTE INC. (LES)",
+"1 Ose d'aliment d'eau - machine à pression - Garage 201",
+103.54,
+"Supplies & operations"
+],
+[
+"ÉQUIP. LAPLANTE & LEVESQUE LTEE",
+"Huile universelle tracteur, 4 O-Ring - Voirie",
+292.22,
+"Supplies & operations"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyse eau - Usine d'épuration - Effluent",
+580.05,
+"Professional services"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analyses/eau potable rues McBain, Roy, Gale, Argyle",
+1076.75,
+"Professional services"
+],
+[
+"EUROFINS ENVIRONEX",
+"Analy Puits Madeleine 1, 4, 5, 8 St-Paul, Dumas 6,",
+338.03,
+"Professional services"
+],
+[
+"FONDS D'INFORMATION TERRITOIRE",
+"Avis de Mutation - Octobre 2024",
+78,
+"Supplies & operations"
+],
+[
+"G.P. AG DISTRIBUTION",
+"Chaine pour remorquage - VEH #16",
+58.64,
+"Supplies & operations"
+],
+[
+"G.P. AG DISTRIBUTION",
+"38 chaines pr levage demandé par L'APSAM",
+333.93,
+"Supplies & operations"
+],
+[
+"G.P. AG DISTRIBUTION",
+"1 chaine de sécurité - VEH #16",
+91.55,
+"Supplies & operations"
+],
+[
+"G.P. AG DISTRIBUTION",
+"Pièces et main d'œuvre - VEH #21",
+705.82,
+"Supplies & operations"
+],
+[
+"GARAGE C.P. & FILS INC.",
+"Enlever cylindre/rebâtir, changer 2 oses - VEH 33",
+1986.77,
+"Vehicle fuel & maintenance"
+],
+[
+"GARAGE C.P. & FILS INC.",
+"Pièces et main d'œuvre - Réparation VEH #11",
+985.98,
+"Vehicle fuel & maintenance"
+],
+[
+"GARAGE C.P. & FILS INC.",
+"Cylindre reconstruit - VEH #27",
+1565.96,
+"Vehicle fuel & maintenance"
+],
+[
+"GARAGE C.P. & FILS INC.",
+"Pièces et main d'œuvre - Répa VEH #36",
+133.09,
+"Vehicle fuel & maintenance"
+],
+[
+"GARAGE S.D. INC.",
+"Réparation crevaison - VEH #13",
+17.25,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 74,049 L - VEH #31",
+111,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 73,629 L - VEH #32",
+110.37,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 52,702 L - VEH #31",
+79,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 93,729 L - VEH #13",
+140.5,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 66,711 L - VEH #32",
+100,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 107,218 L - VEH #7",
+160.72,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 68,966 L - VEH #31",
+102,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 108,326 L - VEH #34",
+181.88,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 104,229 L - VEH #33",
+175,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 55,443 L - VEH #13",
+82,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 50,034 L - VEH #34",
+88.01,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 120,0 L - VEH #7",
+180,
+"Vehicle fuel & maintenance"
+],
+[
+"GAUTHIER, RENÉ (essence)",
+"Essence 18,761 L - VEH #7",
+33,
+"Vehicle fuel & maintenance"
+],
+[
+"GÉANT DU CONTENEUR (LE)",
+"1 container échangé, 1 ramassé Finale - Écocentre",
+2392.91,
+"Waste & recycling"
+],
+[
+"GESTAR INC.",
+"Soutien annuel du logiciel Documentik - 2025",
+574.36,
+"Professional services"
+],
+[
+"GESTAR INC.",
+"Service tech. De traitement + frais déplacement",
+4886.44,
+"Professional services"
+],
+[
+"Gestion Écono Plus Inc.",
+"Frais mensuel - Repérage GPS - Nov. 2024",
+151.54,
+"Supplies & operations"
+],
+[
+"GROUPE KOPERS INC.",
+"Mise à jour AVEVA Edge - Logiciel H.-V.",
+7761.82,
+"Software & IT"
+],
+[
+"GROUPE LOU-TEC INC.",
+"Nacelle 45' -Arbre de Noël et Filet terrain de baseball",
+553.42,
+"Supplies & operations"
+],
+[
+"HART, DANIEL",
+"Trappage 10 castors - Rang 4, Dumas et Botreaux",
+900,
+"Professional services"
+],
+[
+"IGA ORMSTOWN",
+"Café, crème, Biscuits, brioches fête Carole D.",
+85.74,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Eau, biscuits, lait, crème - Élections 3 nov. 2024",
+42.75,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Papiers mouchoir, Mayo, Ketchup - Garage 201",
+24.32,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Breuvages, eau - Pompiers",
+122.21,
+"Supplies & operations"
+],
+[
+"IGA ORMSTOWN",
+"Café, crème - Hôtel de Ville",
+15.28,
+"Supplies & operations"
+],
+[
+"INFOTECH",
+"Contrat annuel entretien et soutien appli. Sygem - 2025",
+20985.24,
+"Supplies & operations"
+],
+[
+"J.T. SPORT",
+"Pièces et main d'œuvre - Entretien du jumping jack",
+203.41,
+"Supplies & operations"
+],
+[
+"JALEC INC.",
+"20 Accès réseau (17 mobiles, 3 portatifs) - NOV 2024",
+343.78,
+"Software & IT"
+],
+[
+"JAMUNIK",
+"Meubles & inst. nouveau poste de travail",
+2664.11,
+"Supplies & operations"
+],
+[
+"JAMUNIK",
+"Meubles & inst. nouveau poste de travail",
+1504.46,
+"Supplies & operations"
+],
+[
+"JAMUNIK",
+"Appui bras, support pr clavier - Poste réception",
+688.7,
+"Supplies & operations"
+],
+[
+"LAURENTIDE RE/SOURCES INC.",
+"RDD- 23 oct. 2024",
+71.9,
+"Supplies & operations"
+],
+[
+"LIBRAIRIE RENAUD-BRAY INC.",
+"Achat 9 livres - Bibliothèque",
+276.05,
+"Supplies & operations"
+],
+[
+"LIBRAIRIE RENAUD-BRAY INC.",
+"Achat 2 livres - Bibliothèque",
+83.98,
+"Supplies & operations"
+],
+[
+"LIBRAIRIE RENAUD-BRAY INC.",
+"Achat 15 livres - Bibliothèque",
+298.87,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"CRÉDIT - Référ. Facture #7468574",
+-29.41,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"Achat 25 livres - Bibliothèque",
+592.46,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"Crédit - a été facturé 2 fois - Facture #7559100",
+-15.13,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"Achat 1 livre - Bibliothèque",
+24.06,
+"Supplies & operations"
+],
+[
+"LIBRAIRIES BOYER",
+"Achat 9 livres - Bibliothèque",
+255.77,
+"Supplies & operations"
+],
+[
+"LOCATION SAUVAGEAU INC",
+"Location Pick-up Voirie - Août 2024",
+1718.88,
+"Supplies & operations"
+],
+[
+"LOCATION SAUVAGEAU INC",
+"Location Pick-up Voirie - Septembre 2024",
+1718.88,
+"Supplies & operations"
+],
+[
+"LOCATION SAUVAGEAU INC",
+"Location Pick-up Voirie - Octobre 2024",
+1718.88,
+"Supplies & operations"
+],
+[
+"OXYGÈNE RÉGIONAL INC.",
+"Piles alcaline 9V et 1.5 AA pour Airpack - Pompiers",
+128.31,
+"Supplies & operations"
+],
+[
+"PETRO-CANADA",
+"Essence 81,007 L - Camion Pompiers",
+140.06,
+"Vehicle fuel & maintenance"
+],
+[
+"PETRO-CANADA",
+"Essence - 49,883 L - Camion pompier",
+84.25,
+"Vehicle fuel & maintenance"
+],
+[
+"PIÈCES D'AUTO MERCIER",
+"Batterie - VEH #16",
+137.67,
+"Vehicle fuel & maintenance"
+],
+[
+"PIÈCES D'AUTO MERCIER",
+"CRÉDIT - Retour vieille batterie - VEH #16",
+-17.25,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"7 lunettes de sécurité - Voirie",
+24.07,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"4 lunettes de sécurité - Voirie",
+17.19,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"3 liquide wash&wax - pr tous les VEH - Voirie",
+100.03,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"25 lbs chiffons tout usage - Voirie",
+62.03,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"1 Booster Pack pour les VEH - Voirie",
+65.4,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"12 nettoyants à freins pr tous les VEH - Voirie",
+82.64,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"20 Lave vitres - tous VEH - Voirie",
+87.15,
+"Vehicle fuel & maintenance"
+],
+[
+"PIECES D'AUTO VALLEYFIELD INC.",
+"Lumières avant VEH #34",
+3.04,
+"Vehicle fuel & maintenance"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 26 rue St-Paul",
+767.2,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 24 rue Bridge",
+279.74,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 49 rue Lambton",
+470.45,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 10 rue Bridge",
+438.54,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - Église rue Roy",
+193.97,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 39 rue Bridge",
+211.27,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 10 rue Victoria",
+473.55,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 6 rue McBain",
+243.14,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 1865 rue Osmond",
+441.67,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 88 rue Linda",
+291.8,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 65 rue Hector",
+297,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 13 rue Victoria",
+257.52,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 65 rue Saint-Paul",
+150.9,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 7 rue Chateauguay",
+242.04,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 22 rue Lambton",
+283.27,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 2 rue Edward",
+239.79,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 1212 rue Du Marais",
+201.25,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 1232 rue Du Marais",
+201.25,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 20 rue Liggett",
+217.1,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 16 rue Cross",
+241.45,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"Inst. compteur d'eau - 65 rue Saint-Paul",
+1320.69,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"CRÉDIT - Facture #7697 - 26 rue St-Paul",
+-383.6,
+"Supplies & operations"
+],
+[
+"PLOMBERIE DESMARAIS INC.",
+"CRÉDIT - erreur prix pièces - plusieurs factures",
+-2368.28,
+"Supplies & operations"
+],
+[
+"POMPACTION INC",
+"6 Ens. Connecteur, 9 Ens. Valve/diaphragme/Pompe doseus",
+5095.92,
+"Supplies & operations"
+],
+[
+"PUROLATOR INC.",
+"De AESL Inst. - outil pour test eau potable",
+8.34,
+"Supplies & operations"
+],
+[
+"PUROLATOR INC.",
+"De Xylem Inc - 4 Flottes pour Poste Border",
+16.39,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE MACHABÉE",
+"2 adaptateurs - compteur d'eau - Express 57",
+23.57,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Antigel pr borne fontaine et abrevoirs",
+53.16,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Ensemble douilles 123 mcx - Voirie",
+118.4,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Gants cotons - Voirie",
+27.57,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"3 cruches eau 18L - Garage 201",
+23.28,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Brosse de lavage 3D télescopique - Garage 201",
+68.97,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"2 néons fluorescent - Garage 201",
+43.65,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"4 peintures noire lustré, gant blanc - Entretien tous VEH",
+82.68,
+"Supplies & operations"
+],
+[
+"QUINCAILLERIE R. GAUTHIER INC.",
+"Gant de tricot - Voirie",
+13.79,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"Formulaire d'achat - Voirie",
+16.89,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"Classeur mural pour D.G., formulaire d'achat - Voirie",
+59.08,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"4 BTE AGRAFES pour brocheuses",
+17.43,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"2 pqt piles AA, 2 ruban transp, 1 paire ciseau - H.-V.",
+29.82,
+"Supplies & operations"
+],
+[
+"RATTE, MAGASIN F.",
+"1 bte chemises format légal - H.-V.",
+35.51,
+"Supplies & operations"
+],
+[
+"REFUGE CHABY ET CHIENS",
+"Contrôle animalier - Déc. 2024",
+550,
+"Professional services"
+],
+[
+"SANIBERT",
+"Location 1 toilette 4 sem - Parc Lindsay- Cullen",
+194.82,
+"Supplies & operations"
+],
+[
+"SANIBERT",
+"Location 2 toilettes 4 sem - Parc Baseball",
+389.66,
+"Supplies & operations"
+],
+[
+"SANIBERT",
+"Location 1 toilette 4 sem - Écocentre - 9 St-Paul",
+194.82,
+"Supplies & operations"
+],
+[
+"Sécurité L. Demers & Fils Inc.",
+"Inst. 3 contrôleurs d'accès, caméra ...",
+7417.14,
+"Supplies & operations"
+],
+[
+"Sécurité L. Demers & Fils Inc.",
+"Ajout de 2 Caméras + main d'œuvre",
+1006.38,
+"Supplies & operations"
+],
+[
+"Sécurité L. Demers & Fils Inc.",
+"Contrat annuel Centrale d'alarme - Nov 24 au 12 nov 25",
+212.7,
+"Supplies & operations"
+],
+[
+"SERVICES DE REBUTS SOULANGES INC.",
+"Nett. Poste pomp Delage, Hôpital, Hector, Borden",
+4843.44,
+"Contracts — works"
+],
+[
+"SHELLEX GROUPE CONSEIL",
+"Dossier Ali - Répondre questions avocats",
+333.43,
+"Contracts — works"
+],
+[
+"SOCIÉTÉ CANADIENNE DES POSTES",
+"Courrier de quartier - Nett. Réseau Aqueduc OCT 24",
+296.24,
+"Supplies & operations"
+],
+[
+"SOLMATECH INC.",
+"Caractéris. Environ. Des sols en piles - 9 St- Paul",
+2517.38,
+"Professional services"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Différents travaux pr personnel bureau",
+521.36,
+"Software & IT"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Ordi. Réception/nouv logiciel pr caméras +lic. MS W11",
+1196.41,
+"Software & IT"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Clavier,souris poste comm, 2 supports écrans FC, CD",
+177.48,
+"Software & IT"
+],
+[
+"SOLUTION INFORMATIQUE DE LA MONTÉRÉGIE",
+"Écran mobile salle conseil, Écran bureau D.G.",
+5343.28,
+"Software & IT"
+],
+[
+"TBL Telecom",
+"Service internet Fibre - Oct. 24 + 4 ligne SIP",
+1014.08,
+"Software & IT"
+],
+[
+"TECHNIVOLT ÉLECTRIQUE INC.",
+"Appel de service. - Vérif. Pompe puit #1",
+400.11,
+"Contracts — works"
+],
+[
+"TECHNIVOLT ÉLECTRIQUE INC.",
+"Pompe pr Srvc. Incendie - Usine d'épuration",
+450.88,
+"Contracts — works"
+],
+[
+"TECHNIVOLT ÉLECTRIQUE INC.",
+"Entretien et Rép. Usine Madeleine et Dumas",
+687.91,
+"Contracts — works"
+],
+[
+"TECHNIVOLT ÉLECTRIQUE INC.",
+"Télémétrie des postes Nov. 24+ frais Nouv. Poste Borden",
+358.96,
+"Contracts — works"
+],
+[
+"TELMATIK",
+"Appels d'urgence - Novembre 2024",
+86.23,
+"Supplies & operations"
+],
+[
+"XYLEM CANADA",
+"4 Flottes - Poste Borden",
+2621.04,
+"Supplies & operations"
+],
+[
+"— (paie municipale)",
+"Salaire à autoriser au 22 novembre 2024",
+63867.41,
+"Salaries & HR"
+],
+[
+"DIVERS - EMPLOYÉ",
+"Remb. Mairesse - Friandises Halloween - H.",
+56.74,
+"Salaries & HR"
+],
+[
+"IMPRESSIONS 1ER PRIX INC. (LE",
+"Chandails & manteaux - pompiers réso 24- 0",
+4177.08,
+"Supplies & operations"
+],
+[
+"OUELLET SAMANTHA",
+"Entretien ménager du 21 oct au 3 nov. 2024",
+1370,
+"Professional services"
+],
+[
+"HYDRO QUÉBEC",
+"Multiple factures",
+9577.03,
+"Utilities"
+],
+[
+"Légion Royale Canadienne",
+"Achat couronne pour Jour du souvenir",
+55,
+"Subsidies & community"
+],
+[
+"MINISTRE DU REVENU",
+"DAS PROV OCT 2024 ( du 16 au 31)",
+32930.24,
+"Salaries & HR"
+],
+[
+"RECEVEUR GENERAL",
+"DAS FED OCT 2024 rég",
+20156.32,
+"Salaries & HR"
+],
+[
+"RECEVEUR GÉNÉRAL",
+"DAS FED OCT 2024 occ",
+1305.52,
+"Salaries & HR"
+],
+[
+"CLUB LIONS ORMSTOWN",
+"Don - Guignolé temps des Fêtes - Réso #24",
+1500,
+"Subsidies & community"
+],
+[
+"FADOQ ORMSTOWN (CLUB)",
+"Souper de Noël",
+500,
+"Subsidies & community"
+],
+[
+"LEGION ROYALE CANADIENNE O",
+"Contribution financière - Réso #24-11-302",
+2000,
+"Subsidies & community"
+],
+[
+"LIVESTOCK BREEDERS ASSOCIA",
+"Demande de commandite - Réso #24-11- 29",
+2500,
+"Subsidies & community"
+],
+[
+"Cogeco",
+"Téléphonie alarme garage 138A - Nov. 2024",
+48.93,
+"Utilities"
+],
+[
+"HYDRO QUÉBEC",
+"Multiple factures",
+748.4,
+"Utilities"
+],
+[
+"OUELLET SAMANTHA",
+"Entretien ménager du 04-11-2024 au 17- 11-",
+1370,
+"Professional services"
+],
+[
+"PRODUCTIONS DU 3 JUIN INC.",
+"Mandat communication oct (4 de 13) réso 2",
+1987.73,
+"Professional services"
+]
+]
 }
