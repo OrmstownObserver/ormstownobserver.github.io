@@ -41,6 +41,10 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/bell-tower/"/>
   </url>
   <url>
+    <loc>https://ormstownobserver.ca/en/briefing/council-2026-11-r8k4m2/</loc>
+    <lastmod>2026-11-23</lastmod>
+  </url>
+  <url>
     <loc>https://ormstownobserver.ca/en/bylaws-regulations/</loc>
     <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/bylaws-regulations/"/>
@@ -831,6 +835,10 @@
     <lastmod>2026-11-16</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/investigations/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/investigations/"/>
+  </url>
+  <url>
+    <loc>https://ormstownobserver.ca/fr/note/conseil-2026-11-r8k4m2/</loc>
+    <lastmod>2026-11-23</lastmod>
   </url>
   <url>
     <loc>https://ormstownobserver.ca/fr/piia/</loc>
