@@ -15,17 +15,35 @@
 # If something is wrong, GitHub emails you and the homepage keeps the last good version.
 
 hero:
-  path: /en/wind-energy-hsl/
-  date: 2026-11-16
-  label_en: Investigation · Wind Energy Watch
-  label_fr: Enquête · Dossier éolien
-  image: /images/wind-energy-hsl.jpg
-  position: center 50%
-  credit: Photo, Cantons-de-l’Est, Wikimedia Commons, CC BY-SA 4.0
-  alt_en: A row of white wind turbines on a grassy ridge under a blue sky, seen across a field of wildflowers.
-  alt_fr: Une rangée d’éoliennes blanches sur une crête herbeuse sous un ciel bleu, vue de l’autre côté d’un champ de fleurs sauvages.
+  path: /en/council-watch/november-23-2026/
+  sitting: 2026-11-23
+  label_en: Council wrap-up · Special sitting
+  label_fr: Bilan du conseil · Séance extraordinaire
+  image: /images/townhall.jpg
+  position: center 55%
+  alt_en: Ormstown town hall.
+  alt_fr: L’hôtel de ville d’Ormstown.
 
 cards:
+  - path: /en/council-watch/events-contract-added-spending/
+    sitting: 2026-11-23
+    label_en: Council Watch · Spending
+    label_fr: Conseil municipal · Dépenses
+    image: /images/townhall.jpg
+    position: center 55%
+    alt_en: Ormstown town hall.
+    alt_fr: L’hôtel de ville d’Ormstown.
+
+  - path: /en/wind-energy-hsl/
+    date: 2026-11-16
+    label_en: Investigation · Wind Energy Watch
+    label_fr: Enquête · Dossier éolien
+    image: /images/wind-energy-hsl.jpg
+    position: center 50%
+    credit: Photo, Cantons-de-l’Est, Wikimedia Commons, CC BY-SA 4.0
+    alt_en: A row of white wind turbines on a grassy ridge under a blue sky, seen across a field of wildflowers.
+    alt_fr: Une rangée d’éoliennes blanches sur une crête herbeuse sous un ciel bleu, vue de l’autre côté d’un champ de fleurs sauvages.
+
   - path: /en/council-watch/november-11-2026/
     sitting: 2026-11-11
     label_en: Council wrap-up · Special sitting
@@ -35,18 +53,3 @@ cards:
     credit: Photo, Stray Dog Media
     alt_en: Ormstown council members and three fire department officers stand together after the November 11 special sitting, poppies on their lapels.
     alt_fr: Des membres du conseil d’Ormstown et trois officiers du service incendie réunis après la séance extraordinaire du 11 novembre, coquelicot à la boutonnière.
-
-  - path: /en/community/ormstown-fires/
-    date: 2026-11-09
-    label_en: Community series · Developing
-    label_fr: Série communautaire · En développement
-    image: /images/community-ormstown-fires.jpg
-    position: center 40%
-    credit: Video still, Stray Dog Media
-    alt_en: A firefighter stands beside a fire truck as an excavator clears the burned Pizzeria Ormstown building on rue Lambton.
-    alt_fr: Un pompier se tient près d’un camion d’incendie pendant qu’une pelle mécanique déblaie l’édifice incendié de Pizzeria Ormstown, rue Lambton.
-
-  - path: /en/editorials/sign-charter-2026/
-    date: 2026-11-04
-    label_en: Editorial
-    label_fr: Éditorial
