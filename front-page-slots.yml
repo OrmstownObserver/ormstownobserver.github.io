@@ -29,10 +29,11 @@ cards:
     sitting: 2026-11-23
     label_en: Council Watch · Spending
     label_fr: Conseil municipal · Dépenses
-    image: /images/townhall.jpg
-    position: center 55%
-    alt_en: Ormstown town hall.
-    alt_fr: L’hôtel de ville d’Ormstown.
+    image: /images/council-watch-events-contract-added-spending.jpg
+    position: center 40%
+    alt_en: Tents and families at Ormstown’s Fête nationale in Parc Lindsay-Cullen, June 2025.
+    alt_fr: Chapiteaux et familles à la fête nationale d’Ormstown, au parc Lindsay-Cullen, en juin 2025.
+    credit: Stray Dog Media
 
   - path: /en/wind-energy-hsl/
     date: 2026-11-16
