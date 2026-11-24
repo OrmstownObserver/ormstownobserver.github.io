@@ -256,7 +256,7 @@
   </url>
   <url>
     <loc>https://ormstownobserver.ca/en/council-watch/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/"/>
   </url>
@@ -297,6 +297,12 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/demande-interdire-camions-trois-rues/"/>
   </url>
   <url>
+    <loc>https://ormstownobserver.ca/en/council-watch/events-contract-added-spending/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/events-contract-added-spending/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/contrat-evenements-depense-ajoutee/"/>
+  </url>
+  <url>
     <loc>https://ormstownobserver.ca/en/council-watch/full-time-fire-chief-emergency-plan/</loc>
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/full-time-fire-chief-emergency-plan/"/>
@@ -331,6 +337,12 @@
     <lastmod>2026-11-04</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/november-2-2026/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/2-novembre-2026/"/>
+  </url>
+  <url>
+    <loc>https://ormstownobserver.ca/en/council-watch/november-23-2026/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/november-23-2026/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/23-novembre-2026/"/>
   </url>
   <url>
     <loc>https://ormstownobserver.ca/en/council-watch/october-6-2026/</loc>
@@ -700,7 +712,7 @@
   </url>
   <url>
     <loc>https://ormstownobserver.ca/fr/conseil-municipal/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-23</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/"/>
   </url>
@@ -735,6 +747,12 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/2-novembre-2026/"/>
   </url>
   <url>
+    <loc>https://ormstownobserver.ca/fr/conseil-municipal/23-novembre-2026/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/november-23-2026/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/23-novembre-2026/"/>
+  </url>
+  <url>
     <loc>https://ormstownobserver.ca/fr/conseil-municipal/3-aout-2026-apercu/</loc>
     <lastmod>2026-10-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/august-3-2026-preview/"/>
@@ -757,6 +775,12 @@
     <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/october-6-2026/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/6-octobre-2026/"/>
+  </url>
+  <url>
+    <loc>https://ormstownobserver.ca/fr/conseil-municipal/contrat-evenements-depense-ajoutee/</loc>
+    <lastmod>2026-11-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/events-contract-added-spending/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/contrat-evenements-depense-ajoutee/"/>
   </url>
   <url>
     <loc>https://ormstownobserver.ca/fr/conseil-municipal/demande-interdire-camions-trois-rues/</loc>
