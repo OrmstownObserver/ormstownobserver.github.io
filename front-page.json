@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-11-24T19:30:41.615Z",
+  "generated_at": "2026-11-25T13:00:38.926Z",
   "hero": {
     "slug": "council-watch-october-6-2026",
     "path_en": "/en/council-watch/october-6-2026/",
@@ -102,6 +102,16 @@
   ],
   "latest": [
     {
+      "slug": "council-watch-mrc-november-25-2026-preview",
+      "path_en": "/en/council-watch/mrc-november-25-2026-preview/",
+      "path_fr": "/fr/conseil-municipal/mrc-25-novembre-2026-apercu/",
+      "label_en": "Council Watch",
+      "label_fr": "Conseil municipal",
+      "hed_en": "MRC Council Preview: November 25, 2026",
+      "hed_fr": "Aperçu de la séance de la MRC : 25 novembre 2026",
+      "date_published": "2026-11-25"
+    },
+    {
       "slug": "council-watch-november-23-2026",
       "path_en": "/en/council-watch/november-23-2026/",
       "path_fr": "/fr/conseil-municipal/23-novembre-2026/",
@@ -190,16 +200,6 @@
       "hed_en": "New draft bylaw on how Ormstown handles contracts — Draft Bylaw 129-2026",
       "hed_fr": "Nouveau projet de règlement sur la gestion des contrats à Ormstown — Draft Bylaw 129-2026",
       "date_published": "2026-10-22"
-    },
-    {
-      "slug": "bylaws-regulations-how-bylaws-are-made",
-      "path_en": "/en/bylaws-regulations/how-bylaws-are-made/",
-      "path_fr": "/fr/bylaws-regulations/comment-un-reglement-est-adopte/",
-      "label_en": "Explainer",
-      "label_fr": "Explication",
-      "hed_en": "From notice of motion to public notice: how Ormstown council makes a bylaw, passes a resolution, and where you fit in — How council decides",
-      "hed_fr": "De l’avis de motion à l’avis public : comment le conseil d’Ormstown adopte un règlement ou une résolution, et où vous intervenez — How council decides",
-      "date_published": "2026-10-22"
     }
   ],
   "latest_groups": [
@@ -209,6 +209,17 @@
       "status_en": "",
       "status_fr": "",
       "items": [
+        {
+          "slug": "council-watch-mrc-november-25-2026-preview",
+          "path_en": "/en/council-watch/mrc-november-25-2026-preview/",
+          "path_fr": "/fr/conseil-municipal/mrc-25-novembre-2026-apercu/",
+          "label_en": "Council Watch",
+          "label_fr": "Conseil municipal",
+          "hed_en": "MRC Council Preview: November 25, 2026",
+          "hed_fr": "Aperçu de la séance de la MRC : 25 novembre 2026",
+          "date_published": "2026-11-25",
+          "part": null
+        },
         {
           "slug": "council-watch-november-11-2026",
           "path_en": "/en/council-watch/november-11-2026/",
@@ -263,21 +274,10 @@
           "hed_fr": "Deux règlements d'emprunt, 11,2 millions $. Prince-Albert, Cullen and Oliver",
           "date_published": "2026-08-02",
           "part": null
-        },
-        {
-          "slug": "council-watch-august-3-2026-preview",
-          "path_en": "/en/council-watch/august-3-2026-preview/",
-          "path_fr": "/fr/conseil-municipal/3-aout-2026-apercu/",
-          "label_en": "Council Watch · Preview",
-          "label_fr": "Conseil municipal · Aperçu",
-          "hed_en": "Council Meeting Preview: August 3, 2026",
-          "hed_fr": "Aperçu de la séance du conseil : 3 août 2026",
-          "date_published": "2026-08-01",
-          "part": null
         }
       ],
-      "newest": "2026-11-11",
-      "total": 9
+      "newest": "2026-11-25",
+      "total": 10
     },
     {
       "file": "PIIA Explained",
