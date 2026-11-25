@@ -117,6 +117,9 @@
   :root[data-theme="dark"] .doc-link { background: #172234; border-color: #34425a; color: #a9c1ec; }
   :root[data-theme="dark"] .doc-link:hover { background: #a9c1ec; color: #0f141b; }
 
+  /* Purple: press reports (first used on the MRC preview, 2026-11-25) */
+  :root[data-theme="dark"] .src-chip.src-press { background: #221c30; border-color: #4a3f66; color: #c9bdf0; }
+
   /* Red: preview / Observer-in-the-room / no */
   :root[data-theme="dark"] .status-badge.preview,
   :root[data-theme="dark"] .src-chip.src-obs { border-color: #5a3038; }

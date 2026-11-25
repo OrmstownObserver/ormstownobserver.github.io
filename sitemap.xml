@@ -321,6 +321,11 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/1-juin-2026/"/>
   </url>
   <url>
+    <loc>https://ormstownobserver.ca/en/council-watch/mrc-november-25-2026-preview/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/mrc-november-25-2026-preview/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/mrc-25-novembre-2026-apercu/"/>
+  </url>
+  <url>
     <loc>https://ormstownobserver.ca/en/council-watch/november-11-2026/</loc>
     <lastmod>2026-11-14</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/november-11-2026/"/>
@@ -799,6 +804,11 @@
     <lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/borrowing-172-173-2026/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/emprunts-172-173-2026/"/>
+  </url>
+  <url>
+    <loc>https://ormstownobserver.ca/fr/conseil-municipal/mrc-25-novembre-2026-apercu/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ormstownobserver.ca/en/council-watch/mrc-november-25-2026-preview/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ormstownobserver.ca/fr/conseil-municipal/mrc-25-novembre-2026-apercu/"/>
   </url>
   <url>
     <loc>https://ormstownobserver.ca/fr/conseil-municipal/parcelles-pour-boucler-aqueduc/</loc>
