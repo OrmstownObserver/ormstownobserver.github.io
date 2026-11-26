@@ -1,7 +1,7 @@
 {
  "version": 2,
- "generated_at": "2026-11-08T10:31:13.013Z",
- "document_count": 177,
+ "generated_at": "2026-11-26T14:12:27.654Z",
+ "document_count": 185,
  "assistants": {
   "legal": {
    "name_en": "Legal & Regulations",
@@ -29,6 +29,11 @@
        "title": "Budget 2025 8x14",
        "year": "2025",
        "url": "https://www.ormstown.ca/wp-content/uploads/Budget_2025_8x14.pdf"
+      },
+      {
+       "title": "Faits Saillants 2025",
+       "year": "2025",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Faits-Saillants-2025.pdf"
       },
       {
        "title": "PTI 2025 2027",
@@ -76,9 +81,19 @@
      "type": "bylaw",
      "documents": [
       {
+       "title": "129 2026 RGC",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/129-2026_RGC.pdf"
+      },
+      {
        "title": "Ajout Regl. 173 2026.1",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Ajout_Regl.-173-2026.1.pdf"
+      },
+      {
+       "title": "AVIS Adoption reglement 129 2026 2026 11 03",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Adoption-reglement-129-2026_2026-11-03.pdf"
       },
       {
        "title": "Avis de promulgation Regl 131 2026 pour site web",
@@ -89,6 +104,11 @@
        "title": "Avis promulgation Regl 167.1 2026 et 39 2026 WEB",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/Avis-promulgation_Regl-167.1-2026-et-39-2026_WEB.pdf"
+      },
+      {
+       "title": "Certificat de publication Reglement MRC 359 2026",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/Certificat-de-publication-_Reglement-MRC-359-2026.pdf"
       },
       {
        "title": "Reglement 131 2026 VF refondu pour side web",
@@ -391,6 +411,11 @@
        "url": "https://www.ormstown.ca/wp-content/uploads/2026-03-11-Avis-public-Derogation-mineure-Lot-6-228-622-signe.pdf"
       },
       {
+       "title": "AVIS Demande de derogation mineure 2026 11 19",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Demande-de-derogation-mineure_2026-11-19.pdf"
+      },
+      {
        "title": "AVIS Demande de derogation mineure octobre 2026 SIGNE",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Demande-de-derogation-mineure-octobre-2026_SIGNE.pdf"
@@ -617,6 +642,11 @@
      "type": "minutes",
      "documents": [
       {
+       "title": "10. PV 2026 10 06",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/10.-PV_2026-10-06.pdf"
+      },
+      {
        "title": "2026 01 19 Signe",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/2026-01-19-Signe.pdf"
@@ -630,6 +660,11 @@
        "title": "2026 09 17 Avis public Seance extraordinaire SIGNE",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/2026-09-17_Avis-public-Seance-extraordinaire_SIGNE.pdf"
+      },
+      {
+       "title": "2026 11 23 ODJ Seance extraordinaire",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/2026-11-23_ODJ_Seance-extraordinaire.pdf"
       },
       {
        "title": "9. PV 2026 09 08 Signe",
@@ -655,6 +690,11 @@
        "title": "AVIS Report seance ordinaire octobre 2026 WEB",
        "year": "2026",
        "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Report-seance-ordinaire-octobre-2026_WEB.pdf"
+      },
+      {
+       "title": "AVIS Seance extraordinaire 2026 11 11 Signe",
+       "year": "2026",
+       "url": "https://www.ormstown.ca/wp-content/uploads/AVIS_Seance-extraordinaire-2026-11-11_Signe.pdf"
       },
       {
        "title": "PV 2026 03 02 pour site web",
