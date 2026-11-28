@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23",
+  "updated": "2026-11-27",
   "events": [
     {
       "id": "krump-oblique-perspectives-2026",
@@ -16,22 +16,6 @@
         "label_en": "The Gleaner (Nov. 18)",
         "label_fr": "The Gleaner (18 nov., en anglais)",
         "url": "https://the-gleaner.com/photo-exhibition-supports-maison-des-jeunes-expansion-project/"
-      },
-      "added": "2026-11-20"
-    },
-    {
-      "id": "mrc-hsl-conseil-2026-11-25",
-      "date": "2026-11-25",
-      "town": "huntingdon",
-      "kind": "civic",
-      "title_en": "MRC du Haut-Saint-Laurent regional council, regular sitting",
-      "title_fr": "Séance régulière du Conseil régional de la MRC du Haut-Saint-Laurent",
-      "text_en": "Regular sitting of the MRC's regional council. The event page lists Huntingdon; the time and room are in the notice of meeting on the MRC's site.",
-      "text_fr": "Séance régulière du Conseil régional de la MRC. La page de l'événement indique Huntingdon; l'heure et la salle figurent dans l'avis de convocation sur le site de la MRC.",
-      "source": {
-        "label_en": "MRC du Haut-Saint-Laurent, event page (in French)",
-        "label_fr": "MRC du Haut-Saint-Laurent, page de l'événement",
-        "url": "https://mrchsl.com/evenement/src-nov-2026"
       },
       "added": "2026-11-20"
     },
